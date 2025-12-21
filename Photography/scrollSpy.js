@@ -1,25 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initScrollSpy() {
   const sections = document.querySelectorAll('p[id]');
-  const sidebarLinks = document.querySelectorAll('.sidebarList a, .mobileMenu a');
+  // Only target sidebar links for gallery navigation
+  const sidebarLinks = document.querySelectorAll('.sidebarList a');
 
   function onScroll() {
     let currentSection = '';
     sections.forEach(section => {
-      // Adjust offset (e.g., 100px) as needed so section near top gets active
       const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop <= 100) {
+      if (sectionTop <= 150) {
         currentSection = section.getAttribute('id');
       }
     });
 
+    // Remove active class from all links first
     sidebarLinks.forEach(link => {
-      link.classList.remove('activeSection');
-      if (link.getAttribute('href') === '#' + currentSection) {
-        link.classList.add('activeSection');
-      }
+      link.classList.remove('active');
     });
+
+    // Add active class to current section link and its parent if applicable
+    if (currentSection) {
+        const activeLinks = document.querySelectorAll(`.sidebarList a[href="#${currentSection}"]`);
+        activeLinks.forEach(link => {
+            link.classList.add('active');
+            
+            // If it's a sublink, also highlight the parent main link
+            if (link.classList.contains('sidebarSubLink')) {
+                const parentUl = link.closest('ul');
+                if (parentUl) {
+                    const parentLi = parentUl.parentElement;
+                    if (parentLi) {
+                        const parentLink = parentLi.querySelector('.sidebarLink');
+                        if (parentLink) {
+                            parentLink.classList.add('active');
+                        }
+                    }
+                }
+            }
+        });
+    }
   }
 
   window.addEventListener('scroll', onScroll);
   onScroll(); // initial check
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Optional: call it if there are static elements, 
+    // but for dynamic content, call initScrollSpy() after loading.
 });

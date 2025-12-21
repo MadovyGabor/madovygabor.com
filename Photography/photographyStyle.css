@@ -305,9 +305,13 @@ header .mobileMenuIcon .material-icons {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.fullscreenMenu .sidebarList li a:hover,
-.fullscreenMenu .sidebarList li a.active {
+.fullscreenMenu .sidebarList li a:hover {
     background-color: #444;
+    color: #007BFF;
+}
+
+.fullscreenMenu .sidebarList li a.active {
+    background-color: transparent;
     color: #007BFF;
 }
 
@@ -1061,6 +1065,7 @@ header .mobileMenuIcon .material-icons {
 
 .galleryPrevSection h2 {
     color: white;
+    margin-top: 20px;
     margin-bottom: 30px;
     font-size: 2.5em;
     position: relative;
@@ -1113,6 +1118,7 @@ header .mobileMenuIcon .material-icons {
     scroll-behavior: smooth;
     box-sizing: border-box;
     cursor: pointer;
+    position: relative;
 }
 
 .carousel.dragging {
@@ -1121,7 +1127,8 @@ header .mobileMenuIcon .material-icons {
 }
 
 .carousel img {
-    width: 450px; 
+    height: 400px;
+    width: auto; 
     margin-right: 14px; 
     object-fit: cover; 
 }
@@ -1240,9 +1247,8 @@ header .mobileMenuIcon .material-icons {
 .sidebarContainer {
     position: sticky;
     border-radius: 12px; 
-    top: 0px; 
-    height: fit-content; 
-    max-height: 80vh; 
+    top: 0; 
+    max-height: 100vh; 
     overflow-y: auto; 
     flex-shrink: 0; 
     background-color: #333; 
@@ -1250,6 +1256,24 @@ header .mobileMenuIcon .material-icons {
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5); 
     padding: 15px; 
     font-family: 'Overpass', sans-serif; 
+    scrollbar-width: thin;
+    scrollbar-color: #888 #333;
+    box-sizing: border-box;
+}
+
+.sidebarContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebarContainer::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 12px;
+}
+
+.sidebarContainer::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+    border: 2px solid #333;
 }
 
 .sidebarList {
@@ -1314,6 +1338,10 @@ header .mobileMenuIcon .material-icons {
 
 .sidebarSubLink:hover {
     background-color: #555;
+    color: #007BFF;
+}
+
+.sidebarSubLink.active {
     color: #007BFF;
 }
 
@@ -1515,6 +1543,7 @@ header .mobileMenuIcon .material-icons {
     color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .contactItem {
@@ -1614,6 +1643,7 @@ header .mobileMenuIcon .material-icons {
     color: #333;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .contactsForm form {
@@ -1858,10 +1888,18 @@ button.disabled {
     .contactsSection .contactsText h3{
         font-size: 1.3em;
     }
-
-    .contactsSection {
+    .contactsText{
         padding: 20px;
         box-sizing: border-box;
+    }
+
+    .contactsSection {
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .contactsContainer {
+        gap: 15px;
     }
     
     .contactsContainer .contacts {
@@ -1965,7 +2003,7 @@ footer {
 
 .footerContent p {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
     letter-spacing: 1px;
 }
 
@@ -1982,6 +2020,7 @@ footer {
 
 .footerSocial {
     display: flex;
+    align-items: center;
     gap: 20px;
     margin-top: 15px;
 }
@@ -1993,7 +2032,7 @@ footer {
 }
 
 .footerSocial .material-icons {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .footerSocial a:hover {
@@ -2008,7 +2047,7 @@ footer {
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
 .footerInfo a {
@@ -2023,11 +2062,18 @@ footer {
 
 @media screen and (max-width: 768px) {
     .footerInfo {
+        font-size: 1em;
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
+    
+    .footerContent{
+        font-size: 1.1em
+    }
 }
+
+
 
 /* Thank You Page */
 .thankYouContainer {

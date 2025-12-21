@@ -1,28 +1,71 @@
 const carousel = document.querySelector('.carousel');
-const firstImg = carousel.querySelectorAll('img')[0];
 const arrowIcons = document.querySelectorAll('.gallery-wrapper i'); 
+
+const scrollCarousel = (direction) => {
+    const images = carousel.querySelectorAll('img');
+    const scrollLeft = carousel.scrollLeft;
+    let targetScroll = scrollLeft;
+
+    if (direction === "left") {
+        // Find the first image whose left edge is >= scrollLeft (approx)
+        for (let i = 0; i < images.length; i++) {
+            const img = images[i];
+            if (img.offsetLeft >= scrollLeft - 5) { 
+                if (i > 0) {
+                    targetScroll = images[i - 1].offsetLeft;
+                } else {
+                    // Loop to end
+                    targetScroll = carousel.scrollWidth - carousel.clientWidth;
+                }
+                break;
+            }
+        }
+    } else { // right
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        // Check if we are at the end (or very close)
+        if (scrollLeft >= maxScrollLeft - 5) {
+            targetScroll = 0;
+        } else {
+            // Find the first image that starts *after* the current scroll position
+            let found = false;
+            for (let i = 0; i < images.length; i++) {
+                const img = images[i];
+                if (img.offsetLeft > scrollLeft + 5) {
+                    targetScroll = img.offsetLeft;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                targetScroll = 0;
+            }
+        }
+    }
+    
+    carousel.scrollTo({
+        left: targetScroll,
+        behavior: "smooth"
+    });
+};
 
 arrowIcons.forEach(icon => { 
     icon.addEventListener("click", () => {
-        // Dynamically calculate the image width (including margin)
-        const firstImgWidth = firstImg.clientWidth + parseInt(getComputedStyle(firstImg).marginRight);
-
-        // Adjust scroll position based on the arrow clicked
-        carousel.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
-
-        // Snap to the nearest image
-        setTimeout(() => {
-            const scrollLeft = carousel.scrollLeft;
-            const remainder = scrollLeft % firstImgWidth;
-
-            if (remainder !== 0) {
-                // Determine the scroll direction and adjust accordingly
-                if (icon.id === "right") {
-                    carousel.scrollLeft += firstImgWidth - remainder; // Snap forward
-                } else {
-                    carousel.scrollLeft -= remainder; // Snap backward
-                }
-            }
-        }, 100); // Delay to allow smooth scrolling
+        scrollCarousel(icon.id === "left" ? "left" : "right");
+        resetAutoScroll();
     });
 });
+
+let autoScrollInterval = setInterval(() => {
+    scrollCarousel("right");
+}, 3000);
+
+const resetAutoScroll = () => {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(() => {
+        scrollCarousel("right");
+    }, 3000);
+};
+
+// Pause on hover
+carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+carousel.addEventListener('mouseleave', () => resetAutoScroll());
