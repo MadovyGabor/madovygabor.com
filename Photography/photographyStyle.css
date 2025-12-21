@@ -1232,6 +1232,9 @@ header .mobileMenuIcon .material-icons {
     display: flex;
     align-items: flex-start; 
     gap: 20px; 
+    max-width: 1600px; /* Limit width to match header */
+    margin: 0 auto; /* Center the wrapper */
+    width: 100%; /* Ensure it takes full width up to max-width */
 }
 
 .sidebarContainer {
