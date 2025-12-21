@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     container.appendChild(tilesDiv);
                 });
             });
+
+            // Initialize ScrollSpy after content is loaded
+            if (typeof initScrollSpy === 'function') {
+                initScrollSpy();
+            }
         })
         .catch(error => console.error('Error loading gallery:', error));
 });
