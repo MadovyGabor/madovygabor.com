@@ -254,7 +254,7 @@ header .mobileMenuIcon .material-icons {
     z-index: 1000;
     flex-direction: column;
     padding: 20px;
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto;
     box-sizing: border-box;
 }
 
