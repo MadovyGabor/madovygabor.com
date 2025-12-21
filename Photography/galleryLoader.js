@@ -46,17 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
                         columns.push(col);
                     }
 
-                    sub.images.forEach((imgSrc, index) => {
+                    // Column heights tracker (normalized by width)
+                    // Initialize all columns to 0 for even distribution
+                    const colHeights = [0, 0, 0]; 
+
+                    sub.images.forEach((imgData) => {
                         const img = document.createElement('img');
-                        img.src = imgSrc;
+                        // Handle both old (string) and new (object) JSON format for backward compatibility
+                        const src = typeof imgData === 'string' ? imgData : imgData.src;
+                        const aspectRatio = (typeof imgData === 'object' && imgData.aspect_ratio) ? imgData.aspect_ratio : 1.5; // Default to 3:2 if missing
+
+                        img.src = src;
                         img.loading = "lazy";
                         img.className = "skeleton";
                         
                         img.onload = function() { this.classList.remove('skeleton'); };
                         
-                        // Distribute images among the 3 columns (0, 1, 2, 0, 1, 2...)
-                        const columnIndex = index % 3;
-                        columns[columnIndex].appendChild(img);
+                        // Find the shortest column
+                        let minColIndex = 0;
+                        for (let i = 1; i < 3; i++) {
+                            if (colHeights[i] < colHeights[minColIndex]) {
+                                minColIndex = i;
+                            }
+                        }
+
+                        // Add image to the shortest column
+                        columns[minColIndex].appendChild(img);
+
+                        // Update column height
+                        // Height added is proportional to 1/aspect_ratio (since width is constant)
+                        colHeights[minColIndex] += (1 / aspectRatio);
                     });
 
                     container.appendChild(tilesDiv);

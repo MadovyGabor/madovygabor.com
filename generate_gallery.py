@@ -2,6 +2,7 @@ import os
 import json
 import unicodedata
 import re
+from PIL import Image
 
 # Settings
 PICTURES_DIR = "pictures/portfolio"
@@ -40,7 +41,24 @@ def generate_gallery_json():
                         if img.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
                             # Relative path needed for the website (from root)
                             web_path = f"/pictures/portfolio/{category}/{subcat}/{img}"
-                            images.append(web_path)
+                            
+                            # Get image dimensions
+                            img_full_path = os.path.join(sub_path, img)
+                            width, height, aspect_ratio = 0, 0, 0
+                            try:
+                                with Image.open(img_full_path) as image:
+                                    width, height = image.size
+                                    if height > 0:
+                                        aspect_ratio = width / height
+                            except Exception as e:
+                                print(f"Error reading image {img}: {e}")
+
+                            images.append({
+                                "src": web_path,
+                                "width": width,
+                                "height": height,
+                                "aspect_ratio": aspect_ratio
+                            })
                     
                     if images:
                         cat_data["subsections"].append({
