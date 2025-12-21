@@ -1,0 +1,130 @@
+[
+    {
+        "title": "Koncertek",
+        "id": "koncertek",
+        "subsections": [
+            {
+                "title": "Azariah",
+                "id": "azariah",
+                "images": [
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (1).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (2).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (3).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (4).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (5).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (6).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (7).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (8).webp",
+                    "/pictures/portfolio/Koncertek/Azariah/Azariah (9).webp"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Portrék",
+        "id": "portrek",
+        "subsections": [
+            {
+                "title": "Portréim",
+                "id": "portreim",
+                "images": [
+                    "/pictures/portfolio/Portrék/Portréim/Picture 1.webp",
+                    "/pictures/portfolio/Portrék/Portréim/Picture 2.webp",
+                    "/pictures/portfolio/Portrék/Portréim/Picture 3.webp",
+                    "/pictures/portfolio/Portrék/Portréim/Picture 4.webp",
+                    "/pictures/portfolio/Portrék/Portréim/Picture 5.webp",
+                    "/pictures/portfolio/Portrék/Portréim/Picture 6.webp"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Rendezvények",
+        "id": "rendezvenyek",
+        "subsections": [
+            {
+                "title": "AMTS 25",
+                "id": "amts-25",
+                "images": [
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (1).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (10).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (11).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (12).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (13).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (14).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (2).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (3).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (4).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (5).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (6).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (7).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (8).webp",
+                    "/pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (9).webp"
+                ]
+            },
+            {
+                "title": "Rakoczi tabor 24",
+                "id": "rakoczi-tabor-24",
+                "images": [
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (1).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (2).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (3).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (4).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (5).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (6).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (7).webp",
+                    "/pictures/portfolio/Rendezvények/Rakoczi tabor 24/rakoczi tabor 24 (8).webp"
+                ]
+            },
+            {
+                "title": "felsoszeli ballagas 24",
+                "id": "felsoszeli-ballagas-24",
+                "images": [
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (1).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (10).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (11).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (12).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (13).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (14).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (15).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (16).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (2).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (3).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (4).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (5).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (6).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (7).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (8).webp",
+                    "/pictures/portfolio/Rendezvények/felsoszeli ballagas 24/Felszoszeli ballagas 24 (9).webp"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Travel",
+        "id": "travel",
+        "subsections": [
+            {
+                "title": "Brno",
+                "id": "brno",
+                "images": [
+                    "/pictures/portfolio/Travel/Brno/Brno (1).webp",
+                    "/pictures/portfolio/Travel/Brno/Brno (2).webp",
+                    "/pictures/portfolio/Travel/Brno/Brno (3).webp"
+                ]
+            },
+            {
+                "title": "Tatranska lomnica",
+                "id": "tatranska-lomnica",
+                "images": [
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (1).webp",
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (2).webp",
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (3).webp",
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (4).webp",
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (5).webp",
+                    "/pictures/portfolio/Travel/Tatranska lomnica/Tatranska Lomnica (6).webp"
+                ]
+            }
+        ]
+    }
+]
