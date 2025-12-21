@@ -1108,6 +1108,7 @@ header .mobileMenuIcon .material-icons {
 .gallery-wrapper {
     max-width: 1520px;
     overflow: hidden; 
+    position: relative;
 }
 
 .gallery-wrapper .carousel {
@@ -1175,14 +1176,6 @@ header .mobileMenuIcon .material-icons {
 
 /* Responsive adjustments */
 
-@media screen and (max-width: 900px) {
-    .carousel img {
-        width: calc(100% / 2); 
-    }
-}
-
-
-
 @media screen and (max-width: 768px) {
     
     .gallery-next-btn,
@@ -1192,9 +1185,19 @@ header .mobileMenuIcon .material-icons {
     }
 }   
 
-@media screen and (max-width: 550px) {
+
+@media screen and (max-width: 600px) {
     .carousel img {
         width: 100%; 
+    }
+
+    /* Hide specific images on small screens */
+    .carousel img.hide-mobile {
+        display: none;
+    }
+
+    .galleryPrevSection {
+        padding: 20px 0px;
     }
 }
 
