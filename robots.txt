@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://madovygabor.github.io/sitemap.xml

@@ -1,12 +1,25 @@
-import os
 import json
-import unicodedata
+import os
 import re
+import unicodedata
+from pathlib import Path
+
 from PIL import Image
 
 # Settings
-PICTURES_DIR = "pictures/portfolio"
-OUTPUT_FILE = "Photography/galleryData.json"
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
+def find_photo_page_dir():
+    for candidate in (SCRIPT_DIR, SCRIPT_DIR.parent, SCRIPT_DIR.parent.parent):
+        if (candidate / "pictures" / "portfolio").exists():
+            return candidate
+    return SCRIPT_DIR
+
+
+PHOTO_PAGE_DIR = find_photo_page_dir()
+PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
+OUTPUT_FILE = SCRIPT_DIR / "galleryData.json"
 
 def slugify(text):
     """Creates an ID from accented folder names (e.g., 'Rendezvények' -> 'rendezvenyek')"""
@@ -18,13 +31,13 @@ def generate_gallery_json():
     gallery_data = []
 
     # Iterate through main categories (e.g., Portraits, Events)
-    if not os.path.exists(PICTURES_DIR):
+    if not PICTURES_DIR.exists():
         print(f"ERROR: Folder not found: {PICTURES_DIR}")
         return
 
     for category in sorted(os.listdir(PICTURES_DIR)):
-        cat_path = os.path.join(PICTURES_DIR, category)
-        if os.path.isdir(cat_path):
+        cat_path = PICTURES_DIR / category
+        if cat_path.is_dir():
             cat_data = {
                 "title": category,
                 "id": slugify(category),
@@ -33,17 +46,16 @@ def generate_gallery_json():
 
             # Iterate through subcategories (e.g., AMTS 25, My Portraits)
             for subcat in sorted(os.listdir(cat_path)):
-                sub_path = os.path.join(cat_path, subcat)
-                if os.path.isdir(sub_path):
+                sub_path = cat_path / subcat
+                if sub_path.is_dir():
                     images = []
                     # Collect images
                     for img in sorted(os.listdir(sub_path)):
                         if img.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                            # Relative path needed for the website (from root)
-                            web_path = f"/pictures/portfolio/{category}/{subcat}/{img}"
-                            
+                            img_full_path = sub_path / img
+                            web_path = img_full_path.relative_to(PHOTO_PAGE_DIR).as_posix()
+
                             # Get image dimensions
-                            img_full_path = os.path.join(sub_path, img)
                             width, height, aspect_ratio = 0, 0, 0
                             try:
                                 with Image.open(img_full_path) as image:
@@ -71,6 +83,7 @@ def generate_gallery_json():
                 gallery_data.append(cat_data)
 
     # Save JSON
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(gallery_data, f, ensure_ascii=False, indent=4)
     
