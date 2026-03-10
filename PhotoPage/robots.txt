@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://madovygabor.work/sitemap.xml
-Sitemap: https://dev.madovygabor.work/sitemap.xml
-Sitemap: https://photo.madovygabor.work/sitemap.xml
