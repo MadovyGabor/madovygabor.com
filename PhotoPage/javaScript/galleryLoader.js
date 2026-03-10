@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('galleryData.json')
+    fetch('utils/galleryData.json')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('dynamicGalleryContainer');
