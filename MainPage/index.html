@@ -1,41 +1,157 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Üdvözöllek Madový Gábor oldalán! Fedezd fel a fotózás és informatika világát.">
-        <meta name="keywords" content="fotós, informatika, Madový Gábor, Galánta, Újvár, Dunaszerdahely, portréfotózás, eseményfotózás">
-        <meta name="author" content="Madový Gabriel">
-        <meta name="robots" content="index, follow">
-    
-        <meta property="og:title" content="Madový Gábor - Üdvözöllek az oldalamon!">
-        <meta property="og:description" content="Fedezd fel a fotózás és informatika világát Madový Gábor oldalán.">
-        <meta property="og:image" content="https://madovygabor.work/pictures/og-image.jpg">
-        <meta property="og:url" content="https://madovygabor.work">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="hu_HU">
-    
-        <title>Üdvözöllek - Madový Gábor</title>
-        
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="pictures/favicon.png">  
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+    <title>Madový Gábor | Developer & Photographer</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;700&display=swap" rel="stylesheet">                                                      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">                                                                      </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="styled-title">Üdvözöllek az oldalamon!</h1>
+    <section class="main-content">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Madový Gábor</h1>
+                <h2>Visual Storyteller & Developer</h2>
+                <p>Üdvözöllek! Szenvedélyem a technológia és az alkotás. Legyen szó letisztult kódokról vagy megismételhetetlen pillanatok megörökítéséről, a precizitás és az estétika vezérel.</p>
+                <a href="#about" class="explore-btn-outline">Explore More ↓</a>      
+            </div>
+            <div class="hero-image">
+                <img src="pictures/aboutMePicture.webp" alt="Madový Gábor">
+            </div>
         </div>
-        <div class="cardsContainer">
-            <a href="https://photo.madovygabor.work" class="card photo">
-                <img src="pictures/photography.jpg" alt="Fotózás - Madový Gábor">
-                <div class="card-text with-background">Fotózás</div>
-            </a>
-            
-            <a href="https://dev.madovygabor.work" class="card it">
-                <img src="pictures/it.jpg" alt="Informatika - Madový Gábor">
-                <div class="card-text with-background">Informatika</div>
-            </a>
+
+        <!-- FOTÓZÁS BEMUTATÓ SZEKCIÓ -->
+        <div id="about" class="photo-showcase">
+            <div class="showcase-header">
+                <div class="title-group">
+                    <span class="overline">Visual Arts</span>
+                    <h2>Capturing Moments.</h2>
+                </div>
+                <!-- Átlátszó gomb animációval -->
+                <a href="https://photo.madovygabor.work" class="explore-btn-outline photo-header-cta">Enter Full Gallery →</a>
+            </div>
+
+            <!-- Ideiglenes professzionális helyettesítő képek (Később cserélheted őket a sajátjaidra) -->
+            <div class="photo-grid">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea0e3408cb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery Image 1">
+                <img src="https://images.unsplash.com/photo-1516214104703-d2507f0147eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery Image 2">
+                <img src="https://images.unsplash.com/photo-1516801708826-6dfb5f1345da?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery Image 3">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery Image 4">
+            </div>
+
+            <div class="showcase-details">
+                <div class="details-left">
+                    <h3>The Aesthetic</h3>
+                    <p>Munkáimat egy letisztult, hangsúlyos vizuális kézjegy határozza meg. A magas kontraszt és a kiemelt fekete tónusok filmszerű atmoszférát teremtenek. Legyen szó a természet csendjéről vagy az urbánus tájak mértani pontosságáról, arra törekszem, hogy magát a pillanatot és annak érzését adjam vissza, ne csupán a látványt.</p>
+                </div>
+                <div class="details-right">
+                    <div class="detail-row">
+                        <span class="detail-label">Primary Gear</span>
+                        <span class="detail-value">Sony Alpha / DJI Mavic</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Focal Range</span>
+                        <span class="detail-value">24mm — 600mm</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Post-Processing</span>
+                        <span class="detail-value">Lightroom / Photoshop</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://photo.madovygabor.work" class="explore-btn-outline photo-end-cta">Enter Full Gallery →</a>
         </div>
-    </div>
+            <!-- INFORMATIKA / ENGINEERING BEMUTATÓ SZEKCIÓ -->
+        <div class="eng-showcase">
+            <div class="eng-left">
+                <span class="overline">Engineering</span>
+                <h2>Architecting Performance.</h2>
+                <p>Fejlesztőként arra fókuszálok, hogy határozott, megbízható és skálázható rendszereket építsek. Nem csak kódolok – a hatékonyság és a tiszta architektúra vezérel.</p>
+                
+                <!-- Dekoratív kódszerkesztő ablak -->
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="code-content">
+<pre><code><span class="keyword">class</span> <span class="function">Developer</span> {
+    <span class="keyword">constructor</span>() {
+        <span class="keyword">this</span>.focus = <span class="string">'Clean Code'</span>;
+        <span class="keyword">this</span>.skills = [<span class="string">'Backend'</span>, <span class="string">'Frontend'</span>, <span class="string">'Architecture'</span>];
+    }
+    
+    <span class="function">buildSystem</span>() {
+        <span class="keyword">return</span> <span class="string">"Efficient & Scalable Solutions"</span>;
+    }
+}
+<span class="comment">// Always learning, always improving...</span></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eng-right">
+                <div class="skill-row">
+                    <h3>Backend Development</h3>
+                    <p>Robusztus szerveroldali alkalmazások, API-k és adatbázisok tervezése, amelyek a másodperc törtrésze alatt kiszolgálják a felhasználókat.</p>
+                    <span class="skill-tags">Node.js / Python / SQL</span>
+                </div>
+                
+                <div class="skill-row">
+                    <h3>Frontend Experience</h3>
+                    <p>Modern, reaktív és reszponzív felületek építése, melyek pixelpontosan hozzák a megálmodott dizájnt.</p>
+                    <span class="skill-tags">React / JavaScript / HTML & CSS</span>
+                </div>
+                
+                <div class="skill-row">
+                    <h3>Systems Architecture</h3>
+                    <p>A kód mögötti rendszer átlátása, tiszta tervezési minták és karbantartható kód írása a jövő biztosítása érdekében.</p>
+                    <span class="skill-tags">Design Patterns / Clean Code</span>
+                </div>
+                
+                <a href="https://dev.madovygabor.work" class="explore-btn-outline" style="margin-top: 20px; align-self: flex-start;">Enter IT Portfolio →</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER MÓDOSÍTÁS -->
+        <!-- FOOTER MÓDOSÍTÁS HANGOLVA A FOTÓS OLDALHOZ -->
+    <footer>
+        <div class="footerContent">
+            <p>© 2026 Madový Gábor</p>
+            <div class="footerSocial">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61574942680651" target="_blank" aria-label="Facebook">
+                    <i class="material-icons">facebook</i>
+                </a>
+                <!-- Instagram (SVG) -->
+                <a href="https://www.instagram.com/mg.captures06/" target="_blank" aria-label="Instagram">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="custom-icon">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="currentColor"/>
+                        <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="currentColor"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:mg.captures06@gmail.com" aria-label="Email"><i class="material-icons">mail</i></a>
+            </div>
+            <div class="footerInfo">
+                <span>Galánta - Újvár - Dunaszerdahely</span>
+                <span>
+                    <a href="https://dev.madovygabor.work" aria-label="Informatika">Informatika</a> | 
+                    <a href="https://photo.madovygabor.work" aria-label="Fotózás">Fotózás</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
+
+
+
