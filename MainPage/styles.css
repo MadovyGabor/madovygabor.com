@@ -24,12 +24,6 @@
         color: #1a1a1a;
     }
 
-    @media screen and (max-width: 480px) {
-        body {
-            margin: 10px; 
-        }
-    }
-
     h1, h2, h3 {
         font-family: 'Crimson Pro', serif;
     }
@@ -174,75 +168,6 @@
 
     .hero-image:hover img {
         transform: scale(1.02);
-    }
-
-    /* -----------------------------
-    ABOUT KÁRTYÁK
-    ------------------------------ */
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        width: 100%;
-    }
-
-    .about-card {
-        padding: 50px;
-        border-radius: 16px;
-        background: #fcfcfc;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); /* Ide is lágy kiemelés */
-        transition: transform 0.3s ease;
-    }
-
-    .about-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .about-card h3 {
-        font-size: 2.5rem;
-        margin-top: 0;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-
-    .about-card p {
-        font-family: 'Overpass', sans-serif;
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.7;
-        margin-bottom: 30px;
-    }
-
-    .it-card { border-top: 6px solid var(--dev-color); }
-    .photo-card { border-top: 6px solid var(--accent-color); }
-
-    .explore-btn {
-        display: inline-block;
-        text-decoration: none;
-        color: #ffffff;
-        font-family: 'Overpass', sans-serif;
-        font-weight: 700;
-        font-size: 0.92rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: 1px solid #1a1a1a;
-        border-radius: 999px;
-        background-color: #1f1f1f;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        transition: all 0.28s ease;
-    }
-
-    .it-card .explore-btn:hover {
-        border-color: var(--dev-color);
-        background-color: var(--dev-color);
-        transform: translateY(-2px);
-    }
-
-    .photo-card .explore-btn:hover {
-        border-color: var(--accent-color);
-        background-color: var(--accent-color);
-        color: #1a1a1a;
-        transform: translateY(-2px);
     }
 
     /* -----------------------------
@@ -660,6 +585,10 @@ body {
         padding: 0 0 30px 0;
     }
 
+    .hero-text p {
+        margin-bottom: 1.4rem;
+    }
+
     .hero .explore-btn-outline {
         display: none;
     }
@@ -764,8 +693,10 @@ body {
     }
 
     .code-content code {
-        white-space: pre-wrap;
-        word-break: break-word;
+        white-space: pre;
+        word-break: normal;
+        display: block;
+        min-width: 0;
     }
 
     footer {
@@ -812,5 +743,56 @@ body {
         justify-content: center;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+
+    .hero {
+        padding: 28px 16px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.2rem, 12vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: -0.4px;
+    }
+
+    .hero-text h2 {
+        font-size: clamp(1.2rem, 6vw, 1.5rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-text p,
+    .eng-left p,
+    .details-left p,
+    .skill-row p {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .title-group h2,
+    .eng-left h2 {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
+
+    .skill-row h3 {
+        font-size: 1.45rem;
+        line-height: 1.2;
+    }
+
+    .explore-btn-outline {
+        font-size: 0.78rem;
+        letter-spacing: 1.4px;
+        padding: 12px 22px;
+    }
+
+    .code-content {
+        padding: 16px 12px;
+        font-size: 0.78rem;
+        line-height: 1.5;
     }
 }

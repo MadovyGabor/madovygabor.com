@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapcsolat - Madový Gábor</title>
     
-    <meta name="description" content="Lépj kapcsolatba Madový Gáborral - Portré-, esemény- és egyedi fotózás Galánta, Újvár és Dunaszerdahely környékén.">
-    <meta name="keywords" content="kapcsolat, fotós, portréfotózás, eseményfotózás, Madový Gábor, Galánta, Szlovákia, MG Captures">
+    <title>Kapcsolat | MG Captures - Fotózás</title>
+    
+    <meta name="description" content="Vedd fel a kapcsolatot az MG Captures-szel! Portré-, esemény- és koncertfotózás Galánta, Érsekújvár és Dunaszerdahely környékén.">
+    <meta name="keywords" content="MG Captures kapcsolat, fotós, portréfotózás, eseményfotózás, Madový Gábor, Galánta, Szlovákia">
     <meta name="author" content="Madový Gábor">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://photo.madovygabor.work/contacts.html" />
 
-    <meta property="og:title" content="Kapcsolat - Madový Gábor">
-    <meta property="og:description" content="Vedd fel velem a kapcsolatot és valósítsuk meg az ötleteidet! Fotózás Galánta környékén.">
+    <meta property="og:title" content="Kapcsolat | MG Captures">
+    <meta property="og:description" content="Vedd fel velem a kapcsolatot és valósítsuk meg az ötleteidet! MG Captures fotózás Galánta környékén.">
     <meta property="og:image" content="https://photo.madovygabor.work/pictures/photography-og.jpg">
     <meta property="og:url" content="https://photo.madovygabor.work/contacts.html">
     <meta property="og:type" content="website">
@@ -26,14 +27,18 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Photographer",
-            "name": "Madový Gábor",
+            "@type": "ProfessionalService",
+            "name": "MG Captures",
+            "founder": {
+                "@type": "Person",
+                "name": "Madový Gábor"
+            },
             "image": "https://photo.madovygabor.work/pictures/photography-og.jpg",
-            "description": "Profi portré- és eseményfotózás Szlovákia szerte.",
+            "description": "Profi portré- és eseményfotózás Szlovákia szerte az MG Captures lencséjén keresztül.",
             "url": "https://photo.madovygabor.work",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Galanta",
+                "addressLocality": "Galánta",
                 "addressCountry": "SK"
             },
             "sameAs": [
@@ -47,7 +52,7 @@
 
 <body>
     <header>
-         <h1>MADOVÝ GÁBOR</h1>
+        <h1>MG CAPTURES</h1>
             
         <div class="menuIcon" onclick="toggleMenu()">
              <i class="material-icons" aria-label="Menu">menu</i>
@@ -56,7 +61,7 @@
         <nav class="navButtons">
               <a href="index.html" class="button" aria-label="Főoldal">FŐOLDAL</a>
               <a href="portfolio.html" class="button" aria-label="Portfólió">PORTFÓLIÓ</a>
-              <a href="contacts.html" class="button  active" aria-label="Elérhetőségek">ELÉRHETŐSÉGEK</a>
+              <a href="contacts.html" class="button active" aria-label="Elérhetőségek">ELÉRHETŐSÉGEK</a>
               <a href="https://madovygabor.work/" class="button" aria-label="Kezdőoldal">KEZDŐOLDAL</a>
           </nav>
             
@@ -113,9 +118,28 @@
                     <i class="material-icons" aria-hidden="true">phone</i>
                     <div>
                         <h2>Telefonszám</h2>
-                        <h3><a href="tel:+421903035624" aria-label="Hívás indítása">+421 903 035 624</a></h3>
+                        <h3><a href="#" id="safe-phone" aria-label="Hívás indítása">Betöltés...</a></h3>
                     </div>
                 </div>
+
+                <script>
+                    //Script for safely displaying the phone number without exposing it to bots
+                    document.addEventListener("DOMContentLoaded", function() {
+                    
+                        var p1 = "+421";
+                        var p2 = "903";
+                        var p3 = "035";
+                        var p4 = "624";
+                        
+                        var phoneElement = document.getElementById("safe-phone");
+                        
+                       
+                        phoneElement.href = "tel:" + p1 + p2 + p3 + p4;
+                        
+                        // Display the phone number in a human-readable format
+                        phoneElement.innerHTML = p1 + " " + p2 + " " + p3 + " " + p4;
+                    });
+                </script>
 
                 <div class="contactItem">
                     <i class="material-icons" aria-hidden="true">public</i>
@@ -196,16 +220,14 @@
                         </div>
                     </div>
                     
-                    <!-- Hidden fields for formsubmit.co -->
-                    <input type="hidden" name="_next" value="thankYou.html">
-                    <input type="hidden" name="_subject" value="Új üzenet a weboldalról">
+                    <input type="hidden" name="_next" value="https://photo.madovygabor.work/thankYou.html">
+                    <input type="hidden" name="_subject" value="Új üzenet az MG Captures weboldalról">
                     <input type="hidden" name="_captcha" value="false">
                 </form> 
             </div>
         </div>
     </section>
 
-    <!-- Add reCAPTCHA script -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function enableSubmitButton() {
@@ -232,7 +254,7 @@
     
 <footer>
     <div class="footerContent">
-        <p>© 2025 Madový Gábor</p>
+        <p>© 2026 MG Captures</p>
         <div class="footerSocial">
             <a href="https://www.facebook.com/profile.php?id=61574942680651" target="_blank" aria-label="Facebook"><i class="material-icons">facebook</i></a>
             <a href="https://www.instagram.com/mg.captures06/" target="_blank" aria-label="Instagram">
