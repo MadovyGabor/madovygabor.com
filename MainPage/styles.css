@@ -548,6 +548,312 @@
 .photo-end-cta {
     display: none;
 }
+/* -----------------------------
+   FOOTER BELSŐ ELEMEK FORMÁZÁSA
+------------------------------ */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 34px 28px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #232323;
+    color: #f1f1f1;
+    font-family: 'Overpass', sans-serif;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1220px;
+    gap: 16px;
+}
+
+.footerContent p {
+    margin: 0;
+    letter-spacing: 0.4px;
+    font-size: 1.08rem;
+}
+
+.footerContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent-color), var(--dev-color));
+}
+
+.footerSocial {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerSocial a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.28s ease, transform 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerSocial a:hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+.footerSocial .material-icons {
+    font-size: 27px;
+}
+
+.footerSocial .custom-icon {
+    width: 23px;
+    height: 23px;
+    fill: currentColor;
+}
+
+.footerInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Elosztja a 3 elemet: bal - közép - jobb */
+    align-items: center;
+    gap: 18px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #d6d6d6;
+    font-size: 1rem;
+}
+
+.footerInfo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footerInfo a:hover {
+    color: var(--dev-color);
+}
+
+/* NYELVVÁLASZTÓ CSS */
+.footer-lang {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-lang a {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.footer-lang a:hover {
+    color: #fff;
+}
+
+.footer-lang-sep {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+.footer-location {
+    display: block;
+}
+
+.footer-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+
+.footer-links a + a {
+    position: relative;
+    margin-left: 14px;
+    padding-left: 14px;
+}
+
+.footer-links a + a::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.photo-end-cta {
+    display: none;
+}
+
+/* -----------------------------
+   POP-UP ASZTALI DESIGN
+------------------------------ */
+.lang-popup {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 10000;
+    width: 340px;
+    display: none;
+}
+
+.lang-popup.is-visible {
+    display: block;
+    animation: langPopupSlideUp 0.5s ease-out forwards;
+}
+
+.lang-popup-inner {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    padding: 24px;
+    font-family: 'Overpass', sans-serif;
+    color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-popup-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--dev-color));
+}
+
+.lang-popup-overline {
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #888;
+}
+
+.lang-popup-title {
+    margin: 0 0 8px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.lang-popup-text {
+    margin: 0 0 16px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.lang-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.lang-btn-primary {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.lang-btn-primary:hover {
+    background: #333;
+}
+
+.lang-dismiss {
+    background: transparent;
+    border: none;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.lang-dismiss:hover {
+    color: #111;
+}
+
+@keyframes langPopupSlideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* -----------------------------
+   RESPONZÍV NÉZETEK (TABLET & MOBIL)
+------------------------------ */
+@media (max-width: 900px) {
+    /* ... (itt marad a többi, amit eddig írtál a hős szekcióra) ... */
+    
+    .footerInfo {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-lang {
+        order: -1; /* Mobilon felugrik a helyszínek fölé, hogy jól mutasson */
+        margin-bottom: 5px;
+    }
+}
+
+/* MOBIL OPTIMALIZÁCIÓ A POP-UPHOZ ÉS FOOTERHEZ */
+@media (max-width: 600px) {
+    /* Pop-up tökéletesen középre igazítva */
+    .lang-popup {
+        right: auto;
+        left: 50%;
+        bottom: 20px;
+        width: calc(100% - 40px);
+        max-width: 380px;
+        transform: translateX(-50%); /* Ez húzza be középre */
+    }
+
+    .lang-popup.is-visible {
+        /* Külön animáció kell, különben a slideUp felülírja a középre húzást */
+        animation: langPopupSlideUpMobile 0.5s ease-out forwards; 
+    }
+
+    .lang-popup-inner {
+        padding: 20px;
+    }
+
+    @keyframes langPopupSlideUpMobile {
+        from { transform: translate(-50%, 40px); opacity: 0; }
+        to { transform: translate(-50%, 0); opacity: 1; }
+    }
+}
 
 /* Egy apró trükk a body-hoz, hogy a footer mindig a legalsó ponton maradjon */
 body {
@@ -565,6 +871,37 @@ body {
 
     .footerInfo {
         font-size: 0.95rem;
+    }
+
+    .lang-popup {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .eng-showcase {
+        padding: 64px 44px 78px 90px;
+        gap: 36px;
+    }
+
+    .eng-left,
+    .eng-right {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .eng-left p {
+        max-width: 100%;
+    }
+
+    .eng-right {
+        padding-top: 22px;
+    }
+
+    .code-content {
+        font-size: 0.88rem;
+        padding: 24px 22px;
     }
 }
 
@@ -620,6 +957,24 @@ body {
     .showcase-details,
     .eng-showcase {
         flex-direction: column;
+    }
+
+    .showcase-header {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .showcase-details,
+    .eng-showcase {
+        align-items: stretch;
+    }
+
+    .title-group,
+    .details-left,
+    .eng-left,
+    .eng-right {
+        width: 100%;
+        text-align: left;
     }
 
     .photo-grid {
@@ -710,8 +1065,50 @@ body {
     .footerInfo {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 14px;
         font-size: 0.95rem;
+    }
+
+    .footer-location,
+    .footer-links {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-links a + a {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .footer-links a + a::before {
+        content: none;
+    }
+
+    .footer-lang {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-location,
+    .footer-links {
+        display: none !important;
+    }
+
+    .footerInfo {
+        gap: 0;
+    }
+
+    .footer-lang {
+        margin: 0 auto;
     }
 }
 
@@ -746,53 +1143,3 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        margin: 10px;
-    }
-
-    .hero {
-        padding: 28px 16px;
-    }
-
-    .hero-text h1 {
-        font-size: clamp(2.2rem, 12vw, 3rem);
-        line-height: 1.05;
-        letter-spacing: -0.4px;
-    }
-
-    .hero-text h2 {
-        font-size: clamp(1.2rem, 6vw, 1.5rem);
-        margin-bottom: 1.2rem;
-    }
-
-    .hero-text p,
-    .eng-left p,
-    .details-left p,
-    .skill-row p {
-        font-size: 0.98rem;
-        line-height: 1.65;
-    }
-
-    .title-group h2,
-    .eng-left h2 {
-        font-size: clamp(2rem, 10vw, 2.7rem);
-    }
-
-    .skill-row h3 {
-        font-size: 1.45rem;
-        line-height: 1.2;
-    }
-
-    .explore-btn-outline {
-        font-size: 0.78rem;
-        letter-spacing: 1.4px;
-        padding: 12px 22px;
-    }
-
-    .code-content {
-        padding: 16px 12px;
-        font-size: 0.78rem;
-        line-height: 1.5;
-    }
-}
