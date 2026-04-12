@@ -182,9 +182,11 @@
                 <span class="footer-location">Brno | Nové Zámky | Galanta</span>
 
                 <div class="footer-lang" aria-label="Nyelvválasztó">
-                    <a href="../index.html" aria-label="English version">EN</a>
+                    <a href="/" aria-label="English version">EN</a>
                     <span class="footer-lang-sep" aria-hidden="true">|</span>
-                    <a href="../sk/index.html" aria-label="Slovenská verzia">SK</a>
+                    <a href="/hu/" aria-label="Magyar verzió">HU</a>
+                    <span class="footer-lang-sep" aria-hidden="true">|</span>
+                    <a href="/sk/" aria-label="Slovenská verzia">SK</a>
                 </div>
 
                 <span class="footer-links">
@@ -202,50 +204,7 @@
         </div>
     </div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem('lang-suggested')) return;
-
-        var userLang = navigator.language || navigator.userLanguage || 'hu';
-        var popup = document.getElementById('lang-popup');
-        var content = document.getElementById('popup-content');
-
-        if (userLang.includes('sk')) {
-            content.innerHTML = `
-                <h3 class="lang-popup-title">Hovoríte po slovensky?</h3>
-                <p class="lang-popup-text">A web je dostupný aj v slovenčine. Chcete prepnúť?</p>
-                <div class="lang-popup-cta">
-                    <div class="lang-popup-actions">
-                        <a href="../sk/index.html" class="lang-btn lang-btn-primary">Slovenská verzia</a>
-                        <button onclick="closeLangPopup()" class="lang-dismiss" type="button">Maradok magyarul</button>
-                    </div>
-                </div>
-            `;
-            showPopup();
-        } else if (userLang.includes('en')) {
-            content.innerHTML = `
-                <h3 class="lang-popup-title">Browsing in English?</h3>
-                <p class="lang-popup-text">This page is available in English as well. Switch now?</p>
-                <div class="lang-popup-cta">
-                    <div class="lang-popup-actions">
-                        <a href="../index.html" class="lang-btn lang-btn-primary">English version</a>
-                        <button onclick="closeLangPopup()" class="lang-dismiss" type="button">Maradok magyarul</button>
-                    </div>
-                </div>
-            `;
-            showPopup();
-        }
-
-        function showPopup() {
-            setTimeout(() => { popup.classList.add('is-visible'); }, 1000);
-        }
-    });
-
-    function closeLangPopup() {
-        document.getElementById('lang-popup').classList.remove('is-visible');
-        sessionStorage.setItem('lang-suggested', 'true');
-    }
-    </script>
+    <script src="/js/lang-popup.js"></script>
 
 </body>
 </html>
