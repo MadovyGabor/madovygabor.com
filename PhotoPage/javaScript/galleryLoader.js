@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         img.src = src;
                         img.loading = "lazy";
                         img.className = "skeleton";
+                        img.style.aspectRatio = aspectRatio;
                         
                         img.onload = function() { this.classList.remove('skeleton'); };
                         

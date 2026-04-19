@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
-body{
+body {
     font-family: 'Crimson Pro', serif;
     margin: 20px;
     display: flex;
@@ -13,12 +13,15 @@ body{
 
 @media screen and (max-width: 480px) {
     body {
-        margin: 10px; 
-        font-size: 14px; /* Reduce base font size */
+        margin: 10px;
+        font-size: 14px;
+        /* Reduce base font size */
     }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Crimson Pro', serif;
 }
 
@@ -39,11 +42,12 @@ header {
     box-sizing: border-box;
     margin: 0 auto;
     margin-bottom: 20px;
-    max-width: 1600px;  
+    max-width: 1600px;
     align-items: center;
 }
 
-header h1,h3 {
+header h1,
+h3 {
     font-size: 2em;
     font-family: 'Crimson Pro', serif;
 }
@@ -101,7 +105,8 @@ header .navButtons .button.active::after {
         padding: 15px;
     }
 
-    header h1,h3 {
+    header h1,
+    h3 {
         font-size: 2.3em;
         margin: 10px;
     }
@@ -130,7 +135,8 @@ header .navButtons .button.active::after {
         display: none;
     }
 
-    header h1,h3 {
+    header h1,
+    h3 {
         font-size: 2em;
         margin: 0;
     }
@@ -141,13 +147,14 @@ header .navButtons .button.active::after {
         padding: 15px;
     }
 
-    header h1,h3 {
+    header h1,
+    h3 {
         font-size: 1.5em;
     }
 }
 
 header .mobileMenuIcon {
-    display: none; 
+    display: none;
     font-size: 24px;
     cursor: pointer;
     color: black;
@@ -169,13 +176,13 @@ header .mobileMenuIcon .material-icons {
     }
 
     .sidebarContainer {
-        display: none; 
+        display: none;
     }
 }
 
 /* Mobile menu styling */
 .mobileMenu {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -192,7 +199,7 @@ header .mobileMenuIcon .material-icons {
 }
 
 .mobileMenu.active {
-    display: flex; 
+    display: flex;
 }
 
 .mobileMenu ul {
@@ -260,7 +267,8 @@ header .mobileMenuIcon .material-icons {
 
 .fullscreenMenu .menuHeader {
     display: flex;
-    justify-content: space-between; /* Align title and close button */
+    justify-content: space-between;
+    /* Align title and close button */
     align-items: center;
     padding-bottom: 20px;
     border-bottom: 1px solid #444;
@@ -275,7 +283,8 @@ header .mobileMenuIcon .material-icons {
 }
 
 .fullscreenMenu .closeButton {
-    font-size: 1.8em; /* Adjusted font size */
+    font-size: 1.8em;
+    /* Adjusted font size */
     color: white;
     cursor: pointer;
     background: none;
@@ -318,11 +327,13 @@ header .mobileMenuIcon .material-icons {
 /* Adjust font sizes for mobile devices */
 @media screen and (max-width: 480px) {
     .fullscreenMenu .menuHeader h2 {
-        font-size: 1.5em; /* Smaller title font size */
+        font-size: 1.5em;
+        /* Smaller title font size */
     }
 
     .fullscreenMenu .sidebarList li a {
-        font-size: 1.2em; /* Smaller menu link font size */
+        font-size: 1.2em;
+        /* Smaller menu link font size */
     }
 }
 
@@ -334,7 +345,7 @@ header .mobileMenuIcon .material-icons {
 
 /* Motto Section */
 .mottoSection {
-    max-width: 1520px;  
+    max-width: 1520px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -344,7 +355,7 @@ header .mobileMenuIcon .material-icons {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
-    
+
 }
 
 .mottoSection .motto {
@@ -373,7 +384,8 @@ header .mobileMenuIcon .material-icons {
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    gap: 20px; /* Adjusted for better spacing */
+    gap: 20px;
+    /* Adjusted for better spacing */
 }
 
 .mottoSection .motto div p {
@@ -384,7 +396,7 @@ header .mobileMenuIcon .material-icons {
     flex: 1;
 }
 
-.mottoSection .motto div .material-icons{
+.mottoSection .motto div .material-icons {
     font-size: 20px;
     color: #777;
     transition: transform 0.3s ease;
@@ -408,11 +420,11 @@ header .mobileMenuIcon .material-icons {
     width: 18px;
     height: 18px;
     color: #777;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 .mottoSection .motto div .custom-icon:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 .mottoSection .pictureAboutMe {
@@ -429,7 +441,7 @@ header .mobileMenuIcon .material-icons {
         font-size: 2.7em;
     }
 
-    .mottoSection .motto p{
+    .mottoSection .motto p {
         font-size: 1.3em;
     }
 
@@ -443,7 +455,7 @@ header .mobileMenuIcon .material-icons {
         font-size: 2.5em;
     }
 
-    .mottoSection .motto p{
+    .mottoSection .motto p {
         font-size: 1.15em;
     }
 
@@ -461,7 +473,7 @@ header .mobileMenuIcon .material-icons {
         font-size: 2.3em;
     }
 
-    .mottoSection .motto p{
+    .mottoSection .motto p {
         font-size: 1em;
     }
 
@@ -491,7 +503,7 @@ header .mobileMenuIcon .material-icons {
         font-size: 2.5em;
     }
 
-    .mottoSection .motto p{
+    .mottoSection .motto p {
         font-size: 1.2em;
     }
 
@@ -510,7 +522,7 @@ header .mobileMenuIcon .material-icons {
         font-size: 2em;
     }
 
-    .mottoSection .motto p{
+    .mottoSection .motto p {
         font-size: 1em;
     }
 }
@@ -521,7 +533,7 @@ header .mobileMenuIcon .material-icons {
     }
 
     .mottoSection .motto div {
-        gap: 10px; 
+        gap: 10px;
     }
 }
 
@@ -631,12 +643,12 @@ header .mobileMenuIcon .material-icons {
     }
 
     .aboutMeSection .aboutMePicture {
-        width: 100%; 
-        justify-content: center; 
-        align-items: center; 
-        padding: 0; 
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
         margin-top: 20px;
-        box-sizing: border-box; 
+        box-sizing: border-box;
     }
 
     .aboutMeSection .aboutMeText {
@@ -665,14 +677,14 @@ header .mobileMenuIcon .material-icons {
         padding: 0 25px;
     }
 
-    .aboutMeSection h2{
+    .aboutMeSection h2 {
         font-size: 1.9em;
         margin-bottom: 30px;
     }
 
     .aboutMeSection p {
         font-size: 21px;
-        
+
     }
 
     .aboutMeSection img {
@@ -1050,10 +1062,10 @@ header .mobileMenuIcon .material-icons {
 
 /* Gallery Preview Section */
 .galleryPrevSection {
-    width: 100%; 
-    max-width: 1600px; 
-    margin: 20px auto; 
-    overflow: hidden; 
+    width: 100%;
+    max-width: 1600px;
+    margin: 20px auto;
+    overflow: hidden;
     text-align: center;
     padding: 30px 40px;
     background-color: #333;
@@ -1107,12 +1119,12 @@ header .mobileMenuIcon .material-icons {
 
 .gallery-wrapper {
     max-width: 1520px;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
 }
 
 .gallery-wrapper .carousel {
-    font-size: 0; 
+    font-size: 0;
     margin: 0 20px;
     white-space: nowrap;
     overflow: hidden;
@@ -1129,9 +1141,9 @@ header .mobileMenuIcon .material-icons {
 
 .carousel img {
     height: 400px;
-    width: auto; 
-    margin-right: 14px; 
-    object-fit: cover; 
+    width: auto;
+    margin-right: 14px;
+    object-fit: cover;
 }
 
 .carousel img:first-child {
@@ -1139,7 +1151,7 @@ header .mobileMenuIcon .material-icons {
 }
 
 .carousel img:last-child {
-    margin-right: 0; 
+    margin-right: 0;
 }
 
 /* Navigation controls */
@@ -1148,10 +1160,10 @@ header .mobileMenuIcon .material-icons {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2.5em; 
-    color: white; 
-    background: none; 
-    border: none; 
+    font-size: 2.5em;
+    color: white;
+    background: none;
+    border: none;
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -1161,7 +1173,7 @@ header .mobileMenuIcon .material-icons {
 }
 
 .gallery-next-btn {
-    right: 20px; 
+    right: 20px;
 }
 
 .gallery-prev-btn {
@@ -1170,25 +1182,25 @@ header .mobileMenuIcon .material-icons {
 
 .gallery-next-btn:hover,
 .gallery-prev-btn:hover {
-    color: #007BFF; 
-    transform: translateY(-50%) scale(1.3); 
+    color: #007BFF;
+    transform: translateY(-50%) scale(1.3);
 }
 
 /* Responsive adjustments */
 
 @media screen and (max-width: 768px) {
-    
+
     .gallery-next-btn,
     .gallery-prev-btn {
         width: 35px;
         height: 35px;
     }
-}   
+}
 
 
 @media screen and (max-width: 600px) {
     .carousel img {
-        width: 100%; 
+        width: 100%;
     }
 
     /* Hide specific images on small screens */
@@ -1202,22 +1214,23 @@ header .mobileMenuIcon .material-icons {
 }
 
 @media screen and (max-width: 480px) {
-    
+
     .galleryPrevSection h2 {
-        font-size: 2.1em; /* Adjust the size as needed */
+        font-size: 2.1em;
+        /* Adjust the size as needed */
         margin-top: 0;
     }
 
     .galleryButtons .button {
-        font-size: 1em; 
-        padding: 10px 20px; 
+        font-size: 1em;
+        padding: 10px 20px;
     }
 
     .portfolio-card {
         max-width: 100%;
         margin: 0 auto;
     }
-    
+
     .gallery-next-btn,
     .gallery-prev-btn {
         width: 30px;
@@ -1233,32 +1246,35 @@ header .mobileMenuIcon .material-icons {
 
 .gallerySection {
     display: flex;
-    gap: 20px; 
-    width: 100%; 
+    gap: 20px;
+    width: 100%;
     box-sizing: border-box;
 }
 
 .galleryWrapper {
     display: flex;
-    align-items: flex-start; 
-    gap: 20px; 
-    max-width: 1600px; /* Limit width to match header */
-    margin: 0 auto; /* Center the wrapper */
-    width: 100%; /* Ensure it takes full width up to max-width */
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1600px;
+    /* Limit width to match header */
+    margin: 0 auto;
+    /* Center the wrapper */
+    width: 100%;
+    /* Ensure it takes full width up to max-width */
 }
 
 .sidebarContainer {
     position: sticky;
-    border-radius: 12px; 
-    top: 0; 
-    max-height: 100vh; 
-    overflow-y: auto; 
-    flex-shrink: 0; 
-    background-color: #333; 
-    color: white; 
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5); 
-    padding: 15px; 
-    font-family: 'Overpass', sans-serif; 
+    border-radius: 12px;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    background-color: #333;
+    color: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    font-family: 'Overpass', sans-serif;
     scrollbar-width: thin;
     scrollbar-color: #888 #333;
     box-sizing: border-box;
@@ -1280,36 +1296,36 @@ header .mobileMenuIcon .material-icons {
 }
 
 .sidebarList {
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-    gap: 15px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
 }
 
 .sidebarList ul {
     list-style: none;
-    font-size: 20px; 
-    padding-left: 30px; 
+    font-size: 20px;
+    padding-left: 30px;
 }
 
 .sidebarList li {
-    margin-bottom: 10px; 
-    font-size: 20px; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-    background-color: transparent; 
-    color: white; 
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent;
+    color: white;
 }
 
 .sidebarList ul li {
-    margin-bottom: 5px; 
-    font-size: 18px; 
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .sidebarList li.selected {
-    background-color: #007BFF; 
-    color: white; 
-    font-weight: bold; 
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
 }
 
 .sidebarLink {
@@ -1349,24 +1365,24 @@ header .mobileMenuIcon .material-icons {
 }
 
 .sidebarLink.active {
-    color: #007BFF; 
+    color: #007BFF;
     font-weight: bold;
-    border-bottom: 2px solid #007BFF; 
+    border-bottom: 2px solid #007BFF;
 }
 
 .sidebarList a.activeSection {
-  text-decoration: underline;
-  color: #007BFF;
-  
+    text-decoration: underline;
+    color: #007BFF;
+
 }
 
 .sidebarList li:hover {
-    background-color: #444; 
-    color: #007BFF; 
+    background-color: #444;
+    color: #007BFF;
 }
 
 .sidebarList li.selected .sidebarLink {
-    color: white; 
+    color: white;
 }
 
 .gallerySection .galleryBox .galleryTiles {
@@ -1378,16 +1394,16 @@ header .mobileMenuIcon .material-icons {
     width: 100%;
     position: relative;
     background-color: #f5f5f5;
-    
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 }
 
 .galleryBox {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .gallerySection .galleryBox .galleryTiles .galleryRow {
@@ -1396,22 +1412,22 @@ header .mobileMenuIcon .material-icons {
 
 .gallerySection .galleryBox .galleryTiles .galleryRow img {
     width: 100%;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     transition: transform 1s ease;
 }
 
 
 
-.galleryBox h2, 
+.galleryBox h2,
 .galleryBox h3 {
     position: sticky;
-    top: 0; 
-    background-color: #f9f9f9; 
-    z-index: 1; 
-    padding: 10px; 
-    margin-bottom: 10px; 
-    margin-top: 0; 
-    border-bottom: 1px solid #ddd; 
+    top: 0;
+    background-color: #f9f9f9;
+    z-index: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .galleryBox h2 {
@@ -1440,31 +1456,32 @@ header .mobileMenuIcon .material-icons {
 
 /* Responsive adjustments for sidebar */
 @media screen and (max-width: 1100px) {
-    .sidebarContainer{
-        display: none; 
+    .sidebarContainer {
+        display: none;
     }
 
     .galleryBox h3::after {
-        content: '▼'; 
+        content: '▼';
         position: absolute;
-        right: 10px; 
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 0.8em; 
-        color: #555; 
+        font-size: 0.8em;
+        color: #555;
     }
 }
 
 @media screen and (max-width: 600px) {
     .gallerySection .galleryBox .galleryTiles {
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
     }
 
     .gallerySection .galleryBox .galleryTiles .galleryRow {
-        width: 100%; 
+        width: 100%;
     }
-    .galleryBox h3{
-        font-size: 1.28em; 
+
+    .galleryBox h3 {
+        font-size: 1.28em;
     }
 }
 
@@ -1477,13 +1494,13 @@ header .mobileMenuIcon .material-icons {
 .contactsSection .contactsText {
     width: 100%;
     align-items: center;
-    text-align: center; 
-    justify-content: center; 
-    align-items: center; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.contactsSection .contacts{
+.contactsSection .contacts {
     width: 50%;
 }
 
@@ -1538,11 +1555,11 @@ header .mobileMenuIcon .material-icons {
     display: flex;
     gap: 40px;
 }
- 
+
 .contactsSection .contacts {
     width: 50%;
     padding: 30px;
-    background-color: #333; 
+    background-color: #333;
     color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1631,7 +1648,7 @@ header .mobileMenuIcon .material-icons {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    height: 250px; 
+    height: 250px;
 }
 
 .mapContainer iframe {
@@ -1642,7 +1659,7 @@ header .mobileMenuIcon .material-icons {
 .contactsSection .contactsForm {
     width: 50%;
     padding: 30px;
-    background-color: white; 
+    background-color: white;
     color: #333;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -1688,7 +1705,7 @@ header .mobileMenuIcon .material-icons {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    align-self: center; 
+    align-self: center;
 }
 
 .contactsForm button:hover {
@@ -1728,26 +1745,26 @@ button.disabled {
 }
 
 
-.input-wrapper .input-group-message{
+.input-wrapper .input-group-message {
     padding: 10px;
     padding-top: 50px;
-    background-color: #007BFF; 
+    background-color: #007BFF;
     color: white;
     font-size: 24px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .input-wrapper i {
     padding: 10px;
-    background-color: #007BFF; 
+    background-color: #007BFF;
     color: white;
     font-size: 24px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -1824,74 +1841,78 @@ button.disabled {
 @media screen and (max-width: 1130px) {
     .form-actions {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
-        gap: 20px; 
+        gap: 20px;
     }
 
     .form-actions .g-recaptcha {
-        width: auto; 
-        margin: 0 auto; 
+        width: auto;
+        margin: 0 auto;
     }
 
     .mapContainer {
-        height: 320px; 
+        height: 320px;
     }
 
 }
+
 @media screen and (max-width: 950px) {
-    .contactsContainer{
-        flex-direction: column; 
-        align-items: center; 
+    .contactsContainer {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .contactsContainer .contacts{
+    .contactsContainer .contacts {
         width: 100%;
-        max-width: 550px; 
+        max-width: 550px;
     }
 
-    .contactsContainer .contacts h2{
+    .contactsContainer .contacts h2 {
         font-size: 1.7em;
     }
 
-    .contactsContainer .contacts h3{
+    .contactsContainer .contacts h3 {
         font-size: 1.2em;
     }
 
-    .contactsContainer .contacts a{
+    .contactsContainer .contacts a {
         font-size: 1.2em;
     }
 
-    .contactsSection .contactsText h3{
+    .contactsSection .contactsText h3 {
         font-size: 1.4em;
     }
 
-    .contactsSection .contactsText .material-icons{
+    .contactsSection .contactsText .material-icons {
         font-size: 1.8em;
     }
+
     .contactItem .material-icons {
         font-size: 31px;
     }
 
-    .contactsContainer .contactsForm{
+    .contactsContainer .contactsForm {
         width: 100%;
-        max-width: 550px; 
+        max-width: 550px;
     }
 
-    .contactsForm p{
+    .contactsForm p {
         font-size: 1.3em;
     }
 }
+
 @media screen and (max-width: 550px) {
-    
-    .contactsSection .contactsText h2{
+
+    .contactsSection .contactsText h2 {
         font-size: 2em;
     }
 
-    .contactsSection .contactsText h3{
+    .contactsSection .contactsText h3 {
         font-size: 1.3em;
     }
-    .contactsText{
+
+    .contactsText {
         padding: 20px;
         box-sizing: border-box;
     }
@@ -1904,73 +1925,82 @@ button.disabled {
     .contactsContainer {
         gap: 15px;
     }
-    
+
     .contactsContainer .contacts {
         padding: 20px;
     }
 
-    .contactsContainer .contacts h2{
+    .contactsContainer .contacts h2 {
         font-size: 1.5em;
     }
 
-    .contactsContainer .contacts h3{
+    .contactsContainer .contacts h3 {
         font-size: 1.2em;
     }
 
-    .contactsContainer .contacts a{
+    .contactsContainer .contacts a {
         font-size: 1.2em;
     }
 
-    .contactsForm p{
+    .contactsForm p {
         font-size: 1.2em;
     }
 
-    
+
     .contactItem .material-icons {
         font-size: 30px;
     }
 
-    .contactsContainer .contactsForm{
+    .contactsContainer .contactsForm {
         padding: 15px;
         width: 100%;
-        max-width: 550px; 
+        max-width: 550px;
     }
 
     .mapContainer {
-        height: 250px; 
+        height: 250px;
     }
-    
+
 }
 
 /* Skeleton loading effect */
 .skeleton {
-  width: 800px;           /* or a fixed width, e.g., 300px */ 
-  background-color: #ccc;
-  position: relative;
-  overflow: hidden;
+    width: 800px;
+    /* or a fixed width, e.g., 300px */
+    background-color: #ccc;
+    position: relative;
+    overflow: hidden;
 }
 
 img.skeleton {
-  /* Optionally enforce size on the img element while loading */
-  width: 100%;
-  display: block;
+    /* Optionally enforce size on the img element while loading */
+    width: 100%;
+    display: block;
 }
 
 .skeleton::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-  animation: skeleton-loading 1.5s infinite;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: skeleton-loading 1.5s infinite;
 }
 
 @keyframes skeleton-loading {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 /*temporary*/
@@ -2071,8 +2101,8 @@ footer {
         align-items: center;
         gap: 10px;
     }
-    
-    .footerContent{
+
+    .footerContent {
         font-size: 1.1em
     }
 }
@@ -2174,8 +2204,22 @@ footer {
     }
 }
 
+/* Skeleton Placeholder */
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    background-color: #eee;
+    border-radius: 8px;
+    /* Optional, matches image style if they have border radius */
+    width: 100%;
+    /* Ensure it fills the grid column */
+}
 
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
 
-
-
-
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
