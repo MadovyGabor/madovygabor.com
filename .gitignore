@@ -19,6 +19,9 @@ env/
 *.log
 
 # IDEs and Editors 
+.vscode/
+**/ .vscode/
+MainPage/.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
