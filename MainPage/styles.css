@@ -293,7 +293,7 @@ a {
     transition: transform 1s ease;
     mix-blend-mode: luminosity;
     opacity: 0.5;
-    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPQZUzkAuBt1-NQ30o6ZJOt9ZxbiVCH03CVEV0qFMN9vWpt3lVeqslVw4Wuh5nslLSTlUPgGOM97AkCa4-yjuXMtUKAUEzGw3DFqYyU0TpuMPucu8zckEW9L9_gLuNBMuA3AiZymNCmJUMQqmvdc202hvqcgk7aAv-TFdZQpCQli6GIO-q6kNBa9HTOsNy6H1WrXILXi-nTXIFWIQaMQEsNOhYgcaXsJBxJKmLHr8o_cICNJiPwGkHYxHno6HtwqfNaPZOINM9B3I');
+    background-image: url('pictures/bg-photo.webp');
 }
 
 .photo-card:hover .photo-bg {
