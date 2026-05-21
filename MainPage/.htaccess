@@ -1,19 +1,22 @@
-Options -MultiViews
+Options -MultiViews -Indexes
 DirectoryIndex index.html
 
 RewriteEngine On
+RewriteBase /
 
-# Normalize direct index.html language entrypoints to canonical directory URLs.
-RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]|$) [NC]
-RewriteRule ^index\.html$ https://madovygabor.work/ [R=301,L,NE]
-
-RewriteCond %{THE_REQUEST} \s/+hu/index\.html(?:[?\s]|$) [NC]
-RewriteRule ^hu/index\.html$ https://madovygabor.work/hu/ [R=301,L,NE]
-
-RewriteCond %{THE_REQUEST} \s/+sk/index\.html(?:[?\s]|$) [NC]
-RewriteRule ^sk/index\.html$ https://madovygabor.work/sk/ [R=301,L,NE]
-
-# Enforce HTTPS + non-www canonical host in a single 301 redirect.
+# 1. Enforce HTTPS + non-www canonical host
 RewriteCond %{HTTP_HOST} !^madovygabor\.work$ [NC,OR]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://madovygabor.work%{REQUEST_URI} [R=301,L,NE]
+
+# 2. Ha létező mappáról vagy fájlról van szó, NE bántsuk (Ez megállítja a belső loopot!)
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 3. Csak akkor vágjuk le az index.html-t, ha a júzer tényleg beírta az URL-be
+RewriteCond %{THE_REQUEST} \s/+(.+?)/index\.html(?:[?\s]|$) [NC]
+RewriteRule ^(.+?)/index\.html$ https://madovygabor.work/$1/ [R=301,L,NE]
+
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]|$) [NC]
+RewriteRule ^index\.html$ https://madovygabor.work/ [R=301,L,NE]
