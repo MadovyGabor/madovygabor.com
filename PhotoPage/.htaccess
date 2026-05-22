@@ -4,30 +4,24 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
-# 1. Enforce HTTPS and canonical host
+# 1. HTTPS és Canonical Host kikényszerítése
 RewriteCond %{HTTP_HOST} !^photo\.madovygabor\.work$ [NC,OR]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://photo.madovygabor.work%{REQUEST_URI} [R=301,L,NE]
 
-# 2. Allow crawlers to access sitemap.xml directly — skip redirect below
+# 2. Sitemap.xml közvetlen elérése (átugorja a routert)
 RewriteRule ^sitemap\.xml$ - [L]
 
-# 3. Redirect root to /hu/ (302 — change to 301 once structure is stable)
+# 3. Csupasz gyökér átirányítása a magyar verzióra
 RewriteRule ^$ hu/ [R=302,L]
 
-# 4. Redirect direct index.html or any .html requests to clean URLs
-# Ez kezeli a gyökeret és az almappákat is (hu/index.html -> hu/)
-RewriteCond %{THE_REQUEST} \s/+(.*?)/?index\.html(?:[\?\s]|$) [NC]
-RewriteRule ^(.*?)index\.html$ /$1 [R=301,L,NE]
+# 4. Trailing slash (perjel) levágása a fájlok végéről (pl. /hu/portfolio/ -> /hu/portfolio)
+# Csak akkor fut le, ha a kérés NEM egy valós mappa
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# Sima .html fájlok levágása (pl. hu/galeria.html -> hu/galeria)
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\?\s]|$) [NC]
-RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
-
-# 5. Internally map clean URLs back to existing .html files WITHIN folders
-# Ha a kért út nem létező mappa és nem létező fájl...
+# 5. Clean URLs belső leképezése (pl. /hu/portfolio -> a háttérben /hu/portfolio.html fut)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-# ...és létezik a .html kiterjesztésű verziója a kért mappán belül
-RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_URI}\.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

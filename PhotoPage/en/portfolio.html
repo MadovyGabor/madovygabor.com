@@ -64,18 +64,18 @@
             </div>
             <nav class="mobile-nav-links">
                 <a class="mobile-nav-link" href="./">HOME</a>
-                <a class="mobile-nav-link active" href="portfolio.html">PORTFOLIO</a>
-                <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+                <a class="mobile-nav-link active" href="portfolio">PORTFOLIO</a>
+                <a class="mobile-nav-link" href="contact">CONTACT</a>
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
-                    <a class="lang-link active" href="../en/portfolio.html">EN</a>
+                    <a class="lang-link active" href="https://photo.madovygabor.work/en/portfolio">EN</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="../hu/portfolio.html">HU</a>
+                    <a class="lang-link" href="https://photo.madovygabor.work/hu/portfolio">HU</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="../sk/portfolio.html">SK</a>
+                    <a class="lang-link" href="https://photo.madovygabor.work/sk/portfolio">SK</a>
                 </div>
-                <a class="nav-btn" href="https://madovygabor.work/">MAIN SITE</a>
+                <a class="nav-btn" href="https://madovygabor.work/" target="_blank" rel="noopener">MAIN SITE</a>
             </div>
         </div>
     </div>
@@ -85,18 +85,18 @@
         <a href="./" class="nav-brand">MG Captures</a>
         <div class="nav-links">
             <a class="nav-link" href="./">HOME</a>
-            <a class="nav-link active" href="portfolio.html">PORTFOLIO</a>
-            <a class="nav-link" href="contact.html">CONTACT</a>
+            <a class="nav-link active" href="portfolio">PORTFOLIO</a>
+            <a class="nav-link" href="contact">CONTACT</a>
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
-                <a class="lang-link active" href="../en/portfolio.html">EN</a>
+                <a class="lang-link active" href="https://photo.madovygabor.work/en/portfolio">EN</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="../hu/portfolio.html">HU</a>
+                <a class="lang-link" href="https://photo.madovygabor.work/hu/portfolio">HU</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="../sk/portfolio.html">SK</a>
+                <a class="lang-link" href="https://photo.madovygabor.work/sk/portfolio">SK</a>
             </div>
-            <a class="nav-btn" href="https://madovygabor.work/">MAIN SITE</a>
+            <a class="nav-btn" href="https://madovygabor.work/" target="_blank" rel="noopener">MAIN SITE</a>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -175,30 +175,7 @@
 
 
 
-    <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navCloseBtn = document.getElementById('navCloseBtn');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
-
-        function openMenu() {
-            if (typeof closeSidebarDrawer === 'function') closeSidebarDrawer();
-            if (sidebarToggleBtn) sidebarToggleBtn.style.display = 'none';
-            mobileNavOverlay.classList.add('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeMenu() {
-            mobileNavOverlay.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            if (sidebarToggleBtn) sidebarToggleBtn.style.display = '';
-            document.body.style.overflow = '';
-        }
-        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
-        if (navCloseBtn) navCloseBtn.addEventListener('click', closeMenu);
-        if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', e => { if (e.target === mobileNavOverlay) closeMenu(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    </script>
+    <script src="../script.js" defer></script>
 
     <script>
         window.galleryDataPath = '../utils/galleryData.json';
@@ -206,18 +183,7 @@
     </script>
     <script src="../javaScript/galleryLoader.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const skeleton = document.getElementById('skeleton');
-            const hideSkeleton = () => {
-                if (skeleton.classList.contains('hidden')) return;
-                skeleton.classList.add('hidden');
-                setTimeout(() => { skeleton.style.display = 'none'; }, 600);
-            };
-            setTimeout(() => { document.readyState === 'complete' ? hideSkeleton() : window.addEventListener('load', hideSkeleton); }, 800);
-            setTimeout(hideSkeleton, 3000);
-        });
-    </script>
+
 
 </body>
 
