@@ -1,533 +1,5 @@
 [
     {
-        "title": "Hajómalom fesztivál 25",
-        "id": "hajomalom-fesztival-25",
-        "subsections": [
-            {
-                "title": "Delegation",
-                "id": "delegation",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-1011WEB.webp",
-                        "width": 2134,
-                        "height": 2668,
-                        "aspect_ratio": 0.7998500749625187
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-1211WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-1511WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-3011WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-3411WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-3711WEB.webp",
-                        "width": 2633,
-                        "height": 2106,
-                        "aspect_ratio": 1.2502374169040835
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-4611WEB.webp",
-                        "width": 2657,
-                        "height": 2126,
-                        "aspect_ratio": 1.2497648165569144
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-4711WEB.webp",
-                        "width": 2678,
-                        "height": 2142,
-                        "aspect_ratio": 1.250233426704015
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-4911WEB.webp",
-                        "width": 2846,
-                        "height": 1898,
-                        "aspect_ratio": 1.4994731296101158
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Delegation/Delagation-511WEB.webp",
-                        "width": 2462,
-                        "height": 1970,
-                        "aspect_ratio": 1.249746192893401
-                    }
-                ]
-            },
-            {
-                "title": "Follow The Flow",
-                "id": "follow-the-flow",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1011WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1111WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1311WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1511WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-2111WEB.webp",
-                        "width": 3592,
-                        "height": 2395,
-                        "aspect_ratio": 1.4997912317327766
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-211WEB.webp",
-                        "width": 1920,
-                        "height": 2400,
-                        "aspect_ratio": 0.8
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-2211WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3111WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3411WEB.webp",
-                        "width": 2427,
-                        "height": 1942,
-                        "aspect_ratio": 1.249742533470649
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3611WEB.webp",
-                        "width": 3554,
-                        "height": 2369,
-                        "aspect_ratio": 1.5002110595187843
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3811WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3911WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4111WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4211WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4311WEB.webp",
-                        "width": 2476,
-                        "height": 1981,
-                        "aspect_ratio": 1.2498738011105501
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4611WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    }
-                ]
-            },
-            {
-                "title": "Gypsy Kings",
-                "id": "gypsy-kings",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-711WEB.webp",
-                        "width": 3380,
-                        "height": 2254,
-                        "aspect_ratio": 1.4995563442768411
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-811WEB.webp",
-                        "width": 2866,
-                        "height": 2293,
-                        "aspect_ratio": 1.2498909725250764
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-911WEB.webp",
-                        "width": 2981,
-                        "height": 2385,
-                        "aspect_ratio": 1.249895178197065
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1011WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1211WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-2411WEB.webp",
-                        "width": 2362,
-                        "height": 3544,
-                        "aspect_ratio": 0.6664785553047404
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-2511WEB.webp",
-                        "width": 3562,
-                        "height": 2374,
-                        "aspect_ratio": 1.5004212299915753
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-511WEB.webp",
-                        "width": 2164,
-                        "height": 2705,
-                        "aspect_ratio": 0.8
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-711WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-811WEB.webp",
-                        "width": 2362,
-                        "height": 3544,
-                        "aspect_ratio": 0.6664785553047404
-                    }
-                ]
-            },
-            {
-                "title": "Pogány Induló",
-                "id": "pogany-indulo",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1011WEB.webp",
-                        "width": 2410,
-                        "height": 1928,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1311WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1411WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-211WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-3211WEB.webp",
-                        "width": 2543,
-                        "height": 2035,
-                        "aspect_ratio": 1.2496314496314496
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-3811WEB.webp",
-                        "width": 2070,
-                        "height": 2588,
-                        "aspect_ratio": 0.7998454404945904
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-4111WEB.webp",
-                        "width": 3421,
-                        "height": 2281,
-                        "aspect_ratio": 1.4997807978956599
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-411WEB.webp",
-                        "width": 2149,
-                        "height": 3224,
-                        "aspect_ratio": 0.6665632754342432
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-511WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-611WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    }
-                ]
-            },
-            {
-                "title": "TDanny",
-                "id": "tdanny",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-1011WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-1211WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-1311WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-1811WEB.webp",
-                        "width": 3310,
-                        "height": 2206,
-                        "aspect_ratio": 1.500453309156845
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-211WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-2711WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-3011WEB.webp",
-                        "width": 3274,
-                        "height": 2182,
-                        "aspect_ratio": 1.5004582951420715
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-3111WEB.webp",
-                        "width": 2513,
-                        "height": 2010,
-                        "aspect_ratio": 1.2502487562189055
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-3811WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-3911WEB.webp",
-                        "width": 2978,
-                        "height": 2383,
-                        "aspect_ratio": 1.2496852706672261
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-4011WEB.webp",
-                        "width": 3000,
-                        "height": 2400,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-4111WEB.webp",
-                        "width": 2416,
-                        "height": 1933,
-                        "aspect_ratio": 1.2498706673564408
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-411WEB.webp",
-                        "width": 2835,
-                        "height": 2268,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-4211WEB.webp",
-                        "width": 2647,
-                        "height": 1765,
-                        "aspect_ratio": 1.49971671388102
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-4311WEB.webp",
-                        "width": 2704,
-                        "height": 2164,
-                        "aspect_ratio": 1.2495378927911276
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-4411WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/TDanny/TDanny-611WEB.webp",
-                        "width": 3206,
-                        "height": 2137,
-                        "aspect_ratio": 1.5002339728591483
-                    }
-                ]
-            },
-            {
-                "title": "Valmar",
-                "id": "valmar",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-1211WEB.webp",
-                        "width": 3479,
-                        "height": 2319,
-                        "aspect_ratio": 1.5002156101768003
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-1511WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-2011WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-2711WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-2811WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-3311WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-4011WEB.webp",
-                        "width": 2221,
-                        "height": 3331,
-                        "aspect_ratio": 0.666766736715701
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-4111WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-411WEB.webp",
-                        "width": 2400,
-                        "height": 3600,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-4511WEB.webp",
-                        "width": 2445,
-                        "height": 1956,
-                        "aspect_ratio": 1.25
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-4811WEB.webp",
-                        "width": 3460,
-                        "height": 2307,
-                        "aspect_ratio": 1.4997832683138275
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-5011WEB.webp",
-                        "width": 2244,
-                        "height": 3366,
-                        "aspect_ratio": 0.6666666666666666
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-511WEB.webp",
-                        "width": 2400,
-                        "height": 3000,
-                        "aspect_ratio": 0.8
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-5711WEB.webp",
-                        "width": 2336,
-                        "height": 1868,
-                        "aspect_ratio": 1.2505353319057815
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-6111WEB.webp",
-                        "width": 2400,
-                        "height": 2400,
-                        "aspect_ratio": 1.0
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-611WEB.webp",
-                        "width": 2484,
-                        "height": 1987,
-                        "aspect_ratio": 1.2501258178158028
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-6911WEB.webp",
-                        "width": 3586,
-                        "height": 2391,
-                        "aspect_ratio": 1.4997908824759514
-                    },
-                    {
-                        "src": "pictures/portfolio/Hajómalom fesztivál 25/Valmar/Valmar-7211WEB.webp",
-                        "width": 3600,
-                        "height": 2400,
-                        "aspect_ratio": 1.5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "title": "Koncertek",
         "id": "koncertek",
         "subsections": [
@@ -588,6 +60,534 @@
                         "width": 4000,
                         "height": 6000,
                         "aspect_ratio": 0.6666666666666666
+                    }
+                ]
+            },
+            {
+                "title": "Hajómalom fesztivál 25",
+                "id": "hajomalom-fesztival-25",
+                "subsections": [
+                    {
+                        "title": "Delegation",
+                        "id": "delegation",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1011WEB.webp",
+                                "width": 2134,
+                                "height": 2668,
+                                "aspect_ratio": 0.7998500749625187
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1211WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1511WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3011WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3411WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3711WEB.webp",
+                                "width": 2633,
+                                "height": 2106,
+                                "aspect_ratio": 1.2502374169040835
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4611WEB.webp",
+                                "width": 2657,
+                                "height": 2126,
+                                "aspect_ratio": 1.2497648165569144
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4711WEB.webp",
+                                "width": 2678,
+                                "height": 2142,
+                                "aspect_ratio": 1.250233426704015
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4911WEB.webp",
+                                "width": 2846,
+                                "height": 1898,
+                                "aspect_ratio": 1.4994731296101158
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-511WEB.webp",
+                                "width": 2462,
+                                "height": 1970,
+                                "aspect_ratio": 1.249746192893401
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Follow The Flow",
+                        "id": "follow-the-flow",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1011WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1111WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1311WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1511WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-2111WEB.webp",
+                                "width": 3592,
+                                "height": 2395,
+                                "aspect_ratio": 1.4997912317327766
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-211WEB.webp",
+                                "width": 1920,
+                                "height": 2400,
+                                "aspect_ratio": 0.8
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-2211WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3111WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3411WEB.webp",
+                                "width": 2427,
+                                "height": 1942,
+                                "aspect_ratio": 1.249742533470649
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3611WEB.webp",
+                                "width": 3554,
+                                "height": 2369,
+                                "aspect_ratio": 1.5002110595187843
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3811WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3911WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4111WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4211WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4311WEB.webp",
+                                "width": 2476,
+                                "height": 1981,
+                                "aspect_ratio": 1.2498738011105501
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4611WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Gypsy Kings",
+                        "id": "gypsy-kings",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-711WEB.webp",
+                                "width": 3380,
+                                "height": 2254,
+                                "aspect_ratio": 1.4995563442768411
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-811WEB.webp",
+                                "width": 2866,
+                                "height": 2293,
+                                "aspect_ratio": 1.2498909725250764
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-911WEB.webp",
+                                "width": 2981,
+                                "height": 2385,
+                                "aspect_ratio": 1.249895178197065
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1011WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1211WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-2411WEB.webp",
+                                "width": 2362,
+                                "height": 3544,
+                                "aspect_ratio": 0.6664785553047404
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-2511WEB.webp",
+                                "width": 3562,
+                                "height": 2374,
+                                "aspect_ratio": 1.5004212299915753
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-511WEB.webp",
+                                "width": 2164,
+                                "height": 2705,
+                                "aspect_ratio": 0.8
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-711WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-811WEB.webp",
+                                "width": 2362,
+                                "height": 3544,
+                                "aspect_ratio": 0.6664785553047404
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pogány Induló",
+                        "id": "pogany-indulo",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1011WEB.webp",
+                                "width": 2410,
+                                "height": 1928,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1311WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1411WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-211WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-3211WEB.webp",
+                                "width": 2543,
+                                "height": 2035,
+                                "aspect_ratio": 1.2496314496314496
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-3811WEB.webp",
+                                "width": 2070,
+                                "height": 2588,
+                                "aspect_ratio": 0.7998454404945904
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-4111WEB.webp",
+                                "width": 3421,
+                                "height": 2281,
+                                "aspect_ratio": 1.4997807978956599
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-411WEB.webp",
+                                "width": 2149,
+                                "height": 3224,
+                                "aspect_ratio": 0.6665632754342432
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-511WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-611WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            }
+                        ]
+                    },
+                    {
+                        "title": "TDanny",
+                        "id": "tdanny",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-1011WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-1211WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-1311WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-1811WEB.webp",
+                                "width": 3310,
+                                "height": 2206,
+                                "aspect_ratio": 1.500453309156845
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-211WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-2711WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3011WEB.webp",
+                                "width": 3274,
+                                "height": 2182,
+                                "aspect_ratio": 1.5004582951420715
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3111WEB.webp",
+                                "width": 2513,
+                                "height": 2010,
+                                "aspect_ratio": 1.2502487562189055
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3811WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3911WEB.webp",
+                                "width": 2978,
+                                "height": 2383,
+                                "aspect_ratio": 1.2496852706672261
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4011WEB.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4111WEB.webp",
+                                "width": 2416,
+                                "height": 1933,
+                                "aspect_ratio": 1.2498706673564408
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-411WEB.webp",
+                                "width": 2835,
+                                "height": 2268,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4211WEB.webp",
+                                "width": 2647,
+                                "height": 1765,
+                                "aspect_ratio": 1.49971671388102
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4311WEB.webp",
+                                "width": 2704,
+                                "height": 2164,
+                                "aspect_ratio": 1.2495378927911276
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4411WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-611WEB.webp",
+                                "width": 3206,
+                                "height": 2137,
+                                "aspect_ratio": 1.5002339728591483
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Valmar",
+                        "id": "valmar",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-1211WEB.webp",
+                                "width": 3479,
+                                "height": 2319,
+                                "aspect_ratio": 1.5002156101768003
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-1511WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-2011WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-2711WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-2811WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-3311WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4011WEB.webp",
+                                "width": 2221,
+                                "height": 3331,
+                                "aspect_ratio": 0.666766736715701
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4111WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-411WEB.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4511WEB.webp",
+                                "width": 2445,
+                                "height": 1956,
+                                "aspect_ratio": 1.25
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4811WEB.webp",
+                                "width": 3460,
+                                "height": 2307,
+                                "aspect_ratio": 1.4997832683138275
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-5011WEB.webp",
+                                "width": 2244,
+                                "height": 3366,
+                                "aspect_ratio": 0.6666666666666666
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-511WEB.webp",
+                                "width": 2400,
+                                "height": 3000,
+                                "aspect_ratio": 0.8
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-5711WEB.webp",
+                                "width": 2336,
+                                "height": 1868,
+                                "aspect_ratio": 1.2505353319057815
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-6111WEB.webp",
+                                "width": 2400,
+                                "height": 2400,
+                                "aspect_ratio": 1.0
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-611WEB.webp",
+                                "width": 2484,
+                                "height": 1987,
+                                "aspect_ratio": 1.2501258178158028
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-6911WEB.webp",
+                                "width": 3586,
+                                "height": 2391,
+                                "aspect_ratio": 1.4997908824759514
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-7211WEB.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5
+                            }
+                        ]
                     }
                 ]
             }

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | MG CAPTURES</title>
+    <meta name="description"
+        content="Check out MG Captures photography portfolio: portraits, concerts, events, and travel photography from Slovakia and beyond.">
+    <meta name="keywords"
+        content="MG Captures, Madový Gábor photographer, photo portfolio, portrait photography, concert photography, event photography, Slovakia, Galanta">
+    <meta name="author" content="Madový Gábor">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://photo.madovygabor.work/en/portfolio" />
+    <link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/portfolio" />
+    <link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/portfolio" />
+    <link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/portfolio" />
+    <link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/portfolio" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://photo.madovygabor.work/en/portfolio" />
+    <meta property="og:title" content="Portfolio | MG CAPTURES" />
+    <meta property="og:description"
+        content="Capturing moments: discover the latest works of MG Captures in the gallery!" />
+    <meta property="og:image" content="https://photo.madovygabor.work/pictures/kezdoOldal/aboutMePicture.webp" />
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="../pictures/favicon.png">
+</head>
+
+<body>
+
+    <!-- Skeleton Loader -->
+    <div id="skeleton" class="skeleton-wrapper">
+        <nav class="sk-nav">
+            <div class="skeleton-block sk-brand"></div>
+            <div class="skeleton-block sk-nav-right"></div>
+        </nav>
+        <div class="skeleton-block sk-content-box"></div>
+    </div>
+
+    <!-- Background overlay -->
+
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">MG Captures</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="./">HOME</a>
+                <a class="mobile-nav-link active" href="portfolio.html">PORTFOLIO</a>
+                <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link active" href="../en/portfolio.html">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="../hu/portfolio.html">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="../sk/portfolio.html">SK</a>
+                </div>
+                <a class="nav-btn" href="https://madovygabor.work/">MAIN SITE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="./" class="nav-brand">MG Captures</a>
+        <div class="nav-links">
+            <a class="nav-link" href="./">HOME</a>
+            <a class="nav-link active" href="portfolio.html">PORTFOLIO</a>
+            <a class="nav-link" href="contact.html">CONTACT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link active" href="../en/portfolio.html">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="../hu/portfolio.html">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="../sk/portfolio.html">SK</a>
+            </div>
+            <a class="nav-btn" href="https://madovygabor.work/">MAIN SITE</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Wrapper -->
+    <div class="gallery-wrapper">
+
+        <!-- Sidebar Overlay Backdrop (mobile/tablet) -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+        <!-- Docked Sidebar -->
+        <aside class="sidebar-container">
+
+
+            <nav id="dynamicSidebarNav" class="sidebar-list">
+                <!-- All category link -->
+                <a href="#" class="sidebar-link active" data-category="all">
+                    <div class="link-inner">
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_upward</span>
+                        <span>To Top</span>
+                    </div>
+                </a>
+
+                <div class="sidebar-divider"></div>
+
+                <div id="sidebarCategoryList">
+                    <!-- Categories will be injected here dynamically -->
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Gallery Box -->
+        <main class="gallery-box">
+
+            <div class="gallery-header">
+                <div class="gallery-title">
+                    <h1 id="mainGalleryTitle">Portfolio</h1>
+                    <p id="mainGalleryDesc">
+                        Capturing selected portraits, concerts, and events. Natural moments in dynamic environments,
+                        precisely captured.
+                    </p>
+                </div>
+                <!-- Squared Filter Buttons -->
+                <div class="gallery-filters" id="dynamicFilterButtons">
+                    <!-- Buttons will be injected here dynamically -->
+                </div>
+            </div>
+
+            <!-- Dynamic Gallery Container (Masonry) -->
+            <div id="dynamicGalleryContainer">
+                <!-- Content will be injected here -->
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Floating TOC Button (mobile/tablet only) -->
+    <button id="sidebarToggleBtn" class="sidebar-toggle-btn" aria-label="Open contents">
+        <span class="material-symbols-outlined">toc</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://www.facebook.com/profile.php?id=61574942680651"
+                target="_blank">FACEBOOK</a>
+            <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank">INSTAGRAM</a>
+            <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navCloseBtn = document.getElementById('navCloseBtn');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+
+        function openMenu() {
+            if (typeof closeSidebarDrawer === 'function') closeSidebarDrawer();
+            if (sidebarToggleBtn) sidebarToggleBtn.style.display = 'none';
+            mobileNavOverlay.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            mobileNavOverlay.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            if (sidebarToggleBtn) sidebarToggleBtn.style.display = '';
+            document.body.style.overflow = '';
+        }
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+        if (navCloseBtn) navCloseBtn.addEventListener('click', closeMenu);
+        if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', e => { if (e.target === mobileNavOverlay) closeMenu(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    </script>
+
+    <script>
+        window.galleryDataPath = '../utils/galleryData.json';
+        window.galleryPathPrefix = '../';
+    </script>
+    <script src="../javaScript/galleryLoader.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skeleton = document.getElementById('skeleton');
+            const hideSkeleton = () => {
+                if (skeleton.classList.contains('hidden')) return;
+                skeleton.classList.add('hidden');
+                setTimeout(() => { skeleton.style.display = 'none'; }, 600);
+            };
+            setTimeout(() => { document.readyState === 'complete' ? hideSkeleton() : window.addEventListener('load', hideSkeleton); }, 800);
+            setTimeout(hideSkeleton, 3000);
+        });
+    </script>
+
+</body>
+
+</html>
