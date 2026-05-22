@@ -60,7 +60,7 @@ function tUI(key) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const dataPath = window.galleryDataPath || 'utils/galleryData.json';
+    const dataPath = window.galleryDataPath || '../galleryData.json';
     fetch(dataPath)
         .then(response => response.json())
         .then(data => {

@@ -24,7 +24,7 @@ def find_photo_page_dir():
 
 PHOTO_PAGE_DIR = find_photo_page_dir()
 PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
-OUTPUT_FILE = SCRIPT_DIR / "galleryData.json"
+OUTPUT_FILE = PHOTO_PAGE_DIR / "galleryData.json"
 
 
 def slugify(text):

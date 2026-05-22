@@ -1,0 +1,10 @@
+# --- CLOUDFLARE PAGES ROUTING ---
+
+# 1. Redirect root to primary market (EN)
+/  /en/  302
+
+# 2. Clean up explicit index.html requests
+/index.html     /en/    301
+/en/index.html  /en/    301
+/hu/index.html  /hu/    301
+/sk/index.html  /sk/    301
