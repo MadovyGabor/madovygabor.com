@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thank you for your trust! | MG Captures</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="theme-color" content="#121414">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="shortcut icon" href="../pictures/favIconPhoto/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../pictures/favIconPhoto/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pictures/favIconPhoto/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../pictures/favIconPhoto/favicon-16x16.png">
+    <link rel="manifest" href="../pictures/favIconPhoto/site.webmanifest">
+</head>
+
+<body>
+    <main class="thank-you-section">
+        <div class="thank-you-card">
+            <div class="thank-you-icon">
+                <span class="material-symbols-outlined" style="font-size: 64px;">check_circle</span>
+            </div>
+
+            <h1>Thank you for your trust!</h1>
+            <p>I will get in touch with you shortly to discuss your ideas and details.</p>
+
+            <button class="thank-you-btn" onclick="window.location.href='contact'">BACK TO CONTACT PAGE</button>
+
+            <div class="thank-you-redirect" id="countdown">
+                Redirecting in 6 seconds...
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let timeLeft = 6;
+        const countdownElement = document.getElementById('countdown');
+
+        const interval = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = `Redirecting in ${timeLeft} seconds...`;
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                window.location.href = 'contact';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

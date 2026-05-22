@@ -1,135 +1,570 @@
+// Translation and Path Configuration Systems
+const categoryTranslations = {
+    en: {
+        'Koncertek': 'Concerts',
+        'Portrék': 'Portraits',
+        'Rendezvények': 'Events',
+        'Travel': 'Travel',
+        'Hajómalom fesztivál 25': 'Hajómalom Festival 25',
+        'Azahriah Puskás Aréna': 'Azahriah Puskas Arena',
+        'Portréim': 'My Portraits',
+        'AMTS 25': 'AMTS 25',
+        'Felsőszeli ballagás 24': 'Felsőszeli Graduation 24',
+        'Rákoczi tábor 24': 'Rákóczi Camp 24',
+        'Brno': 'Brno',
+        'Tatranská Lomnica': 'Tatranská Lomnica'
+    },
+    sk: {
+        'Koncertek': 'Koncerty',
+        'Portrék': 'Portréty',
+        'Rendezvények': 'Podujatia',
+        'Travel': 'Cestovanie',
+        'Hajómalom fesztivál 25': 'Hajómalom festival 25',
+        'Azahriah Puskás Aréna': 'Azahriah Puskas Arena',
+        'Portréim': 'Moje portréty',
+        'AMTS 25': 'AMTS 25',
+        'Felsőszeli ballagás 24': 'Felsőszeli rozlúčka 24',
+        'Rákoczi tábor 24': 'Rákócziho tábor 24',
+        'Brno': 'Brno',
+        'Tatranská Lomnica': 'Tatranská Lomnica'
+    },
+    hu: {
+        'Travel': 'Utazás'
+    }
+};
+
+const uiTranslations = {
+    hu: {
+        all: 'MINDEN'
+    },
+    en: {
+        all: 'ALL'
+    },
+    sk: {
+        all: 'VŠETKO'
+    }
+};
+
+function t(text) {
+    const lang = document.documentElement.lang || 'hu';
+    if (categoryTranslations[lang] && categoryTranslations[lang][text]) {
+        return categoryTranslations[lang][text];
+    }
+    return text;
+}
+
+function tUI(key) {
+    const lang = document.documentElement.lang || 'hu';
+    const pack = uiTranslations[lang] || uiTranslations.hu;
+    return pack[key] || uiTranslations.hu[key] || key;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('utils/galleryData.json')
+    const dataPath = window.galleryDataPath || '../galleryData.json';
+    fetch(dataPath)
         .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('dynamicGalleryContainer');
-            
-            // Update sidebars (desktop and mobile)
-            updateSidebars(data);
-            
-            data.forEach(category => {
-                // 1. Anchor for navigation
-                const anchor = document.createElement('p');
-                anchor.id = category.id;
-                anchor.style.cssText = "visibility: hidden; height: 0; margin: 0; overflow: hidden;";
-                container.appendChild(anchor);
+            window.galleryData = data; // store globally for filtering
+            initFilterButtons(data);
+            renderSidebar(data, 'all');
+            initGallery(data, 'all');
 
-                // 2. Main category title (e.g. Events)
-                const h2 = document.createElement('h2');
-                h2.textContent = category.title;
-                container.appendChild(h2);
-
-                // 3. Subcategories
-                category.subsections.forEach(sub => {
-                    // Subcategory title (e.g. AMTS 25)
-                    const h3 = document.createElement('h3');
-                    h3.textContent = sub.title;
-                    h3.onclick = () => openFullscreenMenu(); // Keep the function
-                    container.appendChild(h3);
-
-                    // Subcategory anchor
-                    const subAnchor = document.createElement('p');
-                    subAnchor.id = sub.id;
-                    subAnchor.style.cssText = "visibility: hidden; height: 0; overflow: hidden;";
-                    container.appendChild(subAnchor);
-
-                    // Images container
-                    const tilesDiv = document.createElement('div');
-                    tilesDiv.className = 'galleryTiles';
-                    
-                    // Create 3 columns for Masonry layout
-                    const columns = [];
-                    for (let i = 0; i < 3; i++) {
-                        const col = document.createElement('div');
-                        col.className = 'galleryRow';
-                        tilesDiv.appendChild(col);
-                        columns.push(col);
-                    }
-
-                    // Column heights tracker (normalized by width)
-                    // Initialize all columns to 0 for even distribution
-                    const colHeights = [0, 0, 0]; 
-
-                    sub.images.forEach((imgData) => {
-                        const img = document.createElement('img');
-                        // Handle both old (string) and new (object) JSON format for backward compatibility
-                        const src = typeof imgData === 'string' ? imgData : imgData.src;
-                        const aspectRatio = (typeof imgData === 'object' && imgData.aspect_ratio) ? imgData.aspect_ratio : 1.5; // Default to 3:2 if missing
-
-                        img.src = src;
-                        img.loading = "lazy";
-                        img.className = "skeleton";
-                        img.style.aspectRatio = aspectRatio;
-                        
-                        img.onload = function() { this.classList.remove('skeleton'); };
-                        
-                        // Find the shortest column
-                        let minColIndex = 0;
-                        for (let i = 1; i < 3; i++) {
-                            if (colHeights[i] < colHeights[minColIndex]) {
-                                minColIndex = i;
-                            }
-                        }
-
-                        // Add image to the shortest column
-                        columns[minColIndex].appendChild(img);
-
-                        // Update column height
-                        // Height added is proportional to 1/aspect_ratio (since width is constant)
-                        colHeights[minColIndex] += (1 / aspectRatio);
-                    });
-
-                    container.appendChild(tilesDiv);
-                });
+            // Calculate total assets recursively
+            let totalImages = 0;
+            data.forEach(cat => {
+                totalImages += countImages(cat);
             });
 
-            // Initialize ScrollSpy after content is loaded
-            if (typeof initScrollSpy === 'function') {
-                initScrollSpy();
+            const assetsCountEl = document.getElementById('assetsIndexedCount');
+            if (assetsCountEl) {
+                assetsCountEl.textContent = totalImages;
+            }
+
+            // Set up top-level "Összes" button scroll to top behaviour
+            const allLink = document.querySelector('.sidebar-link[data-category="all"]');
+            if (allLink) {
+                allLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (window.innerWidth < 1024) closeSidebarDrawer();
+
+                    // Also clear other active classes
+                    document.querySelectorAll('.sidebar-link, .sidebar-sublink').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    allLink.classList.add('active');
+                });
+            }
+
+            // Wire floating TOC button and overlay (mobile/tablet)
+            const sidebarToggleBtnEl = document.getElementById('sidebarToggleBtn');
+            const sidebarOverlayEl = document.getElementById('sidebarOverlay');
+            if (sidebarToggleBtnEl) {
+                sidebarToggleBtnEl.addEventListener('click', () => {
+                    const sidebar = document.querySelector('.sidebar-container');
+                    if (sidebar && sidebar.classList.contains('mobile-open')) {
+                        closeSidebarDrawer();
+                    } else {
+                        openSidebarDrawer();
+                    }
+                });
+            }
+            if (sidebarOverlayEl) {
+                sidebarOverlayEl.addEventListener('click', closeSidebarDrawer);
+            }
+
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = 'none';
             }
         })
-        .catch(error => console.error('Error loading gallery:', error));
+        .catch(error => console.error('Error loading gallery data:', error));
 });
 
-function updateSidebars(data) {
-    // Find all sidebar lists (desktop and mobile)
-    const sidebars = document.querySelectorAll('.sidebarList');
-    
-    sidebars.forEach(sidebar => {
-        sidebar.innerHTML = ''; // Clear static content
-
-        data.forEach(category => {
-            const li = document.createElement('li');
-            
-            // Main category link
-            const a = document.createElement('a');
-            a.href = `#${category.id}`;
-            a.className = 'sidebarLink';
-            a.textContent = category.title;
-            // Close mobile menu on click
-            a.onclick = function() { if(typeof navigateAndClose === 'function') navigateAndClose(this); };
-            li.appendChild(a);
-
-            // List of subcategories
-            if (category.subsections && category.subsections.length > 0) {
-                const ul = document.createElement('ul');
-                
-                category.subsections.forEach(sub => {
-                    const subLi = document.createElement('li');
-                    const subA = document.createElement('a');
-                    subA.href = `#${sub.id}`;
-                    subA.className = 'sidebarSubLink';
-                    subA.textContent = sub.title;
-                    subA.onclick = function() { if(typeof navigateAndClose === 'function') navigateAndClose(this); };
-                    
-                    subLi.appendChild(subA);
-                    ul.appendChild(subLi);
-                });
-                
-                li.appendChild(ul);
-            }
-            
-            sidebar.appendChild(li);
+// Recursive image counter for categories/sections/subsections
+function countImages(item) {
+    let count = 0;
+    if (item.images) {
+        count += item.images.length;
+    }
+    if (item.subsections) {
+        item.subsections.forEach(sub => {
+            count += countImages(sub);
         });
+    }
+    return count;
+}
+
+// Responsive column count based on viewport width
+function getColumnCount() {
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+}
+
+// Mobile sidebar drawer helpers
+function openSidebarDrawer() {
+    const sidebar = document.querySelector('.sidebar-container');
+    const overlay = document.getElementById('sidebarOverlay');
+    const btn = document.getElementById('sidebarToggleBtn');
+    if (sidebar) sidebar.classList.add('mobile-open');
+    if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
+    document.body.style.overflow = 'hidden';
+    if (btn) btn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+}
+
+function closeSidebarDrawer() {
+    const sidebar = document.querySelector('.sidebar-container');
+    const overlay = document.getElementById('sidebarOverlay');
+    const btn = document.getElementById('sidebarToggleBtn');
+    if (sidebar) sidebar.classList.remove('mobile-open');
+    if (overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 300);
+    }
+    const mobileMenu = document.getElementById('mobileNavOverlay');
+    if (!mobileMenu || !mobileMenu.classList.contains('active')) {
+        document.body.style.overflow = '';
+    }
+    if (btn) btn.innerHTML = '<span class="material-symbols-outlined">toc</span>';
+}
+
+const categoryIcons = {
+    'koncertek': 'graphic_eq',
+    'portrek': 'portrait',
+    'rendezvenyek': 'stadium',
+    'travel': 'explore'
+};
+
+function initFilterButtons(data) {
+    const filterContainer = document.getElementById('dynamicFilterButtons');
+    if (!filterContainer) return;
+
+    filterContainer.innerHTML = '';
+
+    // Create 'All' filter button for the top bar
+    const allBtn = document.createElement('button');
+    allBtn.className = 'filter-btn active';
+    allBtn.textContent = tUI('all');
+    allBtn.dataset.category = 'all';
+    filterContainer.appendChild(allBtn);
+
+    data.forEach(category => {
+        const filterBtn = document.createElement('button');
+        filterBtn.className = 'filter-btn';
+        filterBtn.dataset.category = category.id;
+        filterBtn.textContent = t(category.title).toUpperCase();
+        filterContainer.appendChild(filterBtn);
+    });
+
+    // Handle filter button click events
+    filterContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        const categoryId = btn.dataset.category;
+
+        // Update active class on filter buttons
+        document.querySelectorAll('.filter-btn').forEach(el => el.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Close mobile menu if active (if applicable)
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+        }
+
+        // Re-init gallery and sidebar
+        initGallery(window.galleryData, categoryId);
+        renderSidebar(window.galleryData, categoryId);
+
+        // Smooth scroll to top of gallery
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+function renderSidebar(data, activeCategoryId) {
+    const list = document.getElementById('sidebarCategoryList');
+    if (!list) return;
+    list.innerHTML = '';
+
+    const allLink = document.querySelector('.sidebar-link[data-category="all"]');
+    if (allLink) {
+        allLink.href = "#mainGalleryTitle";
+        if (activeCategoryId === 'all') {
+            allLink.classList.add('active');
+        } else {
+            allLink.classList.remove('active');
+        }
+    }
+
+    if (activeCategoryId === 'all') {
+        data.forEach(category => {
+            // Render Level 1 Category Title (non-clickable)
+            const catTitle = document.createElement('div');
+            catTitle.className = 'sidebar-category-title';
+            catTitle.textContent = t(category.title);
+            list.appendChild(catTitle);
+
+            if (category.subsections) {
+                category.subsections.forEach(sub => {
+                    const link = document.createElement('a');
+                    link.href = `#${sub.id}`;
+                    link.className = 'sidebar-link';
+
+                    const imgCount = countImages(sub);
+                    const icon = categoryIcons[category.id] || 'photo_camera';
+
+                    link.innerHTML = `
+                        <div class="link-inner">
+                            <span class="material-symbols-outlined" style="font-size: 1.1rem;">${icon}</span>
+                            <span>${t(sub.title)}</span>
+                        </div>
+                        <span class="link-count">${imgCount}</span>
+                    `;
+                    link.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
+                    list.appendChild(link);
+
+                    // Level 3 subsections
+                    if (sub.subsections) {
+                        const sublist = document.createElement('ul');
+                        sublist.className = 'sidebar-sublist';
+
+                        sub.subsections.forEach(sub3 => {
+                            const li = document.createElement('li');
+                            const sublink = document.createElement('a');
+                            sublink.href = `#${sub3.id}`;
+                            sublink.className = 'sidebar-sublink';
+                            sublink.innerHTML = `${t(sub3.title)} <span style="opacity: 0.7; font-size: 9px; margin-left: 4px;">(${countImages(sub3)})</span>`;
+                            sublink.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
+                            li.appendChild(sublink);
+                            sublist.appendChild(li);
+                        });
+                        list.appendChild(sublist);
+                    }
+                });
+            }
+        });
+    } else {
+        const category = data.find(cat => cat.id === activeCategoryId);
+        if (category && category.subsections) {
+            category.subsections.forEach(sub => {
+                const link = document.createElement('a');
+                link.href = `#${sub.id}`;
+                link.className = 'sidebar-link';
+
+                const imgCount = countImages(sub);
+                const icon = categoryIcons[category.id] || 'photo_camera';
+
+                link.innerHTML = `
+                    <div class="link-inner">
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">${icon}</span>
+                        <span>${t(sub.title)}</span>
+                    </div>
+                    <span class="link-count">${imgCount}</span>
+                `;
+                link.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
+                list.appendChild(link);
+
+                // Level 3 subsections
+                if (sub.subsections) {
+                    const sublist = document.createElement('ul');
+                    sublist.className = 'sidebar-sublist';
+
+                    sub.subsections.forEach(sub3 => {
+                        const li = document.createElement('li');
+                        const sublink = document.createElement('a');
+                        sublink.href = `#${sub3.id}`;
+                        sublink.className = 'sidebar-sublink';
+                        sublink.innerHTML = `${t(sub3.title)} <span style="opacity: 0.7; font-size: 9px; margin-left: 4px;">(${countImages(sub3)})</span>`;
+                        sublink.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
+                        li.appendChild(sublink);
+                        sublist.appendChild(li);
+                    });
+                    list.appendChild(sublist);
+                }
+            });
+        }
+    }
+
+    // Set up ScrollSpy
+    initScrollSpy();
+}
+
+function initGallery(data, filterCategoryId) {
+    const container = document.getElementById('dynamicGalleryContainer');
+    if (!container) return;
+    container.innerHTML = ''; // Clear current gallery items
+
+    data.forEach(category => {
+        if (filterCategoryId !== 'all' && category.id !== filterCategoryId) return;
+
+        if (category.subsections) {
+            category.subsections.forEach(sub => {
+                // If it has Level 3 subsections
+                if (sub.subsections) {
+                    // Render Level 2 Header
+                    const h2Header = document.createElement('div');
+                    h2Header.className = 'group-header';
+                    h2Header.id = sub.id;
+                    h2Header.innerHTML = `
+                        <h2>${t(sub.title)}</h2>
+                        <div class="group-line"></div>
+                        <span class="group-label">${t(category.title).toUpperCase()}</span>
+                    `;
+                    container.appendChild(h2Header);
+
+                    // Render Level 3 subsections
+                    sub.subsections.forEach(sub3 => {
+                        const h3Header = document.createElement('div');
+                        h3Header.className = 'group-header';
+                        h3Header.id = sub3.id;
+                        h3Header.innerHTML = `
+                            <h3>${t(sub3.title)}</h3>
+                            <div class="group-line"></div>
+                            <span class="group-label">${t(sub.title).toUpperCase()}</span>
+                        `;
+                        container.appendChild(h3Header);
+
+                        renderMasonryGrid(container, sub3.images, t(sub.title), t(sub3.title));
+                    });
+                } else {
+                    // Level 2 Section with direct images
+                    const h2Header = document.createElement('div');
+                    h2Header.className = 'group-header';
+                    h2Header.id = sub.id;
+                    h2Header.innerHTML = `
+                        <h2>${t(sub.title)}</h2>
+                        <div class="group-line"></div>
+                        <span class="group-label">${t(category.title).toUpperCase()}</span>
+                    `;
+                    container.appendChild(h2Header);
+
+                    renderMasonryGrid(container, sub.images, t(category.title), t(sub.title));
+                }
+            });
+        }
+    });
+
+    // Re-run ScrollSpy since headers were re-created
+    initScrollSpy();
+}
+
+function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
+    if (!images || images.length === 0) return;
+
+    const tilesDiv = document.createElement('div');
+    tilesDiv.className = 'gallery-tiles';
+
+    // Dynamic columns based on viewport
+    const numCols = getColumnCount();
+    const columns = [];
+    const colHeights = new Array(numCols).fill(0);
+    for (let i = 0; i < numCols; i++) {
+        const col = document.createElement('div');
+        col.className = 'gallery-row';
+        tilesDiv.appendChild(col);
+        columns.push(col);
+    }
+
+    images.forEach((imgData) => {
+        const prefix = window.galleryPathPrefix || '';
+        const rawSrc = typeof imgData === 'string' ? imgData : imgData.src;
+        const src = prefix + rawSrc;
+        const aspectRatio = (typeof imgData === 'object' && imgData.aspect_ratio) ? imgData.aspect_ratio : 1.5;
+
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'img-container';
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.loading = "lazy";
+        img.className = "skeleton";
+        img.style.aspectRatio = aspectRatio;
+        img.onload = function () { this.classList.remove('skeleton'); };
+
+        imgContainer.appendChild(img);
+
+        const overlay = document.createElement('div');
+        overlay.className = 'hud-overlay';
+        overlay.innerHTML = `
+            <div class="hud-top">
+                <span class="hud-badge">${categoryLabel.toUpperCase()}</span>
+            </div>
+            <div class="hud-bottom">
+                <div class="hud-details">
+                    <span style="font-size: 14px; font-weight: bold; color: white; background: none; border: none; padding: 0; text-align: left;">${sectionTitle}</span>
+                </div>
+                <button class="hud-fullscreen" onclick="openFullscreen('${src}')">
+                    <span class="material-symbols-outlined">fullscreen</span>
+                </button>
+            </div>
+        `;
+        imgContainer.appendChild(overlay);
+
+        // Find shortest column
+        let minColIndex = 0;
+        for (let i = 1; i < numCols; i++) {
+            if (colHeights[i] < colHeights[minColIndex]) {
+                minColIndex = i;
+            }
+        }
+
+        columns[minColIndex].appendChild(imgContainer);
+        colHeights[minColIndex] += (1 / aspectRatio);
+    });
+
+    container.appendChild(tilesDiv);
+}
+
+let isScrollListenerAttached = false;
+let lastActiveId = null;
+
+function handleScrollSpy() {
+    const headers = Array.from(document.querySelectorAll('.group-header'));
+    const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link, .sidebar-sublink'));
+    const allLink = document.querySelector('.sidebar-link[data-category="all"]');
+
+    let activeId = null;
+    const scrollPosition = window.scrollY + 120; // 120px offset to detect active section
+
+    if (window.scrollY < 100) {
+        sidebarLinks.forEach(link => link.classList.remove('active'));
+        if (allLink) allLink.classList.add('active');
+        lastActiveId = null;
+        return;
+    }
+
+    for (let i = 0; i < headers.length; i++) {
+        const header = headers[i];
+        const top = header.offsetTop;
+        if (scrollPosition >= top) {
+            activeId = header.getAttribute('id');
+        } else {
+            break;
+        }
+    }
+
+    if (activeId) {
+        if (allLink) allLink.classList.remove('active');
+
+        const activeLinkChanged = (activeId !== lastActiveId);
+        lastActiveId = activeId;
+
+        sidebarLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === `#${activeId}`) {
+                link.classList.add('active');
+                if (activeLinkChanged) {
+                    link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+}
+
+function initScrollSpy() {
+    if (!isScrollListenerAttached) {
+        window.addEventListener('scroll', handleScrollSpy);
+        isScrollListenerAttached = true;
+    }
+    handleScrollSpy();
+}
+
+// Re-render gallery when column count changes on resize (debounced)
+let galleryResizeTimer = null;
+let lastGalleryColumnCount = getColumnCount();
+
+window.addEventListener('resize', () => {
+    clearTimeout(galleryResizeTimer);
+    galleryResizeTimer = setTimeout(() => {
+        const newCount = getColumnCount();
+        if (newCount !== lastGalleryColumnCount) {
+            lastGalleryColumnCount = newCount;
+            if (window.galleryData) {
+                const activeFilter = document.querySelector('.filter-btn.active');
+                const catId = activeFilter ? activeFilter.dataset.category : 'all';
+                initGallery(window.galleryData, catId);
+            }
+        }
+    }, 200);
+});
+
+// Lightbox handler (global/window scoped)
+window.openFullscreen = function (src) {
+    let lightbox = document.getElementById('portfolio-lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'portfolio-lightbox';
+        lightbox.style.cssText = `
+            position: fixed; inset: 0; background: rgba(10,10,10,0.95); z-index: 1000;
+            display: flex; align-items: center; justify-content: center; opacity: 0;
+            transition: opacity 0.3s; backdrop-filter: blur(8px);
+        `;
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+        closeBtn.style.cssText = `
+            position: absolute; top: 24px; right: 24px; background: none; border: none;
+            color: white; font-size: 2rem; cursor: pointer;
+        `;
+        closeBtn.onclick = () => {
+            lightbox.style.opacity = '0';
+            setTimeout(() => lightbox.style.display = 'none', 300);
+        };
+
+        const img = document.createElement('img');
+        img.id = 'lightbox-img';
+        img.style.cssText = 'max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,0.5);';
+
+        lightbox.appendChild(closeBtn);
+        lightbox.appendChild(img);
+        document.body.appendChild(lightbox);
+    }
+
+    document.getElementById('lightbox-img').src = src;
+    lightbox.style.display = 'flex';
+    setTimeout(() => lightbox.style.opacity = '1', 10);
+};

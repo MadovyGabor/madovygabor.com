@@ -1,16 +1,21 @@
 import json
 import os
 import re
+import sys
 import unicodedata
 from pathlib import Path
-
 from PIL import Image
+
+# Configure stdout to use UTF-8 to prevent print encoding errors on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Settings
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def find_photo_page_dir():
+    """Finds the root directory containing the pictures directory"""
     for candidate in (SCRIPT_DIR, SCRIPT_DIR.parent, SCRIPT_DIR.parent.parent):
         if (candidate / "pictures" / "portfolio").exists():
             return candidate
@@ -19,75 +24,123 @@ def find_photo_page_dir():
 
 PHOTO_PAGE_DIR = find_photo_page_dir()
 PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
-OUTPUT_FILE = SCRIPT_DIR / "galleryData.json"
+OUTPUT_FILE = PHOTO_PAGE_DIR / "galleryData.json"
+
 
 def slugify(text):
-    """Creates an ID from accented folder names (e.g., 'Rendezvények' -> 'rendezvenyek')"""
+    """Creates a clean URL/HTML ID from accented folder names (e.g., 'Rendezvények' -> 'rendezvenyek')"""
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
     text = re.sub(r'[^\w\s-]', '', text).strip().lower()
     return re.sub(r'[-\s]+', '-', text)
 
+
+def get_image_data(img_path):
+    """Reads image dimensions and calculates its aspect ratio using Pillow"""
+    width, height, aspect_ratio = 0, 0, 1.5
+    try:
+        with Image.open(img_path) as img:
+            width, height = img.size
+            if height > 0:
+                aspect_ratio = width / height
+    except Exception as e:
+        print(f"  Warning: Could not read image dimensions for {img_path.name}: {e}")
+    
+    web_path = img_path.relative_to(PHOTO_PAGE_DIR).as_posix()
+    return {
+        "src": web_path,
+        "width": width,
+        "height": height,
+        "aspect_ratio": aspect_ratio
+    }
+
+
+def get_images_in_dir(dir_path):
+    """Collects and processes all valid image files in a directory"""
+    images = []
+    if not dir_path.exists():
+        return images
+    
+    for item in sorted(os.listdir(dir_path)):
+        img_path = dir_path / item
+        if img_path.is_file() and img_path.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp'):
+            images.append(get_image_data(img_path))
+    return images
+
+
 def generate_gallery_json():
+    """Scans pictures/portfolio/ recursively and generates the structured gallery JSON file"""
     gallery_data = []
 
-    # Iterate through main categories (e.g., Portraits, Events)
     if not PICTURES_DIR.exists():
-        print(f"ERROR: Folder not found: {PICTURES_DIR}")
+        print(f"ERROR: Pictures folder not found at: {PICTURES_DIR}")
         return
 
+    print(f"Scanning folder structure starting from: {PICTURES_DIR}")
+
+    # Level 1: Categories (e.g., Koncertek, Portrék, Rendezvények, Travel)
     for category in sorted(os.listdir(PICTURES_DIR)):
         cat_path = PICTURES_DIR / category
-        if cat_path.is_dir():
-            cat_data = {
-                "title": category,
-                "id": slugify(category),
-                "subsections": []
-            }
+        if not cat_path.is_dir():
+            continue
 
-            # Iterate through subcategories (e.g., AMTS 25, My Portraits)
-            for subcat in sorted(os.listdir(cat_path)):
-                sub_path = cat_path / subcat
-                if sub_path.is_dir():
-                    images = []
-                    # Collect images
-                    for img in sorted(os.listdir(sub_path)):
-                        if img.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                            img_full_path = sub_path / img
-                            web_path = img_full_path.relative_to(PHOTO_PAGE_DIR).as_posix()
+        print(f"Category (L1): {category}")
+        cat_data = {
+            "title": category,
+            "id": slugify(category),
+            "subsections": []
+        }
 
-                            # Get image dimensions
-                            width, height, aspect_ratio = 0, 0, 0
-                            try:
-                                with Image.open(img_full_path) as image:
-                                    width, height = image.size
-                                    if height > 0:
-                                        aspect_ratio = width / height
-                            except Exception as e:
-                                print(f"Error reading image {img}: {e}")
+        # Level 2: Subsections / Projects / Events
+        for subcat in sorted(os.listdir(cat_path)):
+            sub_path = cat_path / subcat
+            if not sub_path.is_dir():
+                continue
 
-                            images.append({
-                                "src": web_path,
-                                "width": width,
-                                "height": height,
-                                "aspect_ratio": aspect_ratio
-                            })
-                    
+            # Check if Level 2 directory contains subdirectories (Level 3)
+            child_dirs = [d for d in sub_path.iterdir() if d.is_dir()]
+
+            if child_dirs:
+                # Level 3 scenario: Subcategories exist under Level 2 (e.g. Hajómalom fesztivál 25 -> Delegation)
+                print(f"  Subsection (L2 with L3 children): {subcat}")
+                subcat_data = {
+                    "title": subcat,
+                    "id": slugify(subcat),
+                    "subsections": []
+                }
+
+                for child_dir in sorted(child_dirs, key=lambda d: d.name):
+                    print(f"    Sub-subsection (L3): {child_dir.name}")
+                    images = get_images_in_dir(child_dir)
                     if images:
-                        cat_data["subsections"].append({
-                            "title": subcat,
-                            "id": slugify(subcat),
+                        subcat_data["subsections"].append({
+                            "title": child_dir.name,
+                            "id": slugify(child_dir.name),
                             "images": images
                         })
-            
-            if cat_data["subsections"]:
-                gallery_data.append(cat_data)
 
-    # Save JSON
+                if subcat_data["subsections"]:
+                    cat_data["subsections"].append(subcat_data)
+            else:
+                # Level 2 scenario: Direct images (e.g. Portrék -> Portréim)
+                print(f"  Subsection (L2 with direct images): {subcat}")
+                images = get_images_in_dir(sub_path)
+                if images:
+                    cat_data["subsections"].append({
+                        "title": subcat,
+                        "id": slugify(subcat),
+                        "images": images
+                    })
+
+        if cat_data["subsections"]:
+            gallery_data.append(cat_data)
+
+    # Save to output JSON file
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(gallery_data, f, ensure_ascii=False, indent=4)
     
-    print(f"Success! List created: {OUTPUT_FILE}")
+    print(f"\nSuccess! Gallery data generated successfully at:\n{OUTPUT_FILE}")
+
 
 if __name__ == "__main__":
     generate_gallery_json()
