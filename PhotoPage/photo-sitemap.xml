@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Home / x-default / hu -->
   <url>
     <loc>https://photo.madovygabor.work/hu/</loc>
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -25,18 +24,17 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Portfolio -->
   <url>
     <loc>https://photo.madovygabor.work/hu/portfolio</loc>
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/portfolio" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/portfolio" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/portfolio" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,7 +43,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/portfolio" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/portfolio" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/portfolio" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,18 +52,17 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/portfolio" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/portfolio" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/portfolio" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Contact -->
   <url>
     <loc>https://photo.madovygabor.work/hu/kontakt</loc>
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/kontakt" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/kontakt" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/contact" />
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,7 +71,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/kontakt" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/kontakt" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/contact" />
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -83,7 +80,7 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://photo.madovygabor.work/hu/kontakt" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://photo.madovygabor.work/sk/kontakt" />
     <xhtml:link rel="alternate" hreflang="en" href="https://photo.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://photo.madovygabor.work/en/contact" />
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
