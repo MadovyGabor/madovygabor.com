@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="dark" lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Kotlin Multiplatform Fejlesztő | Robusztus Mobilalkalmazások | Biztonságos Szoftverarchitektúra & Produkciós Rendszerek | Madový Gábor</title>
+    <meta name="description"
+        content="Madový Gábor technikai portfóliója. Kotlin Multiplatform fejlesztő, InfoSec hallgató a VUT Brno-n, hálózati és elektrotechnikai szakember.">
+    <meta name="keywords"
+        content="Madový Gábor, Gabriel Madový, Szoftvermérnök, Kotlin Multiplatform, InfoSec, VUT Brno, Cisco CCNA, §21, Home Assistant">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.work/hu/" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigáció">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Menü bezárása">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link active" href="index.html">FŐOLDAL</a>
+                <a class="mobile-nav-link" href="projekty.html">PROJEKTEK</a>
+                <a class="mobile-nav-link" href="kontakt.html">KONTAKT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="https://dev.madovygabor.work/en/">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="https://dev.madovygabor.work/hu/">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="https://dev.madovygabor.work/sk/">SK</a>
+                </div>
+                <a class="nav-btn" href="https://madovygabor.work/hu/">FŐOLDAL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link active" href="index.html">FŐOLDAL</a>
+            <a class="nav-link" href="projekty.html">PROJEKTEK</a>
+            <a class="nav-link" href="kontakt.html">KONTAKT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="https://dev.madovygabor.work/en/">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="https://dev.madovygabor.work/hu/">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="https://dev.madovygabor.work/sk/">SK</a>
+            </div>
+            <a class="nav-btn" href="https://madovygabor.work/hu/">FŐOLDAL</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="bento-grid hero-section">
+            <div class="hero-bottom-line"></div>
+            <div class="hero-bottom-glow"></div>
+
+            <div class="col-span-8 flex-col-between hero-info">
+                <h1 class="hero-title font-display">Madový Gábor</h1>
+                <p class="font-technical hero-desc">
+                    Pragmatikus, rendszerszemléletű szoftvermérnök, specializálódva a <a href="projekty.html"
+                        class="seo-link">Kotlin Multiplatform</a> és az információbiztonság területére. Összekapcsolom a
+                    <a href="kontakt.html" class="seo-link">robusztus szoftverfejlesztést</a>, a vállalati backend
+                    architektúrákat és a precíziós hardverautomatizálást.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://github.com/madovygabor" target="_blank" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined">account_tree</span> REPÓK FELFEDEZÉSE
+                    </a>
+                    <a href="kontakt.html" class="btn">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        KONTAKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-span-4 bento-card">
+                <div class="specs-icon-wrapper">
+                    <span class="material-symbols-outlined specs-icon">shield_lock</span>
+                </div>
+                <h3 class="font-label specs-title">ALAPPROFIL</h3>
+                <ul class="specs-list">
+                    <li class="specs-item">
+                        <span class="specs-label">TANULMÁNYOK:</span>
+                        <span class="specs-value">VUT FEEC Brno (Információbiztonság)</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">FŐ TERÜLETEK:</span>
+                        <span class="specs-value">Mobil & Szoftverfejlesztés, Vállalati Rendszerek, InfoSec</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">INFRASTRUKTÚRA:</span>
+                        <span class="specs-value">Cisco Hálózatok, Unix Rendszerek, Ipari Automatizálás</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">ARCHITEKTÚRA:</span>
+                        <span class="specs-value">MVI / MVVM, Clean Architecture, SOLID Elvek</span>
+                    </li>
+                </ul>
+                <div class="specs-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-purple">Kotlin</span>
+                        <span class="badge badge-purple">Android</span>
+                        <span class="badge badge-purple">Compose</span>
+                        <span class="badge badge-purple">Cisco</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical">Mérnöki Szemlélet</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mindset-list mb-section">
+            <div class="mindset-item">
+                <div class="mindset-log font-code">[LOG_01:EXEC]</div>
+                <div class="mindset-content">
+                    <h4 class="mindset-title font-technical">Ötletvezérelt Architekturális Feltárás</h4>
+                    <p class="mindset-desc">
+                        Nem csak kódot írok; valós piaci igények alapján építek megoldásokat. Amikor egy ötlet felmerül,
+                        először a tényleges piaci szükségletet elemzem, mielőtt mélyen belemerülnék az
+                        infrastruktúrába. Szisztematikusan bontom le a követelményeket, hogy pontosan megértsem, hogyan
+                        kell egy rendszert az alapoktól felépíteni a hosszú távú stabilitás és hibátlan működés
+                        érdekében.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mindset-item">
+                <div class="mindset-log font-code">[LOG_02:SEC]</div>
+                <div class="mindset-content">
+                    <h4 class="mindset-title font-technical">Biztonságos Fejlesztés & Jogi Megfelelőség</h4>
+                    <p class="mindset-desc">
+                        Szigorúan érvényesítem a biztonság-elsődleges tervezési elveket, amelyeket közvetlenül az
+                        információbiztonsági (InfoSec) háttéremből merítek. Számomra a tiszta kód nem csak a
+                        formázásról szól; a sebezhetőségek kiküszöböléséről, a kriptográfiai határok megértéséről és az
+                        ICT szabályozásoknak való szigorú jogi megfelelőségről szól. Szisztematikus architekturális
+                        mintákat (Clean Architecture, MVI) alkalmazok, hogy az adatfeldolgozás strukturálisan
+                        bombabiztos és jogilag megfelelő legyen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mindset-item">
+                <div class="mindset-log font-code">[LOG_03:SYNC]</div>
+                <div class="mindset-content">
+                    <h4 class="mindset-title font-technical">Kreatív Szinergia, Vezetés & UX Integritás</h4>
+                    <p class="mindset-desc">
+                        A <a href="https://photo.madovygabor.work" class="seo-link" target="_blank"
+                            rel="noopener noreferrer">professzionális fotográfiai</a> háttérem egyedi esztétikai
+                        standardot visz a mérnöki munkafolyamatomba. Olyan felületeket tervezek, amelyek tiszták,
+                        vizuálisan meggyőzőek és rendkívül funkcionálisak, biztosítva, hogy a nyers vizuális design
+                        soha ne veszélyeztesse az alapvető használhatóságot. Az ügyfelekkel való együttműködés és a
+                        csapatok vezetése megtanított arra, hogy teljes felelősséget vállaljak az eredményekért.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mindset-item">
+                <div class="mindset-log font-code">[LOG_04:GRW]</div>
+                <div class="mindset-content">
+                    <h4 class="mindset-title font-technical">Gyakorlati Alkalmazkodóképesség & Folyamatos Fejlődés</h4>
+                    <p class="mindset-desc">
+                        Nem vagyok törékeny fejlesztő, aki fél a valóságtól. Legyen szó magas szintű cross-platform
+                        rendszerek írásáról, hardverhibaelhárításról vagy szigorú helyszíni műveletekről, azonnal
+                        alkalmazkodom. A helyben állás kudarc. Szakmai és magánéletem minden aspektusa a folyamatos
+                        tanulásra és az új technológiák elsajátítására összpontosít.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical">A Logika</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid mb-section">
+
+            <div class="col-span-8 bento-card bento-card-purple flex-col-between large-card">
+                <div class="bento-bg bento-bg-code"></div>
+                <div class="bento-gradient"></div>
+
+                <div class="bento-content-wrapper">
+                    <div class="bento-header">
+                        <span class="material-symbols-outlined">phone_android</span>
+                        <span class="font-label font-bold">Natív Mag</span>
+                    </div>
+                    <h3 class="font-display">
+                        Kotlin Multiplatform & iOS
+                    </h3>
+                    <p>
+                        Nagy teljesítményű natív cross-platform rendszerek fejlesztése Android és iOS platformokra.
+                        Megosztott üzleti logikára építve, produkciós szintű architektúrák alatt skálázható
+                        mobilalkalmazásokat építek, amelyek megőrzik a kód integritását a natív felhasználói élmény
+                        feláldozása nélkül.
+                    </p>
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark">KMP</span>
+                        <span class="badge badge-dark">iOS Dev</span>
+                        <span class="badge badge-dark">MVI / MVVM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-4 flex-col-between bento-side-column">
+                <div class="bento-card bento-card-purple flex-1 flex-col-between">
+                    <div>
+                        <div class="flex-center-between mb-2 card-header-border">
+                            <div class="card-header-title">
+                                <span class="material-symbols-outlined">layers</span>
+                                <span class="font-label font-bold">Backend</span>
+                            </div>
+                            <span class="font-code card-header-badge">JAVA</span>
+                        </div>
+                        <h4 class="font-technical mb-2">Java Rendszerek</h4>
+                        <p>
+                            Széleskörű tapasztalat a Java fejlesztésben. Jártas a szigorú objektumorientált szoftverminták
+                            alkalmazásában, biztonságos rendszerhatárok kezelésében és szétcsatolt architektúrák
+                            megvalósításában.
+                        </p>
+                    </div>
+                    <div class="flex-wrap gap-2 mt-4 d-flex">
+                        <span class="badge badge-dark">SOLID</span>
+                        <span class="badge badge-dark">CLEAN ARCH</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-card-purple flex-1 flex-col-between">
+                    <div>
+                        <div class="flex-center-between mb-2 card-header-border">
+                            <div class="card-header-title">
+                                <span class="material-symbols-outlined">terminal</span>
+                                <span class="font-label font-bold">Szkriptelés</span>
+                            </div>
+                            <span class="font-code card-header-badge">PYTHON</span>
+                        </div>
+                        <h4 class="font-technical mb-2">Python Automatizálás</h4>
+                        <p>
+                            Python felhasználása hatékony funkcionális szkriptelésre és automatizálásra.
+                            Tapasztalat tiszta szkriptek írásában adatfolyamatok, helyi folyamatok és hálózati feladatok
+                            kezelésére.
+                        </p>
+                    </div>
+                    <div class="flex-wrap gap-2 mt-4 d-flex">
+                        <span class="badge badge-dark">AUTOMATIZÁLÁS</span>
+                        <span class="badge badge-dark">SZKRIPTEK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-footer-btn">
+            <a href="projekty.html" class="btn btn-primary btn-shrink-0">
+                <div class="btn-corner-tr"></div>
+                <div class="btn-corner-bl"></div>
+                <span class="material-symbols-outlined text-purple">folder_open</span>
+                ÖSSZES PROJEKT MEGTEKINTÉSE
+            </a>
+        </div>
+
+        <div class="section-header">
+            <h2 class="font-technical">Az Infrastruktúra</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid mb-section">
+            <div class="col-span-4 flex-col-between bento-side-column">
+                <div class="bento-card bento-card-purple flex-1 flex-col-between">
+                    <div>
+                        <div class="flex-center-between mb-2 card-header-border">
+                            <div class="card-header-title">
+                                <span class="material-symbols-outlined">developer_board</span>
+                                <span class="font-label font-bold">Automatizálás</span>
+                            </div>
+                            <span class="font-code card-header-badge">Home Assistant</span>
+                        </div>
+                        <h4 class="font-technical mb-2">Okos Rendszerek & IoT Integráció</h4>
+                        <p>
+                            Helyi-elsődleges automatizálási környezetek tervezése. IoT centralizálás Home Assistant
+                            segítségével, PoE kamerabiztonsági hálózatok telepítése és egyedi napenergia-kezelő
+                            rendszerek.
+                        </p>
+                    </div>
+                    <div class="flex-wrap gap-2 mt-4 d-flex">
+                        <span class="badge badge-dark">Home Assistant</span>
+                        <span class="badge badge-dark">Napenergia</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-card-purple flex-1 flex-col-between">
+                    <div>
+                        <div class="flex-center-between mb-2 card-header-border">
+                            <div class="card-header-title">
+                                <span class="material-symbols-outlined">bolt</span>
+                                <span class="font-label font-bold">Hardver</span>
+                            </div>
+                            <span class="font-code card-header-badge">Kisfeszültség</span>
+                        </div>
+                        <h4 class="font-technical mb-2">Ipari Automatizálás & MaR</h4>
+                        <p>
+                            Gyakorlati tapasztalat ipari automatizálásban (MaR rendszerek) és helyszíni műveletekben.
+                            Kompetens a hardverintegráció, kisfeszültségű telepítések és precíz jelzéslogika
+                            területén.
+                        </p>
+                    </div>
+                    <div class="flex-wrap gap-2 mt-4 d-flex">
+                        <span class="badge badge-dark">MaR Rendszerek</span>
+                        <span class="badge badge-dark">Kisfeszültség</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-8 bento-card bento-card-purple flex-col-between large-card">
+                <div class="bento-bg bento-bg-network"></div>
+                <div class="bento-gradient"></div>
+                <div class="bento-content-wrapper">
+                    <div class="bento-header">
+                        <span class="material-symbols-outlined">router</span>
+                        <span class="font-label font-bold">Hálózat & Biztonság</span>
+                    </div>
+                    <h3 class="font-display">
+                        Infrastruktúra & Vállalati Hálózatok
+                    </h3>
+                    <p>
+                        Biztonságos, magas rendelkezésre állású hálózati infrastruktúrák tervezése és telepítése. Jártas
+                        vállalati routing, switching és tűzfal határok konfigurálásában a Cisco ökoszisztéma és UniFi
+                        hardverarchitektúrák használatával. Fókusz a hálózat integritásán, forgalomelválasztáson és
+                        robusztus távoli hozzáférési csatornákon.
+                    </p>
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-purple-accent">Cisco CCNA</span>
+                        <span class="badge badge-dark">UniFi OS</span>
+                        <span class="badge badge-dark">Hálózatbiztonság</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bento-card terminal-card">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <span class="terminal-path">gabor_os@system:~/achievements$ ./read_logs.sh</span>
+            </div>
+            <div>
+                <p class="terminal-line"><span class="text-green">[OK]</span> Hivatalos versenyeredmények betöltése...</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Infoprog
+                        Verseny:</span> 1. Hely (Országos Adatfeldolgozási Kategória)</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Regionális
+                        Elismerés:</span> 2x Érsekújvár Város Díj</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Szakma Sztár
+                        Kategória:</span> Elődöntős (Alkalmazásfejlesztés & Programozás)</p>
+                <br />
+                <p class="terminal-line"><span class="text-green">[OK]</span> Igazolt szakmai tanúsítványok
+                    inicializálása...</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Hálózati
+                        Infrastruktúra:</span> Cisco Certified CCNA 3 [2024]</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Vészhelyzeti
+                        Rendszerek:</span> Bosch EPS Certified Tűzjelző Mérnök [2026]</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Biztonsági &
+                        Mérnöki Megfelelőség:</span> §21 Certified Elektrotechnikus [2025]</p>
+                <p class="terminal-line"><span class="text-blue">>></span> <span class="text-white">Adat & Üzemeltetési
+                        Architektúra:</span> Haladó ECDL Tanúsítvány [2025]</p>
+                <p class="cursor-blink">_</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Madový Gábor. Minden jog fenntartva.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="mailto:gabor@madovygabor.work">EMAIL</a>
+            <a class="footer-link" href="https://madovygabor.work/hu/">FŐOLDAL</a>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+
+</html>

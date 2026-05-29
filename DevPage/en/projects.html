@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Kotlin Multiplatform Projects | Explore Software Engineering | Secure Backend Systems & Automation Implementations | Gabriel Madový</title>
+    <meta name="description"
+        content="Deep dive into the software engineering and InfoSec projects of Gabriel Madový, featuring MaturiMate and Clean Architecture systems.">
+    <meta name="keywords"
+        content="Gabriel Madový, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, MVI, SQLDelight, InfoSec, Cryptography">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.work/en/projects.html" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects.html" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projekty.html" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="index.html">HOME</a>
+                <a class="mobile-nav-link active" href="projects.html">PROJECTS</a>
+                <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link active" href="https://dev.madovygabor.work/en/">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="https://dev.madovygabor.work/hu/">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="https://dev.madovygabor.work/sk/">SK</a>
+                </div>
+                <a class="nav-btn" href="https://madovygabor.work/en/">MAIN SITE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="index.html">HOME</a>
+            <a class="nav-link active" href="projects.html">PROJECTS</a>
+            <a class="nav-link" href="contact.html">CONTACT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link active" href="https://dev.madovygabor.work/en/">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="https://dev.madovygabor.work/hu/">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="https://dev.madovygabor.work/sk/">SK</a>
+            </div>
+            <a class="nav-btn" href="https://madovygabor.work/en/">MAIN SITE</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="projects-hero">
+            <h1 class="font-display projects-title">Development Logs</h1>
+            <p class="font-technical projects-desc">
+                Meticulously engineered applications focusing on shared business logic, mathematical rendering accuracy,
+                and strict security architecture boundaries.
+            </p>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub">01 / Flagship Multiplatform Architecture</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section">
+            <div class="bento-card bento-card-purple">
+                <div class="flex-center-between projects-header">
+                    <div class="projects-brand-wrapper">
+                        <span class="material-symbols-outlined projects-brand-icon">school</span>
+                        <div>
+                            <h3 class="font-technical projects-card-title">MaturiMate Ecosystem</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin
+                                Multiplatform • Active Production Stage</p>
+                        </div>
+                    </div>
+                    <div class="projects-badge-container">
+                        <span class="badge badge-purple">KMP Core</span>
+                        <span class="badge badge-dark">Jetpack Compose</span>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="col-span-5 projects-info-col">
+                        <p>
+                            A highly optimized multiplatform application designed to digitize and scale the high school
+                            graduation preparation engine. Shared core business logic drives both Android and target
+                            platform layouts without performance penalties.
+                        </p>
+                        <p>
+                            The backend interface features asynchronous <strong>JSON5 parsing</strong> coupled with
+                            <strong>KaTeX
+                                mathematical rendering</strong>, allowing complex algebraic matrices and test modules to
+                            render
+                            fluidly down to individual viewport fragments.
+                        </p>
+                        <p>
+                            Built strictly with an <strong>MVI / MVVM state flow container</strong>, state mutation is
+                            fully
+                            decoupled from the UI layer, guaranteeing zero-state leaking during high-concurrency local
+                            database testing.
+                        </p>
+                        <div class="flex-wrap gap-2 d-flex mt-2">
+                            <span class="badge badge-dark badge-rounded">SQLDelight</span>
+                            <span class="badge badge-dark badge-rounded">KaTeX Async</span>
+                            <span class="badge badge-dark badge-rounded">MVI Flow</span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-7 code-window">
+                        <div class="code-header">
+                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                        </div>
+                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
+<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
+    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
+) {
+    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
+        <span class="syntax-keyword">return</span> database.examQueries
+            .selectActiveQuestionsBySubject(subjectId)
+            .asFlow()
+            .mapToList(Dispatchers.Default)
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Rules
+                & Security Frameworks</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid">
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">layers</span>
+                            <h3 class="font-technical projects-card-title-sm">Employee & Security Auditor
+                                System</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Java</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Academic project executing a flawless full score allocation model. Implements <strong>Clean
+                            Architecture</strong> patterns by separating pure business rules from infrastructure
+                        boundaries.
+                        Features an independent access control validation layer that actively monitors and signs state
+                        update sequences without dependency leaks.
+                    </p>
+                </div>
+                <div class="flex-wrap gap-2 mt-auto d-flex">
+                    <span class="badge badge-dark badge-bg-dark">SOLID Principles</span>
+                    <span class="badge badge-dark badge-bg-dark">Decoupled Entities</span>
+                </div>
+            </div>
+
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">shield</span>
+                            <h3 class="font-technical projects-card-title-sm">Secure Communication Tool
+                            </h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Python</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Led a 4-member software engineering engineering division. Responsible for direct architectural
+                        design, encrypted network layer packet tracking, and low-level <strong>end-to-end encryption
+                            (E2EE)</strong>
+                        secure handshake protocol deployments.
+                    </p>
+                </div>
+                <div class="flex-wrap gap-2 mt-auto d-flex">
+                    <span class="badge badge-dark badge-bg-dark">E2EE Cryptography</span>
+                    <span class="badge badge-dark badge-bg-dark">Team Leadership</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. All rights reserved.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="mailto:gabor@madovygabor.work">EMAIL</a>
+            <a class="footer-link" href="https://madovygabor.work/en/">MAIN SITE</a>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
