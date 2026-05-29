@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="dark" lang="sk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Kotlin Multiplatform Projekty | Preskúmajte Softvérové Inžinierstvo | Bezpečné Backend Systémy & Automatizácia | Gabriel Madový</title>
+    <meta name="description"
+        content="Ponorte sa do softvérového inžinierstva a InfoSec projektov Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.">
+    <meta name="keywords"
+        content="Gabriel Madový, Madový Gábor, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, MVI, SQLDelight, InfoSec, Kryptografia">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.work/sk/projekty.html" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects.html" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projekty.html" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Zatvoriť menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="index.html">DOMOV</a>
+                <a class="mobile-nav-link active" href="projekty.html">PROJEKTY</a>
+                <a class="mobile-nav-link" href="kontakt.html">KONTAKT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="https://dev.madovygabor.work/en/projects.html">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="https://dev.madovygabor.work/hu/projekty.html">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty.html">SK</a>
+                </div>
+                <a class="nav-btn" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="index.html">DOMOV</a>
+            <a class="nav-link active" href="projekty.html">PROJEKTY</a>
+            <a class="nav-link" href="kontakt.html">KONTAKT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="https://dev.madovygabor.work/en/projects.html">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="https://dev.madovygabor.work/hu/projekty.html">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty.html">SK</a>
+            </div>
+            <a class="nav-btn" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="projects-hero">
+            <h1 class="font-display projects-title">Vývojové Denníky</h1>
+            <p class="font-technical projects-desc">
+                Precízne navrhnuté aplikácie so zameraním na zdieľanú obchodnú logiku, presnosť matematického
+                vykresľovania a prísne bezpečnostné hranice architektúry.
+            </p>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub">01 / Vlajková Loď Multiplatform Architektúry</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section">
+            <div class="bento-card bento-card-purple">
+                <div class="flex-center-between projects-header">
+                    <div class="projects-brand-wrapper">
+                        <span class="material-symbols-outlined projects-brand-icon">school</span>
+                        <div>
+                            <h3 class="font-technical projects-card-title">MaturiMate Ekosystém</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktívna Produkčná Fáza</p>
+                        </div>
+                    </div>
+                    <div class="projects-badge-container">
+                        <span class="badge badge-purple">KMP Jadro</span>
+                        <span class="badge badge-dark">Jetpack Compose</span>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="col-span-5 projects-info-col">
+                        <p>
+                            Vysoko optimalizovaná multiplatformová aplikácia navrhnutá na digitalizáciu a škálovanie
+                            prípravy na stredoškolské maturity. Zdieľaná základná obchodná logika poháňa rozhrania pre
+                            Android aj cieľové platformy bez zníženia výkonu.
+                        </p>
+                        <p>
+                            Rozhranie backendu je vybavené asynchrónnym <strong>JSON5 parsovaním</strong> spojeným s
+                            <strong>KaTeX matematickým vykresľovaním</strong>, čo umožňuje plynulé vykresľovanie zložitých
+                            algebraických matíc a testovacích modulov až po jednotlivé fragmenty zobrazenia.
+                        </p>
+                        <p>
+                            Zostavené prísne v <strong>MVI / MVVM kontajneri dátových tokov (state flow)</strong>.
+                            Mutácia stavu je plne oddelená od vrstvy používateľského rozhrania, čo zaručuje nulový únik
+                            stavu (zero-state leaking) počas testovania lokálnej databázy s vysokou súbežnosťou.
+                        </p>
+                        <div class="flex-wrap gap-2 d-flex mt-2">
+                            <span class="badge badge-dark badge-rounded">SQLDelight</span>
+                            <span class="badge badge-dark badge-rounded">KaTeX Asynchrónne</span>
+                            <span class="badge badge-dark badge-rounded">MVI Dátový Tok</span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-7 code-window">
+                        <div class="code-header">
+                            <span class="code-dot"></span> Typovo-Bezpečný SQLDelight Driver na Lokálnu Verifikáciu
+                        </div>
+                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Natívny cross-platformový driver na interakciu s databázou</span>
+<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
+    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
+) {
+    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
+        <span class="syntax-keyword">return</span> database.examQueries
+            .selectActiveQuestionsBySubject(subjectId)
+            .asFlow()
+            .mapToList(Dispatchers.Default)
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Podnikové Pravidlá
+                & Bezpečnostné Rámce</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid">
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">layers</span>
+                            <h3 class="font-technical projects-card-title-sm">Zamestnanecký & Bezpečnostný Audítorský
+                                Systém</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Java</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Akademický projekt, ktorý vykonáva bezchybný model prideľovania plného počtu bodov. Implementuje
+                        vzory <strong>Clean Architecture</strong> oddelením čistých obchodných pravidiel od hraníc
+                        infraštruktúry. Obsahuje vrstvu na validáciu kontroly prístupu, ktorá aktívne monitoruje a
+                        podpisuje sekvencie aktualizácií stavu bez úniku závislostí.
+                    </p>
+                </div>
+                <div class="flex-wrap gap-2 mt-auto d-flex">
+                    <span class="badge badge-dark badge-bg-dark">SOLID Princípy</span>
+                    <span class="badge badge-dark badge-bg-dark">Oddelené Entity</span>
+                </div>
+            </div>
+
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">shield</span>
+                            <h3 class="font-technical projects-card-title-sm">Nástroj pre Bezpečnú Komunikáciu
+                            </h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Python</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Vedenie 4-člennej divízie softvérového inžinierstva. Zodpovednosť za priamy návrh architektúry,
+                        sledovanie paketov na šifrovanej sieťovej vrstve a nasadenie nízkoúrovňových protokolov
+                        bezpečného handshaku s <strong>end-to-end šifrovaním (E2EE)</strong>.
+                    </p>
+                </div>
+                <div class="flex-wrap gap-2 mt-auto d-flex">
+                    <span class="badge badge-dark badge-bg-dark">E2EE Kryptografia</span>
+                    <span class="badge badge-dark badge-bg-dark">Vedenie Tímu</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. Všetky práva vyhradené.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="mailto:gabor@madovygabor.work">EMAIL</a>
+            <a class="footer-link" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>

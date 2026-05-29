@@ -2311,7 +2311,7 @@ main {
   text-align: center;
 }
 
-.contact-header h2 {
+.contact-header h1 {
   font-family: var(--font-h1-editorial);
   font-size: clamp(2.2rem, 6vw, 3.5rem);
   color: var(--on-surface);
@@ -2321,7 +2321,7 @@ main {
   letter-spacing: -0.02em;
 }
 
-.contact-header h3 {
+.contact-header p {
   font-family: var(--font-h2-ui);
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   color: var(--on-surface-variant);
@@ -2329,6 +2329,10 @@ main {
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+}
+
+address.contact-info {
+  font-style: normal;
 }
 
 .contact-grid {
@@ -2760,4 +2764,16 @@ main {
   background-color: #3498db;
   color: #000000;
   box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+}
+
+/* SEO Cross-Links */
+.seo-photo-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.seo-photo-link:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
 }
