@@ -609,6 +609,16 @@ a {
     gap: var(--spacing-md);
 }
 
+.hero-info {
+    margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+    .hero-info {
+        margin-bottom: 0;
+    }
+}
+
 .hero-bottom-line {
     position: absolute;
     bottom: 0;
@@ -656,6 +666,21 @@ a {
     color: var(--color-accent-purple);
 }
 
+/* Responsive Button Helpers */
+.desktop-section-btn {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-section-btn {
+        display: inline-flex;
+    }
+
+    .mobile-section-btn {
+        display: none;
+    }
+}
+
 /* Section footer button — placed at the end of a section */
 .section-footer-btn {
     display: flex;
@@ -666,10 +691,11 @@ a {
 /* Specs List */
 .specs-list {
     list-style: none;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-xl);
 }
+
 
 .specs-item {
     display: flex;
@@ -820,6 +846,10 @@ a {
     padding: var(--spacing-lg);
     font-family: var(--font-mono);
     font-size: 14px;
+}
+
+.bento-card.terminal-card p {
+    font-size: inherit;
 }
 
 .terminal-header {
@@ -1632,6 +1662,7 @@ a {
     /* --- Section footer button --- */
     .section-footer-btn {
         justify-content: center;
+        margin-bottom: var(--spacing-2xl);
     }
 
     .section-footer-btn .btn {
@@ -1659,7 +1690,7 @@ a {
     }
 
     .terminal-card {
-        font-size: 13px;
+        font-size: 12px;
         padding: var(--spacing-md);
     }
 
@@ -1754,7 +1785,7 @@ a {
     }
 
     .mindset-desc {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .mindset-log {
@@ -1796,7 +1827,11 @@ a {
 /* ---- Narrow phone breakpoint (max-width: 480px) ---- */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 38px;
+        font-size: 42px;
+    }
+
+    .specs-value {
+        font-size: 16px;
     }
 
     .hero-header .hero-title {
@@ -1821,7 +1856,7 @@ a {
     }
 
     .terminal-card {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .btn {
@@ -1852,7 +1887,7 @@ a {
     }
 
     .mindset-desc {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .contact-item h2 {
