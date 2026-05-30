@@ -2017,20 +2017,13 @@ a {
     background-color: var(--color-bg);
     z-index: 200;
     overflow-y: hidden;
-    /* Starts invisible — JS adds .visible only when loading is slow */
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.skeleton-wrapper.hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* JS adds this after SHOW_THRESHOLD ms if page isn't loaded yet */
-.skeleton-wrapper.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    /* Fade in gently so it doesn't flash */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 
@@ -2132,9 +2125,8 @@ a {
     }
 
     /* On desktop, separator switches from horizontal to vertical */
-    .sk-contact-container > div:first-child {
+    .sk-contact-container>div:first-child {
         border-bottom: none !important;
         border-right: 1px solid var(--color-border);
     }
 }
-
