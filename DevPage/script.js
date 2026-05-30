@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 window.addEventListener('load', hideSkeleton);
             }
-        }, 800);
+        }, 450);
 
         // Fallback in case load event already fired or takes too long
         setTimeout(hideSkeleton, 3000);
