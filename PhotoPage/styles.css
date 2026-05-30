@@ -1222,19 +1222,13 @@ main {
   background-color: var(--color-neutral-950);
   z-index: 200;
   overflow-y: hidden;
-  /* Starts invisible — JS adds .visible only when loading is genuinely slow */
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.skeleton-wrapper.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* JS adds this after threshold ms if page isn't loaded yet */
-.skeleton-wrapper.visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .skeleton-block {
@@ -2779,6 +2773,7 @@ address.contact-info {
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
+
 .seo-photo-link:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;

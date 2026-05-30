@@ -28,40 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── Skeleton Loader ─────────────────────────────────────────
-    // Skeleton starts invisible. It only fades IN if loading takes longer
-    // than SHOW_THRESHOLD ms. Fast/cached pages never see it → no flicker.
     const skeleton = document.getElementById('skeleton');
-    const SHOW_THRESHOLD = 150;
-    let skeletonShown = false;
-    let loaded = false;
 
     if (skeleton) {
-        const showTimer = setTimeout(() => {
-            if (!loaded) {
-                skeleton.classList.add('visible');
-                skeletonShown = true;
-            }
-        }, SHOW_THRESHOLD);
-
         const hideSkeleton = () => {
-            loaded = true;
-            clearTimeout(showTimer);
-
-            if (!skeletonShown) {
+            if (skeleton.classList.contains('hidden')) return;
+            skeleton.classList.add('hidden');
+            setTimeout(() => {
                 skeleton.style.display = 'none';
-            } else {
-                skeleton.classList.remove('visible');
-                setTimeout(() => { skeleton.style.display = 'none'; }, 550);
-            }
+            }, 600);
             observeElements();
         };
 
-        if (document.readyState === 'complete') {
-            hideSkeleton();
-        } else {
-            window.addEventListener('load', hideSkeleton, { once: true });
-            setTimeout(hideSkeleton, 3000);
-        }
+        // Simulate a minimum loading time for skeleton visibility
+        setTimeout(() => {
+            if (document.readyState === 'complete') {
+                hideSkeleton();
+            } else {
+                window.addEventListener('load', hideSkeleton);
+            }
+        }, 800);
+
+        // Fallback in case load event already fired or takes too long
+        setTimeout(hideSkeleton, 3000);
     } else {
         observeElements();
     }
@@ -71,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // never show the skeleton.
     window.addEventListener('pageshow', e => {
         if (!e.persisted || !skeleton) return;
+        skeleton.classList.add('hidden');
         skeleton.style.display = 'none';
         observeElements();
     });
