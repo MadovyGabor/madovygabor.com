@@ -27,33 +27,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Skeleton Loader & Scroll Reveal Logic
+    // ─── Skeleton Loader ─────────────────────────────────────────
+    // Skeleton starts invisible. It only fades IN if loading takes longer
+    // than SHOW_THRESHOLD ms. Fast/cached pages never see it → no flicker.
     const skeleton = document.getElementById('skeleton');
+    const SHOW_THRESHOLD = 150;
+    let skeletonShown = false;
+    let loaded = false;
+
     if (skeleton) {
+        const showTimer = setTimeout(() => {
+            if (!loaded) {
+                skeleton.classList.add('visible');
+                skeletonShown = true;
+            }
+        }, SHOW_THRESHOLD);
+
         const hideSkeleton = () => {
-            if (skeleton.classList.contains('hidden')) return;
-            skeleton.classList.add('hidden');
-            setTimeout(() => {
+            loaded = true;
+            clearTimeout(showTimer);
+
+            if (!skeletonShown) {
                 skeleton.style.display = 'none';
-            }, 600);
+            } else {
+                skeleton.classList.remove('visible');
+                setTimeout(() => { skeleton.style.display = 'none'; }, 550);
+            }
             observeElements();
         };
 
-        // Fallback or natural hide
-        setTimeout(() => {
-            document.readyState === 'complete' ? hideSkeleton() : window.addEventListener('load', hideSkeleton);
-        }, 800);
-        
-        // Failsafe hide
-        setTimeout(hideSkeleton, 3000);
+        if (document.readyState === 'complete') {
+            hideSkeleton();
+        } else {
+            window.addEventListener('load', hideSkeleton, { once: true });
+            setTimeout(hideSkeleton, 3000);
+        }
     } else {
-        // If no skeleton, just observe elements immediately
         observeElements();
     }
 
+    // ─── Back / Forward cache (bfcache) ──────────────────────────
+    // Browser Back restores from cache — page is already rendered,
+    // never show the skeleton.
+    window.addEventListener('pageshow', e => {
+        if (!e.persisted || !skeleton) return;
+        skeleton.style.display = 'none';
+        observeElements();
+    });
+
+    // ─── Scroll Reveal ───────────────────────────────────────────
     function observeElements() {
-        const elementsToObserve = document.querySelectorAll('.scroll-reveal');
-        if (elementsToObserve.length === 0) return;
+        const elements = document.querySelectorAll('.scroll-reveal');
+        if (!elements.length) return;
 
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -62,8 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { root: null, rootMargin: '-60px 0px', threshold: 0.1 });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.05
+        });
 
-        elementsToObserve.forEach(el => observer.observe(el));
+        elements.forEach(el => observer.observe(el));
     }
 });

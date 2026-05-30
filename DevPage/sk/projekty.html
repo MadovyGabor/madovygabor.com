@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Kotlin Multiplatform Projekty | Preskúmajte Softvérové Inžinierstvo | Bezpečné Backend Systémy & Automatizácia | Gabriel Madový</title>
+    <title>Vývojové Denníky | Kotlin Multiplatform & Bezpečnostné Projekty | Gabriel Madový</title>
     <meta name="description"
         content="Ponorte sa do softvérového inžinierstva a InfoSec projektov Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.">
     <meta name="keywords"
@@ -13,18 +13,124 @@
     <meta name="author" content="Gabriel Madový">
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://dev.madovygabor.work/sk/projekty.html" />
-    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects.html" />
-    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projekty.html" />
-    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty.html" />
-    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects.html" />
+    <link rel="canonical" href="https://dev.madovygabor.work/sk/projekty" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projektek" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sk_SK" />
+    <meta property="og:url" content="https://dev.madovygabor.work/sk/projekty" />
+    <meta property="og:title" content="Gabriel Madový | Kotlin Multiplatform Projekty" />
+    <meta property="og:description"
+        content="Ponorte sa do softvérového inžinierstva a InfoSec projektov Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture." />
+    <meta property="og:image" content="https://madovygabor.work/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../pictures/favIcons/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "url": "https://dev.madovygabor.work/sk/projekty",
+      "name": "Vývojové Denníky | Projekty Gabriela Madového",
+      "description": "Softvérové inžinierstvo a InfoSec projekty Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriel Madový",
+        "url": "https://dev.madovygabor.work/sk/"
+      },
+      "hasPart": [
+        { "@type": "SoftwareSourceCode", "name": "MaturiMate Ekosystém", "programmingLanguage": "Kotlin", "codeRepository": "https://github.com/madovygabor/MaturiMate" },
+        { "@type": "SoftwareSourceCode", "name": "Zamestnanecký & Bezpečnostný Audítorský Systém", "programmingLanguage": "Java", "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu" },
+        { "@type": "SoftwareSourceCode", "name": "Nástroj pre Bezpečnú Komunikáciu", "programmingLanguage": "Python", "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool" }
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Skeleton Loader -->
+    <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
+        <nav class="sk-nav">
+            <div class="skeleton-block sk-brand"></div>
+            <div class="skeleton-block sk-nav-right"></div>
+        </nav>
+        <div class="sk-main">
+            <div style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-3xl);">
+                <div class="skeleton-block" style="width: 55%; height: 68px; margin-bottom: 20px;"></div>
+                <div class="skeleton-block" style="width: 90%; height: 15px; margin-bottom: 10px;"></div>
+                <div class="skeleton-block" style="width: 75%; height: 15px;"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--spacing-lg);">
+                <div class="skeleton-block" style="width: 340px; height: 18px; flex-shrink: 0;"></div>
+                <div class="skeleton-block" style="flex: 1; height: 1px;"></div>
+            </div>
+            <div class="mb-section">
+                <div class="bento-card" style="padding: var(--spacing-lg);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--spacing-lg);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="skeleton-block" style="width: 36px; height: 36px; border-radius: 8px;"></div>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div class="skeleton-block" style="width: 200px; height: 20px;"></div>
+                                <div class="skeleton-block" style="width: 160px; height: 14px;"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="skeleton-block" style="width: 70px; height: 24px; border-radius: 4px;"></div>
+                            <div class="skeleton-block" style="width: 120px; height: 24px; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="bento-grid">
+                        <div class="col-span-5" style="display: flex; flex-direction: column; gap: 12px;">
+                            <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
+                            <div class="skeleton-block" style="width: 95%; height: 14px;"></div>
+                            <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
+                            <div class="skeleton-block" style="width: 90%; height: 14px;"></div>
+                            <div class="skeleton-block" style="width: 160px; height: 40px; margin-top: 16px;"></div>
+                        </div>
+                        <div class="col-span-7 bento-card" style="background: #0d0d0d; min-height: 240px; padding: 0; overflow: hidden;">
+                            <div style="padding: 12px 16px; border-bottom: 1px solid var(--color-border); display: flex; gap: 8px; align-items: center;">
+                                <div class="skeleton-block" style="width: 10px; height: 10px; border-radius: 50%;"></div>
+                                <div class="skeleton-block" style="width: 240px; height: 12px;"></div>
+                            </div>
+                            <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+                                <div class="skeleton-block" style="width: 90%; height: 13px;"></div>
+                                <div class="skeleton-block" style="width: 70%; height: 13px;"></div>
+                                <div class="skeleton-block" style="width: 80%; height: 13px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--spacing-lg);">
+                <div class="skeleton-block" style="width: 390px; height: 18px; flex-shrink: 0;"></div>
+                <div class="skeleton-block" style="flex: 1; height: 1px;"></div>
+            </div>
+            <div class="bento-grid">
+                <div class="col-span-6 bento-card" style="min-height: 320px; display: flex; flex-direction: column; gap: 16px;">
+                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
+                    <div class="skeleton-block" style="width: 150px; height: 40px;"></div>
+                </div>
+                <div class="col-span-6 bento-card" style="min-height: 320px; display: flex; flex-direction: column; gap: 16px;">
+                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
+                    <div class="skeleton-block" style="width: 150px; height: 40px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
@@ -35,17 +141,17 @@
                 </button>
             </div>
             <nav class="mobile-nav-links">
-                <a class="mobile-nav-link" href="index.html">DOMOV</a>
-                <a class="mobile-nav-link active" href="projekty.html">PROJEKTY</a>
-                <a class="mobile-nav-link" href="kontakt.html">KONTAKT</a>
+                <a class="mobile-nav-link" href="./">DOMOV</a>
+                <a class="mobile-nav-link active" href="./projekty">PROJEKTY</a>
+                <a class="mobile-nav-link" href="./kontakt">KONTAKT</a>
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
-                    <a class="lang-link" href="https://dev.madovygabor.work/en/projects.html">EN</a>
+                    <a class="lang-link" href="https://dev.madovygabor.work/en/projects">EN</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="https://dev.madovygabor.work/hu/projekty.html">HU</a>
+                    <a class="lang-link" href="https://dev.madovygabor.work/hu/projektek">HU</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty.html">SK</a>
+                    <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty">SK</a>
                 </div>
                 <a class="nav-btn" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
             </div>
@@ -54,19 +160,19 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">GABRIEL MADOVÝ</a>
+        <a href="./" class="nav-brand">GABRIEL MADOVÝ</a>
         <div class="nav-links">
-            <a class="nav-link" href="index.html">DOMOV</a>
-            <a class="nav-link active" href="projekty.html">PROJEKTY</a>
-            <a class="nav-link" href="kontakt.html">KONTAKT</a>
+            <a class="nav-link" href="./">DOMOV</a>
+            <a class="nav-link active" href="./projekty">PROJEKTY</a>
+            <a class="nav-link" href="./kontakt">KONTAKT</a>
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
-                <a class="lang-link" href="https://dev.madovygabor.work/en/projects.html">EN</a>
+                <a class="lang-link" href="https://dev.madovygabor.work/en/projects">EN</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="https://dev.madovygabor.work/hu/projekty.html">HU</a>
+                <a class="lang-link" href="https://dev.madovygabor.work/hu/projektek">HU</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty.html">SK</a>
+                <a class="lang-link active" href="https://dev.madovygabor.work/sk/projekty">SK</a>
             </div>
             <a class="nav-btn" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
@@ -125,10 +231,17 @@
                             Mutácia stavu je plne oddelená od vrstvy používateľského rozhrania, čo zaručuje nulový únik
                             stavu (zero-state leaking) počas testovania lokálnej databázy s vysokou súbežnosťou.
                         </p>
-                        <div class="flex-wrap gap-2 d-flex mt-2">
-                            <span class="badge badge-dark badge-rounded">SQLDelight</span>
-                            <span class="badge badge-dark badge-rounded">KaTeX Asynchrónne</span>
-                            <span class="badge badge-dark badge-rounded">MVI Dátový Tok</span>
+                        <div class="project-footer">
+                            <div class="flex-wrap gap-2 d-flex">
+                                <span class="badge badge-dark badge-rounded">SQLDelight</span>
+                                <span class="badge badge-dark badge-rounded">KaTeX Asynchrónne</span>
+                                <span class="badge badge-dark badge-rounded">MVI Dátový Tok</span>
+                            </div>
+                            <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
+                                <div class="btn-corner-tr"></div>
+                                <div class="btn-corner-bl"></div>
+                                <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
+                            </a>
                         </div>
                     </div>
 
@@ -154,17 +267,17 @@
 
         <div class="section-header">
             <h2 class="font-technical section-header-sub projects-sec-title">02 / Podnikové Pravidlá
-                & Bezpečnostné Rámce</h2>
+                &amp; Bezpečnostné Rámce</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-grid">
+        <section class="bento-grid scroll-reveal delay-100">
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined">layers</span>
-                            <h3 class="font-technical projects-card-title-sm">Zamestnanecký & Bezpečnostný Audítorský
+                            <h3 class="font-technical projects-card-title-sm">Zamestnanecký &amp; Bezpečnostný Audítorský
                                 Systém</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Java</span>
@@ -176,9 +289,16 @@
                         podpisuje sekvencie aktualizácií stavu bez úniku závislostí.
                     </p>
                 </div>
-                <div class="flex-wrap gap-2 mt-auto d-flex">
-                    <span class="badge badge-dark badge-bg-dark">SOLID Princípy</span>
-                    <span class="badge badge-dark badge-bg-dark">Oddelené Entity</span>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">SOLID Princípy</span>
+                        <span class="badge badge-dark badge-bg-dark">Oddelené Entity</span>
+                    </div>
+                    <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
+                    </a>
                 </div>
             </div>
 
@@ -198,9 +318,16 @@
                         bezpečného handshaku s <strong>end-to-end šifrovaním (E2EE)</strong>.
                     </p>
                 </div>
-                <div class="flex-wrap gap-2 mt-auto d-flex">
-                    <span class="badge badge-dark badge-bg-dark">E2EE Kryptografia</span>
-                    <span class="badge badge-dark badge-bg-dark">Vedenie Tímu</span>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">E2EE Kryptografia</span>
+                        <span class="badge badge-dark badge-bg-dark">Vedenie Tímu</span>
+                    </div>
+                    <a href="https://github.com/madovygabor/Secure-Communication-Tool" target="_blank" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
+                    </a>
                 </div>
             </div>
         </section>
@@ -211,11 +338,13 @@
         <div class="footer-copy">© 2026 Gabriel Madový. Všetky práva vyhradené.</div>
         <div class="footer-links">
             <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
-            <a class="footer-link" href="mailto:gabor@madovygabor.work">EMAIL</a>
+            <a class="footer-link" href="https://linkedin.com/in/gabor-madovy-7a31b9338/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
             <a class="footer-link" href="https://madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
         </div>
     </footer>
 
     <script src="../script.js" defer></script>
 </body>
+
 </html>

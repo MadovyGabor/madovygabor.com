@@ -35,7 +35,7 @@ def slugify(text):
 
 
 def get_image_data(img_path):
-    """Reads image dimensions and calculates its aspect ratio using Pillow"""
+    """Reads image dimensions, calculates aspect ratio, and generates a clean alt text from filename"""
     width, height, aspect_ratio = 0, 0, 1.5
     try:
         with Image.open(img_path) as img:
@@ -45,12 +45,26 @@ def get_image_data(img_path):
     except Exception as e:
         print(f"  Warning: Could not read image dimensions for {img_path.name}: {e}")
     
+    # Generate clean alt text from filename
+    filename = img_path.stem
+    # Replace hyphens and underscores with spaces
+    clean_name = filename.replace('-', ' ').replace('_', ' ')
+    # Remove trailing numbering in parentheses (e.g. "Name (1)" -> "Name")
+    clean_name = re.sub(r'\s*\(\d+\)\s*$', '', clean_name)
+    # Strip whitespace
+    clean_name = clean_name.strip()
+    # Capitalize the first letter (keeping other capitals as-is)
+    alt_text = ""
+    if clean_name:
+        alt_text = clean_name[0].upper() + clean_name[1:]
+    
     web_path = img_path.relative_to(PHOTO_PAGE_DIR).as_posix()
     return {
         "src": web_path,
         "width": width,
         "height": height,
-        "aspect_ratio": aspect_ratio
+        "aspect_ratio": aspect_ratio,
+        "alt": alt_text
     }
 
 

@@ -413,17 +413,39 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         const src = prefix + rawSrc;
         const aspectRatio = (typeof imgData === 'object' && imgData.aspect_ratio) ? imgData.aspect_ratio : 1.5;
 
+        // Retrieve or generate alt text
+        let altText = '';
+        if (typeof imgData === 'object' && imgData.alt) {
+            altText = imgData.alt;
+        } else {
+            const filenameWithExt = rawSrc.substring(rawSrc.lastIndexOf('/') + 1);
+            const filename = filenameWithExt.substring(0, filenameWithExt.lastIndexOf('.'));
+            const cleanName = filename.replace(/[-_]/g, ' ').replace(/\(\d+\)/g, '').trim();
+            altText = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+        }
+
         const imgContainer = document.createElement('div');
         imgContainer.className = 'img-container';
 
         const img = document.createElement('img');
         img.src = src;
+        img.alt = altText;
         img.loading = "lazy";
         img.className = "skeleton";
+        
+        // Add dimension attributes for SEO & layout stability (CLS)
+        if (typeof imgData === 'object' && imgData.width && imgData.height) {
+            img.width = imgData.width;
+            img.height = imgData.height;
+            img.style.height = 'auto'; // allow CSS to override visual height while keeping the ratio
+        }
+        
         img.style.aspectRatio = aspectRatio;
         img.onload = function () { this.classList.remove('skeleton'); };
 
         imgContainer.appendChild(img);
+
+        const escapedAlt = altText.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
         const overlay = document.createElement('div');
         overlay.className = 'hud-overlay';
@@ -435,7 +457,7 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
                 <div class="hud-details">
                     <span style="font-size: 14px; font-weight: bold; color: white; background: none; border: none; padding: 0; text-align: left;">${sectionTitle}</span>
                 </div>
-                <button class="hud-fullscreen" onclick="openFullscreen('${src}')">
+                <button class="hud-fullscreen" onclick="openFullscreen('${src}', '${escapedAlt}')">
                     <span class="material-symbols-outlined">fullscreen</span>
                 </button>
             </div>
@@ -533,7 +555,7 @@ window.addEventListener('resize', () => {
 });
 
 // Lightbox handler (global/window scoped)
-window.openFullscreen = function (src) {
+window.openFullscreen = function (src, altText) {
     let lightbox = document.getElementById('portfolio-lightbox');
     if (!lightbox) {
         lightbox = document.createElement('div');
@@ -564,7 +586,9 @@ window.openFullscreen = function (src) {
         document.body.appendChild(lightbox);
     }
 
-    document.getElementById('lightbox-img').src = src;
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightboxImg.alt = altText || 'Fullscreen view';
     lightbox.style.display = 'flex';
     setTimeout(() => lightbox.style.opacity = '1', 10);
 };

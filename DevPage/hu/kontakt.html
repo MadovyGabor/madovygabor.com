@@ -18,13 +18,113 @@
     <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/kontakt.html" />
     <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/contact.html" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta property="og:url" content="https://dev.madovygabor.work/hu/kontakt" />
+    <meta property="og:title" content="Kapcsolat | Madový Gábor" />
+    <meta property="og:description"
+        content="Lépjen kapcsolatba Madový Gáborral szoftverfejlesztési, Kotlin Multiplatform és InfoSec témákban." />
+    <meta property="og:image" content="https://madovygabor.work/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../pictures/favIcons/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "url": "https://dev.madovygabor.work/hu/kontakt",
+      "name": "Kapcsolat | Madový Gábor",
+      "description": "Lépjen kapcsolatba Madový Gáborral szoftverfejlesztési, Kotlin Multiplatform és InfoSec témákban.",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Gabriel Madový",
+        "additionalName": "Madový Gábor",
+        "email": "madovygabor@gmail.com",
+        "telephone": "+421903035624",
+        "url": "https://dev.madovygabor.work/hu/",
+        "sameAs": [
+          "https://github.com/madovygabor",
+          "https://linkedin.com/in/gabor-madovy-7a31b9338/"
+        ]
+      }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Skeleton Loader -->
+    <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
+        <nav class="sk-nav">
+            <div class="skeleton-block sk-brand"></div>
+            <div class="skeleton-block sk-nav-right"></div>
+        </nav>
+        <div class="sk-main" style="justify-content: center; min-height: calc(100vh - 80px);">
+
+            <!-- Contact two-panel container -->
+            <div class="sk-contact-container">
+
+                <!-- Left panel: title + desc + CTA -->
+                <div style="padding: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-lg); flex: 1; border-bottom: 1px solid var(--color-border);">
+                    <div class="skeleton-block" style="width: 70%; height: 56px;"></div>
+                    <div class="skeleton-block" style="width: 100%; height: 15px;"></div>
+                    <div class="skeleton-block" style="width: 85%; height: 15px;"></div>
+                    <div class="skeleton-block" style="width: 140px; height: 42px; margin-top: 8px;"></div>
+                </div>
+
+                <!-- Right panel: 4 contact items -->
+                <div style="padding: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-xl); flex: 1; background: #0a0a0a;">
+                    <!-- Email -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
+                        <div class="skeleton-block" style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="skeleton-block" style="width: 60px; height: 12px;"></div>
+                            <div class="skeleton-block" style="width: 200px; height: 16px;"></div>
+                        </div>
+                    </div>
+                    <!-- Phone -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
+                        <div class="skeleton-block" style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="skeleton-block" style="width: 55px; height: 12px;"></div>
+                            <div class="skeleton-block" style="width: 150px; height: 16px;"></div>
+                        </div>
+                    </div>
+                    <!-- Social -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
+                        <div class="skeleton-block" style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="skeleton-block" style="width: 120px; height: 12px;"></div>
+                            <div style="display: flex; gap: 12px;">
+                                <div class="skeleton-block" style="width: 32px; height: 32px; border-radius: 4px;"></div>
+                                <div class="skeleton-block" style="width: 32px; height: 32px; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Location -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
+                        <div class="skeleton-block" style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div class="skeleton-block" style="width: 140px; height: 12px;"></div>
+                            <div class="skeleton-block" style="width: 240px; height: 16px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigáció">
@@ -35,9 +135,9 @@
                 </button>
             </div>
             <nav class="mobile-nav-links">
-                <a class="mobile-nav-link" href="index.html">FŐOLDAL</a>
-                <a class="mobile-nav-link" href="projekty.html">PROJEKTEK</a>
-                <a class="mobile-nav-link active" href="kontakt.html">KONTAKT</a>
+                <a class="mobile-nav-link" href="./">FŐOLDAL</a>
+                <a class="mobile-nav-link" href="./projektek">PROJEKTEK</a>
+                <a class="mobile-nav-link active" href="./kontakt">KONTAKT</a>
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
@@ -54,11 +154,11 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">GABRIEL MADOVÝ</a>
+        <a href="./" class="nav-brand">GABRIEL MADOVÝ</a>
         <div class="nav-links">
-            <a class="nav-link" href="index.html">FŐOLDAL</a>
-            <a class="nav-link" href="projekty.html">PROJEKTEK</a>
-            <a class="nav-link active" href="kontakt.html">KONTAKT</a>
+            <a class="nav-link" href="./">FŐOLDAL</a>
+            <a class="nav-link" href="./projektek">PROJEKTEK</a>
+            <a class="nav-link active" href="./kontakt">KONTAKT</a>
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
@@ -78,17 +178,17 @@
     </nav>
 
     <main>
-        <section class="contact-section">
+        <section class="contact-section scroll-reveal delay-100">
             <div class="contact-container">
 
                 <!-- Left Panel: Text -->
                 <div class="contact-panel contact-panel-text">
-                    <h2 class="font-display contact-title">Dolgozzunk Együtt</h2>
+                    <h1 class="font-display contact-title">Dolgozzunk Együtt</h1>
                     <p class="contact-desc">
                         Legyen szó robusztus mobilalkalmazásról vagy <a href="https://madovygabor.work/hu/" class="seo-link" target="_blank" rel="noopener noreferrer">technikai rendszermérnöki feladatokról</a>, beszéljük meg a részleteket. Lépjen velem kapcsolatba az alábbi csatornák bármelyikén.
                     </p>
 
-                    <a href="mailto:gabor@madovygabor.work" class="btn btn-primary"
+                    <a href="mailto:madovygabor@gmail.com" class="btn btn-primary"
                         style="margin-top: var(--spacing-lg); align-self: flex-start;">
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>
@@ -104,7 +204,7 @@
                         <span class="material-symbols-outlined">mail</span>
                         <div>
                             <h2>EMAIL</h2>
-                            <a href="mailto:gabor@madovygabor.work">gabor@madovygabor.work</a>
+                            <a href="mailto:madovygabor@gmail.com">madovygabor@gmail.com</a>
                         </div>
                     </div>
 
@@ -152,7 +252,8 @@
         <div class="footer-copy">© 2026 Madový Gábor. Minden jog fenntartva.</div>
         <div class="footer-links">
             <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
-            <a class="footer-link" href="mailto:gabor@madovygabor.work">EMAIL</a>
+            <a class="footer-link" href="https://linkedin.com/in/gabor-madovy-7a31b9338/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
             <a class="footer-link" href="https://madovygabor.work/hu/">FŐOLDAL</a>
         </div>
     </footer>
