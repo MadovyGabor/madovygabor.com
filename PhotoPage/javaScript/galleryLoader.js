@@ -432,13 +432,11 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         }
 
         const imgContainer = document.createElement('div');
-        imgContainer.className = 'img-container';
+        imgContainer.className = 'img-container skeleton';
 
         const img = document.createElement('img');
-        img.src = src;
         img.alt = altText;
         img.loading = "lazy";
-        img.className = "skeleton";
 
         // Add dimension attributes for SEO & layout stability (CLS)
         if (typeof imgData === 'object' && imgData.width && imgData.height) {
@@ -448,7 +446,15 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         }
 
         img.style.aspectRatio = aspectRatio;
-        img.onload = function () { this.classList.remove('skeleton'); };
+        
+        // Remove skeleton class from container once image loads/fails
+        img.onload = function () {
+            imgContainer.classList.remove('skeleton');
+        };
+        img.onerror = function () {
+            imgContainer.classList.remove('skeleton');
+        };
+        img.src = src; // Set src after onload/onerror to ensure cache hits trigger load handler
 
         imgContainer.appendChild(img);
 
