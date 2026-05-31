@@ -1,5 +1,101 @@
 [
     {
+        "title": "Ingatlan & Enteriőr",
+        "id": "ingatlan-enterior",
+        "subsections": [
+            {
+                "title": "AVA Chatka Motýlik",
+                "id": "ava-chatka-motylik",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-exterier-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce exterier 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-kuchyna-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce kuchyna 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-obyvacia-izba-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce obyvacia izba 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-kupalisko-diakovce-kupelna-wc-2.webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Chata motylik kupalisko diakovce kupelna wc 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-ubytovanie-diakovce-spalna-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik ubytovanie diakovce spalna 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-kuchyna-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce kuchyna 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-obyvacia-izba-3.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce obyvacia izba 3"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-terasa-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce terasa 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/kupalisko-diakovce-chata-motylik-spalna-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Kupalisko diakovce chata motylik spalna 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-exterier-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Ubytovanie diakovce chata motylik exterier 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-kupelna-sprcha-1.webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Ubytovanie diakovce chata motylik kupelna sprcha 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-obyvacia-izba-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Ubytovanie diakovce obyvacia izba 2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "title": "Koncertek",
         "id": "koncertek",
         "subsections": [
@@ -8,67 +104,46 @@
                 "id": "azahriah-puskas-arena",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (1).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azariah"
-                    },
-                    {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (2).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Azariah"
-                    },
-                    {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (3).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Azariah"
-                    },
-                    {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (4).webp",
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-es-desh-a-szinpadon.webp",
                         "width": 1453,
                         "height": 2723,
                         "aspect_ratio": 0.5336026441424899,
-                        "alt": "Azariah"
+                        "alt": "Azahriah es desh a szinpadon"
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (5).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azariah"
-                    },
-                    {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (6).webp",
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-koncert-kepek-puskas-arena.webp",
                         "width": 6000,
                         "height": 4000,
                         "aspect_ratio": 1.5,
-                        "alt": "Azariah"
+                        "alt": "Azahriah koncert kepek puskas arena"
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (7).webp",
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-koncert-puskas-arena-latvany.webp",
                         "width": 6000,
                         "height": 4000,
                         "aspect_ratio": 1.5,
-                        "alt": "Azariah"
+                        "alt": "Azahriah koncert puskas arena latvany"
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (8).webp",
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-puskas-arena-koncert.webp",
                         "width": 4000,
                         "height": 6000,
                         "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azariah"
+                        "alt": "Azahriah puskas arena koncert"
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azariah (9).webp",
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-puskas-koncert-lebego-buvar-kep.webp",
                         "width": 4000,
                         "height": 6000,
                         "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azariah"
+                        "alt": "Azahriah puskas koncert lebego buvar kep"
+                    },
+                    {
+                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/desh-a-puskas-arenaban-koncert-kep.webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Desh a puskas arenaban koncert kep"
                     }
                 ]
             },
@@ -81,46 +156,11 @@
                         "id": "delegation",
                         "images": [
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1011WEB.webp",
-                                "width": 2134,
-                                "height": 2668,
-                                "aspect_ratio": 0.7998500749625187,
-                                "alt": "Delagation 1011WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1211WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "Delagation 1211WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-1511WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "Delagation 1511WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3011WEB.webp",
                                 "width": 3000,
                                 "height": 2400,
                                 "aspect_ratio": 1.25,
                                 "alt": "Delagation 3011WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3411WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "Delagation 3411WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-3711WEB.webp",
-                                "width": 2633,
-                                "height": 2106,
-                                "aspect_ratio": 1.2502374169040835,
-                                "alt": "Delagation 3711WEB"
                             },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4611WEB.webp",
@@ -130,25 +170,60 @@
                                 "alt": "Delagation 4611WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4711WEB.webp",
-                                "width": 2678,
-                                "height": 2142,
-                                "aspect_ratio": 1.250233426704015,
-                                "alt": "Delagation 4711WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-4911WEB.webp",
-                                "width": 2846,
-                                "height": 1898,
-                                "aspect_ratio": 1.4994731296101158,
-                                "alt": "Delagation 4911WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delagation-511WEB.webp",
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delegation-a-hajomalom-fesztivalon.webp",
                                 "width": 2462,
                                 "height": 1970,
                                 "aspect_ratio": 1.249746192893401,
-                                "alt": "Delagation 511WEB"
+                                "alt": "Delegation a hajomalom fesztivalon"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delegation-a-szinapdon.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Delegation a szinapdon"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/Delegation-gitarosa.webp",
+                                "width": 2134,
+                                "height": 2668,
+                                "aspect_ratio": 0.7998500749625187,
+                                "alt": "Delegation gitarosa"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/deleagation-gutan.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Deleagation gutan"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/delegation-banda-tagjai-kepek-hajomalom-fesztival.webp",
+                                "width": 2846,
+                                "height": 1898,
+                                "aspect_ratio": 1.4994731296101158,
+                                "alt": "Delegation banda tagjai kepek hajomalom fesztival"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/delegation-gitárosa.webp",
+                                "width": 2633,
+                                "height": 2106,
+                                "aspect_ratio": 1.2502374169040835,
+                                "alt": "Delegation gitárosa"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/delegation-koncert-hangulat.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Delegation koncert hangulat"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/hajomalom-fesztival-delegation.webp",
+                                "width": 2678,
+                                "height": 2142,
+                                "aspect_ratio": 1.250233426704015,
+                                "alt": "Hajomalom fesztival delegation"
                             }
                         ]
                     },
@@ -178,20 +253,6 @@
                                 "alt": "Follow the Flow 1311WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-1511WEB.webp",
-                                "width": 3000,
-                                "height": 2400,
-                                "aspect_ratio": 1.25,
-                                "alt": "Follow the Flow 1511WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-2111WEB.webp",
-                                "width": 3592,
-                                "height": 2395,
-                                "aspect_ratio": 1.4997912317327766,
-                                "alt": "Follow the Flow 2111WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-211WEB.webp",
                                 "width": 1920,
                                 "height": 2400,
@@ -211,13 +272,6 @@
                                 "height": 2400,
                                 "aspect_ratio": 1.25,
                                 "alt": "Follow the Flow 3111WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3411WEB.webp",
-                                "width": 2427,
-                                "height": 1942,
-                                "aspect_ratio": 1.249742533470649,
-                                "alt": "Follow the Flow 3411WEB"
                             },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-3611WEB.webp",
@@ -255,18 +309,39 @@
                                 "alt": "Follow the Flow 4211WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4311WEB.webp",
-                                "width": 2476,
-                                "height": 1981,
-                                "aspect_ratio": 1.2498738011105501,
-                                "alt": "Follow the Flow 4311WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/Follow the Flow-4611WEB.webp",
                                 "width": 3600,
                                 "height": 2400,
                                 "aspect_ratio": 1.5,
                                 "alt": "Follow the Flow 4611WEB"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/follow-the-flow-enekesi-szinpadon.webp",
+                                "width": 3592,
+                                "height": 2395,
+                                "aspect_ratio": 1.4997912317327766,
+                                "alt": "Follow the flow enekesi szinpadon"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/follow-the-flow-kep.webp",
+                                "width": 2427,
+                                "height": 1942,
+                                "aspect_ratio": 1.249742533470649,
+                                "alt": "Follow the flow kep"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/follow-the-flow.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25,
+                                "alt": "Follow the flow"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Follow The Flow/hajomalom-fesztival-hangulat-kozonseg.webp",
+                                "width": 2476,
+                                "height": 1981,
+                                "aspect_ratio": 1.2498738011105501,
+                                "alt": "Hajomalom fesztival hangulat kozonseg"
                             }
                         ]
                     },
@@ -275,32 +350,11 @@
                         "id": "gypsy-kings",
                         "images": [
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-711WEB.webp",
-                                "width": 3380,
-                                "height": 2254,
-                                "aspect_ratio": 1.4995563442768411,
-                                "alt": "Gypsy kings a malomban 711WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-811WEB.webp",
-                                "width": 2866,
-                                "height": 2293,
-                                "aspect_ratio": 1.2498909725250764,
-                                "alt": "Gypsy kings a malomban 811WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings a malomban-911WEB.webp",
-                                "width": 2981,
-                                "height": 2385,
-                                "aspect_ratio": 1.249895178197065,
-                                "alt": "Gypsy kings a malomban 911WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1011WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "Gypsy kings 1011WEB"
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsi-king-koncert-foto-kozosen-banda-hajomalom-fesztival.webp",
+                                "width": 3562,
+                                "height": 2374,
+                                "aspect_ratio": 1.5004212299915753,
+                                "alt": "Gypsi king koncert foto kozosen banda hajomalom fesztival"
                             },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-1211WEB.webp",
@@ -317,20 +371,6 @@
                                 "alt": "Gypsy kings 2411WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-2511WEB.webp",
-                                "width": 3562,
-                                "height": 2374,
-                                "aspect_ratio": 1.5004212299915753,
-                                "alt": "Gypsy kings 2511WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-511WEB.webp",
-                                "width": 2164,
-                                "height": 2705,
-                                "aspect_ratio": 0.8,
-                                "alt": "Gypsy kings 511WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-711WEB.webp",
                                 "width": 2400,
                                 "height": 3600,
@@ -343,6 +383,41 @@
                                 "height": 3544,
                                 "aspect_ratio": 0.6664785553047404,
                                 "alt": "Gypsy kings 811WEB"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-enekese-gitarozik.webp",
+                                "width": 2164,
+                                "height": 2705,
+                                "aspect_ratio": 0.8,
+                                "alt": "Gypsy kings enekese gitarozik"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/Gypsy kings-enekese.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Gypsy kings enekese"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/gypsy-kings-a-malomban-guta-hajomalom-fesztival (1).webp",
+                                "width": 2866,
+                                "height": 2293,
+                                "aspect_ratio": 1.2498909725250764,
+                                "alt": "Gypsy kings a malomban guta hajomalom fesztival"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/gypsy-kings-a-malomban-guta-hajomalom-fesztival (2).webp",
+                                "width": 3380,
+                                "height": 2254,
+                                "aspect_ratio": 1.4995563442768411,
+                                "alt": "Gypsy kings a malomban guta hajomalom fesztival"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Gypsy Kings/gypsy-kings-a-malomban-guta-hajomalom-fesztival.webp",
+                                "width": 2981,
+                                "height": 2385,
+                                "aspect_ratio": 1.249895178197065,
+                                "alt": "Gypsy kings a malomban guta hajomalom fesztival"
                             }
                         ]
                     },
@@ -351,11 +426,32 @@
                         "id": "pogany-indulo",
                         "images": [
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1011WEB.webp",
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogany-indulo-dac-meze.webp",
                                 "width": 2410,
                                 "height": 1928,
                                 "aspect_ratio": 1.25,
-                                "alt": "Pogány induló 1011WEB"
+                                "alt": "Pogany indulo dac meze"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogany-indulo-hajomalom-fesztivalon.webp",
+                                "width": 2149,
+                                "height": 3224,
+                                "aspect_ratio": 0.6665632754342432,
+                                "alt": "Pogany indulo hajomalom fesztivalon"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogany-indulo-hajomalom-feztivalon.webp",
+                                "width": 2070,
+                                "height": 2588,
+                                "aspect_ratio": 0.7998454404945904,
+                                "alt": "Pogany indulo hajomalom feztivalon"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogany-indulo-konzonsge.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Pogany indulo konzonsge"
                             },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-1311WEB.webp",
@@ -386,13 +482,6 @@
                                 "alt": "Pogány induló 3211WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-3811WEB.webp",
-                                "width": 2070,
-                                "height": 2588,
-                                "aspect_ratio": 0.7998454404945904,
-                                "alt": "Pogány induló 3811WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-4111WEB.webp",
                                 "width": 3421,
                                 "height": 2281,
@@ -400,25 +489,11 @@
                                 "alt": "Pogány induló 4111WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-411WEB.webp",
-                                "width": 2149,
-                                "height": 3224,
-                                "aspect_ratio": 0.6665632754342432,
-                                "alt": "Pogány induló 411WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-511WEB.webp",
                                 "width": 3600,
                                 "height": 2400,
                                 "aspect_ratio": 1.5,
                                 "alt": "Pogány induló 511WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Pogány Induló/Pogány induló-611WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "Pogány induló 611WEB"
                             }
                         ]
                     },
@@ -455,13 +530,6 @@
                                 "alt": "TDanny 1811WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-211WEB.webp",
-                                "width": 3000,
-                                "height": 2400,
-                                "aspect_ratio": 1.25,
-                                "alt": "TDanny 211WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-2711WEB.webp",
                                 "width": 3000,
                                 "height": 2400,
@@ -474,20 +542,6 @@
                                 "height": 2182,
                                 "aspect_ratio": 1.5004582951420715,
                                 "alt": "TDanny 3011WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3111WEB.webp",
-                                "width": 2513,
-                                "height": 2010,
-                                "aspect_ratio": 1.2502487562189055,
-                                "alt": "TDanny 3111WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3811WEB.webp",
-                                "width": 3000,
-                                "height": 2400,
-                                "aspect_ratio": 1.25,
-                                "alt": "TDanny 3811WEB"
                             },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-3911WEB.webp",
@@ -518,13 +572,6 @@
                                 "alt": "TDanny 411WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4211WEB.webp",
-                                "width": 2647,
-                                "height": 1765,
-                                "aspect_ratio": 1.49971671388102,
-                                "alt": "TDanny 4211WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4311WEB.webp",
                                 "width": 2704,
                                 "height": 2164,
@@ -532,18 +579,46 @@
                                 "alt": "TDanny 4311WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-4411WEB.webp",
-                                "width": 3600,
-                                "height": 2400,
-                                "aspect_ratio": 1.5,
-                                "alt": "TDanny 4411WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/TDanny-611WEB.webp",
                                 "width": 3206,
                                 "height": 2137,
                                 "aspect_ratio": 1.5002339728591483,
                                 "alt": "TDanny 611WEB"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/Tdanny-bandaja-kep.webp",
+                                "width": 3600,
+                                "height": 2400,
+                                "aspect_ratio": 1.5,
+                                "alt": "Tdanny bandaja kep"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/Tdanny-bicepsz-kep.webp",
+                                "width": 2647,
+                                "height": 1765,
+                                "aspect_ratio": 1.49971671388102,
+                                "alt": "Tdanny bicepsz kep"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/Tdanny-hajomalom-fesztival.webp",
+                                "width": 2513,
+                                "height": 2010,
+                                "aspect_ratio": 1.2502487562189055,
+                                "alt": "Tdanny hajomalom fesztival"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/Tdanny-koncert-foto (2).webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25,
+                                "alt": "Tdanny koncert foto"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/TDanny/Tdanny-koncert-foto.webp",
+                                "width": 3000,
+                                "height": 2400,
+                                "aspect_ratio": 1.25,
+                                "alt": "Tdanny koncert foto"
                             }
                         ]
                     },
@@ -551,6 +626,34 @@
                         "title": "Valmar",
                         "id": "valmar",
                         "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Marics-Peti-es-Valkusz-Milan.webp",
+                                "width": 2400,
+                                "height": 2400,
+                                "aspect_ratio": 1.0,
+                                "alt": "Marics Peti es Valkusz Milan"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Marics-tancol.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666,
+                                "alt": "Marics tancol"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valamar-hajomalom-fesztival.webp",
+                                "width": 2400,
+                                "height": 3600,
+                                "aspect_ratio": 0.6666666666666666,
+                                "alt": "Valamar hajomalom fesztival"
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valamar-koncert-foto.webp",
+                                "width": 2484,
+                                "height": 1987,
+                                "aspect_ratio": 1.2501258178158028,
+                                "alt": "Valamar koncert foto"
+                            },
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-1211WEB.webp",
                                 "width": 3479,
@@ -601,20 +704,6 @@
                                 "alt": "Valmar 4011WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4111WEB.webp",
-                                "width": 2400,
-                                "height": 3600,
-                                "aspect_ratio": 0.6666666666666666,
-                                "alt": "Valmar 4111WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-411WEB.webp",
-                                "width": 2400,
-                                "height": 3600,
-                                "aspect_ratio": 0.6666666666666666,
-                                "alt": "Valmar 411WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-4511WEB.webp",
                                 "width": 2445,
                                 "height": 1956,
@@ -650,20 +739,6 @@
                                 "alt": "Valmar 5711WEB"
                             },
                             {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-6111WEB.webp",
-                                "width": 2400,
-                                "height": 2400,
-                                "aspect_ratio": 1.0,
-                                "alt": "Valmar 6111WEB"
-                            },
-                            {
-                                "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-611WEB.webp",
-                                "width": 2484,
-                                "height": 1987,
-                                "aspect_ratio": 1.2501258178158028,
-                                "alt": "Valmar 611WEB"
-                            },
-                            {
                                 "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Valmar/Valmar-6911WEB.webp",
                                 "width": 3586,
                                 "height": 2391,
@@ -691,6 +766,34 @@
                 "title": "Portréim",
                 "id": "portreim",
                 "images": [
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/Emese-2.webp",
+                        "width": 4000,
+                        "height": 5000,
+                        "aspect_ratio": 0.8,
+                        "alt": "Emese 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/Emese-3.webp",
+                        "width": 4000,
+                        "height": 5000,
+                        "aspect_ratio": 0.8,
+                        "alt": "Emese 3"
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/Emese-6.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Emese 6"
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/Emese-8.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Emese 8"
+                    },
                     {
                         "src": "pictures/portfolio/Portrék/Portréim/Picture 1.webp",
                         "width": 3749,
@@ -732,6 +835,13 @@
                         "height": 4914,
                         "aspect_ratio": 0.7999592999592999,
                         "alt": "Picture 6"
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/Szombat kép-10.webp",
+                        "width": 5827,
+                        "height": 3885,
+                        "aspect_ratio": 1.4998712998713,
+                        "alt": "Szombat kép 10"
                     }
                 ]
             }
@@ -746,20 +856,6 @@
                 "id": "amts-25",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (1).webp",
-                        "width": 5000,
-                        "height": 4000,
-                        "aspect_ratio": 1.25,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (10).webp",
-                        "width": 4544,
-                        "height": 3635,
-                        "aspect_ratio": 1.2500687757909217,
-                        "alt": "AMTS 25"
-                    },
-                    {
                         "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (11).webp",
                         "width": 4000,
                         "height": 3200,
@@ -767,66 +863,10 @@
                         "alt": "AMTS 25"
                     },
                     {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (12).webp",
-                        "width": 5134,
-                        "height": 3423,
-                        "aspect_ratio": 1.499853929301782,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (13).webp",
-                        "width": 3276,
-                        "height": 4587,
-                        "aspect_ratio": 0.7141922825376062,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (14).webp",
-                        "width": 4907,
-                        "height": 3926,
-                        "aspect_ratio": 1.249872643912379,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (2).webp",
-                        "width": 4254,
-                        "height": 3403,
-                        "aspect_ratio": 1.2500734645900675,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (3).webp",
-                        "width": 4508,
-                        "height": 3606,
-                        "aspect_ratio": 1.250138657792568,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (4).webp",
-                        "width": 4248,
-                        "height": 3398,
-                        "aspect_ratio": 1.2501471453796351,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (5).webp",
-                        "width": 3259,
-                        "height": 4074,
-                        "aspect_ratio": 0.7999509081983309,
-                        "alt": "AMTS 25"
-                    },
-                    {
                         "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (6).webp",
                         "width": 4104,
                         "height": 3283,
                         "aspect_ratio": 1.2500761498629303,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (7).webp",
-                        "width": 4597,
-                        "height": 3678,
-                        "aspect_ratio": 1.2498640565524741,
                         "alt": "AMTS 25"
                     },
                     {
@@ -842,6 +882,76 @@
                         "height": 4000,
                         "aspect_ratio": 1.5,
                         "alt": "AMTS 25"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/Palatinus-Attila-StuntRider.webp",
+                        "width": 3259,
+                        "height": 4074,
+                        "aspect_ratio": 0.7999509081983309,
+                        "alt": "Palatinus Attila StuntRider"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amon-oliver-s600-regi-desing.webp",
+                        "width": 3276,
+                        "height": 4587,
+                        "aspect_ratio": 0.7141922825376062,
+                        "alt": "Amon oliver s600 regi desing"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amon-oliver-s600-regi-desing1.webp",
+                        "width": 4544,
+                        "height": 3635,
+                        "aspect_ratio": 1.2500687757909217,
+                        "alt": "Amon oliver s600 regi desing1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-2025-drift-show.webp",
+                        "width": 5000,
+                        "height": 4000,
+                        "aspect_ratio": 1.25,
+                        "alt": "Amts 2025 drift show"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-2025-magyar-tomi-autoja-terror-benz.webp",
+                        "width": 4254,
+                        "height": 3403,
+                        "aspect_ratio": 1.2500734645900675,
+                        "alt": "Amts 2025 magyar tomi autoja terror benz"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-25-rendor-show (1).webp",
+                        "width": 4597,
+                        "height": 3678,
+                        "aspect_ratio": 1.2498640565524741,
+                        "alt": "Amts 25 rendor show"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-25-rendor-show.webp",
+                        "width": 5063,
+                        "height": 2848,
+                        "aspect_ratio": 1.7777387640449438,
+                        "alt": "Amts 25 rendor show"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/magyar tomi driftel.webp",
+                        "width": 4508,
+                        "height": 3606,
+                        "aspect_ratio": 1.250138657792568,
+                        "alt": "Magyar tomi driftel"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/pala55-motor-bemutato.webp",
+                        "width": 4248,
+                        "height": 3398,
+                        "aspect_ratio": 1.2501471453796351,
+                        "alt": "Pala55 motor bemutato"
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/AMTS 25/terror-benz (2).webp",
+                        "width": 4907,
+                        "height": 3926,
+                        "aspect_ratio": 1.249872643912379,
+                        "alt": "Terror benz"
                     }
                 ]
             },
@@ -1022,25 +1132,25 @@
                 "id": "brno",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Travel/Brno/Brno (1).webp",
-                        "width": 3871,
-                        "height": 4839,
-                        "aspect_ratio": 0.7999586691465179,
-                        "alt": "Brno"
-                    },
-                    {
-                        "src": "pictures/portfolio/Travel/Brno/Brno (2).webp",
+                        "src": "pictures/portfolio/Travel/Brno/Brno-cross.webp",
                         "width": 3893,
                         "height": 4866,
                         "aspect_ratio": 0.8000411015207562,
-                        "alt": "Brno"
+                        "alt": "Brno cross"
                     },
                     {
-                        "src": "pictures/portfolio/Travel/Brno/Brno (3).webp",
+                        "src": "pictures/portfolio/Travel/Brno/Bruno-at-the-main-station.webp",
                         "width": 3758,
                         "height": 4697,
                         "aspect_ratio": 0.8000851607408984,
-                        "alt": "Brno"
+                        "alt": "Bruno at the main station"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Brno/Bruno-church.webp",
+                        "width": 3871,
+                        "height": 4839,
+                        "aspect_ratio": 0.7999586691465179,
+                        "alt": "Bruno church"
                     }
                 ]
             },
@@ -1049,46 +1159,46 @@
                 "id": "tatranska-lomnica",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (1).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Tatranska Lomnica"
-                    },
-                    {
-                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (2).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Tatranska Lomnica"
-                    },
-                    {
-                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (3).webp",
-                        "width": 3105,
-                        "height": 3881,
-                        "aspect_ratio": 0.8000515331100232,
-                        "alt": "Tatranska Lomnica"
-                    },
-                    {
-                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (4).webp",
-                        "width": 3397,
-                        "height": 5096,
-                        "aspect_ratio": 0.6666012558869702,
-                        "alt": "Tatranska Lomnica"
-                    },
-                    {
-                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (5).webp",
-                        "width": 3105,
-                        "height": 3881,
-                        "aspect_ratio": 0.8000515331100232,
-                        "alt": "Tatranska Lomnica"
-                    },
-                    {
                         "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica (6).webp",
                         "width": 2596,
                         "height": 2077,
                         "aspect_ratio": 1.2498796340876264,
                         "alt": "Tatranska Lomnica"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica -lanovka (2).webp",
+                        "width": 3105,
+                        "height": 3881,
+                        "aspect_ratio": 0.8000515331100232,
+                        "alt": "Tatranska Lomnica  lanovka"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica -lanovka.webp",
+                        "width": 3397,
+                        "height": 5096,
+                        "aspect_ratio": 0.6666012558869702,
+                        "alt": "Tatranska Lomnica  lanovka"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica -stit (2).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Tatranska Lomnica  stit"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska Lomnica -stit.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Tatranska Lomnica  stit"
+                    },
+                    {
+                        "src": "pictures/portfolio/Travel/Tatranská Lomnica/Tatranska-lomnica.webp",
+                        "width": 3105,
+                        "height": 3881,
+                        "aspect_ratio": 0.8000515331100232,
+                        "alt": "Tatranska lomnica"
                     }
                 ]
             }

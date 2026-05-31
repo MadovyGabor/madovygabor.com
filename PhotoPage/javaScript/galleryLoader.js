@@ -12,7 +12,9 @@ const categoryTranslations = {
         'Felsőszeli ballagás 24': 'Felsőszeli Graduation 24',
         'Rákoczi tábor 24': 'Rákóczi Camp 24',
         'Brno': 'Brno',
-        'Tatranská Lomnica': 'Tatranská Lomnica'
+        'Tatranská Lomnica': 'Tatranská Lomnica',
+        'Ingatlan & Enteriőr': 'Real Estate & Interior',
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
     },
     sk: {
         'Koncertek': 'Koncerty',
@@ -26,10 +28,14 @@ const categoryTranslations = {
         'Felsőszeli ballagás 24': 'Felsőszeli rozlúčka 24',
         'Rákoczi tábor 24': 'Rákócziho tábor 24',
         'Brno': 'Brno',
-        'Tatranská Lomnica': 'Tatranská Lomnica'
+        'Tatranská Lomnica': 'Tatranská Lomnica',
+        'Ingatlan & Enteriőr': 'Nehnuteľnosti & Interiér',
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
     },
     hu: {
-        'Travel': 'Utazás'
+        'Travel': 'Utazás',
+        'Ingatlan & Enteriőr': 'Ingatlan & Enteriőr',
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
     }
 };
 
@@ -173,7 +179,8 @@ const categoryIcons = {
     'koncertek': 'graphic_eq',
     'portrek': 'portrait',
     'rendezvenyek': 'stadium',
-    'travel': 'explore'
+    'travel': 'explore',
+    'ingatlan-enterior': 'home'
 };
 
 function initFilterButtons(data) {
@@ -432,14 +439,14 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         img.alt = altText;
         img.loading = "lazy";
         img.className = "skeleton";
-        
+
         // Add dimension attributes for SEO & layout stability (CLS)
         if (typeof imgData === 'object' && imgData.width && imgData.height) {
             img.width = imgData.width;
             img.height = imgData.height;
             img.style.height = 'auto'; // allow CSS to override visual height while keeping the ratio
         }
-        
+
         img.style.aspectRatio = aspectRatio;
         img.onload = function () { this.classList.remove('skeleton'); };
 
