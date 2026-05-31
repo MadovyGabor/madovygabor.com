@@ -714,21 +714,21 @@ a {
     display: none;
 }
 
+/* Section footer button — placed at the end of a section */
+.section-footer-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--spacing-lg);
+}
+
 @media (min-width: 768px) {
     .desktop-section-btn {
         display: inline-flex;
     }
 
     .mobile-section-btn {
-        display: none;
+        display: none !important;
     }
-}
-
-/* Section footer button — placed at the end of a section */
-.section-footer-btn {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: var(--spacing-lg);
 }
 
 /* Specs List */
