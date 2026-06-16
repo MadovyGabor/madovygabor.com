@@ -68,12 +68,12 @@ FALLBACK_URLS: list[str] = [
     "https://dev.madovygabor.work/en/",
     "https://dev.madovygabor.work/hu/",
     "https://dev.madovygabor.work/sk/",
-    "https://dev.madovygabor.work/en/projects.html",
-    "https://dev.madovygabor.work/hu/projektek.html",
-    "https://dev.madovygabor.work/sk/projekty.html",
-    "https://dev.madovygabor.work/en/contact.html",
-    "https://dev.madovygabor.work/hu/kontakt.html",
-    "https://dev.madovygabor.work/sk/kontakt.html",
+    "https://dev.madovygabor.work/en/projects",
+    "https://dev.madovygabor.work/hu/projektek",
+    "https://dev.madovygabor.work/sk/projekty",
+    "https://dev.madovygabor.work/en/contact",
+    "https://dev.madovygabor.work/hu/kontakt",
+    "https://dev.madovygabor.work/sk/kontakt",
 ]
 
 # HTTP status messages
