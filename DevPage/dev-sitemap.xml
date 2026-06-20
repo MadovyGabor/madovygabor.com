@@ -3,31 +3,31 @@
 
   <!-- Index / Home Pages -->
   <url>
-    <loc>https://dev.madovygabor.work/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/" />
+    <loc>https://madovygabor.work/dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/hu/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/" />
+    <loc>https://madovygabor.work/dev/hu/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/sk/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/" />
+    <loc>https://madovygabor.work/dev/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -35,31 +35,31 @@
 
   <!-- Projects Pages -->
   <url>
-    <loc>https://dev.madovygabor.work/en/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projektek" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects" />
+    <loc>https://madovygabor.work/dev/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/projektek" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/projekty" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/projects" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/hu/projektek</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projektek" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects" />
+    <loc>https://madovygabor.work/dev/hu/projektek</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/projektek" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/projekty" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/projects" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/sk/projekty</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/projects" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/projektek" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/projekty" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/projects" />
+    <loc>https://madovygabor.work/dev/sk/projekty</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/projektek" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/projekty" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/projects" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -67,31 +67,31 @@
 
   <!-- Contact Pages -->
   <url>
-    <loc>https://dev.madovygabor.work/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/contact" />
+    <loc>https://madovygabor.work/dev/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/contact" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/hu/kontakt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/contact" />
+    <loc>https://madovygabor.work/dev/hu/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/contact" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.madovygabor.work/sk/kontakt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.work/en/contact" />
-    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.work/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.work/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.work/en/contact" />
+    <loc>https://madovygabor.work/dev/sk/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/dev/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/dev/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/dev/en/contact" />
     <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>

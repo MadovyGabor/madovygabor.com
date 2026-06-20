@@ -1,9 +1,9 @@
 # --- CLOUDFLARE PAGES ROUTING ---
 
-# 1. Gyökér átirányítása a magyar verzióra
-/  /hu/  301
+# 1. Redirect photography root to primary market (HU)
+/photography/  /photography/hu/  301
 
-# 2. Nyelvi index fájlok tisztítása
-/hu/index.html  /hu/  301
-/sk/index.html  /sk/  301
-/en/index.html  /en/  301
+# 2. Clean up explicit index.html requests
+/photography/hu/index.html  /photography/hu/  301
+/photography/sk/index.html  /photography/sk/  301
+/photography/en/index.html  /photography/en/  301
