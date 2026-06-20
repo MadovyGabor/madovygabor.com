@@ -10,5 +10,5 @@
 /sk/index.html  /sk/    301
 
 # 3. Proxy sub-sites via Cloudflare Pages 200-rewrite
-/dev/* https://devpage-ayc.pages.dev/dev/:splat 200
-/photography/* https://photopage-8ur.pages.dev/photography/:splat 200
+/dev/* https://devpage-ayc.pages.dev/DevPage/:splat 200
+/photography/* https://photopage-8ur.pages.dev/PhotoPage/:splat 200
