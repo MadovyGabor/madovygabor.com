@@ -48,31 +48,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Gabriel Madový",
-        "additionalName": "Madový Gábor",
-        "jobTitle": "Software Engineer & Professional Photographer",
-        "url": "https://madovygabor.work/",
-        "image": "https://madovygabor.work/pictures/aboutMePicture.webp",
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Vysoké učení technické v Brně"
-        },
-        "sameAs": [
-          "https://github.com/madovygabor",
-          "https://www.linkedin.com/in/gabriel-madovy/",
-          "https://dev.madovygabor.work/",
-          "https://photo.madovygabor.work/",
-          "https://www.instagram.com/mg.captures06",
-          "https://www.facebook.com/profile.php?id=61574942680651"
-        ]
-      }
-    }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://madovygabor.work/#profile-page",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://madovygabor.work/#main-identity",
+    "name": "Gabriel Madový",
+    "additionalName": "Madový Gábor",
+    "jobTitle": "Software Engineer & Professional Photographer",
+    "url": "https://madovygabor.work/",
+    "image": "https://madovygabor.work/pictures/aboutMePicture.webp",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Vysoké učení technické v Brně"
+    },
+    "knowsAbout": [
+      "Information Security",
+      "Kotlin Multiplatform",
+      "Jetpack Compose",
+      "Concert Photography",
+      "Local Business Marketing"
+    ],
+    "sameAs": [
+      "https://github.com/madovygabor",
+      "https://www.linkedin.com/in/gabriel-madovy/",
+      "https://madovygabor.work/dev/en/",
+      "https://madovygabor.work/photography/en/",
+      "https://www.instagram.com/mg.captures06",
+      "https://www.facebook.com/profile.php?id=61574942680651"
+    ]
+  }
+}
+</script>
 </head>
 
 <body>
@@ -99,8 +108,8 @@
     <nav class="navbar">
         <a href="./" class="nav-brand">Gabriel Madový</a>
         <div class="nav-links">
-            <a class="nav-link lens" href="https://photo.madovygabor.work/en/">The Lens</a>
-            <a class="nav-link logic" href="https://dev.madovygabor.work/en/">The Logic</a>
+            <a class="nav-link lens" href="https://madovygabor.work/photography/en/">The Lens</a>
+            <a class="nav-link logic" href="https://madovygabor.work/dev/en/">The Logic</a>
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
@@ -138,7 +147,7 @@
                         natural reactions and unrepeatable moments. My goal is to create visual memories in a relaxed
                         atmosphere that will bring back the exact same emotions years down the line.
                     </p>
-                    <a class="card-link primary" href="https://photo.madovygabor.work/en/">
+                    <a class="card-link primary" href="https://madovygabor.work/photography/en/">
                         <span class="card-link-text">Explore Gallery</span>
                         <span class="material-symbols-outlined card-link-icon">arrow_forward</span>
                     </a>
@@ -153,7 +162,7 @@
                         I integrate robust system logic with modern Kotlin and KMP development. My goal is to ensure
                         that every line of code I write is as efficient, maintainable, and functional as possible.
                     </p>
-                    <a class="card-link secondary" href="https://dev.madovygabor.work/en/">
+                    <a class="card-link secondary" href="https://madovygabor.work/dev/en/">
                         <span class="card-link-text">View IT Portfolio</span>
                         <span class="material-symbols-outlined card-link-icon">code</span>
                     </a>
