@@ -1,7 +1,7 @@
 # --- CLOUDFLARE PAGES ROUTING ---
 
 # 1. Gyökér átirányítása a magyar verzióra
-/  /hu/  302
+/  /hu/  301
 
 # 2. Nyelvi index fájlok tisztítása
 /hu/index.html  /hu/  301
