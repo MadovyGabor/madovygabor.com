@@ -43,39 +43,45 @@
     <link rel="stylesheet" href="../styles.css">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://madovygabor.work/dev/hu/projektek/#projects-page",
+  "url": "https://madovygabor.work/dev/hu/projektek",
+  "name": "Fejlesztési Naplók | Madový Gábor Projektjei",
+  "description": "Madový Gábor szoftvermérnöki és InfoSec projektjei, beleértve a MaturiMate-et és a Clean Architecture rendszereket.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://madovygabor.work/#main-identity",
+    "name": "Madový Gábor",
+    "additionalName": "Gabriel Madový",
+    "url": "https://madovygabor.work/dev/hu/"
+  },
+  "hasPart": [
     {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "url": "https://madovygabor.work/dev/hu/projektek",
-      "name": "Fejlesztési Naplók | Madový Gábor projektjei",
-      "description": "Madový Gábor szoftverfejlesztési és InfoSec projektjei, köztük a MaturiMate és Clean Architecture rendszerek.",
-      "author": {
-        "@type": "Person",
-        "name": "Gabriel Madový",
-        "url": "https://madovygabor.work/dev/hu/"
-      },
-      "hasPart": [
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "MaturiMate Ökoszisztéma",
-          "programmingLanguage": "Kotlin",
-          "codeRepository": "https://github.com/madovygabor/MaturiMate"
-        },
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "Alkalmazott & Biztonsági Auditor Rendszer",
-          "programmingLanguage": "Java",
-          "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu"
-        },
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "Biztonságos Kommunikációs Eszköz",
-          "programmingLanguage": "Python",
-          "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool"
-        }
-      ]
+      "@type": "SoftwareSourceCode",
+      "name": "MaturiMate Ökoszisztéma",
+      "programmingLanguage": "Kotlin",
+      "codeRepository": "https://github.com/madovygabor/MaturiMate",
+      "description": "Kotlin Multiplatform érettségi felkészítő alkalmazás."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Alkalmazotti és Biztonsági Auditor Rendszer",
+      "programmingLanguage": "Java",
+      "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
+      "description": "Clean Architecture Java rendszer."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Biztonságos Kommunikációs Eszköz",
+      "programmingLanguage": "Python",
+      "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool",
+      "description": "Végpontok közötti titkosított kommunikációs eszköz."
     }
-    </script>
+  ]
+}
+</script>
 </head>
 
 <body>

@@ -42,24 +42,45 @@
     <link rel="stylesheet" href="../styles.css">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://madovygabor.work/dev/sk/projekty/#projects-page",
+  "url": "https://madovygabor.work/dev/sk/projekty",
+  "name": "Vývojové Denníky | Projekty Gabriela Madového",
+  "description": "Softvérové inžinierstvo a InfoSec projekty Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://madovygabor.work/#main-identity",
+    "name": "Gabriel Madový",
+    "additionalName": "Madový Gábor",
+    "url": "https://madovygabor.work/dev/sk/"
+  },
+  "hasPart": [
     {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "url": "https://madovygabor.work/dev/sk/projekty",
-      "name": "Vývojové Denníky | Projekty Gabriela Madového",
-      "description": "Softvérové inžinierstvo a InfoSec projekty Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.",
-      "author": {
-        "@type": "Person",
-        "name": "Gabriel Madový",
-        "url": "https://madovygabor.work/dev/sk/"
-      },
-      "hasPart": [
-        { "@type": "SoftwareSourceCode", "name": "MaturiMate Ekosystém", "programmingLanguage": "Kotlin", "codeRepository": "https://github.com/madovygabor/MaturiMate" },
-        { "@type": "SoftwareSourceCode", "name": "Zamestnanecký & Bezpečnostný Audítorský Systém", "programmingLanguage": "Java", "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu" },
-        { "@type": "SoftwareSourceCode", "name": "Nástroj pre Bezpečnú Komunikáciu", "programmingLanguage": "Python", "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool" }
-      ]
+      "@type": "SoftwareSourceCode",
+      "name": "Ekosystém MaturiMate",
+      "programmingLanguage": "Kotlin",
+      "codeRepository": "https://github.com/madovygabor/MaturiMate",
+      "description": "Vysoko optimalizovaná multiplatformová aplikácia na prípravu na maturitu."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Zamestnanecký & Bezpečnostný Audítorský Systém",
+      "programmingLanguage": "Java",
+      "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
+      "description": "Clean Architecture Java systém s oddelenou access control validáciou."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Nástroj pre Bezpečnú Komunikáciu",
+      "programmingLanguage": "Python",
+      "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool",
+      "description": "Nástroj s end-to-end šifrovaním a bezpečnými handshake protokolmi."
     }
-    </script>
+  ]
+}
+</script>
 </head>
 
 <body>
