@@ -28,6 +28,10 @@ from urllib.parse import urlparse
 
 import requests
 
+# Configure stdout to use UTF-8 to prevent print encoding errors on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 # ---------------------------------------------------------------------------
 # Shared configuration
 # ---------------------------------------------------------------------------
