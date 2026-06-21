@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://photo.madovygabor.work/photo-sitemap.xml

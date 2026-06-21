@@ -1,0 +1,31 @@
+# ====================================================================
+# GLOBAL ROUTING & SEO REDIRECTS (MONOREPO)
+# ====================================================================
+
+# --- 1. MAIN PAGE (Főoldal) alapértelmezett nyelv (EN) ---
+/               /en/    301
+/index.html     /en/    301
+
+# --- 2. PHOTOGRAPHY alapértelmezett nyelv (HU) ---
+/photography    /photography/hu/    301
+/photography/   /photography/hu/    301
+
+# --- 3. DEV alapértelmezett nyelv (EN) ---
+/dev            /dev/en/    301
+/dev/           /dev/en/    301
+
+# --- 4. INDEX.HTML CLEANUP (SEO Fix a duplikációk ellen) ---
+# Főoldal
+/en/index.html              /en/                301
+/hu/index.html              /hu/                301
+/sk/index.html              /sk/                301
+
+# Fotós portfólió
+/photography/hu/index.html  /photography/hu/    301
+/photography/sk/index.html  /photography/sk/    301
+/photography/en/index.html  /photography/en/    301
+
+# Dev portfólió
+/dev/en/index.html          /dev/en/            301
+/dev/hu/index.html          /dev/hu/            301
+/dev/sk/index.html          /dev/sk/            301
