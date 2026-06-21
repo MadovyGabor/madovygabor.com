@@ -1,25 +1,20 @@
 #!/usr/bin/env python3
 """
-IndexNow Multi-Host Submission Script
+IndexNow Submission Script
 ======================================
-Submits URLs across multiple hosts/subdomains to the IndexNow API.
+Submits URLs to the IndexNow API.
 Groups URLs by host, then fires one POST per distinct host — as required
 by the IndexNow specification.
 
 Supported hosts:
     madovygabor.work          → https://madovygabor.work/c598e83667e74d088a59bdd1c8bfbc10.txt
-    photo.madovygabor.work    → https://photo.madovygabor.work/c598e83667e74d088a59bdd1c8bfbc10.txt
-    dev.madovygabor.work      → https://dev.madovygabor.work/c598e83667e74d088a59bdd1c8bfbc10.txt
 
 Usage:
-    # Submit all default URLs (main + photo domains):
+    # Submit all default URLs:
     python indexnow_submit.py
 
-    # Submit specific URLs (mixed hosts accepted, batching is automatic):
-    python indexnow_submit.py "https://madovygabor.work/en/" "https://photo.madovygabor.work/en/"
-
-    # Submit only photo-domain URLs:
-    python indexnow_submit.py "https://photo.madovygabor.work/hu/" "https://photo.madovygabor.work/sk/"
+    # Submit specific URLs:
+    python indexnow_submit.py "https://madovygabor.work/en/" "https://madovygabor.work/photography/en/"
 
 Dependencies:
     pip install requests
@@ -43,37 +38,35 @@ ENDPOINT = "https://api.indexnow.org/indexnow"
 # Add future subdomains here — no other code changes required.
 HOST_REGISTRY: dict[str, str] = {
     "madovygabor.work":       f"https://madovygabor.work/{API_KEY}.txt",
-    "photo.madovygabor.work": f"https://photo.madovygabor.work/{API_KEY}.txt",
-    "dev.madovygabor.work":   f"https://dev.madovygabor.work/{API_KEY}.txt",
 }
 
 # Default URL list — used when no CLI arguments are provided.
-# Covers all canonical URLs across both hosts.
+# Covers all canonical URLs across the unified host.
 FALLBACK_URLS: list[str] = [
     # Main domain
     "https://madovygabor.work/en/",
     "https://madovygabor.work/hu/",
     "https://madovygabor.work/sk/",
-    # Photo subdomain
-    "https://photo.madovygabor.work/en/",
-    "https://photo.madovygabor.work/hu/",
-    "https://photo.madovygabor.work/sk/",
-    "https://photo.madovygabor.work/en/portfolio",
-    "https://photo.madovygabor.work/hu/portfolio",
-    "https://photo.madovygabor.work/sk/portfolio",
-    "https://photo.madovygabor.work/en/contact",
-    "https://photo.madovygabor.work/hu/kontakt",
-    "https://photo.madovygabor.work/sk/kontakt",
-    # Dev subdomain
-    "https://dev.madovygabor.work/en/",
-    "https://dev.madovygabor.work/hu/",
-    "https://dev.madovygabor.work/sk/",
-    "https://dev.madovygabor.work/en/projects",
-    "https://dev.madovygabor.work/hu/projektek",
-    "https://dev.madovygabor.work/sk/projekty",
-    "https://dev.madovygabor.work/en/contact",
-    "https://dev.madovygabor.work/hu/kontakt",
-    "https://dev.madovygabor.work/sk/kontakt",
+    # Photography
+    "https://madovygabor.work/photography/en/",
+    "https://madovygabor.work/photography/hu/",
+    "https://madovygabor.work/photography/sk/",
+    "https://madovygabor.work/photography/en/portfolio",
+    "https://madovygabor.work/photography/hu/portfolio",
+    "https://madovygabor.work/photography/sk/portfolio",
+    "https://madovygabor.work/photography/en/contact",
+    "https://madovygabor.work/photography/hu/kontakt",
+    "https://madovygabor.work/photography/sk/kontakt",
+    # Dev
+    "https://madovygabor.work/dev/en/",
+    "https://madovygabor.work/dev/hu/",
+    "https://madovygabor.work/dev/sk/",
+    "https://madovygabor.work/dev/en/projects",
+    "https://madovygabor.work/dev/hu/projektek",
+    "https://madovygabor.work/dev/sk/projekty",
+    "https://madovygabor.work/dev/en/contact",
+    "https://madovygabor.work/dev/hu/kontakt",
+    "https://madovygabor.work/dev/sk/kontakt",
 ]
 
 # HTTP status messages
