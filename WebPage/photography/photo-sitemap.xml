@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://madovygabor.work/photography/hu/</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/hu/</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/sk/</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/en/</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/en/</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://madovygabor.work/photography/hu/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/portfolio" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/portfolio" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/portfolio" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/hu/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/portfolio" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/sk/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/portfolio" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/portfolio" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/portfolio" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/sk/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/portfolio" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/en/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/portfolio" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/portfolio" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/portfolio" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/en/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/portfolio" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://madovygabor.work/photography/hu/kontakt</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/contact" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/hu/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/contact" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/sk/kontakt</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/contact" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/sk/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/contact" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madovygabor.work/photography/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/kontakt" />
-    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/kontakt" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/contact" />
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://madovygabor.work/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/kontakt" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/kontakt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://madovygabor.work/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/contact" />
+    <lastmod>2026-09-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

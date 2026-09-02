@@ -42,7 +42,7 @@
             <h1>Thank you for your trust!</h1>
             <p>I will get in touch with you shortly to discuss your ideas and details.</p>
 
-            <button class="thank-you-btn" onclick="window.location.href='contact'">BACK TO CONTACT PAGE</button>
+            <button class="thank-you-btn" onclick="window.location.href='/en/contact'">BACK TO CONTACT PAGE</button>
 
             <div class="thank-you-redirect" id="countdown">
                 Redirecting in 6 seconds...
@@ -59,7 +59,7 @@
             countdownElement.textContent = `Redirecting in ${timeLeft} seconds...`;
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                window.location.href = 'contact';
+                window.location.href = '/en/contact';
             }
         }, 1000);
     </script>

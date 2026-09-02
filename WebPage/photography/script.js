@@ -93,4 +93,88 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(initObserver, 1);
         }
     }
+    // ─── FAQ Accordion ────────────────────────────────────────────
+    function initFaqAccordion() {
+        const questions = document.querySelectorAll('.faq-question');
+        if (!questions.length) return;
+
+        /**
+         * Animate height from 0 → scrollHeight (open) or scrollHeight → 0 (close).
+         * We avoid forcing relayout on every frame by caching the target height.
+         */
+        function openPanel(answer) {
+            answer.removeAttribute('hidden');
+            answer.classList.add('is-animating');
+
+            // Force a paint so the browser registers height: 0 before transition
+            const targetHeight = answer.scrollHeight;
+            answer.style.height = '0px';
+            answer.style.transition = 'height 0.38s cubic-bezier(0.4, 0, 0.2, 1)';
+
+            // rAF ensures the browser has painted height:0 first
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    answer.style.height = targetHeight + 'px';
+                });
+            });
+
+            answer.addEventListener('transitionend', function onEnd() {
+                answer.removeEventListener('transitionend', onEnd);
+                answer.style.height = '';          // let content dictate height
+                answer.style.transition = '';
+                answer.classList.remove('is-animating');
+                answer.classList.add('is-open');
+            }, { once: true });
+        }
+
+        function closePanel(answer) {
+            const currentHeight = answer.scrollHeight;
+            answer.style.height = currentHeight + 'px';
+            answer.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+            answer.classList.add('is-animating');
+            answer.classList.remove('is-open');
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    answer.style.height = '0px';
+                });
+            });
+
+            answer.addEventListener('transitionend', function onEnd() {
+                answer.removeEventListener('transitionend', onEnd);
+                answer.setAttribute('hidden', '');
+                answer.style.height = '';
+                answer.style.transition = '';
+                answer.classList.remove('is-animating');
+            }, { once: true });
+        }
+
+        questions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                const answerId = btn.getAttribute('aria-controls');
+                const answer = document.getElementById(answerId);
+                if (!answer) return;
+
+                if (isOpen) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    closePanel(answer);
+                } else {
+                    // Close any currently open item first
+                    questions.forEach(otherBtn => {
+                        if (otherBtn !== btn && otherBtn.getAttribute('aria-expanded') === 'true') {
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            const otherId = otherBtn.getAttribute('aria-controls');
+                            const otherAnswer = document.getElementById(otherId);
+                            if (otherAnswer) closePanel(otherAnswer);
+                        }
+                    });
+                    btn.setAttribute('aria-expanded', 'true');
+                    openPanel(answer);
+                }
+            });
+        });
+    }
+
+    initFaqAccordion();
 });

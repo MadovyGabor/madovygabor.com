@@ -2812,3 +2812,173 @@ address.contact-info {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
 }
+
+/* ==========================================================================
+   FAQ Accordion Section
+   ========================================================================== */
+
+.faq-section {
+  padding: 96px 0 20px;
+  margin-bottom: 0;
+  background: var(--color-background);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-container {
+  max-width: 1100px;
+}
+
+.faq-header {
+  margin-bottom: 56px;
+}
+
+.faq-overline {
+  display: block;
+  margin-bottom: 14px;
+  letter-spacing: 0.12em;
+}
+
+.faq-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, var(--text-h1-editorial));
+  font-style: italic;
+  line-height: var(--line-height-h1-editorial);
+  color: var(--color-on-background);
+  margin: 0;
+}
+
+/* FAQ List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Question Button */
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-on-background);
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: #ffffff;
+}
+
+.faq-question[aria-expanded="true"] {
+  color: var(--color-primary);
+}
+
+/* Icon — rotating chevron built with CSS */
+.faq-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+/* Horizontal bar */
+.faq-icon::before {
+  width: 10px;
+  height: 1.5px;
+}
+
+/* Vertical bar — becomes invisible when open */
+.faq-icon::after {
+  width: 1.5px;
+  height: 10px;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  background: rgba(146, 204, 255, 0.1);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon::after {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+/* Answer Panel */
+.faq-answer {
+  overflow: hidden;
+  /* height is driven by JS animation */
+}
+
+.faq-answer[hidden] {
+  display: block;   /* override UA hidden so we can animate */
+  height: 0;
+  visibility: hidden;
+}
+
+.faq-answer p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #b0b0b0;
+  padding-bottom: 32px;
+  max-width: 800px;
+}
+
+/* Smooth height animation handled via JS + CSS transition */
+.faq-answer.is-animating,
+.faq-answer.is-open {
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 64px 0 16px;
+    margin-bottom: 0;
+  }
+
+  .faq-question {
+    font-size: 17px;
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    line-height: 1.75;
+    padding-bottom: 24px;
+  }
+}
