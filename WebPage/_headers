@@ -3,10 +3,22 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-/styles.css
+/hub/styles.css
   Cache-Control: public, max-age=31536000, immutable
 
-/pictures/*
+/hub/pictures/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/dev/styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dev/pictures/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/photography/styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/photography/pictures/*
   Cache-Control: public, max-age=31536000, immutable
 
 # --- IndexNow verification file ---

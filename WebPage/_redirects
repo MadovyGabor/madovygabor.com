@@ -1,24 +1,40 @@
 # ====================================================================
-# GLOBAL ROUTING & SEO REDIRECTS (MONOREPO)
+# GLOBAL ROUTING & SEO REDIRECTS (MONOREPO: HUB, DEV, PHOTOGRAPHY)
 # ====================================================================
 
-# --- 1. MAIN PAGE (Főoldal) alapértelmezett nyelv (EN) ---
-/               /en/    301
-/index.html     /en/    301
+# --- 1. HUB (Főoldal) routing és alapértelmezett nyelv (EN) ---
+/                           /hub/en/            301
+/index.html                 /hub/en/            301
+/hub                        /hub/en/            301
+/hub/                       /hub/en/            301
+
+# Régi gyökérszintű elérési utak átirányítása a hub modulra
+/en                         /hub/en/            301
+/en/                        /hub/en/            301
+/hu                         /hub/hu/            301
+/hu/                        /hub/hu/            301
+/sk                         /hub/sk/            301
+/sk/                        /hub/sk/            301
+/pictures/*                 /hub/pictures/:splat 301
+/styles.css                 /hub/styles.css     301
+/script.js                  /hub/script.js      301
 
 # --- 2. PHOTOGRAPHY alapértelmezett nyelv (HU) ---
-/photography    /photography/hu/    301
-/photography/   /photography/hu/    301
+/photography                /photography/hu/    301
+/photography/               /photography/hu/    301
 
 # --- 3. DEV alapértelmezett nyelv (EN) ---
-/dev            /dev/en/    301
-/dev/           /dev/en/    301
+/dev                        /dev/en/            301
+/dev/                       /dev/en/            301
 
 # --- 4. INDEX.HTML CLEANUP (SEO Fix a duplikációk ellen) ---
-# Főoldal
-/en/index.html              /en/                301
-/hu/index.html              /hu/                301
-/sk/index.html              /sk/                301
+# Hub modul
+/hub/en/index.html          /hub/en/            301
+/hub/hu/index.html          /hub/hu/            301
+/hub/sk/index.html          /hub/sk/            301
+/en/index.html              /hub/en/            301
+/hu/index.html              /hub/hu/            301
+/sk/index.html              /hub/sk/            301
 
 # Fotós portfólió
 /photography/hu/index.html  /photography/hu/    301
