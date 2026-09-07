@@ -97,23 +97,27 @@
   <!-- Skeleton Loader -->
   <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
     <nav class="sk-nav">
-      <div class="skeleton-block sk-brand"></div>
-      <div class="skeleton-block sk-nav-right"></div>
+      <div class="nav-container">
+        <div class="skeleton-block sk-brand"></div>
+        <div class="skeleton-block sk-nav-right"></div>
+      </div>
     </nav>
     <div class="sk-main">
       <div class="sk-hero">
-        <div class="sk-hero-text">
-          <div class="skeleton-block sk-hero-label"></div>
-          <div class="skeleton-block sk-hero-title"></div>
-          <div class="skeleton-block sk-hero-title sk-hero-title-2"></div>
-          <div class="skeleton-block sk-hero-subtitle"></div>
-          <div class="skeleton-block sk-hero-subtitle sk-hero-subtitle-short"></div>
-          <div class="sk-hero-actions">
-            <div class="skeleton-block sk-btn"></div>
-            <div class="skeleton-block sk-btn"></div>
+        <div class="container hero-container sk-hero-container">
+          <div class="sk-hero-text">
+            <div class="skeleton-block sk-hero-label"></div>
+            <div class="skeleton-block sk-hero-title"></div>
+            <div class="skeleton-block sk-hero-title sk-hero-title-2"></div>
+            <div class="skeleton-block sk-hero-subtitle"></div>
+            <div class="skeleton-block sk-hero-subtitle sk-hero-subtitle-short"></div>
+            <div class="sk-hero-actions">
+              <div class="skeleton-block sk-btn"></div>
+              <div class="skeleton-block sk-btn"></div>
+            </div>
           </div>
+          <div class="skeleton-block sk-hero-image"></div>
         </div>
-        <div class="skeleton-block sk-hero-image"></div>
       </div>
     </div>
   </div>
@@ -164,67 +168,71 @@
 
   <!-- Navigation -->
   <nav class="navbar">
-    <a href="/sk/" class="nav-brand">MG Captures</a>
-    <div class="nav-links">
-      <a class="nav-link active" href="/sk/">DOMOV</a>
-      <div class="nav-dropdown" id="servicesDropdown">
-        <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-          SLUŽBY
-          <span class="material-symbols-outlined">expand_more</span>
-        </button>
-        <div class="nav-dropdown-menu dropdown-menu" role="menu">
-          <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/eventove-fotenie" role="menuitem">
-            <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
-            <span class="dropdown-title">Eventová fotografia</span>
-          </a>
-          <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie" role="menuitem">
-            <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
-            <span class="dropdown-title">Tablové fotenie</span>
-          </a>
-          <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie" role="menuitem">
-            <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
-            <span class="dropdown-title">Portrétna fotografia</span>
-          </a>
+    <div class="nav-container">
+      <a href="/sk/" class="nav-brand">MG Captures</a>
+      <div class="nav-links">
+        <a class="nav-link active" href="/sk/">DOMOV</a>
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            SLUŽBY
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="nav-dropdown-menu dropdown-menu" role="menu">
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/eventove-fotenie" role="menuitem">
+              <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+              <span class="dropdown-title">Eventová fotografia</span>
+            </a>
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie" role="menuitem">
+              <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+              <span class="dropdown-title">Tablové fotenie</span>
+            </a>
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie" role="menuitem">
+              <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+              <span class="dropdown-title">Portrétna fotografia</span>
+            </a>
+          </div>
         </div>
+        <a class="nav-link" href="/sk/portfolio">PORTFÓLIO</a>
+        <a class="nav-link" href="/sk/kontakt">KONTAKT</a>
       </div>
-      <a class="nav-link" href="/sk/portfolio">PORTFÓLIO</a>
-      <a class="nav-link" href="/sk/kontakt">KONTAKT</a>
-    </div>
-    <div class="nav-actions">
-      <div class="lang-selector">
-        <a class="lang-link" href="/en/">EN</a>
-        <span class="lang-sep">/</span>
-        <a class="lang-link" href="/hu/">HU</a>
-        <span class="lang-sep">/</span>
-        <a class="lang-link active" href="/sk/">SK</a>
+      <div class="nav-actions">
+        <div class="lang-selector">
+          <a class="lang-link" href="/en/">EN</a>
+          <span class="lang-sep">/</span>
+          <a class="lang-link" href="/hu/">HU</a>
+          <span class="lang-sep">/</span>
+          <a class="lang-link active" href="/sk/">SK</a>
+        </div>
+        <a class="nav-btn" href="https://hub.madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
-      <a class="nav-btn" href="https://hub.madovygabor.work/sk/">HLAVNÁ STRÁNKA</a>
-      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="mobileNavDrawer">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
   </nav>
 
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-text-col scroll-reveal">
-        <span class="font-label-caps text-primary hero-label">PHOTOGRAPHER</span>
-        <h1 class="font-display-xl text-white hero-title">Gabriel Madový</h1>
-        <p class="font-h2-ui text-on-surface-variant hero-desc">
-          Spomienky blednú, fotografie zostávajú. Mojou vášňou je zachytávať okamihy, ktoré navždy pretrvajú.
-        </p>
-        <div class="hero-actions">
-          <a href="/sk/portfolio" class="btn-primary font-label-caps">PORTFÓLIO</a>
-          <a href="/sk/kontakt" class="btn-outline font-label-caps">KONTAKTUJTE MA</a>
+      <div class="container hero-container">
+        <div class="hero-text-col scroll-reveal">
+          <span class="font-label-caps text-primary hero-label">PHOTOGRAPHER</span>
+          <h1 class="font-display-xl text-white hero-title">Gabriel Madový</h1>
+          <p class="font-h2-ui text-on-surface-variant hero-desc">
+            Spomienky blednú, fotografie zostávajú. Mojou vášňou je zachytávať okamihy, ktoré navždy pretrvajú.
+          </p>
+          <div class="hero-actions">
+            <a href="/sk/portfolio" class="btn-primary font-label-caps">PORTFÓLIO</a>
+            <a href="/sk/kontakt" class="btn-outline font-label-caps">KONTAKTUJTE MA</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-image-col scroll-reveal delay-100">
-        <img alt="Portrét fotografa Gabriela Madového" class="hero-img" src="../pictures/kezdoOldal/aboutMePicture.webp"
-          width="800" height="1200" fetchpriority="high" />
-        <div class="hero-overlay"></div>
+        <div class="hero-image-col scroll-reveal delay-100">
+          <img alt="Portrét fotografa Gabriela Madového" class="hero-img" src="../pictures/kezdoOldal/aboutMePicture.webp"
+            width="800" height="1200" fetchpriority="high" />
+          <div class="hero-overlay"></div>
+        </div>
       </div>
     </section>
 
@@ -512,13 +520,15 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-copy">© 2026 MG Captures. Gabriel Madový.</div>
-    <div class="footer-links">
-      <a class="footer-link" href="https://www.facebook.com/profile.php?id=61574942680651" target="_blank"
-        rel="noopener noreferrer">FACEBOOK</a>
-      <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
-        rel="noopener noreferrer">INSTAGRAM</a>
-      <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
+    <div class="footer-container">
+      <div class="footer-copy">© 2026 MG Captures. Gabriel Madový.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="https://www.facebook.com/profile.php?id=61574942680651" target="_blank"
+          rel="noopener noreferrer">FACEBOOK</a>
+        <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
+          rel="noopener noreferrer">INSTAGRAM</a>
+        <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
+      </div>
     </div>
   </footer>
 

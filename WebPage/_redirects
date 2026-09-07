@@ -54,6 +54,9 @@
 /hu/szolgaltatasok/esemenyfotozas               /photography/hu/szolgaltatasok/esemenyfotozas.html   200
 /hu/szolgaltatasok/tablofotozas                 /photography/hu/szolgaltatasok/tablofotozas.html     200
 /hu/szolgaltatasok/portrefotozas                /photography/hu/szolgaltatasok/portrefotozas.html    200
+/photography/kontakt                            /photography/hu/kontakt.html                         200
+/kontakt                                        /photography/hu/kontakt.html                         301
+
 
 # SK
 /photography/sk/sluzby/eventove-fotenie         /photography/sk/sluzby/eventove-fotenie.html         200

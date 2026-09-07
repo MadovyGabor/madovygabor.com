@@ -263,6 +263,87 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ─── Contact Form Prefill from Service Calculator ─────────────
+    function initContactPrefill() {
+        const subjectSelect = document.getElementById('subject');
+        const messageTextarea = document.getElementById('message');
+        if (!messageTextarea) return;
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('service') || params.has('total')) {
+            const service = params.get('service');
+            const type = params.get('type') || '';
+            const hours = params.get('hours') || '';
+            const zone = params.get('zone') || '';
+            const total = params.get('total') || '';
+            const express = params.get('express') === 'true' || params.get('express') === '1';
+
+            // Auto-select subject dropdown
+            if (subjectSelect) {
+                if (service === 'esemeny' || service === 'event') {
+                    const eventOption = Array.from(subjectSelect.options).find(opt => 
+                        opt.value === 'eseményfotózás' || 
+                        opt.value === 'event' || 
+                        opt.text.toLowerCase().includes('esemény') || 
+                        opt.text.toLowerCase().includes('event')
+                    );
+                    if (eventOption) {
+                        subjectSelect.value = eventOption.value;
+                    }
+                }
+            }
+
+            // Determine language for template
+            const htmlLang = document.documentElement.lang || 'hu';
+            let summaryText = '';
+
+            if (htmlLang === 'sk') {
+                summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na základe kalkulácie z webu:\n- Typ podujatia: ${type}\n- Trvanie: ${hours} hod.\n- Lokalita / Zóna dopravy: ${zone}\n- Expresné 48h dodanie: ${express ? 'Áno' : 'Nie'}\n- Východiskový odhad rozpočtu: ~${total} €\n\nTermín podujatia a ďalšie podrobnosti:\n`;
+            } else if (htmlLang === 'en') {
+                summaryText = `Hello,\n\nI would like to request a quote based on the website calculator:\n- Event Type: ${type}\n- Estimated Duration: ${hours} hours\n- Location / Travel Zone: ${zone}\n- Express 48h Delivery: ${express ? 'Yes' : 'No'}\n- Estimated Budget: ~${total} €\n\nEvent date and additional details:\n`;
+            } else {
+                summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni a weboldalon kalkulált adatok alapján:\n- Esemény típusa: ${type}\n- Tervezett időtartam: ${hours} óra\n- Helyszín / Kiszállási zóna: ${zone}\n- Expressz 48h átadás: ${express ? 'Igen' : 'Nem'}\n- Várható indikatív keretösszeg: ~${total} €\n\nTervezett dátum és további részletek:\n`;
+            }
+
+            messageTextarea.value = summaryText;
+
+            // Scroll smoothly to form if user arrived via direct link
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                setTimeout(() => {
+                    contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 200);
+            }
+        }
+    }
+
+    // ─── Photo Carousel ──────────────────────────────────────────
+    function initPhotoCarousel() {
+        const track = document.getElementById('photoCarouselTrack');
+        const prevBtn = document.getElementById('carouselPrevBtn');
+        const nextBtn = document.getElementById('carouselNextBtn');
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const getScrollStep = () => {
+            const slide = track.querySelector('.photo-carousel-slide');
+            if (!slide) return 320;
+            const gap = parseInt(window.getComputedStyle(track).gap, 10) || 16;
+            return slide.offsetWidth + gap;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+    }
+
     initNavDropdown();
     initFaqAccordion();
+    initContactPrefill();
+    initPhotoCarousel();
 });
+
