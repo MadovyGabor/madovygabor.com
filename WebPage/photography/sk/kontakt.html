@@ -46,8 +46,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         media="print" onload="this.media='all'" />
 
@@ -178,6 +178,23 @@
             </div>
             <nav class="mobile-nav-links">
                 <a class="mobile-nav-link" href="/sk/">DOMOV</a>
+                <div class="mobile-nav-accordion" id="mobileServicesAccordion">
+                  <button class="mobile-nav-accordion-trigger" aria-expanded="false">
+                    SLUŽBY
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </button>
+                  <div class="mobile-nav-accordion-panel">
+                    <a class="mobile-nav-sublink" href="/sk/sluzby/eventove-fotenie">
+                      <span class="material-symbols-outlined">photo_camera</span> Eventová fotografia
+                    </a>
+                    <a class="mobile-nav-sublink" href="/sk/sluzby/tablove-fotenie">
+                      <span class="material-symbols-outlined">portrait</span> Tablové fotenie
+                    </a>
+                    <a class="mobile-nav-sublink" href="/sk/sluzby/portretove-fotenie">
+                      <span class="material-symbols-outlined">flare</span> Portrétna fotografia
+                    </a>
+                  </div>
+                </div>
                 <a class="mobile-nav-link" href="/sk/portfolio">PORTFÓLIO</a>
                 <a class="mobile-nav-link active" href="/sk/kontakt">KONTAKT</a>
             </nav>
@@ -199,6 +216,26 @@
         <a href="/sk/" class="nav-brand">MG Captures</a>
         <div class="nav-links">
             <a class="nav-link" href="/sk/">DOMOV</a>
+            <div class="nav-dropdown" id="servicesDropdown">
+              <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                SLUŽBY
+                <span class="material-symbols-outlined">expand_more</span>
+              </button>
+              <div class="nav-dropdown-menu dropdown-menu" role="menu">
+                <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/eventove-fotenie" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+                  <span class="dropdown-title">Eventová fotografia</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+                  <span class="dropdown-title">Tablové fotenie</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+                  <span class="dropdown-title">Portrétna fotografia</span>
+                </a>
+              </div>
+            </div>
             <a class="nav-link" href="/sk/portfolio">PORTFÓLIO</a>
             <a class="nav-link active" href="/sk/kontakt">KONTAKT</a>
         </div>

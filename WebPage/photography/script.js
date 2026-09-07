@@ -176,5 +176,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ─── Nav Dropdown & Mobile Accordion ──────────────────────────
+    function initNavDropdown() {
+        const pathname = window.location.pathname;
+        const isServicesSubpage = pathname.includes('/szolgaltatasok/') || 
+                                  pathname.includes('/sluzby/') || 
+                                  pathname.includes('/services/');
+
+        // Desktop dropdown
+        const dropdown = document.getElementById('servicesDropdown');
+        if (dropdown) {
+            const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+            const menu = dropdown.querySelector('.nav-dropdown-menu, .dropdown-menu');
+            let hoverOpenTimeout, hoverCloseTimeout;
+
+            // Ensure active class on services subpages
+            if (isServicesSubpage && trigger && !trigger.classList.contains('active')) {
+                trigger.classList.add('active');
+            }
+
+            function openDropdown() {
+                dropdown.classList.add('open');
+                if (trigger) trigger.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeDropdown() {
+                dropdown.classList.remove('open');
+                if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            }
+
+            // Click toggle
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (dropdown.classList.contains('open')) {
+                        closeDropdown();
+                    } else {
+                        openDropdown();
+                    }
+                });
+            }
+
+            // Hover open/close with delay (desktop only above 1050px)
+            dropdown.addEventListener('mouseenter', () => {
+                if (window.innerWidth <= 1050) return;
+                clearTimeout(hoverCloseTimeout);
+                hoverOpenTimeout = setTimeout(openDropdown, 150);
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                if (window.innerWidth <= 1050) return;
+                clearTimeout(hoverOpenTimeout);
+                hoverCloseTimeout = setTimeout(closeDropdown, 300);
+            });
+
+            // Click outside closes
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+
+            // Escape key closes
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+                    closeDropdown();
+                    if (trigger) trigger.focus();
+                }
+            });
+        }
+
+        // Mobile accordion
+        const accordion = document.getElementById('mobileServicesAccordion');
+        if (accordion) {
+            const accTrigger = accordion.querySelector('.mobile-nav-accordion-trigger');
+            if (isServicesSubpage && accTrigger && !accTrigger.classList.contains('active')) {
+                accTrigger.classList.add('active');
+            }
+            if (accTrigger) {
+                accTrigger.addEventListener('click', () => {
+                    const isOpen = accordion.classList.contains('open');
+                    accordion.classList.toggle('open');
+                    accTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+                });
+            }
+        }
+    }
+
+    initNavDropdown();
     initFaqAccordion();
 });

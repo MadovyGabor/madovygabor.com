@@ -46,8 +46,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         media="print" onload="this.media='all'" />
 
@@ -178,6 +178,23 @@
             </div>
             <nav class="mobile-nav-links">
                 <a class="mobile-nav-link" href="/en/">HOME</a>
+                <div class="mobile-nav-accordion" id="mobileServicesAccordion">
+                  <button class="mobile-nav-accordion-trigger" aria-expanded="false">
+                    SERVICES
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </button>
+                  <div class="mobile-nav-accordion-panel">
+                    <a class="mobile-nav-sublink" href="/en/services/event-photography">
+                      <span class="material-symbols-outlined">photo_camera</span> Event Photography
+                    </a>
+                    <a class="mobile-nav-sublink" href="/en/services/yearbook-photography">
+                      <span class="material-symbols-outlined">portrait</span> Senior &amp; Class Photography
+                    </a>
+                    <a class="mobile-nav-sublink" href="/en/services/outdoor-portraits">
+                      <span class="material-symbols-outlined">flare</span> Outdoor &amp; Personal Portraits
+                    </a>
+                  </div>
+                </div>
                 <a class="mobile-nav-link" href="/en/portfolio">PORTFOLIO</a>
                 <a class="mobile-nav-link active" href="/en/contact">CONTACT</a>
             </nav>
@@ -199,6 +216,26 @@
         <a href="/en/" class="nav-brand">MG Captures</a>
         <div class="nav-links">
             <a class="nav-link" href="/en/">HOME</a>
+            <div class="nav-dropdown" id="servicesDropdown">
+              <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                SERVICES
+                <span class="material-symbols-outlined">expand_more</span>
+              </button>
+              <div class="nav-dropdown-menu dropdown-menu" role="menu">
+                <a class="nav-dropdown-item dropdown-item" href="/en/services/event-photography" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+                  <span class="dropdown-title">Event Photography</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/en/services/yearbook-photography" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+                  <span class="dropdown-title">Senior &amp; Class Photography</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/en/services/outdoor-portraits" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+                  <span class="dropdown-title">Outdoor &amp; Personal Portraits</span>
+                </a>
+              </div>
+            </div>
             <a class="nav-link" href="/en/portfolio">PORTFOLIO</a>
             <a class="nav-link active" href="/en/contact">CONTACT</a>
         </div>

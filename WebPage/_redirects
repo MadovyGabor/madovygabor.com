@@ -45,3 +45,28 @@
 /dev/en/index.html          /dev/en/            301
 /dev/hu/index.html          /dev/hu/            301
 /dev/sk/index.html          /dev/sk/            301
+
+# --- 5. SERVICE PAGES ---
+# HU
+/photography/hu/szolgaltatasok/esemenyfotozas   /photography/hu/szolgaltatasok/esemenyfotozas.html   200
+/photography/hu/szolgaltatasok/tablofotozas     /photography/hu/szolgaltatasok/tablofotozas.html     200
+/photography/hu/szolgaltatasok/portrefotozas    /photography/hu/szolgaltatasok/portrefotozas.html    200
+/hu/szolgaltatasok/esemenyfotozas               /photography/hu/szolgaltatasok/esemenyfotozas.html   200
+/hu/szolgaltatasok/tablofotozas                 /photography/hu/szolgaltatasok/tablofotozas.html     200
+/hu/szolgaltatasok/portrefotozas                /photography/hu/szolgaltatasok/portrefotozas.html    200
+
+# SK
+/photography/sk/sluzby/eventove-fotenie         /photography/sk/sluzby/eventove-fotenie.html         200
+/photography/sk/sluzby/tablove-fotenie          /photography/sk/sluzby/tablove-fotenie.html          200
+/photography/sk/sluzby/portretove-fotenie       /photography/sk/sluzby/portretove-fotenie.html       200
+/sk/sluzby/eventove-fotenie                     /photography/sk/sluzby/eventove-fotenie.html         200
+/sk/sluzby/tablove-fotenie                      /photography/sk/sluzby/tablove-fotenie.html          200
+/sk/sluzby/portretove-fotenie                   /photography/sk/sluzby/portretove-fotenie.html       200
+
+# EN
+/photography/en/services/event-photography      /photography/en/services/event-photography.html      200
+/photography/en/services/yearbook-photography   /photography/en/services/yearbook-photography.html   200
+/photography/en/services/outdoor-portraits      /photography/en/services/outdoor-portraits.html      200
+/en/services/event-photography                  /photography/en/services/event-photography.html      200
+/en/services/yearbook-photography               /photography/en/services/yearbook-photography.html   200
+/en/services/outdoor-portraits                  /photography/en/services/outdoor-portraits.html      200

@@ -46,8 +46,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         media="print" onload="this.media='all'" />
 
@@ -178,6 +178,23 @@
             </div>
             <nav class="mobile-nav-links">
                 <a class="mobile-nav-link" href="/hu/">FŐOLDAL</a>
+                <div class="mobile-nav-accordion" id="mobileServicesAccordion">
+                  <button class="mobile-nav-accordion-trigger" aria-expanded="false">
+                    SZOLGÁLTATÁSOK
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </button>
+                  <div class="mobile-nav-accordion-panel">
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/esemenyfotozas">
+                      <span class="material-symbols-outlined">photo_camera</span> Eseményfotózás
+                    </a>
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/tablofotozas">
+                      <span class="material-symbols-outlined">portrait</span> Tabló és osztályfotózás
+                    </a>
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/portrefotozas">
+                      <span class="material-symbols-outlined">flare</span> Szabadtéri Portrék
+                    </a>
+                  </div>
+                </div>
                 <a class="mobile-nav-link" href="/hu/portfolio">PORTFÓLIÓ</a>
                 <a class="mobile-nav-link active" href="/hu/kontakt">ELÉRHETŐSÉGEK</a>
             </nav>
@@ -199,6 +216,26 @@
         <a href="/hu/" class="nav-brand">MG Captures</a>
         <div class="nav-links">
             <a class="nav-link" href="/hu/">FŐOLDAL</a>
+            <div class="nav-dropdown" id="servicesDropdown">
+              <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                SZOLGÁLTATÁSOK
+                <span class="material-symbols-outlined">expand_more</span>
+              </button>
+              <div class="nav-dropdown-menu dropdown-menu" role="menu">
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/esemenyfotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+                  <span class="dropdown-title">Eseményfotózás</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/tablofotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+                  <span class="dropdown-title">Tabló és osztályfotózás</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/portrefotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+                  <span class="dropdown-title">Szabadtéri Portrék</span>
+                </a>
+              </div>
+            </div>
             <a class="nav-link" href="/hu/portfolio">PORTFÓLIÓ</a>
             <a class="nav-link active" href="/hu/kontakt">ELÉRHETŐSÉGEK</a>
         </div>
