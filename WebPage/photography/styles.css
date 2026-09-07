@@ -678,40 +678,202 @@ button {
 }
 
 /* =========================================
-   Service Card CTA Button (Homepage)
+   Service Card Layout & CTA Buttons (Homepage)
    ========================================= */
-.service-card-cta {
-  display: inline-flex;
+.service-card-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-bottom-row,
+.service-card-bottom-row,
+.service-card-footer {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  padding: 10px 20px;
-  border: 1px solid var(--color-neutral-700);
-  color: var(--color-primary);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  transition: all var(--transition-normal);
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 20px;
   position: relative;
   z-index: 10;
 }
 
+.card-bottom-row .service-tags,
+.service-card-bottom-row .service-tags,
+.service-card-footer .service-tags {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start !important;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Default Desktop (> 1180px): Small cards have tags left-aligned + right-aligned button */
+.service-card-sm .service-card-bottom-row,
+.service-card-sm .service-card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.service-card-sm .service-card-bottom-row .service-card-cta,
+.service-card-sm .service-card-footer .service-card-cta {
+  align-self: flex-end;
+}
+
+/* 1. Between 773px and 1180px: Tags strictly left-aligned, button centered horizontally */
+@media (min-width: 773px) and (max-width: 1180px) {
+  .service-card-sm .service-card-bottom-row,
+  .service-card-sm .service-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .service-card-sm .service-card-bottom-row .service-tags,
+  .service-card-sm .service-card-footer .service-tags {
+    justify-content: flex-start !important;
+    align-self: flex-start;
+  }
+
+  .service-card-sm .service-card-bottom-row .service-card-cta,
+  .service-card-sm .service-card-footer .service-card-cta {
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
+/* 2. Below 772px down to 521px: Full-width inline row (left tags, right button) across all 3 cards */
+@media (min-width: 521px) and (max-width: 772px) {
+  .card-bottom-row,
+  .service-card-bottom-row,
+  .service-card-footer,
+  .service-card-sm .service-card-bottom-row,
+  .service-card-sm .service-card-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+
+  .card-bottom-row .service-tags,
+  .service-card-bottom-row .service-tags,
+  .service-card-footer .service-tags,
+  .service-card-sm .service-card-bottom-row .service-tags,
+  .service-card-sm .service-card-footer .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start !important;
+    align-self: flex-start;
+    margin-top: 0;
+  }
+
+  .card-bottom-row .service-card-cta,
+  .service-card-bottom-row .service-card-cta,
+  .service-card-footer .service-card-cta,
+  .service-card-sm .service-card-bottom-row .service-card-cta,
+  .service-card-sm .service-card-footer .service-card-cta {
+    margin-left: auto;
+    margin-top: 0;
+    width: fit-content;
+    align-self: center;
+    flex-shrink: 0;
+  }
+}
+
+/* 3. Below 520px: Mobile stacking with tags strictly left-aligned, button centered horizontally */
+@media (max-width: 520px) {
+  .card-bottom-row,
+  .service-card-bottom-row,
+  .service-card-footer,
+  .service-card-sm .service-card-bottom-row,
+  .service-card-sm .service-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .card-bottom-row .service-tags,
+  .service-card-bottom-row .service-tags,
+  .service-card-footer .service-tags,
+  .service-card-sm .service-card-bottom-row .service-tags,
+  .service-card-sm .service-card-footer .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start !important;
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .card-bottom-row .service-card-cta,
+  .service-card-bottom-row .service-card-cta,
+  .service-card-footer .service-card-cta,
+  .service-card-sm .service-card-bottom-row .service-card-cta,
+  .service-card-sm .service-card-footer .service-card-cta {
+    margin: 12px auto 0 auto;
+    width: fit-content;
+    align-self: center;
+  }
+}
+
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 14px;
+  background: rgba(62, 166, 255, 0.05);
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  transition: all var(--transition-normal);
+}
+
 .service-card-cta:hover {
-  background-color: var(--color-neutral-800);
-  border-color: var(--color-primary);
-  gap: 12px;
+  background: rgba(62, 166, 255, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .service-card-cta .material-symbols-outlined {
-  font-size: 16px;
-  transition: transform 0.2s ease;
+  font-size: 15px;
+  line-height: 1;
+  margin-left: 6px;
+  color: inherit;
+  transition: transform var(--transition-fast);
 }
 
 .service-card-cta:hover .material-symbols-outlined {
-  transform: translateX(2px);
+  transform: translateX(3px);
+  color: inherit;
 }
 
 .nav-actions {
@@ -1206,7 +1368,7 @@ main {
   min-height: 280px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 773px) {
   .service-card-lg {
     grid-column: span 8;
   }
@@ -1216,7 +1378,7 @@ main {
   grid-column: span 12;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 773px) {
   .service-card-sm {
     grid-column: span 4;
   }
@@ -1237,7 +1399,7 @@ main {
   line-height: 1.6;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 773px) {
   .service-title {
     font-size: 1.75rem;
   }
@@ -1254,13 +1416,21 @@ main {
   margin-top: 24px;
 }
 
-.tag {
-  padding: 6px 12px;
+.tag,
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
   background-color: var(--color-neutral-900);
   border: 1px solid var(--color-neutral-700);
+  border-radius: 0;
   color: var(--color-neutral-400);
-  font-size: 14px;
-  /* Increased from 13px */
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-sizing: border-box;
 }
 
 .service-bg-icon {
