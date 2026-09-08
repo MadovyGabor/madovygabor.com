@@ -57,6 +57,8 @@
 /hu/thankYou.html                          /hu/thankYou                        301
 /hu/szolgaltatasok/esemenyfotozas.html     /hu/szolgaltatasok/esemenyfotozas   301
 /hu/szolgaltatasok/tablofotozas.html       /hu/szolgaltatasok/tablofotozas     301
+/hu/szolgaltatasok/iskolafotozas.html      /hu/szolgaltatasok/iskolafotozas    301
+/photography/hu/szolgaltatasok/iskolafotozas.html /hu/szolgaltatasok/iskolafotozas 301
 /hu/szolgaltatasok/portrefotozas.html      /hu/szolgaltatasok/portrefotozas    301
 
 # Photography SK
@@ -118,6 +120,7 @@
 /hu/thankYou                               /photography/hu/thankYou.html       200
 /hu/szolgaltatasok/esemenyfotozas          /photography/hu/szolgaltatasok/esemenyfotozas.html  200
 /hu/szolgaltatasok/tablofotozas            /photography/hu/szolgaltatasok/tablofotozas.html    200
+/hu/szolgaltatasok/iskolafotozas           /photography/hu/szolgaltatasok/iskolafotozas.html   200
 /hu/szolgaltatasok/portrefotozas           /photography/hu/szolgaltatasok/portrefotozas.html   200
 
 # --- Photography SK ---
