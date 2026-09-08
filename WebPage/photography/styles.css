@@ -4543,6 +4543,8 @@ address.contact-info {
   padding: 0 4px;
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: textfield;
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
 
@@ -4797,7 +4799,7 @@ address.contact-info {
   gap: 10px;
 }
 
-.calc-tier-grid > .calc-pill-btn:last-child:nth-child(odd) {
+.calc-tier-grid>.calc-pill-btn:last-child:nth-child(odd) {
   grid-column: span 2;
 }
 
@@ -4805,7 +4807,8 @@ address.contact-info {
   .calc-tier-grid {
     grid-template-columns: 1fr;
   }
-  .calc-tier-grid > .calc-pill-btn:last-child:nth-child(odd) {
+
+  .calc-tier-grid>.calc-pill-btn:last-child:nth-child(odd) {
     grid-column: span 1;
   }
 }

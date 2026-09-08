@@ -311,6 +311,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (tabloOption) {
                         subjectSelect.value = tabloOption.value;
                     }
+                } else if (service === 'portre' || service === 'portrait' || service === 'portrefotozas') {
+                    const portreOption = Array.from(subjectSelect.options).find(opt =>
+                        opt.value.toLowerCase().includes('portré') ||
+                        opt.value.toLowerCase().includes('portret') ||
+                        opt.value.toLowerCase().includes('portrait') ||
+                        opt.text.toLowerCase().includes('portré') ||
+                        opt.text.toLowerCase().includes('portret')
+                    );
+                    if (portreOption) {
+                        subjectSelect.value = portreOption.value;
+                    }
                 }
             }
 
@@ -401,6 +412,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     summaryText = `Hello,\n\nI would like to request a quote for yearbook photography:\n- Package: ${pkg}\n- Student Count: ${students} students ${rate ? '(' + rate + ' €/student)' : ''}\n- Location / Travel Zone: ${zoneDisplay}\n- Premium Paper Prints: ${paper ? 'Yes (+3 €/student)' : 'No'}\n- Friend Photos: ${friends ? 'Yes (+2 €/student with 1 print)' : 'No'}\n- Teacher Portraits: ${teachersEn}\n- Estimated Budget: ~${total} €\n\nSchool name, class, and preferred date:\n`;
                 } else {
                     summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni végzős tablófotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Tervezett létszám: ${students} diák ${rate ? '(' + rate + ' €/diák)' : ''}\n- Helyszín / Kiszállási zóna: ${zoneDisplay}\n- Nyomtatási alapcsomag: ${paper ? 'Igen (+3 €/diák)' : 'Nem'}\n- Baráti kiscsoportos fotók: ${friends ? 'Igen (+2 €/fő 1 db nyomtatott képpel)' : 'Nem'}\n- Tanárok és osztályfőnök: ${teachersHu}\n- Várható indikatív keretösszeg: ~${total} €\n\nIskola neve, osztály és tervezett időpont:\n`;
+                }
+            } else if (service === 'portre' || service === 'portrait' || service === 'portrefotozas') {
+                const pkg = params.get('package') || params.get('type') || 'Klasszikus Szabadtér';
+                const extras = params.get('extras') || params.get('extraCount') || '0';
+                const extraCount = parseInt(extras, 10) || 0;
+                const prints = params.get('prints') === 'true' || params.get('prints') === '1' || params.get('paper') === 'true' || params.get('paper') === '1';
+                const zone = params.get('zone') || 'Alsószeli, Galánta és környéke (0 €)';
+
+                let extrasTextHu = extraCount > 0 ? `${extraCount} db (+${extraCount * 7} €)` : 'Nem';
+                let extrasTextSk = extraCount > 0 ? `${extraCount} ks (+${extraCount * 7} €)` : 'Nie';
+                let extrasTextEn = extraCount > 0 ? `${extraCount} photos (+${extraCount * 7} €)` : 'No';
+
+                let printsTextHu = prints ? 'Igen (+15 €)' : 'Nem';
+                let printsTextSk = prints ? 'Áno (+15 €)' : 'Nie';
+                let printsTextEn = prints ? 'Yes (+15 €)' : 'No';
+
+                if (htmlLang === 'sk') {
+                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na exteriérové a kreatívne portrétové fotenie:\n- Balík: ${pkg}\n- Extra retušované digitálne fotky: ${extrasTextSk}\n- Balík tlačených fotiek (10 ks 13×18 cm): ${printsTextSk}\n- Lokalita / Zóna dopravy: ${zone}\n- Východiskový odhad rozpočtu: ~${total} €\n\nPlánovaná lokalita, predstava a termín:\n`;
+                } else if (htmlLang === 'en') {
+                    summaryText = `Hello,\n\nI would like to request a quote for outdoor and creative portrait photography:\n- Selected Package: ${pkg}\n- Extra Retouched Digital Photos: ${extrasTextEn}\n- Print Package (10 pcs 13×18 cm): ${printsTextEn}\n- Location / Travel Zone: ${zone}\n- Estimated Budget: ~${total} €\n\nPreferred location, ideas, and date:\n`;
+                } else {
+                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni szabadtéri portréfotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Extra retusált digitális képek: ${extrasTextHu}\n- Nyomtatási csomag (10 db 13×18 cm): ${printsTextHu}\n- Helyszín / Kiszállási zóna: ${zone}\n- Várható indikatív keretösszeg: ~${total} €\n\nTervezett helyszín, elképzelés és időpont:\n`;
                 }
             } else {
                 if (htmlLang === 'sk') {
