@@ -2150,6 +2150,219 @@ main {
 }
 
 /* ============================================================
+   Event Photography Page Skeleton Loader
+   ============================================================ */
+.sk-ev-hero {
+  padding: 120px 0 140px;
+  background-color: #111111;
+}
+
+@media (min-width: 768px) {
+  .sk-ev-hero {
+    padding: 140px 0 160px;
+  }
+}
+
+.sk-ev-hero .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.sk-ev-title {
+  width: 70%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.sk-ev-subtitle {
+  width: 55%;
+  height: 20px;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.sk-ev-desc {
+  width: 90%;
+  max-width: 720px;
+  height: 12px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-desc-short {
+  width: 65%;
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+
+.sk-ev-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sk-ev-btn {
+  width: 160px;
+  height: 44px;
+  border-radius: 0;
+}
+
+/* Occasions skeleton */
+.sk-ev-occasions {
+  padding: 64px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sk-ev-occasions .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.sk-ev-intro-header {
+  margin-bottom: 32px;
+}
+
+.sk-ev-tag {
+  width: 180px;
+  height: 11px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-section-title {
+  width: 60%;
+  height: 36px;
+  border-radius: 0;
+}
+
+.sk-ev-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .sk-ev-split-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+}
+
+.sk-ev-col-title {
+  width: 80%;
+  height: 18px;
+  margin-bottom: 12px;
+  border-radius: 0;
+}
+
+.sk-ev-col-p1 {
+  width: 100%;
+  height: 13px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-col-p2 {
+  width: 90%;
+  height: 13px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-col-p3 {
+  width: 70%;
+  height: 13px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-col-p4 {
+  width: 95%;
+  height: 13px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-col-p5 {
+  width: 60%;
+  height: 13px;
+  border-radius: 0;
+}
+
+.sk-ev-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .sk-ev-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.sk-ev-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #161818;
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.sk-ev-card-img {
+  width: 100%;
+  height: 260px;
+  border-radius: 0;
+}
+
+@media (max-width: 960px) {
+  .sk-ev-card-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 772px) {
+  .sk-ev-card-img {
+    height: 240px;
+  }
+}
+
+.sk-ev-card-body {
+  padding: 28px;
+}
+
+.sk-ev-card-title {
+  width: 75%;
+  height: 22px;
+  margin-bottom: 12px;
+  border-radius: 0;
+}
+
+.sk-ev-card-text1 {
+  width: 100%;
+  height: 13px;
+  margin-bottom: 8px;
+  border-radius: 0;
+}
+
+.sk-ev-card-text2 {
+  width: 85%;
+  height: 13px;
+  border-radius: 0;
+}
+
+/* ============================================================
    Contact Page Skeleton Loader
    ============================================================ */
 .sk-contact-header {
@@ -4004,11 +4217,13 @@ address.contact-info {
 
 .event-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(38px, 5.5vw, 68px);
+  font-size: clamp(40px, 6vw, 68px);
   line-height: 1.1;
   color: #ffffff;
   margin: 0 0 12px;
   font-weight: 400;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .event-hero-subtitle {
@@ -4519,7 +4734,7 @@ address.contact-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
 }
 
 .calc-addon-row:hover {
@@ -4533,8 +4748,10 @@ address.contact-info {
 
 .calc-addon-row .addon-left {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .calc-addon-row .addon-checkbox-box {
@@ -4548,6 +4765,7 @@ address.contact-info {
   justify-content: center;
   transition: all var(--transition-fast);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .calc-addon-row.active .addon-checkbox-box {
@@ -4570,11 +4788,17 @@ address.contact-info {
   display: block;
 }
 
+.calc-addon-row .addon-text-wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .calc-addon-row .addon-title {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
+  line-height: 1.35;
 }
 
 .calc-addon-row .addon-desc {
@@ -4582,6 +4806,7 @@ address.contact-info {
   font-size: 12.5px;
   color: var(--color-neutral-400);
   margin-top: 2px;
+  line-height: 1.45;
 }
 
 .calc-addon-row .addon-badge {
@@ -4595,6 +4820,8 @@ address.contact-info {
   border: 1px solid var(--color-neutral-800);
   border-radius: 0;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
+  align-self: center;
 }
 
 .calc-addon-row.active .addon-badge {
@@ -4679,7 +4906,30 @@ address.contact-info {
 .calc-breakdown-row {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
   color: var(--color-on-surface-variant);
+  width: 100%;
+}
+
+.calc-breakdown-row > span:first-child,
+.calc-breakdown-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.4;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.calc-breakdown-row > span:last-child,
+.calc-breakdown-cost {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
 }
 
 .calc-inclusions-note {
@@ -4704,7 +4954,7 @@ address.contact-info {
   justify-content: center;
   gap: 10px;
   border-radius: 0;
-  padding: 12px 32px;
+  padding: 12px 28px;
   background-color: var(--color-primary-container);
   color: var(--color-on-primary-container);
   border: 1px solid var(--color-primary-container);
@@ -4717,6 +4967,21 @@ address.contact-info {
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.calc-cta-btn .calc-cta-text-short {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .calc-cta-btn .calc-cta-text-full {
+    display: none;
+  }
+
+  .calc-cta-btn .calc-cta-text-short {
+    display: inline;
+  }
 }
 
 .calc-cta-btn:hover {
@@ -4855,6 +5120,7 @@ address.contact-info {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #161616;
@@ -4868,6 +5134,21 @@ address.contact-info {
   text-decoration: none;
   transition: all 0.2s ease;
   border-radius: 0;
+  white-space: nowrap;
+}
+
+.mini-gallery-cta-btn .mini-gallery-cta-text-short {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mini-gallery-cta-btn .mini-gallery-cta-text-full {
+    display: none;
+  }
+
+  .mini-gallery-cta-btn .mini-gallery-cta-text-short {
+    display: inline;
+  }
 }
 
 .mini-gallery-cta-btn .cta-arrow {
@@ -4958,22 +5239,40 @@ address.contact-info {
   .mini-gallery-cta-btn {
     width: 100%;
     max-width: 440px;
-    padding: 14px 18px;
-    font-size: 11.5px;
+    padding: 13px 18px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .event-hero-title {
+    font-size: clamp(38px, 8.5vw, 50px);
+    line-height: 1.08;
   }
 }
 
 @media (max-width: 520px) {
   .event-hero-title {
-    font-size: 32px;
+    font-size: clamp(36px, 9.8vw, 44px);
+    line-height: 1.06;
   }
 
   .event-hero-subtitle {
     font-size: 20px;
   }
 
+  .calc-output-box {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
   .calc-output-num {
     font-size: 38px;
+  }
+
+  .calc-breakdown-list {
+    padding: 12px 14px;
+    font-size: 12.5px;
+    gap: 10px;
   }
 
   .calc-pill-btn {
@@ -4987,7 +5286,43 @@ address.contact-info {
   }
 
   .calc-addon-row {
-    padding: 14px;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .calc-addon-row .addon-left {
+    gap: 10px;
+  }
+
+  .calc-addon-row .addon-title {
+    font-size: 13.5px;
+  }
+
+  .calc-addon-row .addon-desc {
+    font-size: 12px;
+  }
+
+  .calc-addon-row .addon-badge {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .calc-cta-btn {
+    padding: 12px 14px;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .mini-gallery-cta-btn {
+    width: 100%;
+    max-width: 380px;
+    padding: 12px 16px;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    gap: 8px;
+    white-space: nowrap;
   }
 
   .photo-carousel-slide {
