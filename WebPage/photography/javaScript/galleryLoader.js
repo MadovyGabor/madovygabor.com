@@ -75,6 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
             renderSidebar(data, 'all');
             initGallery(data, 'all');
 
+            // Handle smooth scrolling to target album if anchor hash exists (#amts-25, #felsoszeli-ballagas-24, etc.)
+            function scrollToAnchorHash() {
+                if (window.location.hash) {
+                    const hashId = decodeURIComponent(window.location.hash.substring(1));
+                    const targetEl = document.getElementById(hashId);
+                    if (targetEl) {
+                        setTimeout(() => {
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 120);
+                    }
+                }
+            }
+            scrollToAnchorHash();
+            window.addEventListener('hashchange', scrollToAnchorHash);
+
             // Calculate total assets recursively
             let totalImages = 0;
             data.forEach(cat => {
@@ -433,10 +448,12 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
 
         const imgContainer = document.createElement('div');
         imgContainer.className = 'img-container skeleton';
+        imgContainer.style.aspectRatio = aspectRatio;
 
         const img = document.createElement('img');
         img.alt = altText;
         img.loading = "lazy";
+        img.decoding = "async";
 
         // Add dimension attributes for SEO & layout stability (CLS)
         if (typeof imgData === 'object' && imgData.width && imgData.height) {

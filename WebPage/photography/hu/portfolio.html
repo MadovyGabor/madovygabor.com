@@ -22,19 +22,19 @@
     <meta name="author" content="Madový Gábor">
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://madovygabor.work/photography/hu/portfolio" />
-    <link rel="alternate" hreflang="hu" href="https://madovygabor.work/photography/hu/portfolio" />
-    <link rel="alternate" hreflang="sk" href="https://madovygabor.work/photography/sk/portfolio" />
-    <link rel="alternate" hreflang="en" href="https://madovygabor.work/photography/en/portfolio" />
-    <link rel="alternate" hreflang="x-default" href="https://madovygabor.work/photography/en/portfolio" />
+    <link rel="canonical" href="https://madovygabor.work/hu/portfolio" />
+    <link rel="alternate" hreflang="hu" href="https://madovygabor.work/hu/portfolio" />
+    <link rel="alternate" hreflang="sk" href="https://madovygabor.work/sk/portfolio" />
+    <link rel="alternate" hreflang="en" href="https://madovygabor.work/en/portfolio" />
+    <link rel="alternate" hreflang="x-default" href="https://madovygabor.work/en/portfolio" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="hu_HU" />
-    <meta property="og:url" content="https://madovygabor.work/photography/hu/portfolio" />
+    <meta property="og:url" content="https://madovygabor.work/hu/portfolio" />
     <meta property="og:title" content="Portfólió | MG Captures" />
     <meta property="og:description"
         content="Pillanatok megörökítése: fedezd fel az MG Captures legfrissebb munkáit a galériában!" />
-    <meta property="og:image" content="https://madovygabor.work/photography/pictures/OGimage.png" />
+    <meta property="og:image" content="https://madovygabor.work/pictures/OGimage.png" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:image:height" content="1080" />
     <meta property="og:image:type" content="image/png" />
@@ -46,8 +46,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         media="print" onload="this.media='all'" />
 
@@ -61,12 +61,12 @@
     {
       "@context": "https://schema.org",
       "@type": "PhotographyBusiness",
-      "@id": "https://madovygabor.work/photography/hu/#photography-business",
+      "@id": "https://madovygabor.work/hu/#photography-business",
       "name": "MG Captures | Madový Gábor",
       "description": "Válogatott koncert-, portré-, fesztivál- és ingatlanfotók az MG Captures-től.",
-      "url": "https://madovygabor.work/photography/hu/portfolio",
+      "url": "https://madovygabor.work/hu/portfolio",
       "telephone": "+421903035624",
-      "image": "https://madovygabor.work/photography/pictures/kezdoOldal/aboutMePicture.webp",
+      "image": "https://madovygabor.work/pictures/kezdoOldal/aboutMePicture.webp",
       "knowsAbout": [
         "Low-Light Concert Photography",
         "Event Photography",
@@ -113,41 +113,85 @@
                 </button>
             </div>
             <nav class="mobile-nav-links">
-                <a class="mobile-nav-link" href="./">FŐOLDAL</a>
-                <a class="mobile-nav-link active" href="portfolio">PORTFÓLIÓ</a>
-                <a class="mobile-nav-link" href="kontakt">ELÉRHETŐSÉGEK</a>
+                <a class="mobile-nav-link" href="/hu/">FŐOLDAL</a>
+                <div class="mobile-nav-accordion" id="mobileServicesAccordion">
+                  <button class="mobile-nav-accordion-trigger" aria-expanded="false">
+                    SZOLGÁLTATÁSOK
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </button>
+                  <div class="mobile-nav-accordion-panel">
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/esemenyfotozas">
+                      <span class="material-symbols-outlined">photo_camera</span> Eseményfotózás
+                    </a>
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/tablofotozas">
+                      <span class="material-symbols-outlined">portrait</span> Tablófotózás
+                    </a>
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/iskolafotozas">
+                      <span class="material-symbols-outlined">groups</span> Osztály- és iskolafotózás
+                    </a>
+                    <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/portrefotozas">
+                      <span class="material-symbols-outlined">flare</span> Portréfotózás
+                    </a>
+                  </div>
+                </div>
+                <a class="mobile-nav-link active" href="/hu/portfolio">PORTFÓLIÓ</a>
+                <a class="mobile-nav-link" href="/hu/kontakt">ELÉRHETŐSÉGEK</a>
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
-                    <a class="lang-link" href="https://madovygabor.work/photography/en/portfolio">EN</a>
+                    <a class="lang-link" href="/en/portfolio">EN</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link active" href="https://madovygabor.work/photography/hu/portfolio">HU</a>
+                    <a class="lang-link active" href="/hu/portfolio">HU</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="https://madovygabor.work/photography/sk/portfolio">SK</a>
+                    <a class="lang-link" href="/sk/portfolio">SK</a>
                 </div>
-                <a class="nav-btn" href="https://madovygabor.work/hu/">KEZDŐOLDAL</a>
+                <a class="nav-btn" href="https://hub.madovygabor.work/hu/">KEZDŐOLDAL</a>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="./" class="nav-brand">MG Captures</a>
+        <a href="/hu/" class="nav-brand">MG Captures</a>
         <div class="nav-links">
-            <a class="nav-link" href="./">FŐOLDAL</a>
-            <a class="nav-link active" href="portfolio">PORTFÓLIÓ</a>
-            <a class="nav-link" href="kontakt">ELÉRHETŐSÉGEK</a>
+            <a class="nav-link" href="/hu/">FŐOLDAL</a>
+            <div class="nav-dropdown" id="servicesDropdown">
+              <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                SZOLGÁLTATÁSOK
+                <span class="material-symbols-outlined">expand_more</span>
+              </button>
+              <div class="nav-dropdown-menu dropdown-menu" role="menu">
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/esemenyfotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+                  <span class="dropdown-title">Eseményfotózás</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/tablofotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+                  <span class="dropdown-title">Tablófotózás</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/iskolafotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
+                  <span class="dropdown-title">Osztály- és iskolafotózás</span>
+                </a>
+                <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/portrefotozas" role="menuitem">
+                  <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+                  <span class="dropdown-title">Portréfotózás</span>
+                </a>
+              </div>
+            </div>
+            <a class="nav-link active" href="/hu/portfolio">PORTFÓLIÓ</a>
+            <a class="nav-link" href="/hu/kontakt">ELÉRHETŐSÉGEK</a>
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
-                <a class="lang-link" href="https://madovygabor.work/photography/en/portfolio">EN</a>
+                <a class="lang-link" href="/en/portfolio">EN</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link active" href="https://madovygabor.work/photography/hu/portfolio">HU</a>
+                <a class="lang-link active" href="/hu/portfolio">HU</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="https://madovygabor.work/photography/sk/portfolio">SK</a>
+                <a class="lang-link" href="/sk/portfolio">SK</a>
             </div>
-            <a class="nav-btn" href="https://madovygabor.work/hu/">FŐOLDAL</a>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
+            <a class="nav-btn" href="https://hub.madovygabor.work/hu/">KEZDŐOLDAL</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNavDrawer">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -218,8 +262,9 @@
         <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
         <div class="footer-links">
             <a class="footer-link" href="https://www.facebook.com/profile.php?id=61574942680651"
-                target="_blank">FACEBOOK</a>
-            <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank">INSTAGRAM</a>
+                target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+            <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
+                rel="noopener noreferrer">INSTAGRAM</a>
             <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
         </div>
     </footer>

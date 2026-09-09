@@ -47,20 +47,20 @@ HOST_REGISTRY: dict[str, str] = {
 # Default URL list — used when no CLI arguments are provided.
 # Covers all canonical URLs across the unified host.
 FALLBACK_URLS: list[str] = [
-    # Main domain
+    # Main domain (Hub)
+    "https://madovygabor.work/hub/en/",
+    "https://madovygabor.work/hub/hu/",
+    "https://madovygabor.work/hub/sk/",
+    # Photography (Root Platform)
     "https://madovygabor.work/en/",
     "https://madovygabor.work/hu/",
     "https://madovygabor.work/sk/",
-    # Photography
-    "https://madovygabor.work/photography/en/",
-    "https://madovygabor.work/photography/hu/",
-    "https://madovygabor.work/photography/sk/",
-    "https://madovygabor.work/photography/en/portfolio",
-    "https://madovygabor.work/photography/hu/portfolio",
-    "https://madovygabor.work/photography/sk/portfolio",
-    "https://madovygabor.work/photography/en/contact",
-    "https://madovygabor.work/photography/hu/kontakt",
-    "https://madovygabor.work/photography/sk/kontakt",
+    "https://madovygabor.work/en/portfolio",
+    "https://madovygabor.work/hu/portfolio",
+    "https://madovygabor.work/sk/portfolio",
+    "https://madovygabor.work/en/contact",
+    "https://madovygabor.work/hu/kontakt",
+    "https://madovygabor.work/sk/kontakt",
     # Dev
     "https://madovygabor.work/dev/en/",
     "https://madovygabor.work/dev/hu/",

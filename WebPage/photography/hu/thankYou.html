@@ -42,7 +42,7 @@
             <h1>Köszönöm a bizalmad!</h1>
             <p>Hamarosan felveszem veled a kapcsolatot, hogy megbeszéljük az elképzeléseidet és a részleteket.</p>
 
-            <button class="thank-you-btn" onclick="window.location.href='kontakt'">VISSZA A KAPCSOLAT OLDALRA</button>
+            <button class="thank-you-btn" onclick="window.location.href='/hu/kontakt'">VISSZA A KAPCSOLAT OLDALRA</button>
 
             <div class="thank-you-redirect" id="countdown">
                 Visszairányítás 6 másodperc múlva...
@@ -59,7 +59,7 @@
             countdownElement.textContent = `Visszairányítás ${timeLeft} másodperc múlva...`;
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                window.location.href = 'kontakt';
+                window.location.href = '/hu/kontakt';
             }
         }, 1000);
     </script>

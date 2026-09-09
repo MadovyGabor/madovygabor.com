@@ -42,7 +42,7 @@
             <h1>Ďakujem za Vašu dôveru!</h1>
             <p>Čoskoro Vás budem kontaktovať, aby sme prediskutovali Vaše predstavy a podrobnosti.</p>
 
-            <button class="thank-you-btn" onclick="window.location.href='kontakt'">SPÄŤ NA KONTAKT</button>
+            <button class="thank-you-btn" onclick="window.location.href='/sk/kontakt'">SPÄŤ NA KONTAKT</button>
 
             <div class="thank-you-redirect" id="countdown">
                 Presmerovanie o 6 sekúnd...
@@ -59,7 +59,7 @@
             countdownElement.textContent = `Presmerovanie o ${timeLeft} sekúnd...`;
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                window.location.href = 'kontakt';
+                window.location.href = '/sk/kontakt';
             }
         }, 1000);
     </script>
