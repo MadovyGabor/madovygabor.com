@@ -3819,22 +3819,20 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
 
 .calc-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--color-neutral-800);
   min-width: 0;
 }
 
-.calc-header-badge,
-.calc-header .font-label-caps {
+.calc-header .badge-pill {
   color: var(--color-neutral-400);
   background: #141616;
   border: 1px solid var(--color-neutral-800);
   border-radius: 0;
-  padding: 0.5rem 0.75rem !important;
+  padding: 0.5rem 0.75rem;
   line-height: 1.5;
   letter-spacing: 0.05em;
   font-size: 12px;
@@ -3842,6 +3840,9 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   text-align: center;
   max-width: 100%;
   box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .calc-grid {
@@ -4902,17 +4903,9 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
 .photo-carousel-track {
   display: flex;
   gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow: hidden;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
   padding: 4px 2px;
-}
-
-.photo-carousel-track::-webkit-scrollbar {
-  display: none;
 }
 
 .photo-carousel-slide {
@@ -5136,13 +5129,9 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
 }
 
 @media (max-width: 640px) {
-  /* 0. Header Monospace Badge Banner */
-  .calc-header-badge,
-  .calc-header .font-label-caps {
-    padding: 0.5rem 0.75rem !important;
-    line-height: 1.5;
-    letter-spacing: 0.05em;
-    font-size: 11.5px;
+  /* 0. Header Monospace Badge – hidden on small screens to prevent clipping */
+  .calc-header .badge-pill {
+    display: none;
   }
 
   /* 1. Addons & Extras Option Cards: Clean vertical stack on mobile viewports */
