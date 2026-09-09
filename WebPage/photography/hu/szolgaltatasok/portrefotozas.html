@@ -34,7 +34,7 @@
   <meta property="og:title" content="Szabadtéri &amp; Kreatív Portréfotózás | MG Captures | Madový Gábor" />
   <meta property="og:description"
     content="Életteli, laza portrék természetes fényben – feszengés és merev pózok nélkül. Átlátható csomagok és azonnali kalkuláció." />
-  <meta property="og:image" content="https://madovygabor.work/photography/pictures/OGimage.png" />
+  <meta property="og:image" content="https://madovygabor.work/pictures/OGimage.png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
   <meta property="og:image:type" content="image/png" />
@@ -192,13 +192,13 @@
             <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/esemenyfotozas">
               <span class="material-symbols-outlined">photo_camera</span> Eseményfotózás
             </a>
-            <a class="mobile-nav-sublink" href="/photography/hu/szolgaltatasok/tablofotozas.html">
+            <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/tablofotozas">
               <span class="material-symbols-outlined">portrait</span> Tablófotózás
             </a>
-            <a class="mobile-nav-sublink" href="/photography/hu/szolgaltatasok/iskolafotozas.html">
+            <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/iskolafotozas">
               <span class="material-symbols-outlined">groups</span> Osztály- és iskolafotózás
             </a>
-            <a class="mobile-nav-sublink active" href="/photography/hu/szolgaltatasok/portrefotozas.html">
+            <a class="mobile-nav-sublink active" href="/hu/szolgaltatasok/portrefotozas">
               <span class="material-symbols-outlined">flare</span> Portréfotózás
             </a>
           </div>
@@ -210,7 +210,7 @@
         <div class="mobile-lang-selector">
           <a class="lang-link" href="/en/services/outdoor-portraits">EN</a>
           <span class="lang-sep">/</span>
-          <a class="lang-link active" href="/photography/hu/szolgaltatasok/portrefotozas.html">HU</a>
+          <a class="lang-link active" href="/hu/szolgaltatasok/portrefotozas">HU</a>
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/portretove-fotenie">SK</a>
         </div>
@@ -235,15 +235,15 @@
               <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
               <span class="dropdown-title">Eseményfotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/photography/hu/szolgaltatasok/tablofotozas.html" role="menuitem">
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/tablofotozas" role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
               <span class="dropdown-title">Tablófotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/photography/hu/szolgaltatasok/iskolafotozas.html" role="menuitem">
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/iskolafotozas" role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
               <span class="dropdown-title">Osztály- és iskolafotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item active" href="/photography/hu/szolgaltatasok/portrefotozas.html" role="menuitem">
+            <a class="nav-dropdown-item dropdown-item active" href="/hu/szolgaltatasok/portrefotozas" role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
               <span class="dropdown-title">Portréfotózás</span>
             </a>
@@ -256,7 +256,7 @@
         <div class="lang-selector">
           <a class="lang-link" href="/en/services/outdoor-portraits">EN</a>
           <span class="lang-sep">/</span>
-          <a class="lang-link active" href="/photography/hu/szolgaltatasok/portrefotozas.html">HU</a>
+          <a class="lang-link active" href="/hu/szolgaltatasok/portrefotozas">HU</a>
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/portretove-fotenie">SK</a>
         </div>
@@ -293,7 +293,7 @@
         <!-- Action Buttons -->
         <div class="hero-actions">
           <a href="#calculator" class="btn-primary font-label-caps">ÁRKALKULÁTOR ↓</a>
-          <a href="/photography/hu/kontakt?service=portre" class="btn-secondary btn-outline font-label-caps">KAPCSOLATFELVÉTEL →</a>
+          <a href="/hu/kontakt?service=portre" class="btn-secondary btn-outline font-label-caps">KAPCSOLATFELVÉTEL →</a>
         </div>
       </div>
     </header>
@@ -723,7 +723,7 @@
       <span class="font-label-caps text-primary collab-label">EGYÜTTMŰKÖDÉS</span>
       <h2 class="font-display-xl text-white collab-title">Készen állsz a közös munkára?</h2>
       <div class="collab-actions">
-        <a class="btn-white font-label-caps" href="/photography/hu/kontakt?service=portre">
+        <a class="btn-white font-label-caps" href="/hu/kontakt?service=portre">
           KAPCSOLATFELVÉTEL <span class="material-symbols-outlined">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
@@ -940,7 +940,7 @@
       if (ctaBtn) {
         ctaBtn.addEventListener('click', function () {
           const calcData = calculatePortraitTotal();
-          const targetUrl = `/photography/hu/kontakt?service=portre&package=${encodeURIComponent(calcData.packageName)}&extras=${calcData.extraCount}&prints=${calcData.prints ? 'true' : 'false'}&zone=${encodeURIComponent(calcData.zoneName)}&total=${calcData.total}`;
+          const targetUrl = `/hu/kontakt?service=portre&package=${encodeURIComponent(calcData.packageName)}&extras=${calcData.extraCount}&prints=${calcData.prints ? 'true' : 'false'}&zone=${encodeURIComponent(calcData.zoneName)}&total=${calcData.total}`;
           window.location.href = targetUrl;
         });
       }

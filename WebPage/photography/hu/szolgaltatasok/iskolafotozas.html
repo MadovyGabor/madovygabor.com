@@ -33,7 +33,7 @@
   <meta property="og:title" content="Osztály- és iskolafotózás | MG Captures | Madový Gábor" />
   <meta property="og:description"
     content="Szervezett, életteli osztályképek és megbízható iskolai fotózás diákoknak és intézményeknek. Minden diáknak 1 db prémium 13×18 cm papírkép, átlátható volumenárazás." />
-  <meta property="og:image" content="https://madovygabor.work/photography/pictures/OGimage.png" />
+  <meta property="og:image" content="https://madovygabor.work/pictures/OGimage.png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
   <meta property="og:image:type" content="image/png" />
@@ -195,13 +195,13 @@
             <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/esemenyfotozas">
               <span class="material-symbols-outlined">photo_camera</span> Eseményfotózás
             </a>
-            <a class="mobile-nav-sublink" href="/photography/hu/szolgaltatasok/tablofotozas.html">
+            <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/tablofotozas">
               <span class="material-symbols-outlined">portrait</span> Tablófotózás
             </a>
-            <a class="mobile-nav-sublink active" href="/photography/hu/szolgaltatasok/iskolafotozas.html">
+            <a class="mobile-nav-sublink active" href="/hu/szolgaltatasok/iskolafotozas">
               <span class="material-symbols-outlined">groups</span> Osztály- és iskolafotózás
             </a>
-            <a class="mobile-nav-sublink" href="/photography/hu/szolgaltatasok/portrefotozas.html">
+            <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/portrefotozas">
               <span class="material-symbols-outlined">flare</span> Portréfotózás
             </a>
           </div>
@@ -238,17 +238,17 @@
               <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
               <span class="dropdown-title">Eseményfotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/photography/hu/szolgaltatasok/tablofotozas.html"
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/tablofotozas"
               role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
               <span class="dropdown-title">Tablófotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item active" href="/photography/hu/szolgaltatasok/iskolafotozas.html"
+            <a class="nav-dropdown-item dropdown-item active" href="/hu/szolgaltatasok/iskolafotozas"
               role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
               <span class="dropdown-title">Osztály- és iskolafotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/photography/hu/szolgaltatasok/portrefotozas.html"
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/portrefotozas"
               role="menuitem">
               <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
               <span class="dropdown-title">Portréfotózás</span>
@@ -297,7 +297,7 @@
         <!-- Actions -->
         <div class="hero-actions">
           <a href="#calculator" class="btn-primary font-label-caps">ÁRKALKULÁTOR ↓</a>
-          <a href="/photography/hu/kontakt" class="btn-secondary btn-outline font-label-caps">KAPCSOLATFELVÉTEL →</a>
+          <a href="/hu/kontakt" class="btn-secondary btn-outline font-label-caps">KAPCSOLATFELVÉTEL →</a>
         </div>
       </div>
     </header>
@@ -956,7 +956,7 @@
       if (ctaBtn) {
         ctaBtn.addEventListener('click', function () {
           const archiveCost = hasArchive ? Math.min(40, classCount * 10) : 0;
-          let targetUrl = `/photography/hu/kontakt?service=iskolafotozas&tier=${encodeURIComponent(activeTierKey)}&tier_name=${encodeURIComponent(activeTierName)}&rate=${activeRate}`;
+          let targetUrl = `/hu/kontakt?service=iskolafotozas&tier=${encodeURIComponent(activeTierKey)}&tier_name=${encodeURIComponent(activeTierName)}&rate=${activeRate}`;
 
           if (hasArchive) {
             targetUrl += `&archive=true&digital_classes=${classCount}&archive_total=${archiveCost}`;
