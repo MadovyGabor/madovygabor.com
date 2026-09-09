@@ -41,13 +41,22 @@ const categoryTranslations = {
 
 const uiTranslations = {
     hu: {
-        all: 'MINDEN'
+        all: 'MINDEN',
+        imagePreview: 'Kép előnézet',
+        closePreview: 'Előnézet bezárása',
+        fullscreenBtn: 'Megnyitás teljes méretben'
     },
     en: {
-        all: 'ALL'
+        all: 'ALL',
+        imagePreview: 'Image preview',
+        closePreview: 'Close preview',
+        fullscreenBtn: 'Fullscreen view'
     },
     sk: {
-        all: 'VŠETKO'
+        all: 'VŠETKO',
+        imagePreview: 'Náhľad obrázka',
+        closePreview: 'Zatvoriť náhľad',
+        fullscreenBtn: 'Otvoriť na celú obrazovku'
     }
 };
 
@@ -90,16 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollToAnchorHash();
             window.addEventListener('hashchange', scrollToAnchorHash);
 
-            // Calculate total assets recursively
-            let totalImages = 0;
-            data.forEach(cat => {
-                totalImages += countImages(cat);
-            });
-
-            const assetsCountEl = document.getElementById('assetsIndexedCount');
-            if (assetsCountEl) {
-                assetsCountEl.textContent = totalImages;
-            }
 
             // Set up top-level "Összes" button scroll to top behaviour
             const allLink = document.querySelector('.sidebar-link[data-category="all"]');
@@ -121,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const sidebarToggleBtnEl = document.getElementById('sidebarToggleBtn');
             const sidebarOverlayEl = document.getElementById('sidebarOverlay');
             if (sidebarToggleBtnEl) {
+                sidebarToggleBtnEl.setAttribute('aria-expanded', 'false');
+                sidebarToggleBtnEl.setAttribute('aria-controls', 'dynamicSidebarNav');
                 sidebarToggleBtnEl.addEventListener('click', () => {
                     const sidebar = document.querySelector('.sidebar-container');
                     if (sidebar && sidebar.classList.contains('mobile-open')) {
@@ -134,10 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 sidebarOverlayEl.addEventListener('click', closeSidebarDrawer);
             }
 
-            const loadMoreBtn = document.getElementById('loadMoreBtn');
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = 'none';
-            }
         })
         .catch(error => console.error('Error loading gallery data:', error));
 });
@@ -171,7 +168,10 @@ function openSidebarDrawer() {
     if (sidebar) sidebar.classList.add('mobile-open');
     if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
     document.body.style.overflow = 'hidden';
-    if (btn) btn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+    if (btn) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = ICONS.close;
+    }
 }
 
 function closeSidebarDrawer() {
@@ -187,8 +187,23 @@ function closeSidebarDrawer() {
     if (!mobileMenu || !mobileMenu.classList.contains('active')) {
         document.body.style.overflow = '';
     }
-    if (btn) btn.innerHTML = '<span class="material-symbols-outlined">toc</span>';
+    if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = ICONS.toc;
+    }
 }
+
+const ICONS = {
+    fullscreen: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>',
+    close: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>',
+    toc: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/></svg>',
+    graphic_eq: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z"/></svg>',
+    portrait: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 12c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3zm0-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 8.58c0-2.5-3.97-3.58-6-3.58s-6 1.08-6 3.58V18h12v-1.42zM8.48 16c.74-.51 2.23-1 3.52-1s2.78.49 3.52 1H8.48zM19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>',
+    stadium: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M7 5L3 7V3l4 2zm11-2v4l4-2-4-2zm-7-1v4l4-2-4-2zm2 16h-2l0 4c-5.05-.15-9-1.44-9-3v-9c0-1.66 4.48-3 10-3s10 1.34 10 3v9c0 1.56-3.95 2.85-9 3l0-4zM5 10.04C6.38 10.53 8.77 11 12 11s5.62-.47 7-.96C19 9.86 16.22 9 12 9s-7 .86-7 1.04zM20 11.8c-1.82.73-4.73 1.2-8 1.2s-6.18-.47-8-1.2v6.78c.61.41 2.36 1.01 5 1.28V16h6v3.86c2.64-.27 4.39-.87 5-1.28V11.8z"/></svg>',
+    explore: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/></svg>',
+    home: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>',
+    photo_camera: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M14.12 4l1.83 2H20v12H4V6h4.05l1.83-2h4.24M15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2zm-3 7c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>'
+};
 
 const categoryIcons = {
     'koncertek': 'graphic_eq',
@@ -197,6 +212,12 @@ const categoryIcons = {
     'travel': 'explore',
     'ingatlan-enterior': 'home'
 };
+
+function getCategoryIconSvg(categoryId) {
+    const iconName = categoryIcons[categoryId] || 'photo_camera';
+    return ICONS[iconName] || ICONS.photo_camera;
+}
+
 
 function initFilterButtons(data) {
     const filterContainer = document.getElementById('dynamicFilterButtons');
@@ -230,10 +251,10 @@ function initFilterButtons(data) {
         document.querySelectorAll('.filter-btn').forEach(el => el.classList.remove('active'));
         btn.classList.add('active');
 
-        // Close mobile menu if active (if applicable)
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
+        // Close mobile nav drawer if active
+        const mobileNav = document.getElementById('mobileNavOverlay');
+        if (mobileNav && mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
         }
 
         // Re-init gallery and sidebar
@@ -275,11 +296,11 @@ function renderSidebar(data, activeCategoryId) {
                     link.className = 'sidebar-link';
 
                     const imgCount = countImages(sub);
-                    const icon = categoryIcons[category.id] || 'photo_camera';
+                    const iconSvg = getCategoryIconSvg(category.id);
 
                     link.innerHTML = `
                         <div class="link-inner">
-                            <span class="material-symbols-outlined" style="font-size: 1.1rem;">${icon}</span>
+                            ${iconSvg}
                             <span>${t(sub.title)}</span>
                         </div>
                         <span class="link-count">${imgCount}</span>
@@ -316,11 +337,11 @@ function renderSidebar(data, activeCategoryId) {
                 link.className = 'sidebar-link';
 
                 const imgCount = countImages(sub);
-                const icon = categoryIcons[category.id] || 'photo_camera';
+                const iconSvg = getCategoryIconSvg(category.id);
 
                 link.innerHTML = `
                     <div class="link-inner">
-                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">${icon}</span>
+                        ${iconSvg}
                         <span>${t(sub.title)}</span>
                     </div>
                     <span class="link-count">${imgCount}</span>
@@ -447,7 +468,7 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         }
 
         const imgContainer = document.createElement('div');
-        imgContainer.className = 'img-container skeleton';
+        imgContainer.className = 'img-container skeleton skeleton-shimmer';
         imgContainer.style.aspectRatio = aspectRatio;
 
         const img = document.createElement('img');
@@ -465,12 +486,14 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         img.style.aspectRatio = aspectRatio;
         
         // Remove skeleton class from container once image loads/fails
-        img.onload = function () {
+        const handleImageDone = function () {
+            img.classList.add('is-loaded');
             imgContainer.classList.remove('skeleton');
+            imgContainer.classList.remove('skeleton-shimmer');
+            imgContainer.classList.add('is-loaded');
         };
-        img.onerror = function () {
-            imgContainer.classList.remove('skeleton');
-        };
+        img.onload = handleImageDone;
+        img.onerror = handleImageDone;
         img.src = src; // Set src after onload/onerror to ensure cache hits trigger load handler
 
         imgContainer.appendChild(img);
@@ -487,8 +510,8 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
                 <div class="hud-details">
                     <span style="font-size: 14px; font-weight: bold; color: white; background: none; border: none; padding: 0; text-align: left;">${sectionTitle}</span>
                 </div>
-                <button class="hud-fullscreen" onclick="openFullscreen('${src}', '${escapedAlt}')">
-                    <span class="material-symbols-outlined">fullscreen</span>
+                <button class="hud-fullscreen" aria-label="${tUI('fullscreenBtn')}" onclick="openFullscreen('${src}', '${escapedAlt}')">
+                    ${ICONS.fullscreen}
                 </button>
             </div>
         `;
@@ -590,6 +613,9 @@ window.openFullscreen = function (src, altText) {
     if (!lightbox) {
         lightbox = document.createElement('div');
         lightbox.id = 'portfolio-lightbox';
+        lightbox.setAttribute('role', 'dialog');
+        lightbox.setAttribute('aria-modal', 'true');
+        lightbox.setAttribute('aria-label', tUI('imagePreview'));
         lightbox.style.cssText = `
             position: fixed; inset: 0; background: rgba(10,10,10,0.95); z-index: 1000;
             display: flex; align-items: center; justify-content: center; opacity: 0;
@@ -597,15 +623,37 @@ window.openFullscreen = function (src, altText) {
         `;
 
         const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+        closeBtn.innerHTML = ICONS.close;
+        closeBtn.setAttribute('aria-label', tUI('closePreview'));
         closeBtn.style.cssText = `
             position: absolute; top: 24px; right: 24px; background: none; border: none;
-            color: white; font-size: 2rem; cursor: pointer;
+            color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            padding: 8px;
         `;
-        closeBtn.onclick = () => {
+        
+        function closeLightbox() {
             lightbox.style.opacity = '0';
-            setTimeout(() => lightbox.style.display = 'none', 300);
-        };
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+        }
+
+        closeBtn.onclick = closeLightbox;
+
+        // Dismiss on backdrop click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Dismiss on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                closeLightbox();
+            }
+        });
 
         const img = document.createElement('img');
         img.id = 'lightbox-img';
@@ -620,5 +668,6 @@ window.openFullscreen = function (src, altText) {
     lightboxImg.src = src;
     lightboxImg.alt = altText || 'Fullscreen view';
     lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
     setTimeout(() => lightbox.style.opacity = '1', 10);
 };

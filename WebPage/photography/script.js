@@ -27,36 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ─── Skeleton Loader ─────────────────────────────────────────
-    const skeleton = document.getElementById('skeleton');
-    const isHomepage = document.body.classList.contains('page-home');
-
-    if (skeleton && !isHomepage) {
-        const hideSkeleton = () => {
-            if (skeleton.classList.contains('hidden')) return;
-            skeleton.classList.add('hidden');
-            setTimeout(() => {
-                skeleton.style.display = 'none';
-            }, 600);
-            observeElements();
-        };
-
-        // Simulate a minimum loading time for skeleton visibility
-        setTimeout(() => {
-            if (document.readyState === 'complete') {
-                hideSkeleton();
-            } else {
-                window.addEventListener('load', hideSkeleton);
-            }
-        }, 450);
-
-        // Fallback in case load event already fired or takes too long
-        setTimeout(hideSkeleton, 3000);
-    } else {
-        observeElements();
-    }
-
     // ─── In-Place Skeleton Loader ─────────────────────────────────
+    observeElements();
     initInPlaceSkeleton();
 
     function initInPlaceSkeleton() {
@@ -85,14 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── Back / Forward cache (bfcache) ──────────────────────────
-    // Browser Back restores from cache — page is already rendered,
-    // never show the skeleton.
     window.addEventListener('pageshow', e => {
         if (!e.persisted) return;
-        if (skeleton) {
-            skeleton.classList.add('hidden');
-            skeleton.style.display = 'none';
-        }
         observeElements();
         initInPlaceSkeleton();
     });
@@ -297,6 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Contact Form Prefill from Service Calculator ─────────────
     function initContactPrefill() {
+        const eventDateInput = document.getElementById('eventDate');
+        if (eventDateInput) {
+            eventDateInput.min = new Date().toISOString().split('T')[0];
+            eventDateInput.addEventListener('click', () => {
+                try {
+                    if (typeof eventDateInput.showPicker === 'function') {
+                        eventDateInput.showPicker();
+                    }
+                } catch (e) {
+                    // graceful fallback for unsupported browsers
+                }
+            });
+        }
+
         const subjectSelect = document.getElementById('subject');
         const messageTextarea = document.getElementById('message');
         if (!messageTextarea) return;
@@ -316,18 +296,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     const eventOption = Array.from(subjectSelect.options).find(opt =>
                         opt.value === 'eseményfotózás' ||
                         opt.value === 'event' ||
+                        opt.value === 'eventove-fotenie' ||
                         opt.text.toLowerCase().includes('esemény') ||
                         opt.text.toLowerCase().includes('event')
                     );
                     if (eventOption) {
                         subjectSelect.value = eventOption.value;
                     }
-                } else if (service === 'iskolafotozas' || service === 'iskola' || service === 'school') {
+                } else if (service === 'iskolafotozas' || service === 'iskola' || service === 'school' || service === 'skolske') {
                     const iskolaOption = Array.from(subjectSelect.options).find(opt =>
                         opt.value.toLowerCase().includes('iskola') ||
                         opt.text.toLowerCase().includes('iskola') ||
                         opt.value.toLowerCase().includes('osztály') ||
-                        opt.text.toLowerCase().includes('osztály')
+                        opt.text.toLowerCase().includes('osztály') ||
+                        opt.value.toLowerCase().includes('skol') ||
+                        opt.text.toLowerCase().includes('škol') ||
+                        opt.value.toLowerCase().includes('school') ||
+                        opt.text.toLowerCase().includes('school')
                     );
                     if (iskolaOption) {
                         subjectSelect.value = iskolaOption.value;
@@ -361,7 +346,51 @@ document.addEventListener('DOMContentLoaded', () => {
             const htmlLang = document.documentElement.lang || 'hu';
             let summaryText = '';
 
-            if (service === 'iskolafotozas' || service === 'iskola' || service === 'school') {
+            const hasCalculatorMetrics = params.has('total') || (params.has('tier') && params.has('rate'));
+
+            if (!hasCalculatorMetrics) {
+                if (service === 'esemeny' || service === 'event') {
+                    if (htmlLang === 'sk') {
+                        summaryText = `Dobrý deň,\n\nMám záujem o eventové fotenie a rád/rada by som zistil/a viac informácií.\n\nĎalšie podrobnosti a poznámky:\n`;
+                    } else if (htmlLang === 'en') {
+                        summaryText = `Hello,\n\nI would like to inquire about event photography services.\n\nAdditional details and notes:\n`;
+                    } else {
+                        summaryText = `Szia Gábor!\n\nÉrdeklődni szeretnék eseményfotózással kapcsolatban.\n\nTovábbi részletek és megjegyzések:\n`;
+                    }
+                } else if (service === 'tablo' || service === 'tablofotozas' || service === 'yearbook') {
+                    if (htmlLang === 'sk') {
+                        summaryText = `Dobrý deň,\n\nMám záujem o tablové fotenie pre končiaci ročník.\n\nNázov školy, trieda a ďalšie podrobnosti:\n`;
+                    } else if (htmlLang === 'en') {
+                        summaryText = `Hello,\n\nI would like to inquire about graduating class yearbook photography.\n\nSchool name, class, and additional notes:\n`;
+                    } else {
+                        summaryText = `Szia Gábor!\n\nÉrdeklődni szeretnék végzős tablófotózással kapcsolatban.\n\nIskola neve, osztály és további részletek:\n`;
+                    }
+                } else if (service === 'iskolafotozas' || service === 'iskola' || service === 'school' || service === 'skolske') {
+                    if (htmlLang === 'sk') {
+                        summaryText = `Dobrý deň,\n\nMám záujem o školské a triedne fotenie.\n\nNázov školy, trieda a ďalšie podrobnosti:\n`;
+                    } else if (htmlLang === 'en') {
+                        summaryText = `Hello,\n\nI would like to inquire about school and class photography.\n\nSchool name, class, and additional notes:\n`;
+                    } else {
+                        summaryText = `Szia Gábor!\n\nÉrdeklődni szeretnék osztály- és iskolafotózással kapcsolatban.\n\nIskola neve, osztály és további részletek:\n`;
+                    }
+                } else if (service === 'portre' || service === 'portrait' || service === 'portrefotozas') {
+                    if (htmlLang === 'sk') {
+                        summaryText = `Dobrý deň,\n\nMám záujem o portrétové fotenie.\n\nĎalšie podrobnosti a poznámky:\n`;
+                    } else if (htmlLang === 'en') {
+                        summaryText = `Hello,\n\nI would like to inquire about a portrait photography session.\n\nAdditional details and notes:\n`;
+                    } else {
+                        summaryText = `Szia Gábor!\n\nÉrdeklődni szeretnék portréfotózással kapcsolatban.\n\nTovábbi részletek és megjegyzések:\n`;
+                    }
+                } else {
+                    if (htmlLang === 'sk') {
+                        summaryText = `Dobrý deň,\n\nRád/rada by som sa informoval/a o Vašich fotografických službách.\n\nĎalšie podrobnosti a poznámky:\n`;
+                    } else if (htmlLang === 'en') {
+                        summaryText = `Hello,\n\nI would like to inquire about your photography services.\n\nAdditional details and notes:\n`;
+                    } else {
+                        summaryText = `Szia Gábor!\n\nÉrdeklődni szeretnék fotózási szolgáltatásaiddal kapcsolatban.\n\nTovábbi részletek és megjegyzések:\n`;
+                    }
+                }
+            } else if (service === 'iskolafotozas' || service === 'iskola' || service === 'school') {
                 const tier = params.get('tier') || '';
                 const tierName = params.get('tier_name') || tier;
                 const rate = params.get('rate') || '';
@@ -401,16 +430,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (htmlLang === 'sk') {
-                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na triedne a školské fotenie:\n- Vybraný balík / kategória: ${packageDescSk}\n- Doprava: Ingyenes a régióban\n- Školský digitálny archív: ${archiveTextSk}\n- Skupinová fotka učiteľského zboru: ${facultyTextSk}\n- Fotenie pre kamarátov: ${friends ? 'Áno (+2 €/účastník s 1 ks tlačenou fotkou)' : 'Nie'}\n\nNázov školy, trieda a plánovaný termín:\n`;
+                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na triedne a školské fotenie:\n- Vybraný balík / kategória: ${packageDescSk}\n- Doprava: Bezplatne v regióne\n- Školský digitálny archív: ${archiveTextSk}\n- Skupinová fotka učiteľského zboru: ${facultyTextSk}\n- Fotenie pre kamarátov: ${friends ? 'Áno (+2 €/účastník s 1 ks tlačenou fotkou)' : 'Nie'}\n\nNázov školy, trieda a ďalšie podrobnosti:\n`;
                 } else if (htmlLang === 'en') {
-                    summaryText = `Hello,\n\nI would like to request a quote for school and class photography:\n- Selected Package: ${packageDescEn}\n- Travel Fee: Free in the region\n- School Digital Archive: ${archiveTextEn}\n- Faculty / Staff Group Photo: ${facultyTextEn}\n- Friend Groups Photos: ${friends ? 'Yes (+2 €/participant with 1 print)' : 'No'}\n\nSchool name, class, and preferred date:\n`;
+                    summaryText = `Hello,\n\nI would like to request a quote for school and class photography:\n- Selected Package: ${packageDescEn}\n- Travel Fee: Free in the region\n- School Digital Archive: ${archiveTextEn}\n- Faculty / Staff Group Photo: ${facultyTextEn}\n- Friend Groups Photos: ${friends ? 'Yes (+2 €/participant with 1 print)' : 'No'}\n\nSchool name, class, and additional notes:\n`;
                 } else {
-                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni osztály- és iskolafotózásra a kiválasztott csomag alapján:\n- Választott csomag: ${packageDescHu}\n- Kiszállási díj: Ingyenes (régióban)\n- Iskolai digitális archívum: ${archiveTextHu}\n- Tanári kar csoportképe: ${facultyTextHu}\n- Baráti fotózás: ${friends ? 'Igen (+2 €/résztvevő 1 db nyomtatott képpel)' : 'Nem'}\n\nIskola neve, osztály(ok) és tervezett időpont:\n`;
+                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni osztály- és iskolafotózásra a kiválasztott csomag alapján:\n- Választott csomag: ${packageDescHu}\n- Kiszállási díj: Ingyenes (régióban)\n- Iskolai digitális archívum: ${archiveTextHu}\n- Tanári kar csoportképe: ${facultyTextHu}\n- Baráti fotózás: ${friends ? 'Igen (+2 €/résztvevő 1 db nyomtatott képpel)' : 'Nem'}\n\nIskola neve, osztály és további részletek:\n`;
                 }
             } else if (service === 'tablo' || service === 'tablofotozas' || service === 'yearbook') {
                 let pkg = params.get('package') || params.get('type') || '';
-                if (pkg === 'belteri') pkg = 'Beltéri tablóportré';
-                else if (pkg === 'kulteri') pkg = 'Kültéri tablóportré';
+                if (pkg === 'belteri') {
+                    pkg = htmlLang === 'sk' ? 'Tablový portrét v interiéri' : (htmlLang === 'en' ? 'Indoor Yearbook Portrait' : 'Beltéri tablóportré');
+                } else if (pkg === 'kulteri') {
+                    pkg = htmlLang === 'sk' ? 'Tablový portrét v exteriéri' : (htmlLang === 'en' ? 'Outdoor Yearbook Portrait' : 'Kültéri tablóportré');
+                }
 
                 const students = params.get('students') || '';
                 const rate = params.get('rate') || '17';
@@ -433,24 +465,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 let zoneDisplay = zone;
-                if (zone === '0') zoneDisplay = 'Ingyenes zóna (0 €)';
-                else if (zone === '20') zoneDisplay = '1. Zóna (+20 €)';
-                else if (zone === '35') zoneDisplay = '2. Zóna (+35 €)';
-                else if (zone === '55') zoneDisplay = '3. Zóna (+55 €)';
+                if (zone === '0') {
+                    zoneDisplay = htmlLang === 'sk' ? 'Bezplatná zóna (0 €)' : (htmlLang === 'en' ? 'Free zone (0 €)' : 'Ingyenes zóna (0 €)');
+                } else if (zone === '20') {
+                    zoneDisplay = htmlLang === 'sk' ? '1. Zóna (+20 €)' : (htmlLang === 'en' ? 'Zone 1 (+20 €)' : '1. Zóna (+20 €)');
+                } else if (zone === '35') {
+                    zoneDisplay = htmlLang === 'sk' ? '2. Zóna (+35 €)' : (htmlLang === 'en' ? 'Zone 2 (+35 €)' : '2. Zóna (+35 €)');
+                } else if (zone === '55') {
+                    zoneDisplay = htmlLang === 'sk' ? '3. Zóna (+55 €)' : (htmlLang === 'en' ? 'Zone 3 (+55 €)' : '3. Zóna (+55 €)');
+                }
 
                 if (htmlLang === 'sk') {
-                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na tablové fotenie:\n- Balík: ${pkg}\n- Počet študentov: ${students} žiakov ${rate ? '(' + rate + ' €/žiak)' : ''}\n- Lokalita / Zóna dopravy: ${zoneDisplay}\n- Prémiové papierové fotky: ${paper ? 'Áno (+3 €/žiak)' : 'Nie'}\n- Fotenie pre kamarátov: ${friends ? 'Áno (+2 €/žiak s 1 ks tlačenou fotkou)' : 'Nie'}\n- Fotenie učiteľov: ${teachersSk}\n- Východiskový odhad rozpočtu: ~${total} €\n\nNázov školy, trieda a plánovaný termín:\n`;
+                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na tablové fotenie:\n- Balík: ${pkg}\n- Počet študentov: ${students} žiakov ${rate ? '(' + rate + ' €/žiak)' : ''}\n- Lokalita / Zóna dopravy: ${zoneDisplay}\n- Prémiové papierové fotky: ${paper ? 'Áno (+3 €/žiak)' : 'Nie'}\n- Fotenie pre kamarátov: ${friends ? 'Áno (+2 €/žiak s 1 ks tlačenou fotkou)' : 'Nie'}\n- Fotenie učiteľov: ${teachersSk}\n- Východiskový odhad rozpočtu: ~${total} €\n\nNázov školy, trieda a ďalšie podrobnosti:\n`;
                 } else if (htmlLang === 'en') {
-                    summaryText = `Hello,\n\nI would like to request a quote for yearbook photography:\n- Package: ${pkg}\n- Student Count: ${students} students ${rate ? '(' + rate + ' €/student)' : ''}\n- Location / Travel Zone: ${zoneDisplay}\n- Premium Paper Prints: ${paper ? 'Yes (+3 €/student)' : 'No'}\n- Friend Photos: ${friends ? 'Yes (+2 €/student with 1 print)' : 'No'}\n- Teacher Portraits: ${teachersEn}\n- Estimated Budget: ~${total} €\n\nSchool name, class, and preferred date:\n`;
+                    summaryText = `Hello,\n\nI would like to request a quote for yearbook photography:\n- Package: ${pkg}\n- Student Count: ${students} students ${rate ? '(' + rate + ' €/student)' : ''}\n- Location / Travel Zone: ${zoneDisplay}\n- Premium Paper Prints: ${paper ? 'Yes (+3 €/student)' : 'No'}\n- Friend Photos: ${friends ? 'Yes (+2 €/student with 1 print)' : 'No'}\n- Teacher Portraits: ${teachersEn}\n- Estimated Budget: ~${total} €\n\nSchool name, class, and additional notes:\n`;
                 } else {
-                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni végzős tablófotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Tervezett létszám: ${students} diák ${rate ? '(' + rate + ' €/diák)' : ''}\n- Helyszín / Kiszállási zóna: ${zoneDisplay}\n- Nyomtatási alapcsomag: ${paper ? 'Igen (+3 €/diák)' : 'Nem'}\n- Baráti kiscsoportos fotók: ${friends ? 'Igen (+2 €/fő 1 db nyomtatott képpel)' : 'Nem'}\n- Tanárok és osztályfőnök: ${teachersHu}\n- Várható indikatív keretösszeg: ~${total} €\n\nIskola neve, osztály és tervezett időpont:\n`;
+                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni végzős tablófotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Tervezett létszám: ${students} diák ${rate ? '(' + rate + ' €/diák)' : ''}\n- Helyszín / Kiszállási zóna: ${zoneDisplay}\n- Nyomtatási alapcsomag: ${paper ? 'Igen (+3 €/diák)' : 'Nem'}\n- Baráti kiscsoportos fotók: ${friends ? 'Igen (+2 €/fő 1 db nyomtatott képpel)' : 'Nem'}\n- Tanárok és osztályfőnök: ${teachersHu}\n- Várható indikatív keretösszeg: ~${total} €\n\nIskola neve, osztály és további részletek:\n`;
                 }
             } else if (service === 'portre' || service === 'portrait' || service === 'portrefotozas') {
-                const pkg = params.get('package') || params.get('type') || 'Klasszikus Szabadtér';
+                const defaultPkg = htmlLang === 'sk' ? 'Klasický exteriér' : (htmlLang === 'en' ? 'Classic Outdoor' : 'Klasszikus Szabadtér');
+                const pkg = params.get('package') || params.get('type') || defaultPkg;
                 const extras = params.get('extras') || params.get('extraCount') || '0';
                 const extraCount = parseInt(extras, 10) || 0;
                 const prints = params.get('prints') === 'true' || params.get('prints') === '1' || params.get('paper') === 'true' || params.get('paper') === '1';
-                const zone = params.get('zone') || 'Alsószeli, Galánta és környéke (0 €)';
+                const defaultZone = htmlLang === 'sk' ? 'Dolné Saliby, Galanta a okolie (0 €)' : (htmlLang === 'en' ? 'Dolné Saliby, Galanta and vicinity (0 €)' : 'Alsószeli, Galánta és környéke (0 €)');
+                const zone = params.get('zone') || defaultZone;
 
                 let extrasTextHu = extraCount > 0 ? `${extraCount} db (+${extraCount * 7} €)` : 'Nem';
                 let extrasTextSk = extraCount > 0 ? `${extraCount} ks (+${extraCount * 7} €)` : 'Nie';
@@ -461,19 +500,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 let printsTextEn = prints ? 'Yes (+15 €)' : 'No';
 
                 if (htmlLang === 'sk') {
-                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na exteriérové a kreatívne portrétové fotenie:\n- Balík: ${pkg}\n- Extra retušované digitálne fotky: ${extrasTextSk}\n- Balík tlačených fotiek (10 ks 13×18 cm): ${printsTextSk}\n- Lokalita / Zóna dopravy: ${zone}\n- Východiskový odhad rozpočtu: ~${total} €\n\nPlánovaná lokalita, predstava a termín:\n`;
+                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na exteriérové a kreatívne portrétové fotenie:\n- Balík: ${pkg}\n- Extra retušované digitálne fotky: ${extrasTextSk}\n- Balík tlačených fotiek (10 ks 13×18 cm): ${printsTextSk}\n- Lokalita / Zóna dopravy: ${zone}\n- Východiskový odhad rozpočtu: ~${total} €\n\nĎalšie podrobnosti a poznámky:\n`;
                 } else if (htmlLang === 'en') {
-                    summaryText = `Hello,\n\nI would like to request a quote for outdoor and creative portrait photography:\n- Selected Package: ${pkg}\n- Extra Retouched Digital Photos: ${extrasTextEn}\n- Print Package (10 pcs 13×18 cm): ${printsTextEn}\n- Location / Travel Zone: ${zone}\n- Estimated Budget: ~${total} €\n\nPreferred location, ideas, and date:\n`;
+                    summaryText = `Hello,\n\nI would like to request a quote for outdoor and creative portrait photography:\n- Selected Package: ${pkg}\n- Extra Retouched Digital Photos: ${extrasTextEn}\n- Print Package (10 pcs 13×18 cm): ${printsTextEn}\n- Location / Travel Zone: ${zone}\n- Estimated Budget: ~${total} €\n\nAdditional details and notes:\n`;
                 } else {
-                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni szabadtéri portréfotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Extra retusált digitális képek: ${extrasTextHu}\n- Nyomtatási csomag (10 db 13×18 cm): ${printsTextHu}\n- Helyszín / Kiszállási zóna: ${zone}\n- Várható indikatív keretösszeg: ~${total} €\n\nTervezett helyszín, elképzelés és időpont:\n`;
+                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni szabadtéri portréfotózásra a weboldalon kalkulált adatok alapján:\n- Választott csomag: ${pkg}\n- Extra retusált digitális képek: ${extrasTextHu}\n- Nyomtatási csomag (10 db 13×18 cm): ${printsTextHu}\n- Helyszín / Kiszállási zóna: ${zone}\n- Várható indikatív keretösszeg: ~${total} €\n\nTovábbi részletek és megjegyzések:\n`;
                 }
             } else {
                 if (htmlLang === 'sk') {
-                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na základe kalkulácie z webu:\n- Typ podujatia: ${type}\n- Trvanie: ${hours} hod.\n- Lokalita / Zóna dopravy: ${zone}\n- Expresné 48h dodanie: ${express ? 'Áno' : 'Nie'}\n- Východiskový odhad rozpočtu: ~${total} €\n\nTermín podujatia a ďalšie podrobnosti:\n`;
+                    summaryText = `Dobrý deň,\n\nMám záujem o cenovú ponuku na základe kalkulácie z webu:\n- Typ podujatia: ${type}\n- Trvanie: ${hours} hod.\n- Lokalita / Zóna dopravy: ${zone}\n- Expresné 48h dodanie: ${express ? 'Áno' : 'Nie'}\n- Východiskový odhad rozpočtu: ~${total} €\n\nĎalšie podrobnosti a poznámky:\n`;
                 } else if (htmlLang === 'en') {
-                    summaryText = `Hello,\n\nI would like to request a quote based on the website calculator:\n- Event Type: ${type}\n- Estimated Duration: ${hours} hours\n- Location / Travel Zone: ${zone}\n- Express 48h Delivery: ${express ? 'Yes' : 'No'}\n- Estimated Budget: ~${total} €\n\nEvent date and additional details:\n`;
+                    summaryText = `Hello,\n\nI would like to request a quote based on the website calculator:\n- Event Type: ${type}\n- Estimated Duration: ${hours} hours\n- Location / Travel Zone: ${zone}\n- Express 48h Delivery: ${express ? 'Yes' : 'No'}\n- Estimated Budget: ~${total} €\n\nAdditional details and notes:\n`;
                 } else {
-                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni a weboldalon kalkulált adatok alapján:\n- Esemény típusa: ${type}\n- Tervezett időtartam: ${hours} óra\n- Helyszín / Kiszállási zóna: ${zone}\n- Expressz 48h átadás: ${express ? 'Igen' : 'Nem'}\n- Várható indikatív keretösszeg: ~${total} €\n\nTervezett dátum és további részletek:\n`;
+                    summaryText = `Szia Gábor!\n\nAjánlatot szeretnék kérni a weboldalon kalkulált adatok alapján:\n- Esemény típusa: ${type}\n- Tervezett időtartam: ${hours} óra\n- Helyszín / Kiszállási zóna: ${zone}\n- Expressz 48h átadás: ${express ? 'Igen' : 'Nem'}\n- Várható indikatív keretösszeg: ~${total} €\n\nTovábbi részletek és megjegyzések:\n`;
                 }
             }
 

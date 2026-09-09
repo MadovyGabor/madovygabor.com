@@ -2,6 +2,8 @@
 <html class="dark" lang="hu">
 
 <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
   <script>
@@ -10,9 +12,6 @@
     gtag('js', new Date());
     gtag('config', 'G-FW5QY9960V');
   </script>
-
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Eseményfotózás &amp; Rendezvényfotós | Szalagavató, Családi Napok, Partik | Madový Gábor</title>
   <meta name="description"
     content="Professzionális esemény- és rendezvényfotózás Nyugat-Szlovákiában: szalagavatók, ballagások, családi ünnepek és céges estek diszkrét, természetes dokumentálása. Kérj kalkulációt!" />
@@ -45,11 +44,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print"
-    onload="this.media='all'" />
 
   <link rel="shortcut icon" href="../../pictures/favIconPhoto/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIconPhoto/apple-touch-icon.png" />
@@ -81,6 +75,62 @@
       { "@type": "AdministrativeArea", "name": "Bratislava" }
     ],
     "url": "https://madovygabor.work/hu/szolgaltatasok/esemenyfotozas"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mikor kapjuk meg a kész fotókat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Általában egy héten belül átadom a teljes, gondosan kidolgozott fotóanyagot egy kényelmesen elérhető Google Drive felhőlinken. Nincs szükség regisztrációra vagy jelszavakra, egy kattintással letölthetitek a képeket maximális nyomdai minőségben. Ha a legfontosabb pillanatokat azonnal megosztanátok, kérhető 1-2 napos expressz előválogatás is."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mennyi képet kapunk a rendezvényről?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A képek pontos száma az esemény pörgésétől és a programok jellegétől függ. Nem húzok mesterséges korlátokat a rendezvényfotózás során, hiszen minden értékes és jól sikerült pillanatot kidolgozok nektek. A teljes anyagot átadom, így a vendégek közül mindenki garantáltan megtalálja a saját kedvenc képeit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Készülnek csoportképek is a spontán fotók mellett?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Természetesen. Bár a háttérből szeretem elkapni az őszinte nevetéseket, a rendezvényen bármikor szólhattok egy-egy családi, baráti vagy vicces csoportképért."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hogyan működik az előleg és a fizetés?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A dátum fixálásához csak egy jelképes előleget egyeztetünk, hogy ha bármi miatt változna a program, ne ragadjon bent a pénzetek. A fennmaradó részt csak akkor kell kifizetnetek, amikor a kész fotókat már átadtam."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Lehet hosszabbítani a helyszínen, ha tovább tart a buli?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Igen, rugalmas vagyok. Ha úgy alakul a hangulat, a helyszínen is maradhatok még 1-2 órát; az óradíjakat a fenti kalkulátorban pontosan nyomon követhetitek."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hogyan alakul az utazási díj és hol vállalsz fotózást?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Főként Galánta, Dunaszerdahely, Vágsellye és Érsekújvár térségében fotózok. Alsószeli és Galánta közvetlen környékén a kiszállás teljesen ingyenes. A távolabbi helyszínek zónadíjai csak tájékoztató jellegű becslések, a pontos cím megadása után kilométer alapján számoljuk ki a valós útiköltséget."
+        }
+      }
+    ]
   }
   </script>
   <noscript>
@@ -215,7 +265,7 @@
         <!-- Actions -->
         <div class="hero-actions">
           <a href="#calculator" class="btn-primary font-label-caps">ÁRKALKULÁTOR ↓</a>
-          <a href="/hu/kontakt?service=esemeny" class="btn-secondary btn-outline font-label-caps">KAPCSOLATFELVÉTEL
+          <a href="/hu/kontakt?service=esemeny" class="btn-secondary btn-outline font-label-caps" id="directInquiryBtn">KAPCSOLATFELVÉTEL
             →</a>
         </div>
       </div>
@@ -659,12 +709,12 @@
       <span class="font-label-caps text-primary collab-label">EGYÜTTMŰKÖDÉS</span>
       <h2 class="font-display-xl text-white collab-title">Készen állsz a közös munkára?</h2>
       <div class="collab-actions">
-        <a class="btn-white font-label-caps" href="/hu/kontakt">
+        <a class="btn-white font-label-caps" href="/hu/kontakt?service=esemeny">
           KAPCSOLATFELVÉTEL <span class="material-symbols-outlined">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">
-          INSTAGRAM <i class="fa-brands fa-instagram" style="font-size: 1.25rem;"></i>
+          INSTAGRAM <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
       </div>
     </section>

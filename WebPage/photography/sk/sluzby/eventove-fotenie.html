@@ -2,6 +2,8 @@
 <html class="dark" lang="sk">
 
 <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
   <script>
@@ -10,9 +12,6 @@
     gtag('js', new Date());
     gtag('config', 'G-FW5QY9960V');
   </script>
-
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Eventové fotenie a podujatia | Živé momentky a skvelá atmosféra bez umelých póz</title>
   <meta name="description"
     content="Profesionálne fotenie podujatí na západnom Slovensku. Stužkové slávnosti, rodinné oslavy, jubileá a firemné akcie s autentickou atmosférou. Vyskúšajte kalkulačku ceny!" />
@@ -45,11 +44,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print"
-    onload="this.media='all'" />
 
   <link rel="shortcut icon" href="../../pictures/favIconPhoto/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIconPhoto/apple-touch-icon.png" />
@@ -82,6 +76,62 @@
       { "@type": "AdministrativeArea", "name": "Trnava" }
     ],
     "url": "https://madovygabor.work/sk/sluzby/eventove-fotenie"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kedy dostaneme hotové fotografie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kompletný a precízne upravený súbor fotografií odovzdávam zvyčajne do jedného týždňa prostredníctvom privátneho odkazu na Google Drive. Netreba sa nikde registrovať ani zadávať heslá, fotografie stiahnete jedným kliknutím v plnej tlačovej kvalite. Ak chcete hlavné momenty zdieľať čo najskôr, môžete si zvoliť expresný výber do 48 hodín."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Koľko fotografií z podujatia dostaneme?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Presný počet závisí od dynamiky akcie a programu. Pri fotení podujatí si nestanovujem umelé limity a upravujem všetky vydarené zábery. Odovzdávam bohatý ucelený materiál, aby si každý z hostí našiel svoje obľúbené momentky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Fotografujete okrem momentiek aj skupinové fotky?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Samozrejme. Hoci sa sústredím na nenútené reportážne zábery a prirodzené úsmevy, počas celej akcie ma môžete kedykoľvek osloviť na rodinnú, kamarátsku alebo veselú skupinovú fotografiu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ako funguje záloha a platba?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Na záväznú rezerváciu termínu sa dohodneme na symbolickej zálohe, aby ste mali istotu v kalendári. Zvyšnú časť uhradíte až po tom, čo vám odovzdám hotové a upravené fotografie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dá sa fotenie na mieste predĺžiť, ak zábava pokračuje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Áno, rád sa prispôsobím aktuálnej atmosfére. Ak sa hostia skvele bavia a chcete zachytiť aj neskoršie hodiny, môžem zostať dlhšie. Hodinové sadzby za čas navyše sú prehľadne uvedené v kalkulačke vyššie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ako je to s dopravou a v ktorých mestách fotíte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Najčastejšie fotografujem v mestách Galanta, Dunajská Streda, Šaľa, Nové Zámky a Trnava. V obci Dolné Saliby a v blízkom okolí Galanty je doprava úplne zadarmo. Ceny pre vzdialenejšie zóny v kalkulačke slúžia ako orientačný odhad, presné cestovné si potvrdíme podľa konkrétnej adresy."
+        }
+      }
+    ]
   }
   </script>
   <noscript>
@@ -213,7 +263,7 @@
         <!-- Actions -->
         <div class="hero-actions">
           <a href="#calculator" class="btn-primary font-label-caps">KALKULAČKA CENY ↓</a>
-          <a href="/sk/kontakt?service=event" class="btn-secondary btn-outline font-label-caps">KONTAKT →</a>
+          <a href="/sk/kontakt?service=event" class="btn-secondary btn-outline font-label-caps" id="directInquiryBtn">KONTAKT →</a>
         </div>
       </div>
     </header>
@@ -481,7 +531,7 @@
     </section>
 
     <!-- SECTION 4: CONVERSATIONAL FAQ ACCORDION -->
-    <section class="faq-section" id="gyik">
+    <section class="faq-section" id="faq">
       <div class="container faq-container">
         <!-- Header Block -->
         <header class="faq-header scroll-reveal">
@@ -532,7 +582,7 @@
               <span>Fotografujete okrem momentiek aj skupinové fotky?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
-            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-2" hidden>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3" hidden>
               <p>
                 Samozrejme. Hoci sa sústredím na nenútené reportážne zábery a prirodzené úsmevy, počas celej akcie ma
                 môžete kedykoľvek osloviť na rodinnú, kamarátsku alebo veselú skupinovú fotografiu.
@@ -649,12 +699,12 @@
       <span class="font-label-caps text-primary collab-label">SPOLUPRÁCA</span>
       <h2 class="font-display-xl text-white collab-title">Máte záujem o spoločné fotenie?</h2>
       <div class="collab-actions">
-        <a class="btn-white font-label-caps" href="/sk/kontakt">
+        <a class="btn-white font-label-caps" href="/sk/kontakt?service=event">
           KONTAKT <span class="material-symbols-outlined">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">
-          INSTAGRAM <i class="fa-brands fa-instagram" style="font-size: 1.25rem;"></i>
+          INSTAGRAM <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
       </div>
     </section>
