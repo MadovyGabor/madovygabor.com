@@ -4903,9 +4903,17 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
 .photo-carousel-track {
   display: flex;
   gap: 16px;
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 4px 2px;
+}
+
+.photo-carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .photo-carousel-slide {

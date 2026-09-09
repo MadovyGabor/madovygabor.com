@@ -25,6 +25,7 @@ def find_photo_page_dir():
 PHOTO_PAGE_DIR = find_photo_page_dir()
 PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
 OUTPUT_FILE = PHOTO_PAGE_DIR / "galleryData.json"
+METADATA_FILE = PHOTO_PAGE_DIR / "utils" / "image_metadata.json"
 
 
 def slugify(text):
@@ -34,8 +35,8 @@ def slugify(text):
     return re.sub(r'[-\s]+', '-', text)
 
 
-def get_image_data(img_path):
-    """Reads image dimensions, calculates aspect ratio, and generates a clean alt text from filename"""
+def get_image_data(img_path, meta_lookup=None):
+    """Reads image dimensions, calculates aspect ratio, and generates or retrieves localized alt/title metadata"""
     width, height, aspect_ratio = 0, 0, 1.5
     try:
         with Image.open(img_path) as img:
@@ -45,7 +46,7 @@ def get_image_data(img_path):
     except Exception as e:
         print(f"  Warning: Could not read image dimensions for {img_path.name}: {e}")
     
-    # Generate clean alt text from filename
+    # Generate clean fallback alt text from filename
     filename = img_path.stem
     # Replace hyphens and underscores with spaces
     clean_name = filename.replace('-', ' ').replace('_', ' ')
@@ -59,16 +60,28 @@ def get_image_data(img_path):
         alt_text = clean_name[0].upper() + clean_name[1:]
     
     web_path = img_path.relative_to(PHOTO_PAGE_DIR).as_posix()
-    return {
+    item_data = {
         "src": web_path,
         "width": width,
         "height": height,
-        "aspect_ratio": aspect_ratio,
-        "alt": alt_text
+        "aspect_ratio": aspect_ratio
     }
 
+    if meta_lookup and web_path in meta_lookup:
+        entry = meta_lookup[web_path]
+        if "alt" in entry and entry["alt"]:
+            item_data["alt"] = entry["alt"]
+        else:
+            item_data["alt"] = alt_text
+        if "title" in entry and entry["title"]:
+            item_data["title"] = entry["title"]
+    else:
+        item_data["alt"] = alt_text
 
-def get_images_in_dir(dir_path):
+    return item_data
+
+
+def get_images_in_dir(dir_path, meta_lookup=None):
     """Collects and processes all valid image files in a directory"""
     images = []
     if not dir_path.exists():
@@ -77,7 +90,7 @@ def get_images_in_dir(dir_path):
     for item in sorted(os.listdir(dir_path)):
         img_path = dir_path / item
         if img_path.is_file() and img_path.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp'):
-            images.append(get_image_data(img_path))
+            images.append(get_image_data(img_path, meta_lookup))
     return images
 
 
@@ -88,6 +101,39 @@ def generate_gallery_json():
     if not PICTURES_DIR.exists():
         print(f"ERROR: Pictures folder not found at: {PICTURES_DIR}")
         return
+
+    meta_lookup = {}
+    # 1. Load from image_metadata.json if available
+    if METADATA_FILE.exists():
+        try:
+            with open(METADATA_FILE, 'r', encoding='utf-8') as f:
+                meta_lookup.update(json.load(f))
+        except Exception as e:
+            print(f"Warning: Could not read metadata file {METADATA_FILE}: {e}")
+
+    # 2. Harvest any existing rich metadata from galleryData.json to avoid overwriting
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+
+                def harvest_meta(item):
+                    if isinstance(item, dict):
+                        if 'src' in item and (item.get('alt') or item.get('title')):
+                            if item['src'] not in meta_lookup:
+                                meta_lookup[item['src']] = {}
+                                if item.get('alt'):
+                                    meta_lookup[item['src']]['alt'] = item['alt']
+                                if item.get('title'):
+                                    meta_lookup[item['src']]['title'] = item['title']
+                        for v in item.values():
+                            if isinstance(v, list):
+                                for child in v:
+                                    harvest_meta(child)
+
+                harvest_meta(old_data)
+        except Exception as e:
+            print(f"Warning: Could not read existing galleryData.json: {e}")
 
     print(f"Scanning folder structure starting from: {PICTURES_DIR}")
 
@@ -124,7 +170,7 @@ def generate_gallery_json():
 
                 for child_dir in sorted(child_dirs, key=lambda d: d.name):
                     print(f"    Sub-subsection (L3): {child_dir.name}")
-                    images = get_images_in_dir(child_dir)
+                    images = get_images_in_dir(child_dir, meta_lookup)
                     if images:
                         subcat_data["subsections"].append({
                             "title": child_dir.name,
@@ -137,7 +183,7 @@ def generate_gallery_json():
             else:
                 # Level 2 scenario: Direct images (e.g. Portrék -> Portréim)
                 print(f"  Subsection (L2 with direct images): {subcat}")
-                images = get_images_in_dir(sub_path)
+                images = get_images_in_dir(sub_path, meta_lookup)
                 if images:
                     cat_data["subsections"].append({
                         "title": subcat,

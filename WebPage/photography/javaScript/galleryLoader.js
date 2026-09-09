@@ -6,6 +6,7 @@ const categoryTranslations = {
         'Rendezvények': 'Events',
         'Travel': 'Travel',
         'Hajómalom fesztivál 25': 'Hajómalom Festival 25',
+        'Hajomalom fesztivál 26': 'Hajómalom Festival 26',
         'Azahriah Puskás Aréna': 'Azahriah Puskas Arena',
         'Portréim': 'My Portraits',
         'AMTS 25': 'AMTS 25',
@@ -14,7 +15,16 @@ const categoryTranslations = {
         'Brno': 'Brno',
         'Tatranská Lomnica': 'Tatranská Lomnica',
         'Ingatlan & Enteriőr': 'Real Estate & Interior',
-        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik',
+        'Apartmánový dom': 'Apartment House',
+        'AVA NIGHT 26': 'AVA Night 26',
+        'Hangulat': 'Atmosphere',
+        'Fesztivál hangulatképek': 'Festival Atmosphere',
+        'Csoportképek': 'Group Photos',
+        'AVA WARRIORS NIGHT': 'AVA Warriors Night',
+        'FERDINAND VS KOSTOVSKI': 'Ferdinand vs Kostovski',
+        'OROSZI VS BOLEDOVIČ': 'Oroszi vs Boledovič',
+        'Alsószeli Díjátadó': 'Dolné Saliby Awards Gala'
     },
     sk: {
         'Koncertek': 'Koncerty',
@@ -22,6 +32,7 @@ const categoryTranslations = {
         'Rendezvények': 'Podujatia',
         'Travel': 'Cestovanie',
         'Hajómalom fesztivál 25': 'Hajómalom festival 25',
+        'Hajomalom fesztivál 26': 'Hajómalom festival 26',
         'Azahriah Puskás Aréna': 'Azahriah Puskas Arena',
         'Portréim': 'Moje portréty',
         'AMTS 25': 'AMTS 25',
@@ -30,12 +41,31 @@ const categoryTranslations = {
         'Brno': 'Brno',
         'Tatranská Lomnica': 'Tatranská Lomnica',
         'Ingatlan & Enteriőr': 'Nehnuteľnosti & Interiér',
-        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik',
+        'Apartmánový dom': 'Apartmánový dom',
+        'AVA NIGHT 26': 'AVA Night 26',
+        'Hangulat': 'Atmosféra',
+        'Fesztivál hangulatképek': 'Festivalová atmosféra',
+        'Csoportképek': 'Skupinové fotografie',
+        'AVA WARRIORS NIGHT': 'AVA Warriors Night',
+        'FERDINAND VS KOSTOVSKI': 'Ferdinand vs Kostovski',
+        'OROSZI VS BOLEDOVIČ': 'Oroszi vs Boledovič',
+        'Alsószeli Díjátadó': 'Odovzdávanie cien Dolné Saliby'
     },
     hu: {
         'Travel': 'Utazás',
         'Ingatlan & Enteriőr': 'Ingatlan & Enteriőr',
-        'AVA Chatka Motýlik': 'AVA Chatka Motýlik'
+        'AVA Chatka Motýlik': 'AVA Chatka Motýlik',
+        'Apartmánový dom': 'Apartmanház',
+        'AVA NIGHT 26': 'AVA Night 26',
+        'Hajomalom fesztivál 26': 'Hajómalom fesztivál 26',
+        'Hangulat': 'Hangulat',
+        'Fesztivál hangulatképek': 'Fesztivál hangulatképek',
+        'Csoportképek': 'Csoportképek',
+        'AVA WARRIORS NIGHT': 'AVA Warriors Night',
+        'FERDINAND VS KOSTOVSKI': 'Ferdinand vs Kostovski',
+        'OROSZI VS BOLEDOVIČ': 'Oroszi vs Boledovič',
+        'Alsószeli Díjátadó': 'Alsószeli Díjátadó'
     }
 };
 
@@ -456,15 +486,29 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         const src = prefix + rawSrc;
         const aspectRatio = (typeof imgData === 'object' && imgData.aspect_ratio) ? imgData.aspect_ratio : 1.5;
 
-        // Retrieve or generate alt text
+        // Retrieve or generate alt text (supports localized object { hu, sk, en } or string)
+        const currentLang = document.documentElement.lang || 'hu';
         let altText = '';
         if (typeof imgData === 'object' && imgData.alt) {
-            altText = imgData.alt;
+            if (typeof imgData.alt === 'object' && imgData.alt !== null) {
+                altText = imgData.alt[currentLang] || imgData.alt.hu || imgData.alt.sk || imgData.alt.en || '';
+            } else {
+                altText = imgData.alt;
+            }
         } else {
             const filenameWithExt = rawSrc.substring(rawSrc.lastIndexOf('/') + 1);
             const filename = filenameWithExt.substring(0, filenameWithExt.lastIndexOf('.'));
             const cleanName = filename.replace(/[-_]/g, ' ').replace(/\(\d+\)/g, '').trim();
             altText = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+        }
+
+        let titleText = '';
+        if (typeof imgData === 'object' && imgData.title) {
+            if (typeof imgData.title === 'object' && imgData.title !== null) {
+                titleText = imgData.title[currentLang] || imgData.title.hu || imgData.title.sk || imgData.title.en || '';
+            } else {
+                titleText = imgData.title;
+            }
         }
 
         const imgContainer = document.createElement('div');
@@ -473,6 +517,9 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
 
         const img = document.createElement('img');
         img.alt = altText;
+        if (titleText) {
+            img.title = titleText;
+        }
         img.loading = "lazy";
         img.decoding = "async";
 

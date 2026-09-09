@@ -92,6 +92,172 @@
                         "alt": "Ubytovanie diakovce obyvacia izba 2"
                     }
                 ]
+            },
+            {
+                "title": "Apartmánový dom",
+                "id": "apartmanovy-dom",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-01.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (01)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (01)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (01)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-02.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (02)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (02)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (02)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-03.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (03)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (03)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (03)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-04.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (04)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (04)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (04)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-05.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (05)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (05)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (05)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-06.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (06)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (06)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (06)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-07.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (07)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (07)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (07)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-08.webp",
+                        "width": 1920,
+                        "height": 1276,
+                        "aspect_ratio": 1.5047021943573669,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (08)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (08)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (08)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-09.webp",
+                        "width": 1920,
+                        "height": 1279,
+                        "aspect_ratio": 1.5011727912431587,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (09)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (09)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (09)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-10.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (10)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (10)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (10)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -100,50 +266,936 @@
         "id": "koncertek",
         "subsections": [
             {
-                "title": "Azahriah Puskás Aréna",
-                "id": "azahriah-puskas-arena",
-                "images": [
+                "title": "AVA NIGHT 26",
+                "id": "ava-night-26",
+                "subsections": [
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-es-desh-a-szinpadon.webp",
-                        "width": 1453,
-                        "height": 2723,
-                        "aspect_ratio": 0.5336026441424899,
-                        "alt": "Azahriah es desh a szinpadon"
+                        "title": "Azahriah",
+                        "id": "azahriah",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (01)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (01)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (02)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (02)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (03)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (03)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (04)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (04)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (05)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (05)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (06)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (06)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Azahriah/koncertfotozas-azahriah-ava-night-galanta-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Azahriah élő koncert fellépés az AVA Night fesztiválon Galántán - Madový Gábor koncertfotó (07)",
+                                    "sk": "Koncertná fotografia vystúpenia Azahriah na festivale AVA Night v Galante - Gabriel Madový (07)",
+                                    "en": "Live stage photography of Azahriah performing at AVA Night festival in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "Azahriah koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Fotenie koncertu Azahriah - AVA Night Galanta | MG Captures",
+                                    "en": "Azahriah live concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-koncert-kepek-puskas-arena.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Azahriah koncert kepek puskas arena"
+                        "title": "Fesztivál hangulatképek",
+                        "id": "fesztival-hangulatkepek",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (01)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (01)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (01)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (02)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (02)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (02)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (03)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (03)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (03)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (04)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (04)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (04)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (05)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (05)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (05)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (06)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (06)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (06)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztivál hangulat, közönség és látványos fények az AVA Night rendezvényen Galántán - MG Captures (07)",
+                                    "sk": "Párty atmosféra, publikum a svetelná šou na festivale AVA Night v Galante - Gabriel Madový (07)",
+                                    "en": "Festival atmosphere, enthusiastic crowd and stage light show at AVA Night in Galanta - MG Captures (07)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál és rendezvényfotózás - AVA Night Galánta",
+                                    "sk": "Eventová a festivalová fotografia - AVA Night Galanta",
+                                    "en": "Festival atmosphere & event photography - AVA Night Galanta"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-koncert-puskas-arena-latvany.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Azahriah koncert puskas arena latvany"
+                        "title": "Rytmus",
+                        "id": "rytmus",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (01)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (01)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (02)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (02)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (03)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (03)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (04)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (04)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (05)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (05)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (06)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (06)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (07)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (07)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (08)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (08)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/AVA NIGHT 26/Rytmus/koncertfotozas-rytmus-ava-night-galanta-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Rytmus rap koncert az AVA Night színpadán Galántán - Madový Gábor koncertfotózás (09)",
+                                    "sk": "Živé vystúpenie rappera Rytmusa na festivale AVA Night v Galante - Gabriel Madový (09)",
+                                    "en": "Rapper Rytmus performing live at AVA Night concert in Galanta - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "Rytmus koncertfotózás - AVA Night Galánta | MG Captures",
+                                    "sk": "Koncertná fotografia Rytmus - AVA Night Galanta | MG Captures",
+                                    "en": "Rytmus concert photography - AVA Night Galanta | MG Captures"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Hajomalom fesztivál 26",
+                "id": "hajomalom-fesztival-26",
+                "subsections": [
+                    {
+                        "title": "BSW",
+                        "id": "bsw",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (01)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (01)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (02)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (02)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (03)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (03)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (04)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (04)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (05)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (05)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (06)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (06)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (07)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (07)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (08)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (08)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (09)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (09)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/BSW/koncertfotozas-bsw-hajomalom-fesztival-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "BSW élő koncert a Hajómalom Fesztivál nagyszínpadán Gútán - MG Captures (10)",
+                                    "sk": "Koncert formácie BSW na hlavnom pódiu festivalu Hajómalom v Kolárove - Gabriel Madový (10)",
+                                    "en": "BSW live rap concert performance at Hajómalom Festival in Kolárovo - Gabriel Madový (10)"
+                                },
+                                "title": {
+                                    "hu": "BSW koncertfotózás - Hajómalom Fesztivál 26 Gúta",
+                                    "sk": "Koncertná fotografia BSW - Hajómalom festival 26 Kolárovo",
+                                    "en": "BSW live concert photography - Hajómalom Festival 26"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-puskas-arena-koncert.webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azahriah puskas arena koncert"
+                        "title": "Csoportképek",
+                        "id": "csoportkepek",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (01)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (01)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (01)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (02)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (02)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (02)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (03)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (03)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (03)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-04.webp",
+                                "width": 1536,
+                                "height": 1920,
+                                "aspect_ratio": 0.8,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (04)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (04)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (04)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (05)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (05)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (05)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (06)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (06)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (06)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (07)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (07)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (07)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (08)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (08)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (08)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (09)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (09)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (09)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Csoportképek/esemenyfotozas-csoportkep-hajomalom-fesztival-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Fesztiválozók és baráti társaságok csoportképei a Hajómalom Fesztiválon Gútán - MG Captures (10)",
+                                    "sk": "Skupinové momentky návštevníkov a priateľov na festivale Hajómalom v Kolárove - Gabriel Madový (10)",
+                                    "en": "Group photos and festival attendees at Hajómalom Festival in Kolárovo - MG Captures (10)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál csoportképek és vendégfotózás - Hajómalom Fesztivál",
+                                    "sk": "Skupinová fotografia návštevníkov - Hajómalom festival",
+                                    "en": "Festival crowd & group portraits - Hajómalom Festival"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/Azahriah-puskas-koncert-lebego-buvar-kep.webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Azahriah puskas koncert lebego buvar kep"
+                        "title": "Desh",
+                        "id": "desh",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (01)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (01)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (02)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (02)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (03)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (03)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (04)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (04)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (05)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (05)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (06)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (06)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Desh/koncertfotozas-desh-hajomalom-fesztival-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Desh élő színpadi fellépése a Hajómalom Fesztiválon Gútán - Madový Gábor koncertfotó (07)",
+                                    "sk": "Živé koncertné vystúpenie speváka Desh na festivale Hajómalom v Kolárove - Gabriel Madový (07)",
+                                    "en": "Desh performing live on stage at Hajómalom Festival in Kolárovo - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "Desh koncertfotózás - Hajómalom Fesztivál 26",
+                                    "sk": "Fotenie koncertu Desh - Hajómalom festival 26",
+                                    "en": "Desh concert photography - Hajómalom Festival 26"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Koncertek/Azahriah Puskás Aréna/desh-a-puskas-arenaban-koncert-kep.webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Desh a puskas arenaban koncert kep"
+                        "title": "Fesztivál hangulatképek",
+                        "id": "fesztival-hangulatkepek",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1291,
+                                "aspect_ratio": 1.4872192099147947,
+                                "alt": {
+                                    "hu": "Péntek esti fesztiválhangulat és buli pillanatok a Hajómalom Fesztiválon - Madový Gábor fotó (01)",
+                                    "sk": "Piatková festivalová nálada, svetlá a energia na festivale Hajómalom - Gabriel Madový (01)",
+                                    "en": "Friday night festival vibes and atmosphere at Hajómalom Festival - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál hangulat és esti pillanatok - Hajómalom Fesztivál",
+                                    "sk": "Festivalová atmosféra a večerné momenty - Hajómalom festival",
+                                    "en": "Festival night atmosphere - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Péntek esti fesztiválhangulat és buli pillanatok a Hajómalom Fesztiválon - Madový Gábor fotó (02)",
+                                    "sk": "Piatková festivalová nálada, svetlá a energia na festivale Hajómalom - Gabriel Madový (02)",
+                                    "en": "Friday night festival vibes and atmosphere at Hajómalom Festival - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál hangulat és esti pillanatok - Hajómalom Fesztivál",
+                                    "sk": "Festivalová atmosféra a večerné momenty - Hajómalom festival",
+                                    "en": "Festival night atmosphere - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Péntek esti fesztiválhangulat és buli pillanatok a Hajómalom Fesztiválon - Madový Gábor fotó (03)",
+                                    "sk": "Piatková festivalová nálada, svetlá a energia na festivale Hajómalom - Gabriel Madový (03)",
+                                    "en": "Friday night festival vibes and atmosphere at Hajómalom Festival - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál hangulat és esti pillanatok - Hajómalom Fesztivál",
+                                    "sk": "Festivalová atmosféra a večerné momenty - Hajómalom festival",
+                                    "en": "Festival night atmosphere - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Péntek esti fesztiválhangulat és buli pillanatok a Hajómalom Fesztiválon - Madový Gábor fotó (04)",
+                                    "sk": "Piatková festivalová nálada, svetlá a energia na festivale Hajómalom - Gabriel Madový (04)",
+                                    "en": "Friday night festival vibes and atmosphere at Hajómalom Festival - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál hangulat és esti pillanatok - Hajómalom Fesztivál",
+                                    "sk": "Festivalová atmosféra a večerné momenty - Hajómalom festival",
+                                    "en": "Festival night atmosphere - Hajómalom Festival"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Péntek esti fesztiválhangulat és buli pillanatok a Hajómalom Fesztiválon - Madový Gábor fotó (05)",
+                                    "sk": "Piatková festivalová nálada, svetlá a energia na festivale Hajómalom - Gabriel Madový (05)",
+                                    "en": "Friday night festival vibes and atmosphere at Hajómalom Festival - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "Fesztivál hangulat és esti pillanatok - Hajómalom Fesztivál",
+                                    "sk": "Festivalová atmosféra a večerné momenty - Hajómalom festival",
+                                    "en": "Festival night atmosphere - Hajómalom Festival"
+                                }
+                            }
+                        ]
                     }
                 ]
             },
@@ -767,34 +1819,6 @@
                 "id": "portreim",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Portrék/Portréim/Emese-2.webp",
-                        "width": 4000,
-                        "height": 5000,
-                        "aspect_ratio": 0.8,
-                        "alt": "Emese 2"
-                    },
-                    {
-                        "src": "pictures/portfolio/Portrék/Portréim/Emese-3.webp",
-                        "width": 4000,
-                        "height": 5000,
-                        "aspect_ratio": 0.8,
-                        "alt": "Emese 3"
-                    },
-                    {
-                        "src": "pictures/portfolio/Portrék/Portréim/Emese-6.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Emese 6"
-                    },
-                    {
-                        "src": "pictures/portfolio/Portrék/Portréim/Emese-8.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Emese 8"
-                    },
-                    {
                         "src": "pictures/portfolio/Portrék/Portréim/Picture 1.webp",
                         "width": 3749,
                         "height": 4687,
@@ -842,6 +1866,38 @@
                         "height": 3885,
                         "aspect_ratio": 1.4998712998713,
                         "alt": "Szombat kép 10"
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-01.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Természetes fényben készült női szabadtéri portré - Madový Gábor portréfotózás (01)",
+                            "sk": "Prirodzený ženský portrét v exteriéri s denným svetlom - Gabriel Madový (01)",
+                            "en": "Natural light outdoor female portrait photography - Gabriel Madový (01)"
+                        },
+                        "title": {
+                            "hu": "Szabadtéri portréfotózás | MG Captures - Madový Gábor",
+                            "sk": "Portrétna fotografia v exteriéri | Gabriel Madový",
+                            "en": "Outdoor portrait photography | Gabriel Madový"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-02.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Kreatív szabadtéri női portréfotózás természetes környezetben - MG Captures (02)",
+                            "sk": "Kreatívna exteriérová portrétna fotografia v prírode - Gabriel Madový (02)",
+                            "en": "Creative outdoor portrait in scenic natural surroundings - MG Captures (02)"
+                        },
+                        "title": {
+                            "hu": "Szabadtéri portréfotózás | MG Captures - Madový Gábor",
+                            "sk": "Portrétna fotografia v exteriéri | Gabriel Madový",
+                            "en": "Outdoor portrait photography | Gabriel Madový"
+                        }
                     }
                 ]
             }
@@ -952,6 +2008,542 @@
                         "height": 3926,
                         "aspect_ratio": 1.249872643912379,
                         "alt": "Terror benz"
+                    }
+                ]
+            },
+            {
+                "title": "AVA WARRIORS NIGHT",
+                "id": "ava-warriors-night",
+                "subsections": [
+                    {
+                        "title": "FERDINAND VS KOSTOVSKI",
+                        "id": "ferdinand-vs-kostovski",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (01)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (01)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (02)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (02)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (03)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (03)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (04)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (04)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (05)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (05)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (06)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (06)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (07)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (07)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (08)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (08)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (09)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (09)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (10)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (10)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (10)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-11.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (11)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (11)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (11)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "title": "OROSZI VS BOLEDOVIČ",
+                        "id": "oroszi-vs-boledovic",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (01)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (01)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (02)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (02)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (03)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (03)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (04)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (04)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (05)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (05)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (06)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (06)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (07)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (07)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (08)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (08)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (09)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (09)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (10)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (10)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (10)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-11.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (11)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (11)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (11)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Alsószeli Díjátadó",
+                "id": "alsoszeli-dijatado",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-01.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (01)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (01)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (01)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-02.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (02)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (02)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (02)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-03.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (03)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (03)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (03)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-04.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (04)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (04)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (04)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-05.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (05)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (05)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (05)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-06.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (06)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (06)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (06)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-07.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (07)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (07)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (07)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-08.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (08)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (08)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (08)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-09.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (09)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (09)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (09)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-10.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (10)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (10)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (10)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
                     }
                 ]
             },
