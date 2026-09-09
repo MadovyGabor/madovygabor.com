@@ -46,7 +46,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print"
     onload="this.media='all'" />
@@ -84,33 +84,15 @@
     "url": "https://madovygabor.work/en/services/yearbook-photography"
   }
   </script>
+  <noscript>
+    <style>
+      .occasion-img-wrap img, .photo-carousel-slide img { opacity: 1 !important; }
+      .skeleton-shimmer { animation: none !important; background: #141616 !important; }
+    </style>
+  </noscript>
 </head>
 
 <body class="dot-grid">
-
-  <!-- Skeleton Loader -->
-  <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
-    <nav class="sk-nav">
-      <div class="nav-container">
-        <div class="skeleton-block sk-brand"></div>
-        <div class="skeleton-block sk-nav-right"></div>
-      </div>
-    </nav>
-    <div class="sk-main">
-      <div class="sk-ev-hero">
-        <div class="container">
-          <div class="skeleton-block sk-ev-title"></div>
-          <div class="skeleton-block sk-ev-subtitle"></div>
-          <div class="skeleton-block sk-ev-desc"></div>
-          <div class="skeleton-block sk-ev-desc sk-ev-desc-short"></div>
-          <div class="sk-ev-actions">
-            <div class="skeleton-block sk-ev-btn"></div>
-            <div class="skeleton-block sk-ev-btn"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Mobile Nav Drawer -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
@@ -258,10 +240,10 @@
         <div class="occasions-grid">
           <!-- Card 1: Indoor Yearbook Portraits -->
           <article class="occasion-card scroll-reveal delay-100">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
                 alt="Indoor yearbook portrait with portable backdrop" loading="lazy" decoding="async" width="800"
-                height="520" />
+                height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">PORTABLE BACKDROP</span>
             </div>
@@ -275,10 +257,10 @@
 
           <!-- Card 2: Outdoor Campus Photos -->
           <article class="occasion-card scroll-reveal delay-200">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 2.webp"
                 alt="Outdoor yearbook portraits in natural daylight" loading="lazy" decoding="async" width="800"
-                height="520" />
+                height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">OUTDOOR &amp; DAYLIGHT</span>
             </div>
@@ -292,9 +274,9 @@
 
           <!-- Card 3: Teacher Portraits & Friends -->
           <article class="occasion-card scroll-reveal delay-300">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp"
-                alt="Teacher portraits and friend group photos" loading="lazy" decoding="async" width="800" height="520" />
+                alt="Teacher portraits and friend group photos" loading="lazy" decoding="async" width="800" height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">EXTRAS</span>
             </div>
@@ -642,33 +624,33 @@
           </button>
 
           <div class="photo-carousel-track" id="photoCarouselTrack">
-            <div class="photo-carousel-slide scroll-reveal">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
                 alt="Senior yearbook portrait with clean portable backdrop" loading="lazy" decoding="async" width="600"
-                height="750" />
+                height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-100">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 2.webp"
-                alt="Outdoor senior portrait in natural light" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Outdoor senior portrait in natural light" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-200">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp"
                 alt="Graduating seniors celebration and keepsakes" loading="lazy" decoding="async" width="600"
-                height="750" />
+                height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-300">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 4.webp"
-                alt="Creative senior portrait in natural light" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Creative senior portrait in natural light" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-100">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp"
                 alt="Graduation ribbon ceremony and milestone smiles" loading="lazy" decoding="async" width="600"
-                height="750" />
+                height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-200">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (14).webp"
                 alt="Graduating class friends and memorable moments" loading="lazy" decoding="async" width="600"
-                height="750" />
+                height="750" onload="this.classList.add('is-loaded')" />
             </div>
           </div>
 

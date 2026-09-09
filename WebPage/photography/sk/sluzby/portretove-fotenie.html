@@ -46,7 +46,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" media="print"
     onload="this.media='all'" />
@@ -85,91 +85,15 @@
     "url": "https://madovygabor.work/sk/sluzby/portretove-fotenie"
   }
   </script>
+  <noscript>
+    <style>
+      .occasion-img-wrap img, .photo-carousel-slide img { opacity: 1 !important; }
+      .skeleton-shimmer { animation: none !important; background: #141616 !important; }
+    </style>
+  </noscript>
 </head>
 
 <body class="dot-grid">
-
-  <!-- Skeleton Loader -->
-  <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
-    <!-- Nav skeleton -->
-    <nav class="sk-nav">
-      <div class="nav-container">
-        <div class="skeleton-block sk-brand"></div>
-        <div class="skeleton-block sk-nav-right"></div>
-      </div>
-    </nav>
-
-    <div class="sk-main">
-      <!-- Hero skeleton — mirrors .event-hero -->
-      <div class="sk-ev-hero">
-        <div class="container">
-          <div class="skeleton-block sk-ev-title"></div>
-          <div class="skeleton-block sk-ev-subtitle"></div>
-          <div class="skeleton-block sk-ev-desc"></div>
-          <div class="skeleton-block sk-ev-desc sk-ev-desc-short"></div>
-          <div class="sk-ev-actions">
-            <div class="skeleton-block sk-ev-btn"></div>
-            <div class="skeleton-block sk-ev-btn"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Occasions skeleton — mirrors .occasions-section -->
-      <div class="sk-ev-occasions">
-        <div class="container">
-          <!-- Intro header -->
-          <div class="sk-ev-intro-header">
-            <div class="skeleton-block sk-ev-tag"></div>
-            <div class="skeleton-block sk-ev-section-title"></div>
-          </div>
-
-          <!-- 2-column split -->
-          <div class="sk-ev-split-grid">
-            <div>
-              <div class="skeleton-block sk-ev-col-title"></div>
-              <div class="skeleton-block sk-ev-col-p1"></div>
-              <div class="skeleton-block sk-ev-col-p2"></div>
-              <div class="skeleton-block sk-ev-col-p3"></div>
-            </div>
-            <div>
-              <div class="skeleton-block sk-ev-col-title"></div>
-              <div class="skeleton-block sk-ev-col-p1"></div>
-              <div class="skeleton-block sk-ev-col-p2"></div>
-              <div class="skeleton-block sk-ev-col-p3"></div>
-            </div>
-          </div>
-
-          <!-- 3-card grid -->
-          <div class="sk-ev-cards-grid">
-            <div class="sk-ev-card">
-              <div class="skeleton-block sk-ev-card-img"></div>
-              <div class="sk-ev-card-body">
-                <div class="skeleton-block sk-ev-card-title"></div>
-                <div class="skeleton-block sk-ev-card-text1"></div>
-                <div class="skeleton-block sk-ev-card-text2"></div>
-              </div>
-            </div>
-            <div class="sk-ev-card">
-              <div class="skeleton-block sk-ev-card-img"></div>
-              <div class="sk-ev-card-body">
-                <div class="skeleton-block sk-ev-card-title"></div>
-                <div class="skeleton-block sk-ev-card-text1"></div>
-                <div class="skeleton-block sk-ev-card-text2"></div>
-              </div>
-            </div>
-            <div class="sk-ev-card">
-              <div class="skeleton-block sk-ev-card-img"></div>
-              <div class="sk-ev-card-body">
-                <div class="skeleton-block sk-ev-card-title"></div>
-                <div class="skeleton-block sk-ev-card-text1"></div>
-                <div class="skeleton-block sk-ev-card-text2"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Mobile Nav Drawer -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
@@ -328,9 +252,9 @@
         <div class="occasions-grid">
           <!-- Card 1: Exteriérový lifestylový portrét -->
           <article class="occasion-card scroll-reveal delay-100">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 2.webp"
-                alt="Exteriérový lifestylový portrét v prirodzenom svetle" loading="lazy" decoding="async" width="800" height="520" />
+                alt="Exteriérový lifestylový portrét v prirodzenom svetle" loading="lazy" decoding="async" width="800" height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">PRIRODZENÁ NÁLADA</span>
             </div>
@@ -344,9 +268,9 @@
 
           <!-- Card 2: Fotenie v zlatej hodinke -->
           <article class="occasion-card scroll-reveal delay-200">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 6.webp"
-                alt="Portrétové fotenie v zlatej hodinke pri západe slnka" loading="lazy" decoding="async" width="800" height="520" />
+                alt="Portrétové fotenie v zlatej hodinke pri západe slnka" loading="lazy" decoding="async" width="800" height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">TEPLÉ TÓNY</span>
             </div>
@@ -360,9 +284,9 @@
 
           <!-- Card 3: Kreatívna individuálna séria -->
           <article class="occasion-card scroll-reveal delay-300">
-            <div class="occasion-img-wrap">
+            <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
-                alt="Kreatívna individuálna portrétna séria" loading="lazy" decoding="async" width="800" height="520" />
+                alt="Kreatívna individuálna portrétna séria" loading="lazy" decoding="async" width="800" height="520" onload="this.classList.add('is-loaded')" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">VLASTNÝ ŠTÝL</span>
             </div>
@@ -667,37 +591,37 @@
           </button>
 
           <div class="photo-carousel-track" id="photoCarouselTrack">
-            <div class="photo-carousel-slide scroll-reveal">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 2.webp"
-                alt="Prirodzený exteriérový portrét v zlatej hodinke" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Prirodzený exteriérový portrét v zlatej hodinke" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-100">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Emese-2.webp"
-                alt="Uvoľnený lifestylový ženský portrét vonku" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Uvoľnený lifestylový ženský portrét vonku" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-200">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 6.webp"
-                alt="Portrét v teplých tónoch západu slnka" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Portrét v teplých tónoch západu slnka" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-300">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Portrék/Portréim/Emese-3.webp"
-                alt="Exteriérový portrét v prirodzenom svetle" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Exteriérový portrét v prirodzenom svetle" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-100">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
-                alt="Kreatívny individuálny portrét v exteriéri" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Kreatívny individuálny portrét v exteriéri" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-200">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Portrék/Portréim/Emese-6.webp"
-                alt="Autentický portrét v príjemnej atmosfére" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Autentický portrét v príjemnej atmosfére" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-300">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 4.webp"
-                alt="Prirodzená a sebavedomá portrétna fotografia" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Prirodzená a sebavedomá portrétna fotografia" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
-            <div class="photo-carousel-slide scroll-reveal delay-100">
+            <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Emese-8.webp"
-                alt="Záber z kreatívnej individuálnej série" loading="lazy" decoding="async" width="600" height="750" />
+                alt="Záber z kreatívnej individuálnej série" loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
             </div>
           </div>
 

@@ -1,8 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Inline Icon SVGs base utility */
+.icon-svg,
+svg.icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  flex-shrink: 0;
+}
 
 /* Bulletproof Material Symbols Outlined base definition */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('fonts/material-symbols-outlined.woff2') format('woff2');
+}
+
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
+  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -10,6 +38,8 @@
   letter-spacing: normal;
   text-transform: none !important;
   display: inline-block;
+  user-select: none;
+  vertical-align: middle;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
@@ -420,26 +450,36 @@ button {
   border-color: var(--color-sky-500);
 }
 
-.nav-dropdown-trigger .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
+.nav-dropdown-trigger .material-symbols-outlined,
+.nav-dropdown-trigger svg {
   font-size: 18px;
+  width: 18px;
+  height: 18px;
   color: inherit;
+  display: inline-block;
+  vertical-align: middle;
   transition: transform 0.25s ease, color var(--transition-fast);
 }
 
 .nav-dropdown:hover .nav-dropdown-trigger .material-symbols-outlined,
-.nav-dropdown.open .nav-dropdown-trigger .material-symbols-outlined {
+.nav-dropdown.open .nav-dropdown-trigger .material-symbols-outlined,
+.nav-dropdown:hover .nav-dropdown-trigger svg,
+.nav-dropdown.open .nav-dropdown-trigger svg {
   transform: rotate(180deg);
   color: #ffffff;
 }
 
 .nav-dropdown-trigger.active .material-symbols-outlined,
-.nav-dropdown-trigger.active-section .material-symbols-outlined {
+.nav-dropdown-trigger.active-section .material-symbols-outlined,
+.nav-dropdown-trigger.active svg,
+.nav-dropdown-trigger.active-section svg {
   color: var(--color-sky-500);
 }
 
 .nav-dropdown:hover .nav-dropdown-trigger.active .material-symbols-outlined,
-.nav-dropdown.open .nav-dropdown-trigger.active .material-symbols-outlined {
+.nav-dropdown.open .nav-dropdown-trigger.active .material-symbols-outlined,
+.nav-dropdown:hover .nav-dropdown-trigger.active svg,
+.nav-dropdown.open .nav-dropdown-trigger.active svg {
   color: var(--color-sky-500);
   transform: rotate(180deg);
 }
@@ -523,12 +563,15 @@ button {
 }
 
 .nav-dropdown-item-icon,
+.dropdown-item svg,
+.nav-dropdown-item svg,
 .dropdown-item .material-symbols-outlined,
 .nav-dropdown-item .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
   font-weight: normal;
   font-style: normal;
   font-size: 20px;
+  width: 20px;
+  height: 20px;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -538,10 +581,6 @@ button {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  font-feature-settings: 'liga' 1;
-  -webkit-font-feature-settings: 'liga' 1;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
   color: var(--color-sky-500);
   flex-shrink: 0;
   transition: color var(--transition-fast);
@@ -549,6 +588,8 @@ button {
 
 .nav-dropdown-item:hover .nav-dropdown-item-icon,
 .dropdown-item:hover .nav-dropdown-item-icon,
+.dropdown-item:hover svg,
+.nav-dropdown-item:hover svg,
 .dropdown-item:hover .material-symbols-outlined,
 .nav-dropdown-item:hover .material-symbols-outlined {
   color: var(--color-sky-400);
@@ -625,14 +666,20 @@ button {
   color: var(--color-sky-500);
 }
 
-.mobile-nav-accordion-trigger .material-symbols-outlined {
+.mobile-nav-accordion-trigger .material-symbols-outlined,
+.mobile-nav-accordion-trigger svg {
   font-size: 18px;
+  width: 18px;
+  height: 18px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color var(--transition-fast);
   color: inherit;
   margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.mobile-nav-accordion.open .mobile-nav-accordion-trigger .material-symbols-outlined {
+.mobile-nav-accordion.open .mobile-nav-accordion-trigger .material-symbols-outlined,
+.mobile-nav-accordion.open .mobile-nav-accordion-trigger svg {
   transform: rotate(180deg);
 }
 
@@ -683,15 +730,22 @@ button {
   background-color: rgba(14, 165, 233, 0.06);
 }
 
-.mobile-nav-sublink .material-symbols-outlined {
+.mobile-nav-sublink .material-symbols-outlined,
+.mobile-nav-sublink svg {
   font-size: 18px;
+  width: 18px;
+  height: 18px;
   color: var(--color-sky-500);
   flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
   transition: color var(--transition-fast);
 }
 
 .mobile-nav-sublink:hover .material-symbols-outlined,
-.mobile-nav-sublink.active .material-symbols-outlined {
+.mobile-nav-sublink:hover svg,
+.mobile-nav-sublink.active .material-symbols-outlined,
+.mobile-nav-sublink.active svg {
   color: var(--color-sky-400);
 }
 
@@ -853,6 +907,11 @@ button {
     width: fit-content;
     align-self: center;
   }
+
+  .service-card-cta {
+    min-height: 44px;
+    height: auto;
+  }
 }
 
 .service-card-cta {
@@ -884,15 +943,21 @@ button {
   color: var(--primary);
 }
 
-.service-card-cta .material-symbols-outlined {
+.service-card-cta .material-symbols-outlined,
+.service-card-cta svg {
   font-size: 15px;
+  width: 15px;
+  height: 15px;
   line-height: 1;
   margin-left: 6px;
   color: inherit;
+  display: inline-block;
+  vertical-align: middle;
   transition: transform var(--transition-fast);
 }
 
-.service-card-cta:hover .material-symbols-outlined {
+.service-card-cta:hover .material-symbols-outlined,
+.service-card-cta:hover svg {
   transform: translateX(3px);
   color: inherit;
 }
@@ -970,18 +1035,29 @@ button {
 /* Hamburger Button */
 .hamburger-btn {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 10px;
   border-radius: 4px;
+  color: #ffffff;
   transition: background-color var(--transition-fast);
+}
+
+.hamburger-btn .material-symbols-outlined,
+.hamburger-btn svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  color: #ffffff;
+  display: block;
 }
 
 .hamburger-btn:hover {
@@ -1053,8 +1129,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0;
@@ -1067,6 +1145,16 @@ button {
   background-color: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
+}
+
+.nav-close-btn .material-symbols-outlined,
+.nav-close-btn svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  color: inherit;
+  display: block;
 }
 
 .mobile-nav-links {
@@ -1148,6 +1236,11 @@ button {
   text-decoration: none;
   letter-spacing: 0.08em;
   padding: 2px 4px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: color var(--transition-fast);
 }
 
@@ -1536,13 +1629,46 @@ main {
   box-sizing: border-box;
 }
 
+.service-icon,
+.service-icon.material-symbols-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.service-icon .material-symbols-outlined,
+.service-icon svg {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  display: block;
+}
+
+.service-icon-right .material-symbols-outlined,
+.service-icon-right svg {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  display: block;
+}
+
 .service-bg-icon {
   position: absolute;
   top: 0;
   right: 0;
   padding: 32px;
   font-size: 8rem;
+  line-height: 1;
   opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
   transition: opacity var(--transition-normal);
 }
 
@@ -2066,6 +2192,52 @@ main {
   100% {
     background-position: -200% 0;
   }
+}
+
+/* In-place non-blocking skeleton shimmer for homepage image containers */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.5s infinite linear;
+}
+
+.skeleton-shimmer:has(> img.is-loaded),
+.skeleton-shimmer.is-loaded {
+  animation: none;
+  background-image: none;
+  background-color: var(--color-surface-container);
+  transition: background 0.4s ease;
+}
+
+/* Homepage In-Place Skeleton Image Transitions */
+.page-home .hero-img,
+.page-home .portfolio-img {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.page-home .hero-img.is-loaded {
+  opacity: 1;
+}
+
+.page-home .portfolio-img.is-loaded {
+  opacity: 0.8;
+}
+
+.page-home .portfolio-item:hover .portfolio-img.is-loaded {
+  opacity: 1;
+}
+
+/* Keep hero-overlay hidden during skeleton shimmer so colors match sk-hero-image exactly */
+.hero-image-col.skeleton-shimmer:not(:has(> img.is-loaded)):not(.is-loaded) .hero-overlay {
+  opacity: 0;
+}
+
+.hero-image-col .hero-overlay {
+  transition: opacity 0.35s ease-in-out;
 }
 
 /* Skeleton Nav — matches .navbar */
@@ -4584,11 +4756,27 @@ address.contact-info {
   background-color: #0d0f0f;
 }
 
+.occasion-img-wrap.skeleton-shimmer:has(> img.is-loaded),
+.occasion-img-wrap.skeleton-shimmer.is-loaded {
+  animation: none;
+  background-image: none;
+  background-color: #0d0f0f;
+}
+
+.occasion-img-wrap.skeleton-shimmer:not(:has(> img.is-loaded)):not(.is-loaded) .occasion-img-overlay {
+  opacity: 0;
+}
+
 .occasion-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.occasion-img-wrap img.is-loaded {
+  opacity: 1;
 }
 
 .occasion-card:hover .occasion-img-wrap img {
@@ -4600,6 +4788,7 @@ address.contact-info {
   inset: 0;
   background: linear-gradient(to top, rgba(22, 24, 24, 0.95) 0%, transparent 60%);
   pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
 }
 
 .occasion-tag {
@@ -5777,13 +5966,25 @@ address.contact-info {
   border-radius: 0;
 }
 
+.photo-carousel-slide.skeleton-shimmer:has(> img.is-loaded),
+.photo-carousel-slide.skeleton-shimmer.is-loaded {
+  animation: none;
+  background-image: none;
+  background-color: #141616;
+}
+
 .photo-carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-carousel-slide img.is-loaded {
+  opacity: 1;
 }
 
 .photo-carousel-slide:hover img {

@@ -29,8 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Skeleton Loader ─────────────────────────────────────────
     const skeleton = document.getElementById('skeleton');
+    const isHomepage = document.body.classList.contains('page-home');
 
-    if (skeleton) {
+    if (skeleton && !isHomepage) {
         const hideSkeleton = () => {
             if (skeleton.classList.contains('hidden')) return;
             skeleton.classList.add('hidden');
@@ -55,14 +56,45 @@ document.addEventListener('DOMContentLoaded', () => {
         observeElements();
     }
 
+    // ─── In-Place Skeleton Loader ─────────────────────────────────
+    initInPlaceSkeleton();
+
+    function initInPlaceSkeleton() {
+        const images = document.querySelectorAll('.hero-image-col img, .portfolio-item img, .occasion-img-wrap img, .photo-carousel-slide img');
+        if (!images.length) return;
+
+        images.forEach(img => {
+            const handleLoaded = () => {
+                img.classList.add('is-loaded');
+                const container = img.closest('.skeleton-shimmer');
+                if (container) {
+                    container.classList.add('is-loaded');
+                    setTimeout(() => {
+                        container.classList.remove('skeleton-shimmer');
+                    }, 400);
+                }
+            };
+
+            if (img.complete && img.naturalWidth !== 0) {
+                handleLoaded();
+            } else {
+                img.addEventListener('load', handleLoaded, { once: true });
+                img.addEventListener('error', handleLoaded, { once: true });
+            }
+        });
+    }
+
     // ─── Back / Forward cache (bfcache) ──────────────────────────
     // Browser Back restores from cache — page is already rendered,
     // never show the skeleton.
     window.addEventListener('pageshow', e => {
-        if (!e.persisted || !skeleton) return;
-        skeleton.classList.add('hidden');
-        skeleton.style.display = 'none';
+        if (!e.persisted) return;
+        if (skeleton) {
+            skeleton.classList.add('hidden');
+            skeleton.style.display = 'none';
+        }
         observeElements();
+        initInPlaceSkeleton();
     });
 
     // ─── Scroll Reveal ───────────────────────────────────────────
