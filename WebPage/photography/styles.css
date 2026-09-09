@@ -2226,6 +2226,7 @@ main {
 .sk-ev-occasions {
   padding: 64px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--color-surface, #121414);
 }
 
 .sk-ev-occasions .container {
@@ -4300,6 +4301,7 @@ address.contact-info {
 .occasions-section {
   padding: 64px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--color-surface, #121414);
 }
 
 .occasions-header,
@@ -5498,6 +5500,7 @@ address.contact-info {
 .mini-gallery-section {
   padding: clamp(64px, 7vw, 100px) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--color-surface, #121414);
 }
 
 .mini-gallery-header {
