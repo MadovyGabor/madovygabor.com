@@ -279,6 +279,7 @@ button {
   padding-right: clamp(20px, 4vw, 48px);
   width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 /* Navigation */
@@ -1207,13 +1208,25 @@ main {
 .hero-container {
   display: flex;
   flex-direction: column;
-  min-height: 50vh;
+  min-height: 85vh;
+  width: 100%;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .hero-container {
     flex-direction: row;
     align-items: stretch;
+    justify-content: space-between;
+    gap: clamp(32px, 4vw, 64px);
+    min-height: clamp(640px, 85vh, 860px);
+    max-height: 880px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-container {
+    max-height: 820px;
   }
 }
 
@@ -1224,13 +1237,28 @@ main {
 
 @media (min-width: 768px) {
   .hero-image-col {
-    width: 38%;
-    flex-shrink: 0;
+    width: 44%;
+    flex: 0 0 44%;
+    align-self: stretch;
   }
 
   .hero-text-col {
-    width: 62%;
-    flex-grow: 1;
+    width: 54%;
+    flex: 1 1 54%;
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-image-col {
+    width: 46%;
+    flex: 0 0 46%;
+  }
+
+  .hero-text-col {
+    width: 52%;
+    flex: 1 1 52%;
+    max-width: 780px;
   }
 }
 
@@ -1238,38 +1266,43 @@ main {
   position: relative;
   background-color: var(--color-surface-container);
   overflow: hidden;
+  border-radius: 4px;
+  width: 100%;
   height: 55vh;
+  min-height: 360px;
+  max-height: 520px;
+  margin: 16px 0 clamp(32px, 5vh, 48px) 0;
 }
 
 @media (min-width: 570px) and (max-width: 767px) {
   .hero-image-col {
-    height: 90vh;
-  }
-}
-
-@media (min-width: 420px) and (max-width: 570px) {
-  .hero-image-col {
-    height: 72vh;
+    height: 70vh;
   }
 }
 
 @media (min-width: 768px) {
   .hero-image-col {
     height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: clamp(28px, 4vh, 48px) 0;
   }
 }
 
+.hero-image,
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center top; /* Keeps the face/head well framed even when sides are cropped */
+  display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background-color: rgba(10, 10, 10, 0.2);
+  pointer-events: none;
 }
 
 .hero-text-col {
@@ -1282,7 +1315,7 @@ main {
 
 @media (min-width: 768px) {
   .hero-text-col {
-    padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 48px) clamp(48px, 6vw, 80px) 0;
+    padding: clamp(80px, 8vw, 128px) clamp(24px, 4vw, 48px) clamp(80px, 8vw, 128px) 0;
   }
 }
 
@@ -1650,6 +1683,10 @@ main {
 .gallery {
   padding: 48px 0;
   background-color: var(--color-surface-dim);
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -1670,6 +1707,8 @@ main {
   padding-left: clamp(20px, 4vw, 48px);
   padding-right: clamp(20px, 4vw, 48px);
   width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
@@ -1689,6 +1728,8 @@ main {
   padding-left: clamp(20px, 4vw, 48px);
   padding-right: clamp(20px, 4vw, 48px);
   width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
@@ -1701,6 +1742,10 @@ main {
   position: relative;
   background-color: var(--color-surface-container);
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2px;
 }
 
 .portfolio-item-lg {
@@ -1713,13 +1758,25 @@ main {
   height: 240px;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 767px) {
   .portfolio-item-lg {
-    height: 350px;
+    grid-column: span 1 !important;
+    height: 280px !important;
   }
 
   .portfolio-item-wide {
-    height: 300px;
+    grid-column: span 1 !important;
+    height: 240px !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .portfolio-item-lg {
+    height: 350px !important;
+  }
+
+  .portfolio-item-wide {
+    height: 300px !important;
   }
 }
 
@@ -1997,6 +2054,8 @@ main {
   background-size: 200% 100%;
   animation: sk-shimmer 1.5s infinite linear;
   border-radius: 3px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 @keyframes sk-shimmer {
@@ -2037,16 +2096,29 @@ main {
 
 /* Brand placeholder — matches .nav-brand font ~1.125rem bold */
 .sk-brand {
-  width: 110px;
-  height: 18px;
+  width: 132px;
+  height: 22px;
   border-radius: 3px;
 }
 
 /* Right side placeholder (nav links + lang) */
 .sk-nav-right {
-  width: 180px;
-  height: 14px;
+  width: 140px;
+  height: 18px;
   border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .sk-nav-right {
+    width: 240px;
+  }
+}
+
+@media (min-width: 1051px) {
+  .sk-nav-right {
+    width: clamp(320px, 35vw, 480px);
+    height: 20px;
+  }
 }
 
 /* Skeleton Main — matches main { padding-top: 64px } */
@@ -2063,12 +2135,25 @@ main {
 .sk-hero-container {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 85vh;
+  width: 100%;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .sk-hero-container {
     flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: clamp(32px, 4vw, 64px);
+    min-height: clamp(640px, 85vh, 860px);
+    max-height: 880px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sk-hero-container {
+    max-height: 820px;
   }
 }
 
@@ -2084,9 +2169,18 @@ main {
 
 @media (min-width: 768px) {
   .sk-hero-text {
-    width: 62%;
-    flex-grow: 1;
-    padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 48px) clamp(48px, 6vw, 80px) 0;
+    width: 54%;
+    flex: 1 1 54%;
+    max-width: 760px;
+    padding: clamp(80px, 8vw, 128px) clamp(24px, 4vw, 48px) clamp(80px, 8vw, 128px) 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-hero-text {
+    width: 52%;
+    flex: 1 1 52%;
+    max-width: 780px;
   }
 }
 
@@ -2094,50 +2188,97 @@ main {
 .sk-hero-image {
   width: 100%;
   height: 55vh;
-  background: linear-gradient(90deg, #181818 25%, #222 50%, #181818 75%);
+  min-height: 360px;
+  max-height: 520px;
+  margin: 16px 0 clamp(32px, 5vh, 48px) 0;
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
   background-size: 200% 100%;
   animation: sk-shimmer 1.5s infinite linear;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 570px) and (max-width: 767px) {
+  .sk-hero-image {
+    height: 70vh;
+  }
 }
 
 @media (min-width: 768px) {
   .sk-hero-image {
-    width: 38%;
-    flex-shrink: 0;
+    width: 44%;
+    flex: 0 0 44%;
     height: auto;
+    min-height: 0;
+    max-height: none;
+    align-self: stretch;
+    margin: clamp(28px, 4vh, 48px) 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-hero-image {
+    width: 46%;
+    flex: 0 0 46%;
   }
 }
 
 /* Hero text skeleton blocks */
 .sk-hero-label {
-  width: 100px;
-  height: 11px;
+  width: 142px;
+  height: 14px;
   margin-bottom: 24px;
   border-radius: 2px;
 }
 
 .sk-hero-title {
-  width: 80%;
-  height: 44px;
-  margin-bottom: 12px;
+  width: 100%;
+  max-width: 580px;
+  height: clamp(52px, 6.5vw, 76px);
+  margin-bottom: 32px;
   border-radius: 4px;
 }
 
 .sk-hero-title-2 {
-  width: 55%;
+  display: none;
+  width: 60%;
   margin-bottom: 32px;
 }
 
+@media (max-width: 480px) {
+  .sk-hero-title {
+    width: 85%;
+    height: 44px;
+    margin-bottom: 8px;
+  }
+
+  .sk-hero-title-2 {
+    display: block;
+    width: 60%;
+    height: 44px;
+    margin-bottom: 24px;
+  }
+}
+
 .sk-hero-subtitle {
-  width: 90%;
-  max-width: 480px;
-  height: 13px;
-  margin-bottom: 10px;
-  border-radius: 2px;
+  width: 100%;
+  max-width: 560px;
+  height: 20px;
+  margin-bottom: 14px;
+  border-radius: 3px;
 }
 
 .sk-hero-subtitle-short {
-  width: 65%;
-  max-width: 320px;
+  width: 90%;
+  max-width: 520px;
+  height: 20px;
+  margin-bottom: 14px;
+}
+
+.sk-hero-subtitle-3 {
+  width: 35%;
+  max-width: 180px;
+  height: 20px;
   margin-bottom: 0;
 }
 
@@ -2148,9 +2289,25 @@ main {
 }
 
 .sk-btn {
-  width: 140px;
-  height: 43px;
-  border-radius: 2px;
+  width: 154px;
+  height: 48px;
+  border-radius: 0;
+}
+
+.sk-btn:last-child {
+  width: 236px;
+}
+
+@media (max-width: 480px) {
+  .sk-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sk-btn,
+  .sk-btn:last-child {
+    width: 100%;
+  }
 }
 
 .sk-content-box {
@@ -2814,6 +2971,10 @@ main {
   padding: 48px 24px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 @media (min-width: 1024px) {
@@ -2946,6 +3107,10 @@ main {
   display: flex;
   gap: var(--gutter);
   margin-bottom: 64px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 .gallery-row {
@@ -2953,6 +3118,11 @@ main {
   flex-direction: column;
   gap: var(--gutter);
   flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 /* Image Tile styling */
@@ -2963,6 +3133,9 @@ main {
   overflow: hidden;
   border-radius: 4px;
   display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
   /* prevents inline baseline gap */
 }
 
@@ -2980,6 +3153,9 @@ main {
 
 .img-container.skeleton {
   pointer-events: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Hover HUD Overlay */
@@ -3096,7 +3272,21 @@ main {
   }
 }
 
-/* Skeleton Loading */
+/* Skeleton Loading & Skeleton Cards */
+.skeleton,
+.skeleton-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.skeleton-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-container);
+  border-radius: 2px;
+}
+
 .skeleton {
   background: linear-gradient(90deg, var(--surface-container-high) 25%, var(--surface-container-highest) 50%, var(--surface-container-high) 75%);
   background-size: 200% 100%;
@@ -4489,6 +4679,22 @@ address.contact-info {
   min-width: 0;
 }
 
+.calc-header-badge,
+.calc-header .font-label-caps {
+  color: var(--color-neutral-400);
+  background: #141616;
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 0;
+  padding: 0.5rem 0.75rem !important;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .calc-grid {
   display: grid;
   grid-template-columns: 7fr 5fr;
@@ -5769,6 +5975,15 @@ address.contact-info {
 }
 
 @media (max-width: 640px) {
+  /* 0. Header Monospace Badge Banner */
+  .calc-header-badge,
+  .calc-header .font-label-caps {
+    padding: 0.5rem 0.75rem !important;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    font-size: 11.5px;
+  }
+
   /* 1. Addons & Extras Option Cards: Clean vertical stack on mobile viewports */
   .calc-addon-row,
   .addon-card-header {
@@ -5813,13 +6028,14 @@ address.contact-info {
   .calc-addon-row .addon-badge,
   .addon-card-header .addon-badge {
     align-self: flex-start;
-    margin-left: 30px; /* Aligns flush with text content (18px checkbox + 12px gap) */
-    margin-top: 2px;
+    margin-left: 30px; /* Aligns flush under description text (18px checkbox + 12px gap) */
+    margin-top: 4px;
     white-space: nowrap;
     max-width: calc(100% - 30px);
     padding: 4px 10px;
     font-size: 12px;
     box-sizing: border-box;
+    text-align: left;
   }
 
   /* Stepper inside unified card */
@@ -5922,6 +6138,45 @@ address.contact-info {
   .calc-breakdown-row-top > span:last-child {
     text-align: right;
     margin-left: auto;
+  }
+
+  /* 3. Student & Teacher Count Controls: Clean space-between header without redundant manual input */
+  .calc-step-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .calc-step-label > span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 11.5px;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+  }
+
+  .calc-headcount-sync {
+    flex-shrink: 0;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Hide redundant manual text input box on mobile */
+  .calc-headcount-sync .calc-number-input {
+    display: none !important;
+  }
+
+  /* Refined highlighted count badge font size and line height */
+  .calc-step-label .hours-badge {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    font-weight: 700;
   }
 }
 
@@ -6035,7 +6290,7 @@ address.contact-info {
 
   .calc-addon-row .addon-badge,
   .addon-card-header .addon-badge {
-    margin-left: 0;
-    max-width: 100%;
+    margin-left: 28px;
+    max-width: calc(100% - 28px);
   }
 }
