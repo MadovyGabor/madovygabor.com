@@ -184,8 +184,8 @@ def run_audit():
             issues.append((rel, page.canonical_line or 1, 'Criterion 1', 'Missing canonical <link>'))
             page_ok = False
         else:
-            if not page.canonical.startswith('https://madovygabor.work/'):
-                issues.append((rel, page.canonical_line, 'Criterion 1', f'Canonical URL does not point to https://madovygabor.work/: "{page.canonical}"'))
+            if not page.canonical.startswith('https://madovygabor.com/'):
+                issues.append((rel, page.canonical_line, 'Criterion 1', f'Canonical URL does not point to https://madovygabor.com/: "{page.canonical}"'))
                 page_ok = False
 
         # Hreflang
