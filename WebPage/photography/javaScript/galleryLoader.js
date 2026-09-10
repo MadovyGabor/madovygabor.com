@@ -285,6 +285,7 @@ function initFilterButtons(data) {
         const mobileNav = document.getElementById('mobileNavOverlay');
         if (mobileNav && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         // Re-init gallery and sidebar

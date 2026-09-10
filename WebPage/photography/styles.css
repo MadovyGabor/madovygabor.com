@@ -1050,7 +1050,8 @@ button {
   padding: 10px;
   border-radius: 4px;
   color: #ffffff;
-  transition: background-color var(--transition-fast);
+  transform: translateZ(0);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .hamburger-btn .material-symbols-outlined,
@@ -1073,7 +1074,7 @@ button {
   height: 2px;
   background-color: #fff;
   border-radius: 2px;
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
 }
 
 @media (min-width: 1051px) {
@@ -1089,8 +1090,10 @@ button {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
+  will-change: opacity, visibility;
   transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
@@ -1110,13 +1113,17 @@ button {
   display: flex;
   flex-direction: column;
   padding: 24px 20px;
-  transform: translateX(100%);
+  /* Hardware-accelerated drawer transition strictly using transform */
+  transform: translate3d(100%, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform var(--transition-normal);
   box-shadow: -12px 0 36px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-nav-overlay.active .mobile-nav-drawer {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .mobile-nav-header {
@@ -1141,7 +1148,8 @@ button {
   border-radius: 0;
   cursor: pointer;
   color: var(--color-neutral-400);
-  transition: all var(--transition-fast);
+  transform: translateZ(0);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .nav-close-btn:hover {
@@ -1286,6 +1294,21 @@ button {
 @media (min-width: 1051px) {
   .mobile-nav-overlay {
     display: none;
+  }
+}
+
+/* Optimize/Tame backdrop-filter and promote solid colors on mobile viewports */
+@media (max-width: 768px) {
+  .mobile-nav-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(18, 20, 20, 0.92);
+  }
+
+  .mobile-nav-drawer {
+    background-color: rgba(18, 20, 20, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
@@ -2251,8 +2274,9 @@ main {
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
-  background-color: rgba(12, 14, 14, 0.97);
-  backdrop-filter: blur(16px);
+  background-color: rgba(18, 20, 20, 0.98);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   padding: 32px 24px;
   gap: 32px;
   height: calc(100vh - 64px);
@@ -2264,13 +2288,17 @@ main {
   left: auto;
   width: min(85vw, 320px);
   border-left: 1px solid var(--outline-variant);
-  transform: translateX(100%);
+  /* Hardware-accelerated drawer transitions (transform strictly, GPU composite layer) */
+  transform: translate3d(100%, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 202;
 }
 
 .sidebar-container.mobile-open {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* Desktop: revert to static sticky sidebar */
@@ -2282,8 +2310,12 @@ main {
     border-right: 1px solid var(--outline-variant);
     border-left: none;
     transform: none;
+    will-change: auto;
     transition: none;
     z-index: auto;
+    background-color: rgba(12, 14, 14, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 }
 
@@ -2712,15 +2744,25 @@ main {
   position: fixed;
   inset: 0;
   z-index: 49;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
+  will-change: opacity;
   transition: opacity 0.3s ease;
 }
 
 .sidebar-overlay.active {
   display: block;
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(18, 20, 20, 0.92);
+  }
 }
 
 /* ============================================================
@@ -2741,7 +2783,11 @@ main {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -2749,6 +2795,10 @@ main {
   border-color: var(--primary-container);
   color: var(--primary-container);
   box-shadow: 0 4px 24px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-toggle-btn:active {
+  transform: scale(0.95) translateZ(0);
 }
 
 .sidebar-toggle-btn svg {
