@@ -216,7 +216,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-container">
-        <div class="hero-text-col scroll-reveal">
+        <div class="hero-text-col">
           <span class="font-label-caps text-primary hero-label">PHOTOGRAPHER</span>
           <h1 class="font-display-xl text-white hero-title">Gabriel Madový</h1>
           <p class="font-h2-ui text-on-surface-variant hero-desc">
@@ -227,10 +227,10 @@
             <a href="/sk/kontakt" class="btn-outline font-label-caps">KONTAKTUJTE MA</a>
           </div>
         </div>
-        <div class="hero-image-col scroll-reveal delay-100 skeleton-shimmer">
+        <div class="hero-image-col">
           <img alt="Portrét fotografa Gabriela Madového" class="hero-img"
             src="../pictures/kezdoOldal/Picture-of-Gabor-Madovy.webp" width="1200" height="1200" fetchpriority="high"
-            onload="this.classList.add('is-loaded')" />
+            decoding="async" onload="this.classList.add('is-loaded')" />
           <div class="hero-overlay"></div>
         </div>
       </div>

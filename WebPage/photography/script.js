@@ -65,31 +65,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Scroll Reveal ───────────────────────────────────────────
     function observeElements() {
-        const initObserver = () => {
-            const elements = document.querySelectorAll('.scroll-reveal');
-            if (!elements.length) return;
+        const elements = document.querySelectorAll('.scroll-reveal');
+        if (!elements.length) return;
 
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.05
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
             });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.05
+        });
 
-            elements.forEach(el => observer.observe(el));
-        };
-
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(initObserver);
-        } else {
-            setTimeout(initObserver, 1);
-        }
+        elements.forEach(el => {
+            // Instantly activate any element that is already in or near the viewport on load
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 100) {
+                el.classList.add('active');
+            } else {
+                observer.observe(el);
+            }
+        });
     }
     // ─── FAQ Accordion ────────────────────────────────────────────
     function initFaqAccordion() {
