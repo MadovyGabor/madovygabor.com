@@ -1,3 +1,9 @@
 User-agent: *
+Allow: 
 Disallow: /
+Disallow: /hu/thankYou
+Disallow: /sk/thankYou
+Disallow: /en/thankYou
+
 Sitemap: https://madovygabor.work/sitemap.xml
+Sitemap: https://madovygabor.work/photo-sitemap.xml
