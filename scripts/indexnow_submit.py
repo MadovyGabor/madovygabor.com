@@ -7,17 +7,19 @@ Groups URLs by host, then fires one POST per distinct host — as required
 by the IndexNow specification.
 
 Supported hosts:
-    madovygabor.work          → https://madovygabor.work/c598e83667e74d088a59bdd1c8bfbc10.txt
+    madovygabor.com       → https://madovygabor.com/0e96b4d576c4464d91227476fa0aec65.txt
+    hub.madovygabor.com   → https://hub.madovygabor.com/0e96b4d576c4464d91227476fa0aec65.txt
+    dev.madovygabor.com   → https://dev.madovygabor.com/0e96b4d576c4464d91227476fa0aec65.txt
 
 Usage:
-    # Submit all default URLs:
+    # Submit all default URLs across all 3 domains:
     python indexnow_submit.py
 
     # Submit specific URLs:
-    python indexnow_submit.py "https://madovygabor.work/en/" "https://madovygabor.work/photography/en/"
+    python indexnow_submit.py "https://madovygabor.com/en/" "https://dev.madovygabor.com/en/"
 
 Dependencies:
-    pip install requests
+    None (Standard Library only)
 """
 
 import sys
@@ -25,8 +27,8 @@ import json
 import logging
 from collections import defaultdict
 from urllib.parse import urlparse
-
-import requests
+import urllib.request
+import urllib.error
 
 # Configure stdout to use UTF-8 to prevent print encoding errors on Windows
 if hasattr(sys.stdout, 'reconfigure'):
@@ -35,42 +37,63 @@ if hasattr(sys.stdout, 'reconfigure'):
 # ---------------------------------------------------------------------------
 # Shared configuration
 # ---------------------------------------------------------------------------
-API_KEY  = "c598e83667e74d088a59bdd1c8bfbc10"
+API_KEY  = "0e96b4d576c4464d91227476fa0aec65"
 ENDPOINT = "https://api.indexnow.org/indexnow"
 
 # Registry: host → keyLocation
 # Add future subdomains here — no other code changes required.
 HOST_REGISTRY: dict[str, str] = {
-    "madovygabor.work":       f"https://madovygabor.work/{API_KEY}.txt",
+    "madovygabor.com":       f"https://madovygabor.com/{API_KEY}.txt",
+    "hub.madovygabor.com":   f"https://hub.madovygabor.com/{API_KEY}.txt",
+    "dev.madovygabor.com":   f"https://dev.madovygabor.com/{API_KEY}.txt",
 }
 
 # Default URL list — used when no CLI arguments are provided.
-# Covers all canonical URLs across the unified host.
+# Covers all 33 canonical URLs across the unified hosts.
 FALLBACK_URLS: list[str] = [
-    # Main domain (Hub)
-    "https://madovygabor.work/hub/en/",
-    "https://madovygabor.work/hub/hu/",
-    "https://madovygabor.work/hub/sk/",
-    # Photography (Root Platform)
-    "https://madovygabor.work/en/",
-    "https://madovygabor.work/hu/",
-    "https://madovygabor.work/sk/",
-    "https://madovygabor.work/en/portfolio",
-    "https://madovygabor.work/hu/portfolio",
-    "https://madovygabor.work/sk/portfolio",
-    "https://madovygabor.work/en/contact",
-    "https://madovygabor.work/hu/kontakt",
-    "https://madovygabor.work/sk/kontakt",
-    # Dev
-    "https://madovygabor.work/dev/en/",
-    "https://madovygabor.work/dev/hu/",
-    "https://madovygabor.work/dev/sk/",
-    "https://madovygabor.work/dev/en/projects",
-    "https://madovygabor.work/dev/hu/projektek",
-    "https://madovygabor.work/dev/sk/projekty",
-    "https://madovygabor.work/dev/en/contact",
-    "https://madovygabor.work/dev/hu/kontakt",
-    "https://madovygabor.work/dev/sk/kontakt",
+    # ─── Hub Domain (hub.madovygabor.com) ───────────────────────────
+    "https://hub.madovygabor.com/hu/",
+    "https://hub.madovygabor.com/sk/",
+    "https://hub.madovygabor.com/en/",
+
+    # ─── Photography Domain (madovygabor.com) ───────────────────────
+    # Core pages
+    "https://madovygabor.com/hu/",
+    "https://madovygabor.com/sk/",
+    "https://madovygabor.com/en/",
+    "https://madovygabor.com/hu/portfolio",
+    "https://madovygabor.com/sk/portfolio",
+    "https://madovygabor.com/en/portfolio",
+    "https://madovygabor.com/hu/kontakt",
+    "https://madovygabor.com/sk/kontakt",
+    "https://madovygabor.com/en/contact",
+    # Service: Event Photography
+    "https://madovygabor.com/hu/szolgaltatasok/esemenyfotozas",
+    "https://madovygabor.com/sk/sluzby/eventove-fotenie",
+    "https://madovygabor.com/en/services/event-photography",
+    # Service: Yearbook Photography
+    "https://madovygabor.com/hu/szolgaltatasok/tablofotozas",
+    "https://madovygabor.com/sk/sluzby/tablove-fotenie",
+    "https://madovygabor.com/en/services/yearbook-photography",
+    # Service: School Photography
+    "https://madovygabor.com/hu/szolgaltatasok/iskolafotozas",
+    "https://madovygabor.com/sk/sluzby/skolske-fotenie",
+    "https://madovygabor.com/en/services/school-photography",
+    # Service: Outdoor Portraits
+    "https://madovygabor.com/hu/szolgaltatasok/portrefotozas",
+    "https://madovygabor.com/sk/sluzby/portretove-fotenie",
+    "https://madovygabor.com/en/services/outdoor-portraits",
+
+    # ─── Dev Domain (dev.madovygabor.com) ───────────────────────────
+    "https://dev.madovygabor.com/hu/",
+    "https://dev.madovygabor.com/sk/",
+    "https://dev.madovygabor.com/en/",
+    "https://dev.madovygabor.com/hu/projektek",
+    "https://dev.madovygabor.com/sk/projekty",
+    "https://dev.madovygabor.com/en/projects",
+    "https://dev.madovygabor.com/hu/kontakt",
+    "https://dev.madovygabor.com/sk/kontakt",
+    "https://dev.madovygabor.com/en/contact",
 ]
 
 # HTTP status messages
@@ -151,28 +174,34 @@ def submit_batch(host: str, url_list: list[str]) -> int:
     log.info("Submitting %d URL(s):\n  %s", len(url_list), "\n  ".join(url_list))
 
     try:
-        response = requests.post(
+        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request(
             ENDPOINT,
+            data=body,
             headers={"Content-Type": "application/json; charset=utf-8"},
-            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            timeout=15,
+            method="POST",
         )
-    except requests.exceptions.ConnectionError as exc:
-        log.error("Network error reaching %s: %s", ENDPOINT, exc)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            status = resp.status
+            resp_body = resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        status = exc.code
+        resp_body = exc.read().decode("utf-8", errors="replace")
+    except urllib.error.URLError as exc:
+        log.error("Network error reaching %s: %s", ENDPOINT, exc.reason)
         return 0
-    except requests.exceptions.Timeout:
+    except TimeoutError:
         log.error("Request timed out after 15 s.")
         return 0
-    except requests.exceptions.RequestException as exc:
+    except Exception as exc:
         log.error("Unexpected request error: %s", exc)
         return 0
 
-    status = response.status_code
-    message = STATUS_MESSAGES.get(status, f"⚠️  Unexpected HTTP {status} — {response.text[:200]}")
+    message = STATUS_MESSAGES.get(status, f"⚠️  Unexpected HTTP {status} — {resp_body[:200]}")
     log.info("HTTP %d  →  %s", status, message)
 
-    if status not in (200, 202) and response.text.strip():
-        log.debug("Response body: %s", response.text.strip())
+    if status not in (200, 202) and resp_body.strip():
+        log.debug("Response body: %s", resp_body.strip())
 
     return status
 

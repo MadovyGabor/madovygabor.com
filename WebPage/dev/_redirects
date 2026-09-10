@@ -1,0 +1,9 @@
+# ====================================================================
+# Cloudflare Pages Routing Rules
+# Project: Gabriel Madový — Digital Platform Dev / Logic
+# Domain: dev.madovygabor.com
+# ====================================================================
+
+# 1. Root Entry Point
+# Redirect bare domain visitors to English landing by default
+/    /en/    302

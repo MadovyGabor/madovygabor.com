@@ -1,4 +1,4 @@
-# Gabriel Madový — Digital Platform Monorepo (madovygabor.work)
+# Gabriel Madový — Digital Platform Monorepo (madovygabor.com)
 
 > **"Memories fade, photographs remain. My passion is capturing moments that last forever."**  
 > — Gabriel Madový (*MG Captures*)
@@ -10,9 +10,9 @@ A production-grade, trilingual (`EN` / `HU` / `SK`) monorepo hosting the persona
 ## 🎯 Codebase Purpose & Goals
 
 1. **Dual Identity Architecture (The Lens & The Logic)**:
-   - **The Hub (`/hub/`)**: Central entry portal linking two distinct professional disciplines under a cohesive dark-aesthetic design.
-   - **The Lens (`/photography/`)**: Full-featured photography business and portfolio platform (*MG Captures*), offering high-end concert, festival, event, and portrait photography across Western Slovakia (Galanta, Nové Zámky, Dunajská Streda, Šaľa, Bratislava).
-   - **The Logic (`/dev/`)**: Technical engineering portfolio showcasing Kotlin Multiplatform (KMP), Clean Architecture, Android/iOS development, Cisco enterprise networking, and IoT/industrial automation.
+   - **The Hub (`hub.madovygabor.com`)**: Central entry portal linking two distinct professional disciplines under a cohesive dark-aesthetic design.
+   - **The Lens (`madovygabor.com`)**: Full-featured photography business and portfolio platform (*MG Captures*), offering high-end concert, festival, event, and portrait photography across Western Slovakia (Galanta, Nové Zámky, Dunajská Streda, Šaľa, Bratislava).
+   - **The Logic (`dev.madovygabor.com`)**: Technical engineering portfolio and staging/development test environment showcasing Kotlin Multiplatform (KMP), Clean Architecture, Android/iOS development, Cisco enterprise networking, and IoT/industrial automation.
 
 2. **Core Strategic Goals**:
    - **Unified Performance & Zero Runtime Overhead**: Pure vanilla HTML5, CSS3 design tokens, and modular JavaScript without heavy front-end framework overhead.
@@ -25,52 +25,30 @@ A production-grade, trilingual (`EN` / `HU` / `SK`) monorepo hosting the persona
 ## 📁 Repository Structure & Critical Files
 
 ```text
-madovygabor.work/
+madovygabor.com/
 ├── WebPage/
-│   ├── _headers                            # Cloudflare/Netlify caching headers & security rules
-│   ├── _redirects                          # Canonical 301/200 clean URL routing & language defaults
-│   ├── robots.txt                          # Crawler directives & multi-sitemap declarations
-│   ├── sitemap.xml                         # Root Hub sitemap with hreflang alternate links
-│   ├── c598e83667e74d088a59bdd1c8bfbc10.txt # Public IndexNow verification key
+│   ├── hub/                                # Portal Module (hub.madovygabor.com)
+│   │   ├── _headers, _redirects, robots.txt, hub-sitemap.xml
+│   │   ├── en/, hu/, sk/                   # Localized Hub pages (index.html)
+│   │   ├── styles.css, script.js
+│   │   └── pictures/
 │   │
-│   ├── hub/                                # Portal Module (The Lens & The Logic)
-│   │   ├── en/index.html                   # English Hub landing
-│   │   ├── hu/index.html                   # Hungarian Hub landing
-│   │   ├── sk/index.html                   # Slovak Hub landing
-│   │   ├── styles.css                      # Hub styling, CSS grid cards & code preview
-│   │   └── script.js                       # Skeleton loader, scroll reveal & UI handlers
+│   ├── photography/                        # MG Captures Platform (madovygabor.com)
+│   │   ├── _headers, _redirects, robots.txt, photo-sitemap.xml
+│   │   ├── en/, hu/, sk/                   # Localized photography pages & services
+│   │   ├── galleryData.json, styles.css, script.js
+│   │   └── pictures/
 │   │
-│   ├── photography/                        # MG Captures Photography Platform (The Lens)
-│   │   ├── styles.css                      # Global photography design system (~80KB, tokens & components)
-│   │   ├── script.js                       # Mobile drawer, skeleton manager, smooth scrolling
-│   │   ├── galleryData.json                # Generated image database (dimensions, aspect ratios, titles)
-│   │   ├── photo-sitemap.xml               # Photography module XML sitemap
-│   │   ├── hu/, en/, sk/                   # Localized pages:
-│   │   │   ├── index.html                  # Landing page (Hero, Philosophy, Bento Services, FAQ, Gallery preview)
-│   │   │   ├── portfolio.html              # Dynamic masonry gallery with filter tabs & sidebar
-│   │   │   ├── kontakt.html / contact.html # Contact & booking page with FormSubmit & reCAPTCHA
-│   │   │   └── szolgáltatások / sluzby / services/ # Dedicated service landing pages:
-│   │   │       ├── esemenyfotozas.html     # Event photography (Concerts, festivals, proms)
-│   │   │       ├── tablofotozas.html       # Senior & class yearbook photography
-│   │   │       └── portrefotozas.html      # Outdoor & personal portraits
-│   │   ├── javaScript/
-│   │   │   └── galleryLoader.js            # Client-side dynamic gallery renderer & filter engine
-│   │   ├── pictures/                       # Optimized webp photo sets, avatars & icons
-│   │   └── utils/
-│   │       ├── generate_gallery.py         # Automated Pillow script generating galleryData.json
-│   │       └── instructions.md             # Folder hierarchy convention rules for photo indexing
-│   │
-│   └── dev/                                # Software Engineering Portfolio (The Logic)
-│       ├── styles.css                      # Bento grid system, terminal styles, JetBrains Mono tokens
-│       ├── script.js                       # Skeleton loader & terminal interactions
-│       ├── dev-sitemap.xml                 # Engineering portfolio sitemap
-│       └── en/, hu/, sk/                   # Localized engineering pages:
-│           ├── index.html                  # Profile, Bento grid, Mindset logs, Tech stacks, Terminal
-│           ├── projects.html / projektek.html / projekty.html # Deep-dive development logs
-│           └── contact.html / kontakt.html # Tech inquiries & secure communication channels
+│   └── dev/                                # Engineering & Dev/Staging (dev.madovygabor.com)
+│       ├── _headers, _redirects, robots.txt, dev-sitemap.xml
+│       ├── en/, hu/, sk/                   # Localized engineering pages
+│       ├── styles.css, script.js
+│       └── pictures/
 │
 └── scripts/
-    └── indexnow_submit.py                  # CLI automation pushing updated routes to IndexNow API
+    ├── audit_site.py                       # SEO & technical integrity validation
+    ├── indexnow_submit.py                  # CLI automation pushing updated routes to IndexNow API
+    └── verify_cross_domain_links.py        # Cross-domain navigation & sitemap verification suite
 ```
 
 ---

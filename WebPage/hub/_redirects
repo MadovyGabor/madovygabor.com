@@ -1,0 +1,10 @@
+# ====================================================================
+# Cloudflare Pages Routing Rules
+# Project: Gabriel Madový — Digital Platform Hub
+# Domain: hub.madovygabor.com
+# ====================================================================
+
+# 1. Root Entry Point
+# Redirect bare domain visitors to en hub landing by default
+/    /en/    302
+
