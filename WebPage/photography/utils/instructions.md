@@ -9,7 +9,7 @@ This directory contains the Python script (`generate_gallery.py`) designed to sc
 To ensure the portfolio page displays categories, sections, and images correctly, the image folders inside `pictures/portfolio/` must follow a structured hierarchy. The script supports both **2-level** and **3-level** nesting structures.
 
 ### Option A: 2-Level Nesting (Default)
-Use this structure when a category is directly divided into single events, sets, or themes.
+Use this structure when a category is directly divided into single events, sets, or themes. 
 ```text
 pictures/
 └── portfolio/
