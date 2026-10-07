@@ -3890,11 +3890,18 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   background-color: #0d0f0f;
 }
 
+.occasion-img-wrap.skeleton-shimmer {
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.5s infinite linear;
+}
+
 .occasion-img-wrap.skeleton-shimmer:has(> img.is-loaded),
 .occasion-img-wrap.skeleton-shimmer.is-loaded {
   animation: none;
   background-image: none;
   background-color: #0d0f0f;
+  transition: background-color 0.4s ease;
 }
 
 .occasion-img-wrap.skeleton-shimmer:not(:has(> img.is-loaded)):not(.is-loaded) .occasion-img-overlay {
@@ -5096,9 +5103,15 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   aspect-ratio: 4 / 5;
   position: relative;
   overflow: hidden;
-  background: #141616;
+  background-color: #141616;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0;
+}
+
+.photo-carousel-slide.skeleton-shimmer {
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.5s infinite linear;
 }
 
 .photo-carousel-slide.skeleton-shimmer:has(> img.is-loaded),
@@ -5106,6 +5119,7 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   animation: none;
   background-image: none;
   background-color: #141616;
+  transition: background-color 0.4s ease;
 }
 
 .photo-carousel-slide img {
