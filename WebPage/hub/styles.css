@@ -23,6 +23,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
 body {
     background-color: var(--color-background);
     color: var(--color-text-main);
