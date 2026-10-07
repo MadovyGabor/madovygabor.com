@@ -223,10 +223,10 @@
             <a href="/hu/kontakt" class="btn-outline font-label-caps">KAPCSOLATFELVÉTEL</a>
           </div>
         </div>
-        <div class="hero-image-col">
+        <div class="hero-image-col skeleton-shimmer">
           <img alt="Madový Gábor fotós portré" class="hero-img"
             src="../pictures/kezdoOldal/Picture-of-Gabor-Madovy.webp" width="1200" height="1200" fetchpriority="high"
-            decoding="async" onload="this.classList.add('is-loaded')" />
+            decoding="async" onload="this.decode ? this.decode().then(() => this.classList.add('is-loaded')).catch(() => this.classList.add('is-loaded')) : this.classList.add('is-loaded')" />
           <div class="hero-overlay"></div>
         </div>
       </div>

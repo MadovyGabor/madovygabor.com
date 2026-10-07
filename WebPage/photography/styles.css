@@ -1509,6 +1509,12 @@ main {
   object-fit: cover;
   object-position: center top; /* Keeps the face/head well framed even when sides are cropped */
   display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.hero-img.is-loaded {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -2026,11 +2032,15 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0;
   transition: opacity var(--transition-normal);
 }
 
-.portfolio-item:hover .portfolio-img {
+.portfolio-img.is-loaded {
+  opacity: 0.8;
+}
+
+.portfolio-item:hover .portfolio-img.is-loaded {
   opacity: 1;
 }
 
@@ -2263,7 +2273,6 @@ main {
 .hero-image-col,
 .hero-title,
 .hero-desc,
-.hero-img,
 .contact-header,
 .contact-header h1,
 .contact-subtitle,
@@ -2322,8 +2331,8 @@ main {
 
 /* Homepage In-Place Skeleton Image Transitions */
 .page-home .hero-img {
-  opacity: 1;
-  transition: opacity 0.35s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -3896,8 +3905,8 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 0.35s ease-in-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .occasion-img-wrap img.is-loaded {
@@ -5105,8 +5114,8 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   object-fit: cover;
   border-radius: 0;
   display: block;
-  opacity: 1;
-  transition: opacity 0.35s ease-in-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .photo-carousel-slide img.is-loaded {
@@ -5626,5 +5635,15 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   .addon-card-header .addon-badge {
     margin-left: 28px;
     max-width: calc(100% - 28px);
+  }
+}
+
+@media (scripting: none) {
+  .hero-img,
+  .portfolio-img,
+  .occasion-img-wrap img,
+  .photo-carousel-slide img,
+  .img-container img {
+    opacity: 1 !important;
   }
 }

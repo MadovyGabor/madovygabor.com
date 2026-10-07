@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!images.length) return;
 
         images.forEach(img => {
-            const handleLoaded = () => {
+            const markReady = () => {
                 img.classList.add('is-loaded');
                 const container = img.closest('.skeleton-shimmer');
                 if (container) {
@@ -47,11 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
+            const handleLoaded = () => {
+                if (typeof img.decode === 'function') {
+                    img.decode().then(markReady).catch(markReady);
+                } else {
+                    markReady();
+                }
+            };
+
             if (img.complete && img.naturalWidth !== 0) {
                 handleLoaded();
             } else {
                 img.addEventListener('load', handleLoaded, { once: true });
-                img.addEventListener('error', handleLoaded, { once: true });
+                img.addEventListener('error', markReady, { once: true });
             }
         });
     }
