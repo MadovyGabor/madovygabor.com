@@ -34,10 +34,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../pictures/favIcons/favicon-16x16.png">
     <link rel="manifest" href="../pictures/favIcons/site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles.css">
 
@@ -66,75 +70,7 @@
 </head>
 
 <body>
-    <!-- Skeleton Loader -->
-    <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
-        <nav class="sk-nav">
-            <div class="skeleton-block sk-brand"></div>
-            <div class="skeleton-block sk-nav-right"></div>
-        </nav>
-        <div class="sk-main" style="justify-content: center; min-height: calc(100vh - 80px);">
 
-            <!-- Contact two-panel container -->
-            <div class="sk-contact-container">
-
-                <!-- Left panel: title + desc + CTA -->
-                <div
-                    style="padding: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-lg); flex: 1; border-bottom: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 70%; height: 56px;"></div>
-                    <div class="skeleton-block" style="width: 100%; height: 15px;"></div>
-                    <div class="skeleton-block" style="width: 85%; height: 15px;"></div>
-                    <div class="skeleton-block" style="width: 140px; height: 42px; margin-top: 8px;"></div>
-                </div>
-
-                <!-- Right panel: 4 contact items -->
-                <div
-                    style="padding: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-xl); flex: 1; background: #0a0a0a;">
-                    <!-- Email -->
-                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
-                        <div class="skeleton-block"
-                            style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div class="skeleton-block" style="width: 60px; height: 12px;"></div>
-                            <div class="skeleton-block" style="width: 200px; height: 16px;"></div>
-                        </div>
-                    </div>
-                    <!-- Phone -->
-                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
-                        <div class="skeleton-block"
-                            style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div class="skeleton-block" style="width: 55px; height: 12px;"></div>
-                            <div class="skeleton-block" style="width: 150px; height: 16px;"></div>
-                        </div>
-                    </div>
-                    <!-- Social -->
-                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
-                        <div class="skeleton-block"
-                            style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div class="skeleton-block" style="width: 120px; height: 12px;"></div>
-                            <div style="display: flex; gap: 12px;">
-                                <div class="skeleton-block" style="width: 32px; height: 32px; border-radius: 4px;">
-                                </div>
-                                <div class="skeleton-block" style="width: 32px; height: 32px; border-radius: 4px;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Location -->
-                    <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
-                        <div class="skeleton-block"
-                            style="width: 28px; height: 28px; border-radius: 4px; flex-shrink: 0;"></div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div class="skeleton-block" style="width: 140px; height: 12px;"></div>
-                            <div class="skeleton-block" style="width: 240px; height: 16px;"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
@@ -151,11 +87,11 @@
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
-                    <a class="lang-link" href="https://dev.madovygabor.com/en/contact">EN</a>
+                    <a class="lang-link" href="/en/contact">EN</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="https://dev.madovygabor.com/hu/kontakt">HU</a>
+                    <a class="lang-link" href="/hu/kontakt">HU</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link active" href="https://dev.madovygabor.com/sk/kontakt">SK</a>
+                    <a class="lang-link active" href="/sk/kontakt">SK</a>
                 </div>
                 <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
             </div>
@@ -172,11 +108,11 @@
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
-                <a class="lang-link" href="https://dev.madovygabor.com/en/contact">EN</a>
+                <a class="lang-link" href="/en/contact">EN</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="https://dev.madovygabor.com/hu/kontakt">HU</a>
+                <a class="lang-link" href="/hu/kontakt">HU</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link active" href="https://dev.madovygabor.com/sk/kontakt">SK</a>
+                <a class="lang-link active" href="/sk/kontakt">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
@@ -188,7 +124,7 @@
     </nav>
 
     <main>
-        <section class="contact-section scroll-reveal delay-100">
+        <section class="contact-section">
             <div class="contact-container">
 
                 <!-- Left Panel: Text -->

@@ -1,3 +1,101 @@
+/* Inline Icon SVGs base utility */
+.icon-svg,
+svg.icon {
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Self-Hosted Local Fonts (WOFF2)
+   ========================================================================== */
+
+/* Instrument Serif - Normal */
+@font-face {
+    font-family: 'Instrument Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/instrument-serif-v5-latin-ext-regular.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Instrument Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/instrument-serif-v5-latin-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Instrument Serif - Italic */
+@font-face {
+    font-family: 'Instrument Serif';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/instrument-serif-v5-latin-ext-italic.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Instrument Serif';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/instrument-serif-v5-latin-italic.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Inter (Variable 100-900) */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/inter-v20-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/inter-v20-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* JetBrains Mono (Variable 100-800) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('fonts/jetbrains-mono-v24-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('fonts/jetbrains-mono-v24-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Bulletproof Material Symbols Outlined base definition */
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/material-symbols-outlined.woff2?v=2') format('woff2');
+}
+
 :root {
     --color-primary: #38bdf8;
     --color-primary-container: #3498db;
@@ -78,6 +176,26 @@ a {
 
 /* Material Icons */
 .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none !important;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga' 1;
+    -webkit-font-feature-settings: 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
@@ -656,30 +774,11 @@ a {
     transition-delay: 300ms;
 }
 
-/* --- Skeleton Loader --- */
-.skeleton-wrapper {
-    position: fixed;
-    inset: 0;
-    background-color: var(--color-background);
-    z-index: 100;
-    overflow-y: hidden;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
+/* =========================================
+   Skeleton Shimmer & Transitions
+   ========================================= */
 
-.skeleton-wrapper.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.skeleton-block {
-    background: linear-gradient(90deg, #0e0e0e 25%, #1a1a1a 50%, #0e0e0e 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite linear;
-    border-radius: 0.25rem;
-}
-
-@keyframes shimmer {
+@keyframes sk-shimmer {
     0% {
         background-position: 200% 0;
     }
@@ -689,130 +788,17 @@ a {
     }
 }
 
-.sk-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-    border-bottom: 1px solid var(--border-light);
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(12px);
-    z-index: 101;
+.skeleton-shimmer,
+.skeleton {
+    background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+    background-size: 200% 100%;
+    animation: sk-shimmer 1.5s infinite linear;
 }
 
-@media (min-width: 768px) {
-    .sk-nav {
-        padding: 0 3rem;
-    }
-}
-
-.sk-brand {
-    width: 150px;
-    height: 1.5rem;
-}
-
-.sk-langs {
-    width: 80px;
-    height: 1.25rem;
-}
-
-.sk-main {
-    padding-top: 5rem;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.sk-hero {
-    padding: 4rem 1.5rem;
-    max-width: 100rem;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .sk-hero {
-        padding: 8rem 3rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .sk-hero {
-        padding: 11rem 3rem;
-    }
-}
-
-.sk-title {
-    width: 70%;
-    height: 3rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-}
-
-.sk-title-2 {
-    width: 50%;
-    height: 3rem;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-}
-
-@media (min-width: 768px) {
-
-    .sk-title,
-    .sk-title-2 {
-        height: 5.5rem;
-    }
-}
-
-.sk-subtitle {
-    width: 100%;
-    height: 1rem;
-    margin-bottom: 0.75rem;
-    max-width: 42rem;
-}
-
-.sk-subtitle-2 {
-    width: 80%;
-    height: 1rem;
-    margin-bottom: 0.75rem;
-    max-width: 42rem;
-}
-
-.sk-cards {
-    padding: 0 1.5rem 4rem;
-    max-width: 100rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .sk-cards {
-        padding: 0 3rem 8rem;
-        gap: 4rem;
-    }
-}
-
-.sk-card-1 {
-    width: 100%;
-    min-height: 380px;
-    border-radius: 1rem;
-    border: 1px solid var(--border-medium);
-}
-
-@media (min-width: 768px) {
-    .sk-card-1 {
-        min-height: 450px;
-    }
-}
-
-.sk-card-2 {
-    width: 100%;
-    min-height: 380px;
-    border-radius: 1rem;
-    border: 1px solid var(--border-medium);
+.skeleton-shimmer:has(> img.is-loaded),
+.skeleton-shimmer.is-loaded {
+    animation: none;
+    background-image: none;
+    background-color: var(--color-surface);
+    transition: background 0.4s ease;
 }

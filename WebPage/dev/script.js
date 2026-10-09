@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Logic
+    // ─── Mobile Menu Logic ────────────────────────────────────────
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navCloseBtn = document.getElementById('navCloseBtn');
     const mobileNavOverlay = document.getElementById('mobileNavOverlay');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Snapping Dynamic Toggle
+    // ─── Scroll Snapping Dynamic Toggle ───────────────────────────
     const htmlElement = document.documentElement;
     let lastScrollTop = window.pageYOffset || htmlElement.scrollTop;
 
@@ -41,71 +41,77 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     }, { passive: true });
 
-    // ─── Skeleton Loader ─────────────────────────────────────────
-    const skeleton = document.getElementById('skeleton');
+    // ─── In-Place Skeleton Loader ─────────────────────────────────
+    observeElements();
+    initInPlaceSkeleton();
 
-    if (skeleton) {
-        const hideSkeleton = () => {
-            if (skeleton.classList.contains('hidden')) return;
-            skeleton.classList.add('hidden');
-            setTimeout(() => {
-                skeleton.style.display = 'none';
-            }, 600);
-            observeElements();
-        };
+    function initInPlaceSkeleton() {
+        const images = document.querySelectorAll('.skeleton-shimmer img, .img-container img, .hero-img, .portfolio-img');
+        if (!images.length) return;
 
-        // Simulate a minimum loading time for skeleton visibility
-        setTimeout(() => {
-            if (document.readyState === 'complete') {
-                hideSkeleton();
+        images.forEach(img => {
+            const markReady = () => {
+                img.classList.add('is-loaded');
+                const container = img.closest('.skeleton-shimmer');
+                if (container) {
+                    container.classList.add('is-loaded');
+                    setTimeout(() => {
+                        container.classList.remove('skeleton-shimmer');
+                    }, 400);
+                }
+            };
+
+            const handleLoaded = () => {
+                if (typeof img.decode === 'function') {
+                    img.decode().then(markReady).catch(markReady);
+                } else {
+                    markReady();
+                }
+            };
+
+            if (img.complete && img.naturalWidth !== 0) {
+                handleLoaded();
             } else {
-                window.addEventListener('load', hideSkeleton);
+                img.addEventListener('load', handleLoaded, { once: true });
+                img.addEventListener('error', markReady, { once: true });
             }
-        }, 450);
-
-        // Fallback in case load event already fired or takes too long
-        setTimeout(hideSkeleton, 3000);
-    } else {
-        observeElements();
+        });
     }
 
     // ─── Back / Forward cache (bfcache) ──────────────────────────
-    // When the user presses Back, browsers restore from bfcache (e.persisted=true).
-    // The page is already rendered — never show the skeleton in this case.
+    // Browser Back restores from cache — page is already rendered
     window.addEventListener('pageshow', e => {
-        if (!e.persisted || !skeleton) return;
-        skeleton.classList.add('hidden');
-        skeleton.style.display = 'none';
-        // Still wire up scroll-reveal so animations work after Back navigation
+        if (!e.persisted) return;
         observeElements();
+        initInPlaceSkeleton();
     });
 
     // ─── Scroll Reveal ───────────────────────────────────────────
     function observeElements() {
-        const initObserver = () => {
-            const elements = document.querySelectorAll('.scroll-reveal');
-            if (!elements.length) return;
+        const elements = document.querySelectorAll('.scroll-reveal');
+        if (!elements.length) return;
 
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: '0px 0px -40px 0px',
-                threshold: 0.05
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
             });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.05
+        });
 
-            elements.forEach(el => observer.observe(el));
-        };
-
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(initObserver);
-        } else {
-            setTimeout(initObserver, 1);
-        }
+        elements.forEach(el => {
+            // Instantly activate any element that is already in or near the viewport on load
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 100) {
+                el.classList.add('active');
+            } else {
+                observer.observe(el);
+            }
+        });
     }
 });

@@ -35,10 +35,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../pictures/favIcons/favicon-16x16.png">
     <link rel="manifest" href="../pictures/favIcons/site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
     <link rel="stylesheet" href="../styles.css">
 
     <script type="application/ld+json">
@@ -82,143 +86,7 @@
 </head>
 
 <body>
-    <!-- Skeleton Loader -->
-    <div id="skeleton" class="skeleton-wrapper" aria-hidden="true">
-        <!-- Nav skeleton -->
-        <nav class="sk-nav">
-            <div class="skeleton-block sk-brand"></div>
-            <div class="skeleton-block sk-nav-right"></div>
-        </nav>
 
-        <div class="sk-main">
-
-            <!-- HERO: 8-col title/desc + 4-col spec card -->
-            <div class="bento-grid" style="margin-top: var(--spacing-2xl); margin-bottom: 90px;">
-                <!-- left: big title + desc + buttons -->
-                <div class="col-span-8"
-                    style="display: flex; flex-direction: column; gap: var(--spacing-lg); justify-content: center;">
-                    <div class="skeleton-block" style="width: 70%; height: 80px;"></div>
-                    <div class="skeleton-block" style="width: 90%; height: 16px;"></div>
-                    <div class="skeleton-block" style="width: 80%; height: 16px;"></div>
-                    <div class="skeleton-block" style="width: 60%; height: 16px;"></div>
-                    <div style="display: flex; gap: 12px; margin-top: 8px;">
-                        <div class="skeleton-block" style="width: 140px; height: 40px;"></div>
-                        <div class="skeleton-block" style="width: 100px; height: 40px;"></div>
-                    </div>
-                </div>
-                <!-- right: spec card -->
-                <div class="col-span-4 bento-card"
-                    style="min-height: 280px; gap: var(--spacing-md); display: flex; flex-direction: column;">
-                    <div class="skeleton-block" style="width: 40%; height: 12px;"></div>
-                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
-                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
-                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
-                    <div class="skeleton-block" style="width: 100%; height: 14px;"></div>
-                    <div style="display: flex; gap: 8px; margin-top: auto;">
-                        <div class="skeleton-block" style="width: 60px; height: 22px; border-radius: 4px;"></div>
-                        <div class="skeleton-block" style="width: 60px; height: 22px; border-radius: 4px;"></div>
-                        <div class="skeleton-block" style="width: 60px; height: 22px; border-radius: 4px;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section header: Engineering Mindset -->
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--spacing-lg);">
-                <div class="skeleton-block" style="width: 220px; height: 26px;"></div>
-                <div class="skeleton-block" style="flex: 1; height: 1px;"></div>
-            </div>
-
-            <!-- Mindset list: 4 items -->
-            <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: var(--spacing-3xl);">
-                <div class="mindset-item"
-                    style="display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 100px; height: 14px; flex-shrink: 0;"></div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                        <div class="skeleton-block" style="width: 60%; height: 18px;"></div>
-                        <div class="skeleton-block" style="width: 100%; height: 13px;"></div>
-                        <div class="skeleton-block" style="width: 90%; height: 13px;"></div>
-                    </div>
-                </div>
-                <div class="mindset-item"
-                    style="display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 100px; height: 14px; flex-shrink: 0;"></div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                        <div class="skeleton-block" style="width: 55%; height: 18px;"></div>
-                        <div class="skeleton-block" style="width: 100%; height: 13px;"></div>
-                        <div class="skeleton-block" style="width: 85%; height: 13px;"></div>
-                    </div>
-                </div>
-                <div class="mindset-item"
-                    style="display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 100px; height: 14px; flex-shrink: 0;"></div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                        <div class="skeleton-block" style="width: 65%; height: 18px;"></div>
-                        <div class="skeleton-block" style="width: 100%; height: 13px;"></div>
-                        <div class="skeleton-block" style="width: 75%; height: 13px;"></div>
-                    </div>
-                </div>
-                <div class="mindset-item"
-                    style="display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 100px; height: 14px; flex-shrink: 0;"></div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                        <div class="skeleton-block" style="width: 50%; height: 18px;"></div>
-                        <div class="skeleton-block" style="width: 100%; height: 13px;"></div>
-                        <div class="skeleton-block" style="width: 80%; height: 13px;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section header: The Logic -->
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--spacing-lg);">
-                <div class="skeleton-block" style="width: 130px; height: 26px;"></div>
-                <div class="skeleton-block" style="flex: 1; height: 1px;"></div>
-            </div>
-
-            <!-- Bento grid: 8col large card + 4col two small cards -->
-            <div class="bento-grid mb-section">
-                <div class="col-span-8 bento-card" style="min-height: 380px;"></div>
-                <div class="col-span-4" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
-                    <div class="bento-card skeleton-block" style="flex: 1; min-height: 170px;"></div>
-                    <div class="bento-card skeleton-block" style="flex: 1; min-height: 170px;"></div>
-                </div>
-            </div>
-
-            <!-- Section header: The Infrastructure -->
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--spacing-lg);">
-                <div class="skeleton-block" style="width: 200px; height: 26px;"></div>
-                <div class="skeleton-block" style="flex: 1; height: 1px;"></div>
-            </div>
-
-            <!-- Bento grid: 4col two small + 8col large -->
-            <div class="bento-grid mb-section">
-                <div class="col-span-4" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
-                    <div class="bento-card skeleton-block" style="flex: 1; min-height: 170px;"></div>
-                    <div class="bento-card skeleton-block" style="flex: 1; min-height: 170px;"></div>
-                </div>
-                <div class="col-span-8 bento-card" style="min-height: 380px;"></div>
-            </div>
-
-            <!-- Terminal card -->
-            <div class="bento-card" style="padding: var(--spacing-lg); margin-bottom: var(--spacing-3xl);">
-                <div
-                    style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border);">
-                    <div class="skeleton-block" style="width: 12px; height: 12px; border-radius: 50%;"></div>
-                    <div class="skeleton-block" style="width: 12px; height: 12px; border-radius: 50%;"></div>
-                    <div class="skeleton-block" style="width: 12px; height: 12px; border-radius: 50%;"></div>
-                    <div class="skeleton-block" style="width: 280px; height: 13px; margin-left: 8px;"></div>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 14px;">
-                    <div class="skeleton-block" style="width: 70%; height: 13px;"></div>
-                    <div class="skeleton-block" style="width: 85%; height: 13px;"></div>
-                    <div class="skeleton-block" style="width: 80%; height: 13px;"></div>
-                    <div class="skeleton-block" style="width: 75%; height: 13px;"></div>
-                    <div class="skeleton-block" style="width: 70%; height: 13px;"></div>
-                    <div class="skeleton-block" style="width: 82%; height: 13px;"></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
@@ -236,11 +104,11 @@
             </nav>
             <div class="mobile-nav-footer">
                 <div class="mobile-lang-selector">
-                    <a class="lang-link" href="https://dev.madovygabor.com/en/">EN</a>
+                    <a class="lang-link" href="/en/">EN</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link active" href="https://dev.madovygabor.com/hu/">HU</a>
+                    <a class="lang-link active" href="/hu/">HU</a>
                     <span class="lang-sep">/</span>
-                    <a class="lang-link" href="https://dev.madovygabor.com/sk/">SK</a>
+                    <a class="lang-link" href="/sk/">SK</a>
                 </div>
                 <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
             </div>
@@ -257,11 +125,11 @@
         </div>
         <div class="nav-actions">
             <div class="lang-selector">
-                <a class="lang-link" href="https://dev.madovygabor.com/en/">EN</a>
+                <a class="lang-link" href="/en/">EN</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link active" href="https://dev.madovygabor.com/hu/">HU</a>
+                <a class="lang-link active" href="/hu/">HU</a>
                 <span class="lang-sep">/</span>
-                <a class="lang-link" href="https://dev.madovygabor.com/sk/">SK</a>
+                <a class="lang-link" href="/sk/">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
@@ -274,7 +142,7 @@
 
     <main class="container">
 
-        <section class="bento-grid hero-section scroll-reveal">
+        <section class="bento-grid hero-section">
             <div class="hero-bottom-line"></div>
             <div class="hero-bottom-glow"></div>
 
