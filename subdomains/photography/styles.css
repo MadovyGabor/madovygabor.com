@@ -113,10 +113,12 @@ svg.icon {
   line-height: 1;
   letter-spacing: normal;
   text-transform: none !important;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
