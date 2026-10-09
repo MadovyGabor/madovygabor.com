@@ -1,0 +1,15 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: madovygabor_web
+    ports:
+      # Expose host port 80 to container port 80
+      - "80:80"
+    volumes:
+      # Mount application directories as read-only for local live development
+      - ./photography:/usr/share/nginx/html/photography:ro
+      - ./dev:/usr/share/nginx/html/dev:ro
+      - ./hub:/usr/share/nginx/html/hub:ro
+      # Custom Nginx virtual host configuration
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
