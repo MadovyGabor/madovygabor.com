@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('hashchange', scrollToAnchorHash);
 
 
-            // Set up top-level "Összes" button scroll to top behaviour
+            // Set up top-level "All" button scroll-to-top behaviour
             const allLink = document.querySelector('.sidebar-link[data-category="all"]');
             if (allLink) {
                 allLink.addEventListener('click', (e) => {
@@ -470,7 +470,8 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
     const tilesDiv = document.createElement('div');
     tilesDiv.className = 'gallery-tiles';
 
-    // Dynamic columns based on viewport
+    // Masonry layout: one flex column per breakpoint, with cumulative column heights
+    // (in units of width, i.e. 1 / aspectRatio) tracked for balanced placement
     const numCols = getColumnCount();
     const columns = [];
     const colHeights = new Array(numCols).fill(0);
@@ -546,8 +547,6 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
 
         imgContainer.appendChild(img);
 
-        const escapedAlt = altText.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-
         const overlay = document.createElement('div');
         overlay.className = 'hud-overlay';
         overlay.innerHTML = `
@@ -558,14 +557,23 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
                 <div class="hud-details">
                     <span style="font-size: 14px; font-weight: bold; color: white; background: none; border: none; padding: 0; text-align: left;">${sectionTitle}</span>
                 </div>
-                <button class="hud-fullscreen" aria-label="${tUI('fullscreenBtn')}" onclick="openFullscreen('${src}', '${escapedAlt}')">
+                <button class="hud-fullscreen" aria-label="${tUI('fullscreenBtn')}">
                     ${ICONS.fullscreen}
                 </button>
             </div>
         `;
+        const fsBtn = overlay.querySelector('.hud-fullscreen');
+        if (fsBtn) {
+            fsBtn.addEventListener('click', () => window.openFullscreen(src, altText));
+        }
         imgContainer.appendChild(overlay);
 
-        // Find shortest column
+        /**
+         * Greedy column balancing:
+         * Since column widths are uniform in flex masonry, rendered height is
+         * proportional to (1 / aspectRatio). We track cumulative unit height per column
+         * and append each photo to whichever column is currently the shortest.
+         */
         let minColIndex = 0;
         for (let i = 1; i < numCols; i++) {
             if (colHeights[i] < colHeights[minColIndex]) {

@@ -15,11 +15,11 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def find_photo_page_dir():
-    """Finds the root directory containing the pictures directory"""
-    for candidate in (SCRIPT_DIR, SCRIPT_DIR.parent, SCRIPT_DIR.parent.parent):
+    """Finds the root photography directory containing pictures/portfolio."""
+    for candidate in (SCRIPT_DIR.parent, SCRIPT_DIR, SCRIPT_DIR.parent.parent):
         if (candidate / "pictures" / "portfolio").exists():
             return candidate
-    return SCRIPT_DIR
+    return SCRIPT_DIR.parent
 
 
 PHOTO_PAGE_DIR = find_photo_page_dir()
@@ -137,7 +137,7 @@ def generate_gallery_json():
 
     print(f"Scanning folder structure starting from: {PICTURES_DIR}")
 
-    # Level 1: Categories (e.g., Koncertek, Portrék, Rendezvények, Travel)
+    # Level 1: Categories (e.g., Concerts, Portraits, Events, Travel)
     for category in sorted(os.listdir(PICTURES_DIR)):
         cat_path = PICTURES_DIR / category
         if not cat_path.is_dir():
@@ -160,7 +160,7 @@ def generate_gallery_json():
             child_dirs = [d for d in sub_path.iterdir() if d.is_dir()]
 
             if child_dirs:
-                # Level 3 scenario: Subcategories exist under Level 2 (e.g. Hajómalom fesztivál 25 -> Delegation)
+                # Level 3 scenario: Subcategories exist under Level 2 (e.g., Festival -> Band / Artist)
                 print(f"  Subsection (L2 with L3 children): {subcat}")
                 subcat_data = {
                     "title": subcat,
@@ -181,7 +181,7 @@ def generate_gallery_json():
                 if subcat_data["subsections"]:
                     cat_data["subsections"].append(subcat_data)
             else:
-                # Level 2 scenario: Direct images (e.g. Portrék -> Portréim)
+                # Level 2 scenario: Direct image collections under Level 2 (e.g., Portraits -> Studio Set)
                 print(f"  Subsection (L2 with direct images): {subcat}")
                 images = get_images_in_dir(sub_path, meta_lookup)
                 if images:

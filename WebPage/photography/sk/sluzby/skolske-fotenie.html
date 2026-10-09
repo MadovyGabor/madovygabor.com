@@ -5,15 +5,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FW5QY9960V');
-  </script>
-
   <title>Triedne a školské fotenie s transparentnou cenou | MG Captures</title>
   <meta name="description"
     content="Profesionálne triedne fotenie a školské skupinové fotografie v regióne Galanta, Nové Zámky a Dunajská Streda. Tlačená fotka pre každého žiaka a transparentná kalkulačka ceny." />
@@ -187,7 +178,7 @@
     </div>
   </div>
 
-  <!-- Standardized Production Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="/sk/" class="nav-brand">MG Captures</a>
@@ -293,7 +284,7 @@
 
         <!-- SECTION 3: 3-CARD FEATURE GRID -->
         <div class="occasions-grid">
-          <!-- Card 1: Klasické triedne fotografie -->
+          <!-- Card 1: Classic class photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp"
@@ -311,7 +302,7 @@
             </div>
           </article>
 
-          <!-- Card 2: Kamarátske skupinové fotky -->
+          <!-- Card 2: Friend group photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
@@ -330,7 +321,7 @@
             </div>
           </article>
 
-          <!-- Card 3: Digitálny archív pre školu -->
+          <!-- Card 3: School digital archive -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
@@ -369,7 +360,7 @@
           <div class="calc-grid">
             <!-- Controls Column -->
             <div class="calc-controls scroll-reveal">
-              <!-- Step 1: Iskolaméret / Csomagválasztás -->
+              <!-- Step 1: School size / Package selection -->
               <div class="calc-step">
                 <div class="calc-step-label">
                   <span>VEĽKOSŤ ŠKOLY / VÝBER BALÍKA</span>
@@ -405,7 +396,7 @@
                 </div>
               </div>
 
-              <!-- Step 2: Helyszín / Kiszállás -->
+              <!-- Step 2: Location / Travel -->
               <div class="calc-step">
                 <div class="calc-step-label">MIESTO FOTENIA &amp; DOPRAVA</div>
                 <div class="calc-travel-badge">
@@ -415,11 +406,11 @@
                 </div>
               </div>
 
-              <!-- Step 3: Opcionális kiegészítők -->
+              <!-- Step 3: Optional add-ons -->
               <div class="calc-step">
                 <div class="calc-step-label">VOLITEĽNÉ DOPLNKY</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                  <!-- Add-on 1: Iskolai digitális archívum -->
+                  <!-- Add-on 1: School digital archive -->
                   <div class="calc-addon-card" id="calcAddonArchiveCard">
                     <button type="button" class="addon-card-header" id="calcAddonArchive" role="switch"
                       aria-checked="false">
@@ -452,7 +443,7 @@
                     </div>
                   </div>
 
-                  <!-- Add-on 2: Tanári kar csoportképének fotózása -->
+                  <!-- Add-on 2: Teaching staff group photo -->
                   <button type="button" class="calc-addon-row" id="calcAddonFaculty" role="switch" aria-checked="false">
                     <div class="addon-left">
                       <span class="addon-checkbox-box" aria-hidden="true"></span>
@@ -465,7 +456,7 @@
                     <span class="addon-badge" id="facultyBadge">Dostupné v harmonograme</span>
                   </button>
 
-                  <!-- Add-on 3: Baráti kiscsoportos fotózás -->
+                  <!-- Add-on 3: Friend small-group shoot -->
                   <button type="button" class="calc-addon-row" id="calcAddonFriends" role="switch" aria-checked="false">
                     <div class="addon-left">
                       <span class="addon-checkbox-box" aria-hidden="true"></span>
@@ -728,7 +719,7 @@
     </section>
   </main>
 
-  <!-- Standardized Production Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
@@ -746,7 +737,7 @@
   <!-- Global Scripts -->
   <script src="../../script.js" defer></script>
 
-  <!-- Dynamic Price Calculator Logic for Školské fotenie -->
+  <!-- Dynamic price calculator logic: school photography -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       let activeTierKey = 'nagy_iskola';
@@ -883,7 +874,7 @@
         });
       }
 
-      // Add-on: Digitálny archív pre školu
+      // Add-on: school digital archive
       if (addonArchive) {
         addonArchive.addEventListener('click', function () {
           hasArchive = !hasArchive;
@@ -899,7 +890,7 @@
         });
       }
 
-      // Add-on: Skupinová fotografia pedagogického zboru
+      // Add-on: teaching staff group photo
       if (addonFaculty) {
         addonFaculty.addEventListener('click', function () {
           hasFaculty = !hasFaculty;
@@ -912,7 +903,7 @@
         });
       }
 
-      // Add-on: Kamarátske skupinové fotenie
+      // Add-on: friend group shoot
       if (addonFriends) {
         addonFriends.addEventListener('click', function () {
           hasFriends = !hasFriends;

@@ -298,54 +298,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const total = params.get('total') || '';
             const express = params.get('express') === 'true' || params.get('express') === '1';
 
-            // Auto-select subject dropdown
+            // Auto-select subject dropdown based on service parameter
             if (subjectSelect) {
-                if (service === 'esemeny' || service === 'event') {
-                    const eventOption = Array.from(subjectSelect.options).find(opt =>
-                        opt.value === 'eseményfotózás' ||
-                        opt.value === 'event' ||
-                        opt.value === 'eventove-fotenie' ||
-                        opt.text.toLowerCase().includes('esemény') ||
-                        opt.text.toLowerCase().includes('event')
+                const serviceKeywords = {
+                    esemeny: ['esemény', 'event'],
+                    event: ['esemény', 'event'],
+                    iskolafotozas: ['iskola', 'osztály', 'skol', 'škol', 'school'],
+                    iskola: ['iskola', 'osztály', 'skol', 'škol', 'school'],
+                    school: ['iskola', 'osztály', 'skol', 'škol', 'school'],
+                    skolske: ['iskola', 'osztály', 'skol', 'škol', 'school'],
+                    tablo: ['tabló', 'tablo', 'yearbook'],
+                    tablofotozas: ['tabló', 'tablo', 'yearbook'],
+                    yearbook: ['tabló', 'tablo', 'yearbook'],
+                    portre: ['portré', 'portret', 'portrait'],
+                    portrait: ['portré', 'portret', 'portrait'],
+                    portrefotozas: ['portré', 'portret', 'portrait']
+                };
+                const keywords = serviceKeywords[service];
+                if (keywords) {
+                    const matchedOption = Array.from(subjectSelect.options).find(opt =>
+                        keywords.some(k => opt.value.toLowerCase().includes(k) || opt.text.toLowerCase().includes(k))
                     );
-                    if (eventOption) {
-                        subjectSelect.value = eventOption.value;
-                    }
-                } else if (service === 'iskolafotozas' || service === 'iskola' || service === 'school' || service === 'skolske') {
-                    const iskolaOption = Array.from(subjectSelect.options).find(opt =>
-                        opt.value.toLowerCase().includes('iskola') ||
-                        opt.text.toLowerCase().includes('iskola') ||
-                        opt.value.toLowerCase().includes('osztály') ||
-                        opt.text.toLowerCase().includes('osztály') ||
-                        opt.value.toLowerCase().includes('skol') ||
-                        opt.text.toLowerCase().includes('škol') ||
-                        opt.value.toLowerCase().includes('school') ||
-                        opt.text.toLowerCase().includes('school')
-                    );
-                    if (iskolaOption) {
-                        subjectSelect.value = iskolaOption.value;
-                    }
-                } else if (service === 'tablo' || service === 'tablofotozas' || service === 'yearbook') {
-                    const tabloOption = Array.from(subjectSelect.options).find(opt =>
-                        opt.value.toLowerCase().includes('tabló') ||
-                        opt.value.toLowerCase().includes('tablo') ||
-                        opt.value.toLowerCase().includes('yearbook') ||
-                        opt.text.toLowerCase().includes('tabló') ||
-                        opt.text.toLowerCase().includes('tablo')
-                    );
-                    if (tabloOption) {
-                        subjectSelect.value = tabloOption.value;
-                    }
-                } else if (service === 'portre' || service === 'portrait' || service === 'portrefotozas') {
-                    const portreOption = Array.from(subjectSelect.options).find(opt =>
-                        opt.value.toLowerCase().includes('portré') ||
-                        opt.value.toLowerCase().includes('portret') ||
-                        opt.value.toLowerCase().includes('portrait') ||
-                        opt.text.toLowerCase().includes('portré') ||
-                        opt.text.toLowerCase().includes('portret')
-                    );
-                    if (portreOption) {
-                        subjectSelect.value = portreOption.value;
+                    if (matchedOption) {
+                        subjectSelect.value = matchedOption.value;
                     }
                 }
             }

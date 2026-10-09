@@ -5,15 +5,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FW5QY9960V');
-  </script>
-
   <title>Osztálykép és iskolai csoportkép fotózás | MG Captures</title>
   <meta name="description"
     content="Professzionális osztályfotózás és iskolai csoportképek Galánta, Érsekújvár és Dunaszerdahely térségében. Minden diáknak prémium papírkép és azonnali intézményi árkalkuláció." />
@@ -187,7 +178,7 @@
     </div>
   </div>
 
-  <!-- Standardized Production Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="/hu/" class="nav-brand">MG Captures</a>
@@ -294,7 +285,7 @@
 
         <!-- SECTION 3: 3-CARD FEATURE GRID -->
         <div class="occasions-grid">
-          <!-- Card 1: Klasszikus osztályképek -->
+          <!-- Card 1: Classic class photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp"
@@ -312,7 +303,7 @@
             </div>
           </article>
 
-          <!-- Card 2: Baráti kiscsoportos fotók -->
+          <!-- Card 2: Friend small-group photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
@@ -331,7 +322,7 @@
             </div>
           </article>
 
-          <!-- Card 3: Teljes suliarchívum -->
+          <!-- Card 3: Full school archive -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
@@ -370,7 +361,7 @@
           <div class="calc-grid">
             <!-- Controls Column -->
             <div class="calc-controls scroll-reveal">
-              <!-- Step 1: Iskolaméret / Csomagválasztás (5 Discrete Clickable Cards) -->
+              <!-- Step 1: School size / Package selection (5 clickable cards) -->
               <div class="calc-step">
                 <div class="calc-step-label">
                   <span>ISKOLAMÉRET / CSOMAGVÁLASZTÁS</span>
@@ -405,7 +396,7 @@
                 </div>
               </div>
 
-              <!-- Step 2: Helyszín / Kiszállás (Reassuring Text Badge) -->
+              <!-- Step 2: Location / Travel (text badge) -->
               <div class="calc-step">
                 <div class="calc-step-label">HELYSZÍN &amp; KISZÁLLÁS</div>
                 <div class="calc-travel-badge">
@@ -415,11 +406,11 @@
                 </div>
               </div>
 
-              <!-- Step 3: Opcionális kiegészítők -->
+              <!-- Step 3: Optional add-ons -->
               <div class="calc-step">
                 <div class="calc-step-label">OPCIONÁLIS KIEGÉSZÍTŐK</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                  <!-- Add-on 1: Iskolai digitális archívum (Unified Card Container) -->
+                  <!-- Add-on 1: School digital archive (unified card container) -->
                   <div class="calc-addon-card" id="calcAddonArchiveCard">
                     <button type="button" class="addon-card-header" id="calcAddonArchive" role="switch"
                       aria-checked="false">
@@ -452,7 +443,7 @@
                     </div>
                   </div>
 
-                  <!-- Add-on 2: Tanári kar csoportképének fotózása (Zero-Cost Scope Indicator) -->
+                  <!-- Add-on 2: Teaching staff group photo (zero-cost scope indicator) -->
                   <button type="button" class="calc-addon-row" id="calcAddonFaculty" role="switch" aria-checked="false">
                     <div class="addon-left">
                       <span class="addon-checkbox-box" aria-hidden="true"></span>
@@ -465,7 +456,7 @@
                     <span class="addon-badge" id="facultyBadge">Igényelhető</span>
                   </button>
 
-                  <!-- Add-on 3: Baráti kiscsoportos fotózás -->
+                  <!-- Add-on 3: Friend small-group shoot -->
                   <button type="button" class="calc-addon-row" id="calcAddonFriends" role="switch" aria-checked="false">
                     <div class="addon-left">
                       <span class="addon-checkbox-box" aria-hidden="true"></span>
@@ -726,7 +717,7 @@
     </section>
   </main>
 
-  <!-- Standardized Production Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
@@ -744,7 +735,7 @@
   <!-- Global Scripts -->
   <script src="../../script.js" defer></script>
 
-  <!-- Dynamic Price Calculator Logic for Iskolafotózás -->
+  <!-- Dynamic price calculator logic: school photography -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       let activeTierKey = 'nagy_iskola';
@@ -881,7 +872,7 @@
         });
       }
 
-      // Add-on: Iskolai digitális archívum
+      // Add-on: school digital archive
       if (addonArchive) {
         addonArchive.addEventListener('click', function () {
           hasArchive = !hasArchive;
@@ -897,7 +888,7 @@
         });
       }
 
-      // Add-on: Tanári kar csoportképe
+      // Add-on: teaching staff group photo
       if (addonFaculty) {
         addonFaculty.addEventListener('click', function () {
           hasFaculty = !hasFaculty;
@@ -910,7 +901,7 @@
         });
       }
 
-      // Add-on: Baráti kiscsoportos fotózás
+      // Add-on: friend small-group shoot
       if (addonFriends) {
         addonFriends.addEventListener('click', function () {
           hasFriends = !hasFriends;

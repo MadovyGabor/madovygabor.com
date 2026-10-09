@@ -2369,20 +2369,9 @@ main {
 
 /* 
 ==========================================================================
-   PORTFOLIO PAGE STYLES (temp_portfolio.html integration)
+   PORTFOLIO PAGE STYLES
 ========================================================================== 
 */
-
-/* Technical Background Overlay */
-.bg-dot-pattern {
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(var(--surface-container-high) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: -1;
-}
 
 /* Sidebar Wrapper Layout */
 .gallery-wrapper {
@@ -2493,9 +2482,6 @@ main {
   text-transform: none;
 }
 
-.material-symbols-outlined {
-  text-transform: none !important;
-}
 
 .sidebar-link .link-count {
   font-size: 10px;
@@ -2670,7 +2656,7 @@ main {
   white-space: nowrap;
 }
 
-/* Hide the label badge on sub-section (h3) headers — only looks good on the big h2 ones */
+/* Suppress category badge on tertiary (H3) subsection headers */
 .group-header:has(h3) .group-label {
   display: none;
 }
@@ -2687,16 +2673,6 @@ main {
   color: var(--on-surface-variant);
   letter-spacing: 0.1em;
   white-space: nowrap;
-}
-
-.group-description {
-  font-family: var(--font-body-md);
-  font-size: 0.875rem;
-  color: var(--on-surface-variant);
-  margin-top: -16px;
-  margin-bottom: 32px;
-  line-height: 1.5;
-  max-width: 800px;
 }
 
 /* Masonry Layout */
@@ -3111,7 +3087,6 @@ address.contact-info {
   flex-direction: column;
   gap: 24px;
   background-color: #1e2020;
-  /* gray container background */
   border: 1px solid var(--outline-variant);
   border-radius: 2px;
   padding: 32px;
@@ -3139,7 +3114,6 @@ address.contact-info {
 
 .contact-item .material-symbols-outlined {
   color: #3498db;
-  /* cyan icons */
   font-size: 24px;
   margin-top: 4px;
 }
@@ -3232,25 +3206,9 @@ address.contact-info {
   opacity: 1;
 }
 
-.map-badge {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  background-color: #121414;
-  color: #3498db;
-  border: 1px solid #3498db;
-  padding: 4px 8px;
-  font-family: var(--font-data-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
 /* Contact Form */
 .contact-form {
   background-color: #1e2020;
-  /* gray container background */
   border: 1px solid var(--outline-variant);
   border-radius: 2px;
   padding: 32px;
@@ -3291,7 +3249,6 @@ address.contact-info {
   left: 16px;
   top: 14px;
   color: #3498db;
-  /* blue icons in the form */
   font-size: 20px;
   width: 20px;
   height: 20px;
@@ -3326,7 +3283,6 @@ address.contact-info {
 .form-control:focus {
   outline: none;
   border-color: #3498db;
-  /* cyan focus */
   box-shadow: none;
 }
 
@@ -3397,7 +3353,6 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   border: none;
   border-radius: 2px;
   background-color: #3498db;
-  /* bright cyan from image */
   color: #000000;
   font-family: var(--font-data-mono);
   font-size: 0.875rem;
@@ -3550,6 +3505,8 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -3558,19 +3515,6 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   background-color: #3498db;
   color: #000000;
   box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
-}
-
-/* SEO Cross-Links */
-.seo-photo-link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.seo-photo-link:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
 }
 
 /* ==========================================================================
@@ -4116,13 +4060,6 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   border-color: rgba(62, 166, 255, 0.3);
 }
 
-.calc-addon-stepper-row {
-  cursor: default;
-}
-
-.calc-addon-stepper-row:hover {
-  border-color: var(--color-neutral-800);
-}
 
 /* Unified Add-on Card Container with Nested Stepper */
 .calc-addon-card {
@@ -4291,12 +4228,6 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   white-space: nowrap;
 }
 
-.teacher-stepper-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-}
 
 .stepper-btn {
   width: 28px;
@@ -4613,7 +4544,7 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   background: rgba(62, 166, 255, 0.12);
 }
 
-/* Polished Option 4: Full-Width Selectable Addon Row */
+/* Full-width selectable add-on row */
 .calc-addon-row {
   width: 100%;
   text-align: left;

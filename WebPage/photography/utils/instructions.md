@@ -64,18 +64,18 @@ The script runs on Python 3 and requires the **Pillow** library to read image me
 Whenever you add, delete, rename, or reorganize images/folders on disk, you must regenerate the JSON file for the website to display the changes:
 
 1. Open your terminal or Command Prompt.
-2. Navigate to the `PhotoPage/utils/` folder.
+2. Navigate to the `WebPage/photography/utils/` folder.
 3. Run the generator script:
    ```bash
    python generate_gallery.py
    ```
 
-Upon completion, a success message will display, and the `galleryData.json` database file will be updated in the `PhotoPage/utils/` folder.
+Upon completion, a success message will display, and the `galleryData.json` database file will be updated in the `WebPage/photography/` folder.
 
 ---
 
 ## 🌐 Integration with the Web Page
 
-- The portfolio page (`temp_portfolio.html` / `portfolio.html`) loads the script `javaScript/temp_galleryLoader.js`.
-- The JavaScript fetches the database file from `utils/galleryData.json` at runtime.
+- The portfolio page (`portfolio.html`) loads the script `javaScript/galleryLoader.js`.
+- The JavaScript fetches the database file from `../galleryData.json` at runtime.
 - The sidebar navigation, filter tabs, masonry grid, image headers, and photo aspect ratios are all dynamically built based on this JSON structure.

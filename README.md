@@ -1,173 +1,121 @@
-# Gabriel Madový — Digital Platform Monorepo (madovygabor.com)
+# madovygabor.com — Multi-Domain Platform & Dev Environment
 
-> **"Memories fade, photographs remain. My passion is capturing moments that last forever."**  
-> — Gabriel Madový (*MG Captures*)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white)
+![Nginx Alpine](https://img.shields.io/badge/Nginx-Alpine-009639?logo=nginx&logoColor=white)
+![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare&logoColor=white)
+![Vanilla Web Standards](https://img.shields.io/badge/Vanilla-Web_Standards-F7DF1E?logo=javascript&logoColor=black)
+![Python 3](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
 
-A production-grade, trilingual (`EN` / `HU` / `SK`) monorepo hosting the personal ecosystem of **Gabriel Madový** (Madový Gábor): an Information Security student at **VUT FEEC Brno**, Kotlin Multiplatform & Android/iOS developer, certified networking technician (**Cisco CCNA 3**), and professional event, concert, and portrait photographer operating **MG Captures**.
+Monorepo for a multi-domain static platform: a photography client site, a central hub, and an engineering portfolio. It uses plain web standards, runs locally in a containerized Nginx, and deploys to Cloudflare Pages.
 
----
+## Architecture & Topology
 
-## 🎯 Codebase Purpose & Goals
+The repo manages three decoupled domains, each deployed independently:
 
-1. **Dual Identity Architecture (The Lens & The Logic)**:
-   - **The Hub (`hub.madovygabor.com`)**: Central entry portal linking two distinct professional disciplines under a cohesive dark-aesthetic design.
-   - **The Lens (`madovygabor.com`)**: Full-featured photography business and portfolio platform (*MG Captures*), offering high-end concert, festival, event, and portrait photography across Western Slovakia (Galanta, Nové Zámky, Dunajská Streda, Šaľa, Bratislava).
-   - **The Logic (`dev.madovygabor.com`)**: Technical engineering portfolio and staging/development test environment showcasing Kotlin Multiplatform (KMP), Clean Architecture, Android/iOS development, Cisco enterprise networking, and IoT/industrial automation.
+| Domain | Purpose |
+| --- | --- |
+| `madovygabor.com` | Photography client portfolio (MG Captures) |
+| `hub.madovygabor.com` | Central ecosystem entry portal |
+| `dev.madovygabor.com` | Engineering portfolio & staging sandbox |
 
-2. **Core Strategic Goals**:
-   - **Unified Performance & Zero Runtime Overhead**: Pure vanilla HTML5, CSS3 design tokens, and modular JavaScript without heavy front-end framework overhead.
-   - **Zero Layout Shift (CLS = 0) & Instant Perceived Performance**: Integrated custom skeleton loaders (`#skeleton`) matching exact CSS grid layouts, accompanied by smooth reveal animations (`IntersectionObserver`).
-   - **SEO Dominance & Semantic Data Integrity**: JSON-LD schemas (`ProfilePage`, `PhotographyBusiness`, `Service`, `CollectionPage`), complete `hreflang` alternates across 3 locales, clean URL routing without `.html` extensions via `_redirects`, and automated search indexing via IndexNow.
-   - **Deterministic Gallery Generation**: Automated asset discovery and metadata extraction via Python/Pillow (`generate_gallery.py`), compiling structured photo albums into `galleryData.json`.
-
----
-
-## 📁 Repository Structure & Critical Files
+**Why the photography site is on the apex domain:** it is the client-facing, revenue-generating property. Hosting it on the root domain concentrates crawl authority and backlink equity in one place. It also matches local search intent (Galanta, Nové Zámky, Dunajská Streda) without the dilution a subdomain would cause.
 
 ```text
-madovygabor.com/
-├── WebPage/
-│   ├── hub/                                # Portal Module (hub.madovygabor.com)
-│   │   ├── _headers, _redirects, robots.txt, hub-sitemap.xml
-│   │   ├── en/, hu/, sk/                   # Localized Hub pages (index.html)
-│   │   ├── styles.css, script.js
-│   │   └── pictures/
-│   │
-│   ├── photography/                        # MG Captures Platform (madovygabor.com)
-│   │   ├── _headers, _redirects, robots.txt, photo-sitemap.xml
-│   │   ├── en/, hu/, sk/                   # Localized photography pages & services
-│   │   ├── galleryData.json, styles.css, script.js
-│   │   └── pictures/
-│   │
-│   └── dev/                                # Engineering & Dev/Staging (dev.madovygabor.com)
-│       ├── _headers, _redirects, robots.txt, dev-sitemap.xml
-│       ├── en/, hu/, sk/                   # Localized engineering pages
-│       ├── styles.css, script.js
-│       └── pictures/
+WebPage/
+├── scripts/
+│   └── indexnow_submit.py      # Automated IndexNow API search engine submission
 │
-└── scripts/
-    ├── audit_site.py                       # SEO & technical integrity validation
-    ├── indexnow_submit.py                  # CLI automation pushing updated routes to IndexNow API
-    └── verify_cross_domain_links.py        # Cross-domain navigation & sitemap verification suite
+└── WebPage/                    # Core web services & local runtime
+    ├── dev/                    # dev.madovygabor.com
+    ├── hub/                    # hub.madovygabor.com
+    ├── photography/            # madovygabor.com (MG Captures)
+    │   ├── hu/, sk/, en/       # Localized pages & services
+    │   ├── pictures/           # WebP media assets
+    │   ├── galleryData.json    # Compiled gallery manifest
+    │   └── utils/
+    │       └── generate_gallery.py  # Pillow-based gallery manifest generator
+    ├── compose.yaml            # Local multi-tenant container orchestration
+    └── nginx.conf              # Nginx virtual hosts & clean URL router
 ```
 
----
+## Local Container Runtime (Docker & Nginx)
 
-## 🎨 Visual Identity & Design System Tokens
+Purpose: test multi-domain routing and clean URLs locally, without third-party live servers.
 
-The entire platform adheres to a disciplined **Industrial Dark / Editorial Glassmorphism** visual hierarchy.
-
-### 1. Color Palette
-
-| Token / Role | Hex Value | Intent & Usage |
-| :--- | :--- | :--- |
-| `--color-background` | `#121414` / `#000000` | Deep obsidian canvas; reduces eye fatigue |
-| `--color-surface` | `#121414` / `#0a0a0a` | Baseline container surface |
-| `--color-surface-container` | `#1e2020` / `#111111` | Bento cards, service modules, interactive components |
-| `--color-primary` | `#92ccff` / `#38bdf8` | Photography brand cyan & accent links |
-| `--color-primary-container`| `#3498db` | Selection highlight and primary CTAs |
-| `--color-accent-purple` | `#8E44AD` / `#a855f7` | Engineering brand color (*The Logic* badge & glow) |
-| `--color-on-background` | `#e3e2e2` / `#e2e2e2` | Primary typography high-contrast text |
-| `--color-on-surface-variant`| `#bfc7d2` / `#a1a1aa` | Muted supporting copy & descriptions |
-| `--color-neutral-800` | `#262626` | Subtle 1px structural hairline borders |
-| `--color-neutral-950` | `#0a0a0a` | Deepest surface, navigation bar & footer |
-
-### 2. Typography Hierarchy
-
-- **Editorial Display (`--font-display` / `--font-editorial`)**: `'Instrument Serif', serif`  
-  *Usage*: Hero headlines (`--text-display-xl: 80px`), philosophical quotes, section headers.
-- **Modern Sans Interface (`--font-body` / `--font-sans`)**: `'Inter', sans-serif`  
-  *Usage*: Body copy (`--text-body-md: 16px`, line-height `1.6`), navigation, interactive labels.
-- **Technical Monospace (`--font-mono` / `--font-data-mono`)**: `'JetBrains Mono', monospace`  
-  *Usage*: Log tags (`[LOG_01:EXEC]`), metadata specs, status badges, code previews, terminal emulation.
-
-### 3. Layout & Component Standards
-
-- **Standardized Container**: `max-width: 1400px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px);`
-- **Bento Grid System**: CSS Grid 12-column layouts (`col-span-8` + `col-span-4`) with `24px` gutter gaps.
-- **Skeleton Synchronization**: Every interactive view implements an exact 1:1 skeleton mirror loaded before hydration, preventing layout shift.
-- **Tactile Micro-interactions**: Hover scale transitions (`--transition-normal: 0.3s ease`), corner badge notches (`.btn-corner-tr`, `.btn-corner-bl`), and live availability pulse indicators (`.pulse-dot`).
-
----
-
-## 🏷️ Real Content, Verified Entities & Terminology
-
-*Nothing placeholder — all pulled directly from active schemas, templates, and data files:*
-
-- **Identity**: Gabriel Madový (Madový Gábor)
-- **Roles**:
-  - Professional Concert, Festival, Event, & Portrait Photographer (*MG Captures*)
-  - Information Security Student at *Vysoké učení technické v Brně* (VUT FEEC Brno)
-  - Kotlin Multiplatform Engineer & Low-Voltage Electrotechnician
-- **Verified Industry Credentials**:
-  - `Cisco Certified CCNA 3` (Enterprise Networking, Switching & Security)
-  - `§21 Certified Electrotechnician` (Security & Engineering Compliance)
-  - `Bosch EPS Certified Fire Alarm Engineer`
-  - `Infoprog National Data Processing Competition` — 1st Place Winner
-  - `Nové Zámky City Award Recipient` (2x)
-- **Primary Service Offerings & Locations**:
-  - **Locations**: Galanta, Nové Zámky, Dunajská Streda, Šaľa, Bratislava, Dolné Saliby, Alsószeli.
-  - **Services**:
-    - *Event Photography* (Concerts, festivals, proms, night events in challenging low-light)
-    - *Senior & Class Photography* (Tabló, graduation ceremonies, class albums)
-    - *Outdoor & Personal Portraits* (Natural light, mobile studio flash)
-    - *Real Estate & Interior* (Vacation cabins, commercial spaces, apartments)
-- **Featured Client Work & Collaborations**:
-  - *Hajómalom Fesztivál* (Delegation, Follow The Flow, Pogány Induló)
-  - *AVA Thermalpark & AVA Night*
-  - *Azahriah Puskás Aréna*
-  - *AMTS (Automobil & Tuning Show)*
-  - *AVA Chatka Motýlik Diakovce*
-- **Software Projects**:
-  - **MaturiMate Ecosystem**: KMP app for graduation preparation using SQLDelight, KaTeX, and MVI architecture.
-  - **Employee & Security Auditor System**: Java Clean Architecture system with decoupled access control validation.
-  - **Secure Communication Tool**: Python end-to-end encrypted messaging with custom handshake protocol.
-
----
-
-## ⚙️ Core Data Structures & Operational Workflows
-
-### 1. Photo Catalog Data Structure (`galleryData.json`)
-
-The gallery is organized as a nested hierarchy generated from filesystem leaf nodes:
-
-```json
-[
-  {
-    "title": "Koncertek",
-    "id": "koncertek",
-    "subsections": [
-      {
-        "title": "Hajómalom fesztivál 25",
-        "id": "hajomalom-fesztival-25",
-        "images": [
-          {
-            "src": "pictures/portfolio/Koncertek/Hajómalom fesztivál 25/Delegation/img1.webp",
-            "width": 6000,
-            "height": 4000,
-            "aspect_ratio": 1.5,
-            "alt": "Hajómalom festival stage delegation"
-          }
-        ]
-      }
-    ]
-  }
-]
-```
-
-### 2. Gallery Automation Workflow
+- `compose.yaml` declares a single `nginx:alpine` service exposed on port 80.
+- `nginx.conf` defines virtual hosts for `madovygabor.com`, `dev.localhost` and `hub.localhost`.
+- Clean URLs use `try_files $uri $uri/ $uri.html =404;`, matching edge behavior.
+- The `/` → `/hu/` 302 redirect is emulated locally.
+- Sources are bind-mounted read-only (`:ro`), so saved changes show up immediately with no rebuild.
+- Stateless compute: media assets are kept out of the image, so the container stays at ~23 MB.
 
 ```bash
-# Whenever new portfolio pictures are placed in pictures/portfolio/:
-cd WebPage/photography/utils
-python generate_gallery.py
-# Scans dimensions & aspect ratios with Pillow, compiles galleryData.json
+docker compose up -d     # start
+docker compose down      # stop
 ```
 
-### 3. SEO Instant Indexing Workflow
+## Dynamic Gallery Engine & Flat-File Data Pipeline
 
-```bash
-# Submit all canonical multilingual URLs to IndexNow (Bing, Yandex, Seznam):
-cd scripts
-python indexnow_submit.py
-```
+### Database-Free Design
+
+There is no PostgreSQL or SQL backend. A backend database would add latency, attack surface and maintenance. The gallery is instead driven by the filesystem and a generated JSON manifest. The result is fast, secure and needs no upkeep.
+
+### Manifest Generation (`generate_gallery.py`)
+
+A Python CLI tool that uses Pillow to:
+
+- Scan the nested structure `pictures/portfolio/{Category}/{Album}/`.
+- Extract each image's intrinsic dimensions and calculate its aspect ratio.
+- Normalize filenames into clean alt text.
+- Compile everything into `galleryData.json`.
+
+### Client-Side Masonry (`galleryLoader.js`)
+
+- Vanilla JavaScript fetches `galleryData.json` asynchronously.
+- **Column balancing:** the loader tracks cumulative column heights and injects each next photo into the shortest column. This avoids unbalanced layouts and trailing gaps.
+- **Native loading:** `loading="lazy"` and `decoding="async"` keep image work off the main thread and prevent jank.
+
+## Frontend Performance & Standards
+
+Pure HTML5, CSS3 (custom properties, Grid, Flexbox) and ES6+ JavaScript, with no runtime framework.
+
+- **Images:** WebP assets. Hero images use `<link rel="preload">` with `fetchpriority="high"`.
+- **Layout stability:** a measured CLS of 0.000. Aspect-ratio reservation and CSS skeleton shimmer placeholders reserve DOM space before assets load.
+- **Semantic SEO:** a multilingual `hreflang` matrix (`hu`, `sk`, `en`) and JSON-LD schemas (`PhotographyBusiness`, `Service`, `FAQPage`).
+
+## Python Tooling (`scripts/`)
+
+| Script | Function |
+| --- | --- |
+| `generate_gallery.py` | Extracts gallery metadata and compiles the `galleryData.json` manifest. |
+| `indexnow_submit.py` | Sends batch notifications to Bing, Seznam and Yandex via the IndexNow API. |
+
+## Engineering Case Study: SEO Overhaul & Search Intent
+
+### Problems
+
+- The single-page structure stalled crawling.
+- Broad service pages were penalized as thin content.
+- Canonical conflicts (`/` vs `/hu/`) and legacy HTTP leaks appeared in Google Search Console.
+- Unconstrained media delayed LCP.
+
+### Solutions
+
+- Modular, search-intent subpages for high-intent queries: yearbooks/proms, schools, events and portraits.
+- Transparent upfront pricing (*"azonnali árakkal"* / *"s cenami"*), workflow schedules and localized FAQs.
+- Cloudflare edge HTTPS enforcement, and disabling crawler-blocking options (Rocket Loader, Bot Fight Mode).
+
+### Production Metrics
+
+- Full indexation in under 24 hours.
+- 14 core subpages indexed in Google Search Console.
+- Page 1 ranking (average position 4.1) within 5 days for high-intent keywords.
+- 11.1% organic CTR.
+- Google Knowledge Graph entity binding (personal name, founder portrait and business).
+
+## Production Deployment (Cloudflare Pages GitOps)
+
+- Deployment is triggered automatically by `git push origin main`.
+- **Multi-project setup:** Cloudflare Pages builds each directory (`photography`, `hub`, `dev`) independently and publishes it to its own subdomain.
+- **Build-time pruning:** static files are published, while internal Python build utilities (`utils/generate_gallery.py`) are excluded from the edge deployment artifact.
+- Edge rules and security headers are defined declaratively in `_redirects` and `_headers`.

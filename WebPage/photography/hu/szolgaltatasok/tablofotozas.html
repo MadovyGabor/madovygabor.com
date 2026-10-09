@@ -5,15 +5,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FW5QY9960V');
-  </script>
-
   <title>Végzős tablófotózás és egyedi tablóképek azonnali árakkal | MG Captures</title>
   <meta name="description"
     content="Természetes, feszengésmentes tablófotózás végzős diákoknak Galánta, Dunaszerdahely és Érsekújvár térségében. Helyszíni képválasztás és azonnali online kalkuláció." />
@@ -185,7 +176,7 @@
     </div>
   </div>
 
-  <!-- Standardized Production Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="/hu/" class="nav-brand">MG Captures</a>
@@ -293,7 +284,7 @@
 
         <!-- SECTION 3: 3-CARD FEATURE GRID -->
         <div class="occasions-grid">
-          <!-- Card 1: Beltéri tablóportré -->
+          <!-- Card 1: Indoor class portrait -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
@@ -311,7 +302,7 @@
             </div>
           </article>
 
-          <!-- Card 2: Szabadtéri tablóképek -->
+          <!-- Card 2: Outdoor class portrait photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/kezdoOldal/Picture-of-Gabor-Madovy.webp"
@@ -329,7 +320,7 @@
             </div>
           </article>
 
-          <!-- Card 3: Tanári portrék & baráti képek -->
+          <!-- Card 3: Teacher portraits & friend photos -->
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
@@ -369,7 +360,7 @@
           <div class="calc-grid">
             <!-- Controls Column -->
             <div class="calc-controls scroll-reveal">
-              <!-- Step 1: Csomag típusa -->
+              <!-- Step 1: Package type -->
               <div class="calc-step">
                 <div class="calc-step-label">CSOMAG</div>
                 <div class="calc-pills calc-pills-2" id="calcPackageType" role="radiogroup" aria-label="Csomag típusa">
@@ -386,7 +377,7 @@
                 </div>
               </div>
 
-              <!-- Step 2: Diákok létszáma -->
+              <!-- Step 2: Student count -->
               <div class="calc-step">
                 <div class="calc-step-label">
                   <span>DIÁKOK LÉTSZÁMA</span>
@@ -406,7 +397,7 @@
                 </div>
               </div>
 
-              <!-- Step 3: Tanárok és osztályfőnök száma -->
+              <!-- Step 3: Teacher and homeroom teacher count -->
               <div class="calc-step">
                 <div class="calc-step-label">
                   <span>TANÁROK &amp; OSZTÁLYFŐNÖK</span>
@@ -430,7 +421,7 @@
                 </div>
               </div>
 
-              <!-- Step 4: Helyszín / Kiszállási Zóna -->
+              <!-- Step 4: Location / Travel zone -->
               <div class="calc-step">
                 <div class="calc-step-label">HELYSZÍN</div>
                 <div class="calc-zone-grid" id="calcZoneGrid" role="radiogroup" aria-label="Helyszín">
@@ -472,7 +463,7 @@
                 </div>
               </div>
 
-              <!-- Step 5: Opcionális kiegészítők -->
+              <!-- Step 5: Optional add-ons -->
               <div class="calc-step">
                 <div class="calc-step-label">EXTRÁK</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -756,7 +747,7 @@
     </section>
   </main>
 
-  <!-- Standardized Production Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
@@ -774,7 +765,7 @@
   <!-- Global Scripts -->
   <script src="../../script.js" defer></script>
 
-  <!-- Dynamic Price Calculator Logic for Tablófotózás -->
+  <!-- Dynamic price calculator logic: class portrait photography -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       let packageType = 'belteri';
@@ -833,7 +824,7 @@
         const grandTotal = baseTotal + teacherCost + currentZoneCost + printsCost;
         const perStudentEffective = Math.ceil(grandTotal / studentCount);
 
-        // Synchronize diák display elements
+        // Synchronize student display elements
         if (studentsBadge) studentsBadge.textContent = studentCount + ' DIÁK';
         if (studentsSlider && parseInt(studentsSlider.value, 10) !== studentCount) studentsSlider.value = studentCount;
         if (studentsInput && parseInt(studentsInput.value, 10) !== studentCount) studentsInput.value = studentCount;
@@ -852,7 +843,7 @@
           }
         }
 
-        // Handle Baráti kiscsoportos fotók availability (Kültéri only)
+        // Handle friend group photo availability (outdoor only)
         if (addonFriends) {
           if (packageType === 'belteri') {
             addonFriends.classList.add('is-disabled');
@@ -967,7 +958,7 @@
         };
       }
 
-      // Pill buttons (Beltéri vs Kültéri)
+      // Pill buttons (indoor vs outdoor)
       packageButtons.forEach(btn => {
         btn.addEventListener('click', function () {
           packageButtons.forEach(b => {
@@ -984,7 +975,7 @@
         });
       });
 
-      // Diákok slider & Input synchronization
+      // Student slider & input synchronization
       if (studentsSlider) {
         studentsSlider.addEventListener('input', function () {
           studentCount = parseInt(this.value, 10);
@@ -1012,7 +1003,7 @@
         });
       }
 
-      // Tanárok stepper & Input synchronization
+      // Teacher stepper & input synchronization
       if (teacherMinusBtn) {
         teacherMinusBtn.addEventListener('click', function () {
           if (teacherCount > 0) {
@@ -1066,7 +1057,7 @@
         });
       });
 
-      // Add-on: Nyomtatási alapcsomag
+      // Add-on: base print package
       if (addonPrints) {
         addonPrints.addEventListener('click', function () {
           includePrints = !includePrints;
@@ -1076,7 +1067,7 @@
         });
       }
 
-      // Add-on: Baráti kiscsoportos fotók
+      // Add-on: friend group photos
       if (addonFriends) {
         addonFriends.addEventListener('click', function () {
           if (packageType === 'belteri') return;

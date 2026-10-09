@@ -5,15 +5,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW5QY9960V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FW5QY9960V');
-  </script>
-
   <title>Class Photos & School Group Photography | MG Captures</title>
   <meta name="description"
     content="Professional class portrait and school group photography in the Galanta, Nové Zámky, and Dunajská Streda regions. Printed photos included with instant pricing." />
@@ -195,7 +186,7 @@
     </div>
   </div>
 
-  <!-- Standardized Production Navigation -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="/en/" class="nav-brand">MG Captures</a>
@@ -748,7 +739,7 @@
     </section>
   </main>
 
-  <!-- Standardized Production Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-copy">© 2026 MG Captures. Madový Gábor.</div>
@@ -809,6 +800,7 @@
         if (breakdownArchiveRow) {
           if (hasArchive) {
             breakdownArchiveRow.style.display = 'flex';
+            // Institutional archive fee: 10 € per class, capped at 40 € max across the school
             const archiveCost = Math.min(40, classCount * 10);
             if (breakdownArchiveCost) {
               breakdownArchiveCost.textContent = classCount > 1
