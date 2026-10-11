@@ -67,21 +67,21 @@
       "name": "MaturiMate Ecosystem",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform graduation preparation app with SQLDelight, KaTeX and MVI architecture."
+      "description": "Kotlin Multiplatform client with MVI / Clean Architecture decoupling, unidirectional data flow, and an offline-first SQLDelight persistence engine shared across Android and JVM Desktop."
     },
     {
       "@type": "SoftwareSourceCode",
       "name": "Employee & Security Auditor System",
       "programmingLanguage": "Java",
       "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
-      "description": "Clean Architecture Java system with decoupled access control validation."
+      "description": "Layered Java 21 backend with hybrid in-memory/SQLite persistence, isolated JUnit 5 I/O tests, and a GitHub Actions CI/CD pipeline."
     },
     {
       "@type": "SoftwareSourceCode",
-      "name": "Secure Communication Tool",
-      "programmingLanguage": "Python",
-      "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool",
-      "description": "End-to-end encrypted communication tool with secure handshake protocol."
+      "name": "madovygabor.com Multi-Domain Platform",
+      "programmingLanguage": "Docker / Nginx / Web Standards",
+      "codeRepository": "https://github.com/madovygabor/madovygabor.com",
+      "description": "Containerized multi-domain platform linking photography, hub, and engineering portfolios with Nginx orchestration and Cloudflare Pages GitOps delivery."
     }
   ]
 }
@@ -176,28 +176,25 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            A highly optimized multiplatform application designed to digitize and scale the high school
-                            graduation preparation engine. Shared core business logic drives both Android and target
-                            platform layouts without performance penalties.
+                            Production-oriented cross-platform client sharing 100% of domain, data, and UI logic across
+                            Android and JVM Desktop via <strong>Kotlin Multiplatform (KMP)</strong> and Compose
+                            Multiplatform.
                         </p>
                         <p>
-                            The backend interface features asynchronous <strong>JSON5 parsing</strong> coupled with
-                            <strong>KaTeX
-                                mathematical rendering</strong>, allowing complex algebraic matrices and test modules to
-                            render
-                            fluidly down to individual viewport fragments.
+                            Built on a strict <strong>MVI / Clean Architecture</strong> with unidirectional data flow
+                            (UDF) powered by Kotlin Coroutines and <code>StateFlow</code>. Eliminates UI state leaks
+                            during high-throughput local operations.
                         </p>
                         <p>
-                            Built strictly with an <strong>MVI / MVVM state flow container</strong>, state mutation is
-                            fully
-                            decoupled from the UI layer, guaranteeing zero-state leaking during high-concurrency local
-                            database testing.
+                            Features an <strong>offline-first relational engine</strong> using CashApp SQLDelight,
+                            transactional seeders, asynchronous parsing, and multiplatform DataStore persistence.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
-                                <span class="badge badge-dark badge-rounded">SQLDelight</span>
-                                <span class="badge badge-dark badge-rounded">KaTeX Async</span>
-                                <span class="badge badge-dark badge-rounded">MVI Flow</span>
+                                <span class="badge badge-dark badge-bg-dark">Kotlin 2.2</span>
+                                <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
+                                <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
+                                <span class="badge badge-dark badge-bg-dark">Koin DI</span>
                             </div>
                             <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
                                 <div class="btn-corner-tr"></div>
@@ -228,8 +225,8 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Rules
-                & Security Frameworks</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infrastructure
+            </h2>
             <div class="section-line"></div>
         </div>
 
@@ -245,17 +242,23 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Academic project executing a flawless full score allocation model. Implements <strong>Clean
-                            Architecture</strong> patterns by separating pure business rules from infrastructure
-                        boundaries.
-                        Features an independent access control validation layer that actively monitors and signs state
-                        update sequences without dependency leaks.
+                        Strict layered architecture backend built with <strong>Java 21 LTS</strong>, separating
+                        presentation, core domain logic, and persistence layers. Features a hybrid persistence model
+                        combining an in-memory repository cache with SQLite backup synchronization, complete with custom
+                        graph-traversal security metrics and deterministic tie-breaker algorithms.
+                    </p>
+                    <p class="projects-card-desc">
+                        Enforces regression-free deployments through <strong>JUnit 5 isolated I/O tests</strong>
+                        (ephemeral <code>@TempDir</code> sandboxing) and an automated <strong>GitHub Actions CI/CD
+                            pipeline</strong>.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">SOLID Principles</span>
-                        <span class="badge badge-dark badge-bg-dark">Decoupled Entities</span>
+                        <span class="badge badge-dark badge-bg-dark">Java 21 LTS</span>
+                        <span class="badge badge-dark badge-bg-dark">JUnit 5 Sandbox</span>
+                        <span class="badge badge-dark badge-bg-dark">GitHub Actions CI</span>
+                        <span class="badge badge-dark badge-bg-dark">Layered Architecture</span>
                     </div>
                     <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank"
                         class="btn btn-primary">
@@ -270,26 +273,31 @@
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
-                            <span class="material-symbols-outlined">shield</span>
-                            <h3 class="font-technical projects-card-title-sm">Secure Communication Tool
+                            <span class="material-symbols-outlined">public</span>
+                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Media Pipeline
                             </h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Python</span>
+                        <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Led a 4-member software engineering engineering division. Responsible for direct architectural
-                        design, encrypted network layer packet tracking, and low-level <strong>end-to-end encryption
-                            (E2EE)</strong>
-                        secure handshake protocol deployments.
+                        Monorepo linking 3 decoupled domains (photography portfolio, central ecosystem hub, and
+                        engineering portfolio), running locally in a lightweight <strong>Docker Compose</strong> and
+                        Alpine Nginx environment to test multi-domain virtual host routing and clean URLs.
+                    </p>
+                    <p class="projects-card-desc">
+                        Drives an automated flat-file media pipeline where a custom <strong>Python CLI</strong>
+                        compiles filesystem assets into a structured JSON manifest that is consumed asynchronously by a
+                        client-side vanilla JavaScript masonry engine.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">E2EE Cryptography</span>
-                        <span class="badge badge-dark badge-bg-dark">Team Leadership</span>
+                        <span class="badge badge-dark badge-bg-dark">Multi-Domain</span>
+                        <span class="badge badge-dark badge-bg-dark">Python Pipeline</span>
+                        <span class="badge badge-dark badge-bg-dark">Docker Compose</span>
+                        <span class="badge badge-dark badge-bg-dark">Vanilla JS</span>
                     </div>
-                    <a href="https://github.com/madovygabor/Secure-Communication-Tool" target="_blank"
-                        class="btn btn-primary">
+                    <a href="https://github.com/madovygabor/madovygabor.com" target="_blank" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>
                         <span class="material-symbols-outlined">code</span> VIEW REPOSITORY

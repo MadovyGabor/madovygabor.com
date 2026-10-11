@@ -1430,12 +1430,25 @@ a {
 .projects-card-header {
     border-bottom: 1px solid rgba(39, 39, 42, 0.6);
     padding-bottom: 12px;
+    gap: 12px 16px;
+    flex-wrap: wrap;
+}
+
+.projects-card-header > .badge {
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .projects-title-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.projects-title-wrapper .material-symbols-outlined {
+    flex-shrink: 0;
 }
 
 .projects-title-wrapper .material-symbols-outlined {
@@ -1500,12 +1513,43 @@ a {
 @media (max-width: 767px) {
     .project-footer {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: stretch;
+        text-align: left;
     }
 
     .project-footer .flex-wrap {
-        justify-content: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .project-footer .btn {
+        align-self: flex-end;
+        flex-shrink: 0;
+    }
+}
+
+/* Stacked layout: place the MaturiMate footer (button) after the code snippet */
+@media (max-width: 1023px) {
+    .projects-info-col:has(> .project-footer) {
+        display: contents;
+    }
+
+    .projects-info-col:has(> .project-footer) > * {
+        grid-column: span 12;
+    }
+
+    .projects-info-col:has(> .project-footer) > p {
+        color: var(--color-text-muted);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .projects-info-col:has(> .project-footer) + .code-window {
+        order: 1;
+    }
+
+    .projects-info-col:has(> .project-footer) > .project-footer {
+        order: 2;
     }
 }
 

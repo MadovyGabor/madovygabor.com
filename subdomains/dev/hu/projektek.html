@@ -67,21 +67,21 @@
       "name": "MaturiMate Ökoszisztéma",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform érettségi felkészítő alkalmazás."
+      "description": "Kotlin Multiplatform kliens MVI / Clean Architecture szétválasztással, egyirányú adatfolyammal és offline-first SQLDelight perzisztencia-motorral, megosztva Android és JVM Desktop között."
     },
     {
       "@type": "SoftwareSourceCode",
       "name": "Alkalmazotti és Biztonsági Auditor Rendszer",
       "programmingLanguage": "Java",
       "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
-      "description": "Clean Architecture Java rendszer."
+      "description": "Rétegzett Java 21 backend hibrid memória/SQLite perzisztenciával, izolált JUnit 5 I/O tesztekkel és GitHub Actions CI/CD pipeline-nal."
     },
     {
       "@type": "SoftwareSourceCode",
-      "name": "Biztonságos Kommunikációs Eszköz",
-      "programmingLanguage": "Python",
-      "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool",
-      "description": "Végpontok közötti titkosított kommunikációs eszköz."
+      "name": "madovygabor.com Multi-Domain Platform",
+      "programmingLanguage": "Docker / Nginx / Web Standards",
+      "codeRepository": "https://github.com/madovygabor/madovygabor.com",
+      "description": "Konténerizált multi-domain platform, amely a fotós, a hub és a mérnöki portfóliót köti össze Nginx-alapú orkesztrációval és Cloudflare Pages GitOps kiszolgálással."
     }
   ]
 }
@@ -177,26 +177,25 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            Magas szinten optimalizált multiplatform alkalmazás, amely az érettségi felkészülési motor
-                            digitalizálására és skálázására lett tervezve. A megosztott core business logic
-                            teljesítménybeli kompromisszumok nélkül hajtja meg az Android és a célplatformok layoutjait.
+                            Produkciós célú cross-platform kliens, amely a domain, adat és UI logika 100%-át megosztja
+                            Android és JVM Desktop között a <strong>Kotlin Multiplatform (KMP)</strong> és a Compose
+                            Multiplatform segítségével.
                         </p>
                         <p>
-                            A backend interfész aszinkron <strong>JSON5 parsing</strong> műveleteket végez,
-                            összekapcsolva a <strong>KaTeX mathematical rendering</strong> motorral. Ez lehetővé teszi a
-                            komplex algebrai mátrixok és tesztmodulok gördülékeny megjelenítését, egészen az egyedi
-                            viewport fragmentek szintjéig.
+                            Szigorú <strong>MVI / Clean Architecture</strong> alapra épül, egyirányú adatfolyammal
+                            (UDF), amelyet Kotlin Coroutines és <code>StateFlow</code> hajt meg. Kiküszöböli az UI state
+                            szivárgást nagy áteresztőképességű helyi műveletek során.
                         </p>
                         <p>
-                            A rendszer szigorúan <strong>MVI / MVVM state flow container</strong> alapra épül, így a
-                            state mutation teljesen el van választva az UI rétegtől, garantálva a zero-state leaking
-                            működést high-concurrency helyi adatbázis-tesztelés futtatása közben is.
+                            <strong>Offline-first relációs motort</strong> tartalmaz CashApp SQLDelight használatával,
+                            tranzakciós seederekkel, aszinkron parsinggal és multiplatform DataStore perzisztenciával.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
-                                <span class="badge badge-dark badge-rounded">SQLDelight</span>
-                                <span class="badge badge-dark badge-rounded">KaTeX Async</span>
-                                <span class="badge badge-dark badge-rounded">MVI Flow</span>
+                                <span class="badge badge-dark badge-bg-dark">Kotlin 2.2</span>
+                                <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
+                                <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
+                                <span class="badge badge-dark badge-bg-dark">Koin DI</span>
                             </div>
                             <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
                                 <div class="btn-corner-tr"></div>
@@ -227,8 +226,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Rules & Security Frameworks
-            </h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infrastruktúra</h2>
             <div class="section-line"></div>
         </div>
 
@@ -243,17 +241,23 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Akadémiai projekt, amely hibátlan, maximális pontszámmal zárt. A fejlesztés során <strong>Clean
-                            Architecture</strong> mintákat alkalmaztam, teljesen elválasztva a tiszta business rules
-                        réteget az infrastructure boundaries határaitól. Tartalmaz egy független access control
-                        ellenőrző réteget is, amely aktívan monitorozza és aláírja a state update szekvenciákat
-                        dependency leaks nélkül.
+                        Szigorú rétegzett architektúrájú backend <strong>Java 21 LTS</strong> alapon, amely szétválasztja
+                        a prezentációs, a core domain logikai és a perzisztencia réteget. Hibrid perzisztencia-modellt
+                        alkalmaz: memóriában tartott repository cache SQLite backup szinkronizációval, egyedi
+                        gráfbejárásos biztonsági metrikákkal és determinisztikus tie-breaker algoritmusokkal.
+                    </p>
+                    <p class="projects-card-desc">
+                        Regressziómentes kiadásokat biztosít <strong>izolált JUnit 5 I/O tesztekkel</strong>
+                        (ideiglenes <code>@TempDir</code> sandboxolás) és automatizált <strong>GitHub Actions CI/CD
+                            pipeline-nal</strong>.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">SOLID Principles</span>
-                        <span class="badge badge-dark badge-bg-dark">Decoupled Entities</span>
+                        <span class="badge badge-dark badge-bg-dark">Java 21 LTS</span>
+                        <span class="badge badge-dark badge-bg-dark">JUnit 5 Sandbox</span>
+                        <span class="badge badge-dark badge-bg-dark">GitHub Actions CI</span>
+                        <span class="badge badge-dark badge-bg-dark">Layered Architecture</span>
                     </div>
                     <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank"
                         class="btn btn-primary">
@@ -268,24 +272,30 @@
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
-                            <span class="material-symbols-outlined">shield</span>
-                            <h3 class="font-technical projects-card-title-sm">Secure Communication Tool</h3>
+                            <span class="material-symbols-outlined">public</span>
+                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Media Pipeline</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Python</span>
+                        <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Egy 4 fős szoftverfejlesztő csapat vezetése a projekt során. Felelős voltam a közvetlen
-                        architektúra tervezésért, a titkosított hálózati réteg packet tracking folyamataiért, valamint
-                        az alacsony szintű <strong>end-to-end encryption (E2EE)</strong> secure handshake protokollok
-                        implementálásáért.
+                        Monorepo, amely 3 különálló domaint kapcsol össze (fotós portfólió, központi ökoszisztéma hub
+                        és mérnöki portfólió), helyben egy könnyűsúlyú <strong>Docker Compose</strong> és Alpine Nginx
+                        környezetben futva a multi-domain virtual host routing és a tiszta URL-ek teszteléséhez.
+                    </p>
+                    <p class="projects-card-desc">
+                        Automatizált flat-file média pipeline-t hajt meg, ahol egy egyedi <strong>Python CLI</strong> a
+                        fájlrendszerbeli assetekből strukturált JSON manifestet fordít, amelyet egy kliensoldali vanilla
+                        JavaScript masonry motor aszinkron módon dolgoz fel.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">E2EE Cryptography</span>
-                        <span class="badge badge-dark badge-bg-dark">Team Leadership</span>
+                        <span class="badge badge-dark badge-bg-dark">Multi-Domain</span>
+                        <span class="badge badge-dark badge-bg-dark">Python Pipeline</span>
+                        <span class="badge badge-dark badge-bg-dark">Docker Compose</span>
+                        <span class="badge badge-dark badge-bg-dark">Vanilla JS</span>
                     </div>
-                    <a href="https://github.com/madovygabor/Secure-Communication-Tool" target="_blank"
+                    <a href="https://github.com/madovygabor/madovygabor.com" target="_blank"
                         class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>

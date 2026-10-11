@@ -66,21 +66,21 @@
       "name": "Ekosystém MaturiMate",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Vysoko optimalizovaná multiplatformová aplikácia na prípravu na maturitu."
+      "description": "Kotlin Multiplatform klient s MVI / Clean Architecture oddelením, jednosmerným tokom dát a offline-first perzistenciou cez SQLDelight, zdieľaný medzi Androidom a JVM Desktopom."
     },
     {
       "@type": "SoftwareSourceCode",
       "name": "Zamestnanecký & Bezpečnostný Audítorský Systém",
       "programmingLanguage": "Java",
       "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
-      "description": "Clean Architecture Java systém s oddelenou access control validáciou."
+      "description": "Vrstvený Java 21 backend s hybridnou perzistenciou pamäť/SQLite, izolovanými JUnit 5 I/O testami a GitHub Actions CI/CD pipeline."
     },
     {
       "@type": "SoftwareSourceCode",
-      "name": "Nástroj pre Bezpečnú Komunikáciu",
-      "programmingLanguage": "Python",
-      "codeRepository": "https://github.com/madovygabor/Secure-Communication-Tool",
-      "description": "Nástroj s end-to-end šifrovaním a bezpečnými handshake protokolmi."
+      "name": "madovygabor.com Multi-Domain Platform",
+      "programmingLanguage": "Docker / Nginx / Web Standards",
+      "codeRepository": "https://github.com/madovygabor/madovygabor.com",
+      "description": "Kontajnerizovaná multi-domain platforma prepájajúca fotografické, hubové a inžinierske portfólio s Nginx orchestráciou a Cloudflare Pages GitOps doručovaním."
     }
   ]
 }
@@ -176,26 +176,25 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            Vysoko optimalizovaná multiplatformová aplikácia navrhnutá na digitalizáciu a škálovanie
-                            systému prípravy na maturitu. Zdieľaná core business logic poháňa layouty pre Android aj
-                            cieľové platformy bez akýchkoľvek strát na výkone.
+                            Produkčne orientovaný cross-platform klient zdieľajúci 100 % domain, dátovej a UI logiky medzi
+                            Androidom a JVM Desktopom cez <strong>Kotlin Multiplatform (KMP)</strong> a Compose
+                            Multiplatform.
                         </p>
                         <p>
-                            Backendové rozhranie využíva asynchrónny <strong>JSON5 parsing</strong> prepojený s
-                            <strong>KaTeX mathematical renderingom</strong>. To umožňuje plynulé vykresľovanie
-                            komplexných algebraických matíc a testovacích modulov až na úroveň jednotlivých viewport
-                            fragmentov.
+                            Postavený na striktnej <strong>MVI / Clean Architecture</strong> s jednosmerným tokom dát
+                            (UDF) poháňaným Kotlin Coroutines a <code>StateFlow</code>. Eliminuje úniky UI state pri
+                            lokálnych operáciách s vysokou priepustnosťou.
                         </p>
                         <p>
-                            Systém je striktne postavený na <strong>MVI / MVVM state flow containeri</strong>, vďaka
-                            čomu je state mutation plne oddelená od UI vrstvy, čo zaručuje zero-state leaking počas
-                            local databázového testovania s vysokou mierou concurrency.
+                            Obsahuje <strong>offline-first relačný engine</strong> postavený na CashApp SQLDelight,
+                            transakčných seederoch, asynchrónnom parsingu a multiplatformovej DataStore perzistencii.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
-                                <span class="badge badge-dark badge-rounded">SQLDelight</span>
-                                <span class="badge badge-dark badge-rounded">KaTeX Async</span>
-                                <span class="badge badge-dark badge-rounded">MVI Flow</span>
+                                <span class="badge badge-dark badge-bg-dark">Kotlin 2.2</span>
+                                <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
+                                <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
+                                <span class="badge badge-dark badge-bg-dark">Koin DI</span>
                             </div>
                             <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
                                 <div class="btn-corner-tr"></div>
@@ -226,8 +225,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Rules & Security Frameworks
-            </h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infraštruktúra</h2>
             <div class="section-line"></div>
         </div>
 
@@ -242,16 +240,23 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Akademický projekt, ktorý bol vyhodnotený plným počtom bodov. Implementuje vzory <strong>Clean
-                            Architecture</strong> striktným oddelením čistej business rules vrstvy od infrastructure
-                        boundaries. Obsahuje nezávislú overovaciu vrstvu pre access control, ktorá aktívne monitoruje a
-                        podpisuje sekvencie state update bez akýchkoľvek dependency leaks.
+                        Backend so striktnou vrstvenou architektúrou postavený na <strong>Java 21 LTS</strong>,
+                        oddeľujúci prezentačnú vrstvu, core domain logiku a perzistenciu. Využíva hybridný model
+                        perzistencie: in-memory repository cache so synchronizáciou zálohy do SQLite, vlastné
+                        bezpečnostné metriky založené na prechádzaní grafu a deterministické tie-breaker algoritmy.
+                    </p>
+                    <p class="projects-card-desc">
+                        Zaručuje nasadenia bez regresií vďaka <strong>izolovaným JUnit 5 I/O testom</strong>
+                        (dočasný <code>@TempDir</code> sandboxing) a automatizovanej <strong>GitHub Actions CI/CD
+                            pipeline</strong>.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">SOLID Principles</span>
-                        <span class="badge badge-dark badge-bg-dark">Decoupled Entities</span>
+                        <span class="badge badge-dark badge-bg-dark">Java 21 LTS</span>
+                        <span class="badge badge-dark badge-bg-dark">JUnit 5 Sandbox</span>
+                        <span class="badge badge-dark badge-bg-dark">GitHub Actions CI</span>
+                        <span class="badge badge-dark badge-bg-dark">Layered Architecture</span>
                     </div>
                     <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank"
                         class="btn btn-primary">
@@ -266,23 +271,30 @@
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
-                            <span class="material-symbols-outlined">shield</span>
-                            <h3 class="font-technical projects-card-title-sm">Secure Communication Tool</h3>
+                            <span class="material-symbols-outlined">public</span>
+                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Media Pipeline</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Python</span>
+                        <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Vedenie 4-členného vývojového tímu. Zodpovedal som za priamy návrh architektúry, packet tracking
-                        v šifrovanej sieťovej vrstve a nasadenie nízkoúrovňových secure handshake protokolov pre
-                        <strong>end-to-end encryption (E2EE)</strong>.
+                        Monorepo prepájajúce 3 oddelené domény (fotografické portfólio, centrálny ekosystémový hub
+                        a inžinierske portfólio), ktoré lokálne beží v odľahčenom prostredí <strong>Docker
+                            Compose</strong> a Alpine Nginx na testovanie multi-domain virtual host routingu a čistých URL.
+                    </p>
+                    <p class="projects-card-desc">
+                        Poháňa automatizovaný flat-file media pipeline, v ktorom vlastný <strong>Python CLI</strong>
+                        kompiluje assety zo súborového systému do štruktúrovaného JSON manifestu, ktorý asynchrónne
+                        spracúva klientsky vanilla JavaScript masonry engine.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">E2EE Cryptography</span>
-                        <span class="badge badge-dark badge-bg-dark">Team Leadership</span>
+                        <span class="badge badge-dark badge-bg-dark">Multi-Domain</span>
+                        <span class="badge badge-dark badge-bg-dark">Python Pipeline</span>
+                        <span class="badge badge-dark badge-bg-dark">Docker Compose</span>
+                        <span class="badge badge-dark badge-bg-dark">Vanilla JS</span>
                     </div>
-                    <a href="https://github.com/madovygabor/Secure-Communication-Tool" target="_blank"
+                    <a href="https://github.com/madovygabor/madovygabor.com" target="_blank"
                         class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>
