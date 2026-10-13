@@ -147,8 +147,9 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Fejlesztési Naplók</h1>
             <p class="font-technical projects-desc">
-                Precízen megtervezett alkalmazások, fókuszban a megosztott business logic, a pontos matematikai
-                rendering és a szigorú biztonsági architektúra határai.
+                Válogatás azokból a projektekből, amelyeken dolgozom és amelyeket karbantartok, néhány szóval arról,
+                hogyan épülnek fel: platformok között megosztott kód, matematikai tartalom pontos megjelenítése és a
+                rétegek világos szétválasztása.
             </p>
         </section>
 
@@ -164,7 +165,7 @@
                         <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
                             <h3 class="font-technical projects-card-title">MaturiMate Ökoszisztéma</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktív Produkciós Fázis
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktív fejlesztés alatt
                             </p>
                         </div>
                     </div>
@@ -177,18 +178,21 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            Produkciós célú cross-platform kliens, amely a domain, adat és UI logika 100%-át megosztja
-                            Android és JVM Desktop között a <strong>Kotlin Multiplatform (KMP)</strong> és a Compose
-                            Multiplatform segítségével.
+                            A MaturiMate egy érettségi-felkészítő alkalmazás Androidra és asztali gépre (JVM).
+                            <strong>Kotlin Multiplatform (KMP)</strong> és Compose Multiplatform segítségével készül, így
+                            a domain logika, az adatréteg és a felhasználói felület közös a két platformon, nem kell
+                            mindent kétszer megírni.
                         </p>
                         <p>
-                            Szigorú <strong>MVI / Clean Architecture</strong> alapra épül, egyirányú adatfolyammal
-                            (UDF), amelyet Kotlin Coroutines és <code>StateFlow</code> hajt meg. Kiküszöböli az UI state
-                            szivárgást nagy áteresztőképességű helyi műveletek során.
+                            Az alkalmazás <strong>MVI / Clean Architecture</strong> megközelítést követ egyirányú
+                            adatfolyammal. A képernyők állapotát Kotlin Coroutines és <code>StateFlow</code> kezeli, így
+                            a UI frissítései kiszámíthatók és könnyebben átláthatók.
                         </p>
                         <p>
-                            <strong>Offline-first relációs motort</strong> tartalmaz CashApp SQLDelight használatával,
-                            tranzakciós seederekkel, aszinkron parsinggal és multiplatform DataStore perzisztenciával.
+                            <strong>Offline-first</strong> módon működik: a kérdések és a haladás helyben, egy
+                            SQLDelighton keresztül elért relációs adatbázisban tárolódnak, a kezdeti tartalom
+                            tranzakciókon belül töltődik be, a felhasználói beállításokat pedig multiplatform DataStore
+                            menti.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -241,15 +245,17 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Szigorú rétegzett architektúrájú backend <strong>Java 21 LTS</strong> alapon, amely szétválasztja
-                        a prezentációs, a core domain logikai és a perzisztencia réteget. Hibrid perzisztencia-modellt
-                        alkalmaz: memóriában tartott repository cache SQLite backup szinkronizációval, egyedi
-                        gráfbejárásos biztonsági metrikákkal és determinisztikus tie-breaker algoritmusokkal.
+                        <strong>Java 21 LTS</strong> nyelven írt backend alkalmazás az alkalmazotti nyilvántartás
+                        kezelésére és a munkatársak közötti biztonsági kapcsolatok kiértékelésére. A kód külön
+                        prezentációs, domain és perzisztencia rétegre tagolódik. Futás közben az adatok egy memóriában
+                        tartott repositoryban vannak, és biztonsági mentésként egy SQLite adatbázisba szinkronizálódnak.
+                        A biztonsági metrikák az alkalmazottak közötti kapcsolatok gráfjának bejárásával számolódnak,
+                        holtverseny esetén pedig egy rögzített, megismételhető szabály dönt.
                     </p>
                     <p class="projects-card-desc">
-                        Regressziómentes kiadásokat biztosít <strong>izolált JUnit 5 I/O tesztekkel</strong>
-                        (ideiglenes <code>@TempDir</code> sandboxolás) és automatizált <strong>GitHub Actions CI/CD
-                            pipeline-nal</strong>.
+                        A fájlműveleteket ideiglenes <code>@TempDir</code> könyvtárakban futó <strong>JUnit 5
+                            tesztek</strong> fedik le, és egy <strong>GitHub Actions CI/CD pipeline</strong> minden push
+                        után automatikusan lefuttatja a teszteket.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -278,14 +284,15 @@
                         <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Monorepo, amely 3 különálló domaint kapcsol össze (fotós portfólió, központi ökoszisztéma hub
-                        és mérnöki portfólió), helyben egy könnyűsúlyú <strong>Docker Compose</strong> és Alpine Nginx
-                        környezetben futva a multi-domain virtual host routing és a tiszta URL-ek teszteléséhez.
+                        Ez a weboldal. Egyetlen repository három különálló oldalt tartalmaz: egy fotós portfóliót, egy
+                        központi hubot és ezt a mérnöki portfóliót. Helyi fejlesztéskor együtt futnak egy
+                        <strong>Docker Compose</strong> környezetben, Alpine alapú Nginx szerverrel, így élesítés előtt
+                        ki tudom próbálni a domainek közötti routingot és a tiszta URL-eket.
                     </p>
                     <p class="projects-card-desc">
-                        Automatizált flat-file média pipeline-t hajt meg, ahol egy egyedi <strong>Python CLI</strong> a
-                        fájlrendszerbeli assetekből strukturált JSON manifestet fordít, amelyet egy kliensoldali vanilla
-                        JavaScript masonry motor aszinkron módon dolgoz fel.
+                        A fotógalériák adatbázis nélkül készülnek. Egy kis <strong>Python CLI</strong> végignézi a
+                        képmappákat és egy JSON manifestet ír, amelyet a böngésző betölt, majd sima JavaScripttel
+                        masonry galériát épít belőle.
                     </p>
                 </div>
                 <div class="project-footer">

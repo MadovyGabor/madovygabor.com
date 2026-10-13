@@ -146,8 +146,8 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Vývojové denníky</h1>
             <p class="font-technical projects-desc">
-                Precízne navrhnuté aplikácie so zameraním na zdieľanú business logic, presnosť matematického renderingu
-                a striktné hranice bezpečnostnej architektúry.
+                Výber projektov, na ktorých pracujem a ktoré udržiavam, s poznámkami o ich štruktúre: zdieľaný kód
+                naprieč platformami, presné zobrazovanie matematického obsahu a jasné oddelenie vrstiev.
             </p>
         </section>
 
@@ -163,7 +163,7 @@
                         <span class="material-symbols-outlined">school</span>
                         <div>
                             <h3 class="font-technical projects-card-title">Ekosystém MaturiMate</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktívna produkčná fáza
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • V aktívnom vývoji
                             </p>
                         </div>
                     </div>
@@ -176,18 +176,20 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            Produkčne orientovaný cross-platform klient zdieľajúci 100 % domain, dátovej a UI logiky medzi
-                            Androidom a JVM Desktopom cez <strong>Kotlin Multiplatform (KMP)</strong> a Compose
-                            Multiplatform.
+                            MaturiMate je aplikácia na prípravu na maturitu pre Android a desktop (JVM). Je napísaná
+                            pomocou <strong>Kotlin Multiplatform (KMP)</strong> a Compose Multiplatform, takže doménová
+                            logika, dátová vrstva aj používateľské rozhranie sú spoločné pre obe platformy a nepíšu sa
+                            dvakrát.
                         </p>
                         <p>
-                            Postavený na striktnej <strong>MVI / Clean Architecture</strong> s jednosmerným tokom dát
-                            (UDF) poháňaným Kotlin Coroutines a <code>StateFlow</code>. Eliminuje úniky UI state pri
-                            lokálnych operáciách s vysokou priepustnosťou.
+                            Aplikácia vychádza z prístupu <strong>MVI / Clean Architecture</strong> s jednosmerným tokom
+                            dát. Stav obrazoviek držia Kotlin Coroutines a <code>StateFlow</code>, vďaka čomu sú
+                            aktualizácie UI predvídateľné a ľahšie sa v nich orientuje.
                         </p>
                         <p>
-                            Obsahuje <strong>offline-first relačný engine</strong> postavený na CashApp SQLDelight,
-                            transakčných seederoch, asynchrónnom parsingu a multiplatformovej DataStore perzistencii.
+                            Funguje <strong>offline-first</strong>: otázky a pokrok sa ukladajú lokálne do relačnej
+                            databázy cez SQLDelight, počiatočný obsah sa nahráva v rámci transakcií a používateľské
+                            nastavenia sa ukladajú pomocou multiplatformového DataStore.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -240,15 +242,16 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Backend so striktnou vrstvenou architektúrou postavený na <strong>Java 21 LTS</strong>,
-                        oddeľujúci prezentačnú vrstvu, core domain logiku a perzistenciu. Využíva hybridný model
-                        perzistencie: in-memory repository cache so synchronizáciou zálohy do SQLite, vlastné
-                        bezpečnostné metriky založené na prechádzaní grafu a deterministické tie-breaker algoritmy.
+                        Backendová aplikácia napísaná v <strong>Java 21 LTS</strong> na správu evidencie zamestnancov
+                        a vyhodnocovanie bezpečnostných vzťahov medzi nimi. Kód je rozdelený na samostatnú prezentačnú,
+                        doménovú a perzistenčnú vrstvu. Počas behu sa dáta držia v repozitári v pamäti a ako záloha sa
+                        synchronizujú do databázy SQLite. Bezpečnostné metriky sa počítajú prechádzaním grafu prepojení
+                        medzi zamestnancami a pri zhode rozhoduje pevné, opakovateľné pravidlo.
                     </p>
                     <p class="projects-card-desc">
-                        Zaručuje nasadenia bez regresií vďaka <strong>izolovaným JUnit 5 I/O testom</strong>
-                        (dočasný <code>@TempDir</code> sandboxing) a automatizovanej <strong>GitHub Actions CI/CD
-                            pipeline</strong>.
+                        Operácie so súbormi pokrývajú <strong>testy JUnit 5</strong>, ktoré bežia v dočasných
+                        adresároch <code>@TempDir</code>, a <strong>GitHub Actions CI/CD pipeline</strong> automaticky
+                        spúšťa testy pri každom pushi.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -277,14 +280,15 @@
                         <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Monorepo prepájajúce 3 oddelené domény (fotografické portfólio, centrálny ekosystémový hub
-                        a inžinierske portfólio), ktoré lokálne beží v odľahčenom prostredí <strong>Docker
-                            Compose</strong> a Alpine Nginx na testovanie multi-domain virtual host routingu a čistých URL.
+                        Táto webová stránka. Jeden repozitár obsahuje tri samostatné weby: fotografické portfólio,
+                        centrálny hub a toto inžinierske portfólio. Pri lokálnom vývoji bežia spolu v prostredí
+                        <strong>Docker Compose</strong> so serverom Nginx na báze Alpine, takže si pred nasadením môžem
+                        otestovať smerovanie medzi doménami a čisté URL.
                     </p>
                     <p class="projects-card-desc">
-                        Poháňa automatizovaný flat-file media pipeline, v ktorom vlastný <strong>Python CLI</strong>
-                        kompiluje assety zo súborového systému do štruktúrovaného JSON manifestu, ktorý asynchrónne
-                        spracúva klientsky vanilla JavaScript masonry engine.
+                        Fotogalérie sa generujú bez databázy. Malý <strong>Python CLI</strong> prejde priečinky
+                        s obrázkami a zapíše JSON manifest, ktorý prehliadač načíta a v čistom JavaScripte z neho
+                        poskladá masonry galériu.
                     </p>
                 </div>
                 <div class="project-footer">

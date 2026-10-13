@@ -146,8 +146,8 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Development Logs</h1>
             <p class="font-technical projects-desc">
-                Meticulously engineered applications focusing on shared business logic, mathematical rendering accuracy,
-                and strict security architecture boundaries.
+                A selection of projects I am building and maintaining, with notes on how they are structured: shared
+                code across platforms, accurate rendering of mathematical content, and clear separation between layers.
             </p>
         </section>
 
@@ -164,7 +164,7 @@
                         <div>
                             <h3 class="font-technical projects-card-title">MaturiMate Ecosystem</h3>
                             <p class="font-code projects-card-subtitle">Kotlin
-                                Multiplatform • Active Production Stage</p>
+                                Multiplatform • In Active Development</p>
                         </div>
                     </div>
                     <div class="projects-badge-container">
@@ -176,18 +176,20 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            Production-oriented cross-platform client sharing 100% of domain, data, and UI logic across
-                            Android and JVM Desktop via <strong>Kotlin Multiplatform (KMP)</strong> and Compose
-                            Multiplatform.
+                            MaturiMate is an exam-preparation app for Android and desktop (JVM). It is written with
+                            <strong>Kotlin Multiplatform (KMP)</strong> and Compose Multiplatform, so the domain logic,
+                            data layer, and user interface are shared between both platforms instead of being written
+                            twice.
                         </p>
                         <p>
-                            Built on a strict <strong>MVI / Clean Architecture</strong> with unidirectional data flow
-                            (UDF) powered by Kotlin Coroutines and <code>StateFlow</code>. Eliminates UI state leaks
-                            during high-throughput local operations.
+                            The app follows an <strong>MVI / Clean Architecture</strong> approach with unidirectional
+                            data flow. Screen state is held in Kotlin Coroutines and <code>StateFlow</code>, which keeps
+                            UI updates predictable and easier to reason about.
                         </p>
                         <p>
-                            Features an <strong>offline-first relational engine</strong> using CashApp SQLDelight,
-                            transactional seeders, asynchronous parsing, and multiplatform DataStore persistence.
+                            It works <strong>offline first</strong>: questions and progress are stored locally in a
+                            relational database through SQLDelight, the initial content is seeded inside transactions,
+                            and user settings are saved with multiplatform DataStore.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -242,15 +244,17 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <p class="projects-card-desc">
-                        Strict layered architecture backend built with <strong>Java 21 LTS</strong>, separating
-                        presentation, core domain logic, and persistence layers. Features a hybrid persistence model
-                        combining an in-memory repository cache with SQLite backup synchronization, complete with custom
-                        graph-traversal security metrics and deterministic tie-breaker algorithms.
+                        A backend application written in <strong>Java 21 LTS</strong> for managing employee records
+                        and evaluating their security relationships. The code is split into separate presentation,
+                        domain, and persistence layers. Data is kept in an in-memory repository while the program runs
+                        and is synchronized to a SQLite database as a backup. Security metrics are calculated by
+                        traversing the graph of connections between employees, and ties are resolved by a fixed,
+                        repeatable rule.
                     </p>
                     <p class="projects-card-desc">
-                        Enforces regression-free deployments through <strong>JUnit 5 isolated I/O tests</strong>
-                        (ephemeral <code>@TempDir</code> sandboxing) and an automated <strong>GitHub Actions CI/CD
-                            pipeline</strong>.
+                        File operations are covered by <strong>JUnit 5 tests</strong> that run in temporary
+                        <code>@TempDir</code> directories, and a <strong>GitHub Actions CI/CD pipeline</strong> runs
+                        the test suite automatically on every push.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -280,14 +284,15 @@
                         <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
                     </div>
                     <p class="projects-card-desc">
-                        Monorepo linking 3 decoupled domains (photography portfolio, central ecosystem hub, and
-                        engineering portfolio), running locally in a lightweight <strong>Docker Compose</strong> and
-                        Alpine Nginx environment to test multi-domain virtual host routing and clean URLs.
+                        This website. A single repository holds three independent sites: a photography portfolio, a
+                        central hub, and this engineering portfolio. For local development they run together in a
+                        <strong>Docker Compose</strong> setup with an Alpine-based Nginx server, which lets me test
+                        routing between domains and clean URLs before deploying.
                     </p>
                     <p class="projects-card-desc">
-                        Drives an automated flat-file media pipeline where a custom <strong>Python CLI</strong>
-                        compiles filesystem assets into a structured JSON manifest that is consumed asynchronously by a
-                        client-side vanilla JavaScript masonry engine.
+                        Photo galleries are generated without a database. A small <strong>Python CLI</strong> scans the
+                        image folders and writes a JSON manifest, which the browser then loads to build a masonry
+                        gallery in plain JavaScript.
                     </p>
                 </div>
                 <div class="project-footer">
