@@ -81,6 +81,18 @@
       "programmingLanguage": "Docker / Nginx / Web Standards",
       "codeRepository": "https://github.com/madovygabor/madovygabor.com",
       "description": "Kontajnerizovaná multi-domain platforma prepájajúca fotografické, hubové a inžinierske portfólio s Nginx orchestráciou a Cloudflare Pages GitOps doručovaním."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Sieť areálu a L3 vzdialená správa (MS-TVR-NETSEC)",
+      "url": "https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia",
+      "description": "Fyzická inštalácia racku, 3-vrstvová segmentácia VLAN, odľahčenie tokov cez prepínaciu zbernicu (backplane) a WireGuard L3 vzdialená správa."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Programovanie adresovateľnej EPS Bosch & integrácia bezpečnostných systémov",
+      "url": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia",
+      "description": "Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21."
     }
   ]
 }
@@ -303,6 +315,70 @@
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>
                         <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: Campus Network Case Study -->
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M13 22h8v-7h-3v-4h-5V9h3V2H8v7h3v2H6v4H3v7h8v-7H8v-2h8v2h-3v7zM10 7V4h4v3h-4zM9 17v3H5v-3h4zm10 0v3h-4v-3h4z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">Sieť areálu a L3 vzdialená správa</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Infraštruktúra</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Nová sieť pre novopostavené vzdelávacie zariadenie: 19" rack, <strong>segmentácia VLAN</strong> (manažment, CCTV, zamestnanci), Wi-Fi 6 a 8-kamerový systém Hikvision. Prístup kamier na internet blokuje brána.
+                    </p>
+                    <p class="projects-card-desc">
+                        Záznamové streamy zostávajú na <strong>PoE switchi</strong> a neprechádzajú routerom ER605. Lokalita sa spravuje z Brna cez <strong>WireGuard split tunnel</strong> a zamestnanci otvárajú NVR na internej HTTPS adrese s dôveryhodným certifikátom.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">WireGuard</span>
+                        <span class="badge badge-dark badge-bg-dark">Segmentácia VLAN</span>
+                        <span class="badge badge-dark badge-bg-dark">Plánovanie PoE</span>
+                        <span class="badge badge-dark badge-bg-dark">TP-Link Omada</span>
+                    </div>
+                    <a href="/sk/projekty/sietova-infrastruktura-pripadova-studia" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> PREČÍTAŤ PRÍPADOVÚ ŠTÚDIU
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Bosch EPS Case Study -->
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">Programovanie adresovateľnej EPS Bosch &amp; Integrácia systémov</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Požiarna Ochrana</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Projektovanie, programovanie a certifikované oživenie adresovateľnej EPS postavenej na <strong>Modulárnej ústredni Bosch (FPA)</strong>. Nasadenie multisenzorových optických/teplotných/CO hlásičov, slučkových sirén s majákmi a fail-safe bezpečnostných väzieb.
+                    </p>
+                    <p class="projects-card-desc">
+                        Nameraný reálny odpor kruhovej slučky ($R_{\text{loop}} = 26.4\,\Omega$), vypočítaná <strong>24h + 30m záložná autonómia akumulátorov</strong> podľa EN 54-4, naprogramovaná dvojstupňová overovacia matica v Bosch RPS a úspešná revízia s <strong>odbornou spôsobilosťou podľa §21</strong>.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">Bosch EPS</span>
+                        <span class="badge badge-dark badge-bg-dark">§21 Certifikácia</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN Slučka</span>
+                        <span class="badge badge-dark badge-bg-dark">Reléová Logika</span>
+                    </div>
+                    <a href="/sk/projekty/eps-pripadova-studia" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> PREČÍTAŤ PRÍPADOVÚ ŠTÚDIU
                     </a>
                 </div>
             </div>

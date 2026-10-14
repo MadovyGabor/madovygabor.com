@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Bosch EPS Addressable Fire Alarm Programming & Life Safety Integration | Gabriel Madový</title>
+    <meta name="description"
+        content="Technical case study on Bosch EPS addressable fire alarm programming, system topology, cause-and-effect relay logic, and §21 certified electrical deployment by Gabriel Madový.">
+    <meta name="keywords"
+        content="Bosch EPS, Fire Alarm Systems, Loop Programming, Relay Logic, §21 Certified, Life Safety Compliance, Gabriel Madový">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <meta property="og:title" content="Bosch EPS Addressable Fire Alarm Programming & Life Safety Integration" />
+    <meta property="og:description"
+        content="System topology, addressable loop mapping, signaling logic, and §21 certified electrical deployment." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/en/projects/eps-case-study#article",
+  "headline": "Bosch EPS Addressable Fire Alarm Programming & Life Safety Integration",
+  "description": "System topology, addressable loop mapping, signaling logic, and §21 certified electrical deployment.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/en/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gabriel Madový"
+  },
+  "keywords": "Bosch EPS, Fire Alarm Systems, Loop Programming, Relay Logic, §21 Certified, Life Safety"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">HOME</a>
+                <a class="mobile-nav-link active" href="../projects">PROJECTS</a>
+                <a class="mobile-nav-link" href="../contact">CONTACT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link active" href="/en/projects/eps-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">HOME</a>
+            <a class="nav-link active" href="../projects">PROJECTS</a>
+            <a class="nav-link" href="../contact">CONTACT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link active" href="/en/projects/eps-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Case Study Header / Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projects" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> BACK TO PROJECTS
+            </a>
+            <h1 class="case-study-title font-display">Bosch EPS Addressable Fire Alarm Programming &amp; Life Safety Integration</h1>
+            <p class="case-study-subtitle font-technical">
+                System topology, addressable loop mapping, signaling logic, and §21 certified electrical deployment.
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-purple">Bosch EPS</span>
+                <span class="badge badge-dark">Loop Programming</span>
+                <span class="badge badge-dark">Relay Logic</span>
+                <span class="badge badge-dark">§21 Certified</span>
+                <span class="badge badge-dark">Life Safety Compliance</span>
+            </div>
+        </header>
+
+        <!-- Technical Specification Bar -->
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Certification Level</span>
+                <span class="meta-value">Bosch EPS Certified &amp; §21 Electrotechnician</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Control Panel Series</span>
+                <span class="meta-value">Bosch Modular Fire Panel (FPA / FP2200)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Loop Protocol</span>
+                <span class="meta-value">LSN (Local Security Network) Improved</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Safety Standards</span>
+                <span class="meta-value">EN 54-2, EN 54-4, EN 54-13 &amp; VdS 2095</span>
+            </div>
+        </section>
+
+        <!-- Section 1: System Architecture & Hardware -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / System Architecture &amp; Hardware Topology</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <p class="mb-4">
+                    Addressable fire alarm systems (EPS — Elektronická požiarna signalizácia) represent critical life-safety infrastructure where zero failure tolerance is mandated. This project involved designing the addressable LSN loop topology, calculating physical loop parameters and standby battery autonomy, programming the complex input/output cause-and-effect matrix using Bosch RPS/FSP software, and performing certified §21 commissioning.
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Subsystem</th>
+                                <th>Hardware / Equipment</th>
+                                <th>Technical Function</th>
+                                <th>Safety &amp; Compliance Specification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Control Panel Core</strong></td>
+                                <td data-label="Hardware / Equipment">Bosch Modular Fire Panel (FPA Series)</td>
+                                <td data-label="Technical Function">Central CPU, power supply, LCD touchscreen, loop modules</td>
+                                <td data-label="Safety &amp; Compliance Specification">EN 54-2/4 compliant, dual redundant bus communication</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Multisensor Detectors</strong></td>
+                                <td data-label="Hardware / Equipment">Bosch FAP-425-DOTC</td>
+                                <td data-label="Technical Function">Dual optical smoke + thermal heat + CO sensor integration</td>
+                                <td data-label="Safety &amp; Compliance Specification">Intelligent drift compensation, steam/nuisance rejection</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Manual Call Points</strong></td>
+                                <td data-label="Hardware / Equipment">Bosch FMC-420 Series</td>
+                                <td data-label="Technical Function">Break-glass addressable manual pull stations with LED indicator</td>
+                                <td data-label="Safety &amp; Compliance Specification">Integrated bidirectional short-circuit isolator, 0s priority</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Acoustic &amp; Optical Alarms</strong></td>
+                                <td data-label="Hardware / Equipment">Bosch FLM-420 Sounder / Strobe Loop</td>
+                                <td data-label="Technical Function">Addressable loop-powered sirens with high-intensity xenon strobes</td>
+                                <td data-label="Safety &amp; Compliance Specification">EN 54-3 (acoustic) &amp; EN 54-23 (visual alarm devices)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Emergency HVAC Relay</strong></td>
+                                <td data-label="Hardware / Equipment">Dry-contact Life Safety Interface Module</td>
+                                <td data-label="Technical Function">Automated shutoff of AHU air handlers and ventilation blowers</td>
+                                <td data-label="Safety &amp; Compliance Specification">Prevents toxic smoke circulation through mechanical ducts</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Elevator Recall Control</strong></td>
+                                <td data-label="Hardware / Equipment">Low-voltage Potential-free Latching Relay</td>
+                                <td data-label="Technical Function">Immediate elevator recall to primary evacuation ground floor</td>
+                                <td data-label="Safety &amp; Compliance Specification">Opens doors upon arrival, inhibits passenger reentry</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Access Control Release</strong></td>
+                                <td data-label="Hardware / Equipment">Fail-Safe Fire Relay Trigger</td>
+                                <td data-label="Technical Function">Cuts power to electromagnetic locks &amp; motorized turnstiles</td>
+                                <td data-label="Safety &amp; Compliance Specification">Instant unhindered escape path; fails open on total power loss</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Subsystem"><strong>Power &amp; Battery Backup</strong></td>
+                                <td data-label="Hardware / Equipment">Dual 12V 28Ah Sealed Lead-Acid (VRLA)</td>
+                                <td data-label="Technical Function">Temperature-compensated internal battery charger</td>
+                                <td data-label="Safety &amp; Compliance Specification">24h quiescent standby + 30m full alarm evacuation load</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Media Gallery Grid -->
+                <div class="case-study-media-grid">
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined">shield</span>
+                            </div>
+                            <span class="media-tech-tag">Life Safety Core // Bosch FPA</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Modular Fire Panel Enclosure &amp; Power Bus</h3>
+                            <p class="media-caption-desc">Modular rail distribution featuring redundant BCM-0000 battery controllers and dual LSN 0300 A loop processing modules.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.5"/><path d="M7.76 16.24A5.98 5.98 0 0 1 6 12c0-1.66.67-3.16 1.76-4.24l1.42 1.42A3.98 3.98 0 0 0 8 12c0 1.1.45 2.1 1.17 2.83l-1.41 1.41zm8.48 0-1.42-1.42A3.98 3.98 0 0 0 16 12c0-1.1-.45-2.1-1.17-2.83l1.41-1.41A5.98 5.98 0 0 1 18 12c0 1.66-.67 3.16-1.76 4.24zM4.93 19.07A9.97 9.97 0 0 1 2 12c0-2.76 1.12-5.26 2.93-7.07l1.41 1.41A7.95 7.95 0 0 0 4 12c0 2.21.9 4.21 2.34 5.66l-1.41 1.41zm14.14 0-1.41-1.41A7.95 7.95 0 0 0 20 12c0-2.21-.9-4.21-2.34-5.66l1.41-1.41A9.97 9.97 0 0 1 22 12c0 2.76-1.12 5.26-2.93 7.07z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">LSN Loop Ring // FAP-425-DOTC</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Dual Optical / Thermal Multisensor Nodes</h3>
+                            <p class="media-caption-desc">Loop-addressed sensor bases with integrated isolator switches ensuring continuous bidirectional communication under wire breaks.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Evacuation Appliance // EN 54-23</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Synchronized Sounder &amp; Optical Strobes</h3>
+                            <p class="media-caption-desc">Loop-powered multi-tone sirens calibrated to 95 dBA at 1m with synchronized visual flashes for high ambient noise corridors.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Building Automation // Relay Logic</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">HVAC Interlock &amp; Access Release Interface</h3>
+                            <p class="media-caption-desc">Fail-safe relay matrix terminating on external air handling units, elevator controllers, and electromagnetic door strikes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Engineering Execution & Testing -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Engineering Calculations &amp; Programming Logic</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <h3 class="font-display mb-3">Loop Sizing, Power Autonomy &amp; Cause-and-Effect Logic</h3>
+                <p class="mb-4">
+                    Deploying a certified life-safety system requires rigorous mathematical validation before software configuration. Loop resistance, capacitive attenuation, and battery discharge rates must be verified according to national fire safety standards.
+                </p>
+
+                <!-- Calculations Bento Grid -->
+                <div class="bento-grid mb-4">
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">1. Electrical Loop Parameters &amp; Resistance</h4>
+                        <p class="mb-3">
+                            The addressable loop utilizes certified fire-resistant twisted-pair cable ($2 \times 0.8\text{ mm}$ shielded, $S = 0.5\text{ mm}^2$). Electrical specifications:
+                        </p>
+                        <ul class="specs-list" style="margin-bottom: 0;">
+                            <li class="specs-item">
+                                <span class="specs-label">Specific Resistance:</span>
+                                <span class="specs-value">$\approx 36.6\,\Omega/\text{km}$ per conductor ($73.2\,\Omega/\text{km}$ loop)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Total Loop Length:</span>
+                                <span class="specs-value">720 meters closed ring loop</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Measured Resistance:</span>
+                                <span class="specs-value">$R_{\text{loop}} = 26.4\,\Omega$ ($< 50\,\Omega$ maximum allowed limit)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Capacitance:</span>
+                                <span class="specs-value">$C_{\text{loop}} = 82\text{ nF}$ ($< 500\text{ nF}$ max LSN limit)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">2. Battery Autonomy Sizing (EN 54-4)</h4>
+                        <p class="mb-3">
+                            The primary mains power supply (230V AC) is backed up by dual 12V 28Ah VRLA batteries wired in series (24V DC nominal). Required formula:
+                        </p>
+                        <div class="code-window mb-2" style="padding: 10px;">
+                            <code class="font-code" style="color: #60a5fa;">C_req = 1.25 × (I_quiescent × 24h + I_alarm × 0.5h)</code>
+                        </div>
+                        <p class="font-code" style="font-size: 13px; color: var(--color-text-muted);">
+                            • $I_{\text{quiescent}} = 380\text{ mA}$ (Panel CPU + 64x LSN detectors + interface cards)<br>
+                            • $I_{\text{alarm}} = 2.45\text{ A}$ (Full acoustic sirens + optical strobes + relays energized)<br>
+                            • $C_{\text{req}} = 1.25 \times (0.38 \times 24 + 2.45 \times 0.5) = 1.25 \times (9.12 + 1.225) = \mathbf{12.93\text{ Ah}}$<br>
+                            • Installed Capacity: $\mathbf{28\text{ Ah}}$ — Margin of safety: <strong>&gt;216%</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Programming Matrix Description -->
+                <h4 class="font-technical mb-2">3. Cause-and-Effect Programming Matrix (Bosch RPS / FSP)</h4>
+                <p class="mb-3">
+                    Using the Bosch RPS configuration suite, inputs and outputs were structured into an automated two-stage verification matrix:
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Trigger Source (Input)</th>
+                                <th>Logic Delay / Condition</th>
+                                <th>Primary Action (Internal)</th>
+                                <th>Secondary Action (Building Automation)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Trigger Source (Input)">Single Smoke Detector (Type A)</td>
+                                <td data-label="Logic Delay / Condition">Verification window: 30s delay</td>
+                                <td data-label="Primary Action (Internal)">Panel buzzer + LCD location display</td>
+                                <td data-label="Secondary Action (Building Automation)">No building alarm (prevents nuisance evacuation)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Trigger Source (Input)">Confirmed Smoke / Thermal (Type B)</td>
+                                <td data-label="Logic Delay / Condition">Two detectors or &gt;60s continuous</td>
+                                <td data-label="Primary Action (Internal)">Full loop sounders &amp; strobes activated</td>
+                                <td data-label="Secondary Action (Building Automation)">HVAC emergency shutoff; Elevator ground recall</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Trigger Source (Input)">Manual Call Point (Pull Station)</td>
+                                <td data-label="Logic Delay / Condition"><strong>Instant 0-second priority</strong></td>
+                                <td data-label="Primary Action (Internal)">Immediate general building evacuation siren</td>
+                                <td data-label="Secondary Action (Building Automation)">HVAC trip + Access control unlock + Fire brigade dispatch</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Trigger Source (Input)">Loop Short / Open Circuit Fault</td>
+                                <td data-label="Logic Delay / Condition">Immediate hardware detection</td>
+                                <td data-label="Primary Action (Internal)">Fault signal to monitoring station</td>
+                                <td data-label="Secondary Action (Building Automation)">Isolators open within 100ms; dual-feed ring preserved</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Callout Box: §21 Certification -->
+                <div class="callout-box">
+                    <div class="callout-header">
+                        <span class="material-symbols-outlined">verified</span>
+                        <span>Certified Electrotechnical Execution (§21 Compliance)</span>
+                    </div>
+                    <p class="callout-desc">
+                        As a certified electrotechnician under <strong>§21 (Odborná spôsobilosť v elektrotechnike)</strong>, all electrical terminations were executed to strict industrial safety standards: halogen-free flame-retardant cable conduits, dedicated 10A B-curve unswitched power supplies, equipotential bonding to the main protective earth (PE) terminal with resistance $R_{\text{PE}} < 0.1\,\Omega$, and separation of low-voltage fire loops from mains power lines to prevent electromagnetic induction.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Commissioning & Validation Protocols -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Commissioning &amp; Stress Testing Protocols</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 01</span>
+                        <h3 class="challenge-title">Short-Circuit Isolator Ring Continuity Test</h3>
+                    </div>
+                    <span class="badge badge-dark">EN 54-13 Integrity</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Fault Simulation
+                        </div>
+                        <p>
+                            Simulated a hard zero-ohm short circuit between positive and negative loop conductors between detector node #24 and manual pull station #25 while the system was under full quiescent polling.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Automated Isolation Response
+                        </div>
+                        <p>
+                            Integral LSN isolators in nodes #24 and #25 tripped within <strong>85 milliseconds</strong>, isolating the faulted cable span. The control panel immediately switched to bidirectional dual-feed loop driving, maintaining 100% communication with all 64 addressable elements with zero packet drops.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 02</span>
+                        <h3 class="challenge-title">Calibrated Aerosol Smoke &amp; Thermal Response Test</h3>
+                    </div>
+                    <span class="badge badge-dark">Sensor Verification</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Physical Stimulation
+                        </div>
+                        <p>
+                            Applied certified aerosol smoke (Solo A5) and direct calibrated heat flow (Solo 461) to verify individual sensor response times, optical chamber obscuration thresholds, and address matching against engineering floorplans.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Calibration &amp; Address Verification
+                        </div>
+                        <p>
+                            All FAP-425-DOTC sensors responded within <strong>12 to 18 seconds</strong>. Point address, zone nomenclature, and room labels matched the CAD floorplan with 100% accuracy. Drift compensation values were recorded and verified at &lt;5% chamber contamination.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 03</span>
+                        <h3 class="challenge-title">Life Safety Relay Latching &amp; HVAC Interlock Verification</h3>
+                    </div>
+                    <span class="badge badge-dark">Automation Interlock</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Multi-System Trigger
+                        </div>
+                        <p>
+                            Triggered full building alarm to verify simultaneous electrical latching of output relays controlling ventilation dampers, elevator controllers, and access control power supplies.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fail-Safe Execution
+                        </div>
+                        <p>
+                            Air handling units tripped within <strong>0.4 seconds</strong>; elevator cars safely transitioned to the primary egress floor with doors held open; electromagnetic access doors dropped voltage immediately, ensuring safe unhindered evacuation paths throughout the facility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Operational Verification Terminal -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Official Commissioning Protocol Log</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-card terminal-card scroll-reveal delay-100 mb-section">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <span class="terminal-path">technician@bosch-fpa:~/commissioning$ ./run_life_safety_audit.sh</span>
+            </div>
+            <div>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [§21_COMPLIANCE] Verified electrical installation, PE bonding resistance R_pe = 0.04 Ohm (&lt; 0.1 Ohm)</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [LOOP_RESISTANCE] Loop #1 round-trip resistance: 26.4 Ohm | Insulation to ground: &gt; 50 MOhm [PASSED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ISOLATOR_TEST] Bidirectional short-circuit isolator trip time: 85ms | Dual-feed active [PASSED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [BATTERY_AUTONOMY] Standby current: 380mA | Full alarm: 2.45A | Calculated requirement: 12.93Ah &lt; 28Ah [PASSED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [RELAY_LATCH] HVAC emergency shutoff contact latched | Air dampers closed [CONFIRMED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ELEVATOR_RECALL] Primary egress recall relay engaged | Doors held open [CONFIRMED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ACCESS_RELEASE] Fail-safe electromagnetic locks de-energized | Free egress validated [CONFIRMED]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [COMMISSIONING_COMPLETE] Official life-safety certificate issued and signed under §21 engineering license</p>
+                <p class="cursor-blink">_</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. All rights reserved.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

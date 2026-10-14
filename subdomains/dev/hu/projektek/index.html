@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html class="dark" lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Mérnöki &amp; Rendszerarchitektúra Projektek | Madový Gábor</title>
+    <meta name="description"
+        content="Ismerd meg Madový Gábor szoftvermérnöki és IT biztonsági projektjeit: MaturiMate, Java tiszta architektúra és hálózati rendszerek.">
+    <meta name="keywords"
+        content="Madový Gábor, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
+    <meta name="author" content="Madový Gábor">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/hu/projektek" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek" />
+    <meta property="og:title" content="Madový Gábor | Projektek &amp; Architektúra" />
+    <meta property="og:description"
+        content="Ismerd meg Madový Gábor szoftvermérnöki és hálózati projektjeit." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://dev.madovygabor.com/hu/projektek/#projects-page",
+  "url": "https://dev.madovygabor.com/hu/projektek",
+  "name": "Fejlesztési Naplók | Madový Gábor Projektjei",
+  "description": "Madový Gábor szoftvermérnöki és InfoSec projektjei, többek között a MaturiMate és tiszta architektúrájú rendszerek.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Madový Gábor",
+    "additionalName": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/hu/"
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "MaturiMate Ökoszisztéma",
+      "programmingLanguage": "Kotlin",
+      "codeRepository": "https://github.com/madovygabor/MaturiMate",
+      "description": "Kotlin Multiplatform kliens MVI / Clean Architecture szétválasztással, egyirányú adatfolyammal és offline-first SQLDelight perzisztenciával Androidra és asztali JVM-re."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Employee & Security Auditor System",
+      "programmingLanguage": "Java",
+      "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
+      "description": "Rétegzett Java 21 backend hibrid memória/SQLite perzisztenciával, izolált JUnit 5 I/O tesztekkel és GitHub Actions CI/CD pipeline-nal."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "madovygabor.com Multi-Domain Platform",
+      "programmingLanguage": "Docker / Nginx / Web Standards",
+      "codeRepository": "https://github.com/madovygabor/madovygabor.com",
+      "description": "Konténerizált multi-domain platform, amely a fotós, a hub és a mérnöki portfóliót köti össze Nginx-alapú orkesztrációval és Cloudflare Pages GitOps kiszolgálással."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Intézményi hálózat és L3 távmenedzsment (MS-TVR-NETSEC)",
+      "url": "https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany",
+      "description": "Fizikai rack beépítés, 3-rétegű VLAN szegmentáció, switch backplane stream-tehermentesítés és WireGuard L3 távmenedzsment."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Bosch EPS Címezhető Tűzjelző Rendszer Programozás & Életvédelmi Integráció",
+      "url": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany",
+      "description": "Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés."
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigáció">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">KEZDŐLAP</a>
+                <a class="mobile-nav-link active" href="../projektek">PROJEKTEK</a>
+                <a class="mobile-nav-link" href="../kontakt">KAPCSOLAT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="/en/projects">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="/hu/projektek">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/sk/projekty">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">KEZDŐLAP</a>
+            <a class="nav-link active" href="../projektek">PROJEKTEK</a>
+            <a class="nav-link" href="../kontakt">KAPCSOLAT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="/en/projects">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="/hu/projektek">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/sk/projekty">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="projects-hero">
+            <h1 class="font-display projects-title">Fejlesztési Naplók</h1>
+            <p class="font-technical projects-desc">
+                Válogatás azokból a projektekből, amelyeken dolgozom és amelyeket karbantartok, néhány szóval arról,
+                hogyan épülnek fel: platformok között megosztott kód, matematikai tartalom pontos megjelenítése és a
+                rétegek világos szétválasztása.
+            </p>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub">01 / Flagship Multiplatform Architektúra</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section">
+            <div class="bento-card bento-card-purple">
+                <div class="flex-center-between projects-header">
+                    <div class="projects-brand-wrapper">
+                        <span class="material-symbols-outlined projects-brand-icon">school</span>
+                        <div>
+                            <h3 class="font-technical projects-card-title">MaturiMate Ökoszisztéma</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktív fejlesztés alatt
+                            </p>
+                        </div>
+                    </div>
+                    <div class="projects-badge-container">
+                        <span class="badge badge-purple">KMP Core</span>
+                        <span class="badge badge-dark">Jetpack Compose</span>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="col-span-5 projects-info-col">
+                        <p>
+                            A MaturiMate egy érettségi-felkészítő alkalmazás Androidra és asztali gépre (JVM).
+                            <strong>Kotlin Multiplatform (KMP)</strong> és Compose Multiplatform segítségével készül, így
+                            a domain logika, az adatréteg és a felhasználói felület közös a két platformon, nem kell
+                            mindent kétszer megírni.
+                        </p>
+                        <p>
+                            Az alkalmazás <strong>MVI / Clean Architecture</strong> megközelítést követ egyirányú
+                            adatfolyammal. A képernyők állapotát Kotlin Coroutines és <code>StateFlow</code> kezeli, így
+                            a UI frissítései kiszámíthatók és könnyebben átláthatók.
+                        </p>
+                        <p>
+                            <strong>Offline-first</strong> módon működik: a kérdések és a haladás helyben, egy
+                            SQLDelighton keresztül elért relációs adatbázisban tárolódnak, a kezdeti tartalom
+                            tranzakciókon belül töltődik be, a felhasználói beállításokat pedig multiplatform DataStore
+                            menti.
+                        </p>
+                        <div class="project-footer">
+                            <div class="flex-wrap gap-2 d-flex">
+                                <span class="badge badge-dark badge-bg-dark">Kotlin 2.2</span>
+                                <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
+                                <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
+                                <span class="badge badge-dark badge-bg-dark">Koin DI</span>
+                            </div>
+                            <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
+                                <div class="btn-corner-tr"></div>
+                                <div class="btn-corner-bl"></div>
+                                <span class="material-symbols-outlined">code</span> REPÓ MEGTEKINTÉSE
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-span-7 code-window">
+                        <div class="code-header">
+                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                        </div>
+                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
+<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
+    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
+) {
+    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
+        <span class="syntax-keyword">return</span> database.examQueries
+            .selectActiveQuestionsBySubject(subjectId)
+            .asFlow()
+            .mapToList(Dispatchers.Default)
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend &amp; Infrastruktúra</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid scroll-reveal delay-100">
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">layers</span>
+                            <h3 class="font-technical projects-card-title-sm">Employee &amp; Security Auditor System</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Java</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        <strong>Java 21 LTS</strong> nyelven írt backend alkalmazás az alkalmazotti nyilvántartás
+                        kezelésére és a munkatársak közötti biztonsági kapcsolatok kiértékelésére. A kód külön
+                        prezentációs, domain és perzisztencia rétegre tagolódik. Futás közben az adatok egy memóriában
+                        futó tárolóban vannak, mentésként pedig SQLite adatbázisba szinkronizálódnak. A biztonsági
+                        mutatók az alkalmazottak közötti kapcsolatgráf bejárásával számítódnak ki, és a holtversenyeket
+                        egy rögzített, megismételhető szabály dönti el.
+                    </p>
+                    <p class="projects-card-desc">
+                        A fájlműveleteket ideiglenes <code>@TempDir</code> könyvtárakban futó <strong>JUnit 5
+                            tesztek</strong> fedik le, a tesztcsomagot pedig minden push alkalmával egy <strong>GitHub
+                            Actions CI/CD pipeline</strong> futtatja automatikusan.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">Java 21 LTS</span>
+                        <span class="badge badge-dark badge-bg-dark">JUnit 5 Sandbox</span>
+                        <span class="badge badge-dark badge-bg-dark">GitHub Actions CI</span>
+                        <span class="badge badge-dark badge-bg-dark">Rétegzett Architektúra</span>
+                    </div>
+                    <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank"
+                        class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined">code</span> REPÓ MEGTEKINTÉSE
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined">public</span>
+                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Média Folyamat</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Web Ökoszisztéma</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Ez a weboldal. Egyetlen repó három független oldalt tartalmaz: egy fotós portfóliót, egy
+                        központi hubot és ezt a mérnöki portfóliót. Helyi fejlesztéshez egy Alpine-alapú Nginx szerverrel
+                        ellátott <strong>Docker Compose</strong> környezetben futnak együtt, így a domainek közötti
+                        irányítás és a tiszta URL-ek élesítés előtt tesztelhetők.
+                    </p>
+                    <p class="projects-card-desc">
+                        A fotógalériák adatbázis nélkül készülnek. Egy kis <strong>Python CLI</strong> végignézi a
+                        képmappákat és egy JSON manifestet ír, amelyet a böngésző betölt, majd sima JavaScripttel
+                        masonry galériát épít belőle.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">Multi-Domain</span>
+                        <span class="badge badge-dark badge-bg-dark">Python Pipeline</span>
+                        <span class="badge badge-dark badge-bg-dark">Docker Compose</span>
+                        <span class="badge badge-dark badge-bg-dark">Vanilla JS</span>
+                    </div>
+                    <a href="https://github.com/madovygabor/madovygabor.com" target="_blank"
+                        class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined">code</span> REPÓ MEGTEKINTÉSE
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: Campus Network Case Study -->
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M13 22h8v-7h-3v-4h-5V9h3V2H8v7h3v2H6v4H3v7h8v-7H8v-2h8v2h-3v7zM10 7V4h4v3h-4zM9 17v3H5v-3h4zm10 0v3h-4v-3h4z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">Intézményi hálózat és L3 távmenedzsment</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Infrastruktúra</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        Egy újonnan épült oktatási intézmény teljes hálózatának kiépítése: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai), Wi-Fi 6 és 8 kamerás Hikvision rendszer. A kamerák internetelérését az átjáró tiltja.
+                    </p>
+                    <p class="projects-card-desc">
+                        A rögzítési streamek a <strong>PoE switchen</strong> maradnak, nem haladnak át az ER605 routeren. A helyszín Brnóból, <strong>WireGuard split tunnelen</strong> keresztül kezelhető, a dolgozók pedig megbízható tanúsítvánnyal, belső HTTPS címen érik el az NVR-t.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">WireGuard</span>
+                        <span class="badge badge-dark badge-bg-dark">VLAN szegmentáció</span>
+                        <span class="badge badge-dark badge-bg-dark">PoE tervezés</span>
+                        <span class="badge badge-dark badge-bg-dark">TP-Link Omada</span>
+                    </div>
+                    <a href="/hu/projektek/halozat-esettanulmany" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> ESETTANULMÁNY OLVASÁSA
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Bosch EPS Case Study -->
+            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">Bosch EPS Címezhető Tűzjelző &amp; Életvédelmi Rendszerintegráció</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Életvédelem</span>
+                    </div>
+                    <p class="projects-card-desc">
+                        <strong>Bosch Moduláris Tűzjelző Központra (FPA)</strong> épülő címezhető tűzjelző rendszer tervezése, programozása és minősített beüzemelése. Multiszenzoros optikai/termikus/kémiai érzékelők, huroktáplált hang- és fényjelzők, valamint hibabiztos (fail-safe) relé-reteszelések integrálása.
+                    </p>
+                    <p class="projects-card-desc">
+                        Ellenőrzött hurokellenállás ($R_{\text{loop}} = 26.4\,\Omega$), kiszámított <strong>24h + 30p akkumulátoros autonómia</strong> az EN 54-4 szerint, kétlépcsős késleltetési mátrixok a Bosch RPS-ben, és hivatalos villamossági beüzemelés <strong>§21 szakmai jogosultság</strong> alapján.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">Bosch EPS</span>
+                        <span class="badge badge-dark badge-bg-dark">§21 Tanúsítvány</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN Hurok</span>
+                        <span class="badge badge-dark badge-bg-dark">Relé Logika</span>
+                    </div>
+                    <a href="/hu/projektek/eps-esettanulmany" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> ESETTANULMÁNY OLVASÁSA
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Madový Gábor. Minden jog fenntartva.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

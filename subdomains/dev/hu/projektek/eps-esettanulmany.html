@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="dark" lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Bosch EPS Címezhető Tűzjelző Rendszer Programozás & Életvédelem | Madový Gábor</title>
+    <meta name="description"
+        content="Részletes műszaki esettanulmány a Bosch EPS címezhető tűzjelző rendszer programozásáról, huroktopológiáról, relélogikáról és a §21 szerinti villamossági kivitelezésről.">
+    <meta name="keywords"
+        content="Bosch EPS, Tűzjelző Rendszerek, Hurokprogramozás, Relé Logika, §21 Tanúsítvány, Életvédelem, Madový Gábor">
+    <meta name="author" content="Madový Gábor">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <meta property="og:title" content="Bosch EPS Címezhető Tűzjelző Rendszer Programozás & Életvédelem" />
+    <meta property="og:description"
+        content="Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany#article",
+  "headline": "Bosch EPS Címezhető Tűzjelző Rendszer Programozás & Életvédelmi Integráció",
+  "description": "Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Madový Gábor",
+    "url": "https://dev.madovygabor.com/hu/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Madový Gábor"
+  },
+  "keywords": "Bosch EPS, Tűzjelző Rendszerek, Hurokprogramozás, Relé Logika, §21 Tanúsítvány, Életvédelem"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">KEZDŐLAP</a>
+                <a class="mobile-nav-link active" href="../projektek">PROJEKTEK</a>
+                <a class="mobile-nav-link" href="../kontakt">KAPCSOLAT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="/en/projects/eps-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="/hu/projektek/eps-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">KEZDŐLAP</a>
+            <a class="nav-link active" href="../projektek">PROJEKTEK</a>
+            <a class="nav-link" href="../kontakt">KAPCSOLAT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="/en/projects/eps-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="/hu/projektek/eps-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Case Study Header / Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projektek" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> VISSZA A PROJEKTEKHEZ
+            </a>
+            <h1 class="case-study-title font-display">Bosch EPS Címezhető Tűzjelző Rendszer Programozás &amp; Életvédelmi Integráció</h1>
+            <p class="case-study-subtitle font-technical">
+                Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés.
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-purple">Bosch EPS</span>
+                <span class="badge badge-dark">Hurokprogramozás</span>
+                <span class="badge badge-dark">Relé Logika</span>
+                <span class="badge badge-dark">§21 Tanúsítvány</span>
+                <span class="badge badge-dark">Életvédelmi Megfelelőség</span>
+            </div>
+        </header>
+
+        <!-- Technical Specification Bar -->
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Minősítési Szint</span>
+                <span class="meta-value">Bosch EPS Minősített &amp; §21 Villanyszerelő</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Központ Sorozat</span>
+                <span class="meta-value">Bosch Moduláris Tűzjelző Központ (FPA / FP2200)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Hurok Protokoll</span>
+                <span class="meta-value">LSN (Local Security Network) Improved</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Szabványi Megfelelőség</span>
+                <span class="meta-value">EN 54-2, EN 54-4, EN 54-13 &amp; VdS 2095</span>
+            </div>
+        </section>
+
+        <!-- Section 1: System Architecture & Hardware -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / Rendszerarchitektúra &amp; Hardver Topológia</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <p class="mb-4">
+                    A címezhető elektronikus tűzjelző rendszerek (EPS) kritikus életvédelmi infrastruktúrát képviselnek, ahol a hibatűrés zéró. A projekt feladata a címezhető LSN huroktopológia megtervezése, a fizikai hurokparaméterek és akkumulátoros autonómia méretezése, a komplex ok-okozati be-/kimeneti mátrix programozása volt a Bosch RPS/FSP szoftverével, valamint a hivatalos §21 szerinti beüzemelés.
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Alrendszer</th>
+                                <th>Hardver / Berendezés</th>
+                                <th>Műszaki Funkció</th>
+                                <th>Biztonsági &amp; Szabványi Megfelelőség</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Központi Egység</strong></td>
+                                <td data-label="Hardver / Berendezés">Bosch Moduláris Tűzjelző (FPA sorozat)</td>
+                                <td data-label="Műszaki Funkció">Központi processzor, tápegység, LCD érintőképernyő, hurokkártyák</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">EN 54-2/4 szabvány, kettős redundáns belső kommunikációs busz</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Multiszenzor Érzékelők</strong></td>
+                                <td data-label="Hardver / Berendezés">Bosch FAP-425-DOTC</td>
+                                <td data-label="Műszaki Funkció">Kettős optikai füst- + hő- + kémiai CO-érzékelés</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">Intelligens kamrakoszolódás-kompenzáció, gőz/téves riasztás szűrés</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Kézi Jelzésadók</strong></td>
+                                <td data-label="Hardver / Berendezés">Bosch FMC-420 Sorozat</td>
+                                <td data-label="Műszaki Funkció">Üvegtörős címezhető kézi jelzésadók visszajelző LED-del</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">Beépített kétirányú zárlati szakaszoló (izolátor), 0 mp prioritás</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Akusztikus &amp; Optikai Jelzők</strong></td>
+                                <td data-label="Hardver / Berendezés">Bosch FLM-420 Hang/Fényjelző Hurok</td>
+                                <td data-label="Műszaki Funkció">Címezhető huroktáplált szirénák nagy fényerejű xenon stroboszkóppal</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">EN 54-3 (akusztikus) és EN 54-23 (optikai riasztóeszközök)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Légtechnikai Vészleállító</strong></td>
+                                <td data-label="Hardver / Berendezés">Potenciálmentes Életvédelmi Interfész Relé</td>
+                                <td data-label="Műszaki Funkció">Szellőzőgépek (AHU) és légbefúvók automatikus lekapcsolása</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">Megakadályozza a mérgező füst légcsatornákon keresztüli terjedését</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Lift Visszahívó Vezérlés</strong></td>
+                                <td data-label="Hardver / Berendezés">Reteszelő Életvédelmi Relé</td>
+                                <td data-label="Műszaki Funkció">A felvonók azonnali visszahívása a kijelölt evakuációs földszintre</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">Ajtók nyitva tartása érkezéskor, utasok beszorulásának megelőzése</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Beléptető Nyitás</strong></td>
+                                <td data-label="Hardver / Berendezés">Fail-Safe Vészkijárati Relé</td>
+                                <td data-label="Műszaki Funkció">Elektromágneses ajtótartók és beléptetőkapuk áramtalanítása</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">Azonnali akadálymentes menekülési útvonal; áramszünet esetén nyitott állapot</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Alrendszer"><strong>Akkumulátoros Tápellátás</strong></td>
+                                <td data-label="Hardver / Berendezés">2x 12V 28Ah Zárt Ólom-Sav (VRLA)</td>
+                                <td data-label="Műszaki Funkció">Hőmérséklet-kompenzált beépített akkumulátortöltő egység</td>
+                                <td data-label="Biztonsági &amp; Szabványi Megfelelőség">24 órás nyugalmi figyelés + 30 perces teljes szirénás riasztási üzem</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Media Gallery Grid -->
+                <div class="case-study-media-grid">
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined">shield</span>
+                            </div>
+                            <span class="media-tech-tag">Életvédelmi Központ // Bosch FPA</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Moduláris Tűzjelző Szekrény &amp; Tápbusz</h3>
+                            <p class="media-caption-desc">Sínre szerelhető moduláris elrendezés BCM-0000 akkumulátorvezérlőkkel és kettős LSN 0300 A hurokfeldolgozó kártyával.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.5"/><path d="M7.76 16.24A5.98 5.98 0 0 1 6 12c0-1.66.67-3.16 1.76-4.24l1.42 1.42A3.98 3.98 0 0 0 8 12c0 1.1.45 2.1 1.17 2.83l-1.41 1.41zm8.48 0-1.42-1.42A3.98 3.98 0 0 0 16 12c0-1.1-.45-2.1-1.17-2.83l1.41-1.41A5.98 5.98 0 0 1 18 12c0 1.66-.67 3.16-1.76 4.24zM4.93 19.07A9.97 9.97 0 0 1 2 12c0-2.76 1.12-5.26 2.93-7.07l1.41 1.41A7.95 7.95 0 0 0 4 12c0 2.21.9 4.21 2.34 5.66l-1.41 1.41zm14.14 0-1.41-1.41A7.95 7.95 0 0 0 20 12c0-2.21-.9-4.21-2.34-5.66l1.41-1.41A9.97 9.97 0 0 1 22 12c0 2.76-1.12 5.26-2.93 7.07z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">LSN Hurok // FAP-425-DOTC</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Kettős Optikai / Termikus Multiszenzorok</h3>
+                            <p class="media-caption-desc">Címezhető érzékelőaljzatok integrált izolátorkapcsolóval a vezeték szakadása esetén biztosított kétirányú adatátvitelhez.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Evakuációs Eszközök // EN 54-23</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Szinkronizált Hang- &amp; Fényjelzők</h3>
+                            <p class="media-caption-desc">Huroktáplált többhangú szirénák 95 dBA hangnyomással és szinkronizált fényvillanásokkal a nagy zajú folyosókon.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Épületautomatika // Relélogika</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">HVAC Reteszelés &amp; Menekülési Nyitás</h3>
+                            <p class="media-caption-desc">Fail-safe relémátrix bekötve a központi szellőztetőgépekbe, felvonóvezérlőkbe és az elektromágneses menekülőajtókba.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Engineering Execution & Testing -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Mérnöki Számítások &amp; Programozási Logika</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <h3 class="font-display mb-3">Hurokméretezés, Autonómia &amp; Ok-Okozati Logika</h3>
+                <p class="mb-4">
+                    A minősített életvédelmi rendszerek telepítése szigorú matematikai ellenőrzést igényel a szoftveres konfigurálás előtt. A hurokellenállást, a kapacitív csillapítást és az akkumulátor kisülési sebességét a tűzvédelmi szabványok szerint kell igazolni.
+                </p>
+
+                <!-- Calculations Bento Grid -->
+                <div class="bento-grid mb-4">
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">1. Villamos Hurokparaméterek &amp; Ellenállás</h4>
+                        <p class="mb-3">
+                            A címezhető hurok minősített tűzálló sodort érpáras kábelt használ ($2 \times 0.8\text{ mm}$ árnyékolt, $S = 0.5\text{ mm}^2$). Villamos mérési adatok:
+                        </p>
+                        <ul class="specs-list" style="margin-bottom: 0;">
+                            <li class="specs-item">
+                                <span class="specs-label">Fajlagos Ellenállás:</span>
+                                <span class="specs-value">$\approx 36.6\,\Omega/\text{km}$ vezetőnként ($73.2\,\Omega/\text{km}$ oda-vissza)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Teljes Hurokhossz:</span>
+                                <span class="specs-value">720 méteres zárt gyűrűhurok</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Mért Hurokellenállás:</span>
+                                <span class="specs-value">$R_{\text{loop}} = 26.4\,\Omega$ ($< 50\,\Omega$ megengedett határérték)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Hurokkapacitás:</span>
+                                <span class="specs-value">$C_{\text{loop}} = 82\text{ nF}$ ($< 500\text{ nF}$ maximális LSN limit)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">2. Akkumulátoros Tartalék Méretezés (EN 54-4)</h4>
+                        <p class="mb-3">
+                            A 230V AC hálózati betáplálást két sorba kötött 12V 28Ah VRLA akkumulátor biztosítja (24V DC névleges feszültség). Számítási képlet:
+                        </p>
+                        <div class="code-window mb-2" style="padding: 10px;">
+                            <code class="font-code" style="color: #60a5fa;">C_szükséges = 1.25 × (I_nyugalmi × 24h + I_riasztási × 0.5h)</code>
+                        </div>
+                        <p class="font-code" style="font-size: 13px; color: var(--color-text-muted);">
+                            • $I_{\text{nyugalmi}} = 380\text{ mA}$ (Központi CPU + 64 db LSN érzékelő + modulok)<br>
+                            • $I_{\text{riasztási}} = 2.45\text{ A}$ (Minden sziréna, villogó és relé aktiválva)<br>
+                            • $C_{\text{szükséges}} = 1.25 \times (0.38 \times 24 + 2.45 \times 0.5) = 1.25 \times (9.12 + 1.225) = \mathbf{12.93\text{ Ah}}$<br>
+                            • Telepített Kapacitás: $\mathbf{28\text{ Ah}}$ — Biztonsági tartalék: <strong>&gt;216%</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Programming Matrix Description -->
+                <h4 class="font-technical mb-2">3. Ok-Okozati Programozási Mátrix (Bosch RPS / FSP)</h4>
+                <p class="mb-3">
+                    A Bosch RPS szoftverben beállított bemenet/kimenet összefüggések egy automatikus kétlépcsős ellenőrzési logikát követnek:
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Kiváltó Esemény (Bemenet)</th>
+                                <th>Logikai Késleltetés / Feltétel</th>
+                                <th>Elsődleges Művelet (Központ)</th>
+                                <th>Épületautomatikai Művelet (Gépészet)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Kiváltó Esemény (Bemenet)">Egyetlen Füstérzékelő (A Típus)</td>
+                                <td data-label="Logikai Késleltetés / Feltétel">30 másodperces előriasztási ablak</td>
+                                <td data-label="Elsődleges Művelet (Központ)">Központi hangjelzés + LCD helyszín kijelzés</td>
+                                <td data-label="Épületautomatikai Művelet (Gépészet)">Nincs épületriasztás (megelőzi a téves kiürítést)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Kiváltó Esemény (Bemenet)">Megerősített Füst / Hő (B Típus)</td>
+                                <td data-label="Logikai Késleltetés / Feltétel">Két érzékelő vagy &gt;60 mp folytonos jel</td>
+                                <td data-label="Elsődleges Művelet (Központ)">Összes huroksziréna és villogó bekapcsol</td>
+                                <td data-label="Épületautomatikai Művelet (Gépészet)">HVAC vészleállítás; Liftek földszintre irányítása</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Kiváltó Esemény (Bemenet)">Kézi Jelzésadó (Üvegtörős Gomb)</td>
+                                <td data-label="Logikai Késleltetés / Feltétel"><strong>Azonnali 0 másodperces prioritás</strong></td>
+                                <td data-label="Elsődleges Művelet (Központ)">Azonnali teljes épületkiürítési sziréna</td>
+                                <td data-label="Épületautomatikai Művelet (Gépészet)">Légtechnika leállítás + Ajtónyitás + Tűzoltósági jelzés</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Kiváltó Esemény (Bemenet)">Hurokszakadás vagy Zárlat Hiba</td>
+                                <td data-label="Logikai Késleltetés / Feltétel">Azonnali hardveres detektálás</td>
+                                <td data-label="Elsődleges Művelet (Központ)">Hibajelzés küldése a felügyeletnek</td>
+                                <td data-label="Épületautomatikai Művelet (Gépészet)">Izolátorok 100 ms alatt lekapcsolnak; kétoldali táplálás aktív</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Callout Box: §21 Certification -->
+                <div class="callout-box">
+                    <div class="callout-header">
+                        <span class="material-symbols-outlined">verified</span>
+                        <span>Minősített Villamossági Kivitelezés (§21 Megfelelőség)</span>
+                    </div>
+                    <p class="callout-desc">
+                        A <strong>§21 villamossági szakképesítés (Odborná spôsobilosť v elektrotechnike)</strong> birtokában minden bekötés a legszigorúbb ipari biztonsági előírások szerint valósult meg: lángálló, halogénmentes kábelcsatornák, dedikált 10A B-karakterisztikájú leválasztó kapcsolóval védett betáp, potenciálkiegyenlítés (EPH) a fő védővezetőre $R_{\text{PE}} < 0.1\,\Omega$ ellenállással, valamint a gyengeáramú tűzjelző kábelek szigorú fizikai elválasztása az erősáramú vezetékektől az indukciós zavarok kiküszöbölésére.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Commissioning & Validation Protocols -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Üzembe Helyezési &amp; Tesztelési Protokollok</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">01. TESZT</span>
+                        <h3 class="challenge-title">Zárlati Szakaszoló (Izolátor) Hurokfolytonossági Teszt</h3>
+                    </div>
+                    <span class="badge badge-dark">EN 54-13 Integritás</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Hiba Szimulációja
+                        </div>
+                        <p>
+                            Közvetlen 0 ohmos rövidzárlatot idéztünk elő a pozitív és negatív hurokvezetők között a #24-es érzékelő és a #25-ös kézi jelzésadó között nyugalmi huroklekérdezés közben.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Automatikus Izolációs Válasz
+                        </div>
+                        <p>
+                            A beépített LSN szakaszolók <strong>85 ezredmásodperc (ms)</strong> alatt lekapcsolták a sérült vezetékszakaszt. A központ azonnal átváltott kétoldali megtáplálásra, és mind a 64 hurokelemmel 100%-os adatkapcsolat maradt fenn csomagvesztés nélkül.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">02. TESZT</span>
+                        <h3 class="challenge-title">Hitelesített Füstaeroszolos &amp; Hőérzékelési Teszt</h3>
+                    </div>
+                    <span class="badge badge-dark">Érzékelő Validáció</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Fizikai Stimuláció
+                        </div>
+                        <p>
+                            Szabványos Solo A5 füstaeroszollal és Solo 461 kalibrált hőteszterrel ellenőriztük az érzékelők egyedi válaszidejét, az optikai kamrák elnyelési küszöbét és a címek helyességét az alaprajzokhoz képest.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Kalibráció &amp; Címellenőrzés
+                        </div>
+                        <p>
+                            Az összes FAP-425-DOTC érzékelő <strong>12 és 18 másodperc</strong> között jelzett. A pontcímek, zónamegnevezések és helyiségcímkék 100%-ban egyeztek a tervrajzzal. A kamrakoszolódási értékek 5% alatti tiszta értéket mutattak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">03. TESZT</span>
+                        <h3 class="challenge-title">Életvédelmi Relék Reteszelése &amp; HVAC Leválasztás</h3>
+                    </div>
+                    <span class="badge badge-dark">Épületfelügyeleti Retesz</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Többrendszeres Riasztás
+                        </div>
+                        <p>
+                            Teljes épületriasztást váltottunk ki a légtechnikai tűzvédelmi csappantyúkat, a felvonóvezérlőt és a beléptetőrendszer elektromágneses tápjait vezérlő relék egyidejű reteszelésének igazolására.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fail-Safe Működés
+                        </div>
+                        <p>
+                            A szellőzőgépek <strong>0.4 másodperc</strong> alatt leálltak; a liftek azonnal a földszintre érkeztek és nyitott ajtókkal rögzültek; a vészkijárati mágneszárak feszültsége megszűnt, garantálva az akadálytalan menekülési útvonalat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Operational Verification Terminal -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Hivatalos Üzembe Helyezési Napló</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-card terminal-card scroll-reveal delay-100 mb-section">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <span class="terminal-path">technician@bosch-fpa:~/uzembehelyezes$ ./eletvedelmi_audit.sh</span>
+            </div>
+            <div>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [§21_MEGFELELŐSÉG] Villamos kivitelezés ellenőrizve, PE védővezető ellenállása R_pe = 0.04 Ohm (&lt; 0.1 Ohm)</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [HUROKELLENÁLLÁS] 1. hurok oda-vissza ellenállása: 26.4 Ohm | Földelési szigetelési ellenállás: &gt; 50 MOhm [MEGFELELT]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [SZAKASZOLÓ_TESZT] Kétirányú zárlati izolátor lekapcsolási idő: 85ms | Kétoldali táplálás aktív [MEGFELELT]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [AKKUMULÁTOR_AUTONÓMIA] Nyugalmi áram: 380mA | Riasztási áram: 2.45A | Szükséges kapacitás: 12.93Ah &lt; 28Ah [MEGFELELT]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [HVAC_RETESZ] Légtechnikai vészleállító relé meghúzott | Tűzgátló csappantyúk lezárva [IGAZOLVA]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [LIFT_VISSZAHÍVÁS] Földszinti evakuációs relé aktiválva | Fülkeajtók nyitva rögzítve [IGAZOLVA]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [AJTÓNYITÁS] Fail-safe elektromágneses zárak feszültségmentesek | Szabad menekülés biztosítva [IGAZOLVA]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ÜZEMBE_HELYEZÉS_KÉSZ] Hivatalos életvédelmi és biztonsági jegyzőkönyv kiállítva a §21 mérnöki jogosultság alapján</p>
+                <p class="cursor-blink">_</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. Minden jog fenntartva.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

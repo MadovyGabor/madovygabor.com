@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="dark" lang="sk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Programovanie adresovateľnej EPS Bosch & integrácia systémov | Gabriel Madový</title>
+    <meta name="description"
+        content="Technická prípadová štúdia programovania adresovateľnej požiarnej signalizácie Bosch EPS, topológie slučiek, reléovej logiky a certifikovanej inštalácie podľa §21.">
+    <meta name="keywords"
+        content="Bosch EPS, Požiarna signalizácia, Programovanie slučiek, Reléová logika, §21 Certifikácia, Požiarna bezpečnosť, Gabriel Madový">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="sk_SK" />
+    <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <meta property="og:title" content="Programovanie adresovateľnej EPS Bosch & integrácia systémov" />
+    <meta property="og:description"
+        content="Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia#article",
+  "headline": "Programovanie adresovateľnej EPS Bosch & integrácia bezpečnostných systémov",
+  "description": "Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/sk/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gabriel Madový"
+  },
+  "keywords": "Bosch EPS, Požiarna signalizácia, Programovanie slučiek, Reléová logika, §21 Certifikácia, Požiarna ochrana"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">DOMOV</a>
+                <a class="mobile-nav-link active" href="../projekty">PROJEKTY</a>
+                <a class="mobile-nav-link" href="../kontakt">KONTAKT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="/en/projects/eps-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="/sk/projekty/eps-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">DOMOV</a>
+            <a class="nav-link active" href="../projekty">PROJEKTY</a>
+            <a class="nav-link" href="../kontakt">KONTAKT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="/en/projects/eps-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="/sk/projekty/eps-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Case Study Header / Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projekty" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> SPÄŤ NA PROJEKTY
+            </a>
+            <h1 class="case-study-title font-display">Programovanie adresovateľnej EPS Bosch &amp; integrácia bezpečnostných systémov</h1>
+            <p class="case-study-subtitle font-technical">
+                Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21.
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-purple">Bosch EPS</span>
+                <span class="badge badge-dark">Programovanie slučiek</span>
+                <span class="badge badge-dark">Reléová logika</span>
+                <span class="badge badge-dark">§21 Certifikácia</span>
+                <span class="badge badge-dark">Požiarna bezpečnosť stavieb</span>
+            </div>
+        </header>
+
+        <!-- Technical Specification Bar -->
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Úroveň certifikácie</span>
+                <span class="meta-value">Certifikovaný inžinier Bosch EPS &amp; §21 elektrotechnik</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Séria ústredne</span>
+                <span class="meta-value">Modulárna ústredňa EPS Bosch (FPA / FP2200)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Protokol zbernice</span>
+                <span class="meta-value">LSN (Local Security Network) Improved</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Bezpečnostné normy</span>
+                <span class="meta-value">STN EN 54-2, EN 54-4, EN 54-13 &amp; VdS 2095</span>
+            </div>
+        </section>
+
+        <!-- Section 1: System Architecture & Hardware -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / Architektúra systému &amp; Hardvérová topológia</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <p class="mb-4">
+                    Elektronická požiarna signalizácia (EPS) patrí medzi kľúčové život zachraňujúce technické zariadenia budov, kde je nulová tolerancia zlyhania prísne vyžadovaná legislatívou. Predmetom projektu bol návrh adresovateľnej kruhovej topológie LSN, výpočet fyzikálnych parametrov slučky a záložných akumulátorov, naprogramovanie komplexnej matice väzieb príčin a následkov (Cause-and-Effect) v softvéri Bosch RPS/FSP a odborné oživenie s revíziou podľa §21.
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Podsystém</th>
+                                <th>Hardvér / Komponent</th>
+                                <th>Technická funkcia</th>
+                                <th>Normová &amp; bezpečnostná špecifikácia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Centrálna ústredňa</strong></td>
+                                <td data-label="Hardvér / Komponent">Modulárna ústredňa Bosch (FPA séria)</td>
+                                <td data-label="Technická funkcia">Centrálny procesor, napájací zdroj, LCD dotykový displej, slučkové karty</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Súlad s EN 54-2/4, dvojitá redundantná interná zbernica</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Multisenzorové hlásiče</strong></td>
+                                <td data-label="Hardvér / Komponent">Bosch FAP-425-DOTC</td>
+                                <td data-label="Technická funkcia">Duálna optická detekcia dymu + tepelný senzor + chemický senzor CO</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Inteligentná kompenzácia zaprášenia, potlačenie falošných poplachov od pary</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Tlačidlové hlásiče</strong></td>
+                                <td data-label="Hardvér / Komponent">Bosch séria FMC-420</td>
+                                <td data-label="Technická funkcia">Adresovateľné manuálne tlačidlá so sklíčkom a potvrdzovacou LED</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Vstavaný obojsmerný skratový izolátor, okamžitá prioritná aktivácia (0s)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Akustická &amp; Optická signalizácia</strong></td>
+                                <td data-label="Hardvér / Komponent">Bosch FLM-420 Slučkové sirény a majáky</td>
+                                <td data-label="Technická funkcia">Adresovateľné sirény napájané priamo zo slučky so xenónovým bleskom</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">EN 54-3 (akustické) a EN 54-23 (optické výstražné zariadenia)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Havarijné relé HVAC</strong></td>
+                                <td data-label="Hardvér / Komponent">Bezpotenciálový modul rozhrania</td>
+                                <td data-label="Technická funkcia">Automatické vypnutie vzduchotechniky a zatvorenie požiarnych klapiek</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Zamedzuje šíreniu toxického dymu potrubnými rozvodmi do ďalších požiarnych úsekov</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Ovládanie výťahov</strong></td>
+                                <td data-label="Hardvér / Komponent">Záchytné relé pre evakuáciu</td>
+                                <td data-label="Technická funkcia">Okamžitý zjazd výťahov do určeného evakuačného podlažia (prízemie)</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Otvorenie dverí po dojazde, zablokovanie privolania pasažiermi</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Odblokovanie dverí</strong></td>
+                                <td data-label="Hardvér / Komponent">Fail-Safe relé únikových ciest</td>
+                                <td data-label="Technická funkcia">Odpojenie napájania elektromagnetických zámkov a turniketov</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Zabezpečenie okamžitej voľnej únikovej cesty; pri výpadku napájania bezpečne otvorené</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Podsystém"><strong>Záložné akumulátory</strong></td>
+                                <td data-label="Hardvér / Komponent">2x 12V 28Ah Hermetické olovené (VRLA)</td>
+                                <td data-label="Technická funkcia">Teplotne kompenzovaný interný nabíjací modul ústredne</td>
+                                <td data-label="Normová &amp; bezpečnostná špecifikácia">24h kľudová prevádzka + 30 minút plného poplachu so všetkými sirénami</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Media Gallery Grid -->
+                <div class="case-study-media-grid">
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined">shield</span>
+                            </div>
+                            <span class="media-tech-tag">Bezpečnostné jadro // Bosch FPA</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Skriňa ústredne &amp; Systémová napájacia zbernica</h3>
+                            <p class="media-caption-desc">Modulárna montáž s riadiacimi jednotkami BCM-0000 pre batérie a dvojitými slučkovými kartami LSN 0300 A.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.5"/><path d="M7.76 16.24A5.98 5.98 0 0 1 6 12c0-1.66.67-3.16 1.76-4.24l1.42 1.42A3.98 3.98 0 0 0 8 12c0 1.1.45 2.1 1.17 2.83l-1.41 1.41zm8.48 0-1.42-1.42A3.98 3.98 0 0 0 16 12c0-1.1-.45-2.1-1.17-2.83l1.41-1.41A5.98 5.98 0 0 1 18 12c0 1.66-.67 3.16-1.76 4.24zM4.93 19.07A9.97 9.97 0 0 1 2 12c0-2.76 1.12-5.26 2.93-7.07l1.41 1.41A7.95 7.95 0 0 0 4 12c0 2.21.9 4.21 2.34 5.66l-1.41 1.41zm14.14 0-1.41-1.41A7.95 7.95 0 0 0 20 12c0-2.21-.9-4.21-2.34-5.66l1.41-1.41A9.97 9.97 0 0 1 22 12c0 2.76-1.12 5.26-2.93 7.07z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">LSN Slučka // FAP-425-DOTC</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Duálne optické / tepelné multisenzory</h3>
+                            <p class="media-caption-desc">Adresovateľné pätice hlásičov s integrovaným skratovým izolátorom zaisťujúce obojsmerný prenos dát pri prerušení vodiča.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Evakuačné prvky // EN 54-23</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Synchronizované sirény &amp; optické majáky</h3>
+                            <p class="media-caption-desc">Slučkové viac-tónové sirény s akustickým výkonom 95 dBA v 1 m a synchronizovanými zábleskami pre hlučné prevádzky.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container">
+                        <div class="media-preview-box">
+                            <div class="media-icon-badge">
+                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>
+                            </div>
+                            <span class="media-tech-tag">Riadenie technológií // Relé</span>
+                        </div>
+                        <div class="media-caption-box">
+                            <h3 class="media-caption-title">Blokovanie HVAC &amp; Uvoľnenie únikových dverí</h3>
+                            <p class="media-caption-desc">Fail-safe reléová matica priamo napojená na vzduchotechnické jednotky, rozvádzač výťahov a dverné elektromagnetické zámky.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Engineering Execution & Testing -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Inžinierske výpočty &amp; Programovacia logika</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="bento-card bento-card-purple">
+                <h3 class="font-display mb-3">Dimenzovanie slučky, Autonómia napájania &amp; Matica väzieb</h3>
+                <p class="mb-4">
+                    Nasadenie certifikovaného systému ochrany pred požiarmi vyžaduje exaktné matematické overenie parametrov ešte pred samotnou softvérovou konfiguráciou. Odpor slučky, kapacitné útlmy a vybíjacie charakteristiky akumulátorov musia spĺňať striktné normatívne kritériá.
+                </p>
+
+                <!-- Calculations Bento Grid -->
+                <div class="bento-grid mb-4">
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">1. Elektrické parametre &amp; Odpor slučky</h4>
+                        <p class="mb-3">
+                            Adresovateľná slučka využíva certifikovaný požiarny tienený kábel s krúteným párom ($2 \times 0.8\text{ mm}$, prierez $S = 0.5\text{ mm}^2$). Namerané hodnoty:
+                        </p>
+                        <ul class="specs-list" style="margin-bottom: 0;">
+                            <li class="specs-item">
+                                <span class="specs-label">Merný odpor:</span>
+                                <span class="specs-value">$\approx 36.6\,\Omega/\text{km}$ na jeden vodič ($73.2\,\Omega/\text{km}$ slučka)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Celková dĺžka slučky:</span>
+                                <span class="specs-value">720 metrov uzavretej kruhovej slučky</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Odpor slučky (tam a späť):</span>
+                                <span class="specs-value">$R_{\text{loop}} = 26.4\,\Omega$ ($< 50\,\Omega$ maximálny limit výrobcu)</span>
+                            </li>
+                            <li class="specs-item">
+                                <span class="specs-label">Kapacita slučky:</span>
+                                <span class="specs-value">$C_{\text{loop}} = 82\text{ nF}$ ($< 500\text{ nF}$ medzná hodnota LSN)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
+                        <h4 class="font-technical mb-2 text-purple">2. Dimenzovanie záložných batérií (EN 54-4)</h4>
+                        <p class="mb-3">
+                            Zálohovanie sieťového napájania 230V AC zabezpečujú dva sériovo spojené akumulátory 12V 28Ah VRLA (24V DC menovité napätie). Výpočtový vzorec:
+                        </p>
+                        <div class="code-window mb-2" style="padding: 10px;">
+                            <code class="font-code" style="color: #60a5fa;">C_potrebné = 1.25 × (I_kľudový × 24h + I_poplachový × 0.5h)</code>
+                        </div>
+                        <p class="font-code" style="font-size: 13px; color: var(--color-text-muted);">
+                            • $I_{\text{kľudový}} = 380\text{ mA}$ (CPU ústredne + 64 ks LSN hlásičov + moduly rozhraní)<br>
+                            • $I_{\text{poplachový}} = 2.45\text{ A}$ (Aktivované sirény, majáky a reléové karty)<br>
+                            • $C_{\text{potrebné}} = 1.25 \times (0.38 \times 24 + 2.45 \times 0.5) = 1.25 \times (9.12 + 1.225) = \mathbf{12.93\text{ Ah}}$<br>
+                            • Inštalovaná kapacita: $\mathbf{28\text{ Ah}}$ — Bezpečnostná rezerva: <strong>&gt;216%</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Programming Matrix Description -->
+                <h4 class="font-technical mb-2">3. Programovacia matica väzieb Cause-and-Effect (Bosch RPS / FSP)</h4>
+                <p class="mb-3">
+                    V programovacom prostredí Bosch RPS boli vstupy a výstupy usporiadané do dvojstupňovej poplachovej logiky:
+                </p>
+
+                <div class="tech-table-wrapper">
+                    <table class="tech-table tech-table-stack font-code">
+                        <thead>
+                            <tr>
+                                <th>Spúšťací vstup</th>
+                                <th>Časové oneskorenie / Podmienka</th>
+                                <th>Primárna akcia (Ústredňa)</th>
+                                <th>Sekundárna akcia (Ovládanie technológií)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Spúšťací vstup">Jeden automatický dymový hlásič (Typ A)</td>
+                                <td data-label="Časové oneskorenie / Podmienka">Overovacie okno: oneskorenie 30s</td>
+                                <td data-label="Primárna akcia (Ústredňa)">Bzučiak na ústredni + zobrazenie miesta na LCD</td>
+                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Bez evakuácie budovy (ochrana pred planým poplachom)</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Spúšťací vstup">Potvrdený dym / teplota (Typ B)</td>
+                                <td data-label="Časové oneskorenie / Podmienka">Dva hlásiče alebo trvalý signál &gt;60s</td>
+                                <td data-label="Primárna akcia (Ústredňa)">Aktivácia všetkých sirén a majákov v zóne</td>
+                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Vypnutie HVAC ventilácie; Zjazd výťahov na prízemie</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Spúšťací vstup">Manuálne tlačidlo požiaru (Pull Station)</td>
+                                <td data-label="Časové oneskorenie / Podmienka"><strong>Okamžitá 0-sekundová priorita</strong></td>
+                                <td data-label="Primárna akcia (Ústredňa)">Okamžitý všeobecný evakuačný poplach budovy</td>
+                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Vypnutie HVAC + Otvorenie únikových dverí + Prenos na HZS</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Spúšťací vstup">Porucha: skrat alebo prerušenie slučky</td>
+                                <td data-label="Časové oneskorenie / Podmienka">Okamžitá hardvérová detekcia</td>
+                                <td data-label="Primárna akcia (Ústredňa)">Zaslanie poruchového hlásenia na dispečing</td>
+                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Izolátory rozpoja chybný úsek do 100 ms; napájanie z dvoch strán</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Callout Box: §21 Certification -->
+                <div class="callout-box">
+                    <div class="callout-header">
+                        <span class="material-symbols-outlined">verified</span>
+                        <span>Certifikovaná elektroinštalácia (§21 Odborná spôsobilosť)</span>
+                    </div>
+                    <p class="callout-desc">
+                        Ako elektrotechnik s osvedčením podľa <strong>§21 (Odborná spôsobilosť v elektrotechnike)</strong> boli všetky elektrické rozvody realizované podľa najvyšších priemyselných štandardov: nehorľavé bezhalogénové káblové trasy, samostatný prívod 230V istený 10A B-ističom, ochranné pospájanie na ekvipotenciálnu prípojnicu s prechodovým odporom $R_{\text{PE}} < 0.1\,\Omega$ a striktné oddelenie slaboprúdových požiarnych vedení od silových trás pre vylúčenie elektromagnetickej indukcie.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Commissioning & Validation Protocols -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Oživenie systému &amp; Skúšobné protokoly</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="mb-section scroll-reveal delay-100">
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 01</span>
+                        <h3 class="challenge-title">Skúška skratových izolátorov a celistvosti kruhovej slučky</h3>
+                    </div>
+                    <span class="badge badge-dark">Integrita podľa EN 54-13</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Simulácia poruchy
+                        </div>
+                        <p>
+                            Počas plnej kľudovej prevádzky bol simulovaný priamy skrat s nulovým odporom medzi kladným a záporným vodičom slučky medzi hlásičom #24 a požiarnym tlačidlom #25.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Automatická reakcia izolácie
+                        </div>
+                        <p>
+                            Vstavané skratové izolátory LSN v susedných prvkoch zareagovali do <strong>85 milisekúnd</strong> a poškodený úsek odpojili. Ústredňa okamžite začala napájať slučku obojsmerne z oboch koncov, vďaka čomu zostala zachovaná 100% komunikácia so všetkými 64 adresnými prvkami.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 02</span>
+                        <h3 class="challenge-title">Skúška certifikovaným aerosólom a termickým generátorom</h3>
+                    </div>
+                    <span class="badge badge-dark">Overenie senzorov</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Fyzická stimulácia
+                        </div>
+                        <p>
+                            Aplikáciou certifikovaného skúšobného dymu Solo A5 a kalibrovanej teplovzdušnej hlavice Solo 461 bola preverená odozva každého hlásiča, citlivosť optickej komory a správnosť adresácie podľa projektovej dokumentácie.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Kalibrácia a správnosť adries
+                        </div>
+                        <p>
+                            Všetky hlásiče FAP-425-DOTC zareagovali v rozmedzí <strong>12 až 18 sekúnd</strong>. Fyzická adresa hlásiča a textový popis miestnosti na displeji ústredne presne zodpovedali stavebnému výkresu. Úroveň zaprášenia komôr bola preverená na hodnote &lt;5%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">TEST 03</span>
+                        <h3 class="challenge-title">Zopnutie bezpečnostných relé &amp; Odstavenie technológií</h3>
+                    </div>
+                    <span class="badge badge-dark">Riadenie nadväzných systémov</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Viacsystémový poplach
+                        </div>
+                        <p>
+                            Aktiváciou všeobecného poplachu bolo preverené súčasné zopnutie všetkých výstupných relé ovládajúcich požiarne klapky vzduchotechniky, rozvádzač výťahov a napájače únikových dverí.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Bezpečné vybavenie (Fail-Safe)
+                        </div>
+                        <p>
+                            Vzduchotechnické jednotky boli odstavené do <strong>0.4 sekundy</strong>; výťahy zjazdili na prízemie a zotrvali s otvorenými dverami; elektromagnetické zámky dverí stratili napätie a sprístupnili voľný únik z budovy bez prekážok.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Operational Verification Terminal -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Protokol o odbornej prehliadke a skúške</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-card terminal-card scroll-reveal delay-100 mb-section">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <span class="terminal-path">technician@bosch-fpa:~/revizia$ ./spustit_audit_poziarnej_bezpecnosti.sh</span>
+            </div>
+            <div>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [§21_SPÔSOBILOSŤ] Elektroinštalácia preverená, prechodový odpor PE vodiča R_pe = 0.04 Ohm (&lt; 0.1 Ohm)</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ODPOR_SLUČKY] Nameraný celkový odpor slučky #1: 26.4 Ohm | Izolačný stav voči zemi: &gt; 50 MOhm [VYHOVUJE]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [TEST_IZOLÁTORA] Čas vybavenia obojsmerného skratového izolátora: 85 ms | Obojstranné napájanie [VYHOVUJE]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [AUTONÓMIA_AKU] Kľudový prúd: 380 mA | Poplachový prúd: 2.45 A | Vypočítaná kapacita: 12.93 Ah &lt; 28 Ah [VYHOVUJE]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [RELÉ_HVAC] Havarijný kontakt vypnutia VZT zopnutý | Požiarne klapky uzatvorené [POTVRDENÉ]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ZJAZD_VÝŤAHOV] Evakuačné relé zjazdu na prízemie zopnuté | Dvere trvalo otvorené [POTVRDENÉ]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ÚNIKOVÉ_DVERE] Fail-safe elektromagnety bez napätia | Voľná evakuačná cesta zaistená [POTVRDENÉ]</p>
+                <p class="terminal-line"><span class="text-green">[✓]</span> [ODOVZDANIE_DO_PREVÁDZKY] Správa o východiskovej revízii a funkčnej skúške úspešne vystavená pod licenciou §21</p>
+                <p class="cursor-blink">_</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. Všetky práva vyhradené.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>
