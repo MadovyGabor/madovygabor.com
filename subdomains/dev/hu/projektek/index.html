@@ -89,7 +89,7 @@
     },
     {
       "@type": "TechArticle",
-      "name": "Bosch EPS Címezhető Tűzjelző Rendszer Programozás & Életvédelmi Integráció",
+      "name": "Tűzjelzés és életvédelem: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany",
       "description": "Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés."
     }
@@ -163,7 +163,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Flagship Multiplatform Architektúra</h2>
+            <h2 class="font-technical section-header-sub">01 / Kliensalkalmazások &amp; Multiplatform Architektúra</h2>
             <div class="section-line"></div>
         </div>
 
@@ -239,11 +239,11 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend &amp; Infrastruktúra</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend Rendszerek &amp; Szoftverinfrastruktúra</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-grid scroll-reveal delay-100">
+        <section class="bento-grid mb-section scroll-reveal delay-100">
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
@@ -319,7 +319,14 @@
                     </a>
                 </div>
             </div>
+        </section>
 
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Fizikai Hálózati Infrastruktúra &amp; Tűzvédelem (EPS)</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid scroll-reveal delay-100">
             <!-- Project 3: Campus Network Case Study -->
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
@@ -331,18 +338,18 @@
                         <span class="badge badge-dark badge-size-10">Infrastruktúra</span>
                     </div>
                     <p class="projects-card-desc">
-                        Egy újonnan épült oktatási intézmény teljes hálózatának kiépítése: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai), Wi-Fi 6 és 8 kamerás Hikvision rendszer. A kamerák internetelérését az átjáró tiltja.
+                        Zöldmezős hálózat egy új oktatási intézményben: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai LAN), Wi-Fi 6 és 8 IP kamera 250 W-os PoE keretről, ~80 W terheléssel.
                     </p>
                     <p class="projects-card-desc">
-                        A rögzítési streamek a <strong>PoE switchen</strong> maradnak, nem haladnak át az ER605 routeren. A helyszín Brnóból, <strong>WireGuard split tunnelen</strong> keresztül kezelhető, a dolgozók pedig megbízható tanúsítvánnyal, belső HTTPS címen érik el az NVR-t.
+                        A rögzítési streamek a <strong>PoE switch backplane-jén</strong> maradnak. Kétszintű távmenedzsment: Omada felhő a napi ellenőrzéshez, <strong>WireGuard split tunnel</strong> Brnóból az izolált alhálózatokhoz.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
                         <span class="badge badge-dark badge-bg-dark">WireGuard</span>
                         <span class="badge badge-dark badge-bg-dark">VLAN szegmentáció</span>
-                        <span class="badge badge-dark badge-bg-dark">PoE tervezés</span>
                         <span class="badge badge-dark badge-bg-dark">TP-Link Omada</span>
+                        <span class="badge badge-dark badge-bg-dark">TL-SG3452</span>
                     </div>
                     <a href="/hu/projektek/halozat-esettanulmany" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
@@ -358,23 +365,23 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">Bosch EPS Címezhető Tűzjelző &amp; Életvédelmi Rendszerintegráció</h3>
+                            <h3 class="font-technical projects-card-title-sm">Tűzjelzés és életvédelem: Bosch AVENAR 2000</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Életvédelem</span>
                     </div>
                     <p class="projects-card-desc">
-                        <strong>Bosch Moduláris Tűzjelző Központra (FPA)</strong> épülő címezhető tűzjelző rendszer tervezése, programozása és minősített beüzemelése. Multiszenzoros optikai/termikus/kémiai érzékelők, huroktáplált hang- és fényjelzők, valamint hibabiztos (fail-safe) relé-reteszelések integrálása.
+                        <strong>Bosch AVENAR panel 2000</strong> elektronikus tűzjelző rendszer egy oktatási intézményben: zárt LSN hurok, hat funkcionális zóna helyiségnevekkel a kijelzőn, FMC-420RW kézi jelzésadók.
                     </p>
                     <p class="projects-card-desc">
-                        Ellenőrzött hurokellenállás ($R_{\text{loop}} = 26.4\,\Omega$), kiszámított <strong>24h + 30p akkumulátoros autonómia</strong> az EN 54-4 szerint, kétlépcsős késleltetési mátrixok a Bosch RPS-ben, és hivatalos villamossági beüzemelés <strong>§21 szakmai jogosultság</strong> alapján.
+                        Az <strong>RML 0008 A</strong> relék vezérlik a fail-safe ajtónyitást, a tűzeseti lekapcsolást és a GSM riasztást. Beüzemelés: sínsorrend-ellenőrzés, <strong>T-tap</strong> hibakeresés és EN 54-4 akkumulátor-méretezés (24 h + 30 perc).
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">Bosch EPS</span>
-                        <span class="badge badge-dark badge-bg-dark">§21 Tanúsítvány</span>
-                        <span class="badge badge-dark badge-bg-dark">LSN Hurok</span>
-                        <span class="badge badge-dark badge-bg-dark">Relé Logika</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch AVENAR</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN hurok</span>
+                        <span class="badge badge-dark badge-bg-dark">EN 54</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch tanúsítvány</span>
                     </div>
                     <a href="/hu/projektek/eps-esettanulmany" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>

@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Programovanie adresovateľnej EPS Bosch & integrácia systémov | Gabriel Madový</title>
+    <title>Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000 | Gabriel Madový</title>
     <meta name="description"
-        content="Technická prípadová štúdia programovania adresovateľnej požiarnej signalizácie Bosch EPS, topológie slučiek, reléovej logiky a certifikovanej inštalácie podľa §21.">
+        content="Prípadová štúdia: inštalácia, programovanie slučky LSN a integrácia EPS na ústredni EPS Bosch AVENAR panel 2000 pre vzdelávacie zariadenie v Tvrdošovciach. Zónovanie, riadiaca matica, riešenie problémov a dimenzovanie batérií podľa EN 54-4.">
     <meta name="keywords"
-        content="Bosch EPS, Požiarna signalizácia, Programovanie slučiek, Reléová logika, §21 Certifikácia, Požiarna bezpečnosť, Gabriel Madový">
+        content="Bosch AVENAR, LSN, EPS, požiarna signalizácia, EN 54, RML 0008 A, FMC-420RW, riadiaca matica, RPS, Gabriel Madový">
     <meta name="author" content="Gabriel Madový">
     <meta name="robots" content="index, follow">
 
@@ -22,9 +22,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="sk_SK" />
     <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
-    <meta property="og:title" content="Programovanie adresovateľnej EPS Bosch & integrácia systémov" />
+    <meta property="og:title" content="Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000" />
     <meta property="og:description"
-        content="Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21." />
+        content="Uzavretý kruh LSN, funkčné zónovanie, fail-safe reléové riadenie a dimenzovanie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -49,8 +49,8 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia#article",
-  "headline": "Programovanie adresovateľnej EPS Bosch & integrácia bezpečnostných systémov",
-  "description": "Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21.",
+  "headline": "Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000",
+  "description": "Uzavretý kruh LSN, funkčné zónovanie, fail-safe reléové riadenie a dimenzovanie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -61,7 +61,7 @@
     "@type": "Person",
     "name": "Gabriel Madový"
   },
-  "keywords": "Bosch EPS, Požiarna signalizácia, Programovanie slučiek, Reléová logika, §21 Certifikácia, Požiarna ochrana"
+  "keywords": "Bosch AVENAR, LSN, EPS, požiarna signalizácia, EN 54, RML 0008 A, FMC-420RW, riadiaca matica, RPS, Gabriel Madový"
 }
 </script>
 </head>
@@ -122,408 +122,517 @@
 
     <main class="container">
 
-        <!-- Case Study Header / Hero -->
+        <!-- Hero -->
         <header class="case-study-header scroll-reveal">
             <a href="../projekty" class="case-study-back-link">
                 <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> SPÄŤ NA PROJEKTY
             </a>
-            <h1 class="case-study-title font-display">Programovanie adresovateľnej EPS Bosch &amp; integrácia bezpečnostných systémov</h1>
-            <p class="case-study-subtitle font-technical">
-                Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21.
+            <h1 class="case-study-title font-display">Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000</h1>
+            <p class="case-study-subtitle">
+                Systém ochrany života — vzdelávacie zariadenie (materská a základná škola), Tvrdošovce, Slovensko
             </p>
             <div class="case-study-meta-bar">
-                <span class="badge badge-purple">Bosch EPS</span>
-                <span class="badge badge-dark">Programovanie slučiek</span>
-                <span class="badge badge-dark">Reléová logika</span>
-                <span class="badge badge-dark">§21 Certifikácia</span>
-                <span class="badge badge-dark">Požiarna bezpečnosť stavieb</span>
+                <span class="badge badge-dark">Bosch AVENAR</span>
+                <span class="badge badge-dark">Ústredňa EPS</span>
+                <span class="badge badge-dark">LSN slučka</span>
+                <span class="badge badge-dark">EN 54</span>
+                <span class="badge badge-dark">Bosch certifikát</span>
+                <span class="badge badge-dark">§21</span>
             </div>
         </header>
 
-        <!-- Technical Specification Bar -->
         <section class="case-study-meta-grid scroll-reveal delay-100">
             <div class="meta-item">
-                <span class="meta-label">Úroveň certifikácie</span>
-                <span class="meta-value">Certifikovaný inžinier Bosch EPS &amp; §21 elektrotechnik</span>
+                <span class="meta-label">Rola</span>
+                <span class="meta-value">Inštalácia, programovanie a uvedenie do prevádzky</span>
             </div>
             <div class="meta-item">
-                <span class="meta-label">Séria ústredne</span>
-                <span class="meta-value">Modulárna ústredňa EPS Bosch (FPA / FP2200)</span>
+                <span class="meta-label">Lokalita</span>
+                <span class="meta-value">Vzdelávacie zariadenie, Tvrdošovce (SK)</span>
             </div>
             <div class="meta-item">
-                <span class="meta-label">Protokol zbernice</span>
-                <span class="meta-value">LSN (Local Security Network) Improved</span>
+                <span class="meta-label">Ústredňa EPS</span>
+                <span class="meta-value">Bosch AVENAR panel 2000 · RPS</span>
             </div>
             <div class="meta-item">
-                <span class="meta-label">Bezpečnostné normy</span>
-                <span class="meta-value">STN EN 54-2, EN 54-4, EN 54-13 &amp; VdS 2095</span>
+                <span class="meta-label">Stav</span>
+                <span class="meta-value">Uvedené do prevádzky a otestované, 2026</span>
             </div>
         </section>
 
-        <!-- Section 1: System Architecture & Hardware -->
         <div class="section-header scroll-reveal">
-            <h2 class="font-technical section-header-sub">01 / Architektúra systému &amp; Hardvérová topológia</h2>
+            <h2 class="font-technical section-header-sub">01 / Prehľad a normy</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="mb-section scroll-reveal delay-100">
-            <div class="bento-card bento-card-purple">
-                <p class="mb-4">
-                    Elektronická požiarna signalizácia (EPS) patrí medzi kľúčové život zachraňujúce technické zariadenia budov, kde je nulová tolerancia zlyhania prísne vyžadovaná legislatívou. Predmetom projektu bol návrh adresovateľnej kruhovej topológie LSN, výpočet fyzikálnych parametrov slučky a záložných akumulátorov, naprogramovanie komplexnej matice väzieb príčin a následkov (Cause-and-Effect) v softvéri Bosch RPS/FSP a odborné oživenie s revíziou podľa §21.
-                </p>
-
-                <div class="tech-table-wrapper">
-                    <table class="tech-table tech-table-stack font-code">
-                        <thead>
-                            <tr>
-                                <th>Podsystém</th>
-                                <th>Hardvér / Komponent</th>
-                                <th>Technická funkcia</th>
-                                <th>Normová &amp; bezpečnostná špecifikácia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Centrálna ústredňa</strong></td>
-                                <td data-label="Hardvér / Komponent">Modulárna ústredňa Bosch (FPA séria)</td>
-                                <td data-label="Technická funkcia">Centrálny procesor, napájací zdroj, LCD dotykový displej, slučkové karty</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Súlad s EN 54-2/4, dvojitá redundantná interná zbernica</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Multisenzorové hlásiče</strong></td>
-                                <td data-label="Hardvér / Komponent">Bosch FAP-425-DOTC</td>
-                                <td data-label="Technická funkcia">Duálna optická detekcia dymu + tepelný senzor + chemický senzor CO</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Inteligentná kompenzácia zaprášenia, potlačenie falošných poplachov od pary</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Tlačidlové hlásiče</strong></td>
-                                <td data-label="Hardvér / Komponent">Bosch séria FMC-420</td>
-                                <td data-label="Technická funkcia">Adresovateľné manuálne tlačidlá so sklíčkom a potvrdzovacou LED</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Vstavaný obojsmerný skratový izolátor, okamžitá prioritná aktivácia (0s)</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Akustická &amp; Optická signalizácia</strong></td>
-                                <td data-label="Hardvér / Komponent">Bosch FLM-420 Slučkové sirény a majáky</td>
-                                <td data-label="Technická funkcia">Adresovateľné sirény napájané priamo zo slučky so xenónovým bleskom</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">EN 54-3 (akustické) a EN 54-23 (optické výstražné zariadenia)</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Havarijné relé HVAC</strong></td>
-                                <td data-label="Hardvér / Komponent">Bezpotenciálový modul rozhrania</td>
-                                <td data-label="Technická funkcia">Automatické vypnutie vzduchotechniky a zatvorenie požiarnych klapiek</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Zamedzuje šíreniu toxického dymu potrubnými rozvodmi do ďalších požiarnych úsekov</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Ovládanie výťahov</strong></td>
-                                <td data-label="Hardvér / Komponent">Záchytné relé pre evakuáciu</td>
-                                <td data-label="Technická funkcia">Okamžitý zjazd výťahov do určeného evakuačného podlažia (prízemie)</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Otvorenie dverí po dojazde, zablokovanie privolania pasažiermi</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Odblokovanie dverí</strong></td>
-                                <td data-label="Hardvér / Komponent">Fail-Safe relé únikových ciest</td>
-                                <td data-label="Technická funkcia">Odpojenie napájania elektromagnetických zámkov a turniketov</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">Zabezpečenie okamžitej voľnej únikovej cesty; pri výpadku napájania bezpečne otvorené</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Podsystém"><strong>Záložné akumulátory</strong></td>
-                                <td data-label="Hardvér / Komponent">2x 12V 28Ah Hermetické olovené (VRLA)</td>
-                                <td data-label="Technická funkcia">Teplotne kompenzovaný interný nabíjací modul ústredne</td>
-                                <td data-label="Normová &amp; bezpečnostná špecifikácia">24h kľudová prevádzka + 30 minút plného poplachu so všetkými sirénami</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Inštalácia, programovanie slučky LSN a integrácia elektronickej požiarnej signalizácie (EPS) vo vzdelávacom zariadení (materská a základná škola) v Tvrdošovciach. Ústredňou EPS je Bosch AVENAR panel 2000; držiaky dverí, požiarny rozvádzač a GSM komunikátor ovláda reléový modul RML 0008 A na vnútornej lište ústredne.</p>
+            </div>
+            <ul class="cs-list">
+                <li><strong>Čitateľné poplachy:</strong> ústredňa zobrazuje funkčné zóny a názvy miestností, nie surové adresy zbernice LSN.</li>
+                <li><strong>Fail-safe ovládanie:</strong> únikové dvere sa uvoľnia pri poplachu aj pri výpadku napájania.</li>
+                <li><strong>Dimenzovanie batérií podľa EN 54-4:</strong> 24 h pohotovosť plus 30 min poplach.</li>
+            </ul>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Norma</th>
+                            <th>Oblasť</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Norma"><strong>STN EN 54-2</strong></td>
+                            <td data-label="Oblasť">Ústredne EPS</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Norma"><strong>STN EN 54-3</strong></td>
+                            <td data-label="Oblasť">Sirény, akustické parametre</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Norma"><strong>STN EN 54-4</strong></td>
+                            <td data-label="Oblasť">Napájacie zdroje a dimenzovanie batérií</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Norma"><strong>DIN 33404-3</strong></td>
+                            <td data-label="Oblasť">Evakuačný tón: klesajúci sweep 1200 → 500 Hz za 1 s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="cs-subhead">Certifikácie a odborná spôsobilosť</h3>
+            <div class="tier-grid qual-grid">
+                <div class="tier-card tier-purple">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Bosch Certified Specialist</h3>
+                        <span class="badge badge-dark">Výrobca</span>
+                    </div>
+                    <p class="tier-use">AVENAR panel 2000/8000 — programovanie, uvedenie do prevádzky a diagnostika.</p>
                 </div>
-
-                <!-- Media Gallery Grid -->
-                <div class="case-study-media-grid">
-                    <div class="media-container">
-                        <div class="media-preview-box">
-                            <div class="media-icon-badge">
-                                <span class="material-symbols-outlined">shield</span>
-                            </div>
-                            <span class="media-tech-tag">Bezpečnostné jadro // Bosch FPA</span>
-                        </div>
-                        <div class="media-caption-box">
-                            <h3 class="media-caption-title">Skriňa ústredne &amp; Systémová napájacia zbernica</h3>
-                            <p class="media-caption-desc">Modulárna montáž s riadiacimi jednotkami BCM-0000 pre batérie a dvojitými slučkovými kartami LSN 0300 A.</p>
-                        </div>
+                <div class="tier-card tier-purple">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Odborná spôsobilosť §21</h3>
+                        <span class="badge badge-dark">Legislatíva</span>
                     </div>
-
-                    <div class="media-container">
-                        <div class="media-preview-box">
-                            <div class="media-icon-badge">
-                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.5"/><path d="M7.76 16.24A5.98 5.98 0 0 1 6 12c0-1.66.67-3.16 1.76-4.24l1.42 1.42A3.98 3.98 0 0 0 8 12c0 1.1.45 2.1 1.17 2.83l-1.41 1.41zm8.48 0-1.42-1.42A3.98 3.98 0 0 0 16 12c0-1.1-.45-2.1-1.17-2.83l1.41-1.41A5.98 5.98 0 0 1 18 12c0 1.66-.67 3.16-1.76 4.24zM4.93 19.07A9.97 9.97 0 0 1 2 12c0-2.76 1.12-5.26 2.93-7.07l1.41 1.41A7.95 7.95 0 0 0 4 12c0 2.21.9 4.21 2.34 5.66l-1.41 1.41zm14.14 0-1.41-1.41A7.95 7.95 0 0 0 20 12c0-2.21-.9-4.21-2.34-5.66l1.41-1.41A9.97 9.97 0 0 1 22 12c0 2.76-1.12 5.26-2.93 7.07z"/></svg></span>
-                            </div>
-                            <span class="media-tech-tag">LSN Slučka // FAP-425-DOTC</span>
-                        </div>
-                        <div class="media-caption-box">
-                            <h3 class="media-caption-title">Duálne optické / tepelné multisenzory</h3>
-                            <p class="media-caption-desc">Adresovateľné pätice hlásičov s integrovaným skratovým izolátorom zaisťujúce obojsmerný prenos dát pri prerušení vodiča.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container">
-                        <div class="media-preview-box">
-                            <div class="media-icon-badge">
-                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
-                            </div>
-                            <span class="media-tech-tag">Evakuačné prvky // EN 54-23</span>
-                        </div>
-                        <div class="media-caption-box">
-                            <h3 class="media-caption-title">Synchronizované sirény &amp; optické majáky</h3>
-                            <p class="media-caption-desc">Slučkové viac-tónové sirény s akustickým výkonom 95 dBA v 1 m a synchronizovanými zábleskami pre hlučné prevádzky.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container">
-                        <div class="media-preview-box">
-                            <div class="media-icon-badge">
-                                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>
-                            </div>
-                            <span class="media-tech-tag">Riadenie technológií // Relé</span>
-                        </div>
-                        <div class="media-caption-box">
-                            <h3 class="media-caption-title">Blokovanie HVAC &amp; Uvoľnenie únikových dverí</h3>
-                            <p class="media-caption-desc">Fail-safe reléová matica priamo napojená na vzduchotechnické jednotky, rozvádzač výťahov a dverné elektromagnetické zámky.</p>
-                        </div>
-                    </div>
+                    <p class="tier-use">Vyhláška 508/2009 Z. z. — odborná spôsobilosť v elektrotechnike.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Engineering Execution & Testing -->
         <div class="section-header scroll-reveal">
-            <h2 class="font-technical section-header-sub">02 / Inžinierske výpočty &amp; Programovacia logika</h2>
+            <h2 class="font-technical section-header-sub">02 / Hardvér a topológia</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="mb-section scroll-reveal delay-100">
-            <div class="bento-card bento-card-purple">
-                <h3 class="font-display mb-3">Dimenzovanie slučky, Autonómia napájania &amp; Matica väzieb</h3>
-                <p class="mb-4">
-                    Nasadenie certifikovaného systému ochrany pred požiarmi vyžaduje exaktné matematické overenie parametrov ešte pred samotnou softvérovou konfiguráciou. Odpor slučky, kapacitné útlmy a vybíjacie charakteristiky akumulátorov musia spĺňať striktné normatívne kritériá.
-                </p>
-
-                <!-- Calculations Bento Grid -->
-                <div class="bento-grid mb-4">
-                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
-                        <h4 class="font-technical mb-2 text-purple">1. Elektrické parametre &amp; Odpor slučky</h4>
-                        <p class="mb-3">
-                            Adresovateľná slučka využíva certifikovaný požiarny tienený kábel s krúteným párom ($2 \times 0.8\text{ mm}$, prierez $S = 0.5\text{ mm}^2$). Namerané hodnoty:
-                        </p>
-                        <ul class="specs-list" style="margin-bottom: 0;">
-                            <li class="specs-item">
-                                <span class="specs-label">Merný odpor:</span>
-                                <span class="specs-value">$\approx 36.6\,\Omega/\text{km}$ na jeden vodič ($73.2\,\Omega/\text{km}$ slučka)</span>
-                            </li>
-                            <li class="specs-item">
-                                <span class="specs-label">Celková dĺžka slučky:</span>
-                                <span class="specs-value">720 metrov uzavretej kruhovej slučky</span>
-                            </li>
-                            <li class="specs-item">
-                                <span class="specs-label">Odpor slučky (tam a späť):</span>
-                                <span class="specs-value">$R_{\text{loop}} = 26.4\,\Omega$ ($< 50\,\Omega$ maximálny limit výrobcu)</span>
-                            </li>
-                            <li class="specs-item">
-                                <span class="specs-label">Kapacita slučky:</span>
-                                <span class="specs-value">$C_{\text{loop}} = 82\text{ nF}$ ($< 500\text{ nF}$ medzná hodnota LSN)</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-span-6 bento-card" style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border);">
-                        <h4 class="font-technical mb-2 text-purple">2. Dimenzovanie záložných batérií (EN 54-4)</h4>
-                        <p class="mb-3">
-                            Zálohovanie sieťového napájania 230V AC zabezpečujú dva sériovo spojené akumulátory 12V 28Ah VRLA (24V DC menovité napätie). Výpočtový vzorec:
-                        </p>
-                        <div class="code-window mb-2" style="padding: 10px;">
-                            <code class="font-code" style="color: #60a5fa;">C_potrebné = 1.25 × (I_kľudový × 24h + I_poplachový × 0.5h)</code>
-                        </div>
-                        <p class="font-code" style="font-size: 13px; color: var(--color-text-muted);">
-                            • $I_{\text{kľudový}} = 380\text{ mA}$ (CPU ústredne + 64 ks LSN hlásičov + moduly rozhraní)<br>
-                            • $I_{\text{poplachový}} = 2.45\text{ A}$ (Aktivované sirény, majáky a reléové karty)<br>
-                            • $C_{\text{potrebné}} = 1.25 \times (0.38 \times 24 + 2.45 \times 0.5) = 1.25 \times (9.12 + 1.225) = \mathbf{12.93\text{ Ah}}$<br>
-                            • Inštalovaná kapacita: $\mathbf{28\text{ Ah}}$ — Bezpečnostná rezerva: <strong>&gt;216%</strong>.
-                        </p>
-                    </div>
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Funkcia</th>
+                            <th>Zariadenie</th>
+                            <th>Poznámka</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Ústredňa EPS</strong></td>
+                            <td data-label="Zariadenie">Bosch AVENAR panel 2000</td>
+                            <td data-label="Poznámka">Node 1.1, programovaná v RPS. Dotykový displej s mapou zón a kontaktmi.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Napájanie</strong></td>
+                            <td data-label="Zariadenie">FPE-8000-BCM</td>
+                            <td data-label="Poznámka">Riadenie batérií na pozícii 1 lišty. 24 V DC, 2× 12 V 26 Ah SLA v sérii.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Modul LSN linky</strong></td>
+                            <td data-label="Zariadenie">LSN 0300 A</td>
+                            <td data-label="Poznámka">Modul na lište. LSN linka zapojená ako uzavretá slučka.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Reléové výstupy</strong></td>
+                            <td data-label="Zariadenie">Bosch RML 0008 A</td>
+                            <td data-label="Poznámka">8-reléový modul na vnútornej lište ústredne (nie periféria na zbernici LSN).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Hlásiče</strong></td>
+                            <td data-label="Zariadenie">FAP-O420, FAP-425</td>
+                            <td data-label="Poznámka">Optické dymové hlásiče.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Majáky</strong></td>
+                            <td data-label="Zariadenie">FNS-420-R</td>
+                            <td data-label="Poznámka">Optické signalizačné zariadenia LSN.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Sirény</strong></td>
+                            <td data-label="Zariadenie">FNM-420U-A-BS</td>
+                            <td data-label="Poznámka">Sirénové pätice LSN.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Tlačidlové hlásiče</strong></td>
+                            <td data-label="Zariadenie">Bosch FMC-420RW</td>
+                            <td data-label="Poznámka">Adresovateľné, na povrch. Resetovací mechanizmus, stavová LED, horné sklopné veko otvárané servisným kľúčom.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>DC-DC menič</strong></td>
+                            <td data-label="Zariadenie">Mean Well DDR-15G-12</td>
+                            <td data-label="Poznámka">24 V → 12 V, galvanicky oddelený, na DIN lištu. Napája GSM komunikátor.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Komunikátor</strong></td>
+                            <td data-label="Zariadenie">GSM / SMS modul</td>
+                            <td data-label="Poznámka">Umiestnený v kovovej skrini ústredne.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <figure class="topology-figure">
+                <div class="topology-scroll">
+                    <svg class="topology-svg" viewBox="0 0 1000 545" role="img" aria-labelledby="ep-title ep-desc" xmlns="http://www.w3.org/2000/svg"><title id="ep-title">Topológia EPS</title><desc id="ep-desc">Ústredňa Bosch AVENAR panel 2000 s tromi modulmi na lište v poradí: riadenie batérií FPE-8000-BCM, slučkový modul LSN 0300 A a reléový modul RML 0008 A. Uzavretý kruh LSN obsahuje hlásiče, majáky, sirénové pätice a tlačidlové hlásiče. Reléový modul ovláda magnetické držiaky dverí, vypínaciu spúšť hlavného rozvádzača a GSM komunikátor napájaný z AUX zbernice cez galvanicky oddelený DC-DC menič.</desc><defs><marker id="ep-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ep-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ep-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker></defs><rect x="20" y="20" width="300" height="230" rx="10" class="tp-group"/><text x="38" y="48" class="tp-name" text-anchor="start">Bosch AVENAR panel 2000</text><text x="38" y="68" class="tp-foot" text-anchor="start">VNÚTORNÁ LIŠTA</text><rect x="38" y="78" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="99" class="tp-name tp-sm" text-anchor="start">FPE-8000-BCM</text><text x="52" y="116" class="tp-t" text-anchor="start">Pozícia 1 · riadenie batérií</text><rect x="38" y="134" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="155" class="tp-name tp-sm" text-anchor="start">LSN 0300 A</text><text x="52" y="172" class="tp-t" text-anchor="start">Pozícia 2 · slučkový modul LSN</text><rect x="38" y="190" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="211" class="tp-name tp-sm" text-anchor="start">RML 0008 A</text><text x="52" y="228" class="tp-t" text-anchor="start">Pozícia 3 · 8 relé</text><path d="M110 250 V298" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="280" class="tp-t" text-anchor="start">AUX 24 V</text><rect x="20" y="300" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="321" class="tp-name tp-sm" text-anchor="start">Mean Well DDR-15G-12</text><text x="34" y="338" class="tp-t" text-anchor="start">DC-DC 24 V → 12 V, oddelený</text><path d="M110 356 V428" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="396" class="tp-t" text-anchor="start">12 V</text><rect x="20" y="430" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="451" class="tp-name tp-sm" text-anchor="start">GSM komunikátor</text><text x="34" y="468" class="tp-t" text-anchor="start">12 V · v skrini ústredne</text><path d="M302 148 H560 V60 H960 V500 H560 V166 H302" class="tp-w tp-g"/><circle cx="690" cy="60" r="13" class="tp-dev-light"/><circle cx="690" cy="60" r="4" class="tp-led tp-led-r"/><text x="690" y="100" class="tp-name tp-sm" text-anchor="middle">Dymové hlásiče</text><text x="690" y="117" class="tp-t" text-anchor="middle">FAP-O420 · FAP-425</text><circle cx="850" cy="60" r="13" class="tp-dev-light"/><circle cx="850" cy="60" r="4" class="tp-led tp-led-r"/><text x="850" y="100" class="tp-name tp-sm" text-anchor="middle">Majáky</text><text x="850" y="117" class="tp-t" text-anchor="middle">FNS-420-R</text><circle cx="960" cy="210" r="13" class="tp-dev-light"/><circle cx="960" cy="210" r="4" class="tp-led tp-led-r"/><text x="930" y="206" class="tp-name tp-sm" text-anchor="end">Sirénové pätice</text><text x="930" y="223" class="tp-t" text-anchor="end">FNM-420U-A-BS</text><circle cx="960" cy="370" r="13" class="tp-dev-light"/><circle cx="960" cy="370" r="4" class="tp-led tp-led-r"/><text x="930" y="366" class="tp-name tp-sm" text-anchor="end">Tlačidlové hlásiče</text><text x="930" y="383" class="tp-t" text-anchor="end">FMC-420RW</text><circle cx="760" cy="500" r="13" class="tp-dev-light"/><circle cx="760" cy="500" r="4" class="tp-led tp-led-r"/><text x="760" y="470" class="tp-name tp-sm" text-anchor="middle">Dymové hlásiče</text><text x="760" y="300" class="tp-foot" text-anchor="middle">Uzavretý kruh LSN</text><path d="M302 213 H335 V445" class="tp-w tp-r"/><rect x="355" y="270" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="291" class="tp-name tp-sm" text-anchor="start">Držiaky dverí</text><text x="369" y="308" class="tp-t" text-anchor="start">fail-safe uvoľnenie</text><path d="M335 295 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="345" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="366" class="tp-name tp-sm" text-anchor="start">Požiarny rozvádzač</text><text x="369" y="383" class="tp-t" text-anchor="start">vypínacia spúšť</text><path d="M335 370 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="420" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="441" class="tp-name tp-sm" text-anchor="start">Vstup GSM poplachu</text><text x="369" y="458" class="tp-t" text-anchor="start">bezpotenciálová NC slučka</text><path d="M335 445 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><path d="M447 470 V520 H145 V488" class="tp-w tp-r tp-dash" marker-end="url(#ep-a-r)"/></svg>
                 </div>
-
-                <!-- Programming Matrix Description -->
-                <h4 class="font-technical mb-2">3. Programovacia matica väzieb Cause-and-Effect (Bosch RPS / FSP)</h4>
-                <p class="mb-3">
-                    V programovacom prostredí Bosch RPS boli vstupy a výstupy usporiadané do dvojstupňovej poplachovej logiky:
-                </p>
-
-                <div class="tech-table-wrapper">
-                    <table class="tech-table tech-table-stack font-code">
-                        <thead>
-                            <tr>
-                                <th>Spúšťací vstup</th>
-                                <th>Časové oneskorenie / Podmienka</th>
-                                <th>Primárna akcia (Ústredňa)</th>
-                                <th>Sekundárna akcia (Ovládanie technológií)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Spúšťací vstup">Jeden automatický dymový hlásič (Typ A)</td>
-                                <td data-label="Časové oneskorenie / Podmienka">Overovacie okno: oneskorenie 30s</td>
-                                <td data-label="Primárna akcia (Ústredňa)">Bzučiak na ústredni + zobrazenie miesta na LCD</td>
-                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Bez evakuácie budovy (ochrana pred planým poplachom)</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Spúšťací vstup">Potvrdený dym / teplota (Typ B)</td>
-                                <td data-label="Časové oneskorenie / Podmienka">Dva hlásiče alebo trvalý signál &gt;60s</td>
-                                <td data-label="Primárna akcia (Ústredňa)">Aktivácia všetkých sirén a majákov v zóne</td>
-                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Vypnutie HVAC ventilácie; Zjazd výťahov na prízemie</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Spúšťací vstup">Manuálne tlačidlo požiaru (Pull Station)</td>
-                                <td data-label="Časové oneskorenie / Podmienka"><strong>Okamžitá 0-sekundová priorita</strong></td>
-                                <td data-label="Primárna akcia (Ústredňa)">Okamžitý všeobecný evakuačný poplach budovy</td>
-                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Vypnutie HVAC + Otvorenie únikových dverí + Prenos na HZS</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Spúšťací vstup">Porucha: skrat alebo prerušenie slučky</td>
-                                <td data-label="Časové oneskorenie / Podmienka">Okamžitá hardvérová detekcia</td>
-                                <td data-label="Primárna akcia (Ústredňa)">Zaslanie poruchového hlásenia na dispečing</td>
-                                <td data-label="Sekundárna akcia (Ovládanie technológií)">Izolátory rozpoja chybný úsek do 100 ms; napájanie z dvoch strán</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Callout Box: §21 Certification -->
-                <div class="callout-box">
-                    <div class="callout-header">
-                        <span class="material-symbols-outlined">verified</span>
-                        <span>Certifikovaná elektroinštalácia (§21 Odborná spôsobilosť)</span>
+                <figcaption class="topology-caption">Obr. 1 — Topológia systému: moduly na lište, kruh LSN, napájanie a reléové výstupy</figcaption>
+            </figure>
+            <h3 class="cs-subhead">Fotografie</h3>
+            <div class="case-study-media-grid grid-3 eps-photos">
+                <figure class="media-figure">
+                    <div class="media-figure-frame">
+                        <!-- Replace with: <img src="../../pictures/eps/eps-panel-overview.webp" alt="Nástenná ústredňa EPS Bosch AVENAR panel 2000" loading="lazy"> -->
+                        Foto: eps-panel-overview.webp
                     </div>
-                    <p class="callout-desc">
-                        Ako elektrotechnik s osvedčením podľa <strong>§21 (Odborná spôsobilosť v elektrotechnike)</strong> boli všetky elektrické rozvody realizované podľa najvyšších priemyselných štandardov: nehorľavé bezhalogénové káblové trasy, samostatný prívod 230V istený 10A B-ističom, ochranné pospájanie na ekvipotenciálnu prípojnicu s prechodovým odporom $R_{\text{PE}} < 0.1\,\Omega$ a striktné oddelenie slaboprúdových požiarnych vedení od silových trás pre vylúčenie elektromagnetickej indukcie.
-                    </p>
-                </div>
+                    <figcaption>
+                        <span class="media-figure-title">Hotová ústredňa</span>
+                        <span class="media-figure-desc">Nástenná ústredňa AVENAR v objekte.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure">
+                    <div class="media-figure-frame">
+                        <!-- Replace with: <img src="../../pictures/eps/eps-touch-ui.webp" alt="Dotykový displej ústredne s mapou zón a kontaktmi" loading="lazy"> -->
+                        Foto: eps-touch-ui.webp
+                    </div>
+                    <figcaption>
+                        <span class="media-figure-title">Dotykový displej</span>
+                        <span class="media-figure-desc">Aktívna mapa zón a kontaktné údaje.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure">
+                    <div class="media-figure-frame">
+                        <!-- Replace with: <img src="../../pictures/eps/eps-loop-schematic.webp" alt="Schéma uzavretého kruhu LSN" loading="lazy"> -->
+                        Foto: eps-loop-schematic.webp
+                    </div>
+                    <figcaption>
+                        <span class="media-figure-title">Schéma slučky</span>
+                        <span class="media-figure-desc">Usporiadanie uzavretého kruhu LSN.</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <!-- Section 3: Commissioning & Validation Protocols -->
         <div class="section-header scroll-reveal">
-            <h2 class="font-technical section-header-sub">03 / Oživenie systému &amp; Skúšobné protokoly</h2>
+            <h2 class="font-technical section-header-sub">03 / Zónovanie</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="mb-section scroll-reveal delay-100">
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Poplachy sa zobrazujú podľa funkčnej zóny a názvu miestnosti, nie adresou LSN ako <code>Node 1.1, Dev 38</code>. Názvy zón nižšie sú presne tie, ktoré ukazuje displej, takže personál alebo hasiči prečítajú miesto požiaru za pár sekúnd.</p>
+            </div>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Zóna</th>
+                            <th>Názov na displeji</th>
+                            <th>Priestor</th>
+                            <th>Prvky</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 1</strong></td>
+                            <td data-label="Názov na displeji">Únikové cesty a chodby</td>
+                            <td data-label="Priestor">Únikové cesty a chodby</td>
+                            <td data-label="Prvky">Dymové hlásiče, sirény, majáky</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 2</strong></td>
+                            <td data-label="Názov na displeji">Triedy, herne a spálňa</td>
+                            <td data-label="Priestor">Triedy, herne, spálňa</td>
+                            <td data-label="Prvky">Optické dymové hlásiče (FAP-O420), sirénové pätice</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 3</strong></td>
+                            <td data-label="Názov na displeji">Jedáleň a spoločenské m.</td>
+                            <td data-label="Priestor">Jedáleň, spoločenské miestnosti</td>
+                            <td data-label="Prvky">Optické hlásiče pre veľké priestory, nástenné sirény</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 4</strong></td>
+                            <td data-label="Názov na displeji">Hospodárska časť a zázemie</td>
+                            <td data-label="Priestor">Hospodárska časť, technické miestnosti</td>
+                            <td data-label="Prvky">Teplotné a dymové hlásiče</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 5</strong></td>
+                            <td data-label="Názov na displeji">Medzistrop</td>
+                            <td data-label="Priestor">Priestor nad podhľadom</td>
+                            <td data-label="Prvky">Skryté optické hlásiče s externými indikátormi</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>Zóna 10</strong></td>
+                            <td data-label="Názov na displeji">Tlačidlové hlásiče</td>
+                            <td data-label="Priestor">Tlačidlové hlásiče</td>
+                            <td data-label="Prvky">Tlačidlové hlásiče Bosch FMC-420RW</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Riadiaca matica</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Funkcie budovy ovláda reléový modul RML 0008 A na lište ústredne.</p>
+            </div>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Výstup</th>
+                            <th>Normálny stav</th>
+                            <th>Pri požiarnom poplachu</th>
+                            <th>Pri výpadku napájania</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Výstup"><strong>Magnetické držiaky dverí</strong></td>
+                            <td data-label="Normálny stav">Pod napätím, únikové dvere držané</td>
+                            <td data-label="Pri požiarnom poplachu">Relé preruší napájanie, dvere sa mechanicky uvoľnia</td>
+                            <td data-label="Pri výpadku napájania">Uvoľnené (fail-safe)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Výstup"><strong>Požiarny rozvádzač</strong></td>
+                            <td data-label="Normálny stav">Vypínacia spúšť v pokoji</td>
+                            <td data-label="Pri požiarnom poplachu">Vypínacia spúšť vybaví, vypnú sa obvody 230/400 V okrem nevyhnutných</td>
+                            <td data-label="Pri výpadku napájania">Neaplikuje sa</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Výstup"><strong>GSM komunikátor</strong></td>
+                            <td data-label="Normálny stav">Bezpotenciálová NC slučka zopnutá</td>
+                            <td data-label="Pri požiarnom poplachu">Slučka rozopne, komunikátor odošle poplach</td>
+                            <td data-label="Pri výpadku napájania">Zostáva napájaný z AUX zbernice zálohovanej batériami</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout-box">
+                <div class="callout-header">Vstup a napájanie GSM</div>
+                <p class="callout-desc">Komunikátor je v kovovej skrini ústredne, takže bezpotenciálová NC slučka neopúšťa skriňu, prerušenie kábla je prakticky vylúčené a akékoľvek rozopnutie ho okamžite spustí. Napája sa z 24 V AUX zbernice cez galvanicky oddelený Mean Well DDR-15G-12 (24 V → 12 V), nie z jednej batérie, čo by narušilo rovnováhu sériovej sady.</p>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">05 / Technické problémy a ich riešenie</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
             <div class="challenge-item">
                 <div class="challenge-header">
                     <div class="challenge-title-group">
-                        <span class="challenge-number">TEST 01</span>
-                        <h3 class="challenge-title">Skúška skratových izolátorov a celistvosti kruhovej slučky</h3>
+                        <span class="challenge-number">01</span>
+                        <h3 class="challenge-title">Práca s uzavretým priemyselným systémom</h3>
                     </div>
-                    <span class="badge badge-dark">Integrita podľa EN 54-13</span>
+                    <span class="badge badge-dark">Prístup</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Simulácia poruchy
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Kontext
                         </div>
-                        <p>
-                            Počas plnej kľudovej prevádzky bol simulovaný priamy skrat s nulovým odporom medzi kladným a záporným vodičom slučky medzi hlásičom #24 a požiarnym tlačidlom #25.
-                        </p>
+                        <p>Bosch AVENAR, RPS a LSN sú uzavreté produkty na ochranu života. Na rozdiel od open-source webových technológií je verejnej dokumentácie minimum, Stack Overflow ich nepokrýva a o ich vnútornej logike či chybových kódoch neexistujú použiteľné tréningové dáta pre AI.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined">check_circle</span> Automatická reakcia izolácie
+                            <span class="material-symbols-outlined">check_circle</span> Prístup
                         </div>
-                        <p>
-                            Vstavané skratové izolátory LSN v susedných prvkoch zareagovali do <strong>85 milisekúnd</strong> a poškodený úsek odpojili. Ústredňa okamžite začala napájať slučku obojsmerne z oboch koncov, vďaka čomu zostala zachovaná 100% komunikácia so všetkými 64 adresnými prvkami.
-                        </p>
+                        <p>Uvedenie do prevádzky stálo na čítaní schém a dokumentácie výrobcu, meraniach multimetrom na slučke a praktickom hľadaní chýb.</p>
                     </div>
                 </div>
             </div>
-
             <div class="challenge-item">
                 <div class="challenge-header">
                     <div class="challenge-title-group">
-                        <span class="challenge-number">TEST 02</span>
-                        <h3 class="challenge-title">Skúška certifikovaným aerosólom a termickým generátorom</h3>
+                        <span class="challenge-number">02</span>
+                        <h3 class="challenge-title">Poradie modulov na lište a napájanie zbernice</h3>
                     </div>
-                    <span class="badge badge-dark">Overenie senzorov</span>
+                    <span class="badge badge-dark">Hardvér ústredne</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Fyzická stimulácia
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príznak a príčina
                         </div>
-                        <p>
-                            Aplikáciou certifikovaného skúšobného dymu Solo A5 a kalibrovanej teplovzdušnej hlavice Solo 461 bola preverená odozva každého hlásiča, citlivosť optickej komory a správnosť adresácie podľa projektovej dokumentácie.
-                        </p>
+                        <p>Ústredňa neprešla úvodnou vnútornou kontrolou hardvéru: moduly boli na vnútornej lište (PRS-0002A) v nesprávnom poradí.</p>
+                        <p>Zadná doska ústredne vyžaduje pevné fyzické poradie: riadenie batérií napája lištu a ďalšie moduly nasledujú podľa odberu prúdu, aby nevznikali úbytky napätia na vnútornej DC zbernici a chyby arbitráže.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined">check_circle</span> Kalibrácia a správnosť adries
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
                         </div>
-                        <p>
-                            Všetky hlásiče FAP-425-DOTC zareagovali v rozmedzí <strong>12 až 18 sekúnd</strong>. Fyzická adresa hlásiča a textový popis miestnosti na displeji ústredne presne zodpovedali stavebnému výkresu. Úroveň zaprášenia komôr bola preverená na hodnote &lt;5%.
-                        </p>
+                        <p>Moduly preusadené do predpísaného poradia: FPE-8000-BCM na pozícii 1 pri napájaní, potom slučkový modul LSN 0300 A a nakoniec reléový modul RML 0008 A. Kontrola hardvéru prešla.</p>
                     </div>
                 </div>
+                <div class="challenge-code">
+                    <div class="challenge-code-head">
+                        <span>Poradie na lište</span>
+                        <span>po oprave</span>
+                    </div>
+                    <pre class="config-snippet">rail position   module          role
+1               FPE-8000-BCM    battery controller · power feed
+2               LSN 0300 A      LSN loop controller
+3               RML 0008 A      8 relay outputs</pre>
+                </div>
             </div>
-
             <div class="challenge-item">
                 <div class="challenge-header">
                     <div class="challenge-title-group">
-                        <span class="challenge-number">TEST 03</span>
-                        <h3 class="challenge-title">Zopnutie bezpečnostných relé &amp; Odstavenie technológií</h3>
+                        <span class="challenge-number">03</span>
+                        <h3 class="challenge-title">Zapojenie sirénovej pätice: schéma vs. hardvér</h3>
                     </div>
-                    <span class="badge badge-dark">Riadenie nadväzných systémov</span>
+                    <span class="badge badge-dark">Zapojenie</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Viacsystémový poplach
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príznak a príčina
                         </div>
-                        <p>
-                            Aktiváciou všeobecného poplachu bolo preverené súčasné zopnutie všetkých výstupných relé ovládajúcich požiarne klapky vzduchotechniky, rozvádzač výťahov a napájače únikových dverí.
-                        </p>
+                        <p>Sirénové pätice FNM-420U nehlásili a spôsobovali trvalú poruchu slučky.</p>
+                        <p>Schéma predpisovala manuálnu prepojku medzi dvoma svorkami pätice. Aktuálna revízia hardvéru ich prepája interne, takže zastaraná prepojka rušila monitorovanie linky LSN.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined">check_circle</span> Bezpečné vybavenie (Fail-Safe)
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
                         </div>
-                        <p>
-                            Vzduchotechnické jednotky boli odstavené do <strong>0.4 sekundy</strong>; výťahy zjazdili na prízemie a zotrvali s otvorenými dverami; elektromagnetické zámky dverí stratili napätie a sprístupnili voľný únik z budovy bez prekážok.
-                        </p>
+                        <p>Prepojka odstránená, návrat na čistú linku LSN. Sirény boli okamžite adresovateľné a porucha linky zmizla.</p>
                     </div>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">04</span>
+                        <h3 class="challenge-title">Lokalizácia poruchy slučky v režime T-tap</h3>
+                    </div>
+                    <span class="badge badge-dark">Diagnostika</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príznak a príčina
+                        </div>
+                        <p>Uzavretý kruh LSN sa nenadviazal; prvky hlásili skrat a výpadok komunikácie.</p>
+                        <p>V kruhu ústredňa komunikuje z oboch koncov, čo zakrýva skutočné miesto poruchy.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <ol class="cs-steps">
+                            <li>Ústredňa dočasne prepnutá na otvorené (T-tap / odbočka) dotazovanie.</li>
+                            <li>Prvky sa adresovali postupne pozdĺž kábla; skenovanie sa zastavilo na chybnom mieste.</li>
+                            <li>Pri tomto hlásiči svorka zovrela izoláciu namiesto holého vodiča. Vodič znovu odizolovaný na 8–10 mm, sken až po posledný prvok a kruh opäť uzavretý v RPS.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">05</span>
+                        <h3 class="challenge-title">Prekročenie energetického limitu BCM (72 h vs. 24 h)</h3>
+                    </div>
+                    <span class="badge badge-dark">Napájanie</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príznak a príčina
+                        </div>
+                        <p>RPS hlásil:</p>
+                        <p><code class="config-snippet">Fatal: Energy Zone 1 power consumption
+exceeds the maximum limit (FPE-8000-BCM)</code></p>
+                        <p>Pohotovostný čas bol nastavený na 72 h. Kľudový prúd je 0,46 A a sada batérií 2× 12 V 26 Ah v sérii dáva 24 V 26 Ah — pri sériovom zapojení sa kapacita nesčítava.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <p>Pohotovostný čas vrátený na 24 h + 30 min poplach, čo je požiadavka pre tento typ budovy. Kontrola konzistencie v RPS prešla.</p>
+                    </div>
+                </div>
+                <div class="challenge-code">
+                    <div class="challenge-code-head">
+                        <span>Kontrola batérií podľa EN 54-4</span>
+                        <span>0,8 = koeficient využiteľnej kapacity</span>
+                    </div>
+                    <pre class="config-snippet">usable capacity   26 Ah × 0.8          = 20.8 Ah
+72 h standby      0.46 A × 72 h        = 33.1 Ah   &gt; 20.8 Ah   ✗
+max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
+24 h standby      0.46 A × 24 h        = 11.0 Ah   + 30 min alarm  ✓</pre>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: Operational Verification Terminal -->
         <div class="section-header scroll-reveal">
-            <h2 class="font-technical section-header-sub">04 / Protokol o odbornej prehliadke a skúške</h2>
+            <h2 class="font-technical section-header-sub">06 / Protokol o uvedení do prevádzky</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-card terminal-card scroll-reveal delay-100 mb-section">
+        <section class="bento-card terminal-card proto-card scroll-reveal delay-100 mb-section">
             <div class="terminal-header">
                 <div class="terminal-dots">
                     <div class="terminal-dot"></div>
                     <div class="terminal-dot"></div>
                     <div class="terminal-dot"></div>
                 </div>
-                <span class="terminal-path">technician@bosch-fpa:~/revizia$ ./spustit_audit_poziarnej_bezpecnosti.sh</span>
+                <span class="terminal-path">eps-protokol-uvedenia.txt</span>
             </div>
-            <div>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [§21_SPÔSOBILOSŤ] Elektroinštalácia preverená, prechodový odpor PE vodiča R_pe = 0.04 Ohm (&lt; 0.1 Ohm)</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [ODPOR_SLUČKY] Nameraný celkový odpor slučky #1: 26.4 Ohm | Izolačný stav voči zemi: &gt; 50 MOhm [VYHOVUJE]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [TEST_IZOLÁTORA] Čas vybavenia obojsmerného skratového izolátora: 85 ms | Obojstranné napájanie [VYHOVUJE]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [AUTONÓMIA_AKU] Kľudový prúd: 380 mA | Poplachový prúd: 2.45 A | Vypočítaná kapacita: 12.93 Ah &lt; 28 Ah [VYHOVUJE]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [RELÉ_HVAC] Havarijný kontakt vypnutia VZT zopnutý | Požiarne klapky uzatvorené [POTVRDENÉ]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [ZJAZD_VÝŤAHOV] Evakuačné relé zjazdu na prízemie zopnuté | Dvere trvalo otvorené [POTVRDENÉ]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [ÚNIKOVÉ_DVERE] Fail-safe elektromagnety bez napätia | Voľná evakuačná cesta zaistená [POTVRDENÉ]</p>
-                <p class="terminal-line"><span class="text-green">[✓]</span> [ODOVZDANIE_DO_PREVÁDZKY] Správa o východiskovej revízii a funkčnej skúške úspešne vystavená pod licenciou §21</p>
-                <p class="cursor-blink">_</p>
+            <div class="proto-body">
+                <p class="terminal-line proto-title">PROTOKOL O UVEDENÍ EPS DO PREVÁDZKY</p>
+                <p class="terminal-line"><span class="proto-key">Stav:</span> UVEDENÉ DO PREVÁDZKY A PLNE OVERENÉ</p>
+                <p class="terminal-line"><span class="proto-key">Normy:</span> STN EN 54-2, 54-4 | DIN 33404-3</p>
+                <p class="terminal-line"><span class="proto-key">Spôsobilosť:</span> Odborná spôsobilosť §21 | Bosch AVENAR Specialist certifikát</p>
+                <div class="proto-sep"></div>
+                <p class="terminal-line proto-key">KONTROLA SYSTÉMOV:</p>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">ÚSTREDŇA A NAPÁJANIE</span>
+                    <span class="proto-val">Skriňa AVENAR 2000 a poradie modulov na lište overené (BCM → LSN → RML).<br>Batérie SLA 24 V 26 Ah dimenzované na 24 h pohotovosť + 30 min evakuácie.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">LSN SLUČKA</span>
+                    <span class="proto-val">Topológia uzavretej slučky overená vo všetkých 6 zónach.<br>Zastaraná prepojka sirény odstránená; chyba svorky lokalizovaná metódou T-tap.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">EVAKUÁCIA</span>
+                    <span class="proto-val">Sweep DIN 33404-3 (1200 → 500 Hz @ 1 Hz) overený na hlasitosti 5.<br>Tlačidlové hlásiče FMC-420RW a optické majáky plne funkčné.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">INTEGRÁCIA</span>
+                    <span class="proto-val">Logika relé RML 0008 A aktívna: fail-safe uvoľnenie dverí,<br>vypínacia spúšť požiarneho rozvádzača (230/400 V) a oddelená NC slučka GSM.</span>
+                </div>
             </div>
         </section>
 

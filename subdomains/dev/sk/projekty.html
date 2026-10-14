@@ -90,7 +90,7 @@
     },
     {
       "@type": "TechArticle",
-      "name": "Programovanie adresovateľnej EPS Bosch & integrácia bezpečnostných systémov",
+      "name": "EPS a ochrana života: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia",
       "description": "Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21."
     }
@@ -164,7 +164,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Vlajková loď multiplatformovej architektúry</h2>
+            <h2 class="font-technical section-header-sub">01 / Multiplatformový vývoj &amp; Klientske aplikácie</h2>
             <div class="section-line"></div>
         </div>
 
@@ -239,11 +239,11 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infraštruktúra</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backendové systémy &amp; Softvérová infraštruktúra</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-grid scroll-reveal delay-100">
+        <section class="bento-grid mb-section scroll-reveal delay-100">
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
@@ -318,7 +318,14 @@
                     </a>
                 </div>
             </div>
+        </section>
 
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Sieťová infraštruktúra &amp; Požiarna bezpečnosť (EPS)</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid scroll-reveal delay-100">
             <!-- Project 3: Campus Network Case Study -->
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
@@ -330,18 +337,18 @@
                         <span class="badge badge-dark badge-size-10">Infraštruktúra</span>
                     </div>
                     <p class="projects-card-desc">
-                        Nová sieť pre novopostavené vzdelávacie zariadenie: 19" rack, <strong>segmentácia VLAN</strong> (manažment, CCTV, zamestnanci), Wi-Fi 6 a 8-kamerový systém Hikvision. Prístup kamier na internet blokuje brána.
+                        Nová sieť pre novopostavené vzdelávacie zariadenie: 19" rack, <strong>segmentácia VLAN</strong> (manažment, CCTV, LAN zamestnancov), Wi-Fi 6 a 8 IP kamier s PoE rozpočtom 250 W pri záťaži ~80 W.
                     </p>
                     <p class="projects-card-desc">
-                        Záznamové streamy zostávajú na <strong>PoE switchi</strong> a neprechádzajú routerom ER605. Lokalita sa spravuje z Brna cez <strong>WireGuard split tunnel</strong> a zamestnanci otvárajú NVR na internej HTTPS adrese s dôveryhodným certifikátom.
+                        Záznamové streamy zostávajú na <strong>backplane PoE switchu</strong>. Dvojúrovňová správa: cloud Omada na bežný dohľad, <strong>WireGuard split tunnel</strong> z Brna do izolovaných podsietí.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
                         <span class="badge badge-dark badge-bg-dark">WireGuard</span>
                         <span class="badge badge-dark badge-bg-dark">Segmentácia VLAN</span>
-                        <span class="badge badge-dark badge-bg-dark">Plánovanie PoE</span>
                         <span class="badge badge-dark badge-bg-dark">TP-Link Omada</span>
+                        <span class="badge badge-dark badge-bg-dark">TL-SG3452</span>
                     </div>
                     <a href="/sk/projekty/sietova-infrastruktura-pripadova-studia" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
@@ -357,23 +364,23 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">Programovanie adresovateľnej EPS Bosch &amp; Integrácia systémov</h3>
+                            <h3 class="font-technical projects-card-title-sm">EPS a ochrana života: Bosch AVENAR 2000</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Požiarna Ochrana</span>
                     </div>
                     <p class="projects-card-desc">
-                        Projektovanie, programovanie a certifikované oživenie adresovateľnej EPS postavenej na <strong>Modulárnej ústredni Bosch (FPA)</strong>. Nasadenie multisenzorových optických/teplotných/CO hlásičov, slučkových sirén s majákmi a fail-safe bezpečnostných väzieb.
+                        Elektronická požiarna signalizácia na ústredni <strong>Bosch AVENAR panel 2000</strong> vo vzdelávacom zariadení: uzavretá LSN slučka, šesť funkčných zón s názvami miestností na displeji, tlačidlové hlásiče FMC-420RW.
                     </p>
                     <p class="projects-card-desc">
-                        Nameraný reálny odpor kruhovej slučky ($R_{\text{loop}} = 26.4\,\Omega$), vypočítaná <strong>24h + 30m záložná autonómia akumulátorov</strong> podľa EN 54-4, naprogramovaná dvojstupňová overovacia matica v Bosch RPS a úspešná revízia s <strong>odbornou spôsobilosťou podľa §21</strong>.
+                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, požiarny rozvádzač a GSM poplach. Uvedenie do prevádzky: kontrola poradia modulov, lokalizácia porúch <strong>T-tap</strong> a dimenzovanie batérií podľa EN 54-4 (24 h + 30 min).
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">Bosch EPS</span>
-                        <span class="badge badge-dark badge-bg-dark">§21 Certifikácia</span>
-                        <span class="badge badge-dark badge-bg-dark">LSN Slučka</span>
-                        <span class="badge badge-dark badge-bg-dark">Reléová Logika</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch AVENAR</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN slučka</span>
+                        <span class="badge badge-dark badge-bg-dark">EN 54</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch certifikát</span>
                     </div>
                     <a href="/sk/projekty/eps-pripadova-studia" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>

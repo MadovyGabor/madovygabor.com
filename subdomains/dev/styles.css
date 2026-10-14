@@ -3238,3 +3238,77 @@ a {
         padding: var(--spacing-md);
     }
 }
+
+/* EPS diagram extras */
+.tp-iso { fill: #0a0a0a; stroke: #5fbf9a; stroke-width: 1.4; }
+.tp-led-r { fill: #f0806b; }
+.tp-led-g { fill: #5fbf9a; }
+
+/* Commissioning protocol (terminal style) */
+.proto-card .terminal-line {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.proto-key {
+    color: #a1a1aa;
+    font-weight: 700;
+}
+
+.proto-sep {
+    height: 1px;
+    background-color: var(--color-border-light);
+    margin: var(--spacing-md) 0;
+}
+
+@media (max-width: 480px) {
+    .proto-card .terminal-line {
+        font-size: 12px;
+    }
+}
+
+.eps-photos .media-figure-frame {
+    aspect-ratio: 16 / 10;
+}
+
+.qual-grid {
+    margin-top: var(--spacing-md);
+}
+
+/* Protocol: 4 subsystem rows */
+.proto-title {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.proto-row {
+    display: grid;
+    grid-template-columns: 34px 190px minmax(0, 1fr);
+    gap: 4px 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 8px 0;
+    border-top: 1px dashed var(--color-border-light);
+}
+
+.proto-row .proto-val {
+    color: var(--color-text);
+}
+
+@media (max-width: 600px) {
+    .proto-row {
+        grid-template-columns: 30px minmax(0, 1fr);
+        font-size: 12px;
+    }
+
+    .proto-row .proto-val {
+        grid-column: 2;
+    }
+}
+
+.tier-purple {
+    border-top-color: var(--color-accent-purple);
+}

@@ -91,7 +91,7 @@
     },
     {
       "@type": "TechArticle",
-      "name": "Bosch EPS Addressable Fire Alarm Programming & Life Safety Integration",
+      "name": "Fire Detection & Life Safety: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/en/projects/eps-case-study",
       "description": "System topology, addressable loop mapping, signaling logic, and §21 certified electrical deployment."
     }
@@ -164,7 +164,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Flagship Multiplatform Architecture</h2>
+            <h2 class="font-technical section-header-sub">01 / Cross-Platform &amp; Mobile Systems</h2>
             <div class="section-line"></div>
         </div>
 
@@ -239,12 +239,11 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infrastructure
-            </h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend &amp; Systems Software</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-grid scroll-reveal delay-100">
+        <section class="bento-grid mb-section scroll-reveal delay-100">
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
@@ -321,7 +320,14 @@
                     </a>
                 </div>
             </div>
+        </section>
 
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Physical Infrastructure &amp; Critical Life Safety</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid scroll-reveal delay-100">
             <!-- Project 3: Campus Network Case Study -->
             <div class="col-span-6 bento-card bento-card-purple flex-col-between">
                 <div>
@@ -333,18 +339,18 @@
                         <span class="badge badge-dark badge-size-10">Infrastructure</span>
                     </div>
                     <p class="projects-card-desc">
-                        Greenfield network for a newly built educational facility: 19" rack, <strong>VLAN segmentation</strong> (management, CCTV, staff), Wi-Fi 6 and an 8-camera Hikvision system. Camera traffic is blocked from the internet at the gateway.
+                        Greenfield network for a new educational facility: 19" rack, <strong>VLAN segmentation</strong> (management, CCTV, staff LAN), Wi-Fi 6 and 8 IP cameras on a 250 W PoE budget with ~80 W in use.
                     </p>
                     <p class="projects-card-desc">
-                        Recording streams stay on the <strong>PoE switch</strong> instead of passing through the ER605 router. The site is managed from Brno over a <strong>WireGuard split tunnel</strong>, and staff open the NVR at an internal HTTPS address with a trusted certificate.
+                        Recording streams stay on the <strong>PoE switch backplane</strong>. Two-tier remote management: Omada cloud for daily checks, <strong>WireGuard split tunnel</strong> from Brno for the isolated subnets.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
                         <span class="badge badge-dark badge-bg-dark">WireGuard</span>
                         <span class="badge badge-dark badge-bg-dark">VLAN Segmentation</span>
-                        <span class="badge badge-dark badge-bg-dark">PoE Planning</span>
                         <span class="badge badge-dark badge-bg-dark">TP-Link Omada</span>
+                        <span class="badge badge-dark badge-bg-dark">TL-SG3452</span>
                     </div>
                     <a href="/en/projects/network-case-study" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
@@ -360,23 +366,23 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">Bosch EPS Addressable Fire Alarm &amp; Life Safety Integration</h3>
+                            <h3 class="font-technical projects-card-title-sm">Fire Detection &amp; Life Safety: Bosch AVENAR 2000</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Life Safety</span>
                     </div>
                     <p class="projects-card-desc">
-                        Engineering, programming, and certified commissioning of an addressable fire alarm system based on the <strong>Bosch Modular Fire Panel (FPA)</strong>. Incorporates multisensor optical/thermal/chemical detectors, loop sounder/strobes, and fail-safe cause-and-effect interlocks.
+                        <strong>Bosch AVENAR panel 2000</strong> fire detection and alarm system for an educational facility: closed LSN loop, six functional zones with room names on the display, FMC-420RW manual call points.
                     </p>
                     <p class="projects-card-desc">
-                        Validated loop resistance ($R_{\text{loop}} = 26.4\,\Omega$), calculated <strong>24h + 30m battery backup autonomy</strong> under EN 54-4, programmed two-stage delay matrices in Bosch RPS, and executed full physical commissioning under a <strong>§21 electrical qualification</strong>.
+                        <strong>RML 0008 A</strong> relays drive fail-safe door release, shunt trip and GSM alarm. Commissioning included rail-order validation, <strong>T-tap</strong> fault tracing and EN 54-4 battery sizing (24 h + 30 min).
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">Bosch EPS</span>
-                        <span class="badge badge-dark badge-bg-dark">§21 Certified</span>
-                        <span class="badge badge-dark badge-bg-dark">LSN Loop Ring</span>
-                        <span class="badge badge-dark badge-bg-dark">Relay Logic</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch AVENAR</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN Loop</span>
+                        <span class="badge badge-dark badge-bg-dark">EN 54</span>
+                        <span class="badge badge-dark badge-bg-dark">Bosch Certified</span>
                     </div>
                     <a href="/en/projects/eps-case-study" class="btn btn-primary">
                         <div class="btn-corner-tr"></div>
