@@ -183,18 +183,13 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            MaturiMate je aplikácia na prípravu na maturitné skúšky pre Android a desktop (JVM). Využíva
-                            <strong>Kotlin Multiplatform (KMP)</strong> a Compose Multiplatform, vďaka čomu je doménová
-                            logika, dátová vrstva aj používateľské rozhranie zdieľané medzi oboma platformami bez
-                            duplikácie kódu.
+                            MaturiMate je aplikácia na prípravu na maturitné skúšky pre Android a desktop (JVM), napísaná v <strong>Kotlin Multiplatform</strong> a Compose Multiplatform. Približne 95 % produkčného kódu v Kotline je zdieľaných medzi oboma platformami; zvyšok tvoria vstupné body platforiem a malé platformové adaptéry.
                         </p>
                         <p>
-                            Aplikácia stavia na architektúre <strong>MVI / Clean Architecture</strong> s jednosmerným
-                            tokom dát. Stav obrazovky riadia Kotlin Coroutines a <code>StateFlow</code>, čo prináša
-                            predvídateľné reakcie rozhrania a prehľadný kód.
+                            Obrazovky používajú ViewModely, ktoré sprístupňujú nemenný stav UI ako Kotlin <code>StateFlow</code>. Navigácia používa Navigation3 (alpha) a nastavenia používateľa uchováva multiplatformový DataStore.
                         </p>
                         <p>
-                            Funguje na princípe <strong>offline first</strong>: obsah skúšok sa ukladá lokálne v relačnej databáze cez SQLDelight, vstupné dáta sa inicializujú v jednej transakcii a nastavenia používateľa uchováva multiplatformový DataStore. Stav: fungujú onboarding, profil a databáza skúšok; obrazovka na riešenie skúšky, hodnotenie a história pokusov sú rozpracované.
+                            Stav: fungujú onboarding, profilová obrazovka s odpočtom do maturity a adaptívny navigačný rám. Databáza skúšok (SQLDelight) a napĺňanie skúšobných dát sa vyvíjajú v samostatnej vetve a zatiaľ nie sú zlúčené. Obrazovka na riešenie skúšky, hodnotenie a história pokusov zatiaľ nie sú hotové.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">

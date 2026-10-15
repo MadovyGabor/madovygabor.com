@@ -183,18 +183,13 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            MaturiMate is an exam-preparation app for Android and desktop (JVM). It is written with
-                            <strong>Kotlin Multiplatform (KMP)</strong> and Compose Multiplatform, so the domain logic,
-                            data layer, and user interface are shared between both platforms instead of being written
-                            twice.
+                            MaturiMate is an exam-preparation app for Android and desktop (JVM), written with <strong>Kotlin Multiplatform</strong> and Compose Multiplatform. About 95% of the production Kotlin code is shared between the two platforms; the rest is platform entry points and small platform adapters.
                         </p>
                         <p>
-                            The app follows an <strong>MVI / Clean Architecture</strong> approach with unidirectional
-                            data flow. Screen state is held in Kotlin Coroutines and <code>StateFlow</code>, which keeps
-                            UI updates predictable and easier to reason about.
+                            Screens use ViewModels that expose an immutable UI state as a Kotlin <code>StateFlow</code>. Navigation uses Navigation3 (alpha), and user settings are saved with multiplatform DataStore.
                         </p>
                         <p>
-                            It works <strong>offline first</strong>: exam content is stored locally in a relational database through SQLDelight, the initial content is seeded inside a transaction, and user settings are saved with multiplatform DataStore. Status: onboarding, profile and the exam database work; the exam-taking screen, grading and attempt history are in progress.
+                            Status: onboarding, a profile screen with a graduation countdown and an adaptive navigation frame work. The exam database (SQLDelight) and the seeding of exam data are developed on a separate branch and are not merged yet. The exam-taking screen, grading and attempt history are not built yet.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
