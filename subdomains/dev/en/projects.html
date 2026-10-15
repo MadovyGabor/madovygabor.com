@@ -195,9 +195,7 @@
                             UI updates predictable and easier to reason about.
                         </p>
                         <p>
-                            It works <strong>offline first</strong>: questions and progress are stored locally in a
-                            relational database through SQLDelight, the initial content is seeded inside transactions,
-                            and user settings are saved with multiplatform DataStore.
+                            It works <strong>offline first</strong>: exam content is stored locally in a relational database through SQLDelight, the initial content is seeded inside a transaction, and user settings are saved with multiplatform DataStore. Status: onboarding, profile and the exam database work; the exam-taking screen, grading and attempt history are in progress.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -215,9 +213,9 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                            <span class="code-dot"></span> Simplified example: SQLDelight query wrapper
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
+                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Simplified example</span>
 <span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
     <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
 ) {

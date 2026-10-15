@@ -195,10 +195,7 @@
                             a UI frissítései kiszámíthatók és könnyebben átláthatók.
                         </p>
                         <p>
-                            <strong>Offline-first</strong> módon működik: a kérdések és a haladás helyben, egy
-                            SQLDelighton keresztül elért relációs adatbázisban tárolódnak, a kezdeti tartalom
-                            tranzakciókon belül töltődik be, a felhasználói beállításokat pedig multiplatform DataStore
-                            menti.
+                            <strong>Offline-first</strong> módon működik: a vizsgatartalom helyben, egy SQLDelighton keresztül elért relációs adatbázisban tárolódik, a kezdeti tartalom egy tranzakción belül töltődik be, a felhasználói beállításokat pedig multiplatform DataStore menti. Állapot: a bevezető folyamat, a profil és a vizsgaadatbázis működik; a vizsgakitöltő képernyő, az értékelés és a próbálkozások előzményei fejlesztés alatt állnak.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -216,9 +213,9 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                            <span class="code-dot"></span> Simplified example: SQLDelight query wrapper
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
+                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Simplified example</span>
 <span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
     <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
 ) {
