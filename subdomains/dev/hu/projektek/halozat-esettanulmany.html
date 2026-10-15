@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Intézményi hálózat és L3 távmenedzsment kiépítése | Madový Gábor</title>
+    <title>Oktatási Intézményi Hálózat &amp; L3 Távoli Felügyelet | Madový Gábor</title>
     <meta name="description"
         content="Esettanulmány: zöldmezős hálózat és kamerarendszer kiépítése egy új építésű oktatási intézményben, Tvrdošovcén (Szlovákia). VLAN szegmentáció, izolált 8 kamerás CCTV, PoE kapacitástervezés és WireGuard távmenedzsment Brnóból.">
     <meta name="keywords"
@@ -13,7 +13,7 @@
     <meta name="author" content="Madový Gábor">
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <link rel="canonical" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
     <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
     <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
     <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="hu_HU" />
     <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
-    <meta property="og:title" content="Intézményi hálózat és L3 távmenedzsment kiépítése" />
+    <meta property="og:title" content="Oktatási Intézményi Hálózat &amp; L3 Távoli Felügyelet" />
     <meta property="og:description"
         content="VLAN szegmentáció, izolált CCTV, PoE kapacitástervezés és WireGuard split-tunnel távmenedzsment egy oktatási intézményben." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
@@ -49,7 +49,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany#article",
-  "headline": "Intézményi hálózat és L3 távmenedzsment kiépítése",
+  "headline": "Oktatási Intézményi Hálózat & L3 Távoli Felügyelet",
   "description": "VLAN szegmentáció, izolált CCTV, PoE kapacitástervezés és WireGuard split-tunnel távmenedzsment egy tvrdošovcei (Szlovákia) oktatási intézményben.",
   "author": {
     "@type": "Person",
@@ -73,7 +73,7 @@
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
             <div class="mobile-nav-header">
                 <span class="nav-brand">GABRIEL MADOVÝ</span>
-                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Menü bezárása">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -112,7 +112,7 @@
                 <a class="lang-link" href="/sk/projekty/sietova-infrastruktura-pripadova-studia">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -127,7 +127,7 @@
             <a href="../projektek" class="case-study-back-link">
                 <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> VISSZA A PROJEKTEKHEZ
             </a>
-            <h1 class="case-study-title font-display">Intézményi hálózat és L3 távmenedzsment kiépítése</h1>
+            <h1 class="case-study-title font-display">Oktatási Intézményi Hálózat &amp; L3 Távoli Felügyelet</h1>
             <p class="case-study-subtitle">
                 Oktatási intézmény infrastruktúrája — Tvrdošovce (Tardoskedd), Szlovákia
             </p>
@@ -172,7 +172,7 @@
                 </p>
             </div>
             <ul class="cs-list">
-                <li><strong>Elszigetelés:</strong> a kamerák nem érik el az internetet, és el vannak választva az irodai és tantermi forgalomtól.</li>
+                <li><strong>Izoláció:</strong> a kamerák nem érik el az internetet, és el vannak választva az irodai és tantermi forgalomtól.</li>
                 <li><strong>Router tehermentesítése:</strong> a folyamatos 24/7-es videóforgalom nem haladhat át a router CPU-ján.</li>
                 <li><strong>Két hozzáférési út:</strong> a dolgozók a Hik-Connect alkalmazással, hálózati beállítás nélkül látják a kameraképeket; a rendszergazda WireGuardon keresztül teljes, titkosított L3 hozzáférést kap.</li>
             </ul>
@@ -216,7 +216,7 @@
                             <td data-label="Megjegyzés">16× GbE PoE+ (802.3af/at, 250 W keret) + 2× GbE uplink.</td>
                         </tr>
                         <tr>
-                            <td data-label="Szerep"><strong>Végponti switch</strong></td>
+                            <td data-label="Szerep"><strong>Access switch</strong></td>
                             <td data-label="Eszköz">TP-Link JetStream TL-SG3452</td>
                             <td data-label="Megjegyzés">48× GbE + 4× SFP, L2+ menedzselt. Elsődleges végponti elosztó réteg: 802.1Q VLAN-ok az access portokon (fali aljzatok, PC-k, nyomtatók).</td>
                         </tr>
@@ -247,40 +247,47 @@
             <h3 class="cs-subhead">Fizikai és logikai topológia</h3>
             <figure class="topology-figure">
                 <div class="topology-scroll">
-                    <svg class="topology-svg" viewBox="0 0 1000 610" role="img" aria-labelledby="tp-title tp-desc" xmlns="http://www.w3.org/2000/svg"><title id="tp-title">Hálózati topológia</title><desc id="tp-desc">GPON vonal a Sagemcom modemig, DMZ az Omada ER605 átjáróra. LAN1 trunk a PoE switch felé (kamerák, NVR, AP-k, vezérlő). LAN2 a 48 portos TL-SG3452 menedzselt switch felé az irodai kliensekhez. WireGuard alagút Brnóból az ER605-höz.</desc><defs><marker id="tp-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="tp-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="tp-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="tp-a-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="360" y="20" width="340" height="125" rx="10" class="tp-group"/><rect x="320" y="195" width="460" height="100" rx="10" class="tp-group"/><rect x="20" y="355" width="520" height="245" rx="10" class="tp-group"/><rect x="560" y="355" width="420" height="245" rx="10" class="tp-group"/><circle cx="130" cy="78" r="34" class="tp-dev-light"/><path d="M114 86 h30 a8 8 0 0 0 0 -16 a12 12 0 0 0 -22 -3 a9 9 0 0 0 -8 19 z" class="tp-line-dev" fill="none"/><text x="130" y="132" class="tp-name" text-anchor="middle">Slovak Telekom GPON</text><text x="130" y="149" class="tp-t" text-anchor="middle">dinamikus publikus IP</text><path d="M166 78 H358" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><line x1="394" y1="70" x2="390" y2="52" class="tp-line-dev"/><line x1="462" y1="70" x2="466" y2="52" class="tp-line-dev"/><rect x="380" y="70" width="96" height="28" rx="4" class="tp-dev"/><circle cx="413.0" cy="84.0" r="2" class="tp-led"/><circle cx="423.0" cy="84.0" r="2" class="tp-led"/><circle cx="433.0" cy="84.0" r="2" class="tp-led"/><circle cx="443.0" cy="84.0" r="2" class="tp-led"/><rect x="492" y="32" width="118.60000000000001" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="502" y="46" class="tp-pill-t tp-r-t" text-anchor="start">ÁTJÁRÓ / MODEM</text><text x="492" y="74" class="tp-name" text-anchor="start">Sagemcom F@st 5670</text><text x="492" y="96" class="tp-t" text-anchor="start">DMZ → ER605 WAN</text><text x="492" y="116" class="tp-t" text-anchor="start">Wi-Fi ki · No-IP DDNS</text><path d="M530 145 V193" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><text x="540" y="174" class="tp-t" text-anchor="start">WAN · DMZ host</text><rect x="350" y="236" width="110" height="28" rx="4" class="tp-dev"/><rect x="390" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="402" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="414" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="426" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="438" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="476" y="206" width="270.4" height="20" rx="4" class="tp-pill tp-pill-b"/><text x="486" y="220" class="tp-pill-t tp-b-t" text-anchor="start">WIREGUARD · INTER-VLAN ROUTING · ACL</text><text x="476" y="247" class="tp-name" text-anchor="start">TP-Link Omada ER605 v2</text><text x="476" y="266" class="tp-t" text-anchor="start">VPN gateway · 10.0.0.1/24</text><text x="476" y="283" class="tp-t" text-anchor="start">WireGuard UDP 51820</text><rect x="860" y="56" width="40" height="26" rx="2" class="tp-dev"/><path d="M853 86 H907" class="tp-line-dev tp-thick"/><text x="880" y="112" class="tp-name" text-anchor="middle">Távoli admin</text><text x="880" y="128" class="tp-t" text-anchor="middle">Brno (CZ)</text><path d="M880 140 V245 H783" class="tp-w tp-b tp-dash" marker-end="url(#tp-a-b)"/><text x="892" y="182" class="tp-t tp-b-t" text-anchor="start">WireGuard</text><text x="892" y="198" class="tp-t tp-b-t" text-anchor="start">split tunnel</text><text x="892" y="214" class="tp-t tp-b-t" text-anchor="start">10.0.0.0/24</text><path d="M450 295 V325 H215 V378" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><text x="232" y="318" class="tp-t tp-r-t" text-anchor="start">LAN1 trunk · VLAN 1, 10, 20</text><path d="M610 295 V325 H705 V378" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><text x="620" y="318" class="tp-t tp-g-t" text-anchor="start">LAN2 · VLAN 20 · 10.10.20.1/24</text><rect x="287.2" y="345" width="242.8" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="297.2" y="359" class="tp-pill-t tp-r-t" text-anchor="start">250 W PoE keret · ~80 W használt</text><rect x="150" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="162.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="162.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="295" y="393" class="tp-name" text-anchor="start">TL-SG1218MPE</text><text x="295" y="411" class="tp-t" text-anchor="start">16× PoE+ · 802.3af/at</text><path d="M170 410 V432 H90 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M190 410 V442 H215 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M250 410 V442 H345 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M270 410 V432 H470 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><g transform="translate(90,484)"><rect x="-24" y="-9" width="38" height="18" rx="5" class="tp-dev"/><rect x="-30" y="-7" width="8" height="14" rx="2" class="tp-dev"/><circle cx="-26" cy="0" r="3" class="tp-led"/><path d="M10 9 L14 22 M4 22 H24" class="tp-line-dev"/></g><text x="90" y="527" class="tp-name tp-sm" text-anchor="middle">8× IP kamera</text><text x="90" y="544" class="tp-t" text-anchor="middle">port 1–8</text><text x="90" y="560" class="tp-t" text-anchor="middle">10.10.10.21–28</text><rect x="187" y="474" width="56" height="20" rx="3" class="tp-dev"/><line x1="197" y1="484" x2="221" y2="484" class="tp-line-dev"/><circle cx="231" cy="484" r="2" class="tp-led"/><text x="215" y="527" class="tp-name tp-sm" text-anchor="middle">Hikvision NVR</text><text x="215" y="544" class="tp-t" text-anchor="middle">port 17</text><text x="215" y="560" class="tp-t" text-anchor="middle">10.10.10.10</text><circle cx="330" cy="484" r="14" class="tp-dev-light"/><circle cx="330" cy="484" r="3" class="tp-led"/><circle cx="360" cy="484" r="14" class="tp-dev-light"/><circle cx="360" cy="484" r="3" class="tp-led"/><text x="345" y="527" class="tp-name tp-sm" text-anchor="middle">2× EAP610</text><text x="345" y="544" class="tp-t" text-anchor="middle">port 9–10</text><text x="345" y="560" class="tp-t" text-anchor="middle">Wi-Fi 6</text><rect x="456" y="464" width="28" height="38" rx="3" class="tp-dev"/><line x1="462" y1="472" x2="478" y2="472" class="tp-line-dev"/><line x1="462" y1="478" x2="478" y2="478" class="tp-line-dev"/><circle cx="470" cy="491" r="5" class="tp-ring"/><text x="470" y="527" class="tp-name tp-sm" text-anchor="middle">OC200</text><text x="470" y="544" class="tp-t" text-anchor="middle">port 11</text><text x="470" y="560" class="tp-t" text-anchor="middle">vezérlő</text><text x="280" y="588" class="tp-foot" text-anchor="middle">VLAN 10 · a rögzítés a switchen marad</text><rect x="640" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="652.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="652.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="785" y="393" class="tp-name" text-anchor="start">TL-SG3452</text><text x="785" y="411" class="tp-t" text-anchor="start">48× GbE + 4× SFP</text><text x="785" y="428" class="tp-t" text-anchor="start">L2+ menedzselt</text><path d="M685 410 V432 H650 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M705 410 V442 H770 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M725 410 V432 H890 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><rect x="632" y="466" width="36" height="36" rx="4" class="tp-dev-light"/><rect x="639" y="478" width="9" height="9" rx="1" class="tp-port-d"/><rect x="652" y="478" width="9" height="9" rx="1" class="tp-port-d"/><text x="650" y="527" class="tp-name tp-sm" text-anchor="middle">Fali aljzatok</text><text x="650" y="544" class="tp-t" text-anchor="middle">dupla RJ45</text><rect x="760" y="466" width="20" height="10" class="tp-dev-light"/><rect x="750" y="476" width="40" height="18" rx="3" class="tp-dev"/><rect x="760" y="490" width="20" height="12" class="tp-dev-light"/><text x="770" y="527" class="tp-name tp-sm" text-anchor="middle">Nyomtatók</text><text x="770" y="544" class="tp-t" text-anchor="middle">hálózati</text><rect x="868" y="466" width="44" height="28" rx="2" class="tp-dev"/><path d="M890 494 V502 M880 502 H900" class="tp-line-dev"/><text x="890" y="527" class="tp-name tp-sm" text-anchor="middle">Munkaállomások</text><text x="890" y="544" class="tp-t" text-anchor="middle">iroda és terem</text><text x="770" y="588" class="tp-foot" text-anchor="middle">VLAN 20 · irodai és tantermi kliensek</text></svg>
+                    <svg class="topology-svg" viewBox="0 0 1000 610" role="img" aria-labelledby="tp-title tp-desc" xmlns="http://www.w3.org/2000/svg"><title id="tp-title">Hálózati topológia</title><desc id="tp-desc">GPON vonal a Sagemcom modemig, DMZ az Omada ER605 átjáróra. LAN1 trunk a PoE switch felé (kamerák, NVR, AP-k, vezérlő). LAN2 a 48 portos TL-SG3452 menedzselt switch felé az irodai kliensekhez. WireGuard alagút Brnóból az ER605-höz.</desc><defs><marker id="tp-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="tp-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="tp-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="tp-a-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="360" y="20" width="340" height="125" rx="10" class="tp-group"/><rect x="320" y="195" width="460" height="100" rx="10" class="tp-group"/><rect x="20" y="355" width="520" height="245" rx="10" class="tp-group"/><rect x="560" y="355" width="420" height="245" rx="10" class="tp-group"/><circle cx="130" cy="78" r="34" class="tp-dev-light"/><path d="M114 86 h30 a8 8 0 0 0 0 -16 a12 12 0 0 0 -22 -3 a9 9 0 0 0 -8 19 z" class="tp-line-dev" fill="none"/><text x="130" y="132" class="tp-name" text-anchor="middle">Slovak Telekom GPON</text><text x="130" y="149" class="tp-t" text-anchor="middle">dinamikus publikus IP</text><path d="M166 78 H358" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><line x1="394" y1="70" x2="390" y2="52" class="tp-line-dev"/><line x1="462" y1="70" x2="466" y2="52" class="tp-line-dev"/><rect x="380" y="70" width="96" height="28" rx="4" class="tp-dev"/><circle cx="413.0" cy="84.0" r="2" class="tp-led"/><circle cx="423.0" cy="84.0" r="2" class="tp-led"/><circle cx="433.0" cy="84.0" r="2" class="tp-led"/><circle cx="443.0" cy="84.0" r="2" class="tp-led"/><rect x="492" y="32" width="118.60000000000001" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="502" y="46" class="tp-pill-t tp-r-t" text-anchor="start">ÁTJÁRÓ / MODEM</text><text x="492" y="74" class="tp-name" text-anchor="start">Sagemcom F@st 5670</text><text x="492" y="96" class="tp-t" text-anchor="start">DMZ → ER605 WAN</text><text x="492" y="116" class="tp-t" text-anchor="start">Wi-Fi ki · No-IP DDNS</text><path d="M530 145 V193" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><text x="540" y="174" class="tp-t" text-anchor="start">WAN · DMZ host</text><rect x="350" y="236" width="110" height="28" rx="4" class="tp-dev"/><rect x="390" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="402" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="414" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="426" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="438" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="476" y="206" width="270.4" height="20" rx="4" class="tp-pill tp-pill-b"/><text x="486" y="220" class="tp-pill-t tp-b-t" text-anchor="start">WIREGUARD · INTER-VLAN ROUTING · ACL</text><text x="476" y="247" class="tp-name" text-anchor="start">TP-Link Omada ER605 v2</text><text x="476" y="266" class="tp-t" text-anchor="start">VPN gateway · 10.0.0.1/24</text><text x="476" y="283" class="tp-t" text-anchor="start">WireGuard UDP 51820</text><rect x="860" y="56" width="40" height="26" rx="2" class="tp-dev"/><path d="M853 86 H907" class="tp-line-dev tp-thick"/><text x="880" y="112" class="tp-name" text-anchor="middle">Távoli admin</text><text x="880" y="128" class="tp-t" text-anchor="middle">Brno (CZ)</text><path d="M880 140 V245 H783" class="tp-w tp-b tp-dash" marker-end="url(#tp-a-b)"/><text x="892" y="182" class="tp-t tp-b-t" text-anchor="start">WireGuard</text><text x="892" y="198" class="tp-t tp-b-t" text-anchor="start">split tunnel</text><text x="892" y="214" class="tp-t tp-b-t" text-anchor="start">10.0.0.0/24</text><path d="M450 295 V325 H215 V378" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><text x="232" y="318" class="tp-t tp-r-t" text-anchor="start">LAN1 trunk · VLAN 1, 10, 20</text><path d="M610 295 V325 H705 V378" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><text x="620" y="318" class="tp-t tp-g-t" text-anchor="start">LAN2 · VLAN 20 · 10.10.20.1/24</text><rect x="287.2" y="345" width="242.8" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="297.2" y="359" class="tp-pill-t tp-r-t" text-anchor="start">250 W PoE keret · ~80 W terhelés</text><rect x="150" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="162.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="162.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="295" y="393" class="tp-name" text-anchor="start">TL-SG1218MPE</text><text x="295" y="411" class="tp-t" text-anchor="start">16× PoE+ · 802.3af/at</text><path d="M170 410 V432 H90 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M190 410 V442 H215 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M250 410 V442 H345 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M270 410 V432 H470 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><g transform="translate(90,484)"><rect x="-24" y="-9" width="38" height="18" rx="5" class="tp-dev"/><rect x="-30" y="-7" width="8" height="14" rx="2" class="tp-dev"/><circle cx="-26" cy="0" r="3" class="tp-led"/><path d="M10 9 L14 22 M4 22 H24" class="tp-line-dev"/></g><text x="90" y="527" class="tp-name tp-sm" text-anchor="middle">8× IP kamera</text><text x="90" y="544" class="tp-t" text-anchor="middle">port 1–8</text><text x="90" y="560" class="tp-t" text-anchor="middle">10.10.10.21–28</text><rect x="187" y="474" width="56" height="20" rx="3" class="tp-dev"/><line x1="197" y1="484" x2="221" y2="484" class="tp-line-dev"/><circle cx="231" cy="484" r="2" class="tp-led"/><text x="215" y="527" class="tp-name tp-sm" text-anchor="middle">Hikvision NVR</text><text x="215" y="544" class="tp-t" text-anchor="middle">port 17</text><text x="215" y="560" class="tp-t" text-anchor="middle">10.10.10.10</text><circle cx="330" cy="484" r="14" class="tp-dev-light"/><circle cx="330" cy="484" r="3" class="tp-led"/><circle cx="360" cy="484" r="14" class="tp-dev-light"/><circle cx="360" cy="484" r="3" class="tp-led"/><text x="345" y="527" class="tp-name tp-sm" text-anchor="middle">2× EAP610</text><text x="345" y="544" class="tp-t" text-anchor="middle">port 9–10</text><text x="345" y="560" class="tp-t" text-anchor="middle">Wi-Fi 6</text><rect x="456" y="464" width="28" height="38" rx="3" class="tp-dev"/><line x1="462" y1="472" x2="478" y2="472" class="tp-line-dev"/><line x1="462" y1="478" x2="478" y2="478" class="tp-line-dev"/><circle cx="470" cy="491" r="5" class="tp-ring"/><text x="470" y="527" class="tp-name tp-sm" text-anchor="middle">OC200</text><text x="470" y="544" class="tp-t" text-anchor="middle">port 11</text><text x="470" y="560" class="tp-t" text-anchor="middle">vezérlő</text><text x="280" y="588" class="tp-foot" text-anchor="middle">VLAN 10 · a rögzítés a switchen marad</text><rect x="640" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="652.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="652.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="785" y="393" class="tp-name" text-anchor="start">TL-SG3452</text><text x="785" y="411" class="tp-t" text-anchor="start">48× GbE + 4× SFP</text><text x="785" y="428" class="tp-t" text-anchor="start">L2+ menedzselt</text><path d="M685 410 V432 H650 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M705 410 V442 H770 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M725 410 V432 H890 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><rect x="632" y="466" width="36" height="36" rx="4" class="tp-dev-light"/><rect x="639" y="478" width="9" height="9" rx="1" class="tp-port-d"/><rect x="652" y="478" width="9" height="9" rx="1" class="tp-port-d"/><text x="650" y="527" class="tp-name tp-sm" text-anchor="middle">Fali aljzatok</text><text x="650" y="544" class="tp-t" text-anchor="middle">dupla RJ45</text><rect x="760" y="466" width="20" height="10" class="tp-dev-light"/><rect x="750" y="476" width="40" height="18" rx="3" class="tp-dev"/><rect x="760" y="490" width="20" height="12" class="tp-dev-light"/><text x="770" y="527" class="tp-name tp-sm" text-anchor="middle">Nyomtatók</text><text x="770" y="544" class="tp-t" text-anchor="middle">hálózati</text><rect x="868" y="466" width="44" height="28" rx="2" class="tp-dev"/><path d="M890 494 V502 M880 502 H900" class="tp-line-dev"/><text x="890" y="527" class="tp-name tp-sm" text-anchor="middle">Munkaállomások</text><text x="890" y="544" class="tp-t" text-anchor="middle">iroda és terem</text><text x="770" y="588" class="tp-foot" text-anchor="middle">VLAN 20 · irodai és tantermi kliensek</text></svg>
                 </div>
                 <figcaption class="topology-caption">1. ábra — Logikai topológia, portkiosztás és forgalmi utak</figcaption>
             </figure>
 
-            <div class="case-study-media-grid grid-3">
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/rack-cabling.webp" alt="Wall rack with patch panels and switches" loading="lazy"> -->
-                        Fotó: rack kábelezés
-                    </div>
+            <h3 class="cs-subhead">Fotók a telepítésről</h3>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/patch-panel-termination.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/patch-panel-termination.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Cat6 kábelek bekötése a rack patch paneljébe">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">Rack és patch panelek</span>
-                        <span class="media-figure-desc">Cat6 STP végződések a PoE és a végponti switch felé.</span>
+                        <span class="media-figure-title">Patch panel bekötése</span>
+                        <span class="media-figure-desc">Cat6 kábelek bekötése a rack patch paneljébe.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/ap-mounting.webp" alt="Ceiling-mounted EAP610 access point" loading="lazy"> -->
-                        Fotó: AP szerelés
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-first-wiring.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-first-wiring.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Részben bekötött rack ER605 routerrel, NVR-rel és PoE switch-csel">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">EAP610 mennyezeti szerelés</span>
-                        <span class="media-figure-desc">PoE táplálású Wi-Fi 6 AP VLAN-taggelt switchporton.</span>
+                        <span class="media-figure-title">Első bekötések</span>
+                        <span class="media-figure-desc">Router és NVR a helyén, a PoE switch patchelése folyamatban.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/switch-setup.webp" alt="TL-SG1218MPE PoE switch with camera and NVR uplinks" loading="lazy"> -->
-                        Fotó: switch kiépítés
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-final-open.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-final-open.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Kész, nyitott 19 colos rack patch panelekkel, switchekkel, NVR-rel és PDU-val">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">PoE switch és NVR</span>
-                        <span class="media-figure-desc">Kamerák és NVR ugyanazon a switchen, 1–8. és 17. port.</span>
+                        <span class="media-figure-title">Kész rack</span>
+                        <span class="media-figure-desc">Minden eszköz beépítve és bekötve.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Zárt, falra szerelt hálózati rack">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Zárt rack</span>
+                        <span class="media-figure-desc">A falra szerelt szekrény a végleges helyén.</span>
                     </figcaption>
                 </figure>
             </div>
@@ -392,9 +399,9 @@
                         <h3 class="challenge-title">1. szint — Omada felhő (OC200)</h3>
                         <span class="badge badge-dark">Napi üzemeltetés</span>
                     </div>
-                    <p class="tier-label">Felhasználás</p>
+                    <p class="tier-label">Felhasználási terület</p>
                     <p class="tier-use">Napi állapotellenőrzés, gyors hibabehatárolás és rutinmódosítások telefonról vagy webes portálról.</p>
-                    <p class="tier-label">Képességek</p>
+                    <p class="tier-label">Funkciók</p>
                     <ul class="cs-list cs-list-tight">
                             <li>Valós idejű kliensanalitika, sávszélesség és portállapot az Omada által kezelt eszközökön (átjáró, AP-k, adoptált switchek).</li>
                             <li>Wi-Fi módosítások VPN nélkül: SSID-k, adóteljesítmény, csatornaszélesség, ideiglenes vendéghozzáférés.</li>
@@ -404,11 +411,11 @@
                 <div class="tier-card tier-vpn">
                     <div class="tier-head">
                         <h3 class="challenge-title">2. szint — WireGuard L3 alagút</h3>
-                        <span class="badge badge-dark">Mély hozzáférés</span>
+                        <span class="badge badge-dark">Teljes hozzáférés</span>
                     </div>
-                    <p class="tier-label">Felhasználás</p>
+                    <p class="tier-label">Felhasználási terület</p>
                     <p class="tier-use">Alacsony szintű hardveradminisztráció, beágyazott eszközök karbantartása és a videórendszer kezelése.</p>
-                    <p class="tier-label">Képességek</p>
+                    <p class="tier-label">Funkciók</p>
                     <ul class="cs-list cs-list-tight">
                             <li>Routolt L3 hozzáférés az izolált alhálózatokhoz: <code>10.10.1.0/24</code>, <code>10.10.10.0/24</code>, <code>10.10.20.0/24</code>.</li>
                             <li>Teljes NVR webes felület: archívum letöltése, firmware-frissítés és kameránkénti stream-diagnosztika. Ezek egyike sem érhető el a publikus WAN felől.</li>
@@ -440,7 +447,7 @@
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Kiváltó ok
                         </div>
                         <p>
                             A rendszergazdai gép otthoni hálózata és a távoli ISP modem is ugyanazt a privát /24 tartományt használta (az ISP modem gyári alapértéke). Teljes alagút (full tunnel) esetén a helyi forgalom azonnal megszakadt.
@@ -476,7 +483,7 @@
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Kiváltó ok
                         </div>
                         <p>
                             Az alagút aktív, de <code>0 B received, 444 B sent</code> állapotban ragadt. Az Omada által generált kliensprofil az átjáró privát WAN címét (az ISP modem mögött) adta meg végpontként, ami az internet felől nem elérhető. A GPON vonal publikus IP-je ráadásul időszakosan változik.
@@ -509,7 +516,7 @@ PersistentKeepalive = 25</code>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és kiváltó ok
                         </div>
                         <p>Az NVR webes felületét megnyitó dolgozók teljes oldalas „Nem biztonságos” figyelmeztetést kaptak, és egy másik VLAN-ban lévő IP-címet kellett begépelniük.</p>
                         <ul class="cs-list cs-list-tight">
@@ -525,7 +532,7 @@ PersistentKeepalive = 25</code>
                         <ol class="cs-steps">
                             <li><strong>Helyi DNS:</strong> A-rekord az ER605-ön, <code>kamery.skolka.lan → 10.10.10.10</code>, feloldható a LAN-on és WireGuardon keresztül is.</li>
                             <li><strong>NVR tanúsítvány:</strong> HTTPS bekapcsolva a 443-as porton. Új önaláírt tanúsítvány a <code>kamery.skolka.lan</code> névre, SHA-256 aláírással, exportálva <code>NVR_CA.cer</code> néven.</li>
-                            <li><strong>Kliens beállítás:</strong> egy Windows batch script a <code>certutil</code> segítségével importálja a tanúsítványt a Windows megbízható legfelső szintű tárolójába, asztali parancsikont hoz létre az NVR-hez, és rövid útmutatót ír ki a felhasználónak.</li>
+                            <li><strong>Kliensek beállítása:</strong> egy Windows batch script a <code>certutil</code> segítségével importálja a tanúsítványt a Windows megbízható legfelső szintű tárolójába, asztali parancsikont hoz létre az NVR-hez, és rövid útmutatót ír ki a felhasználónak.</li>
                         </ol>
                     </div>
                 </div>
@@ -536,14 +543,14 @@ PersistentKeepalive = 25</code>
                 <div class="challenge-header">
                     <div class="challenge-title-group">
                         <span class="challenge-number">04</span>
-                        <h3 class="challenge-title">Belső DNS feloldás hibája VPN-en</h3>
+                        <h3 class="challenge-title">A belső DNS-nevek nem oldódnak fel VPN-en</h3>
                     </div>
                     <span class="badge badge-dark">DNS</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Kiváltó ok
                         </div>
                         <p>
                             Az alagúton a <code>10.10.10.10</code> 22 ms alatt válaszolt, de a <code>kamery.skolka.lan</code> lekérdezés <code>Non-existent domain</code> választ adott. Az Omada az egyedi LAN DNS rekordokat interfészhez köti, és a WireGuard interfész felé nem szolgálta ki őket.
@@ -578,7 +585,7 @@ PersistentKeepalive = 25</code>
                     <span class="verify-val">A rack túlfeszültség-védett PDU-n keresztül közvetlenül a hálózati áramról működik, UPS nélkül.</span>
                 </div>
                 <div class="verify-row">
-                    <span class="verify-key">Viselkedés</span>
+                    <span class="verify-key">Hatás</span>
                     <span class="verify-val">Áramkimaradás vagy fáziskiesés esetén a modem, az átjáró, a PoE switch és az NVR egyszerre leáll, a rögzítés pedig szünetel, amíg az áram vissza nem tér.</span>
                 </div>
                 <div class="verify-row">
@@ -586,7 +593,7 @@ PersistentKeepalive = 25</code>
                     <span class="verify-val">A követelmények felmérésekor egy dedikált UPS-t is megvizsgáltunk; tudatosan maradt ki a megrendelő kockázattűrése, a költségvetési prioritások és a nyitvatartáson kívüli leállás alacsony kritikussága miatt.</span>
                 </div>
                 <div class="verify-row">
-                    <span class="verify-key">Kezelés</span>
+                    <span class="verify-key">Kockázatcsökkentés</span>
                     <span class="verify-val">Minden eszköz magától helyreáll: az ER605 átjáró, a TP-Link switchek és a Hikvision NVR automatikus bekapcsolásra van állítva, így a linkek, a WireGuard végpont és a rögzítés kézi beavatkozás nélkül visszaáll.</span>
                 </div>
             </div>
@@ -618,12 +625,12 @@ PersistentKeepalive = 25</code>
                     <span class="verify-val">Cat6 STP linkek 1000 Mbps full duplexen. Patch panelek földelve, PDU túlfeszültség-védelem aktív.</span>
                 </div>
                 <div class="verify-row">
-                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Kapcsolás</span>
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>L2 kapcsolás</span>
                     <span class="verify-val">A 8 H.265 rögzítési stream a PoE switchen marad. Nincs folyamatos videóterhelés az átjárón.</span>
                 </div>
                 <div class="verify-row">
-                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Elszigetelés</span>
-                    <span class="verify-val">A VLAN 10 kameraforgalma a WAN határon eldobva.</span>
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Izoláció</span>
+                    <span class="verify-val">A VLAN 10 kameraforgalmát az átjáró a WAN határon eldobja.</span>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Távoli elérés</span>
@@ -639,7 +646,7 @@ PersistentKeepalive = 25</code>
     </main>
 
     <footer class="footer">
-        <div class="footer-copy">© 2026 Gabriel Madový. Minden jog fenntartva.</div>
+        <div class="footer-copy">© 2026 Madový Gábor. Minden jog fenntartva.</div>
         <div class="footer-links">
             <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
             <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>

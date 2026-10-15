@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Campus Network &amp; L3 Remote Management Deployment | Gabriel Madový</title>
+    <title>Educational Facility Network &amp; L3 Remote Management | Gabriel Madový</title>
     <meta name="description"
         content="Case study: greenfield network and CCTV deployment for a newly built educational facility in Tvrdošovce, Slovakia. VLAN segmentation, isolated 8-camera CCTV, PoE capacity planning and WireGuard remote management from Brno.">
     <meta name="keywords"
@@ -22,7 +22,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://dev.madovygabor.com/en/projects/network-case-study" />
-    <meta property="og:title" content="Campus Network &amp; L3 Remote Management Deployment" />
+    <meta property="og:title" content="Educational Facility Network &amp; L3 Remote Management" />
     <meta property="og:description"
         content="VLAN segmentation, isolated CCTV, PoE capacity planning and WireGuard split-tunnel remote management for an educational facility." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
@@ -49,7 +49,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/en/projects/network-case-study#article",
-  "headline": "Campus Network & L3 Remote Management Deployment",
+  "headline": "Educational Facility Network & L3 Remote Management",
   "description": "VLAN segmentation, isolated CCTV, PoE capacity planning and WireGuard split-tunnel remote management for an educational facility in Tvrdošovce, Slovakia.",
   "author": {
     "@type": "Person",
@@ -127,7 +127,7 @@
             <a href="../projects" class="case-study-back-link">
                 <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> BACK TO PROJECTS
             </a>
-            <h1 class="case-study-title font-display">Campus Network &amp; L3 Remote Management Deployment</h1>
+            <h1 class="case-study-title font-display">Educational Facility Network &amp; L3 Remote Management</h1>
             <p class="case-study-subtitle">
                 Educational Facility Infrastructure — Tvrdošovce, Slovakia
             </p>
@@ -252,35 +252,42 @@
                 <figcaption class="topology-caption">Fig. 1 — Logical topology, port assignment and traffic paths</figcaption>
             </figure>
 
-            <div class="case-study-media-grid grid-3">
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/rack-cabling.webp" alt="Wall rack with patch panels and switches" loading="lazy"> -->
-                        Photo: rack cabling
-                    </div>
+            <h3 class="cs-subhead">Installation photos</h3>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/patch-panel-termination.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/patch-panel-termination.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Cat6 cables being terminated on a rack patch panel">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">Rack &amp; patch panels</span>
-                        <span class="media-figure-desc">Cat6 STP terminations into the PoE and access switches.</span>
+                        <span class="media-figure-title">Patch panel termination</span>
+                        <span class="media-figure-desc">Cat6 runs terminated on the rack patch panel.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/ap-mounting.webp" alt="Ceiling-mounted EAP610 access point" loading="lazy"> -->
-                        Photo: AP mounting
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-first-wiring.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-first-wiring.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Partially wired rack with ER605 router, NVR and PoE switch">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">EAP610 ceiling mount</span>
-                        <span class="media-figure-desc">PoE-powered Wi-Fi 6 AP on a VLAN-tagged switch port.</span>
+                        <span class="media-figure-title">First wiring</span>
+                        <span class="media-figure-desc">Router and NVR installed; PoE switch patching in progress.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/network/switch-setup.webp" alt="TL-SG1218MPE PoE switch with camera and NVR uplinks" loading="lazy"> -->
-                        Photo: switch setup
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-final-open.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-final-open.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Finished open 19-inch rack with patch panels, switches, NVR and PDU">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">PoE switch &amp; NVR</span>
-                        <span class="media-figure-desc">Cameras and NVR on the same switch, ports 1–8 and 17.</span>
+                        <span class="media-figure-title">Finished rack</span>
+                        <span class="media-figure-desc">All equipment installed and patched.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Closed wall-mounted network rack">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Closed rack</span>
+                        <span class="media-figure-desc">Wall-mounted cabinet in its final position.</span>
                     </figcaption>
                 </figure>
             </div>
