@@ -168,7 +168,7 @@
         <section class="cs-section scroll-reveal delay-100">
             <div class="cs-prose">
                 <p>Installation, LSN loop programming and building integration of the fire detection and alarm system (FDAS; Slovak: <em>elektronická požiarna signalizácia</em>, EPS) for a kindergarten and school in Slovakia. The FDAS controller is a Bosch AVENAR panel 2000; door holders, the main power distribution and a GSM dialer are controlled by an RML 0008 A relay module on the panel's internal rail.</p>
-                <p>The layout (device types, locations and rooms) came from the design by the authorized supervisor, who holds the required authorization and is responsible for it. I installed, addressed, programmed and troubleshot the system on site.</p>
+                <p>The project design (device layout, rooms and the cause-and-effect logic) was prepared by the team and the authorized supervisor, who holds the required authorization and is responsible for it. I installed, addressed, programmed and troubleshot the system on site.</p>
             </div>
             <ul class="cs-list">
                 <li><strong>Readable alarms:</strong> the panel shows functional zones and room names, not raw LSN bus addresses.</li>
@@ -406,6 +406,7 @@
 
         <section class="cs-section scroll-reveal delay-100">
             <div class="cs-prose">
+                <p>The cause-and-effect logic is part of the project design by my colleagues; my part was implementing the relay outputs (RML 0008 A).</p>
                 <p>Building functions are driven by the RML 0008 A relay module on the panel rail.</p>
             </div>
             <div class="tech-table-wrapper">
@@ -583,7 +584,7 @@ exceeds the maximum limit (FPE-8000-BCM)</code></p>
                         <div class="challenge-block-label">
                             <span class="material-symbols-outlined">check_circle</span> Fix
                         </div>
-                        <p>Standby time set back to 24 h + 30 min alarm, the standard requirement for this type of building. The RPS consistency check passed.</p>
+                        <p>Standby time set back to 24 h + 30 min alarm, the autonomy specified for this building. The RPS consistency check passed.</p>
                     </div>
                 </div>
                 <div class="challenge-code">
@@ -617,7 +618,6 @@ max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
                 <p class="terminal-line proto-title">FDAS COMMISSIONING CHECKLIST (TECHNICAL SELF-CHECK)</p>
                 <p class="terminal-line"><span class="proto-key">Status:</span> INSTALLED, PROGRAMMED &amp; TECHNICALLY VERIFIED</p>
                 <p class="terminal-line"><span class="proto-key">Reference standards:</span> STN EN 54-2, 54-4 | DIN 33404-3</p>
-                <p class="terminal-line"><span class="proto-key">Certification:</span> §21 (Vyhláška 508/2009 Z. z.) | Certified Designer &amp; Engineer – Fire Alarm Systems / EPS (Bosch FPA 5000/1200, AVENAR)</p>
                 <div class="proto-sep"></div>
                 <p class="terminal-line proto-key">SYSTEM CHECKS:</p>
                 <div class="proto-row">

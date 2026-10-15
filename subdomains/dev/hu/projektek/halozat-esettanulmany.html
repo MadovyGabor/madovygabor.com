@@ -300,6 +300,9 @@
         </div>
 
         <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>A címtartományok publikálás céljából általánosítva vannak (x és y helyőrzők).</p>
+            </div>
             <h3 class="cs-subhead">Alhálózatok és szabályok</h3>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -332,7 +335,7 @@
                             <td data-label="Alhálózat"><code>10.x.10.0/24</code></td>
                             <td data-label="Átjáró"><code>.1</code></td>
                             <td data-label="Eszközök">NVR (<code>.10</code>), kamerák (<code>.21–.28</code>)</td>
-                            <td data-label="Szabály">A kamerák WAN kimenete az átjárón tiltva.</td>
+                            <td data-label="Szabály">A kamerák WAN kimenete az átjárón tiltva; csak az NVR kimenő forgalma engedélyezett (Hik-Connect miatt).</td>
                         </tr>
                         <tr>
                             <td data-label="Zóna"><strong>VLAN 20 — Irodai LAN</strong></td>
@@ -630,7 +633,7 @@ PersistentKeepalive = 25</code>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Izoláció</span>
-                    <span class="verify-val">A VLAN 10 kameraforgalmát az átjáró a WAN határon eldobja.</span>
+                    <span class="verify-val">A VLAN 10 kameraforgalmát (az összes kamera, az NVR kivételével) az átjáró a WAN határon eldobja.</span>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Távoli elérés</span>

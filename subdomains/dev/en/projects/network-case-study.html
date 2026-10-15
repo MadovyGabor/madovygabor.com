@@ -300,6 +300,9 @@
         </div>
 
         <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Address ranges are generalised for publication (x, y are placeholders).</p>
+            </div>
             <h3 class="cs-subhead">Subnets &amp; policy</h3>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -332,7 +335,7 @@
                             <td data-label="Subnet"><code>10.x.10.0/24</code></td>
                             <td data-label="Gateway"><code>.1</code></td>
                             <td data-label="Hosts">NVR (<code>.10</code>), cameras (<code>.21–.28</code>)</td>
-                            <td data-label="Policy">Camera WAN egress blocked at the gateway.</td>
+                            <td data-label="Policy">Camera WAN egress blocked at the gateway; only the NVR is allowed outbound (for Hik-Connect).</td>
                         </tr>
                         <tr>
                             <td data-label="Zone"><strong>VLAN 20 — Staff LAN</strong></td>
@@ -630,7 +633,7 @@ PersistentKeepalive = 25</code>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Isolation</span>
-                    <span class="verify-val">Camera traffic from VLAN 10 dropped at the WAN boundary.</span>
+                    <span class="verify-val">Camera traffic (all cameras, excluding the NVR) from VLAN 10 is dropped at the WAN boundary.</span>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Remote access</span>

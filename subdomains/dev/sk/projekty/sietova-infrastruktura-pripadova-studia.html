@@ -300,6 +300,9 @@
         </div>
 
         <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Adresné rozsahy sú pre publikovanie zovšeobecnené (x a y sú zástupné hodnoty).</p>
+            </div>
             <h3 class="cs-subhead">Podsiete a pravidlá</h3>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -332,7 +335,7 @@
                             <td data-label="Podsieť"><code>10.x.10.0/24</code></td>
                             <td data-label="Brána"><code>.1</code></td>
                             <td data-label="Zariadenia">NVR (<code>.10</code>), kamery (<code>.21–.28</code>)</td>
-                            <td data-label="Pravidlo">Výstup kamier do WAN blokovaný na bráne.</td>
+                            <td data-label="Pravidlo">Výstup kamier do WAN je blokovaný na bráne; odchádzajúca prevádzka je povolená iba pre NVR (kvôli Hik-Connect).</td>
                         </tr>
                         <tr>
                             <td data-label="Zóna"><strong>VLAN 20 — LAN zamestnancov</strong></td>
@@ -630,7 +633,7 @@ PersistentKeepalive = 25</code>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Izolácia</span>
-                    <span class="verify-val">Prevádzku kamier z VLAN 10 brána zahadzuje na hranici WAN.</span>
+                    <span class="verify-val">Prevádzku kamier (všetky kamery okrem NVR) z VLAN 10 brána zahadzuje na hranici WAN.</span>
                 </div>
                 <div class="verify-row">
                     <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Vzdialený prístup</span>
