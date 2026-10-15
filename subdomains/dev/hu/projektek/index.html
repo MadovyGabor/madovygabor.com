@@ -208,18 +208,19 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Simplified example: SQLDelight query wrapper
+                            <span class="code-dot"></span> Excerpt (abbreviated): MainFrame.kt, adaptive navigation
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Simplified example</span>
-<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
-    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
-) {
-    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
-        <span class="syntax-keyword">return</span> database.examQueries
-            .selectActiveQuestionsBySubject(subjectId)
-            .asFlow()
-            .mapToList(Dispatchers.Default)
+                        <pre class="font-code code-snippet"><code>BoxWithConstraints {
+    <span class="syntax-comment">// Determine if the device is considered a desktop based on maxWidth</span>
+    <span class="syntax-keyword">val</span> isDesktop = maxWidth &gt; LayoutConstants.DesktopThreshold
+
+    <span class="syntax-keyword">if</span> (isDesktop) {
+        <span class="syntax-comment">// Desktop navigation side bar</span>
+        Row(Modifier.fillMaxSize()) {
+            <span class="syntax-comment">// ...</span>
+        }
     }
+    <span class="syntax-comment">// ...</span>
 }</code></pre>
                     </div>
                 </div>
