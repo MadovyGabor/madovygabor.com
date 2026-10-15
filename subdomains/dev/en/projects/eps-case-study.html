@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000 | Gabriel Madový</title>
+    <meta name="description"
+        content="Case study: installation, LSN loop programming and life-safety integration of a Bosch AVENAR panel 2000 fire detection and alarm system (FDAS) for an educational facility in Tvrdošovce, Slovakia. Zoning, cause & effect, troubleshooting and EN 54-4 battery sizing.">
+    <meta name="keywords"
+        content="Bosch AVENAR, FDAS, Fire Detection and Alarm System, LSN, EPS, EN 54, RML 0008 A, FMC-420RW, Cause and Effect, RPS, Gabriel Madový">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <meta property="og:title" content="Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000" />
+    <meta property="og:description"
+        content="Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery sizing on a Bosch AVENAR panel 2000." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/en/projects/eps-case-study#article",
+  "headline": "Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000",
+  "description": "Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery sizing on a Bosch AVENAR panel 2000.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/en/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gabriel Madový"
+  },
+  "keywords": "Bosch AVENAR, FDAS, Fire Detection and Alarm System, LSN, EPS, EN 54, RML 0008 A, FMC-420RW, Cause and Effect, RPS, Gabriel Madový"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">HOME</a>
+                <a class="mobile-nav-link active" href="../projects">PROJECTS</a>
+                <a class="mobile-nav-link" href="../contact">CONTACT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link active" href="/en/projects/eps-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">HOME</a>
+            <a class="nav-link active" href="../projects">PROJECTS</a>
+            <a class="nav-link" href="../contact">CONTACT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link active" href="/en/projects/eps-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/hu/projektek/eps-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projects" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> BACK TO PROJECTS
+            </a>
+            <h1 class="case-study-title font-display">Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000</h1>
+            <p class="case-study-subtitle">
+                Life-safety installation — educational facility (kindergarten &amp; school), Tvrdošovce, Slovakia
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-dark">Bosch AVENAR</span>
+                <span class="badge badge-dark">FDAS</span>
+                <span class="badge badge-dark">LSN Loop</span>
+                <span class="badge badge-dark">EN 54</span>
+                <span class="badge badge-dark">Bosch Certified</span>
+                <span class="badge badge-dark">§21</span>
+            </div>
+        </header>
+
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Installation, programming &amp; commissioning</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Site</span>
+                <span class="meta-value">Educational facility, Tvrdošovce (SK)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">FDAS controller</span>
+                <span class="meta-value">Bosch AVENAR panel 2000 · RPS</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">Commissioned &amp; tested, 2026</span>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / Overview &amp; Standards</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Installation, LSN loop programming and building integration of the fire detection and alarm system (FDAS; Slovak: <em>elektronická požiarna signalizácia</em>, EPS) for an educational facility (kindergarten and school) in Tvrdošovce, Slovakia. The FDAS controller is a Bosch AVENAR panel 2000; door holders, the main power distribution and a GSM dialer are controlled by an RML 0008 A relay module on the panel's internal rail.</p>
+            </div>
+            <ul class="cs-list">
+                <li><strong>Readable alarms:</strong> the panel shows functional zones and room names, not raw LSN bus addresses.</li>
+                <li><strong>Fail-safe controls:</strong> escape doors release on alarm and on loss of power.</li>
+                <li><strong>Battery sizing to EN 54-4:</strong> 24 h standby plus 30 min alarm.</li>
+            </ul>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Scope</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Standard"><strong>STN EN 54-2</strong></td>
+                            <td data-label="Scope">Control and indicating equipment</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Standard"><strong>STN EN 54-3</strong></td>
+                            <td data-label="Scope">Fire alarm sounders, acoustic parameters</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Standard"><strong>STN EN 54-4</strong></td>
+                            <td data-label="Scope">Power supply equipment and battery sizing</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Standard"><strong>DIN 33404-3</strong></td>
+                            <td data-label="Scope">Evacuation tone: falling sweep 1200 → 500 Hz in 1 s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="cs-subhead">Qualifications</h3>
+            <div class="tier-grid qual-grid">
+                <div class="tier-card tier-purple">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Bosch Certified Specialist</h3>
+                        <span class="badge badge-dark">Manufacturer</span>
+                    </div>
+                    <p class="tier-use">AVENAR panel 2000/8000 series — programming, commissioning and diagnostics.</p>
+                </div>
+                <div class="tier-card tier-purple">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">§21 Electrotechnical Competence</h3>
+                        <span class="badge badge-dark">Regulatory</span>
+                    </div>
+                    <p class="tier-use">Slovak Decree No. 508/2009 Z. z. (Vyhláška 508/2009 Z. z.) — qualification for work on electrical installations.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Hardware &amp; Topology</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Device</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Role"><strong>FDAS controller</strong></td>
+                            <td data-label="Device">Bosch AVENAR panel 2000</td>
+                            <td data-label="Notes">Node 1.1, programmed in RPS. Touchscreen with zone map and contact details.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Power</strong></td>
+                            <td data-label="Device">FPE-8000-BCM</td>
+                            <td data-label="Notes">Battery controller on rail position 1. 24 V DC, 2× 12 V 26 Ah SLA in series.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Loop controller</strong></td>
+                            <td data-label="Device">LSN 0300 A</td>
+                            <td data-label="Notes">Rail module. Closed LSN ring.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Relay outputs</strong></td>
+                            <td data-label="Device">Bosch RML 0008 A</td>
+                            <td data-label="Notes">8-relay rail module on the panel's internal rail (not an LSN field device).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Detectors</strong></td>
+                            <td data-label="Device">FAP-O420, FAP-425</td>
+                            <td data-label="Notes">Optical smoke detectors.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Strobes</strong></td>
+                            <td data-label="Device">FNS-420-R</td>
+                            <td data-label="Notes">LSN visual alarm devices.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Sounders</strong></td>
+                            <td data-label="Device">FNM-420U-A-BS</td>
+                            <td data-label="Notes">LSN base sounders.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Addressable MCPs</strong></td>
+                            <td data-label="Device">Bosch FMC-420RW series</td>
+                            <td data-label="Notes">Addressable manual call points (MCP), surface-mounted. Reset mechanism, status LED, top-hinged cover opened with a service key.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>DC-DC converter</strong></td>
+                            <td data-label="Device">Mean Well DDR-15G-12</td>
+                            <td data-label="Notes">24 V → 12 V, isolated, DIN rail. Feeds the GSM dialer.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Dialer</strong></td>
+                            <td data-label="Device">GSM / SMS module</td>
+                            <td data-label="Notes">Installed inside the metal panel cabinet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <figure class="topology-figure">
+                <div class="topology-scroll">
+                    <svg class="topology-svg" viewBox="0 0 1000 545" role="img" aria-labelledby="ep-title ep-desc" xmlns="http://www.w3.org/2000/svg"><title id="ep-title">FDAS topology</title><desc id="ep-desc">Bosch AVENAR panel 2000 with three rail modules in order: FPE-8000-BCM battery controller, LSN 0300 A loop controller and RML 0008 A relay module. The closed LSN ring carries detectors, strobes, base sounders and manual call points. The relay module drives the door holder magnets, the main distribution shunt trip and the GSM dialer, which is powered from the panel AUX rail through an isolated DC-DC converter.</desc><defs><marker id="ep-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ep-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ep-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker></defs><rect x="20" y="20" width="300" height="230" rx="10" class="tp-group"/><text x="38" y="48" class="tp-name" text-anchor="start">Bosch AVENAR panel 2000</text><text x="38" y="68" class="tp-foot" text-anchor="start">INTERNAL RAIL</text><rect x="38" y="78" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="99" class="tp-name tp-sm" text-anchor="start">FPE-8000-BCM</text><text x="52" y="116" class="tp-t" text-anchor="start">Slot 1 · battery controller</text><rect x="38" y="134" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="155" class="tp-name tp-sm" text-anchor="start">LSN 0300 A</text><text x="52" y="172" class="tp-t" text-anchor="start">Slot 2 · LSN loop controller</text><rect x="38" y="190" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="211" class="tp-name tp-sm" text-anchor="start">RML 0008 A</text><text x="52" y="228" class="tp-t" text-anchor="start">Slot 3 · 8 relays</text><path d="M110 250 V298" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="280" class="tp-t" text-anchor="start">AUX 24 V</text><rect x="20" y="300" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="321" class="tp-name tp-sm" text-anchor="start">Mean Well DDR-15G-12</text><text x="34" y="338" class="tp-t" text-anchor="start">DC-DC 24 V → 12 V, isolated</text><path d="M110 356 V428" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="396" class="tp-t" text-anchor="start">12 V</text><rect x="20" y="430" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="451" class="tp-name tp-sm" text-anchor="start">GSM dialer</text><text x="34" y="468" class="tp-t" text-anchor="start">12 V · inside panel cabinet</text><path d="M302 148 H560 V60 H960 V500 H560 V166 H302" class="tp-w tp-g"/><circle cx="690" cy="60" r="13" class="tp-dev-light"/><circle cx="690" cy="60" r="4" class="tp-led tp-led-r"/><text x="690" y="100" class="tp-name tp-sm" text-anchor="middle">Smoke detectors</text><text x="690" y="117" class="tp-t" text-anchor="middle">FAP-O420 · FAP-425</text><circle cx="850" cy="60" r="13" class="tp-dev-light"/><circle cx="850" cy="60" r="4" class="tp-led tp-led-r"/><text x="850" y="100" class="tp-name tp-sm" text-anchor="middle">Strobes</text><text x="850" y="117" class="tp-t" text-anchor="middle">FNS-420-R</text><circle cx="960" cy="210" r="13" class="tp-dev-light"/><circle cx="960" cy="210" r="4" class="tp-led tp-led-r"/><text x="930" y="206" class="tp-name tp-sm" text-anchor="end">Base sounders</text><text x="930" y="223" class="tp-t" text-anchor="end">FNM-420U-A-BS</text><circle cx="960" cy="370" r="13" class="tp-dev-light"/><circle cx="960" cy="370" r="4" class="tp-led tp-led-r"/><text x="930" y="366" class="tp-name tp-sm" text-anchor="end">Manual call points</text><text x="930" y="383" class="tp-t" text-anchor="end">FMC-420RW</text><circle cx="760" cy="500" r="13" class="tp-dev-light"/><circle cx="760" cy="500" r="4" class="tp-led tp-led-r"/><text x="760" y="470" class="tp-name tp-sm" text-anchor="middle">Smoke detectors</text><text x="760" y="300" class="tp-foot" text-anchor="middle">Closed LSN ring</text><path d="M302 213 H335 V445" class="tp-w tp-r"/><rect x="355" y="270" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="291" class="tp-name tp-sm" text-anchor="start">Door holder magnets</text><text x="369" y="308" class="tp-t" text-anchor="start">fail-safe release</text><path d="M335 295 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="345" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="366" class="tp-name tp-sm" text-anchor="start">Main distribution</text><text x="369" y="383" class="tp-t" text-anchor="start">shunt trip</text><path d="M335 370 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="420" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="441" class="tp-name tp-sm" text-anchor="start">GSM alarm input</text><text x="369" y="458" class="tp-t" text-anchor="start">dry NC loop</text><path d="M335 445 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><path d="M447 470 V520 H145 V488" class="tp-w tp-r tp-dash" marker-end="url(#ep-a-r)"/></svg>
+                </div>
+                <figcaption class="topology-caption">Fig. 1 — System topology: rail modules, LSN ring, power path and relay outputs</figcaption>
+            </figure>
+            <h3 class="cs-subhead">Photos</h3>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-panel-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-panel-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Bosch AVENAR fire panel mounted on the wall next to the network rack">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Finished installation</span>
+                        <span class="media-figure-desc">AVENAR panel (right) next to the network rack.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-panel-internal.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-panel-internal.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Open Bosch AVENAR panel showing touchscreen, rail modules and batteries">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Panel internals</span>
+                        <span class="media-figure-desc">Cover removed: touchscreen, rail modules and 2× 12 V 26 Ah batteries.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-programming-session.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-programming-session.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Laptop running Bosch RPS connected to the fire panel">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Programming on site</span>
+                        <span class="media-figure-desc">Laptop running RPS connected to the panel.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-rps-software.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-rps-software.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Bosch FSP-5000-RPS configuration screen with zone groups and battery autonomy settings">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">RPS configuration</span>
+                        <span class="media-figure-desc">Zone groups, 0.46 A module load and 24 h / 30 min battery settings. Site details blurred.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Zoning</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Alarms are displayed by functional zone and room name instead of LSN addresses such as <code>Node 1.1, Dev 38</code>. The zone names below are exactly what the panel display shows, so staff or the fire brigade can read the location of the fire in seconds.</p>
+            </div>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Display name (SK)</th>
+                            <th>Area</th>
+                            <th>Devices</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 1</strong></td>
+                            <td data-label="Display name (SK)">Únikové cesty a chodby</td>
+                            <td data-label="Area">Escape routes and corridors</td>
+                            <td data-label="Devices">Smoke detectors, sounders, strobes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 2</strong></td>
+                            <td data-label="Display name (SK)">Triedy, herne a spálne</td>
+                            <td data-label="Area">Classrooms, playrooms, dormitory</td>
+                            <td data-label="Devices">Optical smoke detectors (FAP-O420), base sounders</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 3</strong></td>
+                            <td data-label="Display name (SK)">Jedáleň a spoločenská m.</td>
+                            <td data-label="Area">Dining hall, common areas</td>
+                            <td data-label="Devices">Optical detectors for large rooms, wall sounders</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 4</strong></td>
+                            <td data-label="Display name (SK)">Hospodárska časť a zázemie</td>
+                            <td data-label="Area">Service area, utility rooms</td>
+                            <td data-label="Devices">Heat and smoke detectors</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 5</strong></td>
+                            <td data-label="Display name (SK)">Medzistrop</td>
+                            <td data-label="Area">Ceiling void above suspended ceilings</td>
+                            <td data-label="Devices">Concealed optical detectors with remote indicators</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>Zone 10</strong></td>
+                            <td data-label="Display name (SK)">Tlačidlové hlásiče</td>
+                            <td data-label="Area">Manual call points (MCP)</td>
+                            <td data-label="Devices">Bosch FMC-420RW addressable MCPs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Cause &amp; Effect</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Building functions are driven by the RML 0008 A relay module on the panel rail.</p>
+            </div>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Output</th>
+                            <th>Normal state</th>
+                            <th>On fire alarm</th>
+                            <th>On power loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Output"><strong>Door holder magnets</strong></td>
+                            <td data-label="Normal state">Energised, escape doors held</td>
+                            <td data-label="On fire alarm">Relay cuts the supply, doors release mechanically</td>
+                            <td data-label="On power loss">Released (fail-safe)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Output"><strong>Main distribution</strong></td>
+                            <td data-label="Normal state">Shunt trip idle</td>
+                            <td data-label="On fire alarm">Shunt trip (<em>vyrážacia spúšť</em>) fires, non-essential 230/400 V circuits are switched off</td>
+                            <td data-label="On power loss">Not applicable</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Output"><strong>GSM dialer</strong></td>
+                            <td data-label="Normal state">Dry NC loop closed</td>
+                            <td data-label="On fire alarm">Loop opens, the dialer sends the alarm</td>
+                            <td data-label="On power loss">Stays powered from the battery-backed AUX rail</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout-box">
+                <div class="callout-header">GSM input and supply</div>
+                <p class="callout-desc">The dialer sits inside the metal panel cabinet, so the dry NC loop never leaves the enclosure and a cable break is practically excluded; any opening of the loop triggers it immediately. It is powered from the 24 V AUX rail through an isolated Mean Well DDR-15G-12 (24 V → 12 V), not from a single battery, which would unbalance the series battery set.</p>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">05 / Technical Challenges &amp; Troubleshooting</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">01</span>
+                        <h3 class="challenge-title">Working in a closed industrial system</h3>
+                    </div>
+                    <span class="badge badge-dark">Approach</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Context
+                        </div>
+                        <p>Bosch AVENAR, RPS and LSN are closed life-safety products. Unlike open-source web technology there is minimal public documentation, no Stack Overflow coverage and no useful AI training data on their internal logic or error codes.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Approach
+                        </div>
+                        <p>Commissioning relied on reading the engineering schematics and manufacturer documentation, multimeter measurements on the loop, and hands-on fault isolation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">02</span>
+                        <h3 class="challenge-title">Rail module order and bus power</h3>
+                    </div>
+                    <span class="badge badge-dark">Panel hardware</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Symptom &amp; root cause
+                        </div>
+                        <p>The panel failed its initial internal hardware validation. The modules were seated in the wrong order on the internal rail (PRS-0002A).</p>
+                        <p>The panel backplane enforces a fixed physical order: the battery controller feeds power into the rail, and the other modules are arranged by current draw to avoid voltage drops on the internal DC bus and logic arbitration faults.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>Modules re-seated in the required order: FPE-8000-BCM in slot 1 next to the power feed, then the LSN 0300 A loop controller, then the RML 0008 A relay module. Hardware validation passed.</p>
+                    </div>
+                </div>
+                <div class="challenge-code">
+                    <div class="challenge-code-head">
+                        <span>Rail order</span>
+                        <span>after correction</span>
+                    </div>
+                    <pre class="config-snippet">rail position   module          role
+1               FPE-8000-BCM    battery controller · power feed
+2               LSN 0300 A      LSN loop controller
+3               RML 0008 A      8 relay outputs</pre>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">03</span>
+                        <h3 class="challenge-title">Base sounder wiring: schematic vs. hardware</h3>
+                    </div>
+                    <span class="badge badge-dark">Wiring</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Symptom &amp; root cause
+                        </div>
+                        <p>The FNM-420U sounder bases stayed silent and caused a continuous loop fault.</p>
+                        <p>The schematic required a manual jumper between two base terminals. The current hardware revision bridges these internally, so the obsolete jumper interfered with LSN line monitoring.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>Removed the jumper and returned to a clean LSN line. The sounders became addressable immediately and the line fault cleared.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">04</span>
+                        <h3 class="challenge-title">Locating a loop fault with T-tap mode</h3>
+                    </div>
+                    <span class="badge badge-dark">Diagnostics</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Symptom &amp; root cause
+                        </div>
+                        <p>The closed LSN ring would not come up; devices reported short circuits and lost communication.</p>
+                        <p>In a ring the panel communicates from both ends, which hides where the fault actually is.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <ol class="cs-steps">
+                            <li>Panel temporarily switched to open (T-tap / stub) polling.</li>
+                            <li>Devices were addressed one after another along the cable; the scan stopped at the faulty point.</li>
+                            <li>At that detector the terminal screw had pinched the insulation instead of the bare conductor. Re-stripped 8–10 mm, rescanned to the last device and closed the ring again in RPS.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">05</span>
+                        <h3 class="challenge-title">BCM energy limit exceeded (72 h vs. 24 h)</h3>
+                    </div>
+                    <span class="badge badge-dark">Power</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Symptom &amp; root cause
+                        </div>
+                        <p>RPS reported:</p>
+                        <p><code class="config-snippet">Fatal: Energy Zone 1 power consumption
+exceeds the maximum limit (FPE-8000-BCM)</code></p>
+                        <p>Standby time had been set to 72 h. The standby current is 0.46 A and the battery set is 2× 12 V 26 Ah in series, which gives 24 V 26 Ah — capacity does not add up in series.</p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>Standby time set back to 24 h + 30 min alarm, the standard requirement for this type of building. The RPS consistency check passed.</p>
+                    </div>
+                </div>
+                <div class="challenge-code">
+                    <div class="challenge-code-head">
+                        <span>EN 54-4 battery check</span>
+                        <span>0.8 = usable capacity factor</span>
+                    </div>
+                    <pre class="config-snippet">usable capacity   26 Ah × 0.8          = 20.8 Ah
+72 h standby      0.46 A × 72 h        = 33.1 Ah   &gt; 20.8 Ah   ✗
+max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
+24 h standby      0.46 A × 24 h        = 11.0 Ah   + 30 min alarm  ✓</pre>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">06 / Commissioning Protocol</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-card terminal-card proto-card scroll-reveal delay-100 mb-section">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <span class="terminal-path">fdas-commissioning-protocol.txt</span>
+            </div>
+            <div class="proto-body">
+                <p class="terminal-line proto-title">FIRE SAFETY COMMISSIONING PROTOCOL (FDAS)</p>
+                <p class="terminal-line"><span class="proto-key">Status:</span> COMMISSIONED &amp; FULLY VERIFIED</p>
+                <p class="terminal-line"><span class="proto-key">Standard:</span> STN EN 54-2, 54-4 | DIN 33404-3</p>
+                <p class="terminal-line"><span class="proto-key">Certification:</span> §21 Electrotechnical Competence | Bosch AVENAR Specialist Certified</p>
+                <div class="proto-sep"></div>
+                <p class="terminal-line proto-key">SYSTEM CHECKS:</p>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">CORE &amp; POWER</span>
+                    <span class="proto-val">AVENAR 2000 chassis and rail order verified (BCM → LSN → RML).<br>24 V 26 Ah SLA bank sized for 24 h standby + 30 min evacuation.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">LSN RING</span>
+                    <span class="proto-val">Closed-loop topology verified across 6 zones.<br>Obsolete sounder jumper removed; terminal fault located via T-tap.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">EVACUATION</span>
+                    <span class="proto-val">DIN 33404-3 sweep (1200 → 500 Hz @ 1 Hz) verified at volume level 5.<br>FMC-420RW manual call points and optical strobes fully operational.</span>
+                </div>
+                <div class="proto-row">
+                    <span class="text-green">[✓]</span>
+                    <span class="proto-key">INTEGRATION</span>
+                    <span class="proto-val">RML 0008 A relay logic active: fail-safe door release,<br>shunt trip (230/400 V mains cut) and isolated NC GSM telemetry.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. All rights reserved.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

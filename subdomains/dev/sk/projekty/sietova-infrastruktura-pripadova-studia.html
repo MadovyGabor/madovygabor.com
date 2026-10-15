@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html class="dark" lang="sk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Sieťová infraštruktúra vzdelávacej inštitúcie &amp; L3 vzdialená správa | Gabriel Madový</title>
+    <meta name="description"
+        content="Prípadová štúdia: nová sieť a kamerový systém pre novopostavené vzdelávacie zariadenie v Tvrdošovciach. Segmentácia VLAN, izolovaný 8-kamerový CCTV systém, plánovanie PoE a vzdialená správa cez WireGuard z Brna.">
+    <meta name="keywords"
+        content="Sieťová architektúra, Segmentácia VLAN, WireGuard, TP-Link Omada, ER605, Hikvision, PoE, Split tunnel, Gabriel Madový">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="sk_SK" />
+    <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <meta property="og:title" content="Sieťová infraštruktúra vzdelávacej inštitúcie &amp; L3 vzdialená správa" />
+    <meta property="og:description"
+        content="Segmentácia VLAN, izolovaný CCTV, plánovanie PoE a vzdialená správa cez WireGuard split tunnel pre vzdelávacie zariadenie." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia#article",
+  "headline": "Sieťová infraštruktúra vzdelávacej inštitúcie & L3 vzdialená správa",
+  "description": "Segmentácia VLAN, izolovaný CCTV, plánovanie PoE a vzdialená správa cez WireGuard split tunnel pre vzdelávacie zariadenie v Tvrdošovciach.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/sk/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gabriel Madový"
+  },
+  "keywords": "WireGuard, VLAN, PoE, TP-Link Omada, Hikvision, Sieťové inžinierstvo"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Zavrieť menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">DOMOV</a>
+                <a class="mobile-nav-link active" href="../projekty">PROJEKTY</a>
+                <a class="mobile-nav-link" href="../kontakt">KONTAKT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link" href="/en/projects/network-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/hu/projektek/halozat-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link active" href="/sk/projekty/sietova-infrastruktura-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">DOMOV</a>
+            <a class="nav-link active" href="../projekty">PROJEKTY</a>
+            <a class="nav-link" href="../kontakt">KONTAKT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link" href="/en/projects/network-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/hu/projektek/halozat-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link active" href="/sk/projekty/sietova-infrastruktura-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projekty" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> SPÄŤ NA PROJEKTY
+            </a>
+            <h1 class="case-study-title font-display">Sieťová infraštruktúra vzdelávacej inštitúcie &amp; L3 vzdialená správa</h1>
+            <p class="case-study-subtitle">
+                Infraštruktúra vzdelávacieho zariadenia — Tvrdošovce, Slovensko
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-dark">Segmentácia VLAN</span>
+                <span class="badge badge-dark">WireGuard</span>
+                <span class="badge badge-dark">Plánovanie PoE</span>
+                <span class="badge badge-dark">TP-Link Omada</span>
+                <span class="badge badge-dark">Hikvision CCTV</span>
+            </div>
+        </header>
+
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Úloha</span>
+                <span class="meta-value">Návrh siete, inštalácia a konfigurácia</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Lokalita</span>
+                <span class="meta-value">Vzdelávacie zariadenie, Tvrdošovce (SK)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Vzdialená správa</span>
+                <span class="meta-value">WireGuard z Brna (CZ)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Stav</span>
+                <span class="meta-value">V prevádzke, 2026</span>
+            </div>
+        </section>
+
+        <!-- 01 Overview -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / Prehľad a cieľ</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>
+                    Projekt zahŕňal návrh a realizáciu kompletnej sieťovej a kamerovej infraštruktúry „na zelenej lúke“ pre novopostavené vzdelávacie zariadenie (materská a základná škola) v Tvrdošovciach. Cieľom bola čistá, spoľahlivá a ľahko udržiavateľná štruktúrovaná kabeláž, úplné pokrytie Wi-Fi 6, izolovaný IP kamerový dohľad a bezpečná L3 vzdialená správa bez opakovaných technických návštev na mieste.
+                </p>
+            </div>
+            <ul class="cs-list">
+                <li><strong>Izolácia:</strong> kamery nemajú prístup na internet a sú oddelené od prevádzky kancelárií a tried.</li>
+                <li><strong>Odľahčenie routera:</strong> nepretržité 24/7 video nesmie prechádzať cez CPU routera.</li>
+                <li><strong>Dva spôsoby prístupu:</strong> zamestnanci sledujú kamery cez aplikáciu Hik-Connect bez sieťových nastavení; administrátor má plný šifrovaný L3 prístup cez WireGuard.</li>
+            </ul>
+        </section>
+
+        <!-- 02 Hardware & Topology -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Hardvér a topológia</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Funkcia</th>
+                            <th>Zariadenie</th>
+                            <th>Poznámka</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Koncové zariadenie ISP</strong></td>
+                            <td data-label="Zariadenie">Sagemcom F@st 5670 (GPON)</td>
+                            <td data-label="Poznámka">Slovak Telekom FTTH, dynamická verejná IP. Wi-Fi rádiá vypnuté.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Brána</strong></td>
+                            <td data-label="Zariadenie">TP-Link Omada ER605 v2</td>
+                            <td data-label="Poznámka">Smerovanie medzi VLAN, ACL, WireGuard server.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Kontrolér</strong></td>
+                            <td data-label="Zariadenie">TP-Link Omada OC200</td>
+                            <td data-label="Poznámka">Hardvérový SDN kontrolér, napájaný cez PoE.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>PoE switch</strong></td>
+                            <td data-label="Zariadenie">TP-Link TL-SG1218MPE</td>
+                            <td data-label="Poznámka">16× GbE PoE+ (802.3af/at, rozpočet 250 W) + 2× GbE uplink.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Prístupový switch</strong></td>
+                            <td data-label="Zariadenie">TP-Link JetStream TL-SG3452</td>
+                            <td data-label="Poznámka">48× GbE + 4× SFP, manažovateľný L2+. Hlavná distribučná vrstva pre koncové zariadenia: 802.1Q VLAN na prístupových portoch (zásuvky, PC, tlačiarne).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Bezdrôtová sieť</strong></td>
+                            <td data-label="Zariadenie">2× TP-Link Omada EAP610 v2</td>
+                            <td data-label="Poznámka">Stropný AX1800 Wi-Fi 6, napájaný cez PoE.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>NVR</strong></td>
+                            <td data-label="Zariadenie">Hikvision DS-7608NXI-K2</td>
+                            <td data-label="Poznámka">8-kanálový 4K AcuSense, 4 TB WD Purple.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Kamery</strong></td>
+                            <td data-label="Zariadenie">7× DS-2CD2047G2H-LIU<br>1× DS-2CD2143G2-I</td>
+                            <td data-label="Poznámka">4 MP bullet kamery (Smart Hybrid Light) + 4 MP IK10 dome kamera.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Funkcia"><strong>Rozvádzač</strong></td>
+                            <td data-label="Zariadenie">19" nástenný dátový rozvádzač</td>
+                            <td data-label="Poznámka">Aktívny strešný ventilátor, Cat6 STP patch panely, PDU s prepäťovou ochranou.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="cs-subhead">Fyzická a logická topológia</h3>
+            <figure class="topology-figure">
+                <div class="topology-scroll">
+                    <svg class="topology-svg" viewBox="0 0 1000 610" role="img" aria-labelledby="tp-title tp-desc" xmlns="http://www.w3.org/2000/svg"><title id="tp-title">Sieťová topológia</title><desc id="tp-desc">Linka GPON do modemu Sagemcom, DMZ na bránu Omada ER605. LAN1 trunk do PoE switchu s kamerami, NVR, AP a kontrolérom. LAN2 do 48-portového manažovaného switchu TL-SG3452 pre klientov. Tunel WireGuard z Brna do ER605.</desc><defs><marker id="tp-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="tp-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="tp-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="tp-a-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="360" y="20" width="340" height="125" rx="10" class="tp-group"/><rect x="320" y="195" width="460" height="100" rx="10" class="tp-group"/><rect x="20" y="355" width="520" height="245" rx="10" class="tp-group"/><rect x="560" y="355" width="420" height="245" rx="10" class="tp-group"/><circle cx="130" cy="78" r="34" class="tp-dev-light"/><path d="M114 86 h30 a8 8 0 0 0 0 -16 a12 12 0 0 0 -22 -3 a9 9 0 0 0 -8 19 z" class="tp-line-dev" fill="none"/><text x="130" y="132" class="tp-name" text-anchor="middle">Slovak Telekom GPON</text><text x="130" y="149" class="tp-t" text-anchor="middle">dynamická verejná IP</text><path d="M166 78 H358" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><line x1="394" y1="70" x2="390" y2="52" class="tp-line-dev"/><line x1="462" y1="70" x2="466" y2="52" class="tp-line-dev"/><rect x="380" y="70" width="96" height="28" rx="4" class="tp-dev"/><circle cx="413.0" cy="84.0" r="2" class="tp-led"/><circle cx="423.0" cy="84.0" r="2" class="tp-led"/><circle cx="433.0" cy="84.0" r="2" class="tp-led"/><circle cx="443.0" cy="84.0" r="2" class="tp-led"/><rect x="492" y="32" width="111.7" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="502" y="46" class="tp-pill-t tp-r-t" text-anchor="start">BRÁNA / MODEM</text><text x="492" y="74" class="tp-name" text-anchor="start">Sagemcom F@st 5670</text><text x="492" y="96" class="tp-t" text-anchor="start">DMZ → ER605 WAN</text><text x="492" y="116" class="tp-t" text-anchor="start">Wi-Fi vyp. · No-IP DDNS</text><path d="M530 145 V193" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><text x="540" y="174" class="tp-t" text-anchor="start">WAN · DMZ host</text><rect x="350" y="236" width="110" height="28" rx="4" class="tp-dev"/><rect x="390" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="402" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="414" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="426" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="438" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="476" y="206" width="270.4" height="20" rx="4" class="tp-pill tp-pill-b"/><text x="486" y="220" class="tp-pill-t tp-b-t" text-anchor="start">WIREGUARD · INTER-VLAN ROUTING · ACL</text><text x="476" y="247" class="tp-name" text-anchor="start">TP-Link Omada ER605 v2</text><text x="476" y="266" class="tp-t" text-anchor="start">VPN gateway · 10.0.0.1/24</text><text x="476" y="283" class="tp-t" text-anchor="start">WireGuard UDP 51820</text><rect x="860" y="56" width="40" height="26" rx="2" class="tp-dev"/><path d="M853 86 H907" class="tp-line-dev tp-thick"/><text x="880" y="112" class="tp-name" text-anchor="middle">Vzdialená správa</text><text x="880" y="128" class="tp-t" text-anchor="middle">Brno (CZ)</text><path d="M880 140 V245 H783" class="tp-w tp-b tp-dash" marker-end="url(#tp-a-b)"/><text x="892" y="182" class="tp-t tp-b-t" text-anchor="start">WireGuard</text><text x="892" y="198" class="tp-t tp-b-t" text-anchor="start">split tunnel</text><text x="892" y="214" class="tp-t tp-b-t" text-anchor="start">10.0.0.0/24</text><path d="M450 295 V325 H215 V378" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><text x="232" y="318" class="tp-t tp-r-t" text-anchor="start">LAN1 trunk · VLAN 1, 10, 20</text><path d="M610 295 V325 H705 V378" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><text x="620" y="318" class="tp-t tp-g-t" text-anchor="start">LAN2 · VLAN 20 · 10.10.20.1/24</text><rect x="328.6" y="345" width="201.4" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="338.6" y="359" class="tp-pill-t tp-r-t" text-anchor="start">PoE 250 W · využité ~80 W</text><rect x="150" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="162.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="162.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="295" y="393" class="tp-name" text-anchor="start">TL-SG1218MPE</text><text x="295" y="411" class="tp-t" text-anchor="start">16× PoE+ · 802.3af/at</text><path d="M170 410 V432 H90 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M190 410 V442 H215 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M250 410 V442 H345 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M270 410 V432 H470 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><g transform="translate(90,484)"><rect x="-24" y="-9" width="38" height="18" rx="5" class="tp-dev"/><rect x="-30" y="-7" width="8" height="14" rx="2" class="tp-dev"/><circle cx="-26" cy="0" r="3" class="tp-led"/><path d="M10 9 L14 22 M4 22 H24" class="tp-line-dev"/></g><text x="90" y="527" class="tp-name tp-sm" text-anchor="middle">8× IP kamera</text><text x="90" y="544" class="tp-t" text-anchor="middle">porty 1–8</text><text x="90" y="560" class="tp-t" text-anchor="middle">10.10.10.21–28</text><rect x="187" y="474" width="56" height="20" rx="3" class="tp-dev"/><line x1="197" y1="484" x2="221" y2="484" class="tp-line-dev"/><circle cx="231" cy="484" r="2" class="tp-led"/><text x="215" y="527" class="tp-name tp-sm" text-anchor="middle">Hikvision NVR</text><text x="215" y="544" class="tp-t" text-anchor="middle">port 17</text><text x="215" y="560" class="tp-t" text-anchor="middle">10.10.10.10</text><circle cx="330" cy="484" r="14" class="tp-dev-light"/><circle cx="330" cy="484" r="3" class="tp-led"/><circle cx="360" cy="484" r="14" class="tp-dev-light"/><circle cx="360" cy="484" r="3" class="tp-led"/><text x="345" y="527" class="tp-name tp-sm" text-anchor="middle">2× EAP610</text><text x="345" y="544" class="tp-t" text-anchor="middle">porty 9–10</text><text x="345" y="560" class="tp-t" text-anchor="middle">Wi-Fi 6</text><rect x="456" y="464" width="28" height="38" rx="3" class="tp-dev"/><line x1="462" y1="472" x2="478" y2="472" class="tp-line-dev"/><line x1="462" y1="478" x2="478" y2="478" class="tp-line-dev"/><circle cx="470" cy="491" r="5" class="tp-ring"/><text x="470" y="527" class="tp-name tp-sm" text-anchor="middle">OC200</text><text x="470" y="544" class="tp-t" text-anchor="middle">port 11</text><text x="470" y="560" class="tp-t" text-anchor="middle">kontrolér</text><text x="280" y="588" class="tp-foot" text-anchor="middle">VLAN 10 · záznam zostáva na switchi</text><rect x="640" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="652.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="652.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="785" y="393" class="tp-name" text-anchor="start">TL-SG3452</text><text x="785" y="411" class="tp-t" text-anchor="start">48× GbE + 4× SFP</text><text x="785" y="428" class="tp-t" text-anchor="start">L2+ manažovateľný</text><path d="M685 410 V432 H650 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M705 410 V442 H770 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M725 410 V432 H890 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><rect x="632" y="466" width="36" height="36" rx="4" class="tp-dev-light"/><rect x="639" y="478" width="9" height="9" rx="1" class="tp-port-d"/><rect x="652" y="478" width="9" height="9" rx="1" class="tp-port-d"/><text x="650" y="527" class="tp-name tp-sm" text-anchor="middle">Zásuvky</text><text x="650" y="544" class="tp-t" text-anchor="middle">dvojité RJ45</text><rect x="760" y="466" width="20" height="10" class="tp-dev-light"/><rect x="750" y="476" width="40" height="18" rx="3" class="tp-dev"/><rect x="760" y="490" width="20" height="12" class="tp-dev-light"/><text x="770" y="527" class="tp-name tp-sm" text-anchor="middle">Tlačiarne</text><text x="770" y="544" class="tp-t" text-anchor="middle">sieťové</text><rect x="868" y="466" width="44" height="28" rx="2" class="tp-dev"/><path d="M890 494 V502 M880 502 H900" class="tp-line-dev"/><text x="890" y="527" class="tp-name tp-sm" text-anchor="middle">Pracovné stanice</text><text x="890" y="544" class="tp-t" text-anchor="middle">kancelárie a triedy</text><text x="770" y="588" class="tp-foot" text-anchor="middle">VLAN 20 · klienti zamestnancov a tried</text></svg>
+                </div>
+                <figcaption class="topology-caption">Obr. 1 — Logická topológia, priradenie portov a toky dát</figcaption>
+            </figure>
+
+            <h3 class="cs-subhead">Fotografie z inštalácie</h3>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/patch-panel-termination.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/patch-panel-termination.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Zakončovanie káblov Cat6 na patch paneli v racku">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Zakončenie patch panelu</span>
+                        <span class="media-figure-desc">Káble Cat6 zakončené na patch paneli v racku.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-first-wiring.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-first-wiring.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Čiastočne zapojený rack s routerom ER605, NVR a PoE switchom">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Prvé zapojenie</span>
+                        <span class="media-figure-desc">Router a NVR osadené, prepájanie PoE switchu prebieha.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-final-open.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-final-open.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Hotový otvorený 19-palcový rack s patch panelmi, switchmi, NVR a PDU">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Hotový rack</span>
+                        <span class="media-figure-desc">Všetky zariadenia osadené a prepojené.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Zatvorený nástenný sieťový rack">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Zatvorený rack</span>
+                        <span class="media-figure-desc">Nástenná skriňa na finálnom mieste.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 03 Core Architecture -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Sieťová architektúra</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <h3 class="cs-subhead">Podsiete a pravidlá</h3>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Zóna</th>
+                            <th>Podsieť</th>
+                            <th>Brána</th>
+                            <th>Zariadenia</th>
+                            <th>Pravidlo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Zóna"><strong>WAN tranzit</strong></td>
+                            <td data-label="Podsieť">Privátna /24 od ISP</td>
+                            <td data-label="Brána">Modem ISP</td>
+                            <td data-label="Zariadenia">Sagemcom LAN, ER605 WAN</td>
+                            <td data-label="Pravidlo">WAN ER605 nastavený na modeme ako DMZ host.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>VLAN 1 — Manažment</strong></td>
+                            <td data-label="Podsieť"><code>10.10.1.0/24</code></td>
+                            <td data-label="Brána"><code>.1</code></td>
+                            <td data-label="Zariadenia">ER605, switche, OC200, AP</td>
+                            <td data-label="Pravidlo">Iba sieťové zariadenia.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>VLAN 10 — CCTV</strong></td>
+                            <td data-label="Podsieť"><code>10.10.10.0/24</code></td>
+                            <td data-label="Brána"><code>.1</code></td>
+                            <td data-label="Zariadenia">NVR (<code>.10</code>), kamery (<code>.21–.28</code>)</td>
+                            <td data-label="Pravidlo">Výstup kamier do WAN blokovaný na bráne.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>VLAN 20 — LAN zamestnancov</strong></td>
+                            <td data-label="Podsieť"><code>10.10.20.0/24</code></td>
+                            <td data-label="Brána"><code>.1</code></td>
+                            <td data-label="Zariadenia">Klienti v kanceláriách a triedach</td>
+                            <td data-label="Pravidlo">Internet povolený. Prístup k NVR povolený.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zóna"><strong>WireGuard VPN</strong></td>
+                            <td data-label="Podsieť"><code>10.0.0.0/24</code></td>
+                            <td data-label="Brána"><code>.1</code></td>
+                            <td data-label="Zariadenia">Vzdialený admin peer (Brno)</td>
+                            <td data-label="Pravidlo">Smerovaný prístup do VLAN 1, 10, 20.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="cs-subhead">Tok dát: video zostáva na switchi</h3>
+            <div class="cs-prose">
+                <p>
+                    Všetkých osem kamier aj NVR je na switchi TL-SG1218MPE v rovnakej VLAN (10). Osem nepretržitých H.265 záznamových streamov sa preto prepína na L2 vo vnútri backplane switchu a nikdy neprechádza trunkom do ER605. Router spracúva video iba vtedy, keď klient vo VLAN 20 alebo na VPN otvorí živý obraz alebo záznam — ide o krátky tok na požiadanie, nie o záťaž 24/7.
+                </p>
+            </div>
+
+            <h3 class="cs-subhead">Kapacita PoE</h3>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Spotrebič</th>
+                            <th>Odhadovaný odber</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td data-label="Spotrebič">8× kamera</td><td data-label="Odhadovaný odber">~52 W</td></tr>
+                        <tr><td data-label="Spotrebič">2× EAP610</td><td data-label="Odhadovaný odber">~24 W</td></tr>
+                        <tr><td data-label="Spotrebič">1× OC200</td><td data-label="Odhadovaný odber">~4 W</td></tr>
+                        <tr><td data-label="Spotrebič"><strong>Spolu / rozpočet</strong></td><td data-label="Odhadovaný odber"><strong>~80 W / 250 W (~32%)</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cs-prose">
+                <p>
+                    Rezerva ~170 W pokrýva prúdovú špičku pri nočnom zapnutí IR a bielych LED kamier, takže porty ani AP sa pod záťažou nereštartujú.
+                </p>
+            </div>
+        </section>
+
+        <!-- 04 Troubleshooting -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Model vzdialenej správy</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Vzdialená správa je rozdelená do dvoch úrovní s odlišnou cestou prístupu. Bežný dohľad beží cez cloud Omada; všetko, čo zasahuje do izolovaných podsietí, ide cez WireGuard.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card tier-cloud">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Úroveň 1 — cloud Omada (OC200)</h3>
+                        <span class="badge badge-dark">Bežná prevádzka</span>
+                    </div>
+                    <p class="tier-label">Použitie</p>
+                    <p class="tier-use">Denná kontrola stavu, rýchla diagnostika a bežné zmeny z telefónu alebo webového portálu.</p>
+                    <p class="tier-label">Funkcie</p>
+                    <ul class="cs-list cs-list-tight">
+                            <li>Analytika klientov v reálnom čase, využitie pásma a stav portov na zariadeniach spravovaných Omadou (brána, AP, adoptované switche).</li>
+                            <li>Zmeny Wi-Fi bez VPN: SSID, vysielací výkon, šírka kanála, dočasný prístup pre hostí.</li>
+                            <li>Kontrolér OC200 na mieste udržiava <strong>odchádzajúce</strong> spojenie s cloudom Omada, takže nie sú otvorené žiadne prichádzajúce porty.</li>
+                    </ul>
+                </div>
+                <div class="tier-card tier-vpn">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Úroveň 2 — WireGuard L3 tunel</h3>
+                        <span class="badge badge-dark">Plný prístup</span>
+                    </div>
+                    <p class="tier-label">Použitie</p>
+                    <p class="tier-use">Nízkoúrovňová správa hardvéru, údržba vstavaných zariadení a kamerový subsystém.</p>
+                    <p class="tier-label">Funkcie</p>
+                    <ul class="cs-list cs-list-tight">
+                            <li>Smerovaný L3 prístup do izolovaných podsietí <code>10.10.1.0/24</code>, <code>10.10.10.0/24</code> a <code>10.10.20.0/24</code>.</li>
+                            <li>Plné webové rozhranie NVR: sťahovanie archívu, aktualizácie firmvéru a diagnostika streamov jednotlivých kamier. Nič z toho nie je dostupné z verejnej WAN.</li>
+                            <li>Priama správa switchov cez web / CLI v manažment VLAN pre funkcie L2+, bez cloudového sprostredkovateľa.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="callout-box">
+                <div class="callout-header">Inžiniersky záver</div>
+                <p class="callout-desc">Oddelenie bežného dohľadu od nízkoúrovňového prístupu k infraštruktúre zabezpečuje viacvrstvovú ochranu. Bežné metriky a zmeny Wi-Fi sú dostupné aj na cestách cez cloudový kontrolér Omada, zatiaľ čo citlivé vstavané zariadenia (NVR, kamerové streamy, manažment switchov) nie sú z verejnej WAN dostupné v prichádzajúcom smere – iba cez overené point-to-point tunely WireGuard.</p>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">05 / Technické problémy a ich riešenie</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">01</span>
+                        <h3 class="challenge-title">Konflikt podsietí a ochrana pred stratou vzdialeného prístupu</h3>
+                    </div>
+                    <span class="badge badge-dark">Smerovanie</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príčina
+                        </div>
+                        <p>
+                            Domáca sieť administrátorského počítača aj vzdialený modem ISP používali rovnaký privátny rozsah /24 (výrobné nastavenie modemu ISP). Pri plnom tuneli (full tunnel) sa lokálna prevádzka okamžite prerušila.
+                        </p>
+                        <p>
+                            Zmenu adresovania modemu na diaľku som zavrhol: DHCP sa reštartuje, WAN adresa ER605 sa zmení, záznam DMZ prestane platiť a lokalita zostane nedostupná, kým niekto nepríde osobne.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <p>
+                            Modem zostal bez zmeny. Split tunnel na klientovi WireGuard — tunelom idú iba interné podsiete:
+                        </p>
+                        <code class="config-snippet">AllowedIPs = 10.10.1.0/24, 10.10.10.0/24,
+             10.10.20.0/24, 10.0.0.0/24</code>
+                        <p>
+                            Lokálny internet zostáva na lokálnej bráne; podsiete lokality sú dostupné cez VPN.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">02</span>
+                        <h3 class="challenge-title">Dynamická IP operátora a WireGuard handshake</h3>
+                    </div>
+                    <span class="badge badge-dark">NAT / DDNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príčina
+                        </div>
+                        <p>
+                            Tunel aktívny, ale zaseknutý na <code>0 B received, 444 B sent</code>. Klientský profil vygenerovaný Omadou uvádzal ako endpoint privátnu WAN adresu brány (za modemom ISP), ktorá nie je z internetu dostupná. GPON linka navyše dostáva verejnú IP, ktorá sa pravidelne mení.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <p>
+                            WAN adresa ER605 nastavená na Sagemcome ako DMZ host, takže UDP 51820 sa k nemu dostane. No-IP DDNS klient na modeme sleduje verejnú IP. Endpoint klienta:
+                        </p>
+                        <code class="config-snippet">Endpoint = &lt;site&gt;.myddns.me:51820
+PersistentKeepalive = 25</code>
+                        <p>
+                            Keepalive udržiava záznam v NAT tabuľke aktívny; DDNS sleduje zmeny IP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">03</span>
+                        <h3 class="challenge-title">Webový prístup k NVR: varovania o certifikáte a interné DNS</h3>
+                    </div>
+                    <span class="badge badge-dark">TLS / DNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príznak a príčina
+                        </div>
+                        <p>Zamestnanci pri otvorení webového rozhrania NVR dostávali celostránkové varovanie „Nezabezpečené“ a museli zadávať IP adresu z inej VLAN.</p>
+                        <ul class="cs-list cs-list-tight">
+                            <li>NVR používa z výroby samopodpísaný (self-signed) certifikát, ktorému žiadny prehliadač nedôveruje.</li>
+                            <li>NVR je v izolovanej LAN bez verejného názvu, takže verejná CA (napr. Let's Encrypt) preň certifikát vydať nemôže.</li>
+                            <li>IP adresy naprieč VLAN si netechnickí používatelia ťažko pamätajú.</li>
+                        </ul>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <ol class="cs-steps">
+                            <li><strong>Lokálne DNS:</strong> A-záznam na ER605, <code>kamery.skolka.lan → 10.10.10.10</code>, preložiteľný v LAN aj cez WireGuard.</li>
+                            <li><strong>Certifikát NVR:</strong> HTTPS zapnuté na porte 443. Nový samopodpísaný certifikát pre <code>kamery.skolka.lan</code> so SHA-256, exportovaný ako <code>NVR_CA.cer</code>.</li>
+                            <li><strong>Nastavenie klientov:</strong> dávkový skript pre Windows importuje certifikát cez <code>certutil</code> do úložiska dôveryhodných koreňových CA vo Windows, vytvorí zástupcu na ploche a vypíše krátke pokyny pre používateľa.</li>
+                        </ol>
+                    </div>
+                </div>
+                <p class="challenge-outcome"><strong>Výsledok:</strong> žiadne varovania o certifikáte na počítačoch zamestnancov, NVR sa otvára z ikony na ploche. Nová stanica sa nastaví spustením jedného skriptu s právami administrátora.</p>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">04</span>
+                        <h3 class="challenge-title">Interné DNS mená sa cez VPN neprekladajú</h3>
+                    </div>
+                    <span class="badge badge-dark">DNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Príčina
+                        </div>
+                        <p>
+                            Cez tunel odpovedala <code>10.10.10.10</code> za 22 ms, ale <code>kamery.skolka.lan</code> vrátil <code>Non-existent domain</code>. Omada viaže vlastné LAN DNS záznamy na rozhrania a rozhraniu WireGuard ich neposkytovala.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Riešenie
+                        </div>
+                        <p>
+                            Rozsah A-záznamu z bodu 03 na ER605 rozšírený na dopyty z rozhrania WireGuard. Ako záloha záznam v <code>hosts</code> na administrátorskom počítači.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 Verification -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">06 / Známe obmedzenia</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="verify-block limit-block">
+                <div class="limit-head">
+                    <h3 class="challenge-title">Bez záložného zdroja (UPS)</h3>
+                    <span class="badge badge-dark">Prijatý kompromis</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Stav</span>
+                    <span class="verify-val">Rack je napájaný priamo zo siete cez PDU s prepäťovou ochranou, bez UPS.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Dôsledok</span>
+                    <span class="verify-val">Pri výpadku prúdu alebo fázy sa modem, brána, PoE switch aj NVR naraz vypnú a záznam sa preruší, kým sa napájanie neobnoví.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Rozhodnutie</span>
+                    <span class="verify-val">Samostatná UPS bola pri zbere požiadaviek posúdená a zámerne vynechaná vzhľadom na toleranciu rizika klienta, rozpočtové priority a nekritickosť výpadku mimo prevádzkových hodín.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Opatrenie</span>
+                    <span class="verify-val">Všetky zariadenia sa obnovia samy: brána ER605, switche TP-Link a NVR Hikvision sú nastavené na automatické zapnutie, takže linky, endpoint WireGuard aj záznam sa obnovia bez manuálneho zásahu.</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">07 / Overenie prevádzky</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="verify-block">
+                <div class="verify-head">
+                    <div class="meta-item">
+                        <span class="meta-label">Lokalita</span>
+                        <span class="meta-value">Tvrdošovce, SK</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Správa</span>
+                        <span class="meta-value">WireGuard L3 z Brna (CZ)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stav</span>
+                        <span class="meta-value verify-status">Overené · v prevádzke</span>
+                    </div>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Fyzická vrstva</span>
+                    <span class="verify-val">Linky Cat6 STP na 1000 Mbps full duplex. Patch panely uzemnené, prepäťová ochrana PDU aktívna.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Prepínanie</span>
+                    <span class="verify-val">8 záznamových H.265 streamov zostáva na PoE switchi. Brána nemá trvalú video záťaž.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Izolácia</span>
+                    <span class="verify-val">Prevádzku kamier z VLAN 10 brána zahadzuje na hranici WAN.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Vzdialený prístup</span>
+                    <span class="verify-val">Split-tunnel WireGuard stabilný cez DDNS endpoint s keepalive. Bez prekryvu podsietí.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Používatelia</span>
+                    <span class="verify-val">Hik-Connect dostupný pre zamestnancov. NVR sa otvára zo zástupcu na ploche (<code>https://kamery.skolka.lan</code>) bez varovania o certifikáte.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. Všetky práva vyhradené.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

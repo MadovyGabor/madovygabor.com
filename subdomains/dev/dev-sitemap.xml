@@ -97,4 +97,68 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Facility Network Case Study Pages -->
+  <url>
+    <loc>https://dev.madovygabor.com/en/projects/network-case-study</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bosch EPS Case Study Pages -->
+  <url>
+    <loc>https://dev.madovygabor.com/en/projects/eps-case-study</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dev.madovygabor.com/hu/projektek/eps-esettanulmany</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <xhtml:link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/eps-case-study" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Educational Facility Network &amp; L3 Remote Management | Gabriel Madový</title>
+    <meta name="description"
+        content="Case study: greenfield network and CCTV deployment for a newly built educational facility in Tvrdošovce, Slovakia. VLAN segmentation, isolated 8-camera CCTV, PoE capacity planning and WireGuard remote management from Brno.">
+    <meta name="keywords"
+        content="Network Architecture, VLAN Segmentation, WireGuard, TP-Link Omada, ER605, Hikvision, PoE, Split Tunnel, Gabriel Madový">
+    <meta name="author" content="Gabriel Madový">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <link rel="alternate" hreflang="en" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <link rel="alternate" hreflang="hu" href="https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany" />
+    <link rel="alternate" hreflang="sk" href="https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia" />
+    <link rel="alternate" hreflang="x-default" href="https://dev.madovygabor.com/en/projects/network-case-study" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://dev.madovygabor.com/en/projects/network-case-study" />
+    <meta property="og:title" content="Educational Facility Network &amp; L3 Remote Management" />
+    <meta property="og:description"
+        content="VLAN segmentation, isolated CCTV, PoE capacity planning and WireGuard split-tunnel remote management for an educational facility." />
+    <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <link rel="shortcut icon" href="../../pictures/favIcons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../pictures/favIcons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../pictures/favIcons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../pictures/favIcons/favicon-16x16.png">
+    <link rel="manifest" href="../../pictures/favIcons/site.webmanifest">
+
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://dev.madovygabor.com/en/projects/network-case-study#article",
+  "headline": "Educational Facility Network & L3 Remote Management",
+  "description": "VLAN segmentation, isolated CCTV, PoE capacity planning and WireGuard split-tunnel remote management for an educational facility in Tvrdošovce, Slovakia.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://hub.madovygabor.com/#main-identity",
+    "name": "Gabriel Madový",
+    "url": "https://dev.madovygabor.com/en/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gabriel Madový"
+  },
+  "keywords": "WireGuard, VLAN, PoE, TP-Link Omada, Hikvision, Network Engineering"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+            <div class="mobile-nav-header">
+                <span class="nav-brand">GABRIEL MADOVÝ</span>
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="../">HOME</a>
+                <a class="mobile-nav-link active" href="../projects">PROJECTS</a>
+                <a class="mobile-nav-link" href="../contact">CONTACT</a>
+            </nav>
+            <div class="mobile-nav-footer">
+                <div class="mobile-lang-selector">
+                    <a class="lang-link active" href="/en/projects/network-case-study">EN</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/hu/projektek/halozat-esettanulmany">HU</a>
+                    <span class="lang-sep">/</span>
+                    <a class="lang-link" href="/sk/projekty/sietova-infrastruktura-pripadova-studia">SK</a>
+                </div>
+                <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">GABRIEL MADOVÝ</a>
+        <div class="nav-links">
+            <a class="nav-link" href="../">HOME</a>
+            <a class="nav-link active" href="../projects">PROJECTS</a>
+            <a class="nav-link" href="../contact">CONTACT</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-selector">
+                <a class="lang-link active" href="/en/projects/network-case-study">EN</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/hu/projektek/halozat-esettanulmany">HU</a>
+                <span class="lang-sep">/</span>
+                <a class="lang-link" href="/sk/projekty/sietova-infrastruktura-pripadova-studia">SK</a>
+            </div>
+            <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <header class="case-study-header scroll-reveal">
+            <a href="../projects" class="case-study-back-link">
+                <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></span> BACK TO PROJECTS
+            </a>
+            <h1 class="case-study-title font-display">Educational Facility Network &amp; L3 Remote Management</h1>
+            <p class="case-study-subtitle">
+                Educational Facility Infrastructure — Tvrdošovce, Slovakia
+            </p>
+            <div class="case-study-meta-bar">
+                <span class="badge badge-dark">VLAN Segmentation</span>
+                <span class="badge badge-dark">WireGuard</span>
+                <span class="badge badge-dark">PoE Planning</span>
+                <span class="badge badge-dark">TP-Link Omada</span>
+                <span class="badge badge-dark">Hikvision CCTV</span>
+            </div>
+        </header>
+
+        <section class="case-study-meta-grid scroll-reveal delay-100">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Network design, installation &amp; configuration</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Site</span>
+                <span class="meta-value">Educational facility, Tvrdošovce (SK)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Remote administration</span>
+                <span class="meta-value">WireGuard from Brno (CZ)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">In production, 2026</span>
+            </div>
+        </section>
+
+        <!-- 01 Overview -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">01 / Overview &amp; Objective</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>
+                    The project involved designing and deploying a complete, greenfield network and surveillance infrastructure for a newly constructed educational facility (kindergarten and school) in Tvrdošovce, Slovakia. The goal was to establish clean, reliable, and easily maintainable structured cabling, full Wi-Fi 6 coverage, isolated IP CCTV monitoring, and secure L3 remote administration without requiring recurring on-site technical visits.
+                </p>
+            </div>
+            <ul class="cs-list">
+                <li><strong>Isolation:</strong> cameras have no internet access and are separated from staff and classroom traffic.</li>
+                <li><strong>Gateway offload:</strong> continuous 24/7 video must not pass through the router CPU.</li>
+                <li><strong>Two access paths:</strong> staff view cameras via the Hik-Connect app with no network setup; the administrator gets full encrypted L3 access through WireGuard.</li>
+            </ul>
+        </section>
+
+        <!-- 02 Hardware & Topology -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">02 / Hardware &amp; Topology</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Device</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Role"><strong>ISP terminal</strong></td>
+                            <td data-label="Device">Sagemcom F@st 5670 (GPON)</td>
+                            <td data-label="Notes">Slovak Telekom FTTH, dynamic public IP. Wi-Fi radios disabled.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Gateway</strong></td>
+                            <td data-label="Device">TP-Link Omada ER605 v2</td>
+                            <td data-label="Notes">Inter-VLAN routing, ACLs, WireGuard server.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Controller</strong></td>
+                            <td data-label="Device">TP-Link Omada OC200</td>
+                            <td data-label="Notes">Hardware SDN controller, PoE-powered.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>PoE switch</strong></td>
+                            <td data-label="Device">TP-Link TL-SG1218MPE</td>
+                            <td data-label="Notes">16× GbE PoE+ (802.3af/at, 250 W budget) + 2× GbE uplink.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Access switch</strong></td>
+                            <td data-label="Device">TP-Link JetStream TL-SG3452</td>
+                            <td data-label="Notes">48× GbE + 4× SFP, L2+ managed. Primary endpoint distribution layer: 802.1Q VLANs on the access ports for wall outlets, PCs and printers.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Wireless</strong></td>
+                            <td data-label="Device">2× TP-Link Omada EAP610 v2</td>
+                            <td data-label="Notes">Ceiling-mount AX1800 Wi-Fi 6, PoE-powered.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>NVR</strong></td>
+                            <td data-label="Device">Hikvision DS-7608NXI-K2</td>
+                            <td data-label="Notes">8-channel 4K AcuSense, 4 TB WD Purple.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Cameras</strong></td>
+                            <td data-label="Device">7× DS-2CD2047G2H-LIU<br>1× DS-2CD2143G2-I</td>
+                            <td data-label="Notes">4 MP bullets (Smart Hybrid Light) + 4 MP IK10 dome.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Role"><strong>Enclosure</strong></td>
+                            <td data-label="Device">19" wall-mount rack</td>
+                            <td data-label="Notes">Active roof fan, Cat6 STP patch panels, surge-protected PDU.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="cs-subhead">Physical &amp; logical topology</h3>
+            <figure class="topology-figure">
+                <div class="topology-scroll">
+                    <svg class="topology-svg" viewBox="0 0 1000 610" role="img" aria-labelledby="tp-title tp-desc" xmlns="http://www.w3.org/2000/svg"><title id="tp-title">Network topology</title><desc id="tp-desc">GPON line to Sagemcom modem, DMZ to Omada ER605 gateway. LAN1 trunk to the PoE switch with cameras, NVR, access points and controller. LAN2 to the 48-port TL-SG3452 managed switch for staff clients. WireGuard tunnel from Brno to the ER605.</desc><defs><marker id="tp-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="tp-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="tp-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="tp-a-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="360" y="20" width="340" height="125" rx="10" class="tp-group"/><rect x="320" y="195" width="460" height="100" rx="10" class="tp-group"/><rect x="20" y="355" width="520" height="245" rx="10" class="tp-group"/><rect x="560" y="355" width="420" height="245" rx="10" class="tp-group"/><circle cx="130" cy="78" r="34" class="tp-dev-light"/><path d="M114 86 h30 a8 8 0 0 0 0 -16 a12 12 0 0 0 -22 -3 a9 9 0 0 0 -8 19 z" class="tp-line-dev" fill="none"/><text x="130" y="132" class="tp-name" text-anchor="middle">Slovak Telekom GPON</text><text x="130" y="149" class="tp-t" text-anchor="middle">dynamic public IP</text><path d="M166 78 H358" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><line x1="394" y1="70" x2="390" y2="52" class="tp-line-dev"/><line x1="462" y1="70" x2="466" y2="52" class="tp-line-dev"/><rect x="380" y="70" width="96" height="28" rx="4" class="tp-dev"/><circle cx="413.0" cy="84.0" r="2" class="tp-led"/><circle cx="423.0" cy="84.0" r="2" class="tp-led"/><circle cx="433.0" cy="84.0" r="2" class="tp-led"/><circle cx="443.0" cy="84.0" r="2" class="tp-led"/><rect x="492" y="32" width="125.5" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="502" y="46" class="tp-pill-t tp-r-t" text-anchor="start">GATEWAY / MODEM</text><text x="492" y="74" class="tp-name" text-anchor="start">Sagemcom F@st 5670</text><text x="492" y="96" class="tp-t" text-anchor="start">DMZ → ER605 WAN</text><text x="492" y="116" class="tp-t" text-anchor="start">Wi-Fi off · No-IP DDNS</text><path d="M530 145 V193" class="tp-w tp-n" marker-end="url(#tp-a-n)"/><text x="540" y="174" class="tp-t" text-anchor="start">WAN · DMZ host</text><rect x="350" y="236" width="110" height="28" rx="4" class="tp-dev"/><rect x="390" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="402" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="414" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="426" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="438" y="244" width="9" height="9" rx="1" class="tp-port"/><rect x="476" y="206" width="270.4" height="20" rx="4" class="tp-pill tp-pill-b"/><text x="486" y="220" class="tp-pill-t tp-b-t" text-anchor="start">WIREGUARD · INTER-VLAN ROUTING · ACL</text><text x="476" y="247" class="tp-name" text-anchor="start">TP-Link Omada ER605 v2</text><text x="476" y="266" class="tp-t" text-anchor="start">VPN gateway · 10.0.0.1/24</text><text x="476" y="283" class="tp-t" text-anchor="start">WireGuard UDP 51820</text><rect x="860" y="56" width="40" height="26" rx="2" class="tp-dev"/><path d="M853 86 H907" class="tp-line-dev tp-thick"/><text x="880" y="112" class="tp-name" text-anchor="middle">Remote admin</text><text x="880" y="128" class="tp-t" text-anchor="middle">Brno (CZ)</text><path d="M880 140 V245 H783" class="tp-w tp-b tp-dash" marker-end="url(#tp-a-b)"/><text x="892" y="182" class="tp-t tp-b-t" text-anchor="start">WireGuard</text><text x="892" y="198" class="tp-t tp-b-t" text-anchor="start">split tunnel</text><text x="892" y="214" class="tp-t tp-b-t" text-anchor="start">10.0.0.0/24</text><path d="M450 295 V325 H215 V378" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><text x="232" y="318" class="tp-t tp-r-t" text-anchor="start">LAN1 trunk · VLAN 1, 10, 20</text><path d="M610 295 V325 H705 V378" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><text x="620" y="318" class="tp-t tp-g-t" text-anchor="start">LAN2 · VLAN 20 · 10.10.20.1/24</text><rect x="307.9" y="345" width="222.10000000000002" height="20" rx="4" class="tp-pill tp-pill-r"/><text x="317.9" y="359" class="tp-pill-t tp-r-t" text-anchor="start">250 W PoE budget · ~80 W used</text><rect x="150" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="162.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="162.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="175.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="189.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="203.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="217.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="231.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="245.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="259.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="295" y="393" class="tp-name" text-anchor="start">TL-SG1218MPE</text><text x="295" y="411" class="tp-t" text-anchor="start">16× PoE+ · 802.3af/at</text><path d="M170 410 V432 H90 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M190 410 V442 H215 V460" class="tp-w tp-r" marker-end="url(#tp-a-r)"/><path d="M250 410 V442 H345 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M270 410 V432 H470 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><g transform="translate(90,484)"><rect x="-24" y="-9" width="38" height="18" rx="5" class="tp-dev"/><rect x="-30" y="-7" width="8" height="14" rx="2" class="tp-dev"/><circle cx="-26" cy="0" r="3" class="tp-led"/><path d="M10 9 L14 22 M4 22 H24" class="tp-line-dev"/></g><text x="90" y="527" class="tp-name tp-sm" text-anchor="middle">8× IP cameras</text><text x="90" y="544" class="tp-t" text-anchor="middle">ports 1–8</text><text x="90" y="560" class="tp-t" text-anchor="middle">10.10.10.21–28</text><rect x="187" y="474" width="56" height="20" rx="3" class="tp-dev"/><line x1="197" y1="484" x2="221" y2="484" class="tp-line-dev"/><circle cx="231" cy="484" r="2" class="tp-led"/><text x="215" y="527" class="tp-name tp-sm" text-anchor="middle">Hikvision NVR</text><text x="215" y="544" class="tp-t" text-anchor="middle">port 17</text><text x="215" y="560" class="tp-t" text-anchor="middle">10.10.10.10</text><circle cx="330" cy="484" r="14" class="tp-dev-light"/><circle cx="330" cy="484" r="3" class="tp-led"/><circle cx="360" cy="484" r="14" class="tp-dev-light"/><circle cx="360" cy="484" r="3" class="tp-led"/><text x="345" y="527" class="tp-name tp-sm" text-anchor="middle">2× EAP610</text><text x="345" y="544" class="tp-t" text-anchor="middle">ports 9–10</text><text x="345" y="560" class="tp-t" text-anchor="middle">Wi-Fi 6</text><rect x="456" y="464" width="28" height="38" rx="3" class="tp-dev"/><line x1="462" y1="472" x2="478" y2="472" class="tp-line-dev"/><line x1="462" y1="478" x2="478" y2="478" class="tp-line-dev"/><circle cx="470" cy="491" r="5" class="tp-ring"/><text x="470" y="527" class="tp-name tp-sm" text-anchor="middle">OC200</text><text x="470" y="544" class="tp-t" text-anchor="middle">port 11</text><text x="470" y="560" class="tp-t" text-anchor="middle">controller</text><text x="280" y="588" class="tp-foot" text-anchor="middle">VLAN 10 · recording stays on the switch</text><rect x="640" y="380" width="130" height="30" rx="4" class="tp-dev"/><rect x="652.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="387" width="9" height="6" rx="1" class="tp-port"/><rect x="652.0" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="665.9" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="679.7" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="693.6" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="707.4" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="721.3" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="735.1" y="396" width="9" height="6" rx="1" class="tp-port"/><rect x="749.0" y="396" width="9" height="6" rx="1" class="tp-port"/><text x="785" y="393" class="tp-name" text-anchor="start">TL-SG3452</text><text x="785" y="411" class="tp-t" text-anchor="start">48× GbE + 4× SFP</text><text x="785" y="428" class="tp-t" text-anchor="start">L2+ managed</text><path d="M685 410 V432 H650 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M705 410 V442 H770 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><path d="M725 410 V432 H890 V460" class="tp-w tp-g" marker-end="url(#tp-a-g)"/><rect x="632" y="466" width="36" height="36" rx="4" class="tp-dev-light"/><rect x="639" y="478" width="9" height="9" rx="1" class="tp-port-d"/><rect x="652" y="478" width="9" height="9" rx="1" class="tp-port-d"/><text x="650" y="527" class="tp-name tp-sm" text-anchor="middle">Wall outlets</text><text x="650" y="544" class="tp-t" text-anchor="middle">double RJ45</text><rect x="760" y="466" width="20" height="10" class="tp-dev-light"/><rect x="750" y="476" width="40" height="18" rx="3" class="tp-dev"/><rect x="760" y="490" width="20" height="12" class="tp-dev-light"/><text x="770" y="527" class="tp-name tp-sm" text-anchor="middle">Printers</text><text x="770" y="544" class="tp-t" text-anchor="middle">network</text><rect x="868" y="466" width="44" height="28" rx="2" class="tp-dev"/><path d="M890 494 V502 M880 502 H900" class="tp-line-dev"/><text x="890" y="527" class="tp-name tp-sm" text-anchor="middle">Workstations</text><text x="890" y="544" class="tp-t" text-anchor="middle">office & class</text><text x="770" y="588" class="tp-foot" text-anchor="middle">VLAN 20 · staff & classroom clients</text></svg>
+                </div>
+                <figcaption class="topology-caption">Fig. 1 — Logical topology, port assignment and traffic paths</figcaption>
+            </figure>
+
+            <h3 class="cs-subhead">Installation photos</h3>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/patch-panel-termination.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/patch-panel-termination.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Cat6 cables being terminated on a rack patch panel">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Patch panel termination</span>
+                        <span class="media-figure-desc">Cat6 runs terminated on the rack patch panel.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-first-wiring.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-first-wiring.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Partially wired rack with ER605 router, NVR and PoE switch">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">First wiring</span>
+                        <span class="media-figure-desc">Router and NVR installed; PoE switch patching in progress.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-final-open.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-final-open.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Finished open 19-inch rack with patch panels, switches, NVR and PDU">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Finished rack</span>
+                        <span class="media-figure-desc">All equipment installed and patched.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/network/rack-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/network/rack-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Closed wall-mounted network rack">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">Closed rack</span>
+                        <span class="media-figure-desc">Wall-mounted cabinet in its final position.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 03 Core Architecture -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">03 / Core Architecture</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <h3 class="cs-subhead">Subnets &amp; policy</h3>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Subnet</th>
+                            <th>Gateway</th>
+                            <th>Hosts</th>
+                            <th>Policy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Zone"><strong>WAN transit</strong></td>
+                            <td data-label="Subnet">ISP-assigned private /24</td>
+                            <td data-label="Gateway">ISP modem</td>
+                            <td data-label="Hosts">Sagemcom LAN, ER605 WAN</td>
+                            <td data-label="Policy">ER605 WAN set as DMZ host on the modem.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>VLAN 1 — Management</strong></td>
+                            <td data-label="Subnet"><code>10.10.1.0/24</code></td>
+                            <td data-label="Gateway"><code>.1</code></td>
+                            <td data-label="Hosts">ER605, switches, OC200, APs</td>
+                            <td data-label="Policy">Network devices only.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>VLAN 10 — CCTV</strong></td>
+                            <td data-label="Subnet"><code>10.10.10.0/24</code></td>
+                            <td data-label="Gateway"><code>.1</code></td>
+                            <td data-label="Hosts">NVR (<code>.10</code>), cameras (<code>.21–.28</code>)</td>
+                            <td data-label="Policy">Camera WAN egress blocked at the gateway.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>VLAN 20 — Staff LAN</strong></td>
+                            <td data-label="Subnet"><code>10.10.20.0/24</code></td>
+                            <td data-label="Gateway"><code>.1</code></td>
+                            <td data-label="Hosts">Office and classroom clients</td>
+                            <td data-label="Policy">Internet allowed. Access to NVR allowed.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Zone"><strong>WireGuard VPN</strong></td>
+                            <td data-label="Subnet"><code>10.0.0.0/24</code></td>
+                            <td data-label="Gateway"><code>.1</code></td>
+                            <td data-label="Hosts">Remote admin peer (Brno)</td>
+                            <td data-label="Policy">Routed access to VLAN 1, 10, 20.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="cs-subhead">Traffic flow: video stays on the switch</h3>
+            <div class="cs-prose">
+                <p>
+                    All eight cameras and the NVR are on the TL-SG1218MPE in the same VLAN (10). The eight continuous H.265 recording streams are therefore switched at L2 inside the switch backplane and never cross the trunk to the ER605. The router only handles video when a client in VLAN 20 or on the VPN actively opens a live view or playback, which is a short, on-demand flow rather than 24/7 load.
+                </p>
+            </div>
+
+            <h3 class="cs-subhead">PoE capacity</h3>
+            <div class="tech-table-wrapper">
+                <table class="tech-table tech-table-stack">
+                    <thead>
+                        <tr>
+                            <th>Load</th>
+                            <th>Estimated draw</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td data-label="Load">8× cameras</td><td data-label="Estimated draw">~52 W</td></tr>
+                        <tr><td data-label="Load">2× EAP610</td><td data-label="Estimated draw">~24 W</td></tr>
+                        <tr><td data-label="Load">1× OC200</td><td data-label="Estimated draw">~4 W</td></tr>
+                        <tr><td data-label="Load"><strong>Total / budget</strong></td><td data-label="Estimated draw"><strong>~80 W / 250 W (~32%)</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cs-prose">
+                <p>
+                    The ~170 W headroom covers the current spike when camera IR and white-light LEDs switch on at night, so ports and APs do not reboot under load.
+                </p>
+            </div>
+        </section>
+
+        <!-- 04 Troubleshooting -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">04 / Remote Operations &amp; Management</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="cs-prose">
+                <p>Remote administration is split into two tiers with different access paths. Routine monitoring runs through the Omada cloud; anything that touches the isolated subnets goes through WireGuard.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card tier-cloud">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Tier 1 — Omada cloud (OC200)</h3>
+                        <span class="badge badge-dark">Daily operations</span>
+                    </div>
+                    <p class="tier-label">Use case</p>
+                    <p class="tier-use">Daily health checks, quick triage and routine changes from a phone or the web portal.</p>
+                    <p class="tier-label">Capabilities</p>
+                    <ul class="cs-list cs-list-tight">
+                            <li>Real-time client analytics, bandwidth usage and port status for Omada-managed devices (gateway, access points, adopted switches).</li>
+                            <li>Wi-Fi changes without VPN: SSIDs, radio power, channel width, temporary guest access.</li>
+                            <li>The on-site OC200 controller keeps an <strong>outbound</strong> connection to the Omada cloud, so no inbound ports are opened.</li>
+                    </ul>
+                </div>
+                <div class="tier-card tier-vpn">
+                    <div class="tier-head">
+                        <h3 class="challenge-title">Tier 2 — WireGuard L3 tunnel</h3>
+                        <span class="badge badge-dark">Deep access</span>
+                    </div>
+                    <p class="tier-label">Use case</p>
+                    <p class="tier-use">Low-level hardware administration, embedded device maintenance and the video subsystem.</p>
+                    <p class="tier-label">Capabilities</p>
+                    <ul class="cs-list cs-list-tight">
+                            <li>Routed L3 access into the isolated subnets <code>10.10.1.0/24</code>, <code>10.10.10.0/24</code> and <code>10.10.20.0/24</code>.</li>
+                            <li>Full NVR web interface: archive retrieval, firmware updates and per-camera stream diagnostics. None of this is reachable from the public WAN.</li>
+                            <li>Direct switch web UI / CLI on the management VLAN for L2+ features, without a cloud proxy in the path.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="callout-box">
+                <div class="callout-header">Engineering takeaway</div>
+                <p class="callout-desc">Decoupling daily monitoring from low-level infrastructure access gives defense in depth. Routine metrics and wireless changes stay available on the go through the Omada cloud controller, while sensitive embedded devices (NVR, camera feeds, switch management planes) have no inbound exposure to the public WAN and are reachable only through authenticated, peer-to-peer WireGuard tunnels.</p>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">05 / Technical Challenges &amp; Troubleshooting</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">01</span>
+                        <h3 class="challenge-title">Subnet conflict &amp; remote lockout prevention</h3>
+                    </div>
+                    <span class="badge badge-dark">Routing</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Root cause
+                        </div>
+                        <p>
+                            The admin workstation's home network and the remote ISP modem both used the same private /24 range (the ISP modem's factory default). With a full tunnel, local traffic broke immediately.
+                        </p>
+                        <p>
+                            Re-addressing the modem remotely was rejected: its DHCP restarts, the ER605 WAN address changes, the DMZ entry becomes invalid and the site is locked out until someone visits in person.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>
+                            Modem left unchanged. Split tunnel on the WireGuard client — only internal subnets are routed through the tunnel:
+                        </p>
+                        <code class="config-snippet">AllowedIPs = 10.10.1.0/24, 10.10.10.0/24,
+             10.10.20.0/24, 10.0.0.0/24</code>
+                        <p>
+                            Local internet stays on the local gateway; site subnets are reachable over the VPN.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">02</span>
+                        <h3 class="challenge-title">Dynamic carrier IP &amp; WireGuard handshake</h3>
+                    </div>
+                    <span class="badge badge-dark">NAT / DDNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Root cause
+                        </div>
+                        <p>
+                            Tunnel up but stuck at <code>0 B received, 444 B sent</code>. The Omada-generated client profile used the gateway's private WAN address (behind the ISP modem) as the endpoint, which is not reachable from the internet. The GPON line also gets a public IP that changes periodically.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>
+                            ER605 WAN address set as DMZ host on the Sagemcom so UDP 51820 reaches it. No-IP DDNS client on the modem tracks the public IP. Client endpoint:
+                        </p>
+                        <code class="config-snippet">Endpoint = &lt;site&gt;.myddns.me:51820
+PersistentKeepalive = 25</code>
+                        <p>
+                            Keepalive holds the NAT state open; DDNS follows IP changes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">03</span>
+                        <h3 class="challenge-title">NVR web access: certificate warnings &amp; internal DNS</h3>
+                    </div>
+                    <span class="badge badge-dark">TLS / DNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Symptom &amp; root cause
+                        </div>
+                        <p>Staff opening the NVR web interface got a full-page "Not secure" warning and had to type a raw IP address from another VLAN.</p>
+                        <ul class="cs-list cs-list-tight">
+                            <li>The NVR ships with a self-signed certificate that no browser trusts.</li>
+                            <li>The NVR sits on an isolated LAN with no public hostname, so a public CA such as Let's Encrypt cannot issue a certificate for it.</li>
+                            <li>Raw IP addresses across VLANs are hard for non-technical users to remember.</li>
+                        </ul>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <ol class="cs-steps">
+                            <li><strong>Local DNS:</strong> A-record on the ER605, <code>kamery.skolka.lan → 10.10.10.10</code>, resolvable on the LAN and over WireGuard.</li>
+                            <li><strong>NVR certificate:</strong> HTTPS enabled on port 443. New self-signed certificate issued for <code>kamery.skolka.lan</code> with a SHA-256 signature and exported as <code>NVR_CA.cer</code>.</li>
+                            <li><strong>Client onboarding:</strong> a Windows batch script imports the certificate into the Windows Trusted Root store with <code>certutil</code>, creates a desktop shortcut to the NVR and prints short instructions for the user.</li>
+                        </ol>
+                    </div>
+                </div>
+                <p class="challenge-outcome"><strong>Result:</strong> no certificate warnings on staff machines, and the NVR opens from a desktop icon. Setting up a new workstation means running one script as administrator.</p>
+            </div>
+
+            <div class="challenge-item">
+                <div class="challenge-header">
+                    <div class="challenge-title-group">
+                        <span class="challenge-number">04</span>
+                        <h3 class="challenge-title">Internal DNS not resolving over VPN</h3>
+                    </div>
+                    <span class="badge badge-dark">DNS</span>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-block challenge-block-problem">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Root cause
+                        </div>
+                        <p>
+                            Over the tunnel, <code>10.10.10.10</code> answered in 22 ms but <code>kamery.skolka.lan</code> returned <code>Non-existent domain</code>. Omada binds custom LAN DNS records to interfaces and did not serve them to the WireGuard interface.
+                        </p>
+                    </div>
+                    <div class="challenge-block challenge-block-solution">
+                        <div class="challenge-block-label">
+                            <span class="material-symbols-outlined">check_circle</span> Fix
+                        </div>
+                        <p>
+                            Extended the scope of the A-record from 03 on the ER605 to queries arriving on the WireGuard interface. <code>hosts</code> entries on the admin workstation as a fallback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 Verification -->
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">06 / Known Limitations</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="verify-block limit-block">
+                <div class="limit-head">
+                    <h3 class="challenge-title">No battery backup (UPS)</h3>
+                    <span class="badge badge-dark">Accepted trade-off</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Status</span>
+                    <span class="verify-val">The rack runs on mains power through a surge-protected PDU. There is no UPS.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Behavior</span>
+                    <span class="verify-val">During a power outage or phase loss, the modem, gateway, PoE switch and NVR shut down together, and recording pauses until power returns.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Decision</span>
+                    <span class="verify-val">A dedicated UPS was evaluated during requirements gathering and intentionally left out, based on the client's risk tolerance, budget priorities and the non-critical nature of downtime outside opening hours.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key">Mitigation</span>
+                    <span class="verify-val">All devices recover on their own: the ER605 gateway, the TP-Link switches and the Hikvision NVR are set to power on automatically, so links, the WireGuard endpoint and recording come back without manual intervention.</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header scroll-reveal">
+            <h2 class="font-technical section-header-sub">07 / Operational Verification</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="cs-section scroll-reveal delay-100">
+            <div class="verify-block">
+                <div class="verify-head">
+                    <div class="meta-item">
+                        <span class="meta-label">Site</span>
+                        <span class="meta-value">Tvrdošovce, SK</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Management</span>
+                        <span class="meta-value">WireGuard L3 from Brno, CZ</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value verify-status">Verified · in production</span>
+                    </div>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Physical layer</span>
+                    <span class="verify-val">Cat6 STP links at 1000 Mbps full duplex. Patch panels grounded, PDU surge protection active.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Switching</span>
+                    <span class="verify-val">8× H.265 recording streams stay on the PoE switch. No continuous video load on the gateway.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Isolation</span>
+                    <span class="verify-val">Camera traffic from VLAN 10 dropped at the WAN boundary.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>Remote access</span>
+                    <span class="verify-val">Split-tunnel WireGuard stable via DDNS endpoint with keepalive. No subnet overlap.</span>
+                </div>
+                <div class="verify-row">
+                    <span class="verify-key"><span class="material-symbols-outlined">check_circle</span>End users</span>
+                    <span class="verify-val">Hik-Connect online for staff. The NVR opens from a desktop shortcut at <code>https://kamery.skolka.lan</code> with no certificate warning.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">© 2026 Gabriel Madový. All rights reserved.</div>
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
+            <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
+            <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js" defer></script>
+</body>
+
+</html>

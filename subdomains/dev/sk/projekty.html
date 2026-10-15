@@ -5,12 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Softvérové Inžinierstvo & Multiplatformové Projekty | Kotlin Multiplatform, Java Clean Architecture a E2EE |
-        Produkčné architektúry a overené zdrojové kódy | Gabriel Madový</title>
+    <title>Inžinierske projekty &amp; Architektúra systémov | Gabriel Madový</title>
     <meta name="description"
-        content="Ponorte sa do softvérového inžinierstva a InfoSec projektov Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.">
+        content="Prehľad softvérových, sieťových a bezpečnostných projektov Gabriela Madového: MaturiMate, Java Clean Architecture a technická infraštruktúra.">
     <meta name="keywords"
-        content="Gabriel Madový, Madový Gábor, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, MVI, SQLDelight, InfoSec, Kryptografia">
+        content="Gabriel Madový, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
     <meta name="author" content="Gabriel Madový">
     <meta name="robots" content="index, follow">
 
@@ -23,9 +22,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sk_SK" />
     <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty" />
-    <meta property="og:title" content="Gabriel Madový | Kotlin Multiplatform Projekty" />
+    <meta property="og:title" content="Gabriel Madový | Projekty &amp; Architektúra" />
     <meta property="og:description"
-        content="Ponorte sa do softvérového inžinierstva a InfoSec projektov Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture." />
+        content="Prehľad inžinierskych a systémových projektov Gabriela Madového." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,8 +50,8 @@
   "@type": "CollectionPage",
   "@id": "https://dev.madovygabor.com/sk/projekty/#projects-page",
   "url": "https://dev.madovygabor.com/sk/projekty",
-  "name": "Vývojové Denníky | Projekty Gabriela Madového",
-  "description": "Softvérové inžinierstvo a InfoSec projekty Gabriela Madového, vrátane systémov MaturiMate a Clean Architecture.",
+  "name": "Záznamy z vývoja | Projekty Gabriela Madového",
+  "description": "Softvérové inžinierstvo a bezpečnostné projekty Gabriela Madového, vrátane MaturiMate a systémov postavených na Clean Architecture.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -66,11 +65,11 @@
       "name": "Ekosystém MaturiMate",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform klient s MVI / Clean Architecture oddelením, jednosmerným tokom dát a offline-first perzistenciou cez SQLDelight, zdieľaný medzi Androidom a JVM Desktopom."
+      "description": "Kotlin Multiplatform klient s oddelením vrstiev cez MVI / Clean Architecture, jednosmerným tokom dát a offline-first SQLDelight úložiskom zdieľaným medzi Androidom a desktopovým JVM."
     },
     {
       "@type": "SoftwareSourceCode",
-      "name": "Zamestnanecký & Bezpečnostný Audítorský Systém",
+      "name": "Employee & Security Auditor System",
       "programmingLanguage": "Java",
       "codeRepository": "https://github.com/MadovyGabor/DatabazovySystemZamestnancu",
       "description": "Vrstvený Java 21 backend s hybridnou perzistenciou pamäť/SQLite, izolovanými JUnit 5 I/O testami a GitHub Actions CI/CD pipeline."
@@ -81,6 +80,18 @@
       "programmingLanguage": "Docker / Nginx / Web Standards",
       "codeRepository": "https://github.com/madovygabor/madovygabor.com",
       "description": "Kontajnerizovaná multi-domain platforma prepájajúca fotografické, hubové a inžinierske portfólio s Nginx orchestráciou a Cloudflare Pages GitOps doručovaním."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Sieťová infraštruktúra vzdelávacej inštitúcie & L3 vzdialená správa (MS-TVR-NETSEC)",
+      "url": "https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia",
+      "description": "Inštalácia racku, segmentácia VLAN, záznamové streamy ponechané na backplane switchu a WireGuard L3 vzdialená správa."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "EPS a požiarna bezpečnosť: Bosch AVENAR 2000",
+      "url": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia",
+      "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové ovládanie a dimenzovanie batérií podľa EN 54-4."
     }
   ]
 }
@@ -88,13 +99,12 @@
 </head>
 
 <body>
-
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
             <div class="mobile-nav-header">
                 <span class="nav-brand">GABRIEL MADOVÝ</span>
-                <button class="nav-close-btn" id="navCloseBtn" aria-label="Zatvoriť menu">
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Zavrieť menu">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -111,7 +121,7 @@
                     <span class="lang-sep">/</span>
                     <a class="lang-link active" href="/sk/projekty">SK</a>
                 </div>
-                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
             </div>
         </div>
     </div>
@@ -132,7 +142,7 @@
                 <span class="lang-sep">/</span>
                 <a class="lang-link active" href="/sk/projekty">SK</a>
             </div>
-            <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+            <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -144,15 +154,15 @@
     <main class="container">
 
         <section class="projects-hero">
-            <h1 class="font-display projects-title">Vývojové denníky</h1>
+            <h1 class="font-display projects-title">Záznamy z vývoja</h1>
             <p class="font-technical projects-desc">
-                Výber projektov, na ktorých pracujem a ktoré udržiavam, s poznámkami o ich štruktúre: zdieľaný kód
-                naprieč platformami, presné zobrazovanie matematického obsahu a jasné oddelenie vrstiev.
+                Výber projektov, ktoré vyvíjam a spravujem, so stručným popisom ich architektúry: spoločný kód naprieč
+                platformami, presné vykresľovanie matematiky a čisté oddelenie jednotlivých vrstiev.
             </p>
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Vlajková loď multiplatformovej architektúry</h2>
+            <h2 class="font-technical section-header-sub">01 / Multiplatformové a mobilné aplikácie</h2>
             <div class="section-line"></div>
         </div>
 
@@ -160,45 +170,43 @@
             <div class="bento-card bento-card-purple">
                 <div class="flex-center-between projects-header">
                     <div class="projects-brand-wrapper">
-                        <span class="material-symbols-outlined">school</span>
+                        <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
                             <h3 class="font-technical projects-card-title">Ekosystém MaturiMate</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • V aktívnom vývoji
-                            </p>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktívny vývoj</p>
                         </div>
                     </div>
                     <div class="projects-badge-container">
                         <span class="badge badge-purple">KMP Core</span>
-                        <span class="badge badge-dark">Jetpack Compose</span>
                     </div>
                 </div>
 
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            MaturiMate je aplikácia na prípravu na maturitu pre Android a desktop (JVM). Je napísaná
-                            pomocou <strong>Kotlin Multiplatform (KMP)</strong> a Compose Multiplatform, takže doménová
-                            logika, dátová vrstva aj používateľské rozhranie sú spoločné pre obe platformy a nepíšu sa
-                            dvakrát.
+                            MaturiMate je aplikácia na prípravu na maturitné skúšky pre Android a desktop (JVM). Využíva
+                            <strong>Kotlin Multiplatform (KMP)</strong> a Compose Multiplatform, vďaka čomu je doménová
+                            logika, dátová vrstva aj používateľské rozhranie zdieľané medzi oboma platformami bez
+                            duplikácie kódu.
                         </p>
                         <p>
-                            Aplikácia vychádza z prístupu <strong>MVI / Clean Architecture</strong> s jednosmerným tokom
-                            dát. Stav obrazoviek držia Kotlin Coroutines a <code>StateFlow</code>, vďaka čomu sú
-                            aktualizácie UI predvídateľné a ľahšie sa v nich orientuje.
+                            Aplikácia stavia na architektúre <strong>MVI / Clean Architecture</strong> s jednosmerným
+                            tokom dát. Stav obrazovky riadia Kotlin Coroutines a <code>StateFlow</code>, čo prináša
+                            predvídateľné reakcie rozhrania a prehľadný kód.
                         </p>
                         <p>
-                            Funguje <strong>offline-first</strong>: otázky a pokrok sa ukladajú lokálne do relačnej
-                            databázy cez SQLDelight, počiatočný obsah sa nahráva v rámci transakcií a používateľské
-                            nastavenia sa ukladajú pomocou multiplatformového DataStore.
+                            Funguje na princípe <strong>offline first</strong>: otázky a história odpovedí sa ukladajú
+                            lokálne v relačnej databáze cez SQLDelight, vstupné dáta sa inicializujú v transakciách a
+                            nastavenia používateľa uchováva multiplatformový DataStore.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
                                 <span class="badge badge-dark badge-bg-dark">Kotlin 2.2</span>
-                                <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
-                                <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
-                                <span class="badge badge-dark badge-bg-dark">Koin DI</span>
+                        <span class="badge badge-dark badge-bg-dark">Compose Multiplatform</span>
+                        <span class="badge badge-dark badge-bg-dark">SQLDelight</span>
                             </div>
-                            <a href="https://github.com/madovygabor/MaturiMate" target="_blank" class="btn btn-primary">
+                            <a href="https://github.com/madovygabor/MaturiMate" target="_blank"
+                                class="btn btn-primary">
                                 <div class="btn-corner-tr"></div>
                                 <div class="btn-corner-bl"></div>
                                 <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
@@ -227,39 +235,41 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend & Infraštruktúra</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend a systémový softvér</h2>
             <div class="section-line"></div>
         </div>
 
-        <section class="bento-grid scroll-reveal delay-100">
-            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+        <section class="bento-grid mb-section scroll-reveal delay-100">
+            <div class="col-span-7 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined">layers</span>
-                            <h3 class="font-technical projects-card-title-sm">Employee & Security Auditor System</h3>
+                            <h3 class="font-technical projects-card-title-sm">Employee &amp; Security Auditor System</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
+                    <div class="card-visual" aria-hidden="true">
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Prezentácia</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI vrstva</text><rect x="14" y="68" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Doména</text><text x="26" y="102" class="tp-t" text-anchor="start">metriky z grafu</text><rect x="14" y="122" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Perzistencia</text><text x="26" y="156" class="tp-t" text-anchor="start">repozitár v pamäti</text><path d="M99 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M99 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">záloha / synchronizácia</text><path d="M184 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">vrstvená architektúra</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
+                    </div>
                     <p class="projects-card-desc">
-                        Backendová aplikácia napísaná v <strong>Java 21 LTS</strong> na správu evidencie zamestnancov
-                        a vyhodnocovanie bezpečnostných vzťahov medzi nimi. Kód je rozdelený na samostatnú prezentačnú,
-                        doménovú a perzistenčnú vrstvu. Počas behu sa dáta držia v repozitári v pamäti a ako záloha sa
-                        synchronizujú do databázy SQLite. Bezpečnostné metriky sa počítajú prechádzaním grafu prepojení
-                        medzi zamestnancami a pri zhode rozhoduje pevné, opakovateľné pravidlo.
+                        Backendová aplikácia v <strong>Jave 21 LTS</strong> na správu záznamov zamestnancov a
+                        vyhodnocovanie ich bezpečnostných väzieb. Kód je rozdelený na prezentačnú, doménovú a
+                        perzistentnú vrstvu. Počas behu sa dáta držia v pamäťovom úložisku a priebežne zálohujú do
+                        SQLite databázy. Bezpečnostné ukazovatele sa počítajú prechodom grafu vzťahov medzi zamestnancami
+                        s pevne definovaným pravidlom pre riešenie zhôd.
                     </p>
                     <p class="projects-card-desc">
-                        Operácie so súbormi pokrývajú <strong>testy JUnit 5</strong>, ktoré bežia v dočasných
-                        adresároch <code>@TempDir</code>, a <strong>GitHub Actions CI/CD pipeline</strong> automaticky
-                        spúšťa testy pri každom pushi.
+                        Prácu so súbormi overujú <strong>JUnit 5 testy</strong> bežiace v dočasných
+                        <code>@TempDir</code> priečinkoch a <strong>GitHub Actions CI/CD pipeline</strong> automaticky
+                        spúšťa celú testovaciu sadu pri každom pushi.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
                         <span class="badge badge-dark badge-bg-dark">Java 21 LTS</span>
-                        <span class="badge badge-dark badge-bg-dark">JUnit 5 Sandbox</span>
-                        <span class="badge badge-dark badge-bg-dark">GitHub Actions CI</span>
-                        <span class="badge badge-dark badge-bg-dark">Layered Architecture</span>
+                        <span class="badge badge-dark badge-bg-dark">JUnit 5</span>
+                        <span class="badge badge-dark badge-bg-dark">GitHub Actions</span>
                     </div>
                     <a href="https://github.com/MadovyGabor/DatabazovySystemZamestnancu" target="_blank"
                         class="btn btn-primary">
@@ -270,32 +280,41 @@
                 </div>
             </div>
 
-            <div class="col-span-6 bento-card bento-card-purple flex-col-between">
+            <div class="col-span-5 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined">public</span>
-                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Media Pipeline</h3>
+                            <h3 class="font-technical projects-card-title-sm">Multidoménová platforma a mediálny pipeline</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Web Ecosystem</span>
+                        <span class="badge badge-dark badge-size-10">Webový ekosystém</span>
+                    </div>
+                    <div class="card-visual card-visual-code" aria-hidden="true">
+                        <div class="code-header"><span class="code-dot"></span> compose.yaml</div>
+                        <pre class="font-code code-snippet"><code><span class="syntax-keyword">services:</span>
+  web:
+    image: <span class="syntax-type">nginx:alpine</span>
+    volumes:
+      - ./dev:/usr/share/nginx/html/dev:ro
+      - ./hub:/usr/share/nginx/html/hub:ro
+<span class="syntax-comment">      # + photography, nginx.conf</span></code></pre>
                     </div>
                     <p class="projects-card-desc">
-                        Táto webová stránka. Jeden repozitár obsahuje tri samostatné weby: fotografické portfólio,
-                        centrálny hub a toto inžinierske portfólio. Pri lokálnom vývoji bežia spolu v prostredí
-                        <strong>Docker Compose</strong> so serverom Nginx na báze Alpine, takže si pred nasadením môžem
-                        otestovať smerovanie medzi doménami a čisté URL.
+                        Tento web. Jeden repozitár spája tri samostatné projekty: fotografické portfólio, centrálny hub
+                        a toto inžinierske portfólio. Lokálne bežia spolu cez <strong>Docker Compose</strong> s Nginx
+                        serverom postaveným na Alpine Linuxe, čo mi umožňuje odladiť prepojenie domén a čisté URL pred
+                        nasadením do produkcie.
                     </p>
                     <p class="projects-card-desc">
-                        Fotogalérie sa generujú bez databázy. Malý <strong>Python CLI</strong> prejde priečinky
-                        s obrázkami a zapíše JSON manifest, ktorý prehliadač načíta a v čistom JavaScripte z neho
-                        poskladá masonry galériu.
+                        Fotogalérie fungujú bez databázy. Skript v <strong>Pythone</strong> prejde priečinky so snímkami
+                        a vygeneruje JSON manifest, ktorý prehliadač načíta a pomocou čistého JavaScriptu z neho poskladá
+                        masonry galériu.
                     </p>
                 </div>
                 <div class="project-footer">
                     <div class="flex-wrap gap-2 d-flex">
-                        <span class="badge badge-dark badge-bg-dark">Multi-Domain</span>
-                        <span class="badge badge-dark badge-bg-dark">Python Pipeline</span>
-                        <span class="badge badge-dark badge-bg-dark">Docker Compose</span>
+                        <span class="badge badge-dark badge-bg-dark">Docker</span>
+                        <span class="badge badge-dark badge-bg-dark">Python</span>
                         <span class="badge badge-dark badge-bg-dark">Vanilla JS</span>
                     </div>
                     <a href="https://github.com/madovygabor/madovygabor.com" target="_blank"
@@ -303,6 +322,81 @@
                         <div class="btn-corner-tr"></div>
                         <div class="btn-corner-bl"></div>
                         <span class="material-symbols-outlined">code</span> ZOBRAZIŤ REPOZITÁR
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-header">
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Fyzická infraštruktúra a požiarna bezpečnosť</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <section class="bento-grid scroll-reveal delay-100">
+            <!-- Project 3: Facility Network Case Study -->
+            <div class="col-span-5 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M13 22h8v-7h-3v-4h-5V9h3V2H8v7h3v2H6v4H3v7h8v-7H8v-2h8v2h-3v7zM10 7V4h4v3h-4zM9 17v3H5v-3h4zm10 0v3h-4v-3h4z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">Inštitucionálna sieť &amp; L3 správa</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Infraštruktúra</span>
+                    </div>
+                    <div class="card-visual" aria-hidden="true">
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="vn-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="vn-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="vn-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="vn-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><circle cx="40" cy="44" r="22" class="tp-dev-light"/><text x="40" y="48" class="tp-t" text-anchor="middle">GPON</text><path d="M62 44 H126" class="tp-w tp-n" marker-end="url(#vn-n)"/><rect x="128" y="22" width="150" height="44" rx="6" class="tp-dev"/><text x="140" y="41" class="tp-name tp-sm" text-anchor="start">Brána ER605</text><text x="140" y="56" class="tp-t" text-anchor="start">VLAN 1 · 10 · 20</text><path d="M170 66 V92 H90 V114" class="tp-w tp-r" marker-end="url(#vn-r)"/><path d="M236 66 V92 H316 V114" class="tp-w tp-g" marker-end="url(#vn-g)"/><rect x="14" y="116" width="160" height="48" rx="6" class="tp-dev"/><text x="26" y="135" class="tp-name tp-sm" text-anchor="start">TL-SG1218MPE</text><text x="26" y="150" class="tp-t" text-anchor="start">8 kamier · NVR · AP</text><rect x="244" y="116" width="160" height="48" rx="6" class="tp-dev"/><text x="256" y="135" class="tp-name tp-sm" text-anchor="start">TL-SG3452</text><text x="256" y="150" class="tp-t" text-anchor="start">klienti zamestnancov</text><path d="M372 30 H282" class="tp-w tp-b tp-dash" marker-end="url(#vn-b)"/><text x="372" y="22" class="tp-t tp-b-t" text-anchor="end">WireGuard · Brno</text></svg>
+                    </div>
+                    <p class="projects-card-desc">
+                        Nová sieť pre novopostavené vzdelávacie zariadenie: 19" rack, <strong>segmentácia VLAN</strong> (manažment, CCTV, LAN zamestnancov), Wi-Fi 6 a 8 IP kamier s PoE rozpočtom 250 W pri záťaži ~80 W.
+                    </p>
+                    <p class="projects-card-desc">
+                        Záznamové streamy zostávajú na <strong>backplane PoE switchu</strong>. Dvojúrovňová správa: cloud Omada na bežný dohľad, <strong>WireGuard split tunnel</strong> z Brna do izolovaných podsietí.
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">WireGuard</span>
+                        <span class="badge badge-dark badge-bg-dark">VLAN</span>
+                        <span class="badge badge-dark badge-bg-dark">Omada</span>
+                    </div>
+                    <a href="/sk/projekty/sietova-infrastruktura-pripadova-studia" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> PREČÍTAŤ PRÍPADOVÚ ŠTÚDIU
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Bosch EPS Case Study -->
+            <div class="col-span-7 bento-card bento-card-purple flex-col-between">
+                <div>
+                    <div class="flex-center-between mb-4 projects-card-header">
+                        <div class="projects-title-wrapper">
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
+                            <h3 class="font-technical projects-card-title-sm">EPS a požiarna bezpečnosť: Bosch AVENAR 2000</h3>
+                        </div>
+                        <span class="badge badge-dark badge-size-10">Požiarna bezpečnosť</span>
+                    </div>
+                    <div class="card-visual" aria-hidden="true">
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ve-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ve-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ve-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="ve-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="150" height="152" rx="8" class="tp-group"/><text x="28" y="36" class="tp-name tp-sm" text-anchor="start">AVENAR 2000</text><rect x="28" y="48" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="66" class="tp-t" text-anchor="start">BCM</text><rect x="28" y="84" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="102" class="tp-t" text-anchor="start">LSN 0300 A</text><rect x="28" y="120" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="138" class="tp-t" text-anchor="start">RML 0008 A</text><path d="M150 98 H200 V22 H404 V158 H200 V114 H150" class="tp-w tp-g"/><circle cx="260" cy="22" r="9" class="tp-dev-light"/><circle cx="260" cy="22" r="3" class="tp-led tp-led-r"/><circle cx="350" cy="22" r="9" class="tp-dev-light"/><circle cx="350" cy="22" r="3" class="tp-led tp-led-r"/><circle cx="404" cy="90" r="9" class="tp-dev-light"/><circle cx="404" cy="90" r="3" class="tp-led tp-led-r"/><circle cx="300" cy="158" r="9" class="tp-dev-light"/><circle cx="300" cy="158" r="3" class="tp-led tp-led-r"/><text x="260" y="46" class="tp-t" text-anchor="middle">Hlásiče</text><text x="350" y="46" class="tp-t" text-anchor="middle">Majáky</text><text x="392" y="72" class="tp-t" text-anchor="end">Sirény</text><text x="300" y="146" class="tp-t" text-anchor="middle">Tlačidlové hlásiče</text><text x="300" y="96" class="tp-foot" text-anchor="middle">Uzavretá LSN slučka</text><text x="300" y="112" class="tp-foot" text-anchor="middle">6 zón</text></svg>
+                    </div>
+                    <p class="projects-card-desc">
+                        Elektronická požiarna signalizácia na ústredni <strong>Bosch AVENAR panel 2000</strong> vo vzdelávacom zariadení: uzavretá LSN slučka, šesť funkčných zón s názvami miestností na displeji, tlačidlové hlásiče FMC-420RW.
+                    </p>
+                    <p class="projects-card-desc">
+                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, vyrážaciu spúšť hlavného rozvádzača a prenos poplachu cez GSM. Uvedenie do prevádzky: kontrola poradia modulov, lokalizácia porúch v režime <strong>T-tap</strong> a dimenzovanie batérií podľa EN 54-4 (24 h + 30 min).
+                    </p>
+                </div>
+                <div class="project-footer">
+                    <div class="flex-wrap gap-2 d-flex">
+                        <span class="badge badge-dark badge-bg-dark">Bosch AVENAR</span>
+                        <span class="badge badge-dark badge-bg-dark">LSN slučka</span>
+                        <span class="badge badge-dark badge-bg-dark">EN 54</span>
+                    </div>
+                    <a href="/sk/projekty/eps-pripadova-studia" class="btn btn-primary">
+                        <div class="btn-corner-tr"></div>
+                        <div class="btn-corner-bl"></div>
+                        <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg></span> PREČÍTAŤ PRÍPADOVÚ ŠTÚDIU
                     </a>
                 </div>
             </div>
@@ -316,7 +410,7 @@
             <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
             <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
             <a class="footer-link" href="mailto:madovygabor@gmail.com">EMAIL</a>
-            <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+            <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
         </div>
     </footer>
 
