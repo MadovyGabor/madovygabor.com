@@ -7,7 +7,7 @@
 
     <title>Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000 | Gabriel Madový</title>
     <meta name="description"
-        content="Case study: installation, LSN loop programming and life-safety integration of a Bosch AVENAR panel 2000 fire detection and alarm system (FDAS) for a kindergarten and school in Slovakia. Zoning, cause & effect, troubleshooting and EN 54-4 battery sizing.">
+        content="Case study: installation, LSN loop programming and life-safety integration of a Bosch AVENAR panel 2000 fire detection and alarm system (FDAS) for a kindergarten and school in Slovakia. Zoning, cause & effect, troubleshooting and EN 54-4 battery autonomy check.">
     <meta name="keywords"
         content="Bosch AVENAR, FDAS, Fire Detection and Alarm System, LSN, EPS, EN 54, RML 0008 A, FMC-420RW, Cause and Effect, RPS, Gabriel Madový">
     <meta name="author" content="Gabriel Madový">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/en/projects/eps-case-study" />
     <meta property="og:title" content="Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000" />
     <meta property="og:description"
-        content="Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery sizing on a Bosch AVENAR panel 2000." />
+        content="Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery autonomy check on a Bosch AVENAR panel 2000." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -50,7 +50,7 @@
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/en/projects/eps-case-study#article",
   "headline": "Fire Detection and Alarm System (FDAS): Bosch AVENAR panel 2000",
-  "description": "Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery sizing on a Bosch AVENAR panel 2000.",
+  "description": "Closed LSN ring, functional zoning, fail-safe relay controls and EN 54-4 battery autonomy check on a Bosch AVENAR panel 2000.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -173,7 +173,7 @@
             <ul class="cs-list">
                 <li><strong>Readable alarms:</strong> the panel shows functional zones and room names, not raw LSN bus addresses.</li>
                 <li><strong>Fail-safe controls:</strong> escape doors release on alarm and on loss of power.</li>
-                <li><strong>Battery sizing to EN 54-4:</strong> 24 h standby plus 30 min alarm.</li>
+                <li><strong>Battery autonomy to EN 54-4:</strong> 24 h standby plus 30 min alarm.</li>
             </ul>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -623,7 +623,7 @@ max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
                     <span class="proto-key">CORE &amp; POWER</span>
-                    <span class="proto-val">AVENAR 2000 chassis and rail order verified (BCM → LSN → RML).<br>24 V 26 Ah SLA bank sized for 24 h standby + 30 min evacuation.</span>
+                    <span class="proto-val">AVENAR 2000 chassis and rail order verified (BCM → LSN → RML).<br>24 V 26 Ah SLA bank checked for 24 h standby + 30 min evacuation.</span>
                 </div>
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>

@@ -7,7 +7,7 @@
 
     <title>Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000 | Gabriel Madový</title>
     <meta name="description"
-        content="Prípadová štúdia: inštalácia, programovanie slučky LSN a integrácia ústredne EPS Bosch AVENAR panel 2000 v materskej a základnej škole na Slovensku. Zónovanie, matica príčin a následkov, riešenie problémov a dimenzovanie batérií podľa EN 54-4.">
+        content="Prípadová štúdia: inštalácia, programovanie slučky LSN a integrácia ústredne EPS Bosch AVENAR panel 2000 v materskej a základnej škole na Slovensku. Zónovanie, matica príčin a následkov, riešenie problémov a kontrola autonómie batérií podľa EN 54-4.">
     <meta name="keywords"
         content="Bosch AVENAR, LSN, EPS, požiarna signalizácia, EN 54, RML 0008 A, FMC-420RW, matica príčin a následkov, RPS, Gabriel Madový">
     <meta name="author" content="Gabriel Madový">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia" />
     <meta property="og:title" content="Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000" />
     <meta property="og:description"
-        content="Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové riadenie a dimenzovanie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000." />
+        content="Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové riadenie a kontrola autonómie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -50,7 +50,7 @@
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia#article",
   "headline": "Elektronická požiarna signalizácia (EPS): Bosch AVENAR panel 2000",
-  "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové riadenie a dimenzovanie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000.",
+  "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové riadenie a kontrola autonómie batérií podľa EN 54-4 na ústredni Bosch AVENAR panel 2000.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -173,7 +173,7 @@
             <ul class="cs-list">
                 <li><strong>Prehľadné hlásenia poplachov:</strong> ústredňa zobrazuje funkčné zóny a názvy miestností, nie surové adresy zbernice LSN.</li>
                 <li><strong>Fail-safe ovládanie:</strong> únikové dvere sa uvoľnia pri poplachu aj pri výpadku napájania.</li>
-                <li><strong>Dimenzovanie batérií podľa EN 54-4:</strong> 24 h v pokojovom stave + 30 min v stave poplachu.</li>
+                <li><strong>Autonómia batérií podľa EN 54-4:</strong> 24 h v pokojovom stave + 30 min v stave poplachu.</li>
             </ul>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -623,7 +623,7 @@ max. pri 72 h        20,8 Ah ÷ 72 h       ≈ 0,29 A    &lt; 0,46 A    ✗
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
                     <span class="proto-key">ÚSTREDŇA A NAPÁJANIE</span>
-                    <span class="proto-val">Skriňa AVENAR 2000 a poradie modulov na lište overené (BCM → LSN → RML).<br>Batérie SLA 24 V 26 Ah dimenzované na 24 h pohotovosť + 30 min evakuácie.</span>
+                    <span class="proto-val">Skriňa AVENAR 2000 a poradie modulov na lište overené (BCM → LSN → RML).<br>Batérie SLA 24 V 26 Ah skontrolované na 24 h pohotovosť + 30 min evakuácie.</span>
                 </div>
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
