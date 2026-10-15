@@ -7,7 +7,7 @@
 
     <title>Explore Software Engineering & Multiplatform Projects | Gabriel Madový</title>
     <meta name="description"
-        content="Deep dive into the software engineering and InfoSec projects of Gabriel Madový, featuring MaturiMate, enterprise backends, and infrastructure systems.">
+        content="Software and infrastructure projects of Gabriel Madový: the MaturiMate exam-preparation app (Kotlin Multiplatform), a Java console project, this multi-site web platform, and a school network and fire-alarm installation.">
     <meta name="keywords"
         content="Gabriel Madový, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
     <meta name="author" content="Gabriel Madový">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/en/projects" />
     <meta property="og:title" content="Gabriel Madový | Projects &amp; Architecture" />
     <meta property="og:description"
-        content="Deep dive into the software engineering and InfoSec projects of Gabriel Madový." />
+        content="Software and infrastructure projects of Gabriel Madový: the MaturiMate exam-preparation app (Kotlin Multiplatform), a Java console project, this multi-site web platform, and a school network and fire-alarm installation." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,7 +51,7 @@
   "@id": "https://dev.madovygabor.com/en/projects/#projects-page",
   "url": "https://dev.madovygabor.com/en/projects",
   "name": "Development Logs | Projects by Gabriel Madový",
-  "description": "Software engineering and InfoSec projects by Gabriel Madový, featuring MaturiMate and Clean Architecture systems.",
+  "description": "Software and infrastructure projects of Gabriel Madový: the MaturiMate exam-preparation app (Kotlin Multiplatform), a Java console project, this multi-site web platform, and a school network and fire-alarm installation.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -62,10 +62,10 @@
   "hasPart": [
     {
       "@type": "SoftwareSourceCode",
-      "name": "MaturiMate Ecosystem",
+      "name": "MaturiMate",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform client with MVI / Clean Architecture decoupling, unidirectional data flow, and an offline-first SQLDelight persistence engine shared across Android and JVM Desktop."
+      "description": "Kotlin Multiplatform exam-preparation app for Android and JVM Desktop, with ViewModels exposing an immutable UI state as a StateFlow."
     },
     {
       "@type": "SoftwareSourceCode",
@@ -91,7 +91,7 @@
       "@type": "TechArticle",
       "name": "Fire Detection & Life Safety: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/en/projects/eps-case-study",
-      "description": "Closed LSN loop, functional zoning, fail-safe relay controls and EN 54-4 battery sizing."
+      "description": "Closed LSN loop, functional zoning, fail-safe relay controls and EN 54-4 battery autonomy check."
     }
   ]
 }
@@ -156,8 +156,7 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Development Logs</h1>
             <p class="font-technical projects-desc">
-                A selection of projects I am building and maintaining, with notes on how they are structured: shared
-                code across platforms, accurate rendering of mathematical content, and clear separation between layers.
+                A selection of projects I am building and maintaining, with notes on how they are structured: shared code across platforms, separation between layers, and network and fire-alarm installations.
             </p>
         </section>
 
@@ -172,9 +171,8 @@
                     <div class="projects-brand-wrapper">
                         <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
-                            <h3 class="font-technical projects-card-title">MaturiMate Ecosystem</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin
-                                Multiplatform • In Active Development</p>
+                            <h3 class="font-technical projects-card-title">MaturiMate</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • In development</p>
                         </div>
                     </div>
                     <div class="projects-badge-container">
@@ -185,20 +183,13 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            MaturiMate is an exam-preparation app for Android and desktop (JVM). It is written with
-                            <strong>Kotlin Multiplatform (KMP)</strong> and Compose Multiplatform, so the domain logic,
-                            data layer, and user interface are shared between both platforms instead of being written
-                            twice.
+                            MaturiMate is an exam-preparation app for Android and desktop (JVM), written with <strong>Kotlin Multiplatform</strong> and Compose Multiplatform. About 95% of the production Kotlin code is shared between the two platforms; the rest is platform entry points and small platform adapters.
                         </p>
                         <p>
-                            The app follows an <strong>MVI / Clean Architecture</strong> approach with unidirectional
-                            data flow. Screen state is held in Kotlin Coroutines and <code>StateFlow</code>, which keeps
-                            UI updates predictable and easier to reason about.
+                            Screens use ViewModels that expose an immutable UI state as a Kotlin <code>StateFlow</code>. Navigation uses Navigation3 (alpha), and user settings are saved with multiplatform DataStore.
                         </p>
                         <p>
-                            It works <strong>offline first</strong>: questions and progress are stored locally in a
-                            relational database through SQLDelight, the initial content is seeded inside transactions,
-                            and user settings are saved with multiplatform DataStore.
+                            Status: onboarding, a profile screen with a graduation countdown and an adaptive navigation frame work. The exam database (SQLDelight) and the seeding of exam data are developed on a separate branch and are not merged yet. The exam-taking screen, grading and attempt history are not built yet.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -216,18 +207,19 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                            <span class="code-dot"></span> Excerpt (abbreviated): MainFrame.kt, adaptive navigation
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
-<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
-    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
-) {
-    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
-        <span class="syntax-keyword">return</span> database.examQueries
-            .selectActiveQuestionsBySubject(subjectId)
-            .asFlow()
-            .mapToList(Dispatchers.Default)
+                        <pre class="font-code code-snippet"><code>BoxWithConstraints {
+    <span class="syntax-comment">// Determine if the device is considered a desktop based on maxWidth</span>
+    <span class="syntax-keyword">val</span> isDesktop = maxWidth &gt; LayoutConstants.DesktopThreshold
+
+    <span class="syntax-keyword">if</span> (isDesktop) {
+        <span class="syntax-comment">// Desktop navigation side bar</span>
+        Row(Modifier.fillMaxSize()) {
+            <span class="syntax-comment">// ...</span>
+        }
     }
+    <span class="syntax-comment">// ...</span>
 }</code></pre>
                     </div>
                 </div>
@@ -235,7 +227,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Enterprise Backend &amp; Systems Software</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend &amp; Systems Software</h2>
             <div class="section-line"></div>
         </div>
 
@@ -250,20 +242,13 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <div class="card-visual" aria-hidden="true">
-                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Presentation</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI layer</text><rect x="14" y="68" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Domain</text><text x="26" y="102" class="tp-t" text-anchor="start">graph-based metrics</text><rect x="14" y="122" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Persistence</text><text x="26" y="156" class="tp-t" text-anchor="start">in-memory repository</text><path d="M99 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M99 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">backup sync</text><path d="M184 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">layered architecture</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Presentation</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI layer</text><rect x="14" y="68" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Domain</text><text x="26" y="102" class="tp-t" text-anchor="start" style="font-size:10px">risk score · shared coworkers</text><rect x="14" y="122" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Persistence</text><text x="26" y="156" class="tp-t" text-anchor="start">in-memory repository</text><path d="M114 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M114 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">backup sync</text><path d="M214 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">layered architecture</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
                     </div>
                     <p class="projects-card-desc">
-                        A backend application written in <strong>Java 21 LTS</strong> for managing employee records
-                        and evaluating their security relationships. The code is split into separate presentation,
-                        domain, and persistence layers. Data is kept in an in-memory repository while the program runs
-                        and is synchronized to a SQLite database as a backup. Security metrics are calculated by
-                        traversing the graph of connections between employees, and ties are resolved by a fixed,
-                        repeatable rule.
+                        A <strong>Java 21</strong> console application for managing employee records and their collaboration links. It started as a two-person university assignment. The code is split into presentation, domain and data layers, and the domain depends only on repository and storage interfaces. Data lives in an in-memory repository while the program runs, with a text-file export and an SQLite backup that is loaded at startup and saved on exit. The two employee skills are a rule-based risk score and a shared-coworker analysis. The most-connected query breaks ties by employee ID.
                     </p>
                     <p class="projects-card-desc">
-                        File operations are covered by <strong>JUnit 5 tests</strong> that run in temporary
-                        <code>@TempDir</code> directories, and a <strong>GitHub Actions CI/CD pipeline</strong> runs
-                        the test suite automatically on every push.
+                        <strong>JUnit 5</strong> tests cover the domain service, the repository and the storage backends; the file-storage tests run in temporary <code>@TempDir</code> directories. A <strong>GitHub Actions</strong> workflow runs the unit tests on every push and pull request to master.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -301,10 +286,7 @@
 <span class="syntax-comment">      # + photography, nginx.conf</span></code></pre>
                     </div>
                     <p class="projects-card-desc">
-                        This website. A single repository holds three independent sites: a photography portfolio, a
-                        central hub, and this engineering portfolio. For local development they run together in a
-                        <strong>Docker Compose</strong> setup with an Alpine-based Nginx server, which lets me test
-                        routing between domains and clean URLs before deploying.
+                        This website. A single repository holds three independent sites: a photography business site, a central hub, and this engineering portfolio. For local development they run together in a <strong>Docker Compose</strong> setup with an Alpine-based Nginx server, which lets me test routing between domains and clean URLs before deploying. Each site is deployed as its own Cloudflare Pages project on a push to main.
                     </p>
                     <p class="projects-card-desc">
                         Photo galleries are generated without a database. A small <strong>Python CLI</strong> scans the
@@ -328,7 +310,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">03 / Physical Infrastructure &amp; Critical Life Safety</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Physical Infrastructure &amp; Life Safety</h2>
             <div class="section-line"></div>
         </div>
 
@@ -350,7 +332,7 @@
                         Greenfield network for a new educational facility: 19" rack, <strong>VLAN segmentation</strong> (management, CCTV, staff LAN), Wi-Fi 6 and 8 IP cameras on a 250 W PoE budget with ~80 W in use.
                     </p>
                     <p class="projects-card-desc">
-                        Recording streams stay on the <strong>PoE switch backplane</strong>. Two-tier remote management: Omada cloud for daily checks, <strong>WireGuard split tunnel</strong> from a remote location for the isolated subnets.
+                        Recording streams stay on the <strong>PoE switch backplane</strong>. Two-tier remote management: Omada cloud for daily checks, <strong>WireGuard split tunnel</strong> from a remote location for the isolated subnets. Designed, installed and configured by me; administered remotely.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -384,7 +366,7 @@
                         <strong>Bosch AVENAR panel 2000</strong> fire detection and alarm system for an educational facility: closed LSN loop, six functional zones with room names on the display, FMC-420RW manual call points.
                     </p>
                     <p class="projects-card-desc">
-                        <strong>RML 0008 A</strong> relays drive fail-safe door release, shunt trip and GSM alarm. Installation and LSN programming of the Bosch AVENAR panel. Work included rail-order validation, <strong>T-tap</strong> fault tracing and EN 54-4 battery sizing (24 h + 30 min).
+                        <strong>RML 0008 A</strong> relays drive fail-safe door release, shunt trip and GSM alarm. Installation and LSN programming of the Bosch AVENAR panel, to the project design and under an authorized supervisor. Work included rail-order validation, <strong>T-tap</strong> fault tracing and an EN 54-4 battery autonomy check (24 h + 30 min).
                     </p>
                 </div>
                 <div class="project-footer">

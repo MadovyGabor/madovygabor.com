@@ -7,7 +7,7 @@
 
     <title>Mérnöki &amp; Rendszerarchitektúra Projektek | Madový Gábor</title>
     <meta name="description"
-        content="Ismerd meg Madový Gábor szoftvermérnöki és IT biztonsági projektjeit: MaturiMate, Java Clean Architecture és hálózati rendszerek.">
+        content="Madový Gábor szoftver- és infrastruktúra-projektjei: a MaturiMate vizsgafelkészítő alkalmazás (Kotlin Multiplatform), egy Java konzolos projekt, ez a több oldalból álló webes platform, valamint egy iskolai hálózat- és tűzjelzőrendszer-telepítés.">
     <meta name="keywords"
         content="Madový Gábor, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
     <meta name="author" content="Madový Gábor">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek" />
     <meta property="og:title" content="Madový Gábor | Projektek &amp; Architektúra" />
     <meta property="og:description"
-        content="Ismerd meg Madový Gábor szoftvermérnöki és hálózati projektjeit." />
+        content="Madový Gábor szoftver- és infrastruktúra-projektjei: a MaturiMate vizsgafelkészítő alkalmazás (Kotlin Multiplatform), egy Java konzolos projekt, ez a több oldalból álló webes platform, valamint egy iskolai hálózat- és tűzjelzőrendszer-telepítés." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,7 +51,7 @@
   "@id": "https://dev.madovygabor.com/hu/projektek/#projects-page",
   "url": "https://dev.madovygabor.com/hu/projektek",
   "name": "Fejlesztési naplók | Madový Gábor projektjei",
-  "description": "Madový Gábor szoftvermérnöki és InfoSec projektjei, többek között a MaturiMate és Clean Architecture alapú rendszerek.",
+  "description": "Madový Gábor szoftver- és infrastruktúra-projektjei: a MaturiMate vizsgafelkészítő alkalmazás (Kotlin Multiplatform), egy Java konzolos projekt, ez a több oldalból álló webes platform, valamint egy iskolai hálózat- és tűzjelzőrendszer-telepítés.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -62,10 +62,10 @@
   "hasPart": [
     {
       "@type": "SoftwareSourceCode",
-      "name": "MaturiMate ökoszisztéma",
+      "name": "MaturiMate",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform kliens MVI / Clean Architecture szétválasztással, egyirányú adatfolyammal és offline-first SQLDelight perzisztenciával Androidra és asztali JVM-re."
+      "description": "Kotlin Multiplatform vizsgafelkészítő alkalmazás Androidra és asztali JVM-re, ViewModel-ekkel, amelyek a változtathatatlan UI-állapotot StateFlow-ként teszik közzé."
     },
     {
       "@type": "SoftwareSourceCode",
@@ -91,7 +91,7 @@
       "@type": "TechArticle",
       "name": "Tűzjelzés és életvédelem: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany",
-      "description": "Zárt LSN hurok, funkcionális zónák, fail-safe relévezérlések és EN 54-4 szerinti akkumulátor-méretezés."
+      "description": "Zárt LSN hurok, funkcionális zónák, fail-safe relévezérlések és EN 54-4 szerinti akkumulátor-autonómia ellenőrzés."
     }
   ]
 }
@@ -156,8 +156,7 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Fejlesztési naplók</h1>
             <p class="font-technical projects-desc">
-                Válogatás az általam fejlesztett és karbantartott projektekből, röviden a felépítésükről: platformok között megosztott kód, matematikai tartalom pontos megjelenítése és a
-                rétegek világos szétválasztása.
+                Válogatás az általam fejlesztett és karbantartott projektekből, röviden a felépítésükről: platformok között megosztott kód, a rétegek világos szétválasztása, valamint hálózati és tűzjelző rendszerek telepítése.
             </p>
         </section>
 
@@ -172,8 +171,8 @@
                     <div class="projects-brand-wrapper">
                         <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
-                            <h3 class="font-technical projects-card-title">MaturiMate ökoszisztéma</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktív fejlesztés alatt
+                            <h3 class="font-technical projects-card-title">MaturiMate</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Fejlesztés alatt
                             </p>
                         </div>
                     </div>
@@ -185,21 +184,13 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            A MaturiMate egy érettségi-felkészítő alkalmazás Androidra és asztali gépre (JVM).
-                            <strong>Kotlin Multiplatform (KMP)</strong> és Compose Multiplatform segítségével készül, így
-                            a domain logika, az adatréteg és a felhasználói felület közös a két platformon, nem kell
-                            mindent kétszer megírni.
+                            A MaturiMate egy érettségi-felkészítő alkalmazás Androidra és asztali gépre (JVM), <strong>Kotlin Multiplatform</strong> és Compose Multiplatform segítségével írva. Az éles Kotlin kód kb. 95%-a közös a két platform között; a többi platform-belépési pont és kis platformspecifikus adapter.
                         </p>
                         <p>
-                            Az alkalmazás <strong>MVI / Clean Architecture</strong> megközelítést követ egyirányú
-                            adatfolyammal. A képernyők állapotát Kotlin Coroutines és <code>StateFlow</code> kezeli, így
-                            a UI frissítései kiszámíthatók és könnyebben átláthatók.
+                            A képernyők ViewModel-eket használnak, amelyek a változtathatatlan UI-állapotot Kotlin <code>StateFlow</code>-ként teszik közzé. A navigáció a Navigation3 (alpha) könyvtárat használja, a felhasználói beállításokat pedig multiplatform DataStore menti.
                         </p>
                         <p>
-                            <strong>Offline-first</strong> módon működik: a kérdések és a haladás helyben, egy
-                            SQLDelighton keresztül elért relációs adatbázisban tárolódnak, a kezdeti tartalom
-                            tranzakciókon belül töltődik be, a felhasználói beállításokat pedig multiplatform DataStore
-                            menti.
+                            Állapot: a bevezető folyamat (onboarding), az érettségi visszaszámlálóval ellátott profilképernyő és az alkalmazkodó navigációs keret működik. A vizsgaadatbázis (SQLDelight) és a vizsgaadatok betöltése külön ágon készül, és még nincs beolvasztva. A vizsgakitöltő képernyő, az értékelés és a próbálkozások előzményei még nincsenek megépítve.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -217,18 +208,19 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                            <span class="code-dot"></span> Excerpt (abbreviated): MainFrame.kt, adaptive navigation
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
-<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
-    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
-) {
-    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
-        <span class="syntax-keyword">return</span> database.examQueries
-            .selectActiveQuestionsBySubject(subjectId)
-            .asFlow()
-            .mapToList(Dispatchers.Default)
+                        <pre class="font-code code-snippet"><code>BoxWithConstraints {
+    <span class="syntax-comment">// Determine if the device is considered a desktop based on maxWidth</span>
+    <span class="syntax-keyword">val</span> isDesktop = maxWidth &gt; LayoutConstants.DesktopThreshold
+
+    <span class="syntax-keyword">if</span> (isDesktop) {
+        <span class="syntax-comment">// Desktop navigation side bar</span>
+        Row(Modifier.fillMaxSize()) {
+            <span class="syntax-comment">// ...</span>
+        }
     }
+    <span class="syntax-comment">// ...</span>
 }</code></pre>
                     </div>
                 </div>
@@ -251,19 +243,13 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <div class="card-visual" aria-hidden="true">
-                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Prezentáció</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI réteg</text><rect x="14" y="68" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Domain</text><text x="26" y="102" class="tp-t" text-anchor="start">gráfalapú metrikák</text><rect x="14" y="122" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Perzisztencia</text><text x="26" y="156" class="tp-t" text-anchor="start">memóriabeli tároló</text><path d="M99 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M99 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">mentés / szinkron</text><path d="M184 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">rétegzett architektúra</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Prezentáció</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI réteg</text><rect x="14" y="68" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Domain</text><text x="26" y="102" class="tp-t" text-anchor="start" style="font-size:10px">kockázati pontszám · közös kollégák</text><rect x="14" y="122" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Perzisztencia</text><text x="26" y="156" class="tp-t" text-anchor="start">memóriabeli tároló</text><path d="M114 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M114 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">mentés / szinkron</text><path d="M214 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">rétegzett architektúra</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
                     </div>
                     <p class="projects-card-desc">
-                        <strong>Java 21 LTS</strong> nyelven írt backend alkalmazás az alkalmazotti nyilvántartás
-                        kezelésére és a munkatársak közötti biztonsági kapcsolatok kiértékelésére. A kód külön
-                        prezentációs, domain és perzisztencia rétegre tagolódik. Futás közben az adatok egy memóriabeli (in-memory) tárolóban vannak, mentésként pedig SQLite adatbázisba szinkronizálódnak. A biztonsági
-                        mutatók az alkalmazottak közötti kapcsolatgráf bejárásával számítódnak ki, és a holtversenyeket
-                        egy rögzített, megismételhető szabály dönti el.
+                        <strong>Java 21</strong> konzolos alkalmazás alkalmazotti nyilvántartások és a munkatársak közötti együttműködési kapcsolatok kezelésére. Kétfős egyetemi feladatként indult. A kód prezentációs, domain és adatréteg között oszlik meg, a domain pedig csak repository- és tárolási interfészektől függ. Futás közben az adatok egy memóriabeli tárolóban vannak, szöveges fájlos exporttal és egy SQLite-mentéssel, amely indításkor betöltődik, kilépéskor pedig mentésre kerül. A két alkalmazotti funkció egy szabályalapú kockázati pontszám és a közös kollégák elemzése. A legtöbb kapcsolattal rendelkező alkalmazott lekérdezése holtversenynél az alkalmazotti azonosító szerint dönt.
                     </p>
                     <p class="projects-card-desc">
-                        A fájlműveleteket ideiglenes <code>@TempDir</code> könyvtárakban futó <strong>JUnit 5
-                            tesztek</strong> fedik le, a tesztcsomagot pedig minden push alkalmával egy <strong>GitHub
-                            Actions CI/CD pipeline</strong> futtatja automatikusan.
+                        A domain szolgáltatást, a repository-t és a tárolási megvalósításokat <strong>JUnit 5</strong> tesztek fedik le; a fájltárolási tesztek ideiglenes <code>@TempDir</code> könyvtárakban futnak. Egy <strong>GitHub Actions</strong> workflow a master ágra érkező minden push és pull request esetén lefuttatja az egységteszteket.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -301,10 +287,7 @@
 <span class="syntax-comment">      # + photography, nginx.conf</span></code></pre>
                     </div>
                     <p class="projects-card-desc">
-                        Ez a weboldal. Egyetlen repó három független oldalt tartalmaz: egy fotós portfóliót, egy
-                        központi hubot és ezt a mérnöki portfóliót. Helyi fejlesztéshez egy Alpine-alapú Nginx szerverrel
-                        ellátott <strong>Docker Compose</strong> környezetben futnak együtt, így a domainek közötti
-                        irányítás és a tiszta URL-ek élesítés előtt tesztelhetők.
+                        Ez a weboldal. Egyetlen repó három független oldalt tartalmaz: egy fotós vállalkozói oldalt, egy központi hubot és ezt a mérnöki portfóliót. Helyi fejlesztéshez egy Alpine-alapú Nginx szerverrel ellátott <strong>Docker Compose</strong> környezetben futnak együtt, így a domainek közötti irányítás és a tiszta URL-ek élesítés előtt tesztelhetők. Mindegyik oldal külön Cloudflare Pages projektként települ a main ágra érkező push után.
                     </p>
                     <p class="projects-card-desc">
                         A fotógalériák adatbázis nélkül készülnek. Egy kis <strong>Python CLI</strong> végignézi a
@@ -351,7 +334,7 @@
                         Zöldmezős hálózat egy új oktatási intézményben: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai LAN), Wi-Fi 6 és 8 IP kamera 250 W-os PoE kerettel, ~80 W tényleges terheléssel.
                     </p>
                     <p class="projects-card-desc">
-                        A rögzítési streamek a <strong>PoE switch backplane-jén</strong> maradnak. Kétszintű távmenedzsment: Omada felhő a napi ellenőrzéshez, <strong>WireGuard split tunnel</strong> távoli helyszínről az izolált alhálózatokhoz.
+                        A rögzítési streamek a <strong>PoE switch backplane-jén</strong> maradnak. Kétszintű távmenedzsment: Omada felhő a napi ellenőrzéshez, <strong>WireGuard split tunnel</strong> távoli helyszínről az izolált alhálózatokhoz. Általam tervezve, telepítve és konfigurálva; távolról adminisztrálva.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -385,7 +368,7 @@
                         <strong>Bosch AVENAR panel 2000</strong> elektronikus tűzjelző rendszer egy oktatási intézményben: zárt LSN hurok, hat funkcionális zóna helyiségnevekkel a kijelzőn, FMC-420RW kézi jelzésadók.
                     </p>
                     <p class="projects-card-desc">
-                        Az <strong>RML 0008 A</strong> relék vezérlik a fail-safe ajtónyitást, a főelosztó munkaáramú kioldóját és a GSM átjelzést. Telepítés és LSN programozás Bosch AVENAR központon. A munka része volt a sínsorrend-ellenőrzés, a <strong>T-tap</strong> hibakeresés és az EN 54-4 akkumulátor-méretezés (24 h + 30 perc).
+                        Az <strong>RML 0008 A</strong> relék vezérlik a fail-safe ajtónyitást, a főelosztó munkaáramú kioldóját és a GSM átjelzést. Telepítés és LSN programozás Bosch AVENAR központon, a projekt terve szerint és egy felhatalmazott felügyelő irányítása alatt. A munka része volt a sínsorrend-ellenőrzés, a <strong>T-tap</strong> hibakeresés és az EN 54-4 szerinti akkumulátor-autonómia ellenőrzése (24 h + 30 perc).
                     </p>
                 </div>
                 <div class="project-footer">

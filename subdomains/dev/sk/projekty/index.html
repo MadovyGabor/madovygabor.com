@@ -7,7 +7,7 @@
 
     <title>Inžinierske projekty &amp; Architektúra systémov | Gabriel Madový</title>
     <meta name="description"
-        content="Prehľad softvérových, sieťových a bezpečnostných projektov Gabriela Madového: MaturiMate, Java Clean Architecture a technická infraštruktúra.">
+        content="Softvérové a infraštruktúrne projekty Gabriela Madového: aplikácia MaturiMate na prípravu na skúšky (Kotlin Multiplatform), konzolový projekt v Jave, táto viacstránková webová platforma a inštalácia školskej siete a požiarnej signalizácie.">
     <meta name="keywords"
         content="Gabriel Madový, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
     <meta name="author" content="Gabriel Madový">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/sk/projekty" />
     <meta property="og:title" content="Gabriel Madový | Projekty &amp; Architektúra" />
     <meta property="og:description"
-        content="Prehľad inžinierskych a systémových projektov Gabriela Madového." />
+        content="Softvérové a infraštruktúrne projekty Gabriela Madového: aplikácia MaturiMate na prípravu na skúšky (Kotlin Multiplatform), konzolový projekt v Jave, táto viacstránková webová platforma a inštalácia školskej siete a požiarnej signalizácie." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,7 +51,7 @@
   "@id": "https://dev.madovygabor.com/sk/projekty/#projects-page",
   "url": "https://dev.madovygabor.com/sk/projekty",
   "name": "Záznamy z vývoja | Projekty Gabriela Madového",
-  "description": "Softvérové inžinierstvo a bezpečnostné projekty Gabriela Madového, vrátane MaturiMate a systémov postavených na Clean Architecture.",
+  "description": "Softvérové a infraštruktúrne projekty Gabriela Madového: aplikácia MaturiMate na prípravu na skúšky (Kotlin Multiplatform), konzolový projekt v Jave, táto viacstránková webová platforma a inštalácia školskej siete a požiarnej signalizácie.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -62,10 +62,10 @@
   "hasPart": [
     {
       "@type": "SoftwareSourceCode",
-      "name": "Ekosystém MaturiMate",
+      "name": "MaturiMate",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
-      "description": "Kotlin Multiplatform klient s oddelením vrstiev cez MVI / Clean Architecture, jednosmerným tokom dát a offline-first SQLDelight úložiskom zdieľaným medzi Androidom a desktopovým JVM."
+      "description": "Kotlin Multiplatform aplikácia na prípravu na skúšky pre Android a desktopový JVM, s ViewModelmi, ktoré sprístupňujú nemenný stav UI ako StateFlow."
     },
     {
       "@type": "SoftwareSourceCode",
@@ -91,7 +91,7 @@
       "@type": "TechArticle",
       "name": "EPS a požiarna bezpečnosť: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia",
-      "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové ovládanie a dimenzovanie batérií podľa EN 54-4."
+      "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové ovládanie a kontrola autonómie batérií podľa EN 54-4."
     }
   ]
 }
@@ -156,8 +156,7 @@
         <section class="projects-hero">
             <h1 class="font-display projects-title">Záznamy z vývoja</h1>
             <p class="font-technical projects-desc">
-                Výber projektov, ktoré vyvíjam a spravujem, so stručným popisom ich architektúry: spoločný kód naprieč
-                platformami, presné vykresľovanie matematiky a čisté oddelenie jednotlivých vrstiev.
+                Výber projektov, ktoré vyvíjam a spravujem, so stručným popisom ich architektúry: spoločný kód naprieč platformami, oddelenie jednotlivých vrstiev a sieťové a požiarne signalizačné inštalácie.
             </p>
         </section>
 
@@ -172,8 +171,8 @@
                     <div class="projects-brand-wrapper">
                         <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
-                            <h3 class="font-technical projects-card-title">Ekosystém MaturiMate</h3>
-                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktívny vývoj</p>
+                            <h3 class="font-technical projects-card-title">MaturiMate</h3>
+                            <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Vo vývoji</p>
                         </div>
                     </div>
                     <div class="projects-badge-container">
@@ -184,20 +183,13 @@
                 <div class="bento-grid">
                     <div class="col-span-5 projects-info-col">
                         <p>
-                            MaturiMate je aplikácia na prípravu na maturitné skúšky pre Android a desktop (JVM). Využíva
-                            <strong>Kotlin Multiplatform (KMP)</strong> a Compose Multiplatform, vďaka čomu je doménová
-                            logika, dátová vrstva aj používateľské rozhranie zdieľané medzi oboma platformami bez
-                            duplikácie kódu.
+                            MaturiMate je aplikácia na prípravu na maturitné skúšky pre Android a desktop (JVM), napísaná v <strong>Kotlin Multiplatform</strong> a Compose Multiplatform. Približne 95 % produkčného kódu v Kotline je zdieľaných medzi oboma platformami; zvyšok tvoria vstupné body platforiem a malé platformové adaptéry.
                         </p>
                         <p>
-                            Aplikácia stavia na architektúre <strong>MVI / Clean Architecture</strong> s jednosmerným
-                            tokom dát. Stav obrazovky riadia Kotlin Coroutines a <code>StateFlow</code>, čo prináša
-                            predvídateľné reakcie rozhrania a prehľadný kód.
+                            Obrazovky používajú ViewModely, ktoré sprístupňujú nemenný stav UI ako Kotlin <code>StateFlow</code>. Navigácia používa Navigation3 (alpha) a nastavenia používateľa uchováva multiplatformový DataStore.
                         </p>
                         <p>
-                            Funguje na princípe <strong>offline first</strong>: otázky a história odpovedí sa ukladajú
-                            lokálne v relačnej databáze cez SQLDelight, vstupné dáta sa inicializujú v transakciách a
-                            nastavenia používateľa uchováva multiplatformový DataStore.
+                            Stav: fungujú onboarding, profilová obrazovka s odpočtom do maturity a adaptívny navigačný rám. Databáza skúšok (SQLDelight) a napĺňanie skúšobných dát sa vyvíjajú v samostatnej vetve a zatiaľ nie sú zlúčené. Obrazovka na riešenie skúšky, hodnotenie a história pokusov zatiaľ nie sú hotové.
                         </p>
                         <div class="project-footer">
                             <div class="flex-wrap gap-2 d-flex">
@@ -216,18 +208,19 @@
 
                     <div class="col-span-7 code-window">
                         <div class="code-header">
-                            <span class="code-dot"></span> Type-Safe SQLDelight Local Verification Driver
+                            <span class="code-dot"></span> Excerpt (abbreviated): MainFrame.kt, adaptive navigation
                         </div>
-                        <pre class="font-code code-snippet"><code><span class="syntax-comment">// Native cross-platform database interaction driver</span>
-<span class="syntax-keyword">class</span> <span class="syntax-type">LocalExamQueries</span>(
-    <span class="syntax-keyword">private val</span> database: <span class="syntax-type">ExamDatabase</span>
-) {
-    <span class="syntax-keyword">fun</span> <span class="syntax-func">getVerifiedQuestions</span>(subjectId: <span class="syntax-type">String</span>): <span class="syntax-type">Flow</span>&lt;<span class="syntax-type">List</span>&lt;<span class="syntax-type">QuestionEntity</span>&gt;&gt; {
-        <span class="syntax-keyword">return</span> database.examQueries
-            .selectActiveQuestionsBySubject(subjectId)
-            .asFlow()
-            .mapToList(Dispatchers.Default)
+                        <pre class="font-code code-snippet"><code>BoxWithConstraints {
+    <span class="syntax-comment">// Determine if the device is considered a desktop based on maxWidth</span>
+    <span class="syntax-keyword">val</span> isDesktop = maxWidth &gt; LayoutConstants.DesktopThreshold
+
+    <span class="syntax-keyword">if</span> (isDesktop) {
+        <span class="syntax-comment">// Desktop navigation side bar</span>
+        Row(Modifier.fillMaxSize()) {
+            <span class="syntax-comment">// ...</span>
+        }
     }
+    <span class="syntax-comment">// ...</span>
 }</code></pre>
                     </div>
                 </div>
@@ -250,19 +243,13 @@
                         <span class="badge badge-dark badge-size-10">Java</span>
                     </div>
                     <div class="card-visual" aria-hidden="true">
-                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Prezentácia</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI vrstva</text><rect x="14" y="68" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Doména</text><text x="26" y="102" class="tp-t" text-anchor="start">metriky z grafu</text><rect x="14" y="122" width="170" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Perzistencia</text><text x="26" y="156" class="tp-t" text-anchor="start">repozitár v pamäti</text><path d="M99 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M99 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">záloha / synchronizácia</text><path d="M184 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">vrstvená architektúra</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
+                        <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="va-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="va-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="va-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="va-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="33" class="tp-name tp-sm" text-anchor="start">Prezentácia</text><text x="26" y="48" class="tp-t" text-anchor="start">CLI / UI vrstva</text><rect x="14" y="68" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="87" class="tp-name tp-sm" text-anchor="start">Doména</text><text x="26" y="102" class="tp-t" text-anchor="start" style="font-size:10px">skóre rizika · spoloční kolegovia</text><rect x="14" y="122" width="200" height="42" rx="6" class="tp-dev"/><text x="26" y="141" class="tp-name tp-sm" text-anchor="start">Perzistencia</text><text x="26" y="156" class="tp-t" text-anchor="start">repozitár v pamäti</text><path d="M114 56 V66" class="tp-w tp-n" marker-end="url(#va-n)"/><path d="M114 110 V120" class="tp-w tp-n" marker-end="url(#va-n)"/><rect x="236" y="122" width="170" height="42" rx="6" class="tp-dev-light"/><text x="248" y="141" class="tp-name tp-sm" text-anchor="start">SQLite</text><text x="248" y="156" class="tp-t" text-anchor="start">záloha / synchronizácia</text><path d="M214 143 H234" class="tp-w tp-g" marker-end="url(#va-g)"/><rect x="236" y="14" width="170" height="96" rx="6" class="tp-group"/><text x="250" y="40" class="tp-name tp-sm" text-anchor="start">Java 21 LTS</text><text x="250" y="60" class="tp-t" text-anchor="start">JUnit 5 · @TempDir · CI</text><text x="250" y="80" class="tp-t" text-anchor="start">vrstvená architektúra</text><text x="250" y="98" class="tp-t" text-anchor="start">GitHub Actions</text></svg>
                     </div>
                     <p class="projects-card-desc">
-                        Backendová aplikácia v <strong>Jave 21 LTS</strong> na správu záznamov zamestnancov a
-                        vyhodnocovanie ich bezpečnostných väzieb. Kód je rozdelený na prezentačnú, doménovú a
-                        perzistentnú vrstvu. Počas behu sa dáta držia v pamäťovom úložisku a priebežne zálohujú do
-                        SQLite databázy. Bezpečnostné ukazovatele sa počítajú prechodom grafu vzťahov medzi zamestnancami
-                        s pevne definovaným pravidlom pre riešenie zhôd.
+                        Konzolová aplikácia v <strong>Jave 21</strong> na správu záznamov zamestnancov a ich väzieb spolupráce. Začala ako zadanie pre dvojicu na univerzite. Kód je rozdelený na prezentačnú, doménovú a dátovú vrstvu a doména závisí iba od rozhraní repozitára a úložiska. Dáta sú počas behu v pamäťovom repozitári, s exportom do textového súboru a zálohou do SQLite, ktorá sa pri štarte načíta a pri ukončení uloží. Dve funkcie nad zamestnancami sú skóre rizika založené na pravidlách a analýza spoločných kolegov. Dotaz na najviac prepojeného zamestnanca pri zhode rozhoduje podľa ID zamestnanca.
                     </p>
                     <p class="projects-card-desc">
-                        Prácu so súbormi overujú <strong>JUnit 5 testy</strong> bežiace v dočasných
-                        <code>@TempDir</code> priečinkoch a <strong>GitHub Actions CI/CD pipeline</strong> automaticky
-                        spúšťa celú testovaciu sadu pri každom pushi.
+                        Doménovú službu, repozitár a úložné backendy pokrývajú <strong>JUnit 5</strong> testy; testy súborového úložiska bežia v dočasných <code>@TempDir</code> priečinkoch. Workflow <strong>GitHub Actions</strong> spúšťa unit testy pri každom pushi a pull requeste do vetvy master.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -300,10 +287,7 @@
 <span class="syntax-comment">      # + photography, nginx.conf</span></code></pre>
                     </div>
                     <p class="projects-card-desc">
-                        Tento web. Jeden repozitár spája tri samostatné projekty: fotografické portfólio, centrálny hub
-                        a toto inžinierske portfólio. Lokálne bežia spolu cez <strong>Docker Compose</strong> s Nginx
-                        serverom postaveným na Alpine Linuxe, čo mi umožňuje odladiť prepojenie domén a čisté URL pred
-                        nasadením do produkcie.
+                        Tento web. Jeden repozitár obsahuje tri samostatné stránky: web fotografickej živnosti, centrálny hub a toto inžinierske portfólio. Lokálne bežia spolu v nastavení <strong>Docker Compose</strong> s Nginx serverom na Alpine Linuxe, čo mi umožňuje odladiť prepojenie domén a čisté URL pred nasadením. Každá stránka sa nasadzuje ako samostatný projekt Cloudflare Pages pri pushi do vetvy main.
                     </p>
                     <p class="projects-card-desc">
                         Fotogalérie fungujú bez databázy. Skript v <strong>Pythone</strong> prejde priečinky so snímkami
@@ -350,7 +334,7 @@
                         Nová sieť pre novopostavené vzdelávacie zariadenie: 19" rack, <strong>segmentácia VLAN</strong> (manažment, CCTV, LAN zamestnancov), Wi-Fi 6 a 8 IP kamier s PoE rozpočtom 250 W pri záťaži ~80 W.
                     </p>
                     <p class="projects-card-desc">
-                        Záznamové streamy zostávajú na <strong>backplane PoE switchu</strong>. Dvojúrovňová správa: cloud Omada na bežný dohľad, <strong>WireGuard split tunnel</strong> zo vzdialenej lokality do izolovaných podsietí.
+                        Záznamové streamy zostávajú na <strong>backplane PoE switchu</strong>. Dvojúrovňová správa: cloud Omada na bežný dohľad, <strong>WireGuard split tunnel</strong> zo vzdialenej lokality do izolovaných podsietí. Navrhnuté, nainštalované a nakonfigurované mnou; spravované na diaľku.
                     </p>
                 </div>
                 <div class="project-footer">
@@ -384,7 +368,7 @@
                         Elektronická požiarna signalizácia na ústredni <strong>Bosch AVENAR panel 2000</strong> vo vzdelávacom zariadení: uzavretá LSN slučka, šesť funkčných zón s názvami miestností na displeji, tlačidlové hlásiče FMC-420RW.
                     </p>
                     <p class="projects-card-desc">
-                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, vyrážaciu spúšť hlavného rozvádzača a prenos poplachu cez GSM. Inštalácia a programovanie LSN ústredne Bosch AVENAR. Práca zahŕňala kontrolu poradia modulov, lokalizáciu porúch v režime <strong>T-tap</strong> a dimenzovanie batérií podľa EN 54-4 (24 h + 30 min).
+                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, vyrážaciu spúšť hlavného rozvádzača a prenos poplachu cez GSM. Inštalácia a programovanie LSN ústredne Bosch AVENAR podľa projektu a pod dohľadom oprávnenej osoby. Práca zahŕňala kontrolu poradia modulov, lokalizáciu porúch v režime <strong>T-tap</strong> a kontrola autonómie batérií podľa EN 54-4 (24 h + 30 min).
                     </p>
                 </div>
                 <div class="project-footer">

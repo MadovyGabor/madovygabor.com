@@ -7,7 +7,7 @@
 
     <title>Elektronikus tűzjelző rendszer (EPS): Bosch AVENAR panel 2000 | Madový Gábor</title>
     <meta name="description"
-        content="Esettanulmány: Bosch AVENAR panel 2000 elektronikus tűzjelző rendszer (EPS) telepítése, LSN hurok programozása és életvédelmi integrációja egy szlovákiai óvodában és iskolában. Zónázás, vezérlési mátrix, hibaelhárítás és EN 54-4 akkumulátor-méretezés.">
+        content="Esettanulmány: Bosch AVENAR panel 2000 elektronikus tűzjelző rendszer (EPS) telepítése, LSN hurok programozása és életvédelmi integrációja egy szlovákiai óvodában és iskolában. Zónázás, vezérlési mátrix, hibaelhárítás és EN 54-4 akkumulátor-autonómia ellenőrzés.">
     <meta name="keywords"
         content="Bosch AVENAR, LSN, EPS, tűzjelző rendszer, EN 54, RML 0008 A, FMC-420RW, vezérlési mátrix, RPS, Madový Gábor">
     <meta name="author" content="Madový Gábor">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
     <meta property="og:title" content="Elektronikus tűzjelző rendszer (EPS): Bosch AVENAR panel 2000" />
     <meta property="og:description"
-        content="Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon." />
+        content="Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-autonómia ellenőrzés Bosch AVENAR panel 2000 központon." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -50,7 +50,7 @@
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany#article",
   "headline": "Elektronikus tűzjelző rendszer (EPS): Bosch AVENAR panel 2000",
-  "description": "Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon.",
+  "description": "Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-autonómia ellenőrzés Bosch AVENAR panel 2000 központon.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -173,7 +173,7 @@
             <ul class="cs-list">
                 <li><strong>Egyértelmű riasztások:</strong> a központ funkcionális zónákat és helyiségneveket mutat, nem nyers LSN buszcímeket.</li>
                 <li><strong>Fail-safe vezérlések:</strong> a menekülési ajtók riasztáskor és tápkimaradáskor is nyithatók.</li>
-                <li><strong>Akkumulátor-méretezés EN 54-4 szerint:</strong> 24 óra nyugalmi és 30 perc riasztási üzem.</li>
+                <li><strong>Akkumulátor-autonómia EN 54-4 szerint:</strong> 24 óra nyugalmi és 30 perc riasztási üzem.</li>
             </ul>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -623,7 +623,7 @@ max. 72 h esetén    20,8 Ah ÷ 72 h       ≈ 0,29 A    &lt; 0,46 A    ✗
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
                     <span class="proto-key">KÖZPONT ÉS TÁP</span>
-                    <span class="proto-val">AVENAR 2000 ház és sínsorrend ellenőrizve (BCM → LSN → RML).<br>24 V 26 Ah SLA akkumulátor 24 óra készenlétre + 30 perc kiürítésre méretezve.</span>
+                    <span class="proto-val">AVENAR 2000 ház és sínsorrend ellenőrizve (BCM → LSN → RML).<br>24 V 26 Ah SLA akkumulátor ellenőrizve: 24 óra készenlét + 30 perc kiürítés.</span>
                 </div>
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
