@@ -40,3 +40,5 @@ npm-debug.log
 yarn-error.log
 yarn-debug.log
 pnpm-debug.log
+# Original photos (contain EXIF/GPS and unredacted screens) – do not publish
+_raw_photos/

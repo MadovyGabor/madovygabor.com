@@ -7,7 +7,7 @@
 
     <title>Mérnöki &amp; Rendszerarchitektúra Projektek | Madový Gábor</title>
     <meta name="description"
-        content="Ismerd meg Madový Gábor szoftvermérnöki és IT biztonsági projektjeit: MaturiMate, Java tiszta architektúra és hálózati rendszerek.">
+        content="Ismerd meg Madový Gábor szoftvermérnöki és IT biztonsági projektjeit: MaturiMate, Java Clean Architecture és hálózati rendszerek.">
     <meta name="keywords"
         content="Madový Gábor, Kotlin Multiplatform, MaturiMate, Java Clean Architecture, InfoSec, WireGuard, Bosch EPS">
     <meta name="author" content="Madový Gábor">
@@ -50,8 +50,8 @@
   "@type": "CollectionPage",
   "@id": "https://dev.madovygabor.com/hu/projektek/#projects-page",
   "url": "https://dev.madovygabor.com/hu/projektek",
-  "name": "Fejlesztési Naplók | Madový Gábor Projektjei",
-  "description": "Madový Gábor szoftvermérnöki és InfoSec projektjei, többek között a MaturiMate és tiszta architektúrájú rendszerek.",
+  "name": "Fejlesztési naplók | Madový Gábor projektjei",
+  "description": "Madový Gábor szoftvermérnöki és InfoSec projektjei, többek között a MaturiMate és Clean Architecture alapú rendszerek.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -62,7 +62,7 @@
   "hasPart": [
     {
       "@type": "SoftwareSourceCode",
-      "name": "MaturiMate Ökoszisztéma",
+      "name": "MaturiMate ökoszisztéma",
       "programmingLanguage": "Kotlin",
       "codeRepository": "https://github.com/madovygabor/MaturiMate",
       "description": "Kotlin Multiplatform kliens MVI / Clean Architecture szétválasztással, egyirányú adatfolyammal és offline-first SQLDelight perzisztenciával Androidra és asztali JVM-re."
@@ -83,15 +83,15 @@
     },
     {
       "@type": "TechArticle",
-      "name": "Intézményi hálózat és L3 távmenedzsment (MS-TVR-NETSEC)",
+      "name": "Oktatási Intézményi Hálózat & L3 Távoli Felügyelet (MS-TVR-NETSEC)",
       "url": "https://dev.madovygabor.com/hu/projektek/halozat-esettanulmany",
-      "description": "Fizikai rack beépítés, 3-rétegű VLAN szegmentáció, switch backplane stream-tehermentesítés és WireGuard L3 távmenedzsment."
+      "description": "Rack beépítés, VLAN szegmentáció, a switch backplane-jén maradó rögzítési streamek és WireGuard L3 távmenedzsment."
     },
     {
       "@type": "TechArticle",
       "name": "Tűzjelzés és életvédelem: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany",
-      "description": "Rendszertopológia, címezhető huroktérképezés, jelzési logika és §21 szerinti minősített villamossági kivitelezés."
+      "description": "Zárt LSN hurok, funkcionális zónák, fail-safe relévezérlések és EN 54-4 szerinti akkumulátor-méretezés."
     }
   ]
 }
@@ -104,7 +104,7 @@
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigáció">
             <div class="mobile-nav-header">
                 <span class="nav-brand">GABRIEL MADOVÝ</span>
-                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Menü bezárása">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -143,7 +143,7 @@
                 <a class="lang-link" href="/sk/projekty">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -154,16 +154,15 @@
     <main class="container">
 
         <section class="projects-hero">
-            <h1 class="font-display projects-title">Fejlesztési Naplók</h1>
+            <h1 class="font-display projects-title">Fejlesztési naplók</h1>
             <p class="font-technical projects-desc">
-                Válogatás azokból a projektekből, amelyeken dolgozom és amelyeket karbantartok, néhány szóval arról,
-                hogyan épülnek fel: platformok között megosztott kód, matematikai tartalom pontos megjelenítése és a
+                Válogatás az általam fejlesztett és karbantartott projektekből, röviden a felépítésükről: platformok között megosztott kód, matematikai tartalom pontos megjelenítése és a
                 rétegek világos szétválasztása.
             </p>
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Kliensalkalmazások &amp; Multiplatform Architektúra</h2>
+            <h2 class="font-technical section-header-sub">01 / Multiplatform és mobilalkalmazások</h2>
             <div class="section-line"></div>
         </div>
 
@@ -173,7 +172,7 @@
                     <div class="projects-brand-wrapper">
                         <span class="material-symbols-outlined projects-brand-icon">school</span>
                         <div>
-                            <h3 class="font-technical projects-card-title">MaturiMate Ökoszisztéma</h3>
+                            <h3 class="font-technical projects-card-title">MaturiMate ökoszisztéma</h3>
                             <p class="font-code projects-card-subtitle">Kotlin Multiplatform • Aktív fejlesztés alatt
                             </p>
                         </div>
@@ -237,7 +236,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend Rendszerek &amp; Szoftverinfrastruktúra</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend és rendszerszoftverek</h2>
             <div class="section-line"></div>
         </div>
 
@@ -257,8 +256,7 @@
                     <p class="projects-card-desc">
                         <strong>Java 21 LTS</strong> nyelven írt backend alkalmazás az alkalmazotti nyilvántartás
                         kezelésére és a munkatársak közötti biztonsági kapcsolatok kiértékelésére. A kód külön
-                        prezentációs, domain és perzisztencia rétegre tagolódik. Futás közben az adatok egy memóriában
-                        futó tárolóban vannak, mentésként pedig SQLite adatbázisba szinkronizálódnak. A biztonsági
+                        prezentációs, domain és perzisztencia rétegre tagolódik. Futás közben az adatok egy memóriabeli (in-memory) tárolóban vannak, mentésként pedig SQLite adatbázisba szinkronizálódnak. A biztonsági
                         mutatók az alkalmazottak közötti kapcsolatgráf bejárásával számítódnak ki, és a holtversenyeket
                         egy rögzített, megismételhető szabály dönti el.
                     </p>
@@ -288,9 +286,9 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined">public</span>
-                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Média Folyamat</h3>
+                            <h3 class="font-technical projects-card-title-sm">Többdomaines platform és médiafolyamat</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Web Ökoszisztéma</span>
+                        <span class="badge badge-dark badge-size-10">Webes ökoszisztéma</span>
                     </div>
                     <div class="card-visual card-visual-code" aria-hidden="true">
                         <div class="code-header"><span class="code-dot"></span> compose.yaml</div>
@@ -331,18 +329,18 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">03 / Fizikai Hálózati Infrastruktúra &amp; Tűzvédelem (EPS)</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Fizikai infrastruktúra és életvédelmi rendszerek</h2>
             <div class="section-line"></div>
         </div>
 
         <section class="bento-grid scroll-reveal delay-100">
-            <!-- Project 3: Campus Network Case Study -->
+            <!-- Project 3: Facility Network Case Study -->
             <div class="col-span-5 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M13 22h8v-7h-3v-4h-5V9h3V2H8v7h3v2H6v4H3v7h8v-7H8v-2h8v2h-3v7zM10 7V4h4v3h-4zM9 17v3H5v-3h4zm10 0v3h-4v-3h4z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">Intézményi hálózat és L3 távmenedzsment</h3>
+                            <h3 class="font-technical projects-card-title-sm">Intézményi Hálózat &amp; L3 Felügyelet</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Infrastruktúra</span>
                     </div>
@@ -350,7 +348,7 @@
                         <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="vn-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="vn-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="vn-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="vn-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><circle cx="40" cy="44" r="22" class="tp-dev-light"/><text x="40" y="48" class="tp-t" text-anchor="middle">GPON</text><path d="M62 44 H126" class="tp-w tp-n" marker-end="url(#vn-n)"/><rect x="128" y="22" width="150" height="44" rx="6" class="tp-dev"/><text x="140" y="41" class="tp-name tp-sm" text-anchor="start">ER605 átjáró</text><text x="140" y="56" class="tp-t" text-anchor="start">VLAN 1 · 10 · 20</text><path d="M170 66 V92 H90 V114" class="tp-w tp-r" marker-end="url(#vn-r)"/><path d="M236 66 V92 H316 V114" class="tp-w tp-g" marker-end="url(#vn-g)"/><rect x="14" y="116" width="160" height="48" rx="6" class="tp-dev"/><text x="26" y="135" class="tp-name tp-sm" text-anchor="start">TL-SG1218MPE</text><text x="26" y="150" class="tp-t" text-anchor="start">8 kamera · NVR · AP</text><rect x="244" y="116" width="160" height="48" rx="6" class="tp-dev"/><text x="256" y="135" class="tp-name tp-sm" text-anchor="start">TL-SG3452</text><text x="256" y="150" class="tp-t" text-anchor="start">irodai kliensek</text><path d="M372 30 H282" class="tp-w tp-b tp-dash" marker-end="url(#vn-b)"/><text x="372" y="22" class="tp-t tp-b-t" text-anchor="end">WireGuard · Brno</text></svg>
                     </div>
                     <p class="projects-card-desc">
-                        Zöldmezős hálózat egy új oktatási intézményben: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai LAN), Wi-Fi 6 és 8 IP kamera 250 W-os PoE keretről, ~80 W terheléssel.
+                        Zöldmezős hálózat egy új oktatási intézményben: 19"-os rack, <strong>VLAN szegmentáció</strong> (menedzsment, CCTV, irodai LAN), Wi-Fi 6 és 8 IP kamera 250 W-os PoE kerettel, ~80 W tényleges terheléssel.
                     </p>
                     <p class="projects-card-desc">
                         A rögzítési streamek a <strong>PoE switch backplane-jén</strong> maradnak. Kétszintű távmenedzsment: Omada felhő a napi ellenőrzéshez, <strong>WireGuard split tunnel</strong> Brnóból az izolált alhálózatokhoz.
@@ -387,7 +385,7 @@
                         <strong>Bosch AVENAR panel 2000</strong> elektronikus tűzjelző rendszer egy oktatási intézményben: zárt LSN hurok, hat funkcionális zóna helyiségnevekkel a kijelzőn, FMC-420RW kézi jelzésadók.
                     </p>
                     <p class="projects-card-desc">
-                        Az <strong>RML 0008 A</strong> relék vezérlik a fail-safe ajtónyitást, a tűzeseti lekapcsolást és a GSM riasztást. Beüzemelés: sínsorrend-ellenőrzés, <strong>T-tap</strong> hibakeresés és EN 54-4 akkumulátor-méretezés (24 h + 30 perc).
+                        Az <strong>RML 0008 A</strong> relék vezérlik a fail-safe ajtónyitást, a főelosztó munkaáramú kioldóját és a GSM átjelzést. Beüzemelés: sínsorrend-ellenőrzés, <strong>T-tap</strong> hibakeresés és EN 54-4 akkumulátor-méretezés (24 h + 30 perc).
                     </p>
                 </div>
                 <div class="project-footer">

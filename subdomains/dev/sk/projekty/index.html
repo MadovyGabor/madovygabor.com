@@ -51,7 +51,7 @@
   "@id": "https://dev.madovygabor.com/sk/projekty/#projects-page",
   "url": "https://dev.madovygabor.com/sk/projekty",
   "name": "Záznamy z vývoja | Projekty Gabriela Madového",
-  "description": "Softvérové inžinierstvo a bezpečnostné projekty Gabriela Madového, vrátane MaturiMate a architektúr čistého kódu.",
+  "description": "Softvérové inžinierstvo a bezpečnostné projekty Gabriela Madového, vrátane MaturiMate a systémov postavených na Clean Architecture.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -83,15 +83,15 @@
     },
     {
       "@type": "TechArticle",
-      "name": "Sieť areálu a L3 vzdialená správa (MS-TVR-NETSEC)",
+      "name": "Sieťová infraštruktúra vzdelávacej inštitúcie & L3 vzdialená správa (MS-TVR-NETSEC)",
       "url": "https://dev.madovygabor.com/sk/projekty/sietova-infrastruktura-pripadova-studia",
-      "description": "Fyzická inštalácia racku, 3-vrstvová segmentácia VLAN, odľahčenie tokov cez prepínaciu zbernicu (backplane) a WireGuard L3 vzdialená správa."
+      "description": "Inštalácia racku, segmentácia VLAN, záznamové streamy ponechané na backplane switchu a WireGuard L3 vzdialená správa."
     },
     {
       "@type": "TechArticle",
-      "name": "EPS a ochrana života: Bosch AVENAR 2000",
+      "name": "EPS a požiarna bezpečnosť: Bosch AVENAR 2000",
       "url": "https://dev.madovygabor.com/sk/projekty/eps-pripadova-studia",
-      "description": "Topológia systému, mapovanie adresovateľných slučiek, signalizačná logika a certifikovaná elektroinštalácia podľa §21."
+      "description": "Uzavretá slučka LSN, funkčné zónovanie, fail-safe reléové ovládanie a dimenzovanie batérií podľa EN 54-4."
     }
   ]
 }
@@ -104,7 +104,7 @@
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
             <div class="mobile-nav-header">
                 <span class="nav-brand">GABRIEL MADOVÝ</span>
-                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Zavrieť menu">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -143,7 +143,7 @@
                 <a class="lang-link active" href="/sk/projekty">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÝ WEB</a>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -162,7 +162,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub">01 / Multiplatformový vývoj &amp; Klientske aplikácie</h2>
+            <h2 class="font-technical section-header-sub">01 / Multiplatformové a mobilné aplikácie</h2>
             <div class="section-line"></div>
         </div>
 
@@ -235,7 +235,7 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backendové systémy &amp; Softvérová infraštruktúra</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">02 / Backend a systémový softvér</h2>
             <div class="section-line"></div>
         </div>
 
@@ -285,9 +285,9 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined">public</span>
-                            <h3 class="font-technical projects-card-title-sm">Multi-Domain Platform &amp; Mediálny Pipeline</h3>
+                            <h3 class="font-technical projects-card-title-sm">Multidoménová platforma a mediálny pipeline</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Webový Ekosystém</span>
+                        <span class="badge badge-dark badge-size-10">Webový ekosystém</span>
                     </div>
                     <div class="card-visual card-visual-code" aria-hidden="true">
                         <div class="code-header"><span class="code-dot"></span> compose.yaml</div>
@@ -301,7 +301,7 @@
                     </div>
                     <p class="projects-card-desc">
                         Tento web. Jeden repozitár spája tri samostatné projekty: fotografické portfólio, centrálny hub
-                        a toto vývojárske portfólio. Lokálne bežia spolu cez <strong>Docker Compose</strong> s Nginx
+                        a toto inžinierske portfólio. Lokálne bežia spolu cez <strong>Docker Compose</strong> s Nginx
                         serverom postaveným na Alpine Linuxe, čo mi umožňuje odladiť prepojenie domén a čisté URL pred
                         nasadením do produkcie.
                     </p>
@@ -328,18 +328,18 @@
         </section>
 
         <div class="section-header">
-            <h2 class="font-technical section-header-sub projects-sec-title">03 / Sieťová infraštruktúra &amp; Požiarna bezpečnosť (EPS)</h2>
+            <h2 class="font-technical section-header-sub projects-sec-title">03 / Fyzická infraštruktúra a požiarna bezpečnosť</h2>
             <div class="section-line"></div>
         </div>
 
         <section class="bento-grid scroll-reveal delay-100">
-            <!-- Project 3: Campus Network Case Study -->
+            <!-- Project 3: Facility Network Case Study -->
             <div class="col-span-5 bento-card bento-card-purple flex-col-between">
                 <div>
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M13 22h8v-7h-3v-4h-5V9h3V2H8v7h3v2H6v4H3v7h8v-7H8v-2h8v2h-3v7zM10 7V4h4v3h-4zM9 17v3H5v-3h4zm10 0v3h-4v-3h4z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">Sieť areálu a L3 vzdialená správa</h3>
+                            <h3 class="font-technical projects-card-title-sm">Inštitucionálna sieť &amp; L3 správa</h3>
                         </div>
                         <span class="badge badge-dark badge-size-10">Infraštruktúra</span>
                     </div>
@@ -373,9 +373,9 @@
                     <div class="flex-center-between mb-4 projects-card-header">
                         <div class="projects-title-wrapper">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M20.79 9.23l-2-3.46L14 8.54V3h-4v5.54L5.21 5.77l-2 3.46L8 12l-4.79 2.77 2 3.46L10 15.46V21h4v-5.54l4.79 2.77 2-3.46L16 12z"/></svg></span>
-                            <h3 class="font-technical projects-card-title-sm">EPS a ochrana života: Bosch AVENAR 2000</h3>
+                            <h3 class="font-technical projects-card-title-sm">EPS a požiarna bezpečnosť: Bosch AVENAR 2000</h3>
                         </div>
-                        <span class="badge badge-dark badge-size-10">Požiarna Ochrana</span>
+                        <span class="badge badge-dark badge-size-10">Požiarna bezpečnosť</span>
                     </div>
                     <div class="card-visual" aria-hidden="true">
                         <svg class="card-visual-svg" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ve-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ve-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ve-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker><marker id="ve-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-b"/></marker></defs><rect x="14" y="14" width="150" height="152" rx="8" class="tp-group"/><text x="28" y="36" class="tp-name tp-sm" text-anchor="start">AVENAR 2000</text><rect x="28" y="48" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="66" class="tp-t" text-anchor="start">BCM</text><rect x="28" y="84" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="102" class="tp-t" text-anchor="start">LSN 0300 A</text><rect x="28" y="120" width="122" height="28" rx="5" class="tp-dev"/><text x="40" y="138" class="tp-t" text-anchor="start">RML 0008 A</text><path d="M150 98 H200 V22 H404 V158 H200 V114 H150" class="tp-w tp-g"/><circle cx="260" cy="22" r="9" class="tp-dev-light"/><circle cx="260" cy="22" r="3" class="tp-led tp-led-r"/><circle cx="350" cy="22" r="9" class="tp-dev-light"/><circle cx="350" cy="22" r="3" class="tp-led tp-led-r"/><circle cx="404" cy="90" r="9" class="tp-dev-light"/><circle cx="404" cy="90" r="3" class="tp-led tp-led-r"/><circle cx="300" cy="158" r="9" class="tp-dev-light"/><circle cx="300" cy="158" r="3" class="tp-led tp-led-r"/><text x="260" y="46" class="tp-t" text-anchor="middle">Hlásiče</text><text x="350" y="46" class="tp-t" text-anchor="middle">Majáky</text><text x="392" y="72" class="tp-t" text-anchor="end">Sirény</text><text x="300" y="146" class="tp-t" text-anchor="middle">Tlačidlové hlásiče</text><text x="300" y="96" class="tp-foot" text-anchor="middle">Uzavretá LSN slučka</text><text x="300" y="112" class="tp-foot" text-anchor="middle">6 zón</text></svg>
@@ -384,7 +384,7 @@
                         Elektronická požiarna signalizácia na ústredni <strong>Bosch AVENAR panel 2000</strong> vo vzdelávacom zariadení: uzavretá LSN slučka, šesť funkčných zón s názvami miestností na displeji, tlačidlové hlásiče FMC-420RW.
                     </p>
                     <p class="projects-card-desc">
-                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, požiarny rozvádzač a GSM poplach. Uvedenie do prevádzky: kontrola poradia modulov, lokalizácia porúch <strong>T-tap</strong> a dimenzovanie batérií podľa EN 54-4 (24 h + 30 min).
+                        Relé <strong>RML 0008 A</strong> ovládajú fail-safe uvoľnenie dverí, vyrážaciu spúšť hlavného rozvádzača a prenos poplachu cez GSM. Uvedenie do prevádzky: kontrola poradia modulov, lokalizácia porúch v režime <strong>T-tap</strong> a dimenzovanie batérií podľa EN 54-4 (24 h + 30 min).
                     </p>
                 </div>
                 <div class="project-footer">

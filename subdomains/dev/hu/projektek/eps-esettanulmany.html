@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dev.madovygabor.com/hu/projektek/eps-esettanulmany" />
     <meta property="og:title" content="Elektronikus tűzjelző rendszer (EPS): Bosch AVENAR panel 2000" />
     <meta property="og:description"
-        content="Zárt LSN gyűrű, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon." />
+        content="Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon." />
     <meta property="og:image" content="https://hub.madovygabor.com/pictures/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -50,7 +50,7 @@
   "@type": "TechArticle",
   "@id": "https://dev.madovygabor.com/hu/projektek/eps-esettanulmany#article",
   "headline": "Elektronikus tűzjelző rendszer (EPS): Bosch AVENAR panel 2000",
-  "description": "Zárt LSN gyűrű, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon.",
+  "description": "Zárt LSN hurok, funkcionális zónázás, fail-safe relévezérlések és EN 54-4 akkumulátor-méretezés Bosch AVENAR panel 2000 központon.",
   "author": {
     "@type": "Person",
     "@id": "https://hub.madovygabor.com/#main-identity",
@@ -73,7 +73,7 @@
         <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
             <div class="mobile-nav-header">
                 <span class="nav-brand">GABRIEL MADOVÝ</span>
-                <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
+                <button class="nav-close-btn" id="navCloseBtn" aria-label="Menü bezárása">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -112,7 +112,7 @@
                 <a class="lang-link" href="/sk/projekty/eps-pripadova-studia">SK</a>
             </div>
             <a class="nav-btn" href="https://hub.madovygabor.com/hu/">FŐOLDAL</a>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -167,12 +167,12 @@
 
         <section class="cs-section scroll-reveal delay-100">
             <div class="cs-prose">
-                <p>Egy tvrdošovcei (Szlovákia) oktatási intézmény (óvoda és iskola) elektronikus tűzjelző rendszerének (EPS) telepítése, LSN hurok programozása és épületintegrációja. A tűzjelző központ egy Bosch AVENAR panel 2000; az ajtótartókat, a fő villamos elosztót és a GSM tárcsázót a központ belső sínjén ülő RML 0008 A relémodul vezérli.</p>
+                <p>Egy tvrdošovcei (Szlovákia) oktatási intézmény (óvoda és iskola) elektronikus tűzjelző rendszerének (EPS) telepítése, LSN hurok programozása és épületintegrációja. A tűzjelző központ egy Bosch AVENAR panel 2000; az ajtótartókat, a főelosztó munkaáramú kioldóját és a GSM tárcsázót a központ belső sínjén ülő RML 0008 A relémodul vezérli.</p>
             </div>
             <ul class="cs-list">
-                <li><strong>Olvasható riasztások:</strong> a központ funkcionális zónákat és helyiségneveket mutat, nem nyers LSN buszcímeket.</li>
+                <li><strong>Egyértelmű riasztások:</strong> a központ funkcionális zónákat és helyiségneveket mutat, nem nyers LSN buszcímeket.</li>
                 <li><strong>Fail-safe vezérlések:</strong> a menekülési ajtók riasztáskor és tápkimaradáskor is nyithatók.</li>
-                <li><strong>Akkumulátor-méretezés EN 54-4 szerint:</strong> 24 óra készenlét plusz 30 perc riasztás.</li>
+                <li><strong>Akkumulátor-méretezés EN 54-4 szerint:</strong> 24 óra nyugalmi és 30 perc riasztási üzem.</li>
             </ul>
             <div class="tech-table-wrapper">
                 <table class="tech-table tech-table-stack">
@@ -250,7 +250,7 @@
                         <tr>
                             <td data-label="Szerep"><strong>Hurokvezérlő</strong></td>
                             <td data-label="Eszköz">LSN 0300 A</td>
-                            <td data-label="Megjegyzés">Sínmodul. Zárt LSN gyűrű.</td>
+                            <td data-label="Megjegyzés">Sínmodul, zárt hurok topológiájú LSN vonal.</td>
                         </tr>
                         <tr>
                             <td data-label="Szerep"><strong>Relékimenetek</strong></td>
@@ -263,9 +263,9 @@
                             <td data-label="Megjegyzés">Optikai füstérzékelők.</td>
                         </tr>
                         <tr>
-                            <td data-label="Szerep"><strong>Villogók</strong></td>
+                            <td data-label="Szerep"><strong>Fényjelzők</strong></td>
                             <td data-label="Eszköz">FNS-420-R</td>
-                            <td data-label="Megjegyzés">LSN optikai jelzők.</td>
+                            <td data-label="Megjegyzés">LSN optikai riasztásjelzők (villogók).</td>
                         </tr>
                         <tr>
                             <td data-label="Szerep"><strong>Hangjelzők</strong></td>
@@ -275,12 +275,12 @@
                         <tr>
                             <td data-label="Szerep"><strong>Kézi jelzésadók</strong></td>
                             <td data-label="Eszköz">Bosch FMC-420RW sorozat</td>
-                            <td data-label="Megjegyzés">Címezhető kézi jelzésadók, falon kívüli. Visszaállító mechanizmus, állapot-LED, szervizkulccsal nyitható, felül csuklós fedél.</td>
+                            <td data-label="Megjegyzés">Címezhető kézi jelzésadók, falon kívüli szerelésű. Visszaállító mechanizmus, állapot-LED, szervizkulccsal nyitható, felül csuklós fedél.</td>
                         </tr>
                         <tr>
                             <td data-label="Szerep"><strong>DC-DC konverter</strong></td>
                             <td data-label="Eszköz">Mean Well DDR-15G-12</td>
-                            <td data-label="Megjegyzés">24 V → 12 V, leválasztott, DIN-sínes. A GSM tárcsázót táplálja.</td>
+                            <td data-label="Megjegyzés">24 V → 12 V, galvanikusan leválasztott, DIN-sínre szerelhető. A GSM tárcsázót táplálja.</td>
                         </tr>
                         <tr>
                             <td data-label="Szerep"><strong>Tárcsázó</strong></td>
@@ -292,40 +292,46 @@
             </div>
             <figure class="topology-figure">
                 <div class="topology-scroll">
-                    <svg class="topology-svg" viewBox="0 0 1000 545" role="img" aria-labelledby="ep-title ep-desc" xmlns="http://www.w3.org/2000/svg"><title id="ep-title">Tűzjelző rendszer topológiája</title><desc id="ep-desc">Bosch AVENAR panel 2000 három sínmodullal, sorrendben: FPE-8000-BCM akkumulátorvezérlő, LSN 0300 A hurokvezérlő és RML 0008 A relémodul. A zárt LSN gyűrűn érzékelők, villogók, aljzatszirénák és kézi jelzésadók vannak. A relémodul vezérli a mágneses ajtótartókat, a főelosztó munkaáramú kioldóját és a GSM tárcsázót, amely a központ AUX sínjéről, leválasztott DC-DC konverteren át kap tápot.</desc><defs><marker id="ep-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ep-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ep-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker></defs><rect x="20" y="20" width="300" height="230" rx="10" class="tp-group"/><text x="38" y="48" class="tp-name" text-anchor="start">Bosch AVENAR panel 2000</text><text x="38" y="68" class="tp-foot" text-anchor="start">BELSŐ SÍN</text><rect x="38" y="78" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="99" class="tp-name tp-sm" text-anchor="start">FPE-8000-BCM</text><text x="52" y="116" class="tp-t" text-anchor="start">1. hely · akkumulátorvezérlő</text><rect x="38" y="134" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="155" class="tp-name tp-sm" text-anchor="start">LSN 0300 A</text><text x="52" y="172" class="tp-t" text-anchor="start">2. hely · LSN hurokvezérlő</text><rect x="38" y="190" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="211" class="tp-name tp-sm" text-anchor="start">RML 0008 A</text><text x="52" y="228" class="tp-t" text-anchor="start">3. hely · 8 relé</text><path d="M110 250 V298" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="280" class="tp-t" text-anchor="start">AUX 24 V</text><rect x="20" y="300" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="321" class="tp-name tp-sm" text-anchor="start">Mean Well DDR-15G-12</text><text x="34" y="338" class="tp-t" text-anchor="start">DC-DC 24 V → 12 V, leválasztott</text><path d="M110 356 V428" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="396" class="tp-t" text-anchor="start">12 V</text><rect x="20" y="430" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="451" class="tp-name tp-sm" text-anchor="start">GSM tárcsázó</text><text x="34" y="468" class="tp-t" text-anchor="start">12 V · a központ szekrényében</text><path d="M302 148 H560 V60 H960 V500 H560 V166 H302" class="tp-w tp-g"/><circle cx="690" cy="60" r="13" class="tp-dev-light"/><circle cx="690" cy="60" r="4" class="tp-led tp-led-r"/><text x="690" y="100" class="tp-name tp-sm" text-anchor="middle">Füstérzékelők</text><text x="690" y="117" class="tp-t" text-anchor="middle">FAP-O420 · FAP-425</text><circle cx="850" cy="60" r="13" class="tp-dev-light"/><circle cx="850" cy="60" r="4" class="tp-led tp-led-r"/><text x="850" y="100" class="tp-name tp-sm" text-anchor="middle">Villogók</text><text x="850" y="117" class="tp-t" text-anchor="middle">FNS-420-R</text><circle cx="960" cy="210" r="13" class="tp-dev-light"/><circle cx="960" cy="210" r="4" class="tp-led tp-led-r"/><text x="930" y="206" class="tp-name tp-sm" text-anchor="end">Aljzatszirénák</text><text x="930" y="223" class="tp-t" text-anchor="end">FNM-420U-A-BS</text><circle cx="960" cy="370" r="13" class="tp-dev-light"/><circle cx="960" cy="370" r="4" class="tp-led tp-led-r"/><text x="930" y="366" class="tp-name tp-sm" text-anchor="end">Kézi jelzésadók</text><text x="930" y="383" class="tp-t" text-anchor="end">FMC-420RW</text><circle cx="760" cy="500" r="13" class="tp-dev-light"/><circle cx="760" cy="500" r="4" class="tp-led tp-led-r"/><text x="760" y="470" class="tp-name tp-sm" text-anchor="middle">Füstérzékelők</text><text x="760" y="300" class="tp-foot" text-anchor="middle">Zárt LSN gyűrű</text><path d="M302 213 H335 V445" class="tp-w tp-r"/><rect x="355" y="270" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="291" class="tp-name tp-sm" text-anchor="start">Mágneses ajtótartók</text><text x="369" y="308" class="tp-t" text-anchor="start">fail-safe nyitás</text><path d="M335 295 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="345" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="366" class="tp-name tp-sm" text-anchor="start">Főelosztó</text><text x="369" y="383" class="tp-t" text-anchor="start">tűzeseti lekapcsolás</text><path d="M335 370 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="420" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="441" class="tp-name tp-sm" text-anchor="start">GSM riasztási bemenet</text><text x="369" y="458" class="tp-t" text-anchor="start">száraz NC hurok</text><path d="M335 445 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><path d="M447 470 V520 H145 V488" class="tp-w tp-r tp-dash" marker-end="url(#ep-a-r)"/></svg>
+                    <svg class="topology-svg" viewBox="0 0 1000 545" role="img" aria-labelledby="ep-title ep-desc" xmlns="http://www.w3.org/2000/svg"><title id="ep-title">Tűzjelző rendszer topológiája</title><desc id="ep-desc">Bosch AVENAR panel 2000 három sínmodullal, sorrendben: FPE-8000-BCM akkumulátorvezérlő, LSN 0300 A hurokvezérlő és RML 0008 A relémodul. A zárt LSN hurokn érzékelők, villogók, aljzatszirénák és kézi jelzésadók vannak. A relémodul vezérli a mágneses ajtótartókat, a főelosztó munkaáramú kioldóját és a GSM tárcsázót, amely a központ AUX sínjéről, leválasztott DC-DC konverteren át kap tápot.</desc><defs><marker id="ep-a-n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-n"/></marker><marker id="ep-a-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-r"/></marker><marker id="ep-a-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tp-m-g"/></marker></defs><rect x="20" y="20" width="300" height="230" rx="10" class="tp-group"/><text x="38" y="48" class="tp-name" text-anchor="start">Bosch AVENAR panel 2000</text><text x="38" y="68" class="tp-foot" text-anchor="start">BELSŐ SÍN</text><rect x="38" y="78" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="99" class="tp-name tp-sm" text-anchor="start">FPE-8000-BCM</text><text x="52" y="116" class="tp-t" text-anchor="start">1. hely · akkumulátorvezérlő</text><rect x="38" y="134" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="155" class="tp-name tp-sm" text-anchor="start">LSN 0300 A</text><text x="52" y="172" class="tp-t" text-anchor="start">2. hely · LSN hurokvezérlő</text><rect x="38" y="190" width="264" height="46" rx="6" class="tp-dev"/><text x="52" y="211" class="tp-name tp-sm" text-anchor="start">RML 0008 A</text><text x="52" y="228" class="tp-t" text-anchor="start">3. hely · 8 relé</text><path d="M110 250 V298" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="280" class="tp-t" text-anchor="start">AUX 24 V</text><rect x="20" y="300" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="321" class="tp-name tp-sm" text-anchor="start">Mean Well DDR-15G-12</text><text x="34" y="338" class="tp-t" text-anchor="start">DC-DC 24 V → 12 V, leválasztott</text><path d="M110 356 V428" class="tp-w tp-n" marker-end="url(#ep-a-n)"/><text x="120" y="396" class="tp-t" text-anchor="start">12 V</text><rect x="20" y="430" width="250" height="56" rx="6" class="tp-dev"/><text x="34" y="451" class="tp-name tp-sm" text-anchor="start">GSM tárcsázó</text><text x="34" y="468" class="tp-t" text-anchor="start">12 V · a központ szekrényében</text><path d="M302 148 H560 V60 H960 V500 H560 V166 H302" class="tp-w tp-g"/><circle cx="690" cy="60" r="13" class="tp-dev-light"/><circle cx="690" cy="60" r="4" class="tp-led tp-led-r"/><text x="690" y="100" class="tp-name tp-sm" text-anchor="middle">Füstérzékelők</text><text x="690" y="117" class="tp-t" text-anchor="middle">FAP-O420 · FAP-425</text><circle cx="850" cy="60" r="13" class="tp-dev-light"/><circle cx="850" cy="60" r="4" class="tp-led tp-led-r"/><text x="850" y="100" class="tp-name tp-sm" text-anchor="middle">Fényjelzők</text><text x="850" y="117" class="tp-t" text-anchor="middle">FNS-420-R</text><circle cx="960" cy="210" r="13" class="tp-dev-light"/><circle cx="960" cy="210" r="4" class="tp-led tp-led-r"/><text x="930" y="206" class="tp-name tp-sm" text-anchor="end">Aljzatszirénák</text><text x="930" y="223" class="tp-t" text-anchor="end">FNM-420U-A-BS</text><circle cx="960" cy="370" r="13" class="tp-dev-light"/><circle cx="960" cy="370" r="4" class="tp-led tp-led-r"/><text x="930" y="366" class="tp-name tp-sm" text-anchor="end">Kézi jelzésadók</text><text x="930" y="383" class="tp-t" text-anchor="end">FMC-420RW</text><circle cx="760" cy="500" r="13" class="tp-dev-light"/><circle cx="760" cy="500" r="4" class="tp-led tp-led-r"/><text x="760" y="470" class="tp-name tp-sm" text-anchor="middle">Füstérzékelők</text><text x="760" y="300" class="tp-foot" text-anchor="middle">Zárt LSN hurok</text><path d="M302 213 H335 V445" class="tp-w tp-r"/><rect x="355" y="270" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="291" class="tp-name tp-sm" text-anchor="start">Mágneses ajtótartók</text><text x="369" y="308" class="tp-t" text-anchor="start">fail-safe nyitás</text><path d="M335 295 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="345" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="366" class="tp-name tp-sm" text-anchor="start">Főelosztó</text><text x="369" y="383" class="tp-t" text-anchor="start">munkaáramú kioldó</text><path d="M335 370 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><rect x="355" y="420" width="185" height="50" rx="6" class="tp-dev"/><text x="369" y="441" class="tp-name tp-sm" text-anchor="start">GSM riasztási bemenet</text><text x="369" y="458" class="tp-t" text-anchor="start">potenciálmentes NC hurok</text><path d="M335 445 H353" class="tp-w tp-r" marker-end="url(#ep-a-r)"/><path d="M447 470 V520 H145 V488" class="tp-w tp-r tp-dash" marker-end="url(#ep-a-r)"/></svg>
                 </div>
-                <figcaption class="topology-caption">1. ábra — Rendszertopológia: sínmodulok, LSN gyűrű, tápellátás és relékimenetek</figcaption>
+                <figcaption class="topology-caption">1. ábra — Rendszertopológia: sínmodulok, LSN hurok, tápellátás és relékimenetek</figcaption>
             </figure>
             <h3 class="cs-subhead">Fotók</h3>
-            <div class="case-study-media-grid grid-3 eps-photos">
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/eps/eps-panel-overview.webp" alt="Falra szerelt Bosch AVENAR panel 2000 tűzjelző központ" loading="lazy"> -->
-                        Fotó: eps-panel-overview.webp
-                    </div>
+            <div class="case-study-media-grid photo-grid">
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-panel-exterior.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-panel-exterior.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Falra szerelt Bosch AVENAR tűzjelző központ a hálózati rack mellett">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">Kész központ</span>
-                        <span class="media-figure-desc">Falra szerelt AVENAR központ az intézményben.</span>
+                        <span class="media-figure-title">Kész telepítés</span>
+                        <span class="media-figure-desc">Az AVENAR központ (jobbra) a hálózati rack mellett.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/eps/eps-touch-ui.webp" alt="A központ érintőkijelzője zónatérképpel és elérhetőségekkel" loading="lazy"> -->
-                        Fotó: eps-touch-ui.webp
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-panel-internal.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-panel-internal.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Nyitott Bosch AVENAR központ érintőkijelzővel, sínmodulokkal és akkumulátorokkal">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">Érintőkijelző</span>
-                        <span class="media-figure-desc">Aktív zónatérkép és elérhetőségek.</span>
+                        <span class="media-figure-title">A központ belseje</span>
+                        <span class="media-figure-desc">Fedél nélkül: érintőkijelző, sínmodulok és 2× 12 V 26 Ah akkumulátor.</span>
                     </figcaption>
                 </figure>
-                <figure class="media-figure">
-                    <div class="media-figure-frame">
-                        <!-- Replace with: <img src="../../pictures/eps/eps-loop-schematic.webp" alt="Zárt LSN gyűrű vázlata" loading="lazy"> -->
-                        Fotó: eps-loop-schematic.webp
-                    </div>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-programming-session.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-programming-session.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Bosch RPS-t futtató laptop a tűzjelző központhoz csatlakoztatva">
+                    </a>
                     <figcaption>
-                        <span class="media-figure-title">Hurokrajz</span>
-                        <span class="media-figure-desc">A zárt LSN gyűrű elrendezése.</span>
+                        <span class="media-figure-title">Programozás a helyszínen</span>
+                        <span class="media-figure-desc">A központhoz csatlakoztatott laptop RPS-sel.</span>
+                    </figcaption>
+                </figure>
+                <figure class="media-figure photo-card">
+                    <a class="media-figure-frame" href="../../pictures/eps/eps-rps-software.webp" target="_blank" rel="noopener">
+                        <img src="../../pictures/eps/eps-rps-software.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Bosch FSP-5000-RPS konfigurációs képernyő zónacsoportokkal és akkumulátor-beállításokkal">
+                    </a>
+                    <figcaption>
+                        <span class="media-figure-title">RPS konfiguráció</span>
+                        <span class="media-figure-desc">Zónacsoportok, 0,46 A modulterhelés és 24 h / 30 perc akkumulátor-beállítás. A helyszíni adatok kitakarva.</span>
                     </figcaption>
                 </figure>
             </div>
@@ -359,13 +365,13 @@
                         </tr>
                         <tr>
                             <td data-label="Zóna"><strong>Zóna 2</strong></td>
-                            <td data-label="Kijelzett név (SK)">Triedy, herne a spálňa</td>
+                            <td data-label="Kijelzett név (SK)">Triedy, herne a spálne</td>
                             <td data-label="Terület">Tantermek, játszószobák, hálóterem</td>
                             <td data-label="Eszközök">Optikai füstérzékelők (FAP-O420), aljzatszirénák</td>
                         </tr>
                         <tr>
                             <td data-label="Zóna"><strong>Zóna 3</strong></td>
-                            <td data-label="Kijelzett név (SK)">Jedáleň a spoločenské m.</td>
+                            <td data-label="Kijelzett név (SK)">Jedáleň a spoločenská m.</td>
                             <td data-label="Terület">Étkező, közösségi terek</td>
                             <td data-label="Eszközök">Nagy légterű optikai érzékelők, fali szirénák</td>
                         </tr>
@@ -406,7 +412,7 @@
                     <thead>
                         <tr>
                             <th>Kimenet</th>
-                            <th>Normál állapot</th>
+                            <th>Nyugalmi állapot</th>
                             <th>Tűzriasztáskor</th>
                             <th>Tápkimaradáskor</th>
                         </tr>
@@ -414,28 +420,28 @@
                     <tbody>
                         <tr>
                             <td data-label="Kimenet"><strong>Mágneses ajtótartók</strong></td>
-                            <td data-label="Normál állapot">Feszültség alatt, menekülési ajtók tartva</td>
+                            <td data-label="Nyugalmi állapot">Feszültség alatt, menekülési ajtók tartva</td>
                             <td data-label="Tűzriasztáskor">A relé megszakítja a tápot, az ajtók mechanikusan elengednek</td>
                             <td data-label="Tápkimaradáskor">Elengednek (fail-safe)</td>
                         </tr>
                         <tr>
-                            <td data-label="Kimenet"><strong>Főelosztó (tűzeseti lekapcsolás)</strong></td>
-                            <td data-label="Normál állapot">Munkaáramú kioldó nyugalomban</td>
-                            <td data-label="Tűzriasztáskor">A munkaáramú kioldó (<em>vyrážacia spúšť</em>) old, a nem létfontosságú 230/400 V-os körök lekapcsolnak</td>
-                            <td data-label="Tápkimaradáskor">Nem értelmezett</td>
+                            <td data-label="Kimenet"><strong>Főelosztó (munkaáramú kioldó)</strong></td>
+                            <td data-label="Nyugalmi állapot">Munkaáramú kioldó nyugalomban</td>
+                            <td data-label="Tűzriasztáskor">A munkaáramú kioldó kiold, a nem létfontosságú 230/400 V-os körök lekapcsolnak</td>
+                            <td data-label="Tápkimaradáskor">Nem releváns</td>
                         </tr>
                         <tr>
                             <td data-label="Kimenet"><strong>GSM tárcsázó</strong></td>
-                            <td data-label="Normál állapot">Száraz NC hurok zárva</td>
+                            <td data-label="Nyugalmi állapot">Potenciálmentes NC hurok zárva</td>
                             <td data-label="Tűzriasztáskor">A hurok nyit, a tárcsázó elküldi a riasztást</td>
-                            <td data-label="Tápkimaradáskor">Az akkumulátorról táplált AUX sínről működik tovább</td>
+                            <td data-label="Tápkimaradáskor">Az akkumulátorral pufferelt AUX sínről működik tovább</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="callout-box">
                 <div class="callout-header">GSM bemenet és táplálás</div>
-                <p class="callout-desc">A tárcsázó a fém központszekrényen belül van, így a száraz NC hurok nem hagyja el a szekrényt, a vezetékszakadás gyakorlatilag kizárt, és a hurok bármilyen nyitása azonnal indítja. Táplálása a 24 V-os AUX sínről, leválasztott Mean Well DDR-15G-12 konverteren át történik (24 V → 12 V), nem egyetlen akkumulátorról, ami felborítaná a soros akkukészlet egyensúlyát.</p>
+                <p class="callout-desc">A tárcsázó a fém központszekrényen belül van, így a potenciálmentes NC hurok nem hagyja el a szekrényt, a vezetékszakadás gyakorlatilag kizárt, és a hurok bármilyen megszakadása azonnal riasztást indít. Táplálása a 24 V-os AUX sínről, galvanikusan leválasztott Mean Well DDR-15G-12 konverteren át történik (24 V → 12 V), nem egyetlen akkumulátorról, ami felborítaná a sorba kötött akkumulátorok egyensúlyát.</p>
             </div>
         </section>
 
@@ -458,7 +464,7 @@
                         <div class="challenge-block-label">
                             <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Háttér
                         </div>
-                        <p>A Bosch AVENAR, az RPS és az LSN zárt életvédelmi termékek. A nyílt forráskódú webes technológiákkal ellentétben minimális a nyilvános dokumentáció, nincs Stack Overflow, és nincs használható AI tanítóadat a belső logikájukról vagy hibakódjaikról.</p>
+                        <p>A Bosch AVENAR, az RPS és az LSN zárt életvédelmi termékek. A nyílt forráskódú webes technológiákkal ellentétben minimális a nyilvános dokumentáció, a Stack Overflow-n sincs róluk semmi, és nincs használható AI tanítóadat a belső logikájukról vagy hibakódjaikról.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
@@ -472,23 +478,23 @@
                 <div class="challenge-header">
                     <div class="challenge-title-group">
                         <span class="challenge-number">02</span>
-                        <h3 class="challenge-title">Sínmodulok sorrendje és a buszellátás</h3>
+                        <h3 class="challenge-title">Sínmodulok sorrendje és a busz tápellátása</h3>
                     </div>
-                    <span class="badge badge-dark">Központ hardver</span>
+                    <span class="badge badge-dark">A központ hardvere</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és kiváltó ok
                         </div>
-                        <p>A központ elbukott az első belső hardverellenőrzésen: a modulok rossz sorrendben ültek a belső sínen (PRS-0002A).</p>
-                        <p>A központ hátlapja kötött fizikai sorrendet ír elő: az akkumulátorvezérlő táplálja be a sínt, a többi modul áramfelvétel szerint követi, hogy elkerülhetők legyenek a belső DC busz feszültségesései és a logikai arbitrációs hibák.</p>
+                        <p>A központ nem ment át az első belső hardverellenőrzésen: a modulok rossz sorrendben voltak a belső sínen (PRS-0002A).</p>
+                        <p>A központ hátlapja kötött fizikai sorrendet ír elő: az akkumulátorvezérlő táplálja a sínt, a többi modul áramfelvétel szerint követi, hogy elkerülhetők legyenek a belső DC busz feszültségesései és a logikai arbitrációs hibák.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
                             <span class="material-symbols-outlined">check_circle</span> Megoldás
                         </div>
-                        <p>A modulok áthelyezése az előírt sorrendbe: FPE-8000-BCM az 1. helyen a tápbetáplálás mellett, utána az LSN 0300 A hurokvezérlő, majd az RML 0008 A relémodul. A hardverellenőrzés sikeres lett.</p>
+                        <p>Modulok áthelyezve az előírt sorrendbe: FPE-8000-BCM az 1. helyen a tápbetáplálás mellett, utána az LSN 0300 A hurokvezérlő, majd az RML 0008 A relémodul. A hardverellenőrzés hibátlanul lefutott.</p>
                     </div>
                 </div>
                 <div class="challenge-code">
@@ -496,24 +502,24 @@
                         <span>Sínsorrend</span>
                         <span>javítás után</span>
                     </div>
-                    <pre class="config-snippet">rail position   module          role
-1               FPE-8000-BCM    battery controller · power feed
-2               LSN 0300 A      LSN loop controller
-3               RML 0008 A      8 relay outputs</pre>
+                    <pre class="config-snippet">sínpozíció      modul           funkció
+1               FPE-8000-BCM    akkumulátorvezérlő · tápbetáplálás
+2               LSN 0300 A      LSN hurokvezérlő
+3               RML 0008 A      8 relékimenet</pre>
                 </div>
             </div>
             <div class="challenge-item">
                 <div class="challenge-header">
                     <div class="challenge-title-group">
                         <span class="challenge-number">03</span>
-                        <h3 class="challenge-title">Szirénaaljzat bekötése: kapcsolási rajz kontra hardver</h3>
+                        <h3 class="challenge-title">Szirénaaljzat bekötése: kapcsolási rajz vs. hardver</h3>
                     </div>
                     <span class="badge badge-dark">Bekötés</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és kiváltó ok
                         </div>
                         <p>Az FNM-420U szirénaaljzatok nem szólaltak meg, és folyamatos hurokhibát okoztak.</p>
                         <p>A rajz kézi áthidalást írt elő két aljzatkapocs között. Az aktuális hardververzió ezt belül megoldja, így az elavult áthidalás megzavarta az LSN vonalfelügyeletet.</p>
@@ -522,7 +528,7 @@
                         <div class="challenge-block-label">
                             <span class="material-symbols-outlined">check_circle</span> Megoldás
                         </div>
-                        <p>Az áthidalás eltávolítása, vissza a tiszta LSN vonalra. A szirénák azonnal címezhetővé váltak, a vonalhiba megszűnt.</p>
+                        <p>Áthidalás eltávolítva, az LSN vonal ismét gyári bekötésű. A szirénák azonnal címezhetővé váltak, a vonalhiba megszűnt.</p>
                     </div>
                 </div>
             </div>
@@ -537,10 +543,10 @@
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és kiváltó ok
                         </div>
-                        <p>A zárt LSN gyűrű nem épült fel; az eszközök zárlatot és kommunikációkiesést jeleztek.</p>
-                        <p>Gyűrűben a központ mindkét végről kommunikál, ami elfedi a hiba tényleges helyét.</p>
+                        <p>A zárt LSN hurok nem állt fel; az eszközök zárlatot és kommunikációkiesést jeleztek.</p>
+                        <p>Zárt hurokban a központ mindkét végről kommunikál, ami elfedi a hiba tényleges helyét.</p>
                     </div>
                     <div class="challenge-block challenge-block-solution">
                         <div class="challenge-block-label">
@@ -549,7 +555,7 @@
                         <ol class="cs-steps">
                             <li>A központ ideiglenesen nyitott (T-tap / csonk) lekérdezésre kapcsolva.</li>
                             <li>Az eszközök címzése egymás után, a kábel mentén; a beolvasás a hibás pontnál megállt.</li>
-                            <li>Ennél az érzékelőnél a sorkapocs csavarja a szigetelést szorította le a csupasz vezető helyett. 8–10 mm újrablankolás, újraolvasás az utolsó eszközig, majd a gyűrű visszazárása RPS-ben.</li>
+                            <li>Ennél az érzékelőnél a sorkapocs csavarja a szigetelést szorította le a csupasz vezető helyett. Vezető újracsupaszítva 8–10 mm-en, újraolvasás az utolsó eszközig, majd a hurok visszazárása RPS-ben.</li>
                         </ol>
                     </div>
                 </div>
@@ -558,14 +564,14 @@
                 <div class="challenge-header">
                     <div class="challenge-title-group">
                         <span class="challenge-number">05</span>
-                        <h3 class="challenge-title">BCM energiakeret túllépése (72 h kontra 24 h)</h3>
+                        <h3 class="challenge-title">BCM energiakeret túllépése (72 h vs. 24 h)</h3>
                     </div>
                     <span class="badge badge-dark">Tápellátás</span>
                 </div>
                 <div class="challenge-grid">
                     <div class="challenge-block challenge-block-problem">
                         <div class="challenge-block-label">
-                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és gyökérok
+                            <span class="material-symbols-outlined" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></span> Tünet és kiváltó ok
                         </div>
                         <p>Az RPS hibaüzenete:</p>
                         <p><code class="config-snippet">Fatal: Energy Zone 1 power consumption
@@ -576,7 +582,7 @@ exceeds the maximum limit (FPE-8000-BCM)</code></p>
                         <div class="challenge-block-label">
                             <span class="material-symbols-outlined">check_circle</span> Megoldás
                         </div>
-                        <p>A készenléti idő visszaállítása 24 óra + 30 perc riasztásra, ami ilyen épülettípusnál az előírt követelmény. Az RPS konzisztencia-ellenőrzése sikeres lett.</p>
+                        <p>Készenléti idő visszaállítva 24 óra + 30 perc riasztásra, ami ennél az épülettípusnál az előírt követelmény. Az RPS konzisztencia-ellenőrzés hibátlanul lefutott.</p>
                     </div>
                 </div>
                 <div class="challenge-code">
@@ -584,10 +590,10 @@ exceeds the maximum limit (FPE-8000-BCM)</code></p>
                         <span>EN 54-4 akkumulátor-ellenőrzés</span>
                         <span>0,8 = hasznos kapacitás tényezője</span>
                     </div>
-                    <pre class="config-snippet">usable capacity   26 Ah × 0.8          = 20.8 Ah
-72 h standby      0.46 A × 72 h        = 33.1 Ah   &gt; 20.8 Ah   ✗
-max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
-24 h standby      0.46 A × 24 h        = 11.0 Ah   + 30 min alarm  ✓</pre>
+                    <pre class="config-snippet">hasznos kapacitás   26 Ah × 0,8          = 20,8 Ah
+72 h készenlét      0,46 A × 72 h        = 33,1 Ah   &gt; 20,8 Ah   ✗
+max. 72 h esetén    20,8 Ah ÷ 72 h       ≈ 0,29 A    &lt; 0,46 A    ✗
+24 h készenlét      0,46 A × 24 h        = 11,0 Ah   + 30 perc riasztás  ✓</pre>
                 </div>
             </div>
         </section>
@@ -626,12 +632,12 @@ max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
                     <span class="proto-key">KIÜRÍTÉS</span>
-                    <span class="proto-val">DIN 33404-3 sweep (1200 → 500 Hz @ 1 Hz) ellenőrizve 5-ös hangerőn.<br>FMC-420RW kézi jelzésadók és optikai villogók teljesen működőképesek.</span>
+                    <span class="proto-val">DIN 33404-3 sweep (1200 → 500 Hz @ 1 Hz) ellenőrizve 5-ös hangerőn.<br>FMC-420RW kézi jelzésadók és fényjelzők hibátlanul működnek.</span>
                 </div>
                 <div class="proto-row">
                     <span class="text-green">[✓]</span>
                     <span class="proto-key">INTEGRÁCIÓ</span>
-                    <span class="proto-val">RML 0008 A relélogika aktív: fail-safe ajtónyitás,<br>tűzeseti lekapcsolás (230/400 V) és leválasztott NC GSM átjelzés.</span>
+                    <span class="proto-val">RML 0008 A relélogika aktív: fail-safe ajtónyitás,<br>munkaáramú kioldás (230/400 V lekapcsolás) és leválasztott NC GSM átjelzés.</span>
                 </div>
             </div>
         </section>
@@ -639,7 +645,7 @@ max. at 72 h      20.8 Ah ÷ 72 h       ≈ 0.29 A    &lt; 0.46 A    ✗
     </main>
 
     <footer class="footer">
-        <div class="footer-copy">© 2026 Gabriel Madový. Minden jog fenntartva.</div>
+        <div class="footer-copy">© 2026 Madový Gábor. Minden jog fenntartva.</div>
         <div class="footer-links">
             <a class="footer-link" href="https://github.com/madovygabor" target="_blank">GITHUB</a>
             <a class="footer-link" href="https://www.linkedin.com/in/gabriel-madovy/" target="_blank">LINKEDIN</a>
