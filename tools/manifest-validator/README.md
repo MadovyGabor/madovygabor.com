@@ -79,3 +79,45 @@ Info (never fails):
 
 Rules live in `src/validate.ts` as small functions that return issues; the module has
 no I/O. Add a test in `test/validate.test.ts`, run `npm run build && npm test`.
+
+## How to run
+
+Prerequisites: Node 22 or newer (see `engines` in `package.json`) and npm. Run everything from `tools/manifest-validator`.
+
+```bash
+npm ci               # install dev dependencies (needs a package-lock.json, see Known limitations)
+npm run build        # compile src/ and test/ to dist/ with tsc
+npm test             # run the compiled tests: node --test "dist/test/*.test.js"
+npm run validate     # node dist/src/cli.js, validates the default manifest
+```
+
+`npm test` and `npm run validate` run the compiled files, so run `npm run build` first.
+
+- Path argument: at most one path to a manifest file; a relative path is resolved from the current directory. Without it, `subdomains/photography/galleryData.json` in this repository is used.
+- `--check-files`: also checks that every `src` exists below `pictures/portfolio` next to the manifest. A missing file is an error; an image on disk that is not in the manifest is only an info line.
+- `--strict`: warnings also make the command fail.
+- `-h`, `--help`: prints the usage text and exits with 0.
+
+Flags can be passed through npm after `--`, for example `npm run validate -- --check-files --strict`.
+
+## Exit codes
+
+- `0`: no errors. Warnings and info lines may still be printed. `--help` also exits with 0.
+- `1`: at least one error, or at least one warning when `--strict` is used.
+- `2`: the check could not run: unknown option, more than one path, file not readable, invalid JSON, or `pictures/portfolio` cannot be scanned with `--check-files`.
+
+Info lines never change the exit code.
+
+## What it does NOT check
+
+- It validates the manifest file, not the rendered page.
+- It does not open or inspect image contents, and does not check that images load in a browser.
+- It is not a security scanner.
+- It does not judge alt text quality; it only checks that `alt` is present and not empty.
+- It does not check the Cloudflare deployment.
+
+## Known limitations
+
+- No `package-lock.json` is committed yet. Run `npm install` once with network access and commit the lockfile before relying on CI: the workflow runs `npm ci`, which fails without a lockfile.
+- The dependency versions in `package.json` (`typescript` 7.0.2, `@types/node` 22.20.2) were not checked against the npm registry.
+- The committed `galleryData.json` contains one duplicate id (`fesztival-hangulatkepek`). It is reported as a warning (`id-global-unique`), not as an error.
