@@ -1,0 +1,19 @@
+{
+  "name": "gallery-manifest-validator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Validates the photography gallery manifest file (galleryData.json).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test \"dist/test/*.test.js\"",
+    "validate": "node dist/src/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "typescript": "7.0.2"
+  }
+}
