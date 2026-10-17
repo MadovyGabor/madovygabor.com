@@ -14,8 +14,7 @@ Checks the structure of the photography gallery manifest,
   only compares file names with the `src` values.
 - It does not change any file. It has no runtime dependencies and uses no network.
 
-The rules come from reading the generator, the loader and the committed file;
-see [PLAN.md](PLAN.md) for the evidence behind each rule.
+The rules come from reading the generator, the loader and the committed file.
 
 ## Usage
 
