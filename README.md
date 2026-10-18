@@ -69,6 +69,18 @@ A Python CLI tool that uses Pillow to:
 - Normalize filenames into clean alt text.
 - Compile everything into `galleryData.json`.
 
+### Manifest Validation (`tools/manifest-validator/`)
+
+A small TypeScript command-line tool with no runtime dependencies. It checks the `galleryData.json` file: structure, unique ids and image paths, positive integer dimensions, a positive aspect ratio, and that every image has alt text. It validates the manifest file only. It does not render the page or inspect the images themselves.
+
+```bash
+cd tools/manifest-validator
+npm ci && npm run build && npm test
+npm run validate         # checks subdomains/photography/galleryData.json
+```
+
+The workflow `.github/workflows/gallery-manifest.yml` runs the build, the tests and the validation on pull requests and on pushes to `main`. It only reports; it does not gate the Cloudflare Pages deployment. See [tools/manifest-validator/README.md](tools/manifest-validator/README.md) for flags, exit codes and rules.
+
 ### Client-Side Masonry (`galleryLoader.js`)
 
 - Vanilla JavaScript fetches `galleryData.json` asynchronously.
