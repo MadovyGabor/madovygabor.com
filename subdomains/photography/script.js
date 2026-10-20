@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function openMenu() {
             mobileNavOverlay.classList.add('active');
             hamburgerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
+            document.documentElement.classList.add('scroll-lock-nav');
         }
 
         function closeMenu() {
             mobileNavOverlay.classList.remove('active');
             hamburgerBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+            document.documentElement.classList.remove('scroll-lock-nav');
         }
 
         hamburgerBtn.addEventListener('click', openMenu);

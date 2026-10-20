@@ -1270,6 +1270,7 @@ button {
   gap: 2px;
   flex-grow: 1;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding-right: 4px;
 }
 
@@ -2257,6 +2258,7 @@ main {
 }
 
 .scroll-reveal.active {
+  will-change: auto;
   opacity: 1;
   transform: translateY(0);
 }
@@ -2396,6 +2398,7 @@ main {
   gap: 32px;
   height: calc(100vh - 64px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   /* Mobile/tablet: fixed drawer sliding in from the right */
   position: fixed;
   top: 64px;
@@ -3883,8 +3886,7 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   top: 16px;
   left: 16px;
   padding: 6px 12px;
-  background: rgba(18, 20, 20, 0.88);
-  backdrop-filter: blur(8px);
+  background: rgba(18, 20, 20, 0.92);
   border: 1px solid var(--color-neutral-800);
   border-radius: 0;
   font-family: var(--font-mono);
@@ -5593,4 +5595,10 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   .img-container img {
     opacity: 1 !important;
   }
+}
+
+/* Scroll lock while a menu, drawer or lightbox is open (set on <html> by the scripts) */
+html[class*="scroll-lock-"],
+html[class*="scroll-lock-"] body {
+  overflow: hidden;
 }
