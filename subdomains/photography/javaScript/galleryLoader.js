@@ -197,7 +197,7 @@ function openSidebarDrawer() {
     const btn = document.getElementById('sidebarToggleBtn');
     if (sidebar) sidebar.classList.add('mobile-open');
     if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
-    document.documentElement.classList.add('scroll-lock-sidebar');
+    if (window.pageScrollLock) window.pageScrollLock.lock('sidebar');
     if (btn) {
         btn.setAttribute('aria-expanded', 'true');
         btn.innerHTML = ICONS.close;
@@ -213,7 +213,7 @@ function closeSidebarDrawer() {
         overlay.classList.remove('active');
         setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 300);
     }
-    document.documentElement.classList.remove('scroll-lock-sidebar');
+    if (window.pageScrollLock) window.pageScrollLock.unlock('sidebar');
     if (btn) {
         btn.setAttribute('aria-expanded', 'false');
         btn.innerHTML = ICONS.toc;
@@ -282,7 +282,7 @@ function initFilterButtons(data) {
         const mobileNav = document.getElementById('mobileNavOverlay');
         if (mobileNav && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');
-            document.documentElement.classList.remove('scroll-lock-nav');
+            if (window.pageScrollLock) window.pageScrollLock.unlock('nav');
         }
 
         // Re-init gallery and sidebar
@@ -709,7 +709,7 @@ window.openFullscreen = function (src, altText) {
         
         function closeLightbox() {
             lightbox.style.opacity = '0';
-            document.documentElement.classList.remove('scroll-lock-lightbox');
+            if (window.pageScrollLock) window.pageScrollLock.unlock('lightbox');
             setTimeout(() => {
                 lightbox.style.display = 'none';
             }, 300);
@@ -744,6 +744,6 @@ window.openFullscreen = function (src, altText) {
     lightboxImg.src = src;
     lightboxImg.alt = altText || 'Fullscreen view';
     lightbox.style.display = 'flex';
-    document.documentElement.classList.add('scroll-lock-lightbox');
+    if (window.pageScrollLock) window.pageScrollLock.lock('lightbox');
     setTimeout(() => lightbox.style.opacity = '1', 10);
 };
