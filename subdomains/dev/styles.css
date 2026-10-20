@@ -578,6 +578,7 @@ a {
     height: 100dvh;
     /* Accounts for mobile browser UI */
     overflow-y: auto;
+    overscroll-behavior: contain;
     background-color: var(--color-surface);
     border-left: 1px solid var(--color-border);
     display: flex;
@@ -2177,6 +2178,7 @@ a {
 }
 
 .scroll-reveal.active {
+    will-change: auto;
     opacity: 1;
     transform: translateY(0);
 }
@@ -3522,3 +3524,9 @@ html.lightbox-open { overflow: hidden; }
     .photo-expand { opacity: 1; width: 32px; height: 32px; top: 8px; right: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .lightbox { transition: none; } }
+
+/* Scroll lock while a menu, drawer or lightbox is open (set on <html> by the scripts) */
+html[class*="scroll-lock-"],
+html[class*="scroll-lock-"] body {
+    overflow: hidden;
+}

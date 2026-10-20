@@ -1,3 +1,53 @@
+// ─── Page scroll lock ─────────────────────────────────────────
+// iOS Safari ignores overflow:hidden on html/body, so the page is pinned with
+// position:fixed and the scroll position is restored on unlock (no jump).
+window.pageScrollLock = window.pageScrollLock || (function () {
+    const reasons = new Set();
+    const root = document.documentElement;
+    let savedY = 0;
+
+    function apply() {
+        const b = document.body;
+        b.style.position = 'fixed';
+        b.style.top = (-savedY) + 'px';
+        b.style.left = '0';
+        b.style.right = '0';
+        b.style.width = '100%';
+    }
+
+    function release() {
+        const b = document.body;
+        b.style.position = '';
+        b.style.top = '';
+        b.style.left = '';
+        b.style.right = '';
+        b.style.width = '';
+        // html has scroll-behavior:smooth; restore instantly so the page does not animate back
+        const prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, savedY);
+        root.style.scrollBehavior = prev;
+    }
+
+    return {
+        lock(reason) {
+            if (reasons.has(reason)) return;
+            if (reasons.size === 0) {
+                savedY = window.pageYOffset || root.scrollTop || 0;
+                apply();
+            }
+            reasons.add(reason);
+            root.classList.add('scroll-lock-' + reason);
+        },
+        unlock(reason) {
+            if (!reasons.has(reason)) return;
+            reasons.delete(reason);
+            root.classList.remove('scroll-lock-' + reason);
+            if (reasons.size === 0) release();
+        }
+    };
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // ─── Mobile Menu Logic ────────────────────────────────────────
     const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -8,13 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function openMenu() {
             mobileNavOverlay.classList.add('active');
             hamburgerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
+            window.pageScrollLock.lock('nav');
         }
 
         function closeMenu() {
             mobileNavOverlay.classList.remove('active');
             hamburgerBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+            window.pageScrollLock.unlock('nav');
         }
 
         hamburgerBtn.addEventListener('click', openMenu);

@@ -197,7 +197,7 @@ function openSidebarDrawer() {
     const btn = document.getElementById('sidebarToggleBtn');
     if (sidebar) sidebar.classList.add('mobile-open');
     if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
-    document.body.style.overflow = 'hidden';
+    if (window.pageScrollLock) window.pageScrollLock.lock('sidebar');
     if (btn) {
         btn.setAttribute('aria-expanded', 'true');
         btn.innerHTML = ICONS.close;
@@ -213,10 +213,7 @@ function closeSidebarDrawer() {
         overlay.classList.remove('active');
         setTimeout(() => { if (!overlay.classList.contains('active')) overlay.style.display = 'none'; }, 300);
     }
-    const mobileMenu = document.getElementById('mobileNavOverlay');
-    if (!mobileMenu || !mobileMenu.classList.contains('active')) {
-        document.body.style.overflow = '';
-    }
+    if (window.pageScrollLock) window.pageScrollLock.unlock('sidebar');
     if (btn) {
         btn.setAttribute('aria-expanded', 'false');
         btn.innerHTML = ICONS.toc;
@@ -285,7 +282,7 @@ function initFilterButtons(data) {
         const mobileNav = document.getElementById('mobileNavOverlay');
         if (mobileNav && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
+            if (window.pageScrollLock) window.pageScrollLock.unlock('nav');
         }
 
         // Re-init gallery and sidebar
@@ -591,6 +588,31 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
 let isScrollListenerAttached = false;
 let lastActiveId = null;
 
+let scrollSpyTicking = false;
+
+function onScrollSpy() {
+    if (scrollSpyTicking) return;
+    scrollSpyTicking = true;
+    requestAnimationFrame(() => {
+        scrollSpyTicking = false;
+        handleScrollSpy();
+    });
+}
+
+// Keep the active sidebar link in view by scrolling the sidebar itself only,
+// never the page (scrollIntoView with smooth behaviour fights the user's own scrolling).
+function keepSidebarLinkVisible(link) {
+    const container = link.closest('.sidebar-container');
+    if (!container) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop && !container.classList.contains('mobile-open')) return;
+    const c = container.getBoundingClientRect();
+    const l = link.getBoundingClientRect();
+    if (l.top < c.top || l.bottom > c.bottom) {
+        container.scrollTop += (l.top - c.top) - (c.height / 2);
+    }
+}
+
 function handleScrollSpy() {
     const headers = Array.from(document.querySelectorAll('.group-header'));
     const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link, .sidebar-sublink'));
@@ -625,11 +647,9 @@ function handleScrollSpy() {
         sidebarLinks.forEach(link => {
             const href = link.getAttribute('href');
             if (href === `#${activeId}`) {
-                link.classList.add('active');
-                if (activeLinkChanged) {
-                    link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            } else {
+                if (!link.classList.contains('active')) link.classList.add('active');
+                if (activeLinkChanged) keepSidebarLinkVisible(link);
+            } else if (link.classList.contains('active')) {
                 link.classList.remove('active');
             }
         });
@@ -638,7 +658,7 @@ function handleScrollSpy() {
 
 function initScrollSpy() {
     if (!isScrollListenerAttached) {
-        window.addEventListener('scroll', handleScrollSpy);
+        window.addEventListener('scroll', onScrollSpy, { passive: true });
         isScrollListenerAttached = true;
     }
     handleScrollSpy();
@@ -689,7 +709,7 @@ window.openFullscreen = function (src, altText) {
         
         function closeLightbox() {
             lightbox.style.opacity = '0';
-            document.body.style.overflow = '';
+            if (window.pageScrollLock) window.pageScrollLock.unlock('lightbox');
             setTimeout(() => {
                 lightbox.style.display = 'none';
             }, 300);
@@ -724,6 +744,6 @@ window.openFullscreen = function (src, altText) {
     lightboxImg.src = src;
     lightboxImg.alt = altText || 'Fullscreen view';
     lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    if (window.pageScrollLock) window.pageScrollLock.lock('lightbox');
     setTimeout(() => lightbox.style.opacity = '1', 10);
 };
