@@ -51,16 +51,39 @@ window.pageScrollLock = window.pageScrollLock || (function () {
 
 // ─── Back / forward navigation ───────────────────────────────
 // A page restored from the back/forward cache must not come back with the menu open.
+// Transitions are switched off while closing, so the cached page shows a closed menu
+// straight away instead of a menu that visibly slides shut.
 function resetMobileMenuState() {
     const overlay = document.getElementById('mobileNavOverlay');
     const burger = document.getElementById('hamburgerBtn');
+    const animated = [
+        overlay,
+        overlay && overlay.querySelector('.mobile-nav-drawer'),
+        document.querySelector('.sidebar-container'),
+        document.getElementById('sidebarOverlay')
+    ].filter(Boolean);
+    animated.forEach(el => { el.style.transition = 'none'; });
     if (overlay) overlay.classList.remove('active');
     if (burger) burger.setAttribute('aria-expanded', 'false');
     if (typeof closeSidebarDrawer === 'function') closeSidebarDrawer();
+    const sbOverlay = document.getElementById('sidebarOverlay');
+    if (sbOverlay) { sbOverlay.classList.remove('active'); sbOverlay.style.display = 'none'; }
     ['nav', 'sidebar', 'lightbox'].forEach(r => window.pageScrollLock.unlock(r));
 }
+function restoreMenuTransitions() {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        ['mobileNavOverlay', 'sidebarOverlay'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.transition = '';
+        });
+        document.querySelectorAll('.mobile-nav-drawer, .sidebar-container').forEach(el => { el.style.transition = ''; });
+    }));
+}
 window.addEventListener('pagehide', resetMobileMenuState);
-window.addEventListener('pageshow', e => { if (e.persisted) resetMobileMenuState(); });
+window.addEventListener('pageshow', e => {
+    if (e.persisted) resetMobileMenuState();
+    restoreMenuTransitions();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
