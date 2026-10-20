@@ -783,7 +783,8 @@ button {
 .mobile-nav-accordion-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.25s ease-out;
+  contain: layout;
   margin-left: 18px;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 10px;
@@ -1185,8 +1186,6 @@ button {
   inset: 0;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
   will-change: opacity, visibility;
@@ -1290,7 +1289,7 @@ button {
   color: var(--color-neutral-400);
   text-decoration: none;
   background-color: transparent;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .mobile-nav-link:hover {
@@ -1318,7 +1317,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 10px 16px;
+  padding: 2px 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   background-color: rgba(255, 255, 255, 0.02);
@@ -1344,8 +1343,8 @@ button {
   text-decoration: none;
   letter-spacing: 0.08em;
   padding: 2px 4px;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 40px;
+  min-height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1397,8 +1396,6 @@ button {
 /* Optimize/Tame backdrop-filter and promote solid colors on mobile viewports */
 @media (max-width: 768px) {
   .mobile-nav-overlay {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     background-color: rgba(18, 20, 20, 0.92);
   }
 
@@ -2850,8 +2847,6 @@ main {
   inset: 0;
   z-index: 49;
   background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   will-change: opacity;
   transition: opacity 0.3s ease;
@@ -2864,8 +2859,6 @@ main {
 
 @media (max-width: 768px) {
   .sidebar-overlay {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     background-color: rgba(18, 20, 20, 0.92);
   }
 }

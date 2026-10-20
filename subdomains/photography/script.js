@@ -48,6 +48,20 @@ window.pageScrollLock = window.pageScrollLock || (function () {
     };
 })();
 
+
+// ─── Back / forward navigation ───────────────────────────────
+// A page restored from the back/forward cache must not come back with the menu open.
+function resetMobileMenuState() {
+    const overlay = document.getElementById('mobileNavOverlay');
+    const burger = document.getElementById('hamburgerBtn');
+    if (overlay) overlay.classList.remove('active');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+    if (typeof closeSidebarDrawer === 'function') closeSidebarDrawer();
+    ['nav', 'sidebar', 'lightbox'].forEach(r => window.pageScrollLock.unlock(r));
+}
+window.addEventListener('pagehide', resetMobileMenuState);
+window.addEventListener('pageshow', e => { if (e.persisted) resetMobileMenuState(); });
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
     const hamburgerBtn = document.getElementById('hamburgerBtn');
