@@ -78,7 +78,8 @@ const uiTranslations = {
         prevImage: 'Előző kép',
         nextImage: 'Következő kép',
         loadError: 'A galéria betöltése nem sikerült. Ellenőrizd az internetkapcsolatot, majd próbáld újra.',
-        retry: 'Újrapróbálás'
+        retry: 'Újrapróbálás',
+        subMenu: 'Almenü'
     },
     en: {
         all: 'ALL',
@@ -88,7 +89,8 @@ const uiTranslations = {
         prevImage: 'Previous image',
         nextImage: 'Next image',
         loadError: 'The gallery could not be loaded. Check your connection and try again.',
-        retry: 'Try again'
+        retry: 'Try again',
+        subMenu: 'Sub-menu'
     },
     sk: {
         all: 'VŠETKO',
@@ -98,7 +100,8 @@ const uiTranslations = {
         prevImage: 'Predchádzajúci obrázok',
         nextImage: 'Nasledujúci obrázok',
         loadError: 'Galériu sa nepodarilo načítať. Skontrolujte pripojenie a skúste to znova.',
-        retry: 'Skúsiť znova'
+        retry: 'Skúsiť znova',
+        subMenu: 'Podmenu'
     }
 };
 
@@ -339,6 +342,7 @@ function openSidebarDrawer() {
     if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
     if (window.pageScrollLock) window.pageScrollLock.lock('sidebar');
     handleScrollSpy();
+    syncSidebarGroups(lastActiveId);
     requestAnimationFrame(() => {
         const current = document.querySelector('.sidebar-sublink.active, .sidebar-link.active');
         if (current) keepSidebarLinkVisible(current);
@@ -433,6 +437,103 @@ function initFilterButtons(data) {
     });
 }
 
+// Opens or closes the list of sets/bands under an event in the sidebar.
+function setSidebarGroupExpanded(group, open) {
+    const ul = group.querySelector('.sidebar-sublist');
+    if (!ul) return;
+    const toggle = group.querySelector('.sidebar-toggle');
+    group.classList.toggle('is-open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+        ul.style.maxHeight = ul.scrollHeight + 'px';
+        // once opened, let the content decide its height again (fonts, wrapping)
+        const release = () => { if (group.classList.contains('is-open')) ul.style.maxHeight = 'none'; };
+        ul.addEventListener('transitionend', release, { once: true });
+        setTimeout(release, 400);
+    } else {
+        // from "none" a transition needs a concrete start value
+        ul.style.maxHeight = ul.scrollHeight + 'px';
+        requestAnimationFrame(() => requestAnimationFrame(() => { ul.style.maxHeight = '0px'; }));
+        setTimeout(() => { if (!group.classList.contains('is-open')) ul.style.maxHeight = '0px'; }, 50);
+    }
+}
+
+// Keeps only the event we are looking at open; every other event with sub-items is folded.
+function syncSidebarGroups(activeId) {
+    const nav = document.getElementById('dynamicSidebarNav');
+    if (!nav) return;
+    let activeGroup = null;
+    if (activeId) {
+        const link = nav.querySelector(`a[href="#${activeId}"]`);
+        activeGroup = link ? link.closest('.sidebar-group') : null;
+    }
+    nav.querySelectorAll('.sidebar-group').forEach(group => {
+        if (group.querySelector('.sidebar-sublist')) {
+            setSidebarGroupExpanded(group, group === activeGroup);
+        }
+    });
+}
+
+// One sidebar entry for an event (Level 2). Events with sets/bands (Level 3) get a fold-out list.
+function appendSidebarEvent(list, category, sub) {
+    const group = document.createElement('div');
+    group.className = 'sidebar-group';
+
+    const row = document.createElement('div');
+    row.className = 'sidebar-row';
+
+    const link = document.createElement('a');
+    link.href = `#${sub.id}`;
+    link.className = 'sidebar-link';
+    link.innerHTML = `
+        <div class="link-inner">
+            ${getCategoryIconSvg(category.id)}
+            <span>${t(sub.title)}</span>
+        </div>
+        <span class="link-count">${countImages(sub)}</span>
+    `;
+    link.addEventListener('click', () => {
+        if (sub.subsections) setSidebarGroupExpanded(group, true);
+        if (window.innerWidth < 1024) closeSidebarDrawer();
+    });
+    row.appendChild(link);
+
+    if (sub.subsections && sub.subsections.length) {
+        const sublist = document.createElement('ul');
+        sublist.className = 'sidebar-sublist';
+        sublist.id = `sidebar-sub-${sub.id}`;
+
+        sub.subsections.forEach(sub3 => {
+            const li = document.createElement('li');
+            const sublink = document.createElement('a');
+            sublink.href = `#${sub3.id}`;
+            sublink.className = 'sidebar-sublink';
+            sublink.innerHTML = `${t(sub3.title)} <span class="sidebar-sub-count">(${countImages(sub3)})</span>`;
+            sublink.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
+            li.appendChild(sublink);
+            sublist.appendChild(li);
+        });
+
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'sidebar-toggle';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-controls', sublist.id);
+        toggle.setAttribute('aria-label', `${tUI('subMenu')}: ${t(sub.title)}`);
+        toggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
+        toggle.addEventListener('click', () => {
+            setSidebarGroupExpanded(group, !group.classList.contains('is-open'));
+        });
+        row.appendChild(toggle);
+
+        group.appendChild(row);
+        group.appendChild(sublist);
+    } else {
+        group.appendChild(row);
+    }
+    list.appendChild(group);
+}
+
 function renderSidebar(data, activeCategoryId) {
     const list = document.getElementById('sidebarCategoryList');
     if (!list) return;
@@ -457,83 +558,13 @@ function renderSidebar(data, activeCategoryId) {
             list.appendChild(catTitle);
 
             if (category.subsections) {
-                category.subsections.forEach(sub => {
-                    const link = document.createElement('a');
-                    link.href = `#${sub.id}`;
-                    link.className = 'sidebar-link';
-
-                    const imgCount = countImages(sub);
-                    const iconSvg = getCategoryIconSvg(category.id);
-
-                    link.innerHTML = `
-                        <div class="link-inner">
-                            ${iconSvg}
-                            <span>${t(sub.title)}</span>
-                        </div>
-                        <span class="link-count">${imgCount}</span>
-                    `;
-                    link.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
-                    list.appendChild(link);
-
-                    // Level 3 subsections
-                    if (sub.subsections) {
-                        const sublist = document.createElement('ul');
-                        sublist.className = 'sidebar-sublist';
-
-                        sub.subsections.forEach(sub3 => {
-                            const li = document.createElement('li');
-                            const sublink = document.createElement('a');
-                            sublink.href = `#${sub3.id}`;
-                            sublink.className = 'sidebar-sublink';
-                            sublink.innerHTML = `${t(sub3.title)} <span style="opacity: 0.7; font-size: 9px; margin-left: 4px;">(${countImages(sub3)})</span>`;
-                            sublink.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
-                            li.appendChild(sublink);
-                            sublist.appendChild(li);
-                        });
-                        list.appendChild(sublist);
-                    }
-                });
+                category.subsections.forEach(sub => appendSidebarEvent(list, category, sub));
             }
         });
     } else {
         const category = data.find(cat => cat.id === activeCategoryId);
         if (category && category.subsections) {
-            category.subsections.forEach(sub => {
-                const link = document.createElement('a');
-                link.href = `#${sub.id}`;
-                link.className = 'sidebar-link';
-
-                const imgCount = countImages(sub);
-                const iconSvg = getCategoryIconSvg(category.id);
-
-                link.innerHTML = `
-                    <div class="link-inner">
-                        ${iconSvg}
-                        <span>${t(sub.title)}</span>
-                    </div>
-                    <span class="link-count">${imgCount}</span>
-                `;
-                link.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
-                list.appendChild(link);
-
-                // Level 3 subsections
-                if (sub.subsections) {
-                    const sublist = document.createElement('ul');
-                    sublist.className = 'sidebar-sublist';
-
-                    sub.subsections.forEach(sub3 => {
-                        const li = document.createElement('li');
-                        const sublink = document.createElement('a');
-                        sublink.href = `#${sub3.id}`;
-                        sublink.className = 'sidebar-sublink';
-                        sublink.innerHTML = `${t(sub3.title)} <span style="opacity: 0.7; font-size: 9px; margin-left: 4px;">(${countImages(sub3)})</span>`;
-                        sublink.addEventListener('click', () => { if (window.innerWidth < 1024) closeSidebarDrawer(); });
-                        li.appendChild(sublink);
-                        sublist.appendChild(li);
-                    });
-                    list.appendChild(sublist);
-                }
-            });
+            category.subsections.forEach(sub => appendSidebarEvent(list, category, sub));
         }
     }
 
@@ -834,6 +865,7 @@ function handleScrollSpy() {
     if (pageY < 100) {
         sidebarLinks.forEach(link => link.classList.remove('active'));
         if (allLink) allLink.classList.add('active');
+        if (lastActiveId !== null) syncSidebarGroups(null);
         lastActiveId = null;
         return;
     }
@@ -853,12 +885,13 @@ function handleScrollSpy() {
 
         const activeLinkChanged = (activeId !== lastActiveId);
         lastActiveId = activeId;
+        if (activeLinkChanged) syncSidebarGroups(activeId);
 
         sidebarLinks.forEach(link => {
             const href = link.getAttribute('href');
             if (href === `#${activeId}`) {
                 if (!link.classList.contains('active')) link.classList.add('active');
-                if (activeLinkChanged) keepSidebarLinkVisible(link);
+                if (activeLinkChanged) setTimeout(() => keepSidebarLinkVisible(link), 280); // after the fold-out finished
             } else if (link.classList.contains('active')) {
                 link.classList.remove('active');
             }
