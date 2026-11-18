@@ -74,19 +74,31 @@ const uiTranslations = {
         all: 'MINDEN',
         imagePreview: 'Kép előnézet',
         closePreview: 'Előnézet bezárása',
-        fullscreenBtn: 'Megnyitás teljes méretben'
+        fullscreenBtn: 'Megnyitás teljes méretben',
+        prevImage: 'Előző kép',
+        nextImage: 'Következő kép',
+        loadError: 'A galéria betöltése nem sikerült. Ellenőrizd az internetkapcsolatot, majd próbáld újra.',
+        retry: 'Újrapróbálás'
     },
     en: {
         all: 'ALL',
         imagePreview: 'Image preview',
         closePreview: 'Close preview',
-        fullscreenBtn: 'Fullscreen view'
+        fullscreenBtn: 'Fullscreen view',
+        prevImage: 'Previous image',
+        nextImage: 'Next image',
+        loadError: 'The gallery could not be loaded. Check your connection and try again.',
+        retry: 'Try again'
     },
     sk: {
         all: 'VŠETKO',
         imagePreview: 'Náhľad obrázka',
         closePreview: 'Zatvoriť náhľad',
-        fullscreenBtn: 'Otvoriť na celú obrazovku'
+        fullscreenBtn: 'Otvoriť na celú obrazovku',
+        prevImage: 'Predchádzajúci obrázok',
+        nextImage: 'Nasledujúci obrázok',
+        loadError: 'Galériu sa nepodarilo načítať. Skontrolujte pripojenie a skúste to znova.',
+        retry: 'Skúsiť znova'
     }
 };
 
@@ -104,69 +116,190 @@ function tUI(key) {
     return pack[key] || uiTranslations.hu[key] || key;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// ---------------------------------------------------------------------------
+// State & URL helpers
+// ---------------------------------------------------------------------------
+let currentCategory = 'all';
+let galleryUiWired = false;
+
+// Guarantees unique section ids (first occurrence keeps its id; duplicates get a
+// parent-prefix, then a numeric suffix). Idempotent: ids that are already unique are untouched.
+function assignUniqueIds(data) {
+    const seen = new Set();
+    const unique = (candidate, parentId) => {
+        if (!seen.has(candidate)) return candidate;
+        if (parentId) {
+            const prefixed = `${parentId}-${candidate}`;
+            if (!seen.has(prefixed)) return prefixed;
+            candidate = prefixed;
+        }
+        let n = 2;
+        while (seen.has(`${candidate}-${n}`)) n++;
+        return `${candidate}-${n}`;
+    };
+    const walk = (nodes, parentId) => {
+        (nodes || []).forEach(node => {
+            node.id = unique(node.id, parentId);
+            seen.add(node.id);
+            walk(node.subsections, node.id);
+        });
+    };
+    walk(data, '');
+}
+
+function sectionExists(nodes, id) {
+    return (nodes || []).some(n => n.id === id || sectionExists(n.subsections, id));
+}
+
+function getCategoryFromUrl(data) {
+    try {
+        const c = new URLSearchParams(window.location.search).get('category');
+        if (c && data.some(cat => cat.id === c)) return c;
+    } catch (e) { /* ignore malformed URLs */ }
+    return 'all';
+}
+
+function syncCategoryToUrl(categoryId) {
+    try {
+        const url = new URL(window.location.href);
+        if (categoryId === 'all') url.searchParams.delete('category');
+        else url.searchParams.set('category', categoryId);
+        history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+    } catch (e) { /* history API unavailable */ }
+}
+
+function updateFilterButtons(categoryId) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        const on = btn.dataset.category === categoryId;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+}
+
+function setCategory(categoryId, opts = {}) {
+    const data = window.galleryData;
+    if (!data) return;
+    if (categoryId !== 'all' && !data.some(c => c.id === categoryId)) categoryId = 'all';
+    currentCategory = categoryId;
+    updateFilterButtons(categoryId);
+    initGallery(data, categoryId);
+    renderSidebar(data, categoryId);
+    if (opts.updateUrl !== false) syncCategoryToUrl(categoryId);
+}
+
+// Smooth-scroll to the album named in the URL hash. If the target is hidden by the
+// active category filter, reset the filter to "all" first.
+function scrollToAnchorHash() {
+    if (!window.location.hash) return;
+    let hashId;
+    try {
+        hashId = decodeURIComponent(window.location.hash.substring(1));
+    } catch (e) {
+        return;
+    }
+    let targetEl = document.getElementById(hashId);
+    if (!targetEl && currentCategory !== 'all' && window.galleryData && sectionExists(window.galleryData, hashId)) {
+        setCategory('all');
+        targetEl = document.getElementById(hashId);
+    }
+    if (targetEl) {
+        setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+    }
+}
+
+function showGalleryError() {
+    const container = document.getElementById('dynamicGalleryContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    const box = document.createElement('div');
+    box.className = 'gallery-error';
+    box.setAttribute('role', 'alert');
+
+    const msg = document.createElement('p');
+    msg.textContent = tUI('loadError');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'gallery-error-retry';
+    btn.textContent = tUI('retry');
+    btn.addEventListener('click', () => {
+        btn.disabled = true;
+        loadGallery();
+    });
+
+    box.appendChild(msg);
+    box.appendChild(btn);
+    container.appendChild(box);
+}
+
+function loadGallery() {
     const dataPath = window.galleryDataPath || '../galleryData.json';
-    fetch(dataPath)
-        .then(response => response.json())
-        .then(data => {
-            window.galleryData = data; // store globally for filtering
-            initFilterButtons(data);
-            renderSidebar(data, 'all');
-            initGallery(data, 'all');
-
-            // Handle smooth scrolling to target album if anchor hash exists (#amts-25, #felsoszeli-ballagas-24, etc.)
-            function scrollToAnchorHash() {
-                if (window.location.hash) {
-                    const hashId = decodeURIComponent(window.location.hash.substring(1));
-                    const targetEl = document.getElementById(hashId);
-                    if (targetEl) {
-                        setTimeout(() => {
-                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 120);
-                    }
-                }
-            }
-            scrollToAnchorHash();
-            window.addEventListener('hashchange', scrollToAnchorHash);
-
-
-            // Set up top-level "All" button scroll-to-top behaviour
-            const allLink = document.querySelector('.sidebar-link[data-category="all"]');
-            if (allLink) {
-                allLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    if (window.innerWidth < 1024) closeSidebarDrawer();
-
-                    // Also clear other active classes
-                    document.querySelectorAll('.sidebar-link, .sidebar-sublink').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    allLink.classList.add('active');
-                });
-            }
-
-            // Wire floating TOC button and overlay (mobile/tablet)
-            const sidebarToggleBtnEl = document.getElementById('sidebarToggleBtn');
-            const sidebarOverlayEl = document.getElementById('sidebarOverlay');
-            if (sidebarToggleBtnEl) {
-                sidebarToggleBtnEl.setAttribute('aria-expanded', 'false');
-                sidebarToggleBtnEl.setAttribute('aria-controls', 'dynamicSidebarNav');
-                sidebarToggleBtnEl.addEventListener('click', () => {
-                    const sidebar = document.querySelector('.sidebar-container');
-                    if (sidebar && sidebar.classList.contains('mobile-open')) {
-                        closeSidebarDrawer();
-                    } else {
-                        openSidebarDrawer();
-                    }
-                });
-            }
-            if (sidebarOverlayEl) {
-                sidebarOverlayEl.addEventListener('click', closeSidebarDrawer);
-            }
-
+    return fetch(dataPath)
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
         })
-        .catch(error => console.error('Error loading gallery data:', error));
+        .then(data => {
+            if (!Array.isArray(data)) throw new Error('Invalid gallery data');
+            assignUniqueIds(data);
+            window.galleryData = data; // store globally for filtering
+            currentCategory = getCategoryFromUrl(data);
+            initFilterButtons(data);
+            renderSidebar(data, currentCategory);
+            initGallery(data, currentCategory);
+            scrollToAnchorHash();
+        })
+        .catch(error => {
+            console.error('Error loading gallery data:', error);
+            showGalleryError();
+        });
+}
+
+function wireGalleryUi() {
+    if (galleryUiWired) return;
+    galleryUiWired = true;
+
+    window.addEventListener('hashchange', scrollToAnchorHash);
+
+    // Top-level "All" link: scroll to top
+    const allLink = document.querySelector('.sidebar-link[data-category="all"]');
+    if (allLink) {
+        allLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.innerWidth < 1024) closeSidebarDrawer();
+
+            document.querySelectorAll('.sidebar-link, .sidebar-sublink').forEach(link => {
+                link.classList.remove('active');
+            });
+            allLink.classList.add('active');
+        });
+    }
+
+    // Floating TOC button and overlay (mobile/tablet)
+    const sidebarToggleBtnEl = document.getElementById('sidebarToggleBtn');
+    const sidebarOverlayEl = document.getElementById('sidebarOverlay');
+    if (sidebarToggleBtnEl) {
+        sidebarToggleBtnEl.setAttribute('aria-expanded', 'false');
+        sidebarToggleBtnEl.setAttribute('aria-controls', 'dynamicSidebarNav');
+        sidebarToggleBtnEl.addEventListener('click', () => {
+            const sidebar = document.querySelector('.sidebar-container');
+            if (sidebar && sidebar.classList.contains('mobile-open')) {
+                closeSidebarDrawer();
+            } else {
+                openSidebarDrawer();
+            }
+        });
+    }
+    if (sidebarOverlayEl) {
+        sidebarOverlayEl.addEventListener('click', closeSidebarDrawer);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    wireGalleryUi();
+    loadGallery();
 });
 
 // Recursive image counter for categories/sections/subsections
@@ -252,31 +385,27 @@ function initFilterButtons(data) {
 
     filterContainer.innerHTML = '';
 
-    // Create 'All' filter button for the top bar
-    const allBtn = document.createElement('button');
-    allBtn.className = 'filter-btn active';
-    allBtn.textContent = tUI('all');
-    allBtn.dataset.category = 'all';
-    filterContainer.appendChild(allBtn);
+    const makeBtn = (categoryId, label) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'filter-btn';
+        btn.dataset.category = categoryId;
+        btn.textContent = label;
+        btn.setAttribute('aria-pressed', 'false');
+        filterContainer.appendChild(btn);
+    };
 
-    data.forEach(category => {
-        const filterBtn = document.createElement('button');
-        filterBtn.className = 'filter-btn';
-        filterBtn.dataset.category = category.id;
-        filterBtn.textContent = t(category.title).toUpperCase();
-        filterContainer.appendChild(filterBtn);
-    });
+    makeBtn('all', tUI('all'));
+    data.forEach(category => makeBtn(category.id, t(category.title).toUpperCase()));
+    updateFilterButtons(currentCategory);
 
-    // Handle filter button click events
+    // Bind the click handler only once (loadGallery may run again after an error)
+    if (filterContainer.dataset.bound === '1') return;
+    filterContainer.dataset.bound = '1';
+
     filterContainer.addEventListener('click', (e) => {
         const btn = e.target.closest('.filter-btn');
         if (!btn) return;
-
-        const categoryId = btn.dataset.category;
-
-        // Update active class on filter buttons
-        document.querySelectorAll('.filter-btn').forEach(el => el.classList.remove('active'));
-        btn.classList.add('active');
 
         // Close mobile nav drawer if active
         const mobileNav = document.getElementById('mobileNavOverlay');
@@ -285,9 +414,7 @@ function initFilterButtons(data) {
             if (window.pageScrollLock) window.pageScrollLock.unlock('nav');
         }
 
-        // Re-init gallery and sidebar
-        initGallery(window.galleryData, categoryId);
-        renderSidebar(window.galleryData, categoryId);
+        setCategory(btn.dataset.category);
 
         // Smooth scroll to top of gallery
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -461,6 +588,34 @@ function initGallery(data, filterCategoryId) {
     initScrollSpy();
 }
 
+const GALLERY_SIZES = '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 30vw';
+
+function encodeAssetPath(path) {
+    return encodeURI(path).replace(/,/g, '%2C');
+}
+
+// Builds <source>/<img> srcset data from an image entry ({ base, widths, formats }); null if unavailable
+function buildResponsiveSources(imgData, prefix) {
+    if (!imgData || typeof imgData !== 'object' || !imgData.base || !Array.isArray(imgData.widths) || !imgData.widths.length) {
+        return null;
+    }
+    const widths = imgData.widths.slice().sort((a, b) => a - b);
+    const formats = Array.isArray(imgData.formats) && imgData.formats.length ? imgData.formats : ['webp'];
+    if (!formats.includes('webp')) return null; // webp is the universal fallback
+    const basePath = encodeAssetPath(prefix + imgData.base);
+    const makeSet = (fmt) => widths.map(w => `${basePath}-${w}.${fmt} ${w}w`).join(', ');
+
+    // AVIF <source> first; the <img> itself carries the WebP srcset as fallback
+    const sources = formats.includes('avif') ? [{ type: 'image/avif', srcset: makeSet('avif') }] : [];
+    const midWidth = widths[Math.min(1, widths.length - 1)];
+    return {
+        sources,
+        fallbackSrcset: makeSet('webp'),
+        fallbackSrc: `${basePath}-${midWidth}.webp`,
+        fullSrc: `${basePath}-${widths[widths.length - 1]}.webp`
+    };
+}
+
 function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
     if (!images || images.length === 0) return;
 
@@ -479,7 +634,7 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         columns.push(col);
     }
 
-    images.forEach((imgData) => {
+    images.forEach((imgData, imageIndex) => {
         const prefix = window.galleryPathPrefix || '';
         const rawSrc = typeof imgData === 'string' ? imgData : imgData.src;
         const src = prefix + rawSrc;
@@ -513,6 +668,10 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         const imgContainer = document.createElement('div');
         imgContainer.className = 'img-container skeleton skeleton-shimmer';
         imgContainer.style.aspectRatio = aspectRatio;
+        imgContainer.dataset.i = String(imageIndex); // original order, independent of masonry column
+        imgContainer.setAttribute('role', 'button');
+        imgContainer.setAttribute('tabindex', '0');
+        imgContainer.setAttribute('aria-label', `${tUI('fullscreenBtn')}: ${altText}`);
 
         const img = document.createElement('img');
         img.alt = altText;
@@ -530,7 +689,7 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         }
 
         img.style.aspectRatio = aspectRatio;
-        
+
         // Remove skeleton class from container once image loads/fails
         const handleImageDone = function () {
             img.classList.add('is-loaded');
@@ -540,9 +699,31 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
         };
         img.onload = handleImageDone;
         img.onerror = handleImageDone;
-        img.src = src; // Set src after onload/onerror to ensure cache hits trigger load handler
 
-        imgContainer.appendChild(img);
+        // Responsive variants (<picture> + srcset); falls back to the original file
+        // when an image has no generated `widths` yet (backwards compatible)
+        const responsive = buildResponsiveSources(imgData, prefix);
+        let fullSrc = src;
+        if (responsive) {
+            const picture = document.createElement('picture');
+            responsive.sources.forEach(srcInfo => {
+                const source = document.createElement('source');
+                source.type = srcInfo.type;
+                source.srcset = srcInfo.srcset;
+                source.sizes = GALLERY_SIZES;
+                picture.appendChild(source);
+            });
+            img.srcset = responsive.fallbackSrcset;
+            img.sizes = GALLERY_SIZES;
+            picture.appendChild(img);
+            imgContainer.appendChild(picture);
+            img.src = responsive.fallbackSrc; // set src after onload/onerror so cache hits trigger the handler
+            fullSrc = responsive.fullSrc;
+        } else {
+            img.src = src;
+            imgContainer.appendChild(img);
+        }
+        imgContainer.dataset.full = fullSrc;
 
         const overlay = document.createElement('div');
         overlay.className = 'hud-overlay';
@@ -554,16 +735,21 @@ function renderMasonryGrid(container, images, categoryLabel, sectionTitle) {
                 <div class="hud-details">
                     <span style="font-size: 14px; font-weight: bold; color: white; background: none; border: none; padding: 0; text-align: left;">${sectionTitle}</span>
                 </div>
-                <button class="hud-fullscreen" aria-label="${tUI('fullscreenBtn')}">
+                <span class="hud-fullscreen" aria-hidden="true">
                     ${ICONS.fullscreen}
-                </button>
+                </span>
             </div>
         `;
-        const fsBtn = overlay.querySelector('.hud-fullscreen');
-        if (fsBtn) {
-            fsBtn.addEventListener('click', () => window.openFullscreen(src, altText));
-        }
         imgContainer.appendChild(overlay);
+
+        // The whole tile is the click/tap/keyboard target
+        imgContainer.addEventListener('click', () => openGridLightbox(imgContainer));
+        imgContainer.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openGridLightbox(imgContainer);
+            }
+        });
 
         /**
          * Greedy column balancing:
@@ -664,6 +850,26 @@ function initScrollSpy() {
     handleScrollSpy();
 }
 
+// Remember which section is at the top of the viewport so a re-render (e.g. phone rotation) keeps position
+function captureScrollAnchor() {
+    const headers = Array.from(document.querySelectorAll('.group-header[id]'));
+    if (!headers.length) return null;
+    let chosen = headers[0];
+    for (const h of headers) {
+        if (h.getBoundingClientRect().top <= 120) chosen = h;
+        else break;
+    }
+    return { id: chosen.id, top: chosen.getBoundingClientRect().top };
+}
+
+function restoreScrollAnchor(anchor) {
+    if (!anchor) return;
+    const el = document.getElementById(anchor.id);
+    if (!el) return;
+    const delta = el.getBoundingClientRect().top - anchor.top;
+    if (delta) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
+}
+
 // Re-render gallery when column count changes on resize (debounced)
 let galleryResizeTimer = null;
 let lastGalleryColumnCount = getColumnCount();
@@ -672,78 +878,250 @@ window.addEventListener('resize', () => {
     clearTimeout(galleryResizeTimer);
     galleryResizeTimer = setTimeout(() => {
         const newCount = getColumnCount();
-        if (newCount !== lastGalleryColumnCount) {
-            lastGalleryColumnCount = newCount;
-            if (window.galleryData) {
-                const activeFilter = document.querySelector('.filter-btn.active');
-                const catId = activeFilter ? activeFilter.dataset.category : 'all';
-                initGallery(window.galleryData, catId);
-            }
-        }
+        if (newCount === lastGalleryColumnCount) return;
+        lastGalleryColumnCount = newCount;
+        if (!window.galleryData) return;
+        const anchor = captureScrollAnchor();
+        initGallery(window.galleryData, currentCategory);
+        restoreScrollAnchor(anchor);
     }, 200);
 });
 
-// Lightbox handler (global/window scoped)
-window.openFullscreen = function (src, altText) {
-    let lightbox = document.getElementById('portfolio-lightbox');
-    if (!lightbox) {
-        lightbox = document.createElement('div');
-        lightbox.id = 'portfolio-lightbox';
-        lightbox.setAttribute('role', 'dialog');
-        lightbox.setAttribute('aria-modal', 'true');
-        lightbox.setAttribute('aria-label', tUI('imagePreview'));
-        lightbox.style.cssText = `
-            position: fixed; inset: 0; background: rgba(10,10,10,0.95); z-index: 1000;
-            display: flex; align-items: center; justify-content: center; opacity: 0;
-            transition: opacity 0.3s; backdrop-filter: blur(8px);
-        `;
+// ---------------------------------------------------------------------------
+// Lightbox v2
+// ---------------------------------------------------------------------------
+const lightboxState = {
+    el: null, img: null, counter: null, closeBtn: null, prevBtn: null, nextBtn: null,
+    items: [], index: 0, opener: null, isOpen: false, historyPushed: false,
+    loadToken: 0, hideTimer: null, preload: []
+};
 
-        const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = ICONS.close;
-        closeBtn.setAttribute('aria-label', tUI('closePreview'));
-        closeBtn.style.cssText = `
-            position: absolute; top: 24px; right: 24px; background: none; border: none;
-            color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            padding: 8px;
-        `;
-        
-        function closeLightbox() {
-            lightbox.style.opacity = '0';
-            if (window.pageScrollLock) window.pageScrollLock.unlock('lightbox');
-            setTimeout(() => {
-                lightbox.style.display = 'none';
-            }, 300);
+function buildLightbox() {
+    if (lightboxState.el) return;
+    const s = lightboxState;
+
+    const el = document.createElement('div');
+    el.id = 'portfolio-lightbox';
+    el.className = 'lightbox';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-label', tUI('imagePreview'));
+    el.tabIndex = -1;
+    el.style.display = 'none';
+    el.innerHTML = `
+        <button type="button" class="lightbox-btn lightbox-close" aria-label="${tUI('closePreview')}">${ICONS.close}</button>
+        <button type="button" class="lightbox-btn lightbox-nav lightbox-prev" aria-label="${tUI('prevImage')}">&#8249;</button>
+        <button type="button" class="lightbox-btn lightbox-nav lightbox-next" aria-label="${tUI('nextImage')}">&#8250;</button>
+        <div class="lightbox-stage"><img class="lightbox-img" id="lightbox-img" alt=""></div>
+        <div class="lightbox-counter" aria-live="polite"></div>
+    `;
+    document.body.appendChild(el);
+
+    s.el = el;
+    s.img = el.querySelector('.lightbox-img');
+    s.counter = el.querySelector('.lightbox-counter');
+    s.closeBtn = el.querySelector('.lightbox-close');
+    s.prevBtn = el.querySelector('.lightbox-prev');
+    s.nextBtn = el.querySelector('.lightbox-next');
+    const stage = el.querySelector('.lightbox-stage');
+
+    s.closeBtn.addEventListener('click', () => closeLightbox());
+    s.prevBtn.addEventListener('click', () => showLightboxImage(s.index - 1));
+    s.nextBtn.addEventListener('click', () => showLightboxImage(s.index + 1));
+
+    // Dismiss on backdrop click
+    el.addEventListener('click', (e) => {
+        if (e.target === el || e.target === stage) closeLightbox();
+    });
+
+    // Keyboard: arrows, Escape, focus trap
+    document.addEventListener('keydown', (e) => {
+        if (!s.isOpen) return;
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft' && s.items.length > 1) {
+            e.preventDefault();
+            showLightboxImage(s.index - 1);
+        } else if (e.key === 'ArrowRight' && s.items.length > 1) {
+            e.preventDefault();
+            showLightboxImage(s.index + 1);
+        } else if (e.key === 'Tab') {
+            const focusables = [s.closeBtn, s.prevBtn, s.nextBtn].filter(b => !b.hidden && b.offsetParent !== null);
+            if (!focusables.length) {
+                e.preventDefault();
+                return;
+            }
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement;
+            if (e.shiftKey && (active === first || active === s.el)) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && (active === last || !s.el.contains(active))) {
+                e.preventDefault();
+                first.focus();
+            }
         }
+    });
 
-        closeBtn.onclick = closeLightbox;
+    // Touch: horizontal swipe = prev/next, pull down = close
+    let g = null;
+    const resetGesture = () => {
+        g = null;
+        s.img.style.transition = '';
+        s.img.style.transform = '';
+        s.el.style.removeProperty('--lb-alpha');
+    };
+    el.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1 || e.target.closest('.lightbox-btn')) {
+            g = null;
+            return;
+        }
+        const tch = e.touches[0];
+        g = { x: tch.clientX, y: tch.clientY, dx: 0, dy: 0, axis: null };
+        s.img.style.transition = 'none';
+    }, { passive: true });
+    el.addEventListener('touchmove', (e) => {
+        if (!g) return;
+        if (e.touches.length !== 1) {
+            resetGesture();
+            return;
+        }
+        const tch = e.touches[0];
+        g.dx = tch.clientX - g.x;
+        g.dy = tch.clientY - g.y;
+        if (!g.axis && (Math.abs(g.dx) > 10 || Math.abs(g.dy) > 10)) {
+            g.axis = Math.abs(g.dx) > Math.abs(g.dy) ? 'x' : 'y';
+        }
+        if (g.axis === 'x' && s.items.length > 1) {
+            s.img.style.transform = `translateX(${g.dx}px)`;
+        } else if (g.axis === 'y' && g.dy > 0) {
+            s.img.style.transform = `translateY(${g.dy}px)`;
+            s.el.style.setProperty('--lb-alpha', String(0.95 * (1 - Math.min(g.dy / 300, 0.6))));
+        }
+    }, { passive: true });
+    el.addEventListener('touchend', () => {
+        if (!g) return;
+        const { dx, dy, axis } = g;
+        resetGesture();
+        if (axis === 'x' && Math.abs(dx) > 50 && s.items.length > 1) {
+            showLightboxImage(dx < 0 ? s.index + 1 : s.index - 1);
+        } else if (axis === 'y' && dy > 90) {
+            closeLightbox();
+        }
+    });
+    el.addEventListener('touchcancel', resetGesture);
 
-        // Dismiss on backdrop click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
+    // Mobile Back button / gesture closes the lightbox instead of leaving the page
+    window.addEventListener('popstate', () => {
+        if (s.isOpen) {
+            s.historyPushed = false;
+            closeLightbox(true);
+        }
+    });
+}
+
+function showLightboxImage(i) {
+    const s = lightboxState;
+    const n = s.items.length;
+    if (!n) return;
+    s.index = ((i % n) + n) % n;
+    const item = s.items[s.index];
+    const token = ++s.loadToken;
+
+    // Drop the previous image first so it never flashes while the next one loads
+    s.img.classList.remove('is-ready');
+    s.img.removeAttribute('src');
+    s.img.alt = item.alt || tUI('imagePreview');
+    const ready = () => { if (token === s.loadToken) s.img.classList.add('is-ready'); };
+    s.img.onload = ready;
+    s.img.onerror = ready;
+    s.img.src = item.src;
+
+    s.counter.textContent = n > 1 ? `${s.index + 1} / ${n}` : '';
+
+    // Preload neighbours in the background
+    s.preload = [];
+    if (n > 1) {
+        [s.index + 1, s.index - 1].forEach(j => {
+            const pre = new Image();
+            pre.src = s.items[((j % n) + n) % n].src;
+            s.preload.push(pre);
         });
+    }
+}
 
-        // Dismiss on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-                closeLightbox();
-            }
-        });
+function openLightbox(items, index, opener) {
+    if (!items || !items.length) return;
+    buildLightbox();
+    const s = lightboxState;
+    clearTimeout(s.hideTimer);
+    s.items = items;
+    s.opener = opener || document.activeElement;
 
-        const img = document.createElement('img');
-        img.id = 'lightbox-img';
-        img.style.cssText = 'max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,0.5);';
+    const multi = items.length > 1;
+    s.prevBtn.hidden = !multi;
+    s.nextBtn.hidden = !multi;
 
-        lightbox.appendChild(closeBtn);
-        lightbox.appendChild(img);
-        document.body.appendChild(lightbox);
+    s.el.style.display = 'flex';
+    showLightboxImage(index);
+
+    if (!s.isOpen) {
+        s.isOpen = true;
+        if (window.pageScrollLock) window.pageScrollLock.lock('lightbox');
+        try {
+            history.pushState({ mgLightbox: true }, '');
+            s.historyPushed = true;
+        } catch (e) {
+            s.historyPushed = false;
+        }
+        requestAnimationFrame(() => s.el.classList.add('is-open'));
+    }
+    s.closeBtn.focus({ preventScroll: true });
+}
+
+function closeLightbox(fromPopstate) {
+    const s = lightboxState;
+    if (!s.isOpen) return;
+
+    // Close via history so the pushed entry is consumed; popstate finishes the job
+    if (!fromPopstate && s.historyPushed) {
+        history.back();
+        setTimeout(() => { if (s.isOpen) { s.historyPushed = false; closeLightbox(true); } }, 400);
+        return;
     }
 
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightboxImg.alt = altText || 'Fullscreen view';
-    lightbox.style.display = 'flex';
-    if (window.pageScrollLock) window.pageScrollLock.lock('lightbox');
-    setTimeout(() => lightbox.style.opacity = '1', 10);
+    s.historyPushed = false;
+    s.isOpen = false;
+    s.el.classList.remove('is-open');
+    if (window.pageScrollLock) window.pageScrollLock.unlock('lightbox');
+    s.hideTimer = setTimeout(() => {
+        s.el.style.display = 'none';
+        s.img.removeAttribute('src');
+    }, 250);
+
+    const opener = s.opener;
+    s.opener = null;
+    if (opener && document.contains(opener) && typeof opener.focus === 'function') {
+        opener.focus({ preventScroll: true });
+    }
+}
+
+// Opens the lightbox for a tile, paging through its grid in the original image order
+function openGridLightbox(tile) {
+    const grid = tile.closest('.gallery-tiles');
+    if (!grid) return;
+    const tiles = Array.from(grid.querySelectorAll('.img-container'))
+        .sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i));
+    const items = tiles.map(el => {
+        const im = el.querySelector('img');
+        return { src: el.dataset.full || (im && im.currentSrc) || '', alt: im ? im.alt : '' };
+    });
+    openLightbox(items, tiles.indexOf(tile), tile);
+}
+
+// Backwards-compatible single-image API
+window.openFullscreen = function (src, altText) {
+    openLightbox([{ src, alt: altText || '' }], 0, document.activeElement);
 };

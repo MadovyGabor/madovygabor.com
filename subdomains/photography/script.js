@@ -360,7 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function initContactPrefill() {
         const eventDateInput = document.getElementById('eventDate');
         if (eventDateInput) {
-            eventDateInput.min = new Date().toISOString().split('T')[0];
+            // Use the visitor's local date (toISOString() is UTC and can be a day behind/ahead)
+            const now = new Date();
+            const localNow = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+            eventDateInput.min = localNow.toISOString().split('T')[0];
             eventDateInput.addEventListener('click', () => {
                 try {
                     if (typeof eventDateInput.showPicker === 'function') {

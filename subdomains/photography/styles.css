@@ -2686,6 +2686,8 @@ main {
   max-width: 100%;
   box-sizing: border-box;
   overflow: visible;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
 
 .gallery-row {
@@ -5594,4 +5596,195 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
 html[class*="scroll-lock-"],
 html[class*="scroll-lock-"] body {
   overflow: hidden;
+}
+
+
+/* ============================================================
+   Gallery tiles: interaction, touch HUD, error state
+   ============================================================ */
+.img-container[role="button"] {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.img-container picture {
+  display: contents;
+}
+
+.img-container:focus-visible {
+  outline: 2px solid var(--primary-container);
+  outline-offset: 2px;
+}
+
+.img-container:focus-visible .hud-overlay {
+  opacity: 1;
+  border-color: var(--primary-container);
+}
+
+.hud-fullscreen {
+  pointer-events: none;
+}
+
+/* Touch devices have no :hover, so the HUD (and the way into fullscreen) is always visible */
+@media (hover: none) {
+  .hud-overlay {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0) 22%, rgba(10, 10, 10, 0) 70%, rgba(10, 10, 10, 0.7) 100%);
+  }
+
+  .img-container:hover img {
+    transform: none;
+  }
+}
+
+.gallery-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--on-surface-variant);
+}
+
+.gallery-error-retry {
+  padding: 12px 24px;
+  border: 1px solid var(--primary-container);
+  background-color: var(--surface-container);
+  color: var(--primary-container);
+  font-family: var(--font-label-caps);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.gallery-error-retry:disabled {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+/* ============================================================
+   Lightbox v2
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, var(--lb-alpha, 0.95));
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  touch-action: none;
+  overscroll-behavior: contain;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-img {
+  max-width: 92%;
+  max-height: 88%;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-img.is-ready {
+  opacity: 1;
+}
+
+.lightbox-btn {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 8px;
+  border: none;
+  background: rgba(10, 10, 10, 0.4);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.lightbox-btn[hidden] {
+  display: none;
+}
+
+.lightbox-btn:hover {
+  background: rgba(10, 10, 10, 0.7);
+}
+
+.lightbox-btn:focus-visible {
+  outline: 2px solid var(--primary-container, #3498db);
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: calc(16px + env(safe-area-inset-top));
+  right: calc(16px + env(safe-area-inset-right));
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: calc(16px + env(safe-area-inset-left));
+}
+
+.lightbox-next {
+  right: calc(16px + env(safe-area-inset-right));
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-data-mono);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* Swipe works on touch devices, so the side arrows are redundant there */
+@media (hover: none) {
+  .lightbox-nav {
+    display: none;
+  }
+}
+
+
+.form-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+}
+
+.form-hint[hidden] {
+  display: none;
 }

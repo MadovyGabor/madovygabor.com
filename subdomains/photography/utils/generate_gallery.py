@@ -1,10 +1,42 @@
+"""
+Gallery generator.
+
+Usage (from anywhere):
+    python utils/generate_gallery.py            # incremental: only missing/outdated variants
+    python utils/generate_gallery.py --force    # regenerate every responsive variant
+
+Scans pictures/portfolio/, writes responsive WebP/AVIF variants into
+pictures/responsive/ and rebuilds galleryData.json.
+"""
+import argparse
 import json
 import os
 import re
 import sys
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageOps
+
+try:  # optional AVIF plugin (Pillow >= 11.3 ships AVIF support natively)
+    import pillow_avif  # noqa: F401
+except ImportError:
+    pass
+
+try:
+    from PIL import features as _pil_features
+    AVIF_AVAILABLE = bool(_pil_features.check("avif"))
+except Exception:
+    AVIF_AVAILABLE = False
+
+if not AVIF_AVAILABLE:
+    try:  # plugin registered itself on import above
+        import io
+        _buf = io.BytesIO()
+        Image.new("RGB", (8, 8)).save(_buf, format="AVIF")
+        AVIF_AVAILABLE = True
+    except Exception:
+        AVIF_AVAILABLE = False
 
 # Configure stdout to use UTF-8 to prevent print encoding errors on Windows
 if hasattr(sys.stdout, 'reconfigure'):
@@ -26,6 +58,14 @@ PHOTO_PAGE_DIR = find_photo_page_dir()
 PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
 OUTPUT_FILE = PHOTO_PAGE_DIR / "galleryData.json"
 METADATA_FILE = PHOTO_PAGE_DIR / "utils" / "image_metadata.json"
+RESPONSIVE_DIR = PHOTO_PAGE_DIR / "pictures" / "responsive"
+
+TARGET_WIDTHS = [480, 960, 1600, 2400]
+WEBP_QUALITY = 78
+AVIF_QUALITY = 55
+FORCE = False
+GENERATE_RESPONSIVE = False  # responsive WebP/AVIF variants disabled (not needed for this site)
+_used_bases = {}
 
 
 def slugify(text):
@@ -35,16 +75,66 @@ def slugify(text):
     return re.sub(r'[-\s]+', '-', text)
 
 
-def get_image_data(img_path, meta_lookup=None):
-    """Reads image dimensions, calculates aspect ratio, and generates or retrieves localized alt/title metadata"""
+def make_base(img_path):
+    """Deterministic, URL-safe base path (no extension) for an image's responsive variants."""
+    rel = img_path.relative_to(PICTURES_DIR)
+    parts = [slugify(p) or "x" for p in rel.parent.parts] + [slugify(rel.stem) or "image"]
+    base = "pictures/responsive/" + "/".join(parts)
+    candidate, n = base, 2
+    while _used_bases.get(candidate, img_path) != img_path:
+        candidate = f"{base}-{n}"
+        n += 1
+    _used_bases[candidate] = img_path
+    return candidate
+
+
+def _is_fresh(target, source):
+    return target.exists() and target.stat().st_mtime >= source.stat().st_mtime and target.stat().st_size > 0
+
+
+def generate_variants(img, img_path, base, formats):
+    """Writes <base>-<w>.<fmt> for every target width <= original width. Returns the widths."""
+    orig_w, orig_h = img.size
+    widths = [w for w in TARGET_WIDTHS if w <= orig_w]
+    if not widths:
+        return []
+
+    for w in widths:
+        h = max(1, round(orig_h * w / orig_w))
+        resized = None
+        for fmt in formats:
+            out = PHOTO_PAGE_DIR / f"{base}-{w}.{fmt}"
+            if not FORCE and _is_fresh(out, img_path):
+                continue
+            if resized is None:
+                resized = img.resize((w, h), Image.LANCZOS)
+            out.parent.mkdir(parents=True, exist_ok=True)
+            if fmt == "webp":
+                resized.save(out, "WEBP", quality=WEBP_QUALITY, method=4)
+            else:
+                resized.save(out, "AVIF", quality=AVIF_QUALITY, speed=7)
+    return widths
+
+
+def get_image_data(img_path, meta_lookup=None, base=None):
+    """Reads image dimensions, generates responsive variants and retrieves localized alt/title metadata"""
     width, height, aspect_ratio = 0, 0, 1.5
+    widths = []
+    base = None
+    formats = ["avif", "webp"] if AVIF_AVAILABLE else ["webp"]
     try:
-        with Image.open(img_path) as img:
+        with Image.open(img_path) as raw:
+            img = ImageOps.exif_transpose(raw)  # respect EXIF orientation
+            if img.mode not in ("RGB", "RGBA"):
+                img = img.convert("RGBA" if "A" in img.getbands() or img.mode == "P" else "RGB")
             width, height = img.size
             if height > 0:
                 aspect_ratio = width / height
+            base = base or make_base(img_path)
+            widths = generate_variants(img, img_path, base, formats) if GENERATE_RESPONSIVE else []
     except Exception as e:
-        print(f"  Warning: Could not read image dimensions for {img_path.name}: {e}")
+        print(f"  Warning: Could not process image {img_path.name}: {e}")
+        widths = []
     
     # Generate clean fallback alt text from filename
     filename = img_path.stem
@@ -66,6 +156,10 @@ def get_image_data(img_path, meta_lookup=None):
         "height": height,
         "aspect_ratio": aspect_ratio
     }
+    if widths and base:
+        item_data["base"] = base
+        item_data["widths"] = widths
+        item_data["formats"] = formats
 
     if meta_lookup and web_path in meta_lookup:
         entry = meta_lookup[web_path]
@@ -87,11 +181,39 @@ def get_images_in_dir(dir_path, meta_lookup=None):
     if not dir_path.exists():
         return images
     
-    for item in sorted(os.listdir(dir_path)):
-        img_path = dir_path / item
-        if img_path.is_file() and img_path.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp'):
-            images.append(get_image_data(img_path, meta_lookup))
+    paths = [dir_path / item for item in sorted(os.listdir(dir_path))]
+    paths = [p for p in paths if p.is_file() and p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.webp')]
+    # make_base() is order-dependent (collision handling) -> reserve bases sequentially first
+    bases = [make_base(p) for p in paths]
+    with ThreadPoolExecutor(max_workers=min(4, os.cpu_count() or 2)) as pool:
+        images = list(pool.map(lambda pb: get_image_data(pb[0], meta_lookup, pb[1]), zip(paths, bases)))
     return images
+
+
+def ensure_unique_ids(gallery_data):
+    """Guarantees unique section ids. First occurrence keeps its id; later ones get a parent prefix / numeric suffix."""
+    seen = set()
+
+    def unique(candidate, parent_id):
+        if candidate not in seen:
+            return candidate
+        if parent_id:
+            prefixed = f"{parent_id}-{candidate}"
+            if prefixed not in seen:
+                return prefixed
+            candidate = prefixed
+        n = 2
+        while f"{candidate}-{n}" in seen:
+            n += 1
+        return f"{candidate}-{n}"
+
+    def walk(nodes, parent_id):
+        for node in nodes:
+            node["id"] = unique(node["id"], parent_id)
+            seen.add(node["id"])
+            walk(node.get("subsections", []), node["id"])
+
+    walk(gallery_data, "")
 
 
 def generate_gallery_json():
@@ -194,6 +316,8 @@ def generate_gallery_json():
         if cat_data["subsections"]:
             gallery_data.append(cat_data)
 
+    ensure_unique_ids(gallery_data)
+
     # Save to output JSON file
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
@@ -203,4 +327,8 @@ def generate_gallery_json():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate responsive images and galleryData.json")
+    parser.add_argument("--force", action="store_true", help="regenerate all responsive variants")
+    FORCE = parser.parse_args().force
+    print(f"AVIF output: {'enabled' if AVIF_AVAILABLE else 'unavailable -> WebP only'}")
     generate_gallery_json()

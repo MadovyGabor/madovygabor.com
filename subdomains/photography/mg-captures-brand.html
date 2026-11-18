@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MG Captures Brand Guide</title>
+<meta name="description" content="Az MG Captures (Madový Gábor fotós) teljes arculati kézikönyve egy fájlban: szabályok, színtokenek, betűk, komponensek, logó, sablonok. Emberek és AI-agentek számára.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<!--
+  ============================================================
+  AGENT INSTRUCTIONS (read this first)
+  ============================================================
+  This single file is the source of truth for the MG Captures brand.
+  - Machine-readable tokens: the JSON script element with id "brand-tokens" below.
+  - Machine-readable rules: the JSON script element with id "brand-rules" below.
+  - Human-readable guide: the <main> sections (Hungarian; rules are imperative).
+  - Precedence: the user's explicit request > this file > your own taste.
+  - Never invent colors, fonts or logo variants. Never redraw the logo: use the files listed under "logo".
+  - Every design must pass the checklist in section #ellenorzes.
+  Related files in the same folder: design.md (long-form), styles.css (website CSS), pictures/mg-captures-logo*.svg|png.
+  ============================================================
+-->
+<script type="application/json" id="brand-tokens">
+{
+  "brand": "MG Captures",
+  "owner": "Madový Gábor (Gabriel Madový)",
+  "website": "https://madovygabor.com",
+  "languages": ["hu", "sk", "en"],
+  "themes": ["dark", "light"],
+  "defaultTheme": "dark",
+  "color": {
+    "surface":        { "dark": "#121414", "light": "#ffffff", "usage": "Page / poster background." },
+    "surface-deep":   { "dark": "#0a0a0a", "light": "#f2f3f3", "usage": "Inputs, lightbox, deeper bands." },
+    "surface-raised": { "dark": "#1e2020", "light": "#f2f3f3", "usage": "Cards, active filter background." },
+    "surface-chip":   { "dark": "#171717", "light": "#f2f3f3", "usage": "Tag background." },
+    "ink":            { "dark": "#ffffff", "light": "#0a0a0a", "usage": "Headings, emphasis." },
+    "ink-body":       { "dark": "#e3e2e2", "light": "#1f2224", "usage": "Default text." },
+    "ink-soft":       { "dark": "#bfc7d2", "light": "#3b4045", "usage": "Paragraphs, descriptions." },
+    "ink-muted":      { "dark": "#a3a3a3", "light": "#5a5f63", "usage": "Small mono labels, date, place, metadata." },
+    "border":         { "dark": "#404040", "light": "#7f8488", "usage": "All 1px borders." },
+    "border-strong":  { "dark": "#525252", "light": "#5a5f63", "usage": "Hover border." },
+    "hairline":       { "dark": "rgba(255,255,255,0.08)", "light": "rgba(10,10,10,0.08)", "usage": "Section dividers." },
+    "dot":            { "dark": "#2a2a2a", "light": "#d4d6d6", "usage": "Dot-grid dots (section bands only)." },
+    "accent":         { "dark": "#3498db", "light": "#3498db", "usage": "MG Blue. Primary button fill, highlighted card, active filter border. Max 10% of a surface, one place." },
+    "accent-hover":   { "dark": "#3ea6ff", "light": "#1b6fa8", "usage": "Primary hover, focus ring." },
+    "on-accent":      { "dark": "#002d47", "light": "#002d47", "usage": "Text on accent fill (never white)." },
+    "accent-text":    { "dark": "#92ccff", "light": "#1b6fa8", "usage": "Blue text." },
+    "cta-white":      { "dark": "#ffffff", "light": "#0a0a0a", "usage": "White CTA fill." },
+    "on-cta-white":   { "dark": "#0a0a0a", "light": "#ffffff", "usage": "Text on white CTA." },
+    "danger":         { "dark": "#e74c3c", "light": "#c0392b", "usage": "Form errors only, always with text." },
+    "logo-slate":     { "dark": "#4d5e66", "light": "#4d5e66", "usage": "Logo only." },
+    "logo-white":     { "dark": "#edf0f2", "light": "#edf0f2", "usage": "Logo only." },
+    "logo-blue":      { "dark": "#0d99d3", "light": "#0d99d3", "usage": "Logo only (ring around the G)." }
+  },
+  "font": {
+    "serif": { "family": "Instrument Serif", "weights": [400], "styles": ["normal", "italic"], "role": "Headings, names, prices", "stack": "'Instrument Serif', Georgia, serif" },
+    "sans":  { "family": "Inter", "weights": [400, 500, 600, 700], "role": "Body, UI titles", "stack": "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" },
+    "mono":  { "family": "JetBrains Mono", "weights": [500, 700], "role": "Buttons, labels, data", "stack": "'JetBrains Mono', Consolas, monospace" },
+    "files": "fonts/ (self-hosted woff2, latin + latin-ext); also on Google Fonts"
+  },
+  "type": {
+    "display-xl":   { "font": "serif", "size": "80px", "web": "clamp(48px, 6vw, 80px)", "lineHeight": 1.1, "letterSpacing": "-0.02em", "weight": 400 },
+    "h1-editorial": { "font": "serif", "size": "48px", "web": "clamp(32px, 4vw, 48px)", "lineHeight": 1.2, "weight": 400, "style": "italic" },
+    "price":        { "font": "serif", "size": "40px", "lineHeight": 1, "weight": 400 },
+    "h2-ui":        { "font": "sans", "size": "24px", "lineHeight": 1.4, "letterSpacing": "-0.01em", "weight": 600 },
+    "body-md":      { "font": "sans", "size": "16px", "lineHeight": 1.6, "weight": 400 },
+    "brand":        { "font": "sans", "size": "18px", "lineHeight": 1.2, "letterSpacing": "-0.01em", "weight": 700 },
+    "label-caps":   { "font": "mono", "size": "13px", "lineHeight": 1, "letterSpacing": "0.1em", "weight": 700, "transform": "uppercase" },
+    "data-mono":    { "font": "mono", "size": "13px", "lineHeight": 1.4, "letterSpacing": "0.02em", "weight": 500 }
+  },
+  "printScale": {
+    "columns": ["web", "A4 flyer", "A3 poster", "A2 poster", "IG post 1080x1350", "IG story 1080x1920"],
+    "display-xl":   ["80px", "54pt", "96pt", "136pt", "120px", "132px"],
+    "h1-editorial": ["48px", "36pt", "64pt", "90pt", "80px", "88px"],
+    "h2-ui":        ["24px", "18pt", "28pt", "40pt", "40px", "44px"],
+    "body-md":      ["16px", "10pt", "14pt", "20pt", "28px", "32px"],
+    "label-caps":   ["13px", "8pt", "11pt", "16pt", "22px", "24px"]
+  },
+  "spacing": { "grid": "24px", "margin": "48px", "card": "36px", "btn": "12px 32px", "btn-white": "16px 40px", "chip": "12px" },
+  "radius": { "default": "0", "field": "2px", "round": "50% (only meaningful circles: live dot, round icon button)" },
+  "stroke": { "line": "1px", "accentBar": "24x4px web / 12x2mm print / 64x8px social" },
+  "motion": { "default": "0.3s ease", "fast": "0.15s ease", "reducedMotion": "no animation" },
+  "logo": {
+    "primary": "pictures/mg-captures-logo.svg",
+    "primaryPng": "pictures/mg-captures-logo.png",
+    "light": "pictures/mg-captures-logo-light.svg",
+    "lightPng": "pictures/mg-captures-logo-light.png",
+    "web": "https://madovygabor.com/pictures/mg-captures-logo.svg",
+    "description": "Camera outline (left half slate, right half white) containing a large 'MG' (M slate, G white) with a blue ring around the G; 'Captures' below.",
+    "minWidth": "120px / 30mm",
+    "clearSpace": "half the height of the G on every side"
+  }
+}
+</script>
+<script type="application/json" id="brand-rules">
+{
+  "must": [
+    "Use radius 0 everywhere; 2px only on form fields; circles only when they carry meaning.",
+    "1-1-1: one photo, one heading, one blue element per surface. If the color logo is present, its ring counts as the blue element.",
+    "Blue (accent) covers at most 10% of a surface, in one place.",
+    "Text on accent fill is on-accent (#002d47) or near-black, never white.",
+    "Use exactly three fonts: Instrument Serif (headings), Inter (text), JetBrains Mono (buttons, labels, data).",
+    "ALL CAPS only in JetBrains Mono, 1-4 words, letter-spacing 0.1em.",
+    "Hungarian headings use sentence case ('Gyakori kérdések').",
+    "Write every customer-facing text in Hungarian, Slovak and English; informal, personal tone (tegező).",
+    "Use the logo files as they are; place the logo in the same bottom corner on repeating materials.",
+    "Use real photos, real events, real places and years."
+  ],
+  "never": [
+    "Rounded cards or buttons, pill shapes.",
+    "Camera-display effects: viewfinder corner marks, crosshairs, 'REC', HUD grids.",
+    "Gradients (except darkening the bottom of a photo under text), drop shadows, glows.",
+    "Emoji, stock icons on posters, colored left-border accent cards.",
+    "Dot grid behind text or photos; dot grid on print.",
+    "Redrawing, recoloring, stretching or decorating the logo.",
+    "More than one primary (blue) button per surface.",
+    "Invented prices, reviews or EXIF data presented as real."
+  ],
+  "dotGrid": "Off by default. Only as a rare section-divider band (max one per page); everything inside sits on a solid, bordered panel.",
+  "techTouches": "Website only, max 2-3: logo fade-in with a thin accent line on first load; real EXIF data in the lightbox only (data-mono, ink-muted); footer line 'Fotózta és kódolta: Madový Gábor'."
+}
+</script>
+<style>
+  :root {
+    --surface: #121414; --surface-deep: #0a0a0a; --surface-raised: #1e2020; --surface-chip: #171717;
+    --ink: #ffffff; --ink-body: #e3e2e2; --ink-soft: #bfc7d2; --ink-muted: #a3a3a3;
+    --border: #404040; --border-strong: #525252; --hairline: rgba(255,255,255,0.08);
+    --accent: #3498db; --accent-hover: #3ea6ff; --on-accent: #002d47; --accent-text: #92ccff;
+    --cta-white: #ffffff; --on-cta-white: #0a0a0a; --danger: #e74c3c;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; border-radius: 0; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--surface); color: var(--ink-body); font: 16px/1.6 var(--font-sans); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px max(16px, env(safe-area-inset-left)) 96px; display: grid; gap: 72px; }
+  h1, h2, h3 { color: var(--ink); text-wrap: balance; }
+  h1 { font: 400 clamp(48px, 8vw, 88px)/1 var(--font-serif); letter-spacing: -0.02em; margin: 0; }
+  h1 em, h2 em { color: var(--accent-text); }
+  h2 { font: italic 400 clamp(32px, 4vw, 48px)/1.15 var(--font-serif); margin: 0 0 8px; }
+  h3 { font: 600 20px/1.4 var(--font-sans); margin: 24px 0 8px; }
+  p, li { color: var(--ink-soft); max-width: 70ch; }
+  a { color: var(--accent-text); }
+  code, pre { font-family: var(--font-mono); font-size: 13px; }
+  code { background: var(--surface-chip); border: 1px solid var(--border); padding: 1px 6px; color: var(--ink-body); }
+  pre { background: var(--surface-deep); border: 1px solid var(--border); padding: 16px; overflow-x: auto; color: var(--ink-body); line-height: 1.5; }
+  pre code { background: none; border: 0; padding: 0; }
+  .label { font: 700 13px/1.2 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+  .lead { font-size: 19px; color: var(--ink-soft); max-width: 56ch; }
+  section { display: grid; gap: 16px; scroll-margin-top: 24px; }
+  section > header { border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 6px; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+  nav.toc a { font: 700 12px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); border: 1px solid var(--border); padding: 8px 14px; }
+  nav.toc a:hover { border-color: var(--accent); color: var(--accent-text); }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  th { font: 700 11px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); background: var(--surface-chip); }
+  td { color: var(--ink-soft); }
+  td:first-child { color: var(--ink); font-weight: 600; }
+  .sw { display: inline-block; width: 18px; height: 18px; border: 1px solid var(--border); vertical-align: middle; margin-right: 8px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .panel { border: 1px solid var(--border); background: var(--surface-raised); padding: 24px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .panel.light { background: #ffffff; }
+  .do { border-color: #2e6b47; } .dont { border-color: #7a2e26; }
+  .do h3 { color: #6fd39a; } .dont h3 { color: #ff8a7a; }
+  .logo-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .logo-row img { width: min(100%, 300px); height: auto; display: block; margin: 0 auto; }
+  /* component samples, identical to the website */
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 32px; border: 1px solid transparent; font: 700 13px/1 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn-outline { background: transparent; border-color: var(--border); color: var(--ink); }
+  .btn-white { background: var(--cta-white); color: var(--on-cta-white); padding: 16px 40px; }
+  .tag { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; background: var(--surface-chip); border: 1px solid var(--border); color: var(--ink-muted); font: 500 12px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+  .filter { padding: 8px 16px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); font: 700 12px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .filter.on { border-color: var(--accent); background: var(--surface-raised); color: var(--accent-text); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .checklist li { list-style: none; margin-left: -20px; }
+  .checklist li::before { content: "☐ "; color: var(--accent-text); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header style="display:grid;gap:20px">
+  <span class="label">MG Captures · Brand Guide · v1 · 2026-11</span>
+  <h1>Természetes pillanatok, <em>letisztult keretben.</em></h1>
+  <p class="lead">Madový Gábor (MG Captures) rendezvény-, koncert-, portré-, tabló- és ingatlanfotós márkájának teljes arculata egy fájlban. Weboldalra, plakátra, szórólapra, árlapra és Instagramra.</p>
+  <nav class="toc" aria-label="Tartalom">
+    <a href="#agent">Agenteknek</a><a href="#marka">Márka</a><a href="#szabalyok">Szabályok</a><a href="#szinek">Színek</a><a href="#betuk">Betűk</a><a href="#ter">Tér</a><a href="#komponensek">Komponensek</a><a href="#logo">Logó</a><a href="#sablonok">Sablonok</a><a href="#szoveg">Szöveg</a><a href="#kepek">Képek</a><a href="#technika">Technika</a><a href="#ellenorzes">Ellenőrzés</a>
+  </nav>
+</header>
+
+<main style="display:grid;gap:72px">
+
+<section id="agent">
+  <header><span class="label">00</span><h2>Agenteknek: így használd</h2></header>
+  <ol>
+    <li>A gépi adatok két JSON-blokkban vannak a fájl <code>&lt;head&gt;</code> részében: <code>#brand-tokens</code> (színek, betűk, méretek, logó) és <code>#brand-rules</code> (kötelező és tilos szabályok).</li>
+    <li>Sorrend: a felhasználó kifejezett kérése → ez a fájl → saját ízlés.</li>
+    <li>Színt, betűt, logóváltozatot ne találj ki. A logót soha ne rajzold újra: a <code>pictures/</code> mappa fájljait használd.</li>
+    <li>Minden kész anyagot ellenőrizz a <a href="#ellenorzes">#ellenorzes</a> listával.</li>
+    <li>Kapcsolódó fájlok ugyanebben a mappában: <code>design.md</code> (hosszú leírás), <code>styles.css</code> (a weboldal CSS-e), <code>pictures/mg-captures-logo*.svg|png</code>, <code>fonts/</code>.</li>
+  </ol>
+</section>
+
+<section id="marka">
+  <header><span class="label">01</span><h2>A márka</h2></header>
+  <p>Az arculat <strong>a fotót szolgálja</strong>: sötét, csendes háttér, éles sarkok, egyetlen kék szín. A személyes, érzelmes hangot a dőlt Serif címek adják, a precizitást az éles geometria és a nagybetűs Mono címkék.</p>
+  <div class="table-wrap"><table>
+    <tr><th>A fotó (érzelem)</th><th>A keret (precizitás)</th></tr>
+    <tr><td>Valódi, megrendezetlen pillanatok: koncert, ballagás, portré</td><td>Éles sarkok, 1px-es vonalak, sok üres tér</td></tr>
+    <tr><td>Dőlt Instrument Serif címek</td><td>Inter szöveg, JetBrains Mono nagybetűs gombok és címkék</td></tr>
+    <tr><td>Mély, sötét háttér, amin a kép „világít”</td><td>Egyetlen kék akcentus, visszafogottan</td></tr>
+  </table></div>
+  <p><strong>Személyiség:</strong> nyugodt, elegáns, hiteles, személyes, magabiztos, de nem harsány. <strong>Nem vagyunk:</strong> játékosak, pasztellek, lekerekítettek, gradiensesek, túldíszítettek.</p>
+  <p><strong>Szolgáltatások:</strong> eseményfotózás, koncert- és fesztiválfotózás, tablófotózás, osztály- és iskolafotózás, szabadtéri portré, ingatlan- és enteriőrfotózás. <strong>Terület:</strong> Galánta, Érsekújvár, Dunaszerdahely, Vágsellye, Szenc, Pozsony (Szlovákia), székhely Alsószeli (Dolné Saliby).</p>
+</section>
+
+<section id="szabalyok">
+  <header><span class="label">02</span><h2>Alapszabályok</h2></header>
+  <div class="grid2">
+    <div class="panel do">
+      <h3>✓ Mindig</h3>
+      <ul>
+        <li><strong>Éles sarkok:</strong> 0 px mindenhol, 2 px csak űrlapmezőn. Kör csak jelentéssel (élő-pötty, kör alakú ikon-gomb).</li>
+        <li><strong>1-1-1:</strong> egy fotó, egy cím, egy kék elem felületenként. Ha a színes logó rajta van, a gyűrűje már az egy kék elem.</li>
+        <li><strong>Kék ≤ 10%</strong>, egyetlen helyen.</li>
+        <li>Kék kitöltésen sötétkék (<code>#002d47</code>) szöveg.</li>
+        <li>Csupa nagybetű csak JetBrains Mono-val, 1–4 szó, 0,1em ritkítás.</li>
+        <li>A logó ismétlődő anyagon mindig ugyanott: alsó sarokban.</li>
+      </ul>
+    </div>
+    <div class="panel dont">
+      <h3>✕ Soha</h3>
+      <ul>
+        <li>Lekerekített gomb, kártya, pill forma.</li>
+        <li>Kamera-effekt: sarokjelölő, célkereszt, „REC”, rácsos kijelző.</li>
+        <li>Színátmenet (kivéve a kép alját a szöveg alatt), árnyék, ragyogás.</li>
+        <li>Emoji, stock ikon plakáton, színes bal oldali sávos kártya.</li>
+        <li>Pontrács szöveg vagy fotó mögött, pontrács nyomtatásban.</li>
+        <li>A logó újrarajzolása, átszínezése, torzítása.</li>
+        <li>Két kék gomb egy felületen; fehér szöveg kék gombon.</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Pontrács</strong> (<code>#2a2a2a</code> pöttyök 24px-es osztással): alapból nem használjuk. Csak ritkán, szakaszelválasztó sávként (oldalanként legfeljebb egy), és ami a sávba kerül, az tömör hátterű, keretes dobozon áll.</p>
+</section>
+
+<section id="szinek">
+  <header><span class="label">03</span><h2>Színek</h2><p>Két téma: <strong>Este (sötét)</strong> az alapértelmezett, <strong>Világos</strong> árlapra, szórólapra és nyomtatásra. A kontraszt WCAG szerint mérve.</p></header>
+  <div class="table-wrap"><table>
+    <tr><th>Token</th><th>Sötét</th><th>Világos</th><th>Mire</th></tr>
+    <tr><td>surface</td><td><span class="sw" style="background:#121414"></span>#121414</td><td><span class="sw" style="background:#fff"></span>#FFFFFF</td><td>Háttér</td></tr>
+    <tr><td>surface-deep</td><td><span class="sw" style="background:#0a0a0a"></span>#0A0A0A</td><td><span class="sw" style="background:#f2f3f3"></span>#F2F3F3</td><td>Mező, lightbox, mély sáv</td></tr>
+    <tr><td>surface-raised</td><td><span class="sw" style="background:#1e2020"></span>#1E2020</td><td><span class="sw" style="background:#f2f3f3"></span>#F2F3F3</td><td>Kártya, aktív szűrő</td></tr>
+    <tr><td>surface-chip</td><td><span class="sw" style="background:#171717"></span>#171717</td><td><span class="sw" style="background:#f2f3f3"></span>#F2F3F3</td><td>Címke háttér</td></tr>
+    <tr><td>ink</td><td><span class="sw" style="background:#fff"></span>#FFFFFF · 18,5:1</td><td><span class="sw" style="background:#0a0a0a"></span>#0A0A0A · 19,8:1</td><td>Címek</td></tr>
+    <tr><td>ink-body</td><td><span class="sw" style="background:#e3e2e2"></span>#E3E2E2 · 14,3:1</td><td><span class="sw" style="background:#1f2224"></span>#1F2224 · 16:1</td><td>Alap szöveg</td></tr>
+    <tr><td>ink-soft</td><td><span class="sw" style="background:#bfc7d2"></span>#BFC7D2 · 10,8:1</td><td><span class="sw" style="background:#3b4045"></span>#3B4045</td><td>Bekezdés, leírás</td></tr>
+    <tr><td>ink-muted</td><td><span class="sw" style="background:#a3a3a3"></span>#A3A3A3 · 7,3:1</td><td><span class="sw" style="background:#5a5f63"></span>#5A5F63 · 6,5:1</td><td>Kis Mono címke, dátum, hely</td></tr>
+    <tr><td>border</td><td><span class="sw" style="background:#404040"></span>#404040</td><td><span class="sw" style="background:#7f8488"></span>#7F8488</td><td>Minden 1px-es szegély</td></tr>
+    <tr><td>border-strong</td><td><span class="sw" style="background:#525252"></span>#525252</td><td><span class="sw" style="background:#5a5f63"></span>#5A5F63</td><td>Hover-szegély</td></tr>
+    <tr><td>accent (MG Blue)</td><td><span class="sw" style="background:#3498db"></span>#3498DB</td><td><span class="sw" style="background:#3498db"></span>#3498DB</td><td>Elsődleges gomb, kiemelt kártya, aktív szűrő · max 10%</td></tr>
+    <tr><td>accent-hover</td><td><span class="sw" style="background:#3ea6ff"></span>#3EA6FF</td><td><span class="sw" style="background:#1b6fa8"></span>#1B6FA8</td><td>Hover, fókuszgyűrű</td></tr>
+    <tr><td>on-accent</td><td><span class="sw" style="background:#002d47"></span>#002D47 · 4,5:1</td><td><span class="sw" style="background:#002d47"></span>#002D47</td><td>Szöveg kék kitöltésen</td></tr>
+    <tr><td>accent-text</td><td><span class="sw" style="background:#92ccff"></span>#92CCFF · 10,8:1</td><td><span class="sw" style="background:#1b6fa8"></span>#1B6FA8 · 5,4:1</td><td>Kék szöveg</td></tr>
+    <tr><td>danger</td><td><span class="sw" style="background:#e74c3c"></span>#E74C3C</td><td><span class="sw" style="background:#c0392b"></span>#C0392B</td><td>Csak űrlaphiba, szöveggel</td></tr>
+    <tr><td>logo-slate / white / blue</td><td colspan="2"><span class="sw" style="background:#4d5e66"></span>#4D5E66 · <span class="sw" style="background:#edf0f2"></span>#EDF0F2 · <span class="sw" style="background:#0d99d3"></span>#0D99D3</td><td>Csak a logóban</td></tr>
+  </table></div>
+  <h3>60-30-10 receptek</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Recept</th><th>60%</th><th>30%</th><th>10%</th><th>Mikor</th></tr>
+    <tr><td>A · Este</td><td>surface sötét</td><td>ink + ink-body</td><td>accent</td><td>Koncert-, fesztivál-, rendezvényplakát, Instagram</td></tr>
+    <tr><td>B · Világos</td><td>surface fehér</td><td>ink fekete</td><td>accent felület + accent-text szöveg</td><td>Árlap, iskolai és tablós szórólap</td></tr>
+    <tr><td>C · Kék</td><td>accent</td><td>on-accent</td><td>fehér</td><td>Egyetlen erős üzenet: „Foglalj most”, akció, sztori-CTA</td></tr>
+  </table></div>
+</section>
+
+<section id="betuk">
+  <header><span class="label">04</span><h2>Betűk</h2><p>A weboldal három betűtípusa; mind kezeli az ő, ű, č, ľ, ť, ň betűket. Fájlok: <code>fonts/</code> (woff2), vagy Google Fonts.</p></header>
+  <div class="table-wrap"><table>
+    <tr><th>Stílus</th><th>Betű</th><th>Méret / sor / ritkítás / súly</th><th>Mire</th><th>Minta</th></tr>
+    <tr><td>display-xl</td><td>Instrument Serif</td><td>80px (web clamp 48–80) / 1,1 / −0,02em / 400</td><td>Fő cím, plakátcím; felületenként egy</td><td style="font:400 32px/1 var(--font-serif);color:var(--ink)">Madový Gábor</td></tr>
+    <tr><td>h1-editorial</td><td>Instrument Serif dőlt</td><td>48px (web clamp 32–48) / 1,2 / 0 / 400</td><td>Szakasz-, album-, eseménycím</td><td style="font:italic 400 26px/1.1 var(--font-serif);color:var(--ink)">Hajómalom fesztivál</td></tr>
+    <tr><td>price</td><td>Instrument Serif</td><td>40px / 1 / 0 / 400</td><td>Ár</td><td style="font:400 26px/1 var(--font-serif);color:var(--ink)">89 €</td></tr>
+    <tr><td>h2-ui</td><td>Inter</td><td>24px / 1,4 / −0,01em / 600</td><td>Kártyacím, csomagnév</td><td style="font:600 18px var(--font-sans);color:var(--ink)">Portréfotózás</td></tr>
+    <tr><td>body-md</td><td>Inter</td><td>16px / 1,6 / 0 / 400</td><td>Folyó szöveg, max ~65 karakter/sor</td><td>Természetes pillanatok.</td></tr>
+    <tr><td>label-caps</td><td>JetBrains Mono</td><td>13px / 1 / 0,1em / 700 · NAGYBETŰ</td><td>Gomb, menü, kategória</td><td class="label" style="color:var(--ink-body)">Ajánlatkérés</td></tr>
+    <tr><td>data-mono</td><td>JetBrains Mono</td><td>13px / 1,4 / 0,02em / 500</td><td>Dátum, hely, képadat</td><td style="font:500 13px var(--font-mono)">Gúta · 2025</td></tr>
+  </table></div>
+  <h3>Nyomtatott és social méretek</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Szint</th><th>Web</th><th>A4 szórólap</th><th>A3 plakát</th><th>A2 plakát</th><th>IG poszt 1080×1350</th><th>IG sztori 1080×1920</th></tr>
+    <tr><td>display-xl</td><td>80px</td><td>54pt</td><td>96pt</td><td>136pt</td><td>120px</td><td>132px</td></tr>
+    <tr><td>h1-editorial</td><td>48px</td><td>36pt</td><td>64pt</td><td>90pt</td><td>80px</td><td>88px</td></tr>
+    <tr><td>h2-ui</td><td>24px</td><td>18pt</td><td>28pt</td><td>40pt</td><td>40px</td><td>44px</td></tr>
+    <tr><td>body-md</td><td>16px</td><td>10pt</td><td>14pt</td><td>20pt</td><td>28px</td><td>32px</td></tr>
+    <tr><td>label-caps</td><td>13px</td><td>8pt</td><td>11pt</td><td>16pt</td><td>22px</td><td>24px</td></tr>
+  </table></div>
+  <p>Nyomtatásban legalább 8pt, social felületen legalább 22px a legkisebb szöveg.</p>
+</section>
+
+<section id="ter">
+  <header><span class="label">05</span><h2>Tér, sarkok, vonalak, mozgás</h2></header>
+  <ul>
+    <li><strong>Rács:</strong> 24px (kártyák közti rés is). Nagy szakasz és oldalmargó: 48px. Kártya belső margó: 36px.</li>
+    <li><strong>Gomb:</strong> 12 × 32px belső margó; fehér CTA 16 × 40px. Címke: 32px magas, 12px oldalmargó.</li>
+    <li><strong>Sarok:</strong> 0. Űrlapmező: 2px. Kör: csak jelentéssel.</li>
+    <li><strong>Vonal:</strong> mindig 1px. Szegély <code>border</code>, elválasztó <code>hairline</code>. Vastag, dupla, szaggatott vonal nincs.</li>
+    <li><strong>Kék kiemelő vonal:</strong> 24×4px (web), 12×2mm (print), 64×8px (social), felületenként egy.</li>
+    <li><strong>Mozgás:</strong> 0,3s ease áttűnés, 0,15s gyors hover; ugrálás nincs; <code>prefers-reduced-motion</code> esetén mozgás nincs.</li>
+  </ul>
+</section>
+
+<section id="komponensek">
+  <header><span class="label">06</span><h2>Komponensek</h2><p>A weboldal elemei pontos értékekkel. A kód másolható.</p></header>
+  <div class="panel">
+    <h3 style="margin:0">Gombok</h3>
+    <div class="row"><a class="btn btn-primary" href="#komponensek">Ajánlatkérés →</a><a class="btn btn-outline" href="#komponensek">Portfólió</a><a class="btn btn-white" href="#komponensek">Kapcsolatfelvétel →</a></div>
+    <h3>Címkék és szűrők</h3>
+    <div class="row"><span class="tag">Ingatlan</span><span class="tag">Design</span><span class="tag">Precízió</span></div>
+    <div class="row"><span class="filter on">Minden</span><span class="filter">Koncertek</span><span class="filter">Portrék</span></div>
+  </div>
+<pre><code>/* Gomb */
+.btn { display:inline-flex; align-items:center; gap:8px; padding:12px 32px; border:1px solid transparent; border-radius:0;
+       font:700 13px/1 'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; transition:all .3s ease; }
+.btn-primary { background:#3498db; border-color:#3498db; color:#002d47; }   /* hover: #3ea6ff */
+.btn-outline { background:transparent; border-color:#404040; color:#fff; }  /* hover border: #525252 */
+.btn-white   { background:#fff; color:#0a0a0a; padding:16px 40px; }         /* hover: #92ccff */
+
+/* Címke */
+.tag { height:32px; padding:0 12px; background:#171717; border:1px solid #404040; color:#a3a3a3;
+       font:500 12px 'JetBrains Mono',monospace; letter-spacing:.06em; text-transform:uppercase; }
+
+/* Szűrő (aktív: aria-pressed="true") */
+.filter { padding:8px 16px; border:1px solid #404040; background:#121414; color:#bfc7d2;
+          font:700 12px 'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
+.filter[aria-pressed="true"] { border-color:#3498db; background:#1e2020; color:#92ccff; }
+
+/* Szolgáltatáskártya (kiemelt: kék kitöltés, #002d47 szöveg; rácsonként max. egy) */
+.card { background:#1e2020; border:1px solid #404040; padding:36px; }
+.card h3 { font:600 24px/1.4 Inter,sans-serif; letter-spacing:-.01em; color:#fff; }
+
+/* Űrlapmező – az egyetlen 2px-es sarok */
+.field-input { background:#0a0a0a; border:1px solid #404040; border-radius:2px; color:#e3e2e2; padding:12px 16px; font:16px Inter,sans-serif; }
+.field-input:focus { border-color:#3ea6ff; outline:none; }
+.field-label { font:700 12px 'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; color:#a3a3a3; }
+
+/* Galériakép: éles keret, hover legfeljebb scale(1.03), alján sötétítés a felirat alatt */
+.tile { position:relative; overflow:hidden; }
+.tile-hud { background:linear-gradient(to top, rgba(10,10,10,.7), transparent 45%); }</code></pre>
+</section>
+
+<section id="logo">
+  <header><span class="label">07</span><h2>Logó</h2><p>Madový Gábor saját logója, változtatás nélkül: fényképezőgép-körvonal (bal fele szürke, jobb fele fehér), benne nagy „MG” (M szürke, G fehér), a G körül kék gyűrű, alatta „Captures”.</p></header>
+  <div class="logo-row">
+    <div class="panel"><img src="pictures/mg-captures-logo.svg" alt="MG Captures logó, színes, sötét háttérre"><span class="label">Fő logó · sötét háttérre</span><code>pictures/mg-captures-logo.svg</code></div>
+    <div class="panel light"><img src="pictures/mg-captures-logo-light.svg" alt="MG Captures logó, fekete-fehér, világos háttérre"><span class="label" style="color:#5a5f63">Világos háttérre · egyszínű nyomtatás</span><code>pictures/mg-captures-logo-light.svg</code></div>
+  </div>
+  <ul>
+    <li>Fájlok: <code>pictures/mg-captures-logo.svg</code> (színes, átlátszó), <code>pictures/mg-captures-logo-light.svg</code> (fekete-fehér, átlátszó), valamint az eredeti 1024×1024-es PNG-k (<code>.png</code>). Élesben: <code>https://madovygabor.com/pictures/mg-captures-logo.svg</code>.</li>
+    <li>Színek: szürke <code>#4D5E66</code>, fehér <code>#EDF0F2</code>, kék <code>#0D99D3</code>. A logó kékje kicsit ciánosabb az MG Blue-nál; a logóban így marad.</li>
+    <li>Körülötte legalább a G magasságának fele üres tér. Legalább 120px / 30mm széles. 32px alatt (favicon) a „Captures” felirat nem olvasható.</li>
+    <li>Ne színezd át, ne torzítsd, ne tegyél rá árnyékot, ragyogást, keretet; ne rajzold újra.</li>
+  </ul>
+</section>
+
+<section id="sablonok">
+  <header><span class="label">08</span><h2>Sablonok: plakát, Instagram, árlap</h2></header>
+  <div class="grid2">
+    <div class="panel"><h3 style="margin:0">Eseményplakát (A3/A2, Este)</h3><ul><li>Nagy fotó felül vagy kifutóval; szöveg a képen csak a kép alja sötétítve.</li><li>Cím: <code>h1-editorial</code> dőlt, fehér.</li><li>Alatta egy sor: dátum · helyszín, <code>label-caps</code>, <code>ink-muted</code>.</li><li>Egyetlen kék elem (pl. a dátum kék háttérrel), vagy a logó gyűrűje.</li><li>Alul vékony vonal, alatta a logó és a weboldal.</li></ul></div>
+    <div class="panel"><h3 style="margin:0">Instagram poszt (1080×1350)</h3><ul><li>A fotó a felület ~75%-a, 48px sötét margóval.</li><li>Alatta rövid, személyes mondat Serifben („Valódi pillanat, egyszerű keret.”).</li><li>Jobb alsó sarokban a logó kicsiben.</li></ul></div>
+    <div class="panel"><h3 style="margin:0">Instagram sztori (1080×1920)</h3><ul><li>Felül és alul 250px üresen (az app gombjai).</li><li>Középen a fotó, alatta a cím.</li><li>CTA-sáv a „C · Kék” recept szerint.</li></ul></div>
+    <div class="panel"><h3 style="margin:0">Árlap / csomagkártya (Világos vagy Este)</h3><ul><li>Csomagnév <code>h2-ui</code>, ár <code>price</code>.</li><li>Tételek Inter 400, egyszerű felsorolás.</li><li>A „Legnépszerűbb” csomag az egyetlen kék kártya (sötétkék szöveggel), a többi 1px keretes.</li><li>Valódi árak csak a weboldalról; mintaárat jelölj mintának.</li></ul></div>
+  </div>
+</section>
+
+<section id="szoveg">
+  <header><span class="label">09</span><h2>Hang és szöveg</h2></header>
+  <ul>
+    <li>Tegező, személyes, rövid mondatok: „Írj nekem”, „Kérj ajánlatot”. Az ajánlatkérő sablon „Szia Gábor!”-ral nyit.</li>
+    <li>Három nyelv: magyar, szlovák, angol – minden ügyfélnek szóló szöveg mindháromban.</li>
+    <li>Helynevek a nyelvnek megfelelően: Galánta / Galanta, Érsekújvár / Nové Zámky, Dunaszerdahely / Dunajská Streda, Gúta / Kolárovo, Alsószeli / Dolné Saliby, Pozsony / Bratislava.</li>
+    <li>Mondatkezdő nagybetű („Gyakori kérdések”); helyesírás: „e-mail-cím”, „Rákóczi”, „Hajómalom”.</li>
+    <li>Nincs emoji. Gombfelirat végén nyíl állhat (→, külső linknél ↗).</li>
+    <li>Valódi tartalom: valódi esemény, helyszín, év („Hajómalom fesztivál · Gúta · 2025”).</li>
+    <li>Kapcsolat: <code>mg.captures06@gmail.com</code>, <code>+421 903 035 624</code>, Instagram <code>@mg.captures06</code>.</li>
+  </ul>
+</section>
+
+<section id="kepek">
+  <header><span class="label">10</span><h2>Képek</h2></header>
+  <ul>
+    <li>Valódi, megrendezetlen pillanatok. Egységes szerkesztés: mély feketék, enyhén hideg árnyékok, természetes bőrtónus.</li>
+    <li>Éles képkeret, legfeljebb 1px szegély; nincs árnyék, keretdísz, színes szűrő.</li>
+    <li>Képfelirat: a név <code>h1-editorial</code> dőlt, alatta <code>label-caps</code> kategória („KONCERT · HAJÓMALOM 25”).</li>
+    <li>Alt szöveg: mi látszik + esemény + helyszín + év („Valmar koncertje a Hajómalom Fesztiválon, Gúta 2025”).</li>
+    <li>Weben WebP, reszponzív méretek (480/960/1600/2400px), <code>loading="lazy"</code>.</li>
+  </ul>
+</section>
+
+<section id="technika">
+  <header><span class="label">11</span><h2>Csipetnyi technika</h2><p>A fotós egyben fejlesztő – ez finoman látszhat, de csak a weboldalon, legfeljebb két-három elemmel.</p></header>
+  <ul>
+    <li>Betöltéskor a logó egyszer finoman előtűnik, alatta vékony kék sáv töltődik (~1s).</li>
+    <li>Képadat (pl. „85 mm · f/1.8 · 1/250 s · ISO 200”) csak a nagyított nézetben, <code>data-mono</code>, <code>ink-muted</code>, csak valódi EXIF-ből.</li>
+    <li>Lábléc: „Fotózta és kódolta: Madový Gábor”.</li>
+    <li>Plakáton és social posztban egyik sem.</li>
+  </ul>
+</section>
+
+<section id="ellenorzes">
+  <header><span class="label">12</span><h2>Ellenőrzőlista</h2><p>Minden kész anyag előtt.</p></header>
+  <ul class="checklist">
+    <li>Minden sarok 0 (mező 2px; kör csak jelentéssel).</li>
+    <li>1-1-1: egy fotó, egy cím, egy kék elem.</li>
+    <li>Kék ≤ 10%, egy helyen; kék kitöltésen sötétkék szöveg.</li>
+    <li>Csak a három betűtípus; nagybetű csak Mono-val.</li>
+    <li>A logó eredeti fájlból, alsó sarokban, elég térrel.</li>
+    <li>Nincs kamera-effekt, színes gradiens, árnyék, emoji.</li>
+    <li>Pontrács csak elválasztó sávként, tartalom tömör dobozon.</li>
+    <li>Szöveg mindhárom nyelven, ékezetek rendben (ő, ű, č, ľ).</li>
+    <li>Szöveg-kontraszt legalább 4,5:1 (nagy szövegnél 3:1).</li>
+    <li>Valódi fotó, esemény, hely, év – kitalált adat nincs.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer style="border-top:1px solid var(--border);padding-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--ink-muted)">
+  <span>© 2026 MG Captures · Madový Gábor</span>
+  <span>Részletes leírás: design.md · Design system: „MG Captures Brand” artifact</span>
+</footer>
+</div>
+</body>
+</html>

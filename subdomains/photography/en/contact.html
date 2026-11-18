@@ -298,7 +298,7 @@
                             <label for="email">ENTER YOUR EMAIL ADDRESS <span class="required-star">*</span></label>
                             <div class="input-wrapper">
                                 <span class="material-symbols-outlined">mail</span>
-                                <input type="email" id="email" name="Email" class="form-control" required
+                                <input type="email" id="email" name="email" class="form-control" required
                                     placeholder="Email address">
                             </div>
                         </div>
@@ -308,6 +308,7 @@
                             <div class="input-wrapper">
                                 <span class="material-symbols-outlined">subject</span>
                                 <select id="subject" name="subject" class="form-control" required>
+                                    <option value="" disabled selected>Select a subject…</option>
                                     <option value="portrait">Portrait Sessions</option>
                                     <option value="event">Event Photography</option>
                                     <option value="yearbook">Yearbook Portraits</option>
@@ -339,12 +340,14 @@
                         <div class="form-actions">
                             <div class="g-recaptcha" data-sitekey="6LcyMrQtAAAAAG96ly9926jOfrkEjG7q_eAUyDKQ"
                                 data-callback="enableSubmitButton" data-expired-callback="disableSubmitButton"></div>
-                            <button type="submit" id="submitButton" disabled class="disabled">SEND MESSAGE</button>
+                            <p id="submitHint" class="form-hint">Tick “I’m not a robot” to enable sending.</p>
+                            <button type="submit" id="submitButton" disabled aria-describedby="submitHint" class="disabled">SEND MESSAGE</button>
                         </div>
 
                         <input type="hidden" name="_next" value="https://madovygabor.com/en/thankYou">
                         <input type="hidden" name="_subject" value="New message from MG Captures website">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_replyto" id="replyTo" value="">
                     </form>
                 </div>
             </div>
@@ -371,25 +374,58 @@
     <script src="../script.js" defer></script>
     <script>
         // Form logic
+        var SUBMIT_LABEL = "SEND MESSAGE";
+        var SUBMIT_BUSY_LABEL = "SENDING...";
+
         function enableSubmitButton() {
-            const submitButton = document.getElementById('submitButton');
+            var submitButton = document.getElementById('submitButton');
+            var hint = document.getElementById('submitHint');
             submitButton.disabled = false;
             submitButton.classList.remove('disabled');
+            if (hint) hint.hidden = true;
         }
 
         function disableSubmitButton() {
-            const submitButton = document.getElementById('submitButton');
+            var submitButton = document.getElementById('submitButton');
+            var hint = document.getElementById('submitHint');
             submitButton.disabled = true;
             submitButton.classList.add('disabled');
-            submitButton.textContent = "SEND MESSAGE";
+            submitButton.removeAttribute('aria-busy');
+            submitButton.textContent = SUBMIT_LABEL;
+            if (hint) hint.hidden = false;
         }
 
-        document.getElementById('contactForm').addEventListener('submit', function () {
-            const submitButton = document.getElementById('submitButton');
-            submitButton.disabled = true;
-            submitButton.classList.add('disabled');
-            submitButton.textContent = "SENDING...";
-        });
+        (function () {
+            var form = document.getElementById('contactForm');
+            var submitting = false;
+
+            form.addEventListener('submit', function (e) {
+                // Double-submit guard
+                if (submitting) {
+                    e.preventDefault();
+                    return;
+                }
+                submitting = true;
+                // FormSubmit sends the reply to the sender's address
+                var replyTo = document.getElementById('replyTo');
+                var email = document.getElementById('email');
+                if (replyTo && email) replyTo.value = email.value;
+
+                var submitButton = document.getElementById('submitButton');
+                submitButton.disabled = true;
+                submitButton.classList.add('disabled');
+                submitButton.setAttribute('aria-busy', 'true');
+                submitButton.textContent = SUBMIT_BUSY_LABEL;
+            });
+
+            // Back/forward cache: the page may come back with a stale "sending" state
+            window.addEventListener('pageshow', function (ev) {
+                if (!ev.persisted) return;
+                submitting = false;
+                try { if (window.grecaptcha) window.grecaptcha.reset(); } catch (err) { /* ignore */ }
+                disableSubmitButton();
+            });
+        })();
     </script>
 </body>
 
