@@ -267,8 +267,15 @@ function wireGalleryUi() {
     if (allLink) {
         allLink.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Close the drawer first: unlocking the page restores the old scroll position,
+            // which would otherwise cancel the scroll to the top that follows.
             if (window.innerWidth < 1024) closeSidebarDrawer();
+            // Phones (iOS Safari especially) ignore a scroll that is issued in the same moment the
+            // page is unlocked, so wait two frames, and jump instantly if the smooth scroll did not run.
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setTimeout(() => { if (window.scrollY > 2) window.scrollTo(0, 0); }, 1200);
+            }));
 
             document.querySelectorAll('.sidebar-link, .sidebar-sublink').forEach(link => {
                 link.classList.remove('active');
@@ -331,6 +338,11 @@ function openSidebarDrawer() {
     if (sidebar) sidebar.classList.add('mobile-open');
     if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => overlay.classList.add('active')); }
     if (window.pageScrollLock) window.pageScrollLock.lock('sidebar');
+    handleScrollSpy();
+    requestAnimationFrame(() => {
+        const current = document.querySelector('.sidebar-sublink.active, .sidebar-link.active');
+        if (current) keepSidebarLinkVisible(current);
+    });
     if (btn) {
         btn.setAttribute('aria-expanded', 'true');
         btn.innerHTML = ICONS.close;
@@ -799,15 +811,27 @@ function keepSidebarLinkVisible(link) {
     }
 }
 
+// While a drawer or menu is open the page is pinned with position:fixed and window.scrollY reads 0;
+// the real position is kept in the body's negative top offset.
+function getPageScrollY() {
+    const b = document.body;
+    if (b.style.position === 'fixed' && b.style.top) {
+        const y = -parseFloat(b.style.top);
+        if (!isNaN(y)) return y;
+    }
+    return window.scrollY;
+}
+
 function handleScrollSpy() {
     const headers = Array.from(document.querySelectorAll('.group-header'));
     const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link, .sidebar-sublink'));
     const allLink = document.querySelector('.sidebar-link[data-category="all"]');
 
     let activeId = null;
-    const scrollPosition = window.scrollY + 120; // 120px offset to detect active section
+    const pageY = getPageScrollY();
+    const scrollPosition = pageY + 120; // 120px offset to detect active section
 
-    if (window.scrollY < 100) {
+    if (pageY < 100) {
         sidebarLinks.forEach(link => link.classList.remove('active'));
         if (allLink) allLink.classList.add('active');
         lastActiveId = null;

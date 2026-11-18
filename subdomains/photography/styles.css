@@ -5621,11 +5621,10 @@ html[class*="scroll-lock-"] body {
   pointer-events: none;
 }
 
-/* Touch devices have no :hover, so the HUD (and the way into fullscreen) is always visible */
+/* Touch devices have no :hover: no overlay at all on the photos, tapping a photo still opens it */
 @media (hover: none) {
   .hud-overlay {
-    opacity: 1;
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0) 22%, rgba(10, 10, 10, 0) 70%, rgba(10, 10, 10, 0.7) 100%);
+    display: none;
   }
 
   .img-container:hover img {
