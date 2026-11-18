@@ -179,6 +179,14 @@
         opacity: 1 !important;
         transform: none !important;
       }
+
+      /* FAQ answers are collapsed by script; keep them readable without it */
+      .faq-answer,
+      .faq-answer[hidden] {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
     </style>
   </noscript>
 </head>
