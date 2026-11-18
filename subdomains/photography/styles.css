@@ -1638,6 +1638,7 @@ main {
 /* About / Philosophy Section */
 .about {
   padding: 64px 0;
+  border-bottom: 1px solid var(--color-neutral-800);
 }
 
 @media (min-width: 768px) {
@@ -1677,6 +1678,17 @@ main {
 /* Services Section */
 .services {
   padding-bottom: 32px;
+}
+
+/* Dot-grid band: the same space above the panels as below them */
+.services.dot-grid {
+  padding-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .services.dot-grid {
+    padding-top: 96px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -5829,4 +5841,61 @@ html[class*="scroll-lock-"] body {
 
 .faq-answer a:hover {
   color: #fff;
+}
+
+
+/* ==========================================================================
+   Subtle motion (home page)
+   Only opacity/transform are animated; everything is off for reduced motion.
+   ========================================================================== */
+
+/* Staggered reveal: each item waits a little longer than the one before */
+.services-grid > .scroll-reveal:nth-child(2),
+.faq-list > .scroll-reveal:nth-child(2),
+.gallery-grid > .scroll-reveal:nth-child(2) { --reveal-delay: 0.08s; }
+
+.services-grid > .scroll-reveal:nth-child(3),
+.faq-list > .scroll-reveal:nth-child(3),
+.gallery-grid > .scroll-reveal:nth-child(3) { --reveal-delay: 0.16s; }
+
+.services-grid > .scroll-reveal:nth-child(4),
+.faq-list > .scroll-reveal:nth-child(4),
+.gallery-grid > .scroll-reveal:nth-child(4) { --reveal-delay: 0.24s; }
+
+.services-grid > .scroll-reveal:nth-child(5),
+.faq-list > .scroll-reveal:nth-child(5),
+.gallery-grid > .scroll-reveal:nth-child(5) { --reveal-delay: 0.32s; }
+
+.gallery-grid > .scroll-reveal:nth-child(6) { --reveal-delay: 0.4s; }
+
+/* The delay only belongs to the reveal, not to hover transitions */
+.service-card.scroll-reveal,
+.faq-item.scroll-reveal,
+.portfolio-item.scroll-reveal {
+  transition-property: opacity, transform, translate, border-color;
+  transition-duration: 0.75s, 0.75s, 0.3s, 0.3s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1), ease, ease;
+  transition-delay: var(--reveal-delay, 0s), var(--reveal-delay, 0s), 0s, 0s;
+}
+
+/* Card hover: a small lift and a stronger border */
+.service-card:hover {
+  translate: 0 -2px;
+  border-color: var(--color-neutral-600);
+}
+
+.service-card-highlight:hover {
+  border-color: var(--color-primary-container);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-card:hover {
+    translate: none;
+  }
 }
