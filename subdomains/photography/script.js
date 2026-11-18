@@ -65,6 +65,7 @@ function resetMobileMenuState() {
     animated.forEach(el => { el.style.transition = 'none'; });
     if (overlay) overlay.classList.remove('active');
     if (burger) burger.setAttribute('aria-expanded', 'false');
+    if (overlay) overlay.setAttribute('aria-hidden', 'true');
     if (typeof closeSidebarDrawer === 'function') closeSidebarDrawer();
     const sbOverlay = document.getElementById('sidebarOverlay');
     if (sbOverlay) { sbOverlay.classList.remove('active'); sbOverlay.style.display = 'none'; }
@@ -79,6 +80,15 @@ function restoreMenuTransitions() {
         document.querySelectorAll('.mobile-nav-drawer, .sidebar-container').forEach(el => { el.style.transition = ''; });
     }));
 }
+// A skipped or aborted page transition is harmless (the page just loads normally);
+// swallow the rejected promises so they do not surface as console errors.
+window.addEventListener('pagereveal', e => {
+    if (!e.viewTransition) return;
+    e.viewTransition.ready.catch(() => { });
+    e.viewTransition.finished.catch(() => { });
+    e.viewTransition.updateCallbackDone.catch(() => { });
+});
+
 window.addEventListener('pagehide', resetMobileMenuState);
 window.addEventListener('pageshow', e => {
     if (e.persisted) resetMobileMenuState();
@@ -92,16 +102,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
     if (hamburgerBtn && navCloseBtn && mobileNavOverlay) {
+        const drawer = mobileNavOverlay.querySelector('.mobile-nav-drawer');
+        const focusableSel = 'a[href], button:not([disabled])';
+
         function openMenu() {
             mobileNavOverlay.classList.add('active');
+            mobileNavOverlay.setAttribute('aria-hidden', 'false');
             hamburgerBtn.setAttribute('aria-expanded', 'true');
             window.pageScrollLock.lock('nav');
+            // The overlay turns visible with its fade-in, so focus has to wait a moment
+            setTimeout(() => navCloseBtn.focus({ preventScroll: true }), 60);
         }
 
         function closeMenu() {
+            const wasOpen = mobileNavOverlay.classList.contains('active');
             mobileNavOverlay.classList.remove('active');
+            mobileNavOverlay.setAttribute('aria-hidden', 'true');
             hamburgerBtn.setAttribute('aria-expanded', 'false');
             window.pageScrollLock.unlock('nav');
+            if (wasOpen) hamburgerBtn.focus({ preventScroll: true });
+        }
+
+        // Keep Tab / Shift+Tab inside the open drawer
+        function trapFocus(e) {
+            if (e.key !== 'Tab' || !mobileNavOverlay.classList.contains('active') || !drawer) return;
+            const items = Array.from(drawer.querySelectorAll(focusableSel)).filter(el => el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden');
+            if (!items.length) return;
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         }
 
         hamburgerBtn.addEventListener('click', openMenu);
@@ -110,7 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === mobileNavOverlay) closeMenu();
         });
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeMenu();
+            if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) closeMenu();
+            trapFocus(e);
         });
     }
 
@@ -195,6 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
          * Animate height from 0 → scrollHeight (open) or scrollHeight → 0 (close).
          * We avoid forcing relayout on every frame by caching the target height.
          */
+        function isExpanded(answer) {
+            const btn = document.querySelector('.faq-question[aria-controls="' + answer.id + '"]');
+            return !!btn && btn.getAttribute('aria-expanded') === 'true';
+        }
+
         function openPanel(answer) {
             answer.removeAttribute('hidden');
             answer.classList.add('is-animating');
@@ -211,13 +252,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            answer.addEventListener('transitionend', function onEnd() {
-                answer.removeEventListener('transitionend', onEnd);
+            let done = false;
+            const finish = () => {
+                if (done) return;
+                done = true;
+                answer.removeEventListener('transitionend', finish);
+                if (!isExpanded(answer)) return;   // closed again before this open finished
                 answer.style.height = '';          // let content dictate height
                 answer.style.transition = '';
                 answer.classList.remove('is-animating');
                 answer.classList.add('is-open');
-            }, { once: true });
+            };
+            answer.addEventListener('transitionend', finish, { once: true });
+            // Fallback: no transitionend fires with reduced motion or a zero-length change
+            setTimeout(finish, 500);
         }
 
         function closePanel(answer) {
@@ -233,13 +281,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            answer.addEventListener('transitionend', function onEnd() {
-                answer.removeEventListener('transitionend', onEnd);
+            let done = false;
+            const finish = () => {
+                if (done) return;
+                done = true;
+                answer.removeEventListener('transitionend', finish);
+                if (isExpanded(answer)) return;    // re-opened before this close finished
                 answer.setAttribute('hidden', '');
                 answer.style.height = '';
                 answer.style.transition = '';
                 answer.classList.remove('is-animating');
-            }, { once: true });
+            };
+            answer.addEventListener('transitionend', finish, { once: true });
+            setTimeout(finish, 450);
         }
 
         questions.forEach(btn => {

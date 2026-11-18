@@ -11,6 +11,23 @@
   border: 0;
 }
 
+/* Skip link: first Tab stop, visible only when focused */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: #fff;
+  color: #0a0a0a;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* Inline Icon SVGs base utility */
 .icon-svg,
 svg.icon {
@@ -101,7 +118,7 @@ svg.icon {
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('fonts/material-symbols-outlined.woff2?v=2') format('woff2');
 }
 
@@ -324,11 +341,11 @@ button {
 }
 
 .text-neutral-500 {
-  color: var(--color-neutral-500);
+  color: var(--color-neutral-400); /* brand ink-muted, #737373 was ~3.9:1 */
 }
 
 .text-neutral-600 {
-  color: var(--color-neutral-600);
+  color: #8f8f8f; /* #525252 was ~2.3:1 on the dark surface */
 }
 
 /* Typography Classes */
@@ -1864,7 +1881,7 @@ main {
 }
 
 .service-card-highlight .service-desc {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .service-icon-right {
@@ -2049,45 +2066,6 @@ main {
   outline-offset: -1px;
 }
 
-/* Viewfinder overlay */
-.viewfinder-corner::before,
-.viewfinder-corner::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-color: var(--color-primary-container);
-  pointer-events: none;
-}
-
-.viewfinder-tl::before {
-  top: 12px;
-  left: 12px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-
-.viewfinder-tr::after {
-  top: 12px;
-  right: 12px;
-  border-top: 1px solid;
-  border-right: 1px solid;
-}
-
-.viewfinder-bl::before {
-  bottom: 12px;
-  left: 12px;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-}
-
-.viewfinder-br::after {
-  bottom: 12px;
-  right: 12px;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-}
-
 .image-hover-info {
   position: absolute;
   inset: 0;
@@ -2107,6 +2085,39 @@ main {
 .image-meta {
   display: flex;
   justify-content: space-between;
+}
+
+/* Home page layout helpers (replace inline styles) */
+.eyebrow-block {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.eyebrow-spaced {
+  margin-bottom: 12px;
+}
+
+.service-status-label {
+  margin-bottom: 8px;
+}
+
+.gallery-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+/* Narrow bento tiles: one column wide on the 4-column desktop grid */
+@media (min-width: 768px) {
+  .portfolio-item-tall {
+    grid-column: span 1;
+    height: 500px;
+  }
+
+  .portfolio-item-short {
+    grid-column: span 1;
+    height: 400px;
+  }
 }
 
 /* Collaboration Section */
@@ -2331,24 +2342,12 @@ main {
 }
 
 /* Homepage In-Place Skeleton Image Transitions */
-.page-home .hero-img {
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
 .page-home .portfolio-img {
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-
-.page-home .hero-img.is-loaded {
-  opacity: 1;
 }
 
 .page-home .portfolio-img.is-loaded {
@@ -5787,4 +5786,47 @@ html[class*="scroll-lock-"] body {
 
 .form-hint[hidden] {
   display: none;
+}
+
+
+/* ==========================================================================
+   Page transitions (cross-document View Transitions)
+   The navbar keeps its place while the content fades between pages.
+   Browsers without support just do a normal page load.
+   ========================================================================== */
+@view-transition {
+  navigation: auto;
+}
+
+.navbar {
+  view-transition-name: site-nav;
+}
+
+::view-transition-old(site-nav),
+::view-transition-new(site-nav) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.18s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.001s;
+  }
+}
+
+.faq-answer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.faq-answer a:hover {
+  color: #fff;
 }
