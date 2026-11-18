@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="sk">
+<html lang="sk">
 
 <head>
   <meta charset="utf-8" />
@@ -15,19 +15,32 @@
   <link rel="alternate" hreflang="hu" href="https://madovygabor.com/hu/szolgaltatasok/esemenyfotozas" />
   <link rel="alternate" hreflang="sk" href="https://madovygabor.com/sk/sluzby/eventove-fotenie" />
   <link rel="alternate" hreflang="en" href="https://madovygabor.com/en/services/event-photography" />
-  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/en/services/event-photography" />
+  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/hu/szolgaltatasok/esemenyfotozas" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MG Captures" />
   <meta property="og:locale" content="sk_SK" />
   <meta property="og:url" content="https://madovygabor.com/sk/sluzby/eventove-fotenie" />
   <meta property="og:title" content="MG Captures | Gabriel Madový – Fotenie stužkovej a podujatí" />
   <meta property="og:description"
     content="Prirodzené reportážne fotenie stužkových, osláv a firemných akcií v regióne Galanta a okolí." />
-  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.png" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="MG Captures – výber koncertných, eventových a portrétových fotografií" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MG Captures | Gabriel Madový – Fotenie stužkovej a podujatí" />
+  <meta name="twitter:description" content="Prirodzené reportážne fotenie stužkových, osláv a firemných akcií v regióne Galanta a okolí." />
+  <meta name="twitter:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+
+
+  <!-- Fonts: the first-paint faces are preloaded so text and icons do not swap in late -->
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/inter-v20-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/jetbrains-mono-v24-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/instrument-serif-v5-latin-regular.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/material-symbols-outlined.woff2" crossorigin />
 
   <link rel="stylesheet" href="../../styles.css" />
   <meta name="theme-color" content="#121414" />
@@ -131,19 +144,27 @@
         animation: none !important;
         background: #141616 !important;
       }
+
+      /* Without JS nothing would ever reveal these sections */
+      .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     </style>
   </noscript>
 </head>
 
-<body class="dot-grid">
+<body>
+
+  <a class="skip-link font-label-caps" href="#main">Preskočiť na obsah</a>
 
   <!-- Mobile Nav Drawer -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
-    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-label="Navigácia">
       <div class="mobile-nav-header">
         <span class="nav-brand">MG Captures</span>
         <button class="nav-close-btn" id="navCloseBtn" aria-label="Zatvoriť menu">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
         </button>
       </div>
       <nav class="mobile-nav-links">
@@ -151,20 +172,20 @@
         <div class="mobile-nav-accordion open" id="mobileServicesAccordion">
           <button class="mobile-nav-accordion-trigger active" aria-expanded="true">
             SLUŽBY
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
           <div class="mobile-nav-accordion-panel">
             <a class="mobile-nav-sublink active" href="/sk/sluzby/eventove-fotenie">
-              <span class="material-symbols-outlined">photo_camera</span> Eventové fotenie
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span> Eventové fotenie
             </a>
             <a class="mobile-nav-sublink" href="/sk/sluzby/tablove-fotenie">
-              <span class="material-symbols-outlined">portrait</span> Tablové fotenie
+              <span class="material-symbols-outlined" aria-hidden="true">portrait</span> Tablové fotenie
             </a>
             <a class="mobile-nav-sublink" href="/sk/sluzby/skolske-fotenie">
-              <span class="material-symbols-outlined">groups</span> Školské a triedne fotenie
+              <span class="material-symbols-outlined" aria-hidden="true">groups</span> Školské a triedne fotenie
             </a>
             <a class="mobile-nav-sublink" href="/sk/sluzby/portretove-fotenie">
-              <span class="material-symbols-outlined">flare</span> Portrétové fotenie
+              <span class="material-symbols-outlined" aria-hidden="true">flare</span> Portrétové fotenie
             </a>
           </div>
         </div>
@@ -179,7 +200,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link active" href="/sk/sluzby/eventove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)" title="Madový Gábor – všetky moje práce">HUB ↗</a>
       </div>
     </div>
   </div>
@@ -191,25 +212,25 @@
       <div class="nav-links">
         <a class="nav-link" href="/sk/">DOMOV</a>
         <div class="nav-dropdown" id="servicesDropdown">
-          <button class="nav-link nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+          <button class="nav-link nav-dropdown-trigger active" aria-expanded="false" aria-controls="servicesMenu">
             SLUŽBY
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
-          <div class="nav-dropdown-menu dropdown-menu" role="menu">
-            <a class="nav-dropdown-item dropdown-item active" href="/sk/sluzby/eventove-fotenie" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+          <div class="nav-dropdown-menu dropdown-menu" id="servicesMenu">
+            <a class="nav-dropdown-item dropdown-item active" href="/sk/sluzby/eventove-fotenie">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">photo_camera</span>
               <span class="dropdown-title">Eventové fotenie</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">portrait</span>
               <span class="dropdown-title">Tablové fotenie</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/skolske-fotenie" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/skolske-fotenie">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">groups</span>
               <span class="dropdown-title">Školské a triedne fotenie</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+            <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">flare</span>
               <span class="dropdown-title">Portrétové fotenie</span>
             </a>
           </div>
@@ -225,7 +246,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link active" href="/sk/sluzby/eventove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)" title="Madový Gábor – všetky moje práce">HUB ↗</a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false"
           aria-controls="mobileNavDrawer">
           <span class="hamburger-line"></span>
@@ -236,7 +257,7 @@
     </div>
   </nav>
 
-  <main class="event-main">
+  <main class="event-main" id="main">
     <!-- SECTION 1: HERO -->
     <header class="event-hero">
       <div class="container">
@@ -293,8 +314,7 @@
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/Felszoszeli ballagas 24 (6).webp" alt="Fotenie stužkovej a končiacich ročníkov"
-                fetchpriority="high" decoding="async" width="800" height="520"
-                onload="this.classList.add('is-loaded')" />
+                fetchpriority="high" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">STUŽKOVÁ &amp; ŠKOLA</span>
             </div>
@@ -311,8 +331,7 @@
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (4).webp"
-                alt="Rodinné a priateľské momentky na podujatí" loading="lazy" decoding="async" width="800" height="520"
-                onload="this.classList.add('is-loaded')" />
+                alt="Rodinné a priateľské momentky na podujatí" loading="lazy" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">RODINNÉ OKAMIHY</span>
             </div>
@@ -331,7 +350,7 @@
               <img
                 src="../../pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-02.webp"
                 alt="Párty, firemné večierky a festivalové momentky" loading="lazy" decoding="async" width="800"
-                height="520" onload="this.classList.add('is-loaded')" />
+                height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">PÁRTY &amp; FIREMNÉ AKCIE</span>
             </div>
@@ -647,40 +666,38 @@
               <img
                 src="../../pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-01.webp"
                 alt="Festivalová atmosféra a koncerty na festivale Hajómalom v Kolárove" loading="lazy" decoding="async"
-                width="600" height="750" onload="this.classList.add('is-loaded')" />
+                width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img
                 src="../../pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-01.webp"
                 alt="Oficiálna eventová fotografia odovzdávania cien v Dolných Salibách" loading="lazy" decoding="async"
-                width="600" height="750" onload="this.classList.add('is-loaded')" />
+                width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img
                 src="../../pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-01.webp"
                 alt="Festivalová atmosféra a svetelná šou AVA Night Galanta" loading="lazy" decoding="async" width="600"
-                height="750" onload="this.classList.add('is-loaded')" />
+                height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Rendezvények/AMTS 25/amts-2025-drift-show.webp"
                 alt="Medzinárodný motoristický festival AMTS a drift show" loading="lazy" decoding="async" width="600"
-                height="750" onload="this.classList.add('is-loaded')" />
+                height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp"
-                alt="Stužková slávnosť a odovzdávanie stužiek" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Stužková slávnosť a odovzdávanie stužiek" loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img
                 src="../../pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-02.webp"
                 alt="Piatková festivalová nálada, svetlá a energia na festivale Hajómalom" loading="lazy"
-                decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
+                decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (1).webp"
-                alt="Kultúrne podujatie a mládežnícky tábor" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Kultúrne podujatie a mládežnícky tábor" loading="lazy" decoding="async" width="600" height="750" />
             </div>
           </div>
 
@@ -700,12 +717,12 @@
     </section>
 
     <!-- Collaboration Section -->
-    <section class="collaboration dot-grid scroll-reveal">
+    <section class="collaboration scroll-reveal">
       <span class="font-label-caps text-primary collab-label">SPOLUPRÁCA</span>
       <h2 class="font-display-xl text-white collab-title">Máte záujem o spoločné fotenie?</h2>
       <div class="collab-actions">
         <a class="btn-white font-label-caps" href="/sk/kontakt?service=event">
-          KONTAKT <span class="material-symbols-outlined">arrow_forward</span>
+          KONTAKT <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">
@@ -728,7 +745,7 @@
         <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">INSTAGRAM</a>
         <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
-        <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+        <a class="footer-link" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)">HUB ↗</a>
       </div>
     </div>
   </footer>

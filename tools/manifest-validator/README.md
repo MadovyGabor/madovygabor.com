@@ -55,7 +55,7 @@ Errors:
 - `root-array`: the root is a non-empty array of categories.
 - `category-shape`, `section-shape`, `title`, `id`: a category has `title`, `id` and a non-empty `subsections`; a section has `title`, `id` and exactly one of a non-empty `images` or `subsections`.
 - `max-depth`: at most 3 levels (category, section, sub-section); sub-sections hold only images.
-- `id-slug`: `id` equals the slug of `title`, computed like `slugify` in the generator.
+- `id-slug`: `id` equals the slug of `title`, computed like `slugify` in the generator. Ids the generator made unique are accepted too: the slug with a numeric suffix (`fest-2`) or with a parent prefix (`parent-fest`, `parent-fest-2`).
 - `id-sibling-unique`: ids are unique among siblings.
 - `image-type`: an image entry is an object (bare strings are rejected, although the page would accept them).
 - `src`, `src-format`, `src-extension`, `src-unique`: a non-empty relative path with forward slashes, starting with `pictures/portfolio/`, ending in `.jpg`, `.jpeg`, `.png` or `.webp`, and unique in the file. Spaces and non-ASCII characters are allowed.
@@ -68,6 +68,7 @@ Warnings:
 
 - `id-global-unique`: the same id appears under different parents (the committed file has one such case; the id is used as an anchor and DOM id).
 - `alt-language`, `title-language`: a language is missing or empty, or the key is not `en`, `hu`, `sk`.
+- `date-format`: the optional `date` on a category or section (written by the generator for the newest-first order) is not a real `YYYY-MM-DD` date.
 - `unknown-key`: a key that the generator never writes.
 
 Info (never fails):

@@ -2,11 +2,19 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
 
 /styles.css
   Cache-Control: public, max-age=0, must-revalidate
 
 /script.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/javaScript/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/galleryData.json
   Cache-Control: public, max-age=0, must-revalidate
 
 /pictures/*

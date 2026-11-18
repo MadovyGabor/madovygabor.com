@@ -91,7 +91,8 @@
                         "aspect_ratio": 1.5,
                         "alt": "Ubytovanie diakovce obyvacia izba 2"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Apartmánový dom",
@@ -257,9 +258,11 @@
                             "en": "Real estate and interior photography - Apartment House | MG Captures"
                         }
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             }
-        ]
+        ],
+        "date": "2026-09-09"
     },
     {
         "title": "Koncertek",
@@ -655,7 +658,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Hajomalom fesztivál 26",
@@ -1113,7 +1117,7 @@
                     },
                     {
                         "title": "Fesztivál hangulatképek",
-                        "id": "fesztival-hangulatkepek",
+                        "id": "hajomalom-fesztival-26-fesztival-hangulatkepek",
                         "images": [
                             {
                                 "src": "pictures/portfolio/Koncertek/Hajomalom fesztivál 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-hajomalom-madovy-gabor-01.webp",
@@ -1197,7 +1201,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Hajómalom fesztivál 25",
@@ -1806,9 +1811,11 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             }
-        ]
+        ],
+        "date": "2026-09-09"
     },
     {
         "title": "Portrék",
@@ -1899,9 +1906,11 @@
                             "en": "Outdoor portrait photography | Gabriel Madový"
                         }
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             }
-        ]
+        ],
+        "date": "2026-09-09"
     },
     {
         "title": "Rendezvények",
@@ -2009,7 +2018,8 @@
                         "aspect_ratio": 1.249872643912379,
                         "alt": "Terror benz"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "AVA WARRIORS NIGHT",
@@ -2379,7 +2389,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Alsószeli Díjátadó",
@@ -2545,7 +2556,8 @@
                             "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Felsőszeli ballagás 24",
@@ -2649,7 +2661,8 @@
                         "aspect_ratio": 0.6666666666666666,
                         "alt": "Felszoszeli ballagas 24"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Rákoczi tábor 24",
@@ -2711,9 +2724,11 @@
                         "aspect_ratio": 1.5,
                         "alt": "Rakoczi tabor 24"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             }
-        ]
+        ],
+        "date": "2026-09-09"
     },
     {
         "title": "Travel",
@@ -2744,7 +2759,8 @@
                         "aspect_ratio": 0.7999586691465179,
                         "alt": "Bruno church"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             },
             {
                 "title": "Tatranská Lomnica",
@@ -2792,8 +2808,10 @@
                         "aspect_ratio": 0.8000515331100232,
                         "alt": "Tatranska lomnica"
                     }
-                ]
+                ],
+                "date": "2026-09-09"
             }
-        ]
+        ],
+        "date": "2026-09-09"
     }
 ]

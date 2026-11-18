@@ -15,8 +15,8 @@ export interface SrcEntry {
   path: string;
 }
 
-const CATEGORY_KEYS: readonly string[] = ["title", "id", "subsections"];
-const SECTION_KEYS: readonly string[] = ["title", "id", "images", "subsections"];
+const CATEGORY_KEYS: readonly string[] = ["title", "id", "subsections", "date"];
+const SECTION_KEYS: readonly string[] = ["title", "id", "images", "subsections", "date"];
 const IMAGE_KEYS: readonly string[] = ["src", "width", "height", "aspect_ratio", "alt", "title"];
 
 function isObject(value: unknown): value is JsonObject {
@@ -86,6 +86,27 @@ function checkNodes(nodes: readonly unknown[], depth: number, path: string, ctx:
   });
 }
 
+/**
+ * The generator makes ids unique by prefixing the parent id and/or adding a number, so an id is valid when it is
+ * the slug itself, or the slug with a numeric suffix, or the slug with a parent prefix (and optional suffix).
+ */
+function idMatchesSlug(id: string, slug: string): boolean {
+  if (id === slug) {
+    return true;
+  }
+  const withoutNumber = id.replace(/-\d+$/, "");
+  return withoutNumber === slug || withoutNumber.endsWith(`-${slug}`);
+}
+
+/** "date" is written by the generator (newest-first ordering): a real calendar date as YYYY-MM-DD. */
+function isIsoDate(value: unknown): boolean {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString().startsWith(value);
+}
+
 function checkNode(
   node: JsonObject,
   depth: number,
@@ -104,6 +125,10 @@ function checkNode(
     }
   }
 
+  if ("date" in node && !isIsoDate(node.date)) {
+    report.add("warning", "date-format", `${path}.date`, `"date" must be a real calendar date written as YYYY-MM-DD.`);
+  }
+
   const { title, id } = node;
   if (!isNonEmptyString(title)) {
     report.add("error", "title", `${path}.title`, `A ${label} needs a non-empty string "title".`);
@@ -120,7 +145,7 @@ function checkNode(
     const records = ctx.ids.get(id) ?? [];
     records.push({ path: `${path}.id`, parentPath });
     ctx.ids.set(id, records);
-    if (isNonEmptyString(title) && id !== slugify(title)) {
+    if (isNonEmptyString(title) && !idMatchesSlug(id, slugify(title))) {
       report.add("error", "id-slug", `${path}.id`, `Id "${id}" does not match the slug of the title ("${slugify(title)}").`);
     }
   }

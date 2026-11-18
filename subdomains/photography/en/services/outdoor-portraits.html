@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -15,19 +15,32 @@
   <link rel="alternate" hreflang="hu" href="https://madovygabor.com/hu/szolgaltatasok/portrefotozas" />
   <link rel="alternate" hreflang="sk" href="https://madovygabor.com/sk/sluzby/portretove-fotenie" />
   <link rel="alternate" hreflang="en" href="https://madovygabor.com/en/services/outdoor-portraits" />
-  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/en/services/outdoor-portraits" />
+  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/hu/szolgaltatasok/portrefotozas" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MG Captures" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://madovygabor.com/en/services/outdoor-portraits" />
   <meta property="og:title" content="MG Captures | Gabriel Madový – Outdoor Portrait Photography" />
   <meta property="og:description"
     content="Authentic portraits in natural sunset light without stiff poses. Transparent packages and live pricing." />
-  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.png" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="MG Captures – a selection of concert, event and portrait photos" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MG Captures | Gabriel Madový – Outdoor Portrait Photography" />
+  <meta name="twitter:description" content="Authentic portraits in natural sunset light without stiff poses. Transparent packages and live pricing." />
+  <meta name="twitter:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+
+
+  <!-- Fonts: the first-paint faces are preloaded so text and icons do not swap in late -->
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/inter-v20-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/jetbrains-mono-v24-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/instrument-serif-v5-latin-regular.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/material-symbols-outlined.woff2" crossorigin />
 
   <link rel="stylesheet" href="../../styles.css" />
   <meta name="theme-color" content="#121414" />
@@ -131,19 +144,27 @@
         animation: none !important;
         background: #141616 !important;
       }
+
+      /* Without JS nothing would ever reveal these sections */
+      .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     </style>
   </noscript>
 </head>
 
-<body class="dot-grid">
+<body>
+
+  <a class="skip-link font-label-caps" href="#main">Skip to content</a>
 
   <!-- Mobile Nav Drawer -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
-    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigation">
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-label="Navigation">
       <div class="mobile-nav-header">
         <span class="nav-brand">MG Captures</span>
         <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
         </button>
       </div>
       <nav class="mobile-nav-links">
@@ -151,20 +172,20 @@
         <div class="mobile-nav-accordion open" id="mobileServicesAccordion">
           <button class="mobile-nav-accordion-trigger active" aria-expanded="true">
             SERVICES
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
           <div class="mobile-nav-accordion-panel">
             <a class="mobile-nav-sublink" href="/en/services/event-photography">
-              <span class="material-symbols-outlined">photo_camera</span> Event Photography
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span> Event Photography
             </a>
             <a class="mobile-nav-sublink" href="/en/services/yearbook-photography">
-              <span class="material-symbols-outlined">portrait</span> High School Yearbook Portraits
+              <span class="material-symbols-outlined" aria-hidden="true">portrait</span> High School Yearbook Portraits
             </a>
             <a class="mobile-nav-sublink" href="/en/services/school-photography">
-              <span class="material-symbols-outlined">groups</span> School &amp; Class Photography
+              <span class="material-symbols-outlined" aria-hidden="true">groups</span> School &amp; Class Photography
             </a>
             <a class="mobile-nav-sublink active" href="/en/services/outdoor-portraits">
-              <span class="material-symbols-outlined">flare</span> Outdoor Portrait Sessions
+              <span class="material-symbols-outlined" aria-hidden="true">flare</span> Outdoor Portrait Sessions
             </a>
           </div>
         </div>
@@ -179,7 +200,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/portretove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/en/" aria-label="Madový Gábor – all my work (hub)" title="Madový Gábor – all my work">HUB ↗</a>
       </div>
     </div>
   </div>
@@ -191,25 +212,25 @@
       <div class="nav-links">
         <a class="nav-link" href="/en/">HOME</a>
         <div class="nav-dropdown" id="servicesDropdown">
-          <button class="nav-link nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+          <button class="nav-link nav-dropdown-trigger active" aria-expanded="false" aria-controls="servicesMenu">
             SERVICES
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
-          <div class="nav-dropdown-menu dropdown-menu" role="menu">
-            <a class="nav-dropdown-item dropdown-item" href="/en/services/event-photography" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+          <div class="nav-dropdown-menu dropdown-menu" id="servicesMenu">
+            <a class="nav-dropdown-item dropdown-item" href="/en/services/event-photography">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">photo_camera</span>
               <span class="dropdown-title">Event Photography</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/en/services/yearbook-photography" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+            <a class="nav-dropdown-item dropdown-item" href="/en/services/yearbook-photography">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">portrait</span>
               <span class="dropdown-title">High School Yearbook Portraits</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/en/services/school-photography" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
+            <a class="nav-dropdown-item dropdown-item" href="/en/services/school-photography">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">groups</span>
               <span class="dropdown-title">School &amp; Class Photography</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item active" href="/en/services/outdoor-portraits" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+            <a class="nav-dropdown-item dropdown-item active" href="/en/services/outdoor-portraits">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">flare</span>
               <span class="dropdown-title">Outdoor Portrait Sessions</span>
             </a>
           </div>
@@ -225,7 +246,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/portretove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/en/" aria-label="Madový Gábor – all my work (hub)" title="Madový Gábor – all my work">HUB ↗</a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false"
           aria-controls="mobileNavDrawer">
           <span class="hamburger-line"></span>
@@ -236,7 +257,7 @@
     </div>
   </nav>
 
-  <main class="event-main">
+  <main class="event-main" id="main">
     <!-- SECTION 1: HERO -->
     <header class="event-hero">
       <div class="container">
@@ -299,8 +320,7 @@
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/Picture 2.webp" alt="Outdoor lifestyle portrait in natural daylight"
-                fetchpriority="high" decoding="async" width="800" height="520"
-                onload="this.classList.add('is-loaded')" />
+                fetchpriority="high" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">NATURAL VIBE</span>
             </div>
@@ -318,7 +338,7 @@
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-02.webp"
                 alt="Golden hour portrait session at sunset in scenic surroundings" loading="lazy" decoding="async"
-                width="800" height="520" onload="this.classList.add('is-loaded')" />
+                width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">WARM GLOW</span>
             </div>
@@ -335,7 +355,7 @@
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/Picture 4.webp" alt="Creative personal portrait session in natural surroundings"
-                loading="lazy" decoding="async" width="800" height="520" onload="this.classList.add('is-loaded')" />
+                loading="lazy" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">CUSTOM STYLE</span>
             </div>
@@ -672,32 +692,30 @@
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal">
               <img src="../../pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-01.webp"
                 alt="Natural light outdoor female portrait photography - Gabriel Madový" loading="lazy" decoding="async"
-                width="600" height="750" onload="this.classList.add('is-loaded')" />
+                width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 2.webp"
-                alt="Golden hour outdoor portrait session" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Golden hour outdoor portrait session" loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-02.webp"
                 alt="Creative outdoor portrait in scenic natural surroundings" loading="lazy" decoding="async"
-                width="600" height="750" onload="this.classList.add('is-loaded')" />
+                width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 4.webp"
                 alt="Natural lifestyle portrait with warm sunlight" loading="lazy" decoding="async" width="600"
-                height="750" onload="this.classList.add('is-loaded')" />
+                height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 5.webp"
                 alt="Sunset portrait session with soft background bokeh" loading="lazy" decoding="async" width="600"
-                height="750" onload="this.classList.add('is-loaded')" />
+                height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 6.webp"
-                alt="Warm golden hour outdoor portrait" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Warm golden hour outdoor portrait" loading="lazy" decoding="async" width="600" height="750" />
             </div>
           </div>
 
@@ -717,12 +735,12 @@
     </section>
 
     <!-- SECTION 7: COLLABORATION SECTION -->
-    <section class="collaboration dot-grid scroll-reveal">
+    <section class="collaboration scroll-reveal">
       <span class="font-label-caps text-primary collab-label">COLLABORATION</span>
       <h2 class="font-display-xl text-white collab-title">Ready for your portrait session?</h2>
       <div class="collab-actions">
         <a class="btn-white font-label-caps" href="/en/contact?service=portre">
-          BOOK SESSION <span class="material-symbols-outlined">arrow_forward</span>
+          BOOK SESSION <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">
@@ -745,7 +763,7 @@
         <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">INSTAGRAM</a>
         <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
-        <a class="footer-link" href="https://hub.madovygabor.com/en/">MAIN SITE</a>
+        <a class="footer-link" href="https://hub.madovygabor.com/en/" aria-label="Madový Gábor – all my work (hub)">HUB ↗</a>
       </div>
     </div>
   </footer>

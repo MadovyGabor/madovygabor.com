@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="sk">
+<html lang="sk">
 
 <head>
     <meta charset="utf-8" />
@@ -15,19 +15,32 @@
     <link rel="alternate" hreflang="hu" href="https://madovygabor.com/hu/kontakt" />
     <link rel="alternate" hreflang="sk" href="https://madovygabor.com/sk/kontakt" />
     <link rel="alternate" hreflang="en" href="https://madovygabor.com/en/contact" />
-    <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/en/contact" />
+    <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/hu/kontakt" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MG Captures" />
     <meta property="og:locale" content="sk_SK" />
     <meta property="og:url" content="https://madovygabor.com/sk/kontakt" />
     <meta property="og:title" content="MG Captures | Gabriel Madový – Kontakt a Rezervácia" />
     <meta property="og:description"
         content="Dohodnite si termín na fotenie stužkovej, eventov, tabiel alebo portrétov priamo s fotografom." />
-    <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.png" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="MG Captures – výber koncertných, eventových a portrétových fotografií" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MG Captures | Gabriel Madový – Kontakt a Rezervácia" />
+    <meta name="twitter:description" content="Dohodnite si termín na fotenie stužkovej, eventov, tabiel alebo portrétov priamo s fotografom." />
+    <meta name="twitter:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+
+
+    <!-- Fonts: the first-paint faces are preloaded so text and icons do not swap in late -->
+    <link rel="preload" as="font" type="font/woff2" href="../fonts/inter-v20-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="../fonts/jetbrains-mono-v24-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="../fonts/instrument-serif-v5-latin-regular.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="../fonts/material-symbols-outlined.woff2" crossorigin />
 
     <link rel="stylesheet" href="../styles.css">
     <meta name="theme-color" content="#121414">
@@ -97,15 +110,17 @@
     </noscript>
 </head>
 
-<body class="">
+<body>
+
+    <a class="skip-link font-label-caps" href="#main">Preskočiť na obsah</a>
 
     <!-- Mobile Nav Drawer -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
-        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigácia">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-label="Navigácia">
             <div class="mobile-nav-header">
                 <span class="nav-brand">MG Captures</span>
                 <button class="nav-close-btn" id="navCloseBtn" aria-label="Zavrieť menu">
-                    <span class="material-symbols-outlined">close</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">close</span>
                 </button>
             </div>
             <nav class="mobile-nav-links">
@@ -113,20 +128,20 @@
                 <div class="mobile-nav-accordion" id="mobileServicesAccordion">
                     <button class="mobile-nav-accordion-trigger" aria-expanded="false">
                         SLUŽBY
-                        <span class="material-symbols-outlined">expand_more</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
                     </button>
                     <div class="mobile-nav-accordion-panel">
                         <a class="mobile-nav-sublink" href="/sk/sluzby/eventove-fotenie">
-                            <span class="material-symbols-outlined">photo_camera</span> Eventové fotenie
+                            <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span> Eventové fotenie
                         </a>
                         <a class="mobile-nav-sublink" href="/sk/sluzby/tablove-fotenie">
-                            <span class="material-symbols-outlined">portrait</span> Tablové fotenie
+                            <span class="material-symbols-outlined" aria-hidden="true">portrait</span> Tablové fotenie
                         </a>
                         <a class="mobile-nav-sublink" href="/sk/sluzby/skolske-fotenie">
-                            <span class="material-symbols-outlined">groups</span> Školské a triedne fotenie
+                            <span class="material-symbols-outlined" aria-hidden="true">groups</span> Školské a triedne fotenie
                         </a>
                         <a class="mobile-nav-sublink" href="/sk/sluzby/portretove-fotenie">
-                            <span class="material-symbols-outlined">flare</span> Portrétové fotenie
+                            <span class="material-symbols-outlined" aria-hidden="true">flare</span> Portrétové fotenie
                         </a>
                     </div>
                 </div>
@@ -141,7 +156,7 @@
                     <span class="lang-sep">/</span>
                     <a class="lang-link active" href="/sk/kontakt">SK</a>
                 </div>
-                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+                <a class="nav-btn" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)" title="Madový Gábor – všetky moje práce">HUB ↗</a>
             </div>
         </div>
     </div>
@@ -153,25 +168,25 @@
             <div class="nav-links">
                 <a class="nav-link" href="/sk/">DOMOV</a>
                 <div class="nav-dropdown" id="servicesDropdown">
-                    <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                    <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-controls="servicesMenu">
                         SLUŽBY
-                        <span class="material-symbols-outlined">expand_more</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="nav-dropdown-menu dropdown-menu" role="menu">
-                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/eventove-fotenie" role="menuitem">
-                            <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+                    <div class="nav-dropdown-menu dropdown-menu" id="servicesMenu">
+                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/eventove-fotenie">
+                            <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">photo_camera</span>
                             <span class="dropdown-title">Eventové fotenie</span>
                         </a>
-                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie" role="menuitem">
-                            <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/tablove-fotenie">
+                            <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">portrait</span>
                             <span class="dropdown-title">Tablové fotenie</span>
                         </a>
-                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/skolske-fotenie" role="menuitem">
-                            <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
+                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/skolske-fotenie">
+                            <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">groups</span>
                             <span class="dropdown-title">Školské a triedne fotenie</span>
                         </a>
-                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie" role="menuitem">
-                            <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+                        <a class="nav-dropdown-item dropdown-item" href="/sk/sluzby/portretove-fotenie">
+                            <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">flare</span>
                             <span class="dropdown-title">Portrétové fotenie</span>
                         </a>
                     </div>
@@ -187,7 +202,7 @@
                     <span class="lang-sep">/</span>
                     <a class="lang-link active" href="/sk/kontakt">SK</a>
                 </div>
-                <a class="nav-btn" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+                <a class="nav-btn" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)" title="Madový Gábor – všetky moje práce">HUB ↗</a>
                 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Otvoriť menu" aria-expanded="false"
                     aria-controls="mobileNavDrawer">
                     <span class="hamburger-line"></span>
@@ -198,7 +213,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <section class="contact-section">
             <!-- Header -->
             <div class="contact-header">
@@ -215,7 +230,7 @@
                     <address class="contact-info">
                         <!-- Email -->
                         <div class="contact-item">
-                            <span class="material-symbols-outlined">mail</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
                             <div>
                                 <h2>EMAIL</h2>
                                 <a href="mailto:mg.captures06@gmail.com"
@@ -225,7 +240,7 @@
 
                         <!-- Phone -->
                         <div class="contact-item">
-                            <span class="material-symbols-outlined">call</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">call</span>
                             <div>
                                 <h2>TELEFÓNNE ČÍSLO</h2>
                                 <a href="tel:+421903035624" id="safe-phone" aria-label="Zavolať">+421 903 035 624</a>
@@ -234,7 +249,7 @@
 
                         <!-- Social -->
                         <div class="contact-item">
-                            <span class="material-symbols-outlined">public</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">public</span>
                             <div>
                                 <h2>SOCIÁLNE MÉDIÁ</h2>
                                 <div class="social-links">
@@ -260,7 +275,7 @@
 
                         <!-- Location -->
                         <div class="contact-item" style="margin-top: 16px;">
-                            <span class="material-symbols-outlined">location_on</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
                             <div style="width: 100%;">
                                 <h2>KDE MA NÁJDEŠ?</h2>
                                 <h3>Galanta a okolie, Slovensko</h3>
@@ -283,8 +298,8 @@
                         <div class="input-group">
                             <label for="name">CELÉ MENO <span class="required-star">*</span></label>
                             <div class="input-wrapper">
-                                <span class="material-symbols-outlined">person</span>
-                                <input type="text" id="name" name="Name" class="form-control" required minlength="2"
+                                <span class="material-symbols-outlined" aria-hidden="true">person</span>
+                                <input type="text" id="name" name="Name" class="form-control" required minlength="2" autocomplete="name"
                                     placeholder="Meno">
                             </div>
                         </div>
@@ -292,8 +307,8 @@
                         <div class="input-group">
                             <label for="email">EMAILOVÁ ADRESA <span class="required-star">*</span></label>
                             <div class="input-wrapper">
-                                <span class="material-symbols-outlined">mail</span>
-                                <input type="email" id="email" name="Email" class="form-control" required
+                                <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                                <input type="email" id="email" name="email" class="form-control" required autocomplete="email"
                                     placeholder="Emailová adresa">
                             </div>
                         </div>
@@ -301,8 +316,9 @@
                         <div class="input-group">
                             <label for="subject">ČO BUDEME FOTIŤ? <span class="required-star">*</span></label>
                             <div class="input-wrapper">
-                                <span class="material-symbols-outlined">subject</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">subject</span>
                                 <select id="subject" name="subject" class="form-control" required>
+                                    <option value="" disabled selected>Vyber tému…</option>
                                     <option value="portretne-fotenie">Portrétne fotenie</option>
                                     <option value="eventove-fotenie">Eventové fotenie</option>
                                     <option value="tablove-fotenie">Tablové fotenie</option>
@@ -316,7 +332,7 @@
                             <label for="eventDate">PLÁNOVANÝ TERMÍN / DÁTUM UDALOSTI <span
                                     class="required-star">*</span></label>
                             <div class="input-wrapper">
-                                <span class="material-symbols-outlined">calendar_today</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">calendar_today</span>
                                 <input type="date" id="eventDate" name="Planned Date" class="form-control" required
                                     min="2026-01-01">
                             </div>
@@ -325,7 +341,7 @@
                         <div class="input-group">
                             <label for="message">TVOJA SPRÁVA</label>
                             <div class="input-wrapper">
-                                <span class="material-symbols-outlined">chat</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">chat</span>
                                 <textarea id="message" name="message" class="form-control"
                                     placeholder="Správa..."></textarea>
                             </div>
@@ -334,12 +350,16 @@
                         <div class="form-actions">
                             <div class="g-recaptcha" data-sitekey="6LcyMrQtAAAAAG96ly9926jOfrkEjG7q_eAUyDKQ"
                                 data-callback="enableSubmitButton" data-expired-callback="disableSubmitButton"></div>
-                            <button type="submit" id="submitButton" disabled class="disabled">ODOSLAŤ SPRÁVU</button>
+                            <noscript><p class="form-hint">Tlačidlo odoslania potrebuje JavaScript. Napíšte mi priamo: <a href="mailto:mg.captures06@gmail.com">mg.captures06@gmail.com</a></p></noscript>
+                            <p id="submitHint" class="form-hint">Na odoslanie zaškrtnite políčko „Nie som robot“.</p>
+                            <button type="submit" id="submitButton" disabled aria-describedby="submitHint" class="disabled">ODOSLAŤ SPRÁVU</button>
                         </div>
 
                         <input type="hidden" name="_next" value="https://madovygabor.com/sk/thankYou">
                         <input type="hidden" name="_subject" value="Nová správa z webu MG Captures">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="_replyto" id="replyTo" value="">
                     </form>
                 </div>
             </div>
@@ -356,7 +376,7 @@
                 <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
                     rel="noopener noreferrer">INSTAGRAM</a>
                 <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
-        <a class="footer-link" href="https://hub.madovygabor.com/sk/">HLAVNÁ STRÁNKA</a>
+        <a class="footer-link" href="https://hub.madovygabor.com/sk/" aria-label="Madový Gábor – všetky moje práce (hub)">HUB ↗</a>
       </div>
         </div>
     </footer>
@@ -366,26 +386,58 @@
     <script src="../script.js" defer></script>
     <script>
         // Form logic
+        var SUBMIT_LABEL = "ODOSLAŤ SPRÁVU";
+        var SUBMIT_BUSY_LABEL = "ODOSIELA SA...";
+
         function enableSubmitButton() {
-            const submitButton = document.getElementById('submitButton');
+            var submitButton = document.getElementById('submitButton');
+            var hint = document.getElementById('submitHint');
             submitButton.disabled = false;
             submitButton.classList.remove('disabled');
+            if (hint) hint.hidden = true;
         }
 
-        // Disable Submit Button
         function disableSubmitButton() {
-            const submitButton = document.getElementById('submitButton');
+            var submitButton = document.getElementById('submitButton');
+            var hint = document.getElementById('submitHint');
             submitButton.disabled = true;
             submitButton.classList.add('disabled');
-            submitButton.textContent = "ODOSLAŤ SPRÁVU";
+            submitButton.removeAttribute('aria-busy');
+            submitButton.textContent = SUBMIT_LABEL;
+            if (hint) hint.hidden = false;
         }
 
-        document.getElementById('contactForm').addEventListener('submit', function () {
-            const submitButton = document.getElementById('submitButton');
-            submitButton.disabled = true;
-            submitButton.classList.add('disabled');
-            submitButton.textContent = "ODOSIELA SA...";
-        });
+        (function () {
+            var form = document.getElementById('contactForm');
+            var submitting = false;
+
+            form.addEventListener('submit', function (e) {
+                // Double-submit guard
+                if (submitting) {
+                    e.preventDefault();
+                    return;
+                }
+                submitting = true;
+                // FormSubmit sends the reply to the sender's address
+                var replyTo = document.getElementById('replyTo');
+                var email = document.getElementById('email');
+                if (replyTo && email) replyTo.value = email.value;
+
+                var submitButton = document.getElementById('submitButton');
+                submitButton.disabled = true;
+                submitButton.classList.add('disabled');
+                submitButton.setAttribute('aria-busy', 'true');
+                submitButton.textContent = SUBMIT_BUSY_LABEL;
+            });
+
+            // Back/forward cache: the page may come back with a stale "sending" state
+            window.addEventListener('pageshow', function (ev) {
+                if (!ev.persisted) return;
+                submitting = false;
+                try { if (window.grecaptcha) window.grecaptcha.reset(); } catch (err) { /* ignore */ }
+                disableSubmitButton();
+            });
+        })();
     </script>
 </body>
 

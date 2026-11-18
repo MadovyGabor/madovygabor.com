@@ -108,6 +108,32 @@ describe("validateManifest: structure", () => {
   });
 });
 
+describe("validateManifest: generator ids and dates", () => {
+  it("accepts ids the generator made unique (parent prefix and numeric suffix)", () => {
+    for (const id of ["fest", "fest-2", "parent-fest", "parent-fest-3"]) {
+      const data = [{ title: "Cat", id: "cat", subsections: [{ title: "Fest", id, images: [image()] }] }];
+      assert.ok(!has(validateManifest(data), "error", "id-slug"), id);
+    }
+  });
+
+  it("still rejects an id that has nothing to do with the title", () => {
+    const data = [{ title: "Cat", id: "cat", subsections: [{ title: "Fest", id: "other", images: [image()] }] }];
+    assert.ok(has(validateManifest(data), "error", "id-slug"));
+  });
+
+  it("accepts a YYYY-MM-DD date on categories and sections without warnings", () => {
+    const data = [{ title: "Cat", id: "cat", date: "2026-11-18", subsections: [{ title: "Sub", id: "sub", date: "2026-09-09", images: [image()] }] }];
+    assert.deepEqual(validateManifest(data), []);
+  });
+
+  it("warns about a malformed or impossible date", () => {
+    for (const date of ["18-11-2026", "2026-13-40", "2026-02-30", 20261118]) {
+      const data = [{ title: "Cat", id: "cat", subsections: [{ title: "Sub", id: "sub", date, images: [image()] }] }];
+      assert.ok(has(validateManifest(data), "warning", "date-format"), String(date));
+    }
+  });
+});
+
 describe("validateManifest: images", () => {
   it("reports a bare string image entry", () => {
     assert.ok(has(validateManifest(manifest(["pictures/portfolio/Cat/Sub/a.webp"])), "error", "image-type"));
