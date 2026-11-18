@@ -1,273 +1,1490 @@
 [
     {
-        "title": "Ingatlan & Enteriőr",
-        "id": "ingatlan-enterior",
+        "title": "Események",
+        "id": "esemenyek",
         "subsections": [
             {
-                "title": "AVA Chatka Motýlik",
-                "id": "ava-chatka-motylik",
-                "images": [
+                "title": "KAFEDIK",
+                "id": "kafedik",
+                "subsections": [
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-exterier-1.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chata motylik diakovce exterier 1"
+                        "title": "Események 26",
+                        "id": "esemenyek-26",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-11.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (11)",
+                                    "en": "Bowling – KAFEDIK (11)",
+                                    "sk": "Bowling – KAFEDIK (11)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-12.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (12)",
+                                    "en": "Bowling – KAFEDIK (12)",
+                                    "sk": "Bowling – KAFEDIK (12)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-2.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (2)",
+                                    "en": "Bowling – KAFEDIK (2)",
+                                    "sk": "Bowling – KAFEDIK (2)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-4.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (4)",
+                                    "en": "Bowling – KAFEDIK (4)",
+                                    "sk": "Bowling – KAFEDIK (4)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-6.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (6)",
+                                    "en": "Bowling – KAFEDIK (6)",
+                                    "sk": "Bowling – KAFEDIK (6)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-7.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (7)",
+                                    "en": "Bowling – KAFEDIK (7)",
+                                    "sk": "Bowling – KAFEDIK (7)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Bowling-9.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Bowling – KAFEDIK (9)",
+                                    "en": "Bowling – KAFEDIK (9)",
+                                    "sk": "Bowling – KAFEDIK (9)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (1).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (1)",
+                                    "en": "Thursday show – KAFEDIK (1)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (1)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (16).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (16)",
+                                    "en": "Thursday show – KAFEDIK (16)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (16)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (18).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (18)",
+                                    "en": "Thursday show – KAFEDIK (18)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (18)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (2).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (2)",
+                                    "en": "Thursday show – KAFEDIK (2)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (2)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (22).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (22)",
+                                    "en": "Thursday show – KAFEDIK (22)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (22)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (3).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (3)",
+                                    "en": "Thursday show – KAFEDIK (3)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (3)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (4).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (4)",
+                                    "en": "Thursday show – KAFEDIK (4)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (4)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (5).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (5)",
+                                    "en": "Thursday show – KAFEDIK (5)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (5)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (6).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (6)",
+                                    "en": "Thursday show – KAFEDIK (6)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (6)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Csutortok-eloadas (9).webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Csütörtöki előadás – KAFEDIK (9)",
+                                    "en": "Thursday show – KAFEDIK (9)",
+                                    "sk": "Štvrtkové vystúpenie – KAFEDIK (9)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Elso-sor-13.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Első sor – KAFEDIK (13)",
+                                    "en": "Front row – KAFEDIK (13)",
+                                    "sk": "Prvý rad – KAFEDIK (13)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Elso-sor-2.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Első sor – KAFEDIK (2)",
+                                    "en": "Front row – KAFEDIK (2)",
+                                    "sk": "Prvý rad – KAFEDIK (2)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Elso-sor-3.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Első sor – KAFEDIK (3)",
+                                    "en": "Front row – KAFEDIK (3)",
+                                    "sk": "Prvý rad – KAFEDIK (3)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Elso-sor-4.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Első sor – KAFEDIK (4)",
+                                    "en": "Front row – KAFEDIK (4)",
+                                    "sk": "Prvý rad – KAFEDIK (4)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Események 26/Elso-sor-9.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Első sor – KAFEDIK (9)",
+                                    "en": "Front row – KAFEDIK (9)",
+                                    "sk": "Prvý rad – KAFEDIK (9)"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-kuchyna-2.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chata motylik diakovce kuchyna 2"
+                        "title": "Kocsmatúra",
+                        "id": "kocsmatura",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-12.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (12)",
+                                    "en": "Tour de pub – KAFEDIK (12)",
+                                    "sk": "Pivný beh – KAFEDIK (12)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-15.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (15)",
+                                    "en": "Tour de pub – KAFEDIK (15)",
+                                    "sk": "Pivný beh – KAFEDIK (15)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-18.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (18)",
+                                    "en": "Tour de pub – KAFEDIK (18)",
+                                    "sk": "Pivný beh – KAFEDIK (18)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-19.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (19)",
+                                    "en": "Tour de pub – KAFEDIK (19)",
+                                    "sk": "Pivný beh – KAFEDIK (19)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-2.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (2)",
+                                    "en": "Tour de pub – KAFEDIK (2)",
+                                    "sk": "Pivný beh – KAFEDIK (2)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-20.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (20)",
+                                    "en": "Tour de pub – KAFEDIK (20)",
+                                    "sk": "Pivný beh – KAFEDIK (20)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-23.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (23)",
+                                    "en": "Tour de pub – KAFEDIK (23)",
+                                    "sk": "Pivný beh – KAFEDIK (23)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-24.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (24)",
+                                    "en": "Tour de pub – KAFEDIK (24)",
+                                    "sk": "Pivný beh – KAFEDIK (24)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-28.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (28)",
+                                    "en": "Tour de pub – KAFEDIK (28)",
+                                    "sk": "Pivný beh – KAFEDIK (28)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-29.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (29)",
+                                    "en": "Tour de pub – KAFEDIK (29)",
+                                    "sk": "Pivný beh – KAFEDIK (29)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-34.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (34)",
+                                    "en": "Tour de pub – KAFEDIK (34)",
+                                    "sk": "Pivný beh – KAFEDIK (34)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-38.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (38)",
+                                    "en": "Tour de pub – KAFEDIK (38)",
+                                    "sk": "Pivný beh – KAFEDIK (38)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-46.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (46)",
+                                    "en": "Tour de pub – KAFEDIK (46)",
+                                    "sk": "Pivný beh – KAFEDIK (46)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-48.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (48)",
+                                    "en": "Tour de pub – KAFEDIK (48)",
+                                    "sk": "Pivný beh – KAFEDIK (48)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-51.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (51)",
+                                    "en": "Tour de pub – KAFEDIK (51)",
+                                    "sk": "Pivný beh – KAFEDIK (51)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-53.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (53)",
+                                    "en": "Tour de pub – KAFEDIK (53)",
+                                    "sk": "Pivný beh – KAFEDIK (53)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-54.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (54)",
+                                    "en": "Tour de pub – KAFEDIK (54)",
+                                    "sk": "Pivný beh – KAFEDIK (54)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-56.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (56)",
+                                    "en": "Tour de pub – KAFEDIK (56)",
+                                    "sk": "Pivný beh – KAFEDIK (56)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-59.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (59)",
+                                    "en": "Tour de pub – KAFEDIK (59)",
+                                    "sk": "Pivný beh – KAFEDIK (59)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-62.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (62)",
+                                    "en": "Tour de pub – KAFEDIK (62)",
+                                    "sk": "Pivný beh – KAFEDIK (62)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-66.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (66)",
+                                    "en": "Tour de pub – KAFEDIK (66)",
+                                    "sk": "Pivný beh – KAFEDIK (66)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-69.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (69)",
+                                    "en": "Tour de pub – KAFEDIK (69)",
+                                    "sk": "Pivný beh – KAFEDIK (69)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-7.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (7)",
+                                    "en": "Tour de pub – KAFEDIK (7)",
+                                    "sk": "Pivný beh – KAFEDIK (7)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-71.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (71)",
+                                    "en": "Tour de pub – KAFEDIK (71)",
+                                    "sk": "Pivný beh – KAFEDIK (71)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-75.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (75)",
+                                    "en": "Tour de pub – KAFEDIK (75)",
+                                    "sk": "Pivný beh – KAFEDIK (75)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-76.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (76)",
+                                    "en": "Tour de pub – KAFEDIK (76)",
+                                    "sk": "Pivný beh – KAFEDIK (76)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/KAFEDIK/Kocsmatúra/Kocsmatura-9.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Kocsmatúra – KAFEDIK (9)",
+                                    "en": "Tour de pub – KAFEDIK (9)",
+                                    "sk": "Pivný beh – KAFEDIK (9)"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "date": "2026-11-18"
+            },
+            {
+                "title": "AVA WARRIORS NIGHT",
+                "id": "ava-warriors-night",
+                "subsections": [
+                    {
+                        "title": "FERDINAND VS KOSTOVSKI",
+                        "id": "ferdinand-vs-kostovski",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (01)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (01)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (02)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (02)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (03)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (03)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (04)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (04)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (05)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (05)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (06)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (06)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (07)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (07)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (08)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (08)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (09)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (09)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (10)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (10)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (10)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-11.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (11)",
+                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (11)",
+                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (11)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
+                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
+                                }
+                            }
+                        ]
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-obyvacia-izba-1.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chata motylik diakovce obyvacia izba 1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-kupalisko-diakovce-kupelna-wc-2.webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Chata motylik kupalisko diakovce kupelna wc 2"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-ubytovanie-diakovce-spalna-1.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chata motylik ubytovanie diakovce spalna 1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-kuchyna-1.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chatka na prenajom diakovce kuchyna 1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-obyvacia-izba-3.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chatka na prenajom diakovce obyvacia izba 3"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-terasa-1.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Chatka na prenajom diakovce terasa 1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/kupalisko-diakovce-chata-motylik-spalna-2.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Kupalisko diakovce chata motylik spalna 2"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-exterier-2.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Ubytovanie diakovce chata motylik exterier 2"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-kupelna-sprcha-1.webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Ubytovanie diakovce chata motylik kupelna sprcha 1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-obyvacia-izba-2.webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Ubytovanie diakovce obyvacia izba 2"
+                        "title": "OROSZI VS BOLEDOVIČ",
+                        "id": "oroszi-vs-boledovic",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-01.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (01)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (01)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (01)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-02.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (02)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (02)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (02)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-03.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (03)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (03)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (03)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-04.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (04)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (04)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (04)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-05.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (05)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (05)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (05)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-06.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (06)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (06)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (06)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-07.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (07)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (07)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (07)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-08.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (08)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (08)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (08)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-09.webp",
+                                "width": 1920,
+                                "height": 1280,
+                                "aspect_ratio": 1.5,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (09)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (09)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (09)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-10.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (10)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (10)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (10)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Események/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-11.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (11)",
+                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (11)",
+                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (11)"
+                                },
+                                "title": {
+                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
+                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
+                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
+                                }
+                            }
+                        ]
                     }
                 ],
                 "date": "2026-09-09"
             },
             {
-                "title": "Apartmánový dom",
-                "id": "apartmanovy-dom",
+                "title": "Alsószeli Díjátadó",
+                "id": "alsoszeli-dijatado",
                 "images": [
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-01.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-01.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (01)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (01)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (01)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (01)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (01)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (01)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-02.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-02.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (02)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (02)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (02)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (02)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (02)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (02)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-03.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-03.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (03)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (03)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (03)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (03)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (03)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (03)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-04.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-04.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (04)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (04)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (04)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (04)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (04)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (04)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-05.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-05.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (05)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (05)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (05)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (05)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (05)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (05)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-06.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-06.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (06)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (06)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (06)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (06)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (06)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (06)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-07.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-07.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (07)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (07)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (07)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (07)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (07)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (07)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
                     },
                     {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-08.webp",
-                        "width": 1920,
-                        "height": 1276,
-                        "aspect_ratio": 1.5047021943573669,
-                        "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (08)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (08)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (08)"
-                        },
-                        "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-09.webp",
-                        "width": 1920,
-                        "height": 1279,
-                        "aspect_ratio": 1.5011727912431587,
-                        "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (09)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (09)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (09)"
-                        },
-                        "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-10.webp",
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-08.webp",
                         "width": 1920,
                         "height": 1280,
                         "aspect_ratio": 1.5,
                         "alt": {
-                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (10)",
-                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (10)",
-                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (10)"
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (08)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (08)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (08)"
                         },
                         "title": {
-                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
-                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
-                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
                         }
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-09.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (09)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (09)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (09)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-10.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (10)",
+                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (10)",
+                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (10)"
+                        },
+                        "title": {
+                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
+                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
+                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
+                        }
+                    }
+                ],
+                "date": "2026-09-09"
+            },
+            {
+                "title": "Felsőszeli ballagás 24",
+                "id": "felsoszeli-ballagas-24",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (12).webp",
+                        "width": 5338,
+                        "height": 3559,
+                        "aspect_ratio": 1.4998595110986233,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (13).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (14).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (15).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (16).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (2).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (3).webp",
+                        "width": 3925,
+                        "height": 5888,
+                        "aspect_ratio": 0.666610054347826,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (4).webp",
+                        "width": 5810,
+                        "height": 3873,
+                        "aspect_ratio": 1.5001290988897495,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (5).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (7).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (8).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Felszoszeli ballagas 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (9).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Felszoszeli ballagas 24"
+                    }
+                ],
+                "date": "2026-09-09"
+            },
+            {
+                "title": "Rákoczi tábor 24",
+                "id": "rakoczi-tabor-24",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (1).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (2).webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (3).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (4).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (5).webp",
+                        "width": 3821,
+                        "height": 5731,
+                        "aspect_ratio": 0.6667248298726226,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (6).webp",
+                        "width": 3367,
+                        "height": 5051,
+                        "aspect_ratio": 0.6666006731340328,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (7).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Rakoczi tabor 24"
+                    },
+                    {
+                        "src": "pictures/portfolio/Események/Rákoczi tábor 24/rakoczi tabor 24 (8).webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Rakoczi tabor 24"
                     }
                 ],
                 "date": "2026-09-09"
             }
         ],
-        "date": "2026-09-09"
+        "date": "2026-11-18"
     },
     {
         "title": "Koncertek",
         "id": "koncertek",
         "subsections": [
+            {
+                "title": "Mega7vege",
+                "id": "mega7vege",
+                "subsections": [
+                    {
+                        "title": "Mad About Marilyn",
+                        "id": "mad-about-marilyn",
+                        "images": [
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-1.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (1)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (1)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (1)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-10.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (10)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (10)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (10)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-12.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (12)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (12)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (12)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-14.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (14)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (14)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (14)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-15.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (15)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (15)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (15)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-17.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (17)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (17)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (17)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-19.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (19)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (19)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (19)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-24.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (24)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (24)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (24)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-25.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (25)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (25)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (25)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-30.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (30)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (30)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (30)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-31.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (31)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (31)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (31)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-33.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (33)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (33)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (33)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-34.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (34)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (34)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (34)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-36.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (36)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (36)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (36)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-4.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (4)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (4)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (4)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-5.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (5)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (5)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (5)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-7.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (7)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (7)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (7)"
+                                }
+                            },
+                            {
+                                "src": "pictures/portfolio/Koncertek/Mega7vege/Mad About Marilyn/KAFEDIK - szombat-9.webp",
+                                "width": 1920,
+                                "height": 1536,
+                                "aspect_ratio": 1.25,
+                                "alt": {
+                                    "hu": "Mad About Marilyn – szombat – KAFEDIK (9)",
+                                    "en": "Mad About Marilyn – Saturday – KAFEDIK (9)",
+                                    "sk": "Mad About Marilyn – sobota – KAFEDIK (9)"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "date": "2026-11-18"
+            },
             {
                 "title": "AVA NIGHT 26",
                 "id": "ava-night-26",
@@ -1815,6 +3032,271 @@
                 "date": "2026-09-09"
             }
         ],
+        "date": "2026-11-18"
+    },
+    {
+        "title": "Ingatlan & Enteriőr",
+        "id": "ingatlan-enterior",
+        "subsections": [
+            {
+                "title": "AVA Chatka Motýlik",
+                "id": "ava-chatka-motylik",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-exterier-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce exterier 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-kuchyna-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce kuchyna 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-diakovce-obyvacia-izba-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik diakovce obyvacia izba 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-kupalisko-diakovce-kupelna-wc-2.webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Chata motylik kupalisko diakovce kupelna wc 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chata-motylik-ubytovanie-diakovce-spalna-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chata motylik ubytovanie diakovce spalna 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-kuchyna-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce kuchyna 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-obyvacia-izba-3.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce obyvacia izba 3"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/chatka-na-prenajom-diakovce-terasa-1.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Chatka na prenajom diakovce terasa 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/kupalisko-diakovce-chata-motylik-spalna-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Kupalisko diakovce chata motylik spalna 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-exterier-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Ubytovanie diakovce chata motylik exterier 2"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-chata-motylik-kupelna-sprcha-1.webp",
+                        "width": 4000,
+                        "height": 6000,
+                        "aspect_ratio": 0.6666666666666666,
+                        "alt": "Ubytovanie diakovce chata motylik kupelna sprcha 1"
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/AVA Chatka Motýlik/ubytovanie-diakovce-obyvacia-izba-2.webp",
+                        "width": 6000,
+                        "height": 4000,
+                        "aspect_ratio": 1.5,
+                        "alt": "Ubytovanie diakovce obyvacia izba 2"
+                    }
+                ],
+                "date": "2026-09-09"
+            },
+            {
+                "title": "Apartmánový dom",
+                "id": "apartmanovy-dom",
+                "images": [
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-01.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (01)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (01)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (01)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-02.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (02)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (02)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (02)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-03.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (03)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (03)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (03)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-04.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (04)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (04)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (04)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-05.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (05)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (05)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (05)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-06.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (06)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (06)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (06)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-07.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (07)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (07)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (07)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-08.webp",
+                        "width": 1920,
+                        "height": 1276,
+                        "aspect_ratio": 1.5047021943573669,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (08)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (08)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (08)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-09.webp",
+                        "width": 1920,
+                        "height": 1279,
+                        "aspect_ratio": 1.5011727912431587,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (09)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (09)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (09)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    },
+                    {
+                        "src": "pictures/portfolio/Ingatlan & Enteriőr/Apartmánový dom/ingatlanfotozas-apartman-dom-madovy-gabor-10.webp",
+                        "width": 1920,
+                        "height": 1280,
+                        "aspect_ratio": 1.5,
+                        "alt": {
+                            "hu": "Modern apartmanház belső tér és ingatlanfotózás - Madový Gábor fotográfus (10)",
+                            "sk": "Interiérová fotografia a fotenie nehnuteľností moderného apartmánového domu - Gabriel Madový (10)",
+                            "en": "Interior real estate photography for modern apartment building - Gabriel Madový (10)"
+                        },
+                        "title": {
+                            "hu": "Ingatlanfotózás és enteriőrfotózás - Apartmanház | MG Captures",
+                            "sk": "Fotenie nehnuteľností a interiéru - Apartmánový dom | MG Captures",
+                            "en": "Real estate and interior photography - Apartment House | MG Captures"
+                        }
+                    }
+                ],
+                "date": "2026-09-09"
+            }
+        ],
         "date": "2026-09-09"
     },
     {
@@ -1905,824 +3387,6 @@
                             "sk": "Portrétna fotografia v exteriéri | Gabriel Madový",
                             "en": "Outdoor portrait photography | Gabriel Madový"
                         }
-                    }
-                ],
-                "date": "2026-09-09"
-            }
-        ],
-        "date": "2026-09-09"
-    },
-    {
-        "title": "Rendezvények",
-        "id": "rendezvenyek",
-        "subsections": [
-            {
-                "title": "AMTS 25",
-                "id": "amts-25",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (11).webp",
-                        "width": 4000,
-                        "height": 3200,
-                        "aspect_ratio": 1.25,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (6).webp",
-                        "width": 4104,
-                        "height": 3283,
-                        "aspect_ratio": 1.2500761498629303,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (8).webp",
-                        "width": 5405,
-                        "height": 3603,
-                        "aspect_ratio": 1.5001387732445184,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/AMTS 25 (9).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "AMTS 25"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/Palatinus-Attila-StuntRider.webp",
-                        "width": 3259,
-                        "height": 4074,
-                        "aspect_ratio": 0.7999509081983309,
-                        "alt": "Palatinus Attila StuntRider"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amon-oliver-s600-regi-desing.webp",
-                        "width": 3276,
-                        "height": 4587,
-                        "aspect_ratio": 0.7141922825376062,
-                        "alt": "Amon oliver s600 regi desing"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amon-oliver-s600-regi-desing1.webp",
-                        "width": 4544,
-                        "height": 3635,
-                        "aspect_ratio": 1.2500687757909217,
-                        "alt": "Amon oliver s600 regi desing1"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-2025-drift-show.webp",
-                        "width": 5000,
-                        "height": 4000,
-                        "aspect_ratio": 1.25,
-                        "alt": "Amts 2025 drift show"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-2025-magyar-tomi-autoja-terror-benz.webp",
-                        "width": 4254,
-                        "height": 3403,
-                        "aspect_ratio": 1.2500734645900675,
-                        "alt": "Amts 2025 magyar tomi autoja terror benz"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-25-rendor-show (1).webp",
-                        "width": 4597,
-                        "height": 3678,
-                        "aspect_ratio": 1.2498640565524741,
-                        "alt": "Amts 25 rendor show"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/amts-25-rendor-show.webp",
-                        "width": 5063,
-                        "height": 2848,
-                        "aspect_ratio": 1.7777387640449438,
-                        "alt": "Amts 25 rendor show"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/magyar tomi driftel.webp",
-                        "width": 4508,
-                        "height": 3606,
-                        "aspect_ratio": 1.250138657792568,
-                        "alt": "Magyar tomi driftel"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/pala55-motor-bemutato.webp",
-                        "width": 4248,
-                        "height": 3398,
-                        "aspect_ratio": 1.2501471453796351,
-                        "alt": "Pala55 motor bemutato"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/AMTS 25/terror-benz (2).webp",
-                        "width": 4907,
-                        "height": 3926,
-                        "aspect_ratio": 1.249872643912379,
-                        "alt": "Terror benz"
-                    }
-                ],
-                "date": "2026-09-09"
-            },
-            {
-                "title": "AVA WARRIORS NIGHT",
-                "id": "ava-warriors-night",
-                "subsections": [
-                    {
-                        "title": "FERDINAND VS KOSTOVSKI",
-                        "id": "ferdinand-vs-kostovski",
-                        "images": [
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-01.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (01)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (01)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (01)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-02.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (02)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (02)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (02)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-03.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (03)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (03)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (03)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-04.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (04)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (04)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (04)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-05.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (05)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (05)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (05)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-06.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (06)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (06)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (06)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-07.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (07)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (07)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (07)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-08.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (08)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (08)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (08)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-09.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (09)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (09)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (09)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-10.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (10)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (10)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (10)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/FERDINAND VS KOSTOVSKI/sportfotozas-box-ferdinand-kostovski-ava-warriors-madovy-gabor-11.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Ferdinand vs Kostovski profi boksz gála főmérkőzés az AVA Warriors Night rendezvényen - Madový Gábor sportfotózás (11)",
-                                    "sk": "Hlavný zápas v boxe Ferdinand vs Kostovski na podujatí AVA Warriors Night v Galante - Gabriel Madový (11)",
-                                    "en": "Main event boxing match Ferdinand vs Kostovski at AVA Warriors Night in Galanta - Gabriel Madový (11)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz mérkőzés: Ferdinand vs Kostovski | MG Captures",
-                                    "sk": "Zápasová športová fotografia: Ferdinand vs Kostovski | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing main event: Ferdinand vs Kostovski"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "title": "OROSZI VS BOLEDOVIČ",
-                        "id": "oroszi-vs-boledovic",
-                        "images": [
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-01.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (01)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (01)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (01)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-02.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (02)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (02)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (02)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-03.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (03)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (03)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (03)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-04.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (04)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (04)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (04)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-05.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (05)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (05)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (05)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-06.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (06)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (06)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (06)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-07.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (07)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (07)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (07)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-08.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (08)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (08)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (08)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-09.webp",
-                                "width": 1920,
-                                "height": 1280,
-                                "aspect_ratio": 1.5,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (09)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (09)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (09)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-10.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (10)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (10)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (10)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            },
-                            {
-                                "src": "pictures/portfolio/Rendezvények/AVA WARRIORS NIGHT/OROSZI VS BOLEDOVIČ/sportfotozas-box-oroszi-boledovic-ava-warriors-madovy-gabor-11.webp",
-                                "width": 1920,
-                                "height": 1536,
-                                "aspect_ratio": 1.25,
-                                "alt": {
-                                    "hu": "Oroszi vs Boledovič ökölvívó küzdelem az AVA Warriors Night gálán Galántán - MG Captures sportfotó (11)",
-                                    "sk": "Boxerský súboj Oroszi vs Boledovič na galavečere AVA Warriors Night v Galante - Gabriel Madový (11)",
-                                    "en": "Co-main event boxing fight Oroszi vs Boledovič at AVA Warriors Night in Galanta - Gabriel Madový (11)"
-                                },
-                                "title": {
-                                    "hu": "AVA Warriors Night boksz gála: Oroszi vs Boledovič | Madový Gábor",
-                                    "sk": "Športová fotografia boxu: Oroszi vs Boledovič | AVA Warriors Night",
-                                    "en": "AVA Warriors Night boxing co-main event: Oroszi vs Boledovič"
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "date": "2026-09-09"
-            },
-            {
-                "title": "Alsószeli Díjátadó",
-                "id": "alsoszeli-dijatado",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-01.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (01)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (01)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (01)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-02.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (02)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (02)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (02)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-03.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (03)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (03)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (03)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-04.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (04)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (04)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (04)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-05.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (05)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (05)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (05)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-06.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (06)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (06)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (06)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-07.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (07)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (07)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (07)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-08.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (08)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (08)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (08)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-09.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (09)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (09)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (09)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Alsószeli Díjátadó/esemenyfotozas-dijatado-gala-alsoszeli-madovy-gabor-10.webp",
-                        "width": 1920,
-                        "height": 1280,
-                        "aspect_ratio": 1.5,
-                        "alt": {
-                            "hu": "Ünnepélyes díjátadó gála és elismerések átadása Alsószeliben - Madový Gábor eseményfotózás (10)",
-                            "sk": "Slávnostné odovzdávanie ocenení v Dolných Salibách - eventová fotografia Gabriel Madový (10)",
-                            "en": "Ceremonial community and sports awards gala in Dolné Saliby - Gabriel Madový Event Photography (10)"
-                        },
-                        "title": {
-                            "hu": "Díjátadó gála eseményfotózás Alsószeli | MG Captures",
-                            "sk": "Odovzdávanie cien Dolné Saliby | Eventová fotografia Gabriel Madový",
-                            "en": "Awards Gala ceremony photography in Dolné Saliby | MG Captures"
-                        }
-                    }
-                ],
-                "date": "2026-09-09"
-            },
-            {
-                "title": "Felsőszeli ballagás 24",
-                "id": "felsoszeli-ballagas-24",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (12).webp",
-                        "width": 5338,
-                        "height": 3559,
-                        "aspect_ratio": 1.4998595110986233,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (13).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (14).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (15).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (16).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (2).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (3).webp",
-                        "width": 3925,
-                        "height": 5888,
-                        "aspect_ratio": 0.666610054347826,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (4).webp",
-                        "width": 5810,
-                        "height": 3873,
-                        "aspect_ratio": 1.5001290988897495,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (5).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (7).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (8).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Felszoszeli ballagas 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (9).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Felszoszeli ballagas 24"
-                    }
-                ],
-                "date": "2026-09-09"
-            },
-            {
-                "title": "Rákoczi tábor 24",
-                "id": "rakoczi-tabor-24",
-                "images": [
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (1).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (2).webp",
-                        "width": 4000,
-                        "height": 6000,
-                        "aspect_ratio": 0.6666666666666666,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (3).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (4).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (5).webp",
-                        "width": 3821,
-                        "height": 5731,
-                        "aspect_ratio": 0.6667248298726226,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (6).webp",
-                        "width": 3367,
-                        "height": 5051,
-                        "aspect_ratio": 0.6666006731340328,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (7).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Rakoczi tabor 24"
-                    },
-                    {
-                        "src": "pictures/portfolio/Rendezvények/Rákoczi tábor 24/rakoczi tabor 24 (8).webp",
-                        "width": 6000,
-                        "height": 4000,
-                        "aspect_ratio": 1.5,
-                        "alt": "Rakoczi tabor 24"
                     }
                 ],
                 "date": "2026-09-09"
