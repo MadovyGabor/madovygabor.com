@@ -43,7 +43,11 @@ pictures/
 1. **Accented Folder Names**: You can name folders using normal accented characters (e.g. `Rendezvények`, `Portrék`). The generator automatically normalizes them into clean HTML anchors and slugs (e.g. `rendezvenyek`, `portrek`).
 2. **File Placement**: Images must **only** reside in the leaf folders (the deepest folder in the chain). Do not put images in a Level 2 folder if it contains Level 3 folders, as they will be ignored.
 3. **Supported Formats**: The script indexes images with `.jpg`, `.jpeg`, `.png`, and `.webp` extensions.
-4. **Ordering**: Folders and images are sorted alphabetically. To customize the ordering, prefix your folder or image names with numbers (e.g. `01_Delegation`, `02_Follow The Flow` or `01_intro.webp`, `02_main.webp`).
+4. **Ordering**: Images inside a folder and the sub-subsections (Level 3) are sorted alphabetically. To customize that, prefix names with numbers (e.g. `01_Delegation`, `02_Follow The Flow` or `01_intro.webp`, `02_main.webp`).
+5. **Newest first**: categories and the events inside them (Level 2) are shown newest first. Every event folder has a date in `utils/portfolio_dates.json`:
+   - a **new event folder** gets today's date automatically the first time you run the generator, so it (and its category) moves to the top;
+   - an existing folder that receives **new images** is bumped to today's date;
+   - you can edit any date by hand (`"Koncertek/AVA NIGHT 26": "2026-08-15"`, format `YYYY-MM-DD`) and run the generator again. A category takes the date of its newest event; equal dates keep alphabetical order.
 
 ---
 

@@ -58,6 +58,7 @@ PHOTO_PAGE_DIR = find_photo_page_dir()
 PICTURES_DIR = PHOTO_PAGE_DIR / "pictures" / "portfolio"
 OUTPUT_FILE = PHOTO_PAGE_DIR / "galleryData.json"
 METADATA_FILE = PHOTO_PAGE_DIR / "utils" / "image_metadata.json"
+DATES_FILE = PHOTO_PAGE_DIR / "utils" / "portfolio_dates.json"  # "Category/Event folder" -> date shown first when newest
 RESPONSIVE_DIR = PHOTO_PAGE_DIR / "pictures" / "responsive"
 
 TARGET_WIDTHS = [480, 960, 1600, 2400]
@@ -216,6 +217,67 @@ def ensure_unique_ids(gallery_data):
     walk(gallery_data, "")
 
 
+def _collect_srcs(node):
+    """All image src paths below a gallery node."""
+    srcs = []
+    srcs.extend(img["src"] for img in node.get("images", []))
+    for child in node.get("subsections", []):
+        srcs.extend(_collect_srcs(child))
+    return srcs
+
+
+def apply_recency_order(gallery_data, old_srcs):
+    """Orders categories and events newest first.
+
+    Every event folder (Category/Event) has a date in utils/portfolio_dates.json:
+      * a folder that is new (not in the file, not in the previous galleryData.json) gets today's date,
+      * a folder that received images it did not have before gets today's date,
+      * folders that already existed when this was introduced keep the date of their newest file.
+    A category takes the date of its newest event. Equal dates keep the previous (alphabetical) order.
+    The dates can be edited by hand in portfolio_dates.json (format YYYY-MM-DD)."""
+    import datetime
+
+    today = datetime.date.today().isoformat()
+    dates = {}
+    if DATES_FILE.exists():
+        try:
+            with open(DATES_FILE, "r", encoding="utf-8") as f:
+                dates = json.load(f)
+        except Exception as e:
+            print(f"Warning: Could not read {DATES_FILE}: {e}")
+    original_dates = dict(dates)
+
+    for cat in gallery_data:
+        for sub in cat["subsections"]:
+            key = f"{cat['title']}/{sub['title']}"
+            srcs = _collect_srcs(sub)
+            existed = bool(old_srcs) and any(src in old_srcs for src in srcs)
+            has_new = bool(old_srcs) and any(src not in old_srcs for src in srcs)
+            if key not in dates:
+                if existed:
+                    mtimes = [(PHOTO_PAGE_DIR / src).stat().st_mtime for src in srcs if (PHOTO_PAGE_DIR / src).exists()]
+                    dates[key] = (datetime.date.fromtimestamp(max(mtimes)).isoformat() if mtimes else today)
+                else:
+                    dates[key] = today
+            elif has_new and existed:
+                dates[key] = today
+            sub["date"] = dates[key]
+        # newest event first; ties keep their current order (sorted() is stable)
+        cat["subsections"] = sorted(cat["subsections"], key=lambda s: s["date"], reverse=True)             if len({s["date"] for s in cat["subsections"]}) > 1 else cat["subsections"]
+        cat["date"] = max(s["date"] for s in cat["subsections"])
+
+    if len({c["date"] for c in gallery_data}) > 1:
+        gallery_data.sort(key=lambda c: c["date"], reverse=True)
+
+    # drop folders that no longer exist, keep the file tidy and hand-editable
+    live = {f"{c['title']}/{s['title']}" for c in gallery_data for s in c["subsections"]}
+    dates = {k: v for k, v in dates.items() if k in live}
+    if dates != original_dates:
+        with open(DATES_FILE, "w", encoding="utf-8") as f:
+            json.dump(dict(sorted(dates.items())), f, ensure_ascii=False, indent=4)
+        print(f"Updated {DATES_FILE.name}")
+
+
 def generate_gallery_json():
     """Scans pictures/portfolio/ recursively and generates the structured gallery JSON file"""
     gallery_data = []
@@ -256,6 +318,15 @@ def generate_gallery_json():
                 harvest_meta(old_data)
         except Exception as e:
             print(f"Warning: Could not read existing galleryData.json: {e}")
+
+    old_srcs = set()
+    if OUTPUT_FILE.exists():
+        try:
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                for cat_old in json.load(f):
+                    old_srcs.update(_collect_srcs(cat_old))
+        except Exception:
+            pass
 
     print(f"Scanning folder structure starting from: {PICTURES_DIR}")
 
@@ -317,6 +388,7 @@ def generate_gallery_json():
             gallery_data.append(cat_data)
 
     ensure_unique_ids(gallery_data)
+    apply_recency_order(gallery_data, old_srcs)  # after the ids are fixed, so anchors never change
 
     # Save to output JSON file
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

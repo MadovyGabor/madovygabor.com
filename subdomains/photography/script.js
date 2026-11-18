@@ -106,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const focusableSel = 'a[href], button:not([disabled])';
 
         function openMenu() {
+            // Not while the portfolio category drawer is open: two menus must never stack
+            if (document.documentElement.classList.contains('scroll-lock-sidebar')) return;
             mobileNavOverlay.classList.add('active');
             mobileNavOverlay.setAttribute('aria-hidden', 'false');
             hamburgerBtn.setAttribute('aria-expanded', 'true');

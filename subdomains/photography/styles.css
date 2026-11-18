@@ -2886,6 +2886,17 @@ main {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* The main menu cannot be opened while the category drawer is open */
+html.scroll-lock-sidebar .hamburger-btn {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* While the category drawer is open (z-index 202) the button turns into the close "X": keep it on top */
+html.scroll-lock-sidebar .sidebar-toggle-btn {
+  z-index: 210;
+}
+
 .sidebar-toggle-btn:hover {
   border-color: var(--primary-container);
   color: var(--primary-container);
