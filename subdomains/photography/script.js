@@ -401,8 +401,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 accTrigger.classList.add('active');
             }
             if (accTrigger) {
+                const accPanel = accordion.querySelector('.mobile-nav-accordion-panel');
                 accTrigger.addEventListener('click', () => {
                     const isOpen = accordion.classList.contains('open');
+                    // Animate to the real content height; a fixed max-height leaves a dead
+                    // stretch at the start of the close animation and makes it look stuck.
+                    if (accPanel) accPanel.style.maxHeight = isOpen ? '0px' : accPanel.scrollHeight + 'px';
                     accordion.classList.toggle('open');
                     accTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
                 });
