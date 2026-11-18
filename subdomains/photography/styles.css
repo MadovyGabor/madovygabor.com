@@ -119,7 +119,7 @@ svg.icon {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url('fonts/material-symbols-outlined.woff2?v=2') format('woff2');
+  src: url('fonts/material-symbols-outlined.woff2') format('woff2');
 }
 
 .material-symbols-outlined {
@@ -2354,22 +2354,6 @@ main {
 }
 
 /* Homepage In-Place Skeleton Image Transitions */
-.page-home .portfolio-img {
-  opacity: 0;
-  transition: opacity 0.35s ease-in-out;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.page-home .portfolio-img.is-loaded {
-  opacity: 0.8;
-}
-
-.page-home .portfolio-item:hover .portfolio-img.is-loaded {
-  opacity: 1;
-}
-
 /* Keep hero-overlay hidden during skeleton shimmer so colors match sk-hero-image exactly */
 .hero-image-col.skeleton-shimmer:not(:has(> img.is-loaded)):not(.is-loaded) .hero-overlay {
   opacity: 0;
@@ -5806,10 +5790,6 @@ html[class*="scroll-lock-"] body {
    The navbar keeps its place while the content fades between pages.
    Browsers without support just do a normal page load.
    ========================================================================== */
-@view-transition {
-  navigation: auto;
-}
-
 .navbar {
   view-transition-name: site-nav;
 }
@@ -5823,14 +5803,6 @@ html[class*="scroll-lock-"] body {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.18s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation-duration: 0.001s;
-  }
 }
 
 .faq-answer a {
@@ -5898,4 +5870,22 @@ html[class*="scroll-lock-"] body {
   .service-card:hover {
     translate: none;
   }
+}
+
+
+/* Home hero: the portrait appears as it is, without fade-in or shimmer */
+.page-home .hero-img {
+  opacity: 1;
+  transition: none;
+}
+
+.page-home .hero-image-col.skeleton-shimmer {
+  animation: none;
+  background: var(--color-surface-container);
+}
+
+.page-home .hero-image-col .hero-overlay,
+.page-home .hero-image-col.skeleton-shimmer:not(:has(> img.is-loaded)):not(.is-loaded) .hero-overlay {
+  opacity: 1;
+  transition: none;
 }
