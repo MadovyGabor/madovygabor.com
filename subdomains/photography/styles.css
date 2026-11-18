@@ -5010,6 +5010,7 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator:hover {
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  overflow-y: hidden; /* otherwise the track also scrolls vertically and swallows the page scroll */
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;

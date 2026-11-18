@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="hu">
+<html lang="hu">
 
 <head>
   <meta charset="utf-8" />
@@ -15,19 +15,32 @@
   <link rel="alternate" hreflang="hu" href="https://madovygabor.com/hu/szolgaltatasok/tablofotozas" />
   <link rel="alternate" hreflang="sk" href="https://madovygabor.com/sk/sluzby/tablove-fotenie" />
   <link rel="alternate" hreflang="en" href="https://madovygabor.com/en/services/yearbook-photography" />
-  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/en/services/yearbook-photography" />
+  <link rel="alternate" hreflang="x-default" href="https://madovygabor.com/hu/szolgaltatasok/tablofotozas" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MG Captures" />
   <meta property="og:locale" content="hu_HU" />
   <meta property="og:url" content="https://madovygabor.com/hu/szolgaltatasok/tablofotozas" />
   <meta property="og:title" content="MG Captures | Madový Gábor – Végzős Tablófotózás" />
   <meta property="og:description"
     content="Feszengésmentes tablóportrék és nyomdakész retusálás végzős osztályoknak Galántán és környékén." />
-  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.png" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="MG Captures – koncert-, rendezvény- és portréfotók válogatása" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MG Captures | Madový Gábor – Végzős Tablófotózás" />
+  <meta name="twitter:description" content="Feszengésmentes tablóportrék és nyomdakész retusálás végzős osztályoknak Galántán és környékén." />
+  <meta name="twitter:image" content="https://madovygabor.com/pictures/OGimage.jpg" />
+
+
+  <!-- Fonts: the first-paint faces are preloaded so text and icons do not swap in late -->
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/inter-v20-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/jetbrains-mono-v24-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/instrument-serif-v5-latin-regular.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../../fonts/material-symbols-outlined.woff2" crossorigin />
 
   <link rel="stylesheet" href="../../styles.css" />
   <meta name="theme-color" content="#121414" />
@@ -123,19 +136,27 @@
         animation: none !important;
         background: #141616 !important;
       }
+
+      /* Without JS nothing would ever reveal these sections */
+      .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     </style>
   </noscript>
 </head>
 
-<body class="dot-grid">
+<body>
+
+  <a class="skip-link font-label-caps" href="#main">Ugrás a tartalomra</a>
 
   <!-- Mobile Nav Drawer -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
-    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-label="Navigáció">
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-label="Navigáció">
       <div class="mobile-nav-header">
         <span class="nav-brand">MG Captures</span>
         <button class="nav-close-btn" id="navCloseBtn" aria-label="Menü bezárása">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
         </button>
       </div>
       <nav class="mobile-nav-links">
@@ -143,20 +164,20 @@
         <div class="mobile-nav-accordion open" id="mobileServicesAccordion">
           <button class="mobile-nav-accordion-trigger active" aria-expanded="true">
             SZOLGÁLTATÁSOK
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
           <div class="mobile-nav-accordion-panel">
             <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/esemenyfotozas">
-              <span class="material-symbols-outlined">photo_camera</span> Eseményfotózás
+              <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span> Eseményfotózás
             </a>
             <a class="mobile-nav-sublink active" href="/hu/szolgaltatasok/tablofotozas">
-              <span class="material-symbols-outlined">portrait</span> Tablófotózás
+              <span class="material-symbols-outlined" aria-hidden="true">portrait</span> Tablófotózás
             </a>
             <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/iskolafotozas">
-              <span class="material-symbols-outlined">groups</span> Osztály- és iskolafotózás
+              <span class="material-symbols-outlined" aria-hidden="true">groups</span> Osztály- és iskolafotózás
             </a>
             <a class="mobile-nav-sublink" href="/hu/szolgaltatasok/portrefotozas">
-              <span class="material-symbols-outlined">flare</span> Portréfotózás
+              <span class="material-symbols-outlined" aria-hidden="true">flare</span> Portréfotózás
             </a>
           </div>
         </div>
@@ -171,7 +192,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/tablove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/hu/">KEZDŐOLDAL</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/hu/" aria-label="Madový Gábor – összes munkám (hub)" title="Madový Gábor – összes munkám">HUB ↗</a>
       </div>
     </div>
   </div>
@@ -183,25 +204,25 @@
       <div class="nav-links">
         <a class="nav-link" href="/hu/">FŐOLDAL</a>
         <div class="nav-dropdown" id="servicesDropdown">
-          <button class="nav-link nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+          <button class="nav-link nav-dropdown-trigger active" aria-expanded="false" aria-controls="servicesMenu">
             SZOLGÁLTATÁSOK
-            <span class="material-symbols-outlined">expand_more</span>
+            <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
           </button>
-          <div class="nav-dropdown-menu dropdown-menu" role="menu">
-            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/esemenyfotozas" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">photo_camera</span>
+          <div class="nav-dropdown-menu dropdown-menu" id="servicesMenu">
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/esemenyfotozas">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">photo_camera</span>
               <span class="dropdown-title">Eseményfotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item active" href="/hu/szolgaltatasok/tablofotozas" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">portrait</span>
+            <a class="nav-dropdown-item dropdown-item active" href="/hu/szolgaltatasok/tablofotozas">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">portrait</span>
               <span class="dropdown-title">Tablófotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/iskolafotozas" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">groups</span>
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/iskolafotozas">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">groups</span>
               <span class="dropdown-title">Osztály- és iskolafotózás</span>
             </a>
-            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/portrefotozas" role="menuitem">
-              <span class="material-symbols-outlined nav-dropdown-item-icon">flare</span>
+            <a class="nav-dropdown-item dropdown-item" href="/hu/szolgaltatasok/portrefotozas">
+              <span class="material-symbols-outlined nav-dropdown-item-icon" aria-hidden="true">flare</span>
               <span class="dropdown-title">Portréfotózás</span>
             </a>
           </div>
@@ -217,7 +238,7 @@
           <span class="lang-sep">/</span>
           <a class="lang-link" href="/sk/sluzby/tablove-fotenie">SK</a>
         </div>
-        <a class="nav-btn" href="https://hub.madovygabor.com/hu/">KEZDŐOLDAL</a>
+        <a class="nav-btn" href="https://hub.madovygabor.com/hu/" aria-label="Madový Gábor – összes munkám (hub)" title="Madový Gábor – összes munkám">HUB ↗</a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menü megnyitása" aria-expanded="false"
           aria-controls="mobileNavDrawer">
           <span class="hamburger-line"></span>
@@ -228,7 +249,7 @@
     </div>
   </nav>
 
-  <main class="event-main">
+  <main class="event-main" id="main">
     <!-- SECTION 1: HERO -->
     <header class="event-hero">
       <div class="container">
@@ -289,7 +310,7 @@
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
                 alt="Beltéri tablóportré professzionális mobil stúdióban" fetchpriority="high" decoding="async"
-                width="800" height="520" onload="this.classList.add('is-loaded')" />
+                width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">BELTÉRI HÁTTÉR</span>
             </div>
@@ -306,8 +327,7 @@
           <article class="occasion-card">
             <div class="occasion-img-wrap skeleton-shimmer">
               <img src="../../pictures/kezdoOldal/Picture-of-Gabor-Madovy.webp"
-                alt="Szabadtéri tablóképek természetes fényben" loading="lazy" decoding="async" width="800" height="520"
-                onload="this.classList.add('is-loaded')" />
+                alt="Szabadtéri tablóképek természetes fényben" loading="lazy" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">SZABADTÉR &amp; TERMÉSZETES FÉNY</span>
             </div>
@@ -325,8 +345,7 @@
             <div class="occasion-img-wrap skeleton-shimmer">
               <img
                 src="../../pictures/portfolio/Koncertek/AVA NIGHT 26/Fesztivál hangulatképek/esemenyfotozas-fesztival-hangulat-ava-night-galanta-madovy-gabor-06.webp"
-                alt="Tanári portrék és baráti képek" loading="lazy" decoding="async" width="800" height="520"
-                onload="this.classList.add('is-loaded')" />
+                alt="Tanári portrék és baráti képek" loading="lazy" decoding="async" width="800" height="520" />
               <div class="occasion-img-overlay"></div>
               <span class="occasion-tag">KIEGÉSZÍTŐK</span>
             </div>
@@ -684,32 +703,28 @@
           <div class="photo-carousel-track" id="photoCarouselTrack">
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 1.webp"
-                alt="Klasszikus beltéri stúdió tablóportré" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Klasszikus beltéri stúdió tablóportré" loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (6).webp"
-                alt="Ballagási ceremónia és ünneplés" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Ballagási ceremónia és ünneplés" loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Portrék/Portréim/portrefotozas-szabadteri-portre-madovy-gabor-01.webp"
                 alt="Fiatalos szabadtéri tablófotó természetes fényben" loading="lazy" decoding="async" width="600"
-                height="750" onload="this.classList.add('is-loaded')" />
+                height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-300">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (10).webp"
-                alt="Végzős osztály és csoportkép" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Végzős osztály és csoportkép" loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-100">
               <img src="../../pictures/portfolio/Portrék/Portréim/Picture 3.webp" alt="Természetes stúdió diákportré"
-                loading="lazy" decoding="async" width="600" height="750" onload="this.classList.add('is-loaded')" />
+                loading="lazy" decoding="async" width="600" height="750" />
             </div>
             <div class="photo-carousel-slide skeleton-shimmer scroll-reveal delay-200">
               <img src="../../pictures/portfolio/Rendezvények/Felsőszeli ballagás 24/Felszoszeli ballagas 24 (14).webp"
-                alt="Vidám ballagási pillanat és barátok" loading="lazy" decoding="async" width="600" height="750"
-                onload="this.classList.add('is-loaded')" />
+                alt="Vidám ballagási pillanat és barátok" loading="lazy" decoding="async" width="600" height="750" />
             </div>
           </div>
 
@@ -729,12 +744,12 @@
     </section>
 
     <!-- Collaboration Section -->
-    <section class="collaboration dot-grid scroll-reveal">
+    <section class="collaboration scroll-reveal">
       <span class="font-label-caps text-primary collab-label">EGYÜTTMŰKÖDÉS</span>
       <h2 class="font-display-xl text-white collab-title">Készen állsz a közös munkára?</h2>
       <div class="collab-actions">
         <a class="btn-white font-label-caps" href="/hu/kontakt?service=tablo">
-          KAPCSOLATFELVÉTEL <span class="material-symbols-outlined">arrow_forward</span>
+          KAPCSOLATFELVÉTEL <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
         </a>
         <a class="btn-outline-icon font-label-caps" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">
@@ -757,7 +772,7 @@
         <a class="footer-link" href="https://www.instagram.com/mg.captures06/" target="_blank"
           rel="noopener noreferrer">INSTAGRAM</a>
         <a class="footer-link" href="mailto:mg.captures06@gmail.com">EMAIL</a>
-        <a class="footer-link" href="https://hub.madovygabor.com/hu/">KEZDŐOLDAL</a>
+        <a class="footer-link" href="https://hub.madovygabor.com/hu/" aria-label="Madový Gábor – összes munkám (hub)">HUB ↗</a>
       </div>
     </div>
   </footer>
